@@ -31,7 +31,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -100,7 +100,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -169,7 +169,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -237,7 +237,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -308,7 +308,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -374,7 +374,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -433,7 +433,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -499,7 +499,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {
@@ -570,7 +570,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/shamelin/jellyfin-api-client-go"
+	openapiclient "github.com/shamelin/go-jellyfin-api-client"
 )
 
 func main() {

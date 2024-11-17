@@ -5,5 +5,5 @@ generate:
 			-i https://repo.jellyfin.org/files/openapi/jellyfin-openapi-${VERSION}.json \
 			-g go \
 			--package-name jellyfin-api-client \
-			--git-repo-id jellyfin-api-client-go --git-user-id shamelin \
+			--git-repo-id go-jellyfin-api-client --git-user-id shamelin \
 			-o /local

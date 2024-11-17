@@ -22,7 +22,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import jellyfin-api-client "github.com/shamelin/jellyfin-api-client-go"
+import jellyfin-api-client "github.com/shamelin/go-jellyfin-api-client"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
