@@ -23,13 +23,13 @@ import (
 // ItemUpdateAPIService ItemUpdateAPI service
 type ItemUpdateAPIService service
 
-type ApiGetMetadataEditorInfoRequest struct {
+type ItemUpdateAPIGetMetadataEditorInfoRequest struct {
 	ctx context.Context
 	ApiService *ItemUpdateAPIService
 	itemId string
 }
 
-func (r ApiGetMetadataEditorInfoRequest) Execute() (*JellyfinMetadataEditorInfo, *http.Response, error) {
+func (r ItemUpdateAPIGetMetadataEditorInfoRequest) Execute() (*JellyfinMetadataEditorInfo, *http.Response, error) {
 	return r.ApiService.GetMetadataEditorInfoExecute(r)
 }
 
@@ -38,10 +38,10 @@ GetMetadataEditorInfo Gets metadata editor info for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetMetadataEditorInfoRequest
+ @return ItemUpdateAPIGetMetadataEditorInfoRequest
 */
-func (a *ItemUpdateAPIService) GetMetadataEditorInfo(ctx context.Context, itemId string) ApiGetMetadataEditorInfoRequest {
-	return ApiGetMetadataEditorInfoRequest{
+func (a *ItemUpdateAPIService) GetMetadataEditorInfo(ctx context.Context, itemId string) ItemUpdateAPIGetMetadataEditorInfoRequest {
+	return ItemUpdateAPIGetMetadataEditorInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -50,7 +50,7 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfo(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return JellyfinMetadataEditorInfo
-func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEditorInfoRequest) (*JellyfinMetadataEditorInfo, *http.Response, error) {
+func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ItemUpdateAPIGetMetadataEditorInfoRequest) (*JellyfinMetadataEditorInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEdit
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateItemRequest struct {
+type ItemUpdateAPIUpdateItemRequest struct {
 	ctx context.Context
 	ApiService *ItemUpdateAPIService
 	itemId string
@@ -157,12 +157,12 @@ type ApiUpdateItemRequest struct {
 }
 
 // The new item properties.
-func (r ApiUpdateItemRequest) JellyfinBaseItemDto(jellyfinBaseItemDto JellyfinBaseItemDto) ApiUpdateItemRequest {
+func (r ItemUpdateAPIUpdateItemRequest) JellyfinBaseItemDto(jellyfinBaseItemDto JellyfinBaseItemDto) ItemUpdateAPIUpdateItemRequest {
 	r.jellyfinBaseItemDto = &jellyfinBaseItemDto
 	return r
 }
 
-func (r ApiUpdateItemRequest) Execute() (*http.Response, error) {
+func (r ItemUpdateAPIUpdateItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateItemExecute(r)
 }
 
@@ -171,10 +171,10 @@ UpdateItem Updates an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiUpdateItemRequest
+ @return ItemUpdateAPIUpdateItemRequest
 */
-func (a *ItemUpdateAPIService) UpdateItem(ctx context.Context, itemId string) ApiUpdateItemRequest {
-	return ApiUpdateItemRequest{
+func (a *ItemUpdateAPIService) UpdateItem(ctx context.Context, itemId string) ItemUpdateAPIUpdateItemRequest {
+	return ItemUpdateAPIUpdateItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -182,7 +182,7 @@ func (a *ItemUpdateAPIService) UpdateItem(ctx context.Context, itemId string) Ap
 }
 
 // Execute executes the request
-func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.Response, error) {
+func (a *ItemUpdateAPIService) UpdateItemExecute(r ItemUpdateAPIUpdateItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -276,7 +276,7 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateItemContentTypeRequest struct {
+type ItemUpdateAPIUpdateItemContentTypeRequest struct {
 	ctx context.Context
 	ApiService *ItemUpdateAPIService
 	itemId string
@@ -284,12 +284,12 @@ type ApiUpdateItemContentTypeRequest struct {
 }
 
 // The content type of the item.
-func (r ApiUpdateItemContentTypeRequest) ContentType(contentType string) ApiUpdateItemContentTypeRequest {
+func (r ItemUpdateAPIUpdateItemContentTypeRequest) ContentType(contentType string) ItemUpdateAPIUpdateItemContentTypeRequest {
 	r.contentType = &contentType
 	return r
 }
 
-func (r ApiUpdateItemContentTypeRequest) Execute() (*http.Response, error) {
+func (r ItemUpdateAPIUpdateItemContentTypeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateItemContentTypeExecute(r)
 }
 
@@ -298,10 +298,10 @@ UpdateItemContentType Updates an item's content type.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiUpdateItemContentTypeRequest
+ @return ItemUpdateAPIUpdateItemContentTypeRequest
 */
-func (a *ItemUpdateAPIService) UpdateItemContentType(ctx context.Context, itemId string) ApiUpdateItemContentTypeRequest {
-	return ApiUpdateItemContentTypeRequest{
+func (a *ItemUpdateAPIService) UpdateItemContentType(ctx context.Context, itemId string) ItemUpdateAPIUpdateItemContentTypeRequest {
+	return ItemUpdateAPIUpdateItemContentTypeRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -309,7 +309,7 @@ func (a *ItemUpdateAPIService) UpdateItemContentType(ctx context.Context, itemId
 }
 
 // Execute executes the request
-func (a *ItemUpdateAPIService) UpdateItemContentTypeExecute(r ApiUpdateItemContentTypeRequest) (*http.Response, error) {
+func (a *ItemUpdateAPIService) UpdateItemContentTypeExecute(r ItemUpdateAPIUpdateItemContentTypeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

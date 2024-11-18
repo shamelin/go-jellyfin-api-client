@@ -23,7 +23,7 @@ import (
 // ActivityLogAPIService ActivityLogAPI service
 type ActivityLogAPIService service
 
-type ApiGetLogEntriesRequest struct {
+type ActivityLogAPIGetLogEntriesRequest struct {
 	ctx context.Context
 	ApiService *ActivityLogAPIService
 	startIndex *int32
@@ -33,30 +33,30 @@ type ApiGetLogEntriesRequest struct {
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetLogEntriesRequest) StartIndex(startIndex int32) ApiGetLogEntriesRequest {
+func (r ActivityLogAPIGetLogEntriesRequest) StartIndex(startIndex int32) ActivityLogAPIGetLogEntriesRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetLogEntriesRequest) Limit(limit int32) ApiGetLogEntriesRequest {
+func (r ActivityLogAPIGetLogEntriesRequest) Limit(limit int32) ActivityLogAPIGetLogEntriesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. The minimum date. Format &#x3D; ISO.
-func (r ApiGetLogEntriesRequest) MinDate(minDate time.Time) ApiGetLogEntriesRequest {
+func (r ActivityLogAPIGetLogEntriesRequest) MinDate(minDate time.Time) ActivityLogAPIGetLogEntriesRequest {
 	r.minDate = &minDate
 	return r
 }
 
 // Optional. Filter log entries if it has user id, or not.
-func (r ApiGetLogEntriesRequest) HasUserId(hasUserId bool) ApiGetLogEntriesRequest {
+func (r ActivityLogAPIGetLogEntriesRequest) HasUserId(hasUserId bool) ActivityLogAPIGetLogEntriesRequest {
 	r.hasUserId = &hasUserId
 	return r
 }
 
-func (r ApiGetLogEntriesRequest) Execute() (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
+func (r ActivityLogAPIGetLogEntriesRequest) Execute() (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
 	return r.ApiService.GetLogEntriesExecute(r)
 }
 
@@ -64,10 +64,10 @@ func (r ApiGetLogEntriesRequest) Execute() (*JellyfinActivityLogEntryQueryResult
 GetLogEntries Gets activity log entries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLogEntriesRequest
+ @return ActivityLogAPIGetLogEntriesRequest
 */
-func (a *ActivityLogAPIService) GetLogEntries(ctx context.Context) ApiGetLogEntriesRequest {
-	return ApiGetLogEntriesRequest{
+func (a *ActivityLogAPIService) GetLogEntries(ctx context.Context) ActivityLogAPIGetLogEntriesRequest {
+	return ActivityLogAPIGetLogEntriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -75,7 +75,7 @@ func (a *ActivityLogAPIService) GetLogEntries(ctx context.Context) ApiGetLogEntr
 
 // Execute executes the request
 //  @return JellyfinActivityLogEntryQueryResult
-func (a *ActivityLogAPIService) GetLogEntriesExecute(r ApiGetLogEntriesRequest) (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
+func (a *ActivityLogAPIService) GetLogEntriesExecute(r ActivityLogAPIGetLogEntriesRequest) (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

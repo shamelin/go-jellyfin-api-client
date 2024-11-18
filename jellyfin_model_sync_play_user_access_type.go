@@ -20,9 +20,9 @@ type JellyfinSyncPlayUserAccessType string
 
 // List of SyncPlayUserAccessType
 const (
-	CREATE_AND_JOIN_GROUPS JellyfinSyncPlayUserAccessType = "CreateAndJoinGroups"
-	JOIN_GROUPS JellyfinSyncPlayUserAccessType = "JoinGroups"
-	NONE JellyfinSyncPlayUserAccessType = "None"
+	JELLYFINSYNCPLAYUSERACCESSTYPE_CREATE_AND_JOIN_GROUPS JellyfinSyncPlayUserAccessType = "CreateAndJoinGroups"
+	JELLYFINSYNCPLAYUSERACCESSTYPE_JOIN_GROUPS JellyfinSyncPlayUserAccessType = "JoinGroups"
+	JELLYFINSYNCPLAYUSERACCESSTYPE_NONE JellyfinSyncPlayUserAccessType = "None"
 )
 
 // All allowed values of JellyfinSyncPlayUserAccessType enum

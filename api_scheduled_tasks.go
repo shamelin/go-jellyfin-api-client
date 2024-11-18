@@ -23,13 +23,13 @@ import (
 // ScheduledTasksAPIService ScheduledTasksAPI service
 type ScheduledTasksAPIService service
 
-type ApiGetTaskRequest struct {
+type ScheduledTasksAPIGetTaskRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	taskId string
 }
 
-func (r ApiGetTaskRequest) Execute() (*JellyfinTaskInfo, *http.Response, error) {
+func (r ScheduledTasksAPIGetTaskRequest) Execute() (*JellyfinTaskInfo, *http.Response, error) {
 	return r.ApiService.GetTaskExecute(r)
 }
 
@@ -38,10 +38,10 @@ GetTask Get task by id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taskId Task Id.
- @return ApiGetTaskRequest
+ @return ScheduledTasksAPIGetTaskRequest
 */
-func (a *ScheduledTasksAPIService) GetTask(ctx context.Context, taskId string) ApiGetTaskRequest {
-	return ApiGetTaskRequest{
+func (a *ScheduledTasksAPIService) GetTask(ctx context.Context, taskId string) ScheduledTasksAPIGetTaskRequest {
+	return ScheduledTasksAPIGetTaskRequest{
 		ApiService: a,
 		ctx: ctx,
 		taskId: taskId,
@@ -50,7 +50,7 @@ func (a *ScheduledTasksAPIService) GetTask(ctx context.Context, taskId string) A
 
 // Execute executes the request
 //  @return JellyfinTaskInfo
-func (a *ScheduledTasksAPIService) GetTaskExecute(r ApiGetTaskRequest) (*JellyfinTaskInfo, *http.Response, error) {
+func (a *ScheduledTasksAPIService) GetTaskExecute(r ScheduledTasksAPIGetTaskRequest) (*JellyfinTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *ScheduledTasksAPIService) GetTaskExecute(r ApiGetTaskRequest) (*Jellyfi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTasksRequest struct {
+type ScheduledTasksAPIGetTasksRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	isHidden *bool
@@ -157,18 +157,18 @@ type ApiGetTasksRequest struct {
 }
 
 // Optional filter tasks that are hidden, or not.
-func (r ApiGetTasksRequest) IsHidden(isHidden bool) ApiGetTasksRequest {
+func (r ScheduledTasksAPIGetTasksRequest) IsHidden(isHidden bool) ScheduledTasksAPIGetTasksRequest {
 	r.isHidden = &isHidden
 	return r
 }
 
 // Optional filter tasks that are enabled, or not.
-func (r ApiGetTasksRequest) IsEnabled(isEnabled bool) ApiGetTasksRequest {
+func (r ScheduledTasksAPIGetTasksRequest) IsEnabled(isEnabled bool) ScheduledTasksAPIGetTasksRequest {
 	r.isEnabled = &isEnabled
 	return r
 }
 
-func (r ApiGetTasksRequest) Execute() ([]JellyfinTaskInfo, *http.Response, error) {
+func (r ScheduledTasksAPIGetTasksRequest) Execute() ([]JellyfinTaskInfo, *http.Response, error) {
 	return r.ApiService.GetTasksExecute(r)
 }
 
@@ -176,10 +176,10 @@ func (r ApiGetTasksRequest) Execute() ([]JellyfinTaskInfo, *http.Response, error
 GetTasks Get tasks.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTasksRequest
+ @return ScheduledTasksAPIGetTasksRequest
 */
-func (a *ScheduledTasksAPIService) GetTasks(ctx context.Context) ApiGetTasksRequest {
-	return ApiGetTasksRequest{
+func (a *ScheduledTasksAPIService) GetTasks(ctx context.Context) ScheduledTasksAPIGetTasksRequest {
+	return ScheduledTasksAPIGetTasksRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -187,7 +187,7 @@ func (a *ScheduledTasksAPIService) GetTasks(ctx context.Context) ApiGetTasksRequ
 
 // Execute executes the request
 //  @return []JellyfinTaskInfo
-func (a *ScheduledTasksAPIService) GetTasksExecute(r ApiGetTasksRequest) ([]JellyfinTaskInfo, *http.Response, error) {
+func (a *ScheduledTasksAPIService) GetTasksExecute(r ScheduledTasksAPIGetTasksRequest) ([]JellyfinTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -280,13 +280,13 @@ func (a *ScheduledTasksAPIService) GetTasksExecute(r ApiGetTasksRequest) ([]Jell
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStartTaskRequest struct {
+type ScheduledTasksAPIStartTaskRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	taskId string
 }
 
-func (r ApiStartTaskRequest) Execute() (*http.Response, error) {
+func (r ScheduledTasksAPIStartTaskRequest) Execute() (*http.Response, error) {
 	return r.ApiService.StartTaskExecute(r)
 }
 
@@ -295,10 +295,10 @@ StartTask Start specified task.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taskId Task Id.
- @return ApiStartTaskRequest
+ @return ScheduledTasksAPIStartTaskRequest
 */
-func (a *ScheduledTasksAPIService) StartTask(ctx context.Context, taskId string) ApiStartTaskRequest {
-	return ApiStartTaskRequest{
+func (a *ScheduledTasksAPIService) StartTask(ctx context.Context, taskId string) ScheduledTasksAPIStartTaskRequest {
+	return ScheduledTasksAPIStartTaskRequest{
 		ApiService: a,
 		ctx: ctx,
 		taskId: taskId,
@@ -306,7 +306,7 @@ func (a *ScheduledTasksAPIService) StartTask(ctx context.Context, taskId string)
 }
 
 // Execute executes the request
-func (a *ScheduledTasksAPIService) StartTaskExecute(r ApiStartTaskRequest) (*http.Response, error) {
+func (a *ScheduledTasksAPIService) StartTaskExecute(r ScheduledTasksAPIStartTaskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -395,13 +395,13 @@ func (a *ScheduledTasksAPIService) StartTaskExecute(r ApiStartTaskRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiStopTaskRequest struct {
+type ScheduledTasksAPIStopTaskRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	taskId string
 }
 
-func (r ApiStopTaskRequest) Execute() (*http.Response, error) {
+func (r ScheduledTasksAPIStopTaskRequest) Execute() (*http.Response, error) {
 	return r.ApiService.StopTaskExecute(r)
 }
 
@@ -410,10 +410,10 @@ StopTask Stop specified task.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taskId Task Id.
- @return ApiStopTaskRequest
+ @return ScheduledTasksAPIStopTaskRequest
 */
-func (a *ScheduledTasksAPIService) StopTask(ctx context.Context, taskId string) ApiStopTaskRequest {
-	return ApiStopTaskRequest{
+func (a *ScheduledTasksAPIService) StopTask(ctx context.Context, taskId string) ScheduledTasksAPIStopTaskRequest {
+	return ScheduledTasksAPIStopTaskRequest{
 		ApiService: a,
 		ctx: ctx,
 		taskId: taskId,
@@ -421,7 +421,7 @@ func (a *ScheduledTasksAPIService) StopTask(ctx context.Context, taskId string) 
 }
 
 // Execute executes the request
-func (a *ScheduledTasksAPIService) StopTaskExecute(r ApiStopTaskRequest) (*http.Response, error) {
+func (a *ScheduledTasksAPIService) StopTaskExecute(r ScheduledTasksAPIStopTaskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -510,7 +510,7 @@ func (a *ScheduledTasksAPIService) StopTaskExecute(r ApiStopTaskRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateTaskRequest struct {
+type ScheduledTasksAPIUpdateTaskRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	taskId string
@@ -518,12 +518,12 @@ type ApiUpdateTaskRequest struct {
 }
 
 // Triggers.
-func (r ApiUpdateTaskRequest) JellyfinTaskTriggerInfo(jellyfinTaskTriggerInfo []JellyfinTaskTriggerInfo) ApiUpdateTaskRequest {
+func (r ScheduledTasksAPIUpdateTaskRequest) JellyfinTaskTriggerInfo(jellyfinTaskTriggerInfo []JellyfinTaskTriggerInfo) ScheduledTasksAPIUpdateTaskRequest {
 	r.jellyfinTaskTriggerInfo = &jellyfinTaskTriggerInfo
 	return r
 }
 
-func (r ApiUpdateTaskRequest) Execute() (*http.Response, error) {
+func (r ScheduledTasksAPIUpdateTaskRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateTaskExecute(r)
 }
 
@@ -532,10 +532,10 @@ UpdateTask Update specified task triggers.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taskId Task Id.
- @return ApiUpdateTaskRequest
+ @return ScheduledTasksAPIUpdateTaskRequest
 */
-func (a *ScheduledTasksAPIService) UpdateTask(ctx context.Context, taskId string) ApiUpdateTaskRequest {
-	return ApiUpdateTaskRequest{
+func (a *ScheduledTasksAPIService) UpdateTask(ctx context.Context, taskId string) ScheduledTasksAPIUpdateTaskRequest {
+	return ScheduledTasksAPIUpdateTaskRequest{
 		ApiService: a,
 		ctx: ctx,
 		taskId: taskId,
@@ -543,7 +543,7 @@ func (a *ScheduledTasksAPIService) UpdateTask(ctx context.Context, taskId string
 }
 
 // Execute executes the request
-func (a *ScheduledTasksAPIService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*http.Response, error) {
+func (a *ScheduledTasksAPIService) UpdateTaskExecute(r ScheduledTasksAPIUpdateTaskRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

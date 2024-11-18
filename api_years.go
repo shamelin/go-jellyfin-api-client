@@ -24,7 +24,7 @@ import (
 // YearsAPIService YearsAPI service
 type YearsAPIService service
 
-type ApiGetYearRequest struct {
+type YearsAPIGetYearRequest struct {
 	ctx context.Context
 	ApiService *YearsAPIService
 	year int32
@@ -32,12 +32,12 @@ type ApiGetYearRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetYearRequest) UserId(userId string) ApiGetYearRequest {
+func (r YearsAPIGetYearRequest) UserId(userId string) YearsAPIGetYearRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetYearRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r YearsAPIGetYearRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetYearExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetYear Gets a year.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param year The year.
- @return ApiGetYearRequest
+ @return YearsAPIGetYearRequest
 */
-func (a *YearsAPIService) GetYear(ctx context.Context, year int32) ApiGetYearRequest {
-	return ApiGetYearRequest{
+func (a *YearsAPIService) GetYear(ctx context.Context, year int32) YearsAPIGetYearRequest {
+	return YearsAPIGetYearRequest{
 		ApiService: a,
 		ctx: ctx,
 		year: year,
@@ -58,7 +58,7 @@ func (a *YearsAPIService) GetYear(ctx context.Context, year int32) ApiGetYearReq
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *YearsAPIService) GetYearExecute(r YearsAPIGetYearRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*JellyfinBaseItem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetYearsRequest struct {
+type YearsAPIGetYearsRequest struct {
 	ctx context.Context
 	ApiService *YearsAPIService
 	startIndex *int32
@@ -181,96 +181,96 @@ type ApiGetYearsRequest struct {
 }
 
 // Skips over a given number of items within the results. Use for paging.
-func (r ApiGetYearsRequest) StartIndex(startIndex int32) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) StartIndex(startIndex int32) YearsAPIGetYearsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetYearsRequest) Limit(limit int32) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) Limit(limit int32) YearsAPIGetYearsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetYearsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) SortOrder(sortOrder []JellyfinSortOrder) YearsAPIGetYearsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetYearsRequest) ParentId(parentId string) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) ParentId(parentId string) YearsAPIGetYearsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetYearsRequest) Fields(fields []JellyfinItemFields) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) Fields(fields []JellyfinItemFields) YearsAPIGetYearsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited.
-func (r ApiGetYearsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) YearsAPIGetYearsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be included based on item type. This allows multiple, comma delimited.
-func (r ApiGetYearsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) YearsAPIGetYearsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetYearsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) MediaTypes(mediaTypes []JellyfinMediaType) YearsAPIGetYearsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetYearsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) SortBy(sortBy []JellyfinItemSortBy) YearsAPIGetYearsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetYearsRequest) EnableUserData(enableUserData bool) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) EnableUserData(enableUserData bool) YearsAPIGetYearsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetYearsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) ImageTypeLimit(imageTypeLimit int32) YearsAPIGetYearsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetYearsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) YearsAPIGetYearsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // User Id.
-func (r ApiGetYearsRequest) UserId(userId string) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) UserId(userId string) YearsAPIGetYearsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Search recursively.
-func (r ApiGetYearsRequest) Recursive(recursive bool) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) Recursive(recursive bool) YearsAPIGetYearsRequest {
 	r.recursive = &recursive
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetYearsRequest) EnableImages(enableImages bool) ApiGetYearsRequest {
+func (r YearsAPIGetYearsRequest) EnableImages(enableImages bool) YearsAPIGetYearsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
-func (r ApiGetYearsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r YearsAPIGetYearsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetYearsExecute(r)
 }
 
@@ -278,10 +278,10 @@ func (r ApiGetYearsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Re
 GetYears Get years.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetYearsRequest
+ @return YearsAPIGetYearsRequest
 */
-func (a *YearsAPIService) GetYears(ctx context.Context) ApiGetYearsRequest {
-	return ApiGetYearsRequest{
+func (a *YearsAPIService) GetYears(ctx context.Context) YearsAPIGetYearsRequest {
+	return YearsAPIGetYearsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -289,7 +289,7 @@ func (a *YearsAPIService) GetYears(ctx context.Context) ApiGetYearsRequest {
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *YearsAPIService) GetYearsExecute(r ApiGetYearsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *YearsAPIService) GetYearsExecute(r YearsAPIGetYearsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

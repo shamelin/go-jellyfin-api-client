@@ -24,7 +24,7 @@ import (
 // TrickplayAPIService TrickplayAPI service
 type TrickplayAPIService service
 
-type ApiGetTrickplayHlsPlaylistRequest struct {
+type TrickplayAPIGetTrickplayHlsPlaylistRequest struct {
 	ctx context.Context
 	ApiService *TrickplayAPIService
 	itemId string
@@ -33,12 +33,12 @@ type ApiGetTrickplayHlsPlaylistRequest struct {
 }
 
 // The media version id, if using an alternate version.
-func (r ApiGetTrickplayHlsPlaylistRequest) MediaSourceId(mediaSourceId string) ApiGetTrickplayHlsPlaylistRequest {
+func (r TrickplayAPIGetTrickplayHlsPlaylistRequest) MediaSourceId(mediaSourceId string) TrickplayAPIGetTrickplayHlsPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
-func (r ApiGetTrickplayHlsPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r TrickplayAPIGetTrickplayHlsPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetTrickplayHlsPlaylistExecute(r)
 }
 
@@ -48,10 +48,10 @@ GetTrickplayHlsPlaylist Gets an image tiles playlist for trickplay.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param width The width of a single tile.
- @return ApiGetTrickplayHlsPlaylistRequest
+ @return TrickplayAPIGetTrickplayHlsPlaylistRequest
 */
-func (a *TrickplayAPIService) GetTrickplayHlsPlaylist(ctx context.Context, itemId string, width int32) ApiGetTrickplayHlsPlaylistRequest {
-	return ApiGetTrickplayHlsPlaylistRequest{
+func (a *TrickplayAPIService) GetTrickplayHlsPlaylist(ctx context.Context, itemId string, width int32) TrickplayAPIGetTrickplayHlsPlaylistRequest {
+	return TrickplayAPIGetTrickplayHlsPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -61,7 +61,7 @@ func (a *TrickplayAPIService) GetTrickplayHlsPlaylist(ctx context.Context, itemI
 
 // Execute executes the request
 //  @return *os.File
-func (a *TrickplayAPIService) GetTrickplayHlsPlaylistExecute(r ApiGetTrickplayHlsPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *TrickplayAPIService) GetTrickplayHlsPlaylistExecute(r TrickplayAPIGetTrickplayHlsPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -164,7 +164,7 @@ func (a *TrickplayAPIService) GetTrickplayHlsPlaylistExecute(r ApiGetTrickplayHl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTrickplayTileImageRequest struct {
+type TrickplayAPIGetTrickplayTileImageRequest struct {
 	ctx context.Context
 	ApiService *TrickplayAPIService
 	itemId string
@@ -174,12 +174,12 @@ type ApiGetTrickplayTileImageRequest struct {
 }
 
 // The media version id, if using an alternate version.
-func (r ApiGetTrickplayTileImageRequest) MediaSourceId(mediaSourceId string) ApiGetTrickplayTileImageRequest {
+func (r TrickplayAPIGetTrickplayTileImageRequest) MediaSourceId(mediaSourceId string) TrickplayAPIGetTrickplayTileImageRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
-func (r ApiGetTrickplayTileImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r TrickplayAPIGetTrickplayTileImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetTrickplayTileImageExecute(r)
 }
 
@@ -190,10 +190,10 @@ GetTrickplayTileImage Gets a trickplay tile image.
  @param itemId The item id.
  @param width The width of a single tile.
  @param index The index of the desired tile.
- @return ApiGetTrickplayTileImageRequest
+ @return TrickplayAPIGetTrickplayTileImageRequest
 */
-func (a *TrickplayAPIService) GetTrickplayTileImage(ctx context.Context, itemId string, width int32, index int32) ApiGetTrickplayTileImageRequest {
-	return ApiGetTrickplayTileImageRequest{
+func (a *TrickplayAPIService) GetTrickplayTileImage(ctx context.Context, itemId string, width int32, index int32) TrickplayAPIGetTrickplayTileImageRequest {
+	return TrickplayAPIGetTrickplayTileImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -204,7 +204,7 @@ func (a *TrickplayAPIService) GetTrickplayTileImage(ctx context.Context, itemId 
 
 // Execute executes the request
 //  @return *os.File
-func (a *TrickplayAPIService) GetTrickplayTileImageExecute(r ApiGetTrickplayTileImageRequest) (*os.File, *http.Response, error) {
+func (a *TrickplayAPIService) GetTrickplayTileImageExecute(r TrickplayAPIGetTrickplayTileImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

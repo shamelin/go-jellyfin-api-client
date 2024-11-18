@@ -24,7 +24,7 @@ import (
 // PlaystateAPIService PlaystateAPI service
 type PlaystateAPIService service
 
-type ApiMarkPlayedItemRequest struct {
+type PlaystateAPIMarkPlayedItemRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	itemId string
@@ -33,18 +33,18 @@ type ApiMarkPlayedItemRequest struct {
 }
 
 // User id.
-func (r ApiMarkPlayedItemRequest) UserId(userId string) ApiMarkPlayedItemRequest {
+func (r PlaystateAPIMarkPlayedItemRequest) UserId(userId string) PlaystateAPIMarkPlayedItemRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The date the item was played.
-func (r ApiMarkPlayedItemRequest) DatePlayed(datePlayed time.Time) ApiMarkPlayedItemRequest {
+func (r PlaystateAPIMarkPlayedItemRequest) DatePlayed(datePlayed time.Time) PlaystateAPIMarkPlayedItemRequest {
 	r.datePlayed = &datePlayed
 	return r
 }
 
-func (r ApiMarkPlayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r PlaystateAPIMarkPlayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkPlayedItemExecute(r)
 }
 
@@ -53,10 +53,10 @@ MarkPlayedItem Marks an item as played for user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiMarkPlayedItemRequest
+ @return PlaystateAPIMarkPlayedItemRequest
 */
-func (a *PlaystateAPIService) MarkPlayedItem(ctx context.Context, itemId string) ApiMarkPlayedItemRequest {
-	return ApiMarkPlayedItemRequest{
+func (a *PlaystateAPIService) MarkPlayedItem(ctx context.Context, itemId string) PlaystateAPIMarkPlayedItemRequest {
+	return PlaystateAPIMarkPlayedItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -65,7 +65,7 @@ func (a *PlaystateAPIService) MarkPlayedItem(ctx context.Context, itemId string)
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *PlaystateAPIService) MarkPlayedItemExecute(r ApiMarkPlayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *PlaystateAPIService) MarkPlayedItemExecute(r PlaystateAPIMarkPlayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -170,7 +170,7 @@ func (a *PlaystateAPIService) MarkPlayedItemExecute(r ApiMarkPlayedItemRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarkUnplayedItemRequest struct {
+type PlaystateAPIMarkUnplayedItemRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	itemId string
@@ -178,12 +178,12 @@ type ApiMarkUnplayedItemRequest struct {
 }
 
 // User id.
-func (r ApiMarkUnplayedItemRequest) UserId(userId string) ApiMarkUnplayedItemRequest {
+func (r PlaystateAPIMarkUnplayedItemRequest) UserId(userId string) PlaystateAPIMarkUnplayedItemRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiMarkUnplayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r PlaystateAPIMarkUnplayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkUnplayedItemExecute(r)
 }
 
@@ -192,10 +192,10 @@ MarkUnplayedItem Marks an item as unplayed for user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiMarkUnplayedItemRequest
+ @return PlaystateAPIMarkUnplayedItemRequest
 */
-func (a *PlaystateAPIService) MarkUnplayedItem(ctx context.Context, itemId string) ApiMarkUnplayedItemRequest {
-	return ApiMarkUnplayedItemRequest{
+func (a *PlaystateAPIService) MarkUnplayedItem(ctx context.Context, itemId string) PlaystateAPIMarkUnplayedItemRequest {
+	return PlaystateAPIMarkUnplayedItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -204,7 +204,7 @@ func (a *PlaystateAPIService) MarkUnplayedItem(ctx context.Context, itemId strin
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *PlaystateAPIService) MarkUnplayedItemExecute(r ApiMarkUnplayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *PlaystateAPIService) MarkUnplayedItemExecute(r PlaystateAPIMarkUnplayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *PlaystateAPIService) MarkUnplayedItemExecute(r ApiMarkUnplayedItemReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOnPlaybackProgressRequest struct {
+type PlaystateAPIOnPlaybackProgressRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	itemId string
@@ -324,72 +324,72 @@ type ApiOnPlaybackProgressRequest struct {
 }
 
 // The id of the MediaSource.
-func (r ApiOnPlaybackProgressRequest) MediaSourceId(mediaSourceId string) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) MediaSourceId(mediaSourceId string) PlaystateAPIOnPlaybackProgressRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. The current position, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiOnPlaybackProgressRequest) PositionTicks(positionTicks int64) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) PositionTicks(positionTicks int64) PlaystateAPIOnPlaybackProgressRequest {
 	r.positionTicks = &positionTicks
 	return r
 }
 
 // The audio stream index.
-func (r ApiOnPlaybackProgressRequest) AudioStreamIndex(audioStreamIndex int32) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) AudioStreamIndex(audioStreamIndex int32) PlaystateAPIOnPlaybackProgressRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // The subtitle stream index.
-func (r ApiOnPlaybackProgressRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) SubtitleStreamIndex(subtitleStreamIndex int32) PlaystateAPIOnPlaybackProgressRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Scale of 0-100.
-func (r ApiOnPlaybackProgressRequest) VolumeLevel(volumeLevel int32) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) VolumeLevel(volumeLevel int32) PlaystateAPIOnPlaybackProgressRequest {
 	r.volumeLevel = &volumeLevel
 	return r
 }
 
 // The play method.
-func (r ApiOnPlaybackProgressRequest) PlayMethod(playMethod JellyfinPlayMethod) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) PlayMethod(playMethod JellyfinPlayMethod) PlaystateAPIOnPlaybackProgressRequest {
 	r.playMethod = &playMethod
 	return r
 }
 
 // The live stream id.
-func (r ApiOnPlaybackProgressRequest) LiveStreamId(liveStreamId string) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) LiveStreamId(liveStreamId string) PlaystateAPIOnPlaybackProgressRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // The play session id.
-func (r ApiOnPlaybackProgressRequest) PlaySessionId(playSessionId string) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) PlaySessionId(playSessionId string) PlaystateAPIOnPlaybackProgressRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The repeat mode.
-func (r ApiOnPlaybackProgressRequest) RepeatMode(repeatMode JellyfinRepeatMode) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) RepeatMode(repeatMode JellyfinRepeatMode) PlaystateAPIOnPlaybackProgressRequest {
 	r.repeatMode = &repeatMode
 	return r
 }
 
 // Indicates if the player is paused.
-func (r ApiOnPlaybackProgressRequest) IsPaused(isPaused bool) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) IsPaused(isPaused bool) PlaystateAPIOnPlaybackProgressRequest {
 	r.isPaused = &isPaused
 	return r
 }
 
 // Indicates if the player is muted.
-func (r ApiOnPlaybackProgressRequest) IsMuted(isMuted bool) ApiOnPlaybackProgressRequest {
+func (r PlaystateAPIOnPlaybackProgressRequest) IsMuted(isMuted bool) PlaystateAPIOnPlaybackProgressRequest {
 	r.isMuted = &isMuted
 	return r
 }
 
-func (r ApiOnPlaybackProgressRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIOnPlaybackProgressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.OnPlaybackProgressExecute(r)
 }
 
@@ -398,10 +398,10 @@ OnPlaybackProgress Reports a session's playback progress.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiOnPlaybackProgressRequest
+ @return PlaystateAPIOnPlaybackProgressRequest
 */
-func (a *PlaystateAPIService) OnPlaybackProgress(ctx context.Context, itemId string) ApiOnPlaybackProgressRequest {
-	return ApiOnPlaybackProgressRequest{
+func (a *PlaystateAPIService) OnPlaybackProgress(ctx context.Context, itemId string) PlaystateAPIOnPlaybackProgressRequest {
+	return PlaystateAPIOnPlaybackProgressRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -409,7 +409,7 @@ func (a *PlaystateAPIService) OnPlaybackProgress(ctx context.Context, itemId str
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) OnPlaybackProgressExecute(r ApiOnPlaybackProgressRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) OnPlaybackProgressExecute(r PlaystateAPIOnPlaybackProgressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -526,7 +526,7 @@ func (a *PlaystateAPIService) OnPlaybackProgressExecute(r ApiOnPlaybackProgressR
 	return localVarHTTPResponse, nil
 }
 
-type ApiOnPlaybackStartRequest struct {
+type PlaystateAPIOnPlaybackStartRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	itemId string
@@ -540,48 +540,48 @@ type ApiOnPlaybackStartRequest struct {
 }
 
 // The id of the MediaSource.
-func (r ApiOnPlaybackStartRequest) MediaSourceId(mediaSourceId string) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) MediaSourceId(mediaSourceId string) PlaystateAPIOnPlaybackStartRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The audio stream index.
-func (r ApiOnPlaybackStartRequest) AudioStreamIndex(audioStreamIndex int32) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) AudioStreamIndex(audioStreamIndex int32) PlaystateAPIOnPlaybackStartRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // The subtitle stream index.
-func (r ApiOnPlaybackStartRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) SubtitleStreamIndex(subtitleStreamIndex int32) PlaystateAPIOnPlaybackStartRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // The play method.
-func (r ApiOnPlaybackStartRequest) PlayMethod(playMethod JellyfinPlayMethod) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) PlayMethod(playMethod JellyfinPlayMethod) PlaystateAPIOnPlaybackStartRequest {
 	r.playMethod = &playMethod
 	return r
 }
 
 // The live stream id.
-func (r ApiOnPlaybackStartRequest) LiveStreamId(liveStreamId string) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) LiveStreamId(liveStreamId string) PlaystateAPIOnPlaybackStartRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // The play session id.
-func (r ApiOnPlaybackStartRequest) PlaySessionId(playSessionId string) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) PlaySessionId(playSessionId string) PlaystateAPIOnPlaybackStartRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // Indicates if the client can seek.
-func (r ApiOnPlaybackStartRequest) CanSeek(canSeek bool) ApiOnPlaybackStartRequest {
+func (r PlaystateAPIOnPlaybackStartRequest) CanSeek(canSeek bool) PlaystateAPIOnPlaybackStartRequest {
 	r.canSeek = &canSeek
 	return r
 }
 
-func (r ApiOnPlaybackStartRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIOnPlaybackStartRequest) Execute() (*http.Response, error) {
 	return r.ApiService.OnPlaybackStartExecute(r)
 }
 
@@ -590,10 +590,10 @@ OnPlaybackStart Reports that a session has begun playing an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiOnPlaybackStartRequest
+ @return PlaystateAPIOnPlaybackStartRequest
 */
-func (a *PlaystateAPIService) OnPlaybackStart(ctx context.Context, itemId string) ApiOnPlaybackStartRequest {
-	return ApiOnPlaybackStartRequest{
+func (a *PlaystateAPIService) OnPlaybackStart(ctx context.Context, itemId string) PlaystateAPIOnPlaybackStartRequest {
+	return PlaystateAPIOnPlaybackStartRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -601,7 +601,7 @@ func (a *PlaystateAPIService) OnPlaybackStart(ctx context.Context, itemId string
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) OnPlaybackStartExecute(r ApiOnPlaybackStartRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) OnPlaybackStartExecute(r PlaystateAPIOnPlaybackStartRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -703,7 +703,7 @@ func (a *PlaystateAPIService) OnPlaybackStartExecute(r ApiOnPlaybackStartRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiOnPlaybackStoppedRequest struct {
+type PlaystateAPIOnPlaybackStoppedRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	itemId string
@@ -715,36 +715,36 @@ type ApiOnPlaybackStoppedRequest struct {
 }
 
 // The id of the MediaSource.
-func (r ApiOnPlaybackStoppedRequest) MediaSourceId(mediaSourceId string) ApiOnPlaybackStoppedRequest {
+func (r PlaystateAPIOnPlaybackStoppedRequest) MediaSourceId(mediaSourceId string) PlaystateAPIOnPlaybackStoppedRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The next media type that will play.
-func (r ApiOnPlaybackStoppedRequest) NextMediaType(nextMediaType string) ApiOnPlaybackStoppedRequest {
+func (r PlaystateAPIOnPlaybackStoppedRequest) NextMediaType(nextMediaType string) PlaystateAPIOnPlaybackStoppedRequest {
 	r.nextMediaType = &nextMediaType
 	return r
 }
 
 // Optional. The position, in ticks, where playback stopped. 1 tick &#x3D; 10000 ms.
-func (r ApiOnPlaybackStoppedRequest) PositionTicks(positionTicks int64) ApiOnPlaybackStoppedRequest {
+func (r PlaystateAPIOnPlaybackStoppedRequest) PositionTicks(positionTicks int64) PlaystateAPIOnPlaybackStoppedRequest {
 	r.positionTicks = &positionTicks
 	return r
 }
 
 // The live stream id.
-func (r ApiOnPlaybackStoppedRequest) LiveStreamId(liveStreamId string) ApiOnPlaybackStoppedRequest {
+func (r PlaystateAPIOnPlaybackStoppedRequest) LiveStreamId(liveStreamId string) PlaystateAPIOnPlaybackStoppedRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // The play session id.
-func (r ApiOnPlaybackStoppedRequest) PlaySessionId(playSessionId string) ApiOnPlaybackStoppedRequest {
+func (r PlaystateAPIOnPlaybackStoppedRequest) PlaySessionId(playSessionId string) PlaystateAPIOnPlaybackStoppedRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
-func (r ApiOnPlaybackStoppedRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIOnPlaybackStoppedRequest) Execute() (*http.Response, error) {
 	return r.ApiService.OnPlaybackStoppedExecute(r)
 }
 
@@ -753,10 +753,10 @@ OnPlaybackStopped Reports that a session has stopped playing an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiOnPlaybackStoppedRequest
+ @return PlaystateAPIOnPlaybackStoppedRequest
 */
-func (a *PlaystateAPIService) OnPlaybackStopped(ctx context.Context, itemId string) ApiOnPlaybackStoppedRequest {
-	return ApiOnPlaybackStoppedRequest{
+func (a *PlaystateAPIService) OnPlaybackStopped(ctx context.Context, itemId string) PlaystateAPIOnPlaybackStoppedRequest {
+	return PlaystateAPIOnPlaybackStoppedRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -764,7 +764,7 @@ func (a *PlaystateAPIService) OnPlaybackStopped(ctx context.Context, itemId stri
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) OnPlaybackStoppedExecute(r ApiOnPlaybackStoppedRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) OnPlaybackStoppedExecute(r PlaystateAPIOnPlaybackStoppedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -857,19 +857,19 @@ func (a *PlaystateAPIService) OnPlaybackStoppedExecute(r ApiOnPlaybackStoppedReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiPingPlaybackSessionRequest struct {
+type PlaystateAPIPingPlaybackSessionRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	playSessionId *string
 }
 
 // Playback session id.
-func (r ApiPingPlaybackSessionRequest) PlaySessionId(playSessionId string) ApiPingPlaybackSessionRequest {
+func (r PlaystateAPIPingPlaybackSessionRequest) PlaySessionId(playSessionId string) PlaystateAPIPingPlaybackSessionRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
-func (r ApiPingPlaybackSessionRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIPingPlaybackSessionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PingPlaybackSessionExecute(r)
 }
 
@@ -877,17 +877,17 @@ func (r ApiPingPlaybackSessionRequest) Execute() (*http.Response, error) {
 PingPlaybackSession Pings a playback session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPingPlaybackSessionRequest
+ @return PlaystateAPIPingPlaybackSessionRequest
 */
-func (a *PlaystateAPIService) PingPlaybackSession(ctx context.Context) ApiPingPlaybackSessionRequest {
-	return ApiPingPlaybackSessionRequest{
+func (a *PlaystateAPIService) PingPlaybackSession(ctx context.Context) PlaystateAPIPingPlaybackSessionRequest {
+	return PlaystateAPIPingPlaybackSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) PingPlaybackSessionExecute(r ApiPingPlaybackSessionRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) PingPlaybackSessionExecute(r PlaystateAPIPingPlaybackSessionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -968,19 +968,19 @@ func (a *PlaystateAPIService) PingPlaybackSessionExecute(r ApiPingPlaybackSessio
 	return localVarHTTPResponse, nil
 }
 
-type ApiReportPlaybackProgressRequest struct {
+type PlaystateAPIReportPlaybackProgressRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	jellyfinPlaybackProgressInfo *JellyfinPlaybackProgressInfo
 }
 
 // The playback progress info.
-func (r ApiReportPlaybackProgressRequest) JellyfinPlaybackProgressInfo(jellyfinPlaybackProgressInfo JellyfinPlaybackProgressInfo) ApiReportPlaybackProgressRequest {
+func (r PlaystateAPIReportPlaybackProgressRequest) JellyfinPlaybackProgressInfo(jellyfinPlaybackProgressInfo JellyfinPlaybackProgressInfo) PlaystateAPIReportPlaybackProgressRequest {
 	r.jellyfinPlaybackProgressInfo = &jellyfinPlaybackProgressInfo
 	return r
 }
 
-func (r ApiReportPlaybackProgressRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIReportPlaybackProgressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ReportPlaybackProgressExecute(r)
 }
 
@@ -988,17 +988,17 @@ func (r ApiReportPlaybackProgressRequest) Execute() (*http.Response, error) {
 ReportPlaybackProgress Reports playback progress within a session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportPlaybackProgressRequest
+ @return PlaystateAPIReportPlaybackProgressRequest
 */
-func (a *PlaystateAPIService) ReportPlaybackProgress(ctx context.Context) ApiReportPlaybackProgressRequest {
-	return ApiReportPlaybackProgressRequest{
+func (a *PlaystateAPIService) ReportPlaybackProgress(ctx context.Context) PlaystateAPIReportPlaybackProgressRequest {
+	return PlaystateAPIReportPlaybackProgressRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) ReportPlaybackProgressExecute(r ApiReportPlaybackProgressRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) ReportPlaybackProgressExecute(r PlaystateAPIReportPlaybackProgressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1077,19 +1077,19 @@ func (a *PlaystateAPIService) ReportPlaybackProgressExecute(r ApiReportPlaybackP
 	return localVarHTTPResponse, nil
 }
 
-type ApiReportPlaybackStartRequest struct {
+type PlaystateAPIReportPlaybackStartRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	jellyfinPlaybackStartInfo *JellyfinPlaybackStartInfo
 }
 
 // The playback start info.
-func (r ApiReportPlaybackStartRequest) JellyfinPlaybackStartInfo(jellyfinPlaybackStartInfo JellyfinPlaybackStartInfo) ApiReportPlaybackStartRequest {
+func (r PlaystateAPIReportPlaybackStartRequest) JellyfinPlaybackStartInfo(jellyfinPlaybackStartInfo JellyfinPlaybackStartInfo) PlaystateAPIReportPlaybackStartRequest {
 	r.jellyfinPlaybackStartInfo = &jellyfinPlaybackStartInfo
 	return r
 }
 
-func (r ApiReportPlaybackStartRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIReportPlaybackStartRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ReportPlaybackStartExecute(r)
 }
 
@@ -1097,17 +1097,17 @@ func (r ApiReportPlaybackStartRequest) Execute() (*http.Response, error) {
 ReportPlaybackStart Reports playback has started within a session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportPlaybackStartRequest
+ @return PlaystateAPIReportPlaybackStartRequest
 */
-func (a *PlaystateAPIService) ReportPlaybackStart(ctx context.Context) ApiReportPlaybackStartRequest {
-	return ApiReportPlaybackStartRequest{
+func (a *PlaystateAPIService) ReportPlaybackStart(ctx context.Context) PlaystateAPIReportPlaybackStartRequest {
+	return PlaystateAPIReportPlaybackStartRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) ReportPlaybackStartExecute(r ApiReportPlaybackStartRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) ReportPlaybackStartExecute(r PlaystateAPIReportPlaybackStartRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1186,19 +1186,19 @@ func (a *PlaystateAPIService) ReportPlaybackStartExecute(r ApiReportPlaybackStar
 	return localVarHTTPResponse, nil
 }
 
-type ApiReportPlaybackStoppedRequest struct {
+type PlaystateAPIReportPlaybackStoppedRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
 	jellyfinPlaybackStopInfo *JellyfinPlaybackStopInfo
 }
 
 // The playback stop info.
-func (r ApiReportPlaybackStoppedRequest) JellyfinPlaybackStopInfo(jellyfinPlaybackStopInfo JellyfinPlaybackStopInfo) ApiReportPlaybackStoppedRequest {
+func (r PlaystateAPIReportPlaybackStoppedRequest) JellyfinPlaybackStopInfo(jellyfinPlaybackStopInfo JellyfinPlaybackStopInfo) PlaystateAPIReportPlaybackStoppedRequest {
 	r.jellyfinPlaybackStopInfo = &jellyfinPlaybackStopInfo
 	return r
 }
 
-func (r ApiReportPlaybackStoppedRequest) Execute() (*http.Response, error) {
+func (r PlaystateAPIReportPlaybackStoppedRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ReportPlaybackStoppedExecute(r)
 }
 
@@ -1206,17 +1206,17 @@ func (r ApiReportPlaybackStoppedRequest) Execute() (*http.Response, error) {
 ReportPlaybackStopped Reports playback has stopped within a session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportPlaybackStoppedRequest
+ @return PlaystateAPIReportPlaybackStoppedRequest
 */
-func (a *PlaystateAPIService) ReportPlaybackStopped(ctx context.Context) ApiReportPlaybackStoppedRequest {
-	return ApiReportPlaybackStoppedRequest{
+func (a *PlaystateAPIService) ReportPlaybackStopped(ctx context.Context) PlaystateAPIReportPlaybackStoppedRequest {
+	return PlaystateAPIReportPlaybackStoppedRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PlaystateAPIService) ReportPlaybackStoppedExecute(r ApiReportPlaybackStoppedRequest) (*http.Response, error) {
+func (a *PlaystateAPIService) ReportPlaybackStoppedExecute(r PlaystateAPIReportPlaybackStoppedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

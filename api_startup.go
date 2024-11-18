@@ -22,12 +22,12 @@ import (
 // StartupAPIService StartupAPI service
 type StartupAPIService service
 
-type ApiCompleteWizardRequest struct {
+type StartupAPICompleteWizardRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 }
 
-func (r ApiCompleteWizardRequest) Execute() (*http.Response, error) {
+func (r StartupAPICompleteWizardRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CompleteWizardExecute(r)
 }
 
@@ -35,17 +35,17 @@ func (r ApiCompleteWizardRequest) Execute() (*http.Response, error) {
 CompleteWizard Completes the startup wizard.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCompleteWizardRequest
+ @return StartupAPICompleteWizardRequest
 */
-func (a *StartupAPIService) CompleteWizard(ctx context.Context) ApiCompleteWizardRequest {
-	return ApiCompleteWizardRequest{
+func (a *StartupAPIService) CompleteWizard(ctx context.Context) StartupAPICompleteWizardRequest {
+	return StartupAPICompleteWizardRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StartupAPIService) CompleteWizardExecute(r ApiCompleteWizardRequest) (*http.Response, error) {
+func (a *StartupAPIService) CompleteWizardExecute(r StartupAPICompleteWizardRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -122,12 +122,12 @@ func (a *StartupAPIService) CompleteWizardExecute(r ApiCompleteWizardRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetFirstUserRequest struct {
+type StartupAPIGetFirstUserRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetFirstUserRequest) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
+func (r StartupAPIGetFirstUserRequest) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
 	return r.ApiService.GetFirstUserExecute(r)
 }
 
@@ -135,10 +135,10 @@ func (r ApiGetFirstUserRequest) Execute() (*JellyfinStartupUserDto, *http.Respon
 GetFirstUser Gets the first user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFirstUserRequest
+ @return StartupAPIGetFirstUserRequest
 */
-func (a *StartupAPIService) GetFirstUser(ctx context.Context) ApiGetFirstUserRequest {
-	return ApiGetFirstUserRequest{
+func (a *StartupAPIService) GetFirstUser(ctx context.Context) StartupAPIGetFirstUserRequest {
+	return StartupAPIGetFirstUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -146,7 +146,7 @@ func (a *StartupAPIService) GetFirstUser(ctx context.Context) ApiGetFirstUserReq
 
 // Execute executes the request
 //  @return JellyfinStartupUserDto
-func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*JellyfinStartupUserDto, *http.Response, error) {
+func (a *StartupAPIService) GetFirstUserExecute(r StartupAPIGetFirstUserRequest) (*JellyfinStartupUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -233,12 +233,12 @@ func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*Jell
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetFirstUser2Request struct {
+type StartupAPIGetFirstUser2Request struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetFirstUser2Request) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
+func (r StartupAPIGetFirstUser2Request) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
 	return r.ApiService.GetFirstUser2Execute(r)
 }
 
@@ -246,10 +246,10 @@ func (r ApiGetFirstUser2Request) Execute() (*JellyfinStartupUserDto, *http.Respo
 GetFirstUser2 Gets the first user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFirstUser2Request
+ @return StartupAPIGetFirstUser2Request
 */
-func (a *StartupAPIService) GetFirstUser2(ctx context.Context) ApiGetFirstUser2Request {
-	return ApiGetFirstUser2Request{
+func (a *StartupAPIService) GetFirstUser2(ctx context.Context) StartupAPIGetFirstUser2Request {
+	return StartupAPIGetFirstUser2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -257,7 +257,7 @@ func (a *StartupAPIService) GetFirstUser2(ctx context.Context) ApiGetFirstUser2R
 
 // Execute executes the request
 //  @return JellyfinStartupUserDto
-func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*JellyfinStartupUserDto, *http.Response, error) {
+func (a *StartupAPIService) GetFirstUser2Execute(r StartupAPIGetFirstUser2Request) (*JellyfinStartupUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -344,12 +344,12 @@ func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStartupConfigurationRequest struct {
+type StartupAPIGetStartupConfigurationRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetStartupConfigurationRequest) Execute() (*JellyfinStartupConfigurationDto, *http.Response, error) {
+func (r StartupAPIGetStartupConfigurationRequest) Execute() (*JellyfinStartupConfigurationDto, *http.Response, error) {
 	return r.ApiService.GetStartupConfigurationExecute(r)
 }
 
@@ -357,10 +357,10 @@ func (r ApiGetStartupConfigurationRequest) Execute() (*JellyfinStartupConfigurat
 GetStartupConfiguration Gets the initial startup wizard configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStartupConfigurationRequest
+ @return StartupAPIGetStartupConfigurationRequest
 */
-func (a *StartupAPIService) GetStartupConfiguration(ctx context.Context) ApiGetStartupConfigurationRequest {
-	return ApiGetStartupConfigurationRequest{
+func (a *StartupAPIService) GetStartupConfiguration(ctx context.Context) StartupAPIGetStartupConfigurationRequest {
+	return StartupAPIGetStartupConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -368,7 +368,7 @@ func (a *StartupAPIService) GetStartupConfiguration(ctx context.Context) ApiGetS
 
 // Execute executes the request
 //  @return JellyfinStartupConfigurationDto
-func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfigurationRequest) (*JellyfinStartupConfigurationDto, *http.Response, error) {
+func (a *StartupAPIService) GetStartupConfigurationExecute(r StartupAPIGetStartupConfigurationRequest) (*JellyfinStartupConfigurationDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -455,19 +455,19 @@ func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfig
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSetRemoteAccessRequest struct {
+type StartupAPISetRemoteAccessRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 	jellyfinStartupRemoteAccessDto *JellyfinStartupRemoteAccessDto
 }
 
 // The startup remote access dto.
-func (r ApiSetRemoteAccessRequest) JellyfinStartupRemoteAccessDto(jellyfinStartupRemoteAccessDto JellyfinStartupRemoteAccessDto) ApiSetRemoteAccessRequest {
+func (r StartupAPISetRemoteAccessRequest) JellyfinStartupRemoteAccessDto(jellyfinStartupRemoteAccessDto JellyfinStartupRemoteAccessDto) StartupAPISetRemoteAccessRequest {
 	r.jellyfinStartupRemoteAccessDto = &jellyfinStartupRemoteAccessDto
 	return r
 }
 
-func (r ApiSetRemoteAccessRequest) Execute() (*http.Response, error) {
+func (r StartupAPISetRemoteAccessRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SetRemoteAccessExecute(r)
 }
 
@@ -475,17 +475,17 @@ func (r ApiSetRemoteAccessRequest) Execute() (*http.Response, error) {
 SetRemoteAccess Sets remote access and UPnP.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetRemoteAccessRequest
+ @return StartupAPISetRemoteAccessRequest
 */
-func (a *StartupAPIService) SetRemoteAccess(ctx context.Context) ApiSetRemoteAccessRequest {
-	return ApiSetRemoteAccessRequest{
+func (a *StartupAPIService) SetRemoteAccess(ctx context.Context) StartupAPISetRemoteAccessRequest {
+	return StartupAPISetRemoteAccessRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) (*http.Response, error) {
+func (a *StartupAPIService) SetRemoteAccessExecute(r StartupAPISetRemoteAccessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -567,19 +567,19 @@ func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateInitialConfigurationRequest struct {
+type StartupAPIUpdateInitialConfigurationRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 	jellyfinStartupConfigurationDto *JellyfinStartupConfigurationDto
 }
 
 // The updated startup configuration.
-func (r ApiUpdateInitialConfigurationRequest) JellyfinStartupConfigurationDto(jellyfinStartupConfigurationDto JellyfinStartupConfigurationDto) ApiUpdateInitialConfigurationRequest {
+func (r StartupAPIUpdateInitialConfigurationRequest) JellyfinStartupConfigurationDto(jellyfinStartupConfigurationDto JellyfinStartupConfigurationDto) StartupAPIUpdateInitialConfigurationRequest {
 	r.jellyfinStartupConfigurationDto = &jellyfinStartupConfigurationDto
 	return r
 }
 
-func (r ApiUpdateInitialConfigurationRequest) Execute() (*http.Response, error) {
+func (r StartupAPIUpdateInitialConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateInitialConfigurationExecute(r)
 }
 
@@ -587,17 +587,17 @@ func (r ApiUpdateInitialConfigurationRequest) Execute() (*http.Response, error) 
 UpdateInitialConfiguration Sets the initial startup wizard configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateInitialConfigurationRequest
+ @return StartupAPIUpdateInitialConfigurationRequest
 */
-func (a *StartupAPIService) UpdateInitialConfiguration(ctx context.Context) ApiUpdateInitialConfigurationRequest {
-	return ApiUpdateInitialConfigurationRequest{
+func (a *StartupAPIService) UpdateInitialConfiguration(ctx context.Context) StartupAPIUpdateInitialConfigurationRequest {
+	return StartupAPIUpdateInitialConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitialConfigurationRequest) (*http.Response, error) {
+func (a *StartupAPIService) UpdateInitialConfigurationExecute(r StartupAPIUpdateInitialConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -679,19 +679,19 @@ func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitial
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateStartupUserRequest struct {
+type StartupAPIUpdateStartupUserRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
 	jellyfinStartupUserDto *JellyfinStartupUserDto
 }
 
 // The DTO containing username and password.
-func (r ApiUpdateStartupUserRequest) JellyfinStartupUserDto(jellyfinStartupUserDto JellyfinStartupUserDto) ApiUpdateStartupUserRequest {
+func (r StartupAPIUpdateStartupUserRequest) JellyfinStartupUserDto(jellyfinStartupUserDto JellyfinStartupUserDto) StartupAPIUpdateStartupUserRequest {
 	r.jellyfinStartupUserDto = &jellyfinStartupUserDto
 	return r
 }
 
-func (r ApiUpdateStartupUserRequest) Execute() (*http.Response, error) {
+func (r StartupAPIUpdateStartupUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateStartupUserExecute(r)
 }
 
@@ -699,17 +699,17 @@ func (r ApiUpdateStartupUserRequest) Execute() (*http.Response, error) {
 UpdateStartupUser Sets the user name and password.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateStartupUserRequest
+ @return StartupAPIUpdateStartupUserRequest
 */
-func (a *StartupAPIService) UpdateStartupUser(ctx context.Context) ApiUpdateStartupUserRequest {
-	return ApiUpdateStartupUserRequest{
+func (a *StartupAPIService) UpdateStartupUser(ctx context.Context) StartupAPIUpdateStartupUserRequest {
+	return StartupAPIUpdateStartupUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StartupAPIService) UpdateStartupUserExecute(r ApiUpdateStartupUserRequest) (*http.Response, error) {
+func (a *StartupAPIService) UpdateStartupUserExecute(r StartupAPIUpdateStartupUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

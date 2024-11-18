@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**NullableJellyfinJellyfinSendCommand**](JellyfinSendCommand.md) | Class SendCommand. | [optional] 
 **MessageId** | Pointer to **string** | Gets or sets the message id. | [optional] 
-**MessageType** | Pointer to [**JellyfinJellyfinSessionMessageType**](JellyfinSessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to SYNC_PLAY_COMMAND]
+**MessageType** | Pointer to [**JellyfinJellyfinSessionMessageType**](JellyfinSessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to JELLYFINJELLYFINSESSIONMESSAGETYPE_SYNC_PLAY_COMMAND]
 
 ## Methods
 

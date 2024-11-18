@@ -23,7 +23,7 @@ import (
 // FilterAPIService FilterAPI service
 type FilterAPIService service
 
-type ApiGetQueryFiltersRequest struct {
+type FilterAPIGetQueryFiltersRequest struct {
 	ctx context.Context
 	ApiService *FilterAPIService
 	userId *string
@@ -39,66 +39,66 @@ type ApiGetQueryFiltersRequest struct {
 }
 
 // Optional. User id.
-func (r ApiGetQueryFiltersRequest) UserId(userId string) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) UserId(userId string) FilterAPIGetQueryFiltersRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetQueryFiltersRequest) ParentId(parentId string) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) ParentId(parentId string) FilterAPIGetQueryFiltersRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetQueryFiltersRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) FilterAPIGetQueryFiltersRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Is item airing.
-func (r ApiGetQueryFiltersRequest) IsAiring(isAiring bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsAiring(isAiring bool) FilterAPIGetQueryFiltersRequest {
 	r.isAiring = &isAiring
 	return r
 }
 
 // Optional. Is item movie.
-func (r ApiGetQueryFiltersRequest) IsMovie(isMovie bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsMovie(isMovie bool) FilterAPIGetQueryFiltersRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional. Is item sports.
-func (r ApiGetQueryFiltersRequest) IsSports(isSports bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsSports(isSports bool) FilterAPIGetQueryFiltersRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. Is item kids.
-func (r ApiGetQueryFiltersRequest) IsKids(isKids bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsKids(isKids bool) FilterAPIGetQueryFiltersRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional. Is item news.
-func (r ApiGetQueryFiltersRequest) IsNews(isNews bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsNews(isNews bool) FilterAPIGetQueryFiltersRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional. Is item series.
-func (r ApiGetQueryFiltersRequest) IsSeries(isSeries bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) IsSeries(isSeries bool) FilterAPIGetQueryFiltersRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional. Search recursive.
-func (r ApiGetQueryFiltersRequest) Recursive(recursive bool) ApiGetQueryFiltersRequest {
+func (r FilterAPIGetQueryFiltersRequest) Recursive(recursive bool) FilterAPIGetQueryFiltersRequest {
 	r.recursive = &recursive
 	return r
 }
 
-func (r ApiGetQueryFiltersRequest) Execute() (*JellyfinQueryFilters, *http.Response, error) {
+func (r FilterAPIGetQueryFiltersRequest) Execute() (*JellyfinQueryFilters, *http.Response, error) {
 	return r.ApiService.GetQueryFiltersExecute(r)
 }
 
@@ -106,10 +106,10 @@ func (r ApiGetQueryFiltersRequest) Execute() (*JellyfinQueryFilters, *http.Respo
 GetQueryFilters Gets query filters.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQueryFiltersRequest
+ @return FilterAPIGetQueryFiltersRequest
 */
-func (a *FilterAPIService) GetQueryFilters(ctx context.Context) ApiGetQueryFiltersRequest {
-	return ApiGetQueryFiltersRequest{
+func (a *FilterAPIService) GetQueryFilters(ctx context.Context) FilterAPIGetQueryFiltersRequest {
+	return FilterAPIGetQueryFiltersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -117,7 +117,7 @@ func (a *FilterAPIService) GetQueryFilters(ctx context.Context) ApiGetQueryFilte
 
 // Execute executes the request
 //  @return JellyfinQueryFilters
-func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (*JellyfinQueryFilters, *http.Response, error) {
+func (a *FilterAPIService) GetQueryFiltersExecute(r FilterAPIGetQueryFiltersRequest) (*JellyfinQueryFilters, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -242,7 +242,7 @@ func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetQueryFiltersLegacyRequest struct {
+type FilterAPIGetQueryFiltersLegacyRequest struct {
 	ctx context.Context
 	ApiService *FilterAPIService
 	userId *string
@@ -252,30 +252,30 @@ type ApiGetQueryFiltersLegacyRequest struct {
 }
 
 // Optional. User id.
-func (r ApiGetQueryFiltersLegacyRequest) UserId(userId string) ApiGetQueryFiltersLegacyRequest {
+func (r FilterAPIGetQueryFiltersLegacyRequest) UserId(userId string) FilterAPIGetQueryFiltersLegacyRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Parent id.
-func (r ApiGetQueryFiltersLegacyRequest) ParentId(parentId string) ApiGetQueryFiltersLegacyRequest {
+func (r FilterAPIGetQueryFiltersLegacyRequest) ParentId(parentId string) FilterAPIGetQueryFiltersLegacyRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetQueryFiltersLegacyRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetQueryFiltersLegacyRequest {
+func (r FilterAPIGetQueryFiltersLegacyRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) FilterAPIGetQueryFiltersLegacyRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetQueryFiltersLegacyRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetQueryFiltersLegacyRequest {
+func (r FilterAPIGetQueryFiltersLegacyRequest) MediaTypes(mediaTypes []JellyfinMediaType) FilterAPIGetQueryFiltersLegacyRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
-func (r ApiGetQueryFiltersLegacyRequest) Execute() (*JellyfinQueryFiltersLegacy, *http.Response, error) {
+func (r FilterAPIGetQueryFiltersLegacyRequest) Execute() (*JellyfinQueryFiltersLegacy, *http.Response, error) {
 	return r.ApiService.GetQueryFiltersLegacyExecute(r)
 }
 
@@ -283,10 +283,10 @@ func (r ApiGetQueryFiltersLegacyRequest) Execute() (*JellyfinQueryFiltersLegacy,
 GetQueryFiltersLegacy Gets legacy query filters.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQueryFiltersLegacyRequest
+ @return FilterAPIGetQueryFiltersLegacyRequest
 */
-func (a *FilterAPIService) GetQueryFiltersLegacy(ctx context.Context) ApiGetQueryFiltersLegacyRequest {
-	return ApiGetQueryFiltersLegacyRequest{
+func (a *FilterAPIService) GetQueryFiltersLegacy(ctx context.Context) FilterAPIGetQueryFiltersLegacyRequest {
+	return FilterAPIGetQueryFiltersLegacyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -294,7 +294,7 @@ func (a *FilterAPIService) GetQueryFiltersLegacy(ctx context.Context) ApiGetQuer
 
 // Execute executes the request
 //  @return JellyfinQueryFiltersLegacy
-func (a *FilterAPIService) GetQueryFiltersLegacyExecute(r ApiGetQueryFiltersLegacyRequest) (*JellyfinQueryFiltersLegacy, *http.Response, error) {
+func (a *FilterAPIService) GetQueryFiltersLegacyExecute(r FilterAPIGetQueryFiltersLegacyRequest) (*JellyfinQueryFiltersLegacy, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

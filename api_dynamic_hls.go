@@ -24,7 +24,7 @@ import (
 // DynamicHlsAPIService DynamicHlsAPI service
 type DynamicHlsAPIService service
 
-type ApiGetHlsAudioSegmentRequest struct {
+type DynamicHlsAPIGetHlsAudioSegmentRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -85,313 +85,313 @@ type ApiGetHlsAudioSegmentRequest struct {
 }
 
 // The position of the requested segment in ticks.
-func (r ApiGetHlsAudioSegmentRequest) RuntimeTicks(runtimeTicks int64) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) RuntimeTicks(runtimeTicks int64) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.runtimeTicks = &runtimeTicks
 	return r
 }
 
 // The length of the requested segment in ticks.
-func (r ApiGetHlsAudioSegmentRequest) ActualSegmentLengthTicks(actualSegmentLengthTicks int64) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) ActualSegmentLengthTicks(actualSegmentLengthTicks int64) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.actualSegmentLengthTicks = &actualSegmentLengthTicks
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetHlsAudioSegmentRequest) Static(static bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Static(static bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetHlsAudioSegmentRequest) Params(params string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Params(params string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetHlsAudioSegmentRequest) Tag(tag string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Tag(tag string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetHlsAudioSegmentRequest) DeviceProfileId(deviceProfileId string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetHlsAudioSegmentRequest) PlaySessionId(playSessionId string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetHlsAudioSegmentRequest) SegmentContainer(segmentContainer string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetHlsAudioSegmentRequest) SegmentLength(segmentLength int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetHlsAudioSegmentRequest) MinSegments(minSegments int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MinSegments(minSegments int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetHlsAudioSegmentRequest) MediaSourceId(mediaSourceId string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetHlsAudioSegmentRequest) DeviceId(deviceId string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) DeviceId(deviceId string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetHlsAudioSegmentRequest) AudioCodec(audioCodec string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetHlsAudioSegmentRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetHlsAudioSegmentRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetHlsAudioSegmentRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetHlsAudioSegmentRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetHlsAudioSegmentRequest) AudioSampleRate(audioSampleRate int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetHlsAudioSegmentRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiGetHlsAudioSegmentRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxStreamingBitrate(maxStreamingBitrate int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetHlsAudioSegmentRequest) AudioBitRate(audioBitRate int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetHlsAudioSegmentRequest) AudioChannels(audioChannels int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetHlsAudioSegmentRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetHlsAudioSegmentRequest) Profile(profile string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Profile(profile string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetHlsAudioSegmentRequest) Level(level string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Level(level string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetHlsAudioSegmentRequest) Framerate(framerate float32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Framerate(framerate float32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetHlsAudioSegmentRequest) MaxFramerate(maxFramerate float32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetHlsAudioSegmentRequest) CopyTimestamps(copyTimestamps bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetHlsAudioSegmentRequest) StartTimeTicks(startTimeTicks int64) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetHlsAudioSegmentRequest) Width(width int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Width(width int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetHlsAudioSegmentRequest) Height(height int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Height(height int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetHlsAudioSegmentRequest) VideoBitRate(videoBitRate int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetHlsAudioSegmentRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetHlsAudioSegmentRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetHlsAudioSegmentRequest) MaxRefFrames(maxRefFrames int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetHlsAudioSegmentRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetHlsAudioSegmentRequest) RequireAvc(requireAvc bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetHlsAudioSegmentRequest) DeInterlace(deInterlace bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetHlsAudioSegmentRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetHlsAudioSegmentRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetHlsAudioSegmentRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetHlsAudioSegmentRequest) LiveStreamId(liveStreamId string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetHlsAudioSegmentRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetHlsAudioSegmentRequest) VideoCodec(videoCodec string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetHlsAudioSegmentRequest) SubtitleCodec(subtitleCodec string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetHlsAudioSegmentRequest) TranscodeReasons(transcodeReasons string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetHlsAudioSegmentRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetHlsAudioSegmentRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetHlsAudioSegmentRequest) Context(context JellyfinEncodingContext) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetHlsAudioSegmentRequest) StreamOptions(streamOptions map[string]string) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetHlsAudioSegmentRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetHlsAudioSegmentRequest {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetHlsAudioSegmentRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetHlsAudioSegmentRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetHlsAudioSegmentRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsAudioSegmentExecute(r)
 }
 
@@ -403,10 +403,10 @@ GetHlsAudioSegment Gets a video stream using HTTP live streaming.
  @param playlistId The playlist id.
  @param segmentId The segment id.
  @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetHlsAudioSegmentRequest
+ @return DynamicHlsAPIGetHlsAudioSegmentRequest
 */
-func (a *DynamicHlsAPIService) GetHlsAudioSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsAudioSegmentRequest {
-	return ApiGetHlsAudioSegmentRequest{
+func (a *DynamicHlsAPIService) GetHlsAudioSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) DynamicHlsAPIGetHlsAudioSegmentRequest {
+	return DynamicHlsAPIGetHlsAudioSegmentRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -418,7 +418,7 @@ func (a *DynamicHlsAPIService) GetHlsAudioSegment(ctx context.Context, itemId st
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetHlsAudioSegmentExecute(r ApiGetHlsAudioSegmentRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetHlsAudioSegmentExecute(r DynamicHlsAPIGetHlsAudioSegmentRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -667,7 +667,7 @@ func (a *DynamicHlsAPIService) GetHlsAudioSegmentExecute(r ApiGetHlsAudioSegment
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetHlsVideoSegmentRequest struct {
+type DynamicHlsAPIGetHlsVideoSegmentRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -730,325 +730,325 @@ type ApiGetHlsVideoSegmentRequest struct {
 }
 
 // The position of the requested segment in ticks.
-func (r ApiGetHlsVideoSegmentRequest) RuntimeTicks(runtimeTicks int64) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) RuntimeTicks(runtimeTicks int64) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.runtimeTicks = &runtimeTicks
 	return r
 }
 
 // The length of the requested segment in ticks.
-func (r ApiGetHlsVideoSegmentRequest) ActualSegmentLengthTicks(actualSegmentLengthTicks int64) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) ActualSegmentLengthTicks(actualSegmentLengthTicks int64) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.actualSegmentLengthTicks = &actualSegmentLengthTicks
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetHlsVideoSegmentRequest) Static(static bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Static(static bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetHlsVideoSegmentRequest) Params(params string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Params(params string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetHlsVideoSegmentRequest) Tag(tag string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Tag(tag string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetHlsVideoSegmentRequest) DeviceProfileId(deviceProfileId string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetHlsVideoSegmentRequest) PlaySessionId(playSessionId string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetHlsVideoSegmentRequest) SegmentContainer(segmentContainer string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The desired segment length.
-func (r ApiGetHlsVideoSegmentRequest) SegmentLength(segmentLength int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetHlsVideoSegmentRequest) MinSegments(minSegments int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MinSegments(minSegments int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetHlsVideoSegmentRequest) MediaSourceId(mediaSourceId string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetHlsVideoSegmentRequest) DeviceId(deviceId string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) DeviceId(deviceId string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetHlsVideoSegmentRequest) AudioCodec(audioCodec string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetHlsVideoSegmentRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetHlsVideoSegmentRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetHlsVideoSegmentRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetHlsVideoSegmentRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetHlsVideoSegmentRequest) AudioSampleRate(audioSampleRate int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetHlsVideoSegmentRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetHlsVideoSegmentRequest) AudioBitRate(audioBitRate int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetHlsVideoSegmentRequest) AudioChannels(audioChannels int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetHlsVideoSegmentRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetHlsVideoSegmentRequest) Profile(profile string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Profile(profile string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetHlsVideoSegmentRequest) Level(level string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Level(level string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetHlsVideoSegmentRequest) Framerate(framerate float32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Framerate(framerate float32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetHlsVideoSegmentRequest) MaxFramerate(maxFramerate float32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetHlsVideoSegmentRequest) CopyTimestamps(copyTimestamps bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetHlsVideoSegmentRequest) StartTimeTicks(startTimeTicks int64) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetHlsVideoSegmentRequest) Width(width int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Width(width int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetHlsVideoSegmentRequest) Height(height int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Height(height int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiGetHlsVideoSegmentRequest) MaxWidth(maxWidth int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxWidth(maxWidth int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiGetHlsVideoSegmentRequest) MaxHeight(maxHeight int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxHeight(maxHeight int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetHlsVideoSegmentRequest) VideoBitRate(videoBitRate int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetHlsVideoSegmentRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetHlsVideoSegmentRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetHlsVideoSegmentRequest) MaxRefFrames(maxRefFrames int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetHlsVideoSegmentRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetHlsVideoSegmentRequest) RequireAvc(requireAvc bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetHlsVideoSegmentRequest) DeInterlace(deInterlace bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetHlsVideoSegmentRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetHlsVideoSegmentRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetHlsVideoSegmentRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetHlsVideoSegmentRequest) LiveStreamId(liveStreamId string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetHlsVideoSegmentRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetHlsVideoSegmentRequest) VideoCodec(videoCodec string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetHlsVideoSegmentRequest) SubtitleCodec(subtitleCodec string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetHlsVideoSegmentRequest) TranscodeReasons(transcodeReasons string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetHlsVideoSegmentRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetHlsVideoSegmentRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetHlsVideoSegmentRequest) Context(context JellyfinEncodingContext) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetHlsVideoSegmentRequest) StreamOptions(streamOptions map[string]string) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetHlsVideoSegmentRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Whether to always burn in subtitles when transcoding.
-func (r ApiGetHlsVideoSegmentRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiGetHlsVideoSegmentRequest {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) DynamicHlsAPIGetHlsVideoSegmentRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
-func (r ApiGetHlsVideoSegmentRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetHlsVideoSegmentRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsVideoSegmentExecute(r)
 }
 
@@ -1060,10 +1060,10 @@ GetHlsVideoSegment Gets a video stream using HTTP live streaming.
  @param playlistId The playlist id.
  @param segmentId The segment id.
  @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetHlsVideoSegmentRequest
+ @return DynamicHlsAPIGetHlsVideoSegmentRequest
 */
-func (a *DynamicHlsAPIService) GetHlsVideoSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) ApiGetHlsVideoSegmentRequest {
-	return ApiGetHlsVideoSegmentRequest{
+func (a *DynamicHlsAPIService) GetHlsVideoSegment(ctx context.Context, itemId string, playlistId string, segmentId int32, container string) DynamicHlsAPIGetHlsVideoSegmentRequest {
+	return DynamicHlsAPIGetHlsVideoSegmentRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1075,7 +1075,7 @@ func (a *DynamicHlsAPIService) GetHlsVideoSegment(ctx context.Context, itemId st
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetHlsVideoSegmentExecute(r ApiGetHlsVideoSegmentRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetHlsVideoSegmentExecute(r DynamicHlsAPIGetHlsVideoSegmentRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1333,7 +1333,7 @@ func (a *DynamicHlsAPIService) GetHlsVideoSegmentExecute(r ApiGetHlsVideoSegment
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveHlsStreamRequest struct {
+type DynamicHlsAPIGetLiveHlsStreamRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -1393,325 +1393,325 @@ type ApiGetLiveHlsStreamRequest struct {
 }
 
 // The audio container.
-func (r ApiGetLiveHlsStreamRequest) Container(container string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Container(container string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.container = &container
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetLiveHlsStreamRequest) Static(static bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Static(static bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetLiveHlsStreamRequest) Params(params string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Params(params string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetLiveHlsStreamRequest) Tag(tag string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Tag(tag string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetLiveHlsStreamRequest) DeviceProfileId(deviceProfileId string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetLiveHlsStreamRequest) PlaySessionId(playSessionId string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetLiveHlsStreamRequest) SegmentContainer(segmentContainer string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetLiveHlsStreamRequest) SegmentLength(segmentLength int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetLiveHlsStreamRequest) MinSegments(minSegments int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MinSegments(minSegments int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetLiveHlsStreamRequest) MediaSourceId(mediaSourceId string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetLiveHlsStreamRequest) DeviceId(deviceId string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) DeviceId(deviceId string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetLiveHlsStreamRequest) AudioCodec(audioCodec string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetLiveHlsStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetLiveHlsStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetLiveHlsStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetLiveHlsStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetLiveHlsStreamRequest) AudioSampleRate(audioSampleRate int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetLiveHlsStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetLiveHlsStreamRequest) AudioBitRate(audioBitRate int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetLiveHlsStreamRequest) AudioChannels(audioChannels int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetLiveHlsStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetLiveHlsStreamRequest) Profile(profile string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Profile(profile string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetLiveHlsStreamRequest) Level(level string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Level(level string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetLiveHlsStreamRequest) Framerate(framerate float32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Framerate(framerate float32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetLiveHlsStreamRequest) MaxFramerate(maxFramerate float32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetLiveHlsStreamRequest) CopyTimestamps(copyTimestamps bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetLiveHlsStreamRequest) StartTimeTicks(startTimeTicks int64) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetLiveHlsStreamRequest) Width(width int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Width(width int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetLiveHlsStreamRequest) Height(height int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Height(height int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetLiveHlsStreamRequest) VideoBitRate(videoBitRate int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetLiveHlsStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetLiveHlsStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetLiveHlsStreamRequest) MaxRefFrames(maxRefFrames int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetLiveHlsStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetLiveHlsStreamRequest) RequireAvc(requireAvc bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetLiveHlsStreamRequest) DeInterlace(deInterlace bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetLiveHlsStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetLiveHlsStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetLiveHlsStreamRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetLiveHlsStreamRequest) LiveStreamId(liveStreamId string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetLiveHlsStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetLiveHlsStreamRequest) VideoCodec(videoCodec string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetLiveHlsStreamRequest) SubtitleCodec(subtitleCodec string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetLiveHlsStreamRequest) TranscodeReasons(transcodeReasons string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetLiveHlsStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetLiveHlsStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetLiveHlsStreamRequest) Context(context JellyfinEncodingContext) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetLiveHlsStreamRequest) StreamOptions(streamOptions map[string]string) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. The max width.
-func (r ApiGetLiveHlsStreamRequest) MaxWidth(maxWidth int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxWidth(maxWidth int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The max height.
-func (r ApiGetLiveHlsStreamRequest) MaxHeight(maxHeight int32) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) MaxHeight(maxHeight int32) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Whether to enable subtitles in the manifest.
-func (r ApiGetLiveHlsStreamRequest) EnableSubtitlesInManifest(enableSubtitlesInManifest bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) EnableSubtitlesInManifest(enableSubtitlesInManifest bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.enableSubtitlesInManifest = &enableSubtitlesInManifest
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetLiveHlsStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Whether to always burn in subtitles when transcoding.
-func (r ApiGetLiveHlsStreamRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiGetLiveHlsStreamRequest {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) DynamicHlsAPIGetLiveHlsStreamRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
-func (r ApiGetLiveHlsStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetLiveHlsStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetLiveHlsStreamExecute(r)
 }
 
@@ -1720,10 +1720,10 @@ GetLiveHlsStream Gets a hls live stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetLiveHlsStreamRequest
+ @return DynamicHlsAPIGetLiveHlsStreamRequest
 */
-func (a *DynamicHlsAPIService) GetLiveHlsStream(ctx context.Context, itemId string) ApiGetLiveHlsStreamRequest {
-	return ApiGetLiveHlsStreamRequest{
+func (a *DynamicHlsAPIService) GetLiveHlsStream(ctx context.Context, itemId string) DynamicHlsAPIGetLiveHlsStreamRequest {
+	return DynamicHlsAPIGetLiveHlsStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1732,7 +1732,7 @@ func (a *DynamicHlsAPIService) GetLiveHlsStream(ctx context.Context, itemId stri
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetLiveHlsStreamExecute(r ApiGetLiveHlsStreamRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetLiveHlsStreamExecute(r DynamicHlsAPIGetLiveHlsStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1985,7 +1985,7 @@ func (a *DynamicHlsAPIService) GetLiveHlsStreamExecute(r ApiGetLiveHlsStreamRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMasterHlsAudioPlaylistRequest struct {
+type DynamicHlsAPIGetMasterHlsAudioPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -2042,307 +2042,307 @@ type ApiGetMasterHlsAudioPlaylistRequest struct {
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Static(static bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Static(static bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Params(params string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Params(params string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Tag(tag string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Tag(tag string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetMasterHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetMasterHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetMasterHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetMasterHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MinSegments(minSegments int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetMasterHlsAudioPlaylistRequest) DeviceId(deviceId string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AudioCodec(audioCodec string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetMasterHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetMasterHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Profile(profile string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Profile(profile string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Level(level string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Level(level string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Framerate(framerate float32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetMasterHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetMasterHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Width(width int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Width(width int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Height(height int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Height(height int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetMasterHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetMasterHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetMasterHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetMasterHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetMasterHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetMasterHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetMasterHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetMasterHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetMasterHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetMasterHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetMasterHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetMasterHlsAudioPlaylistRequest) VideoCodec(videoCodec string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetMasterHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetMasterHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetMasterHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetMasterHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetMasterHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetMasterHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Enable adaptive bitrate streaming.
-func (r ApiGetMasterHlsAudioPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.enableAdaptiveBitrateStreaming = &enableAdaptiveBitrateStreaming
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetMasterHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetMasterHlsAudioPlaylistExecute(r)
 }
 
@@ -2351,10 +2351,10 @@ GetMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetMasterHlsAudioPlaylistRequest
+ @return DynamicHlsAPIGetMasterHlsAudioPlaylistRequest
 */
-func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsAudioPlaylistRequest {
-	return ApiGetMasterHlsAudioPlaylistRequest{
+func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylist(ctx context.Context, itemId string) DynamicHlsAPIGetMasterHlsAudioPlaylistRequest {
+	return DynamicHlsAPIGetMasterHlsAudioPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2363,7 +2363,7 @@ func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylist(ctx context.Context, it
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylistExecute(r ApiGetMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylistExecute(r DynamicHlsAPIGetMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2608,7 +2608,7 @@ func (a *DynamicHlsAPIService) GetMasterHlsAudioPlaylistExecute(r ApiGetMasterHl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMasterHlsVideoPlaylistRequest struct {
+type DynamicHlsAPIGetMasterHlsVideoPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -2668,325 +2668,325 @@ type ApiGetMasterHlsVideoPlaylistRequest struct {
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Static(static bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Static(static bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Params(params string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Params(params string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Tag(tag string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Tag(tag string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetMasterHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetMasterHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetMasterHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetMasterHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MinSegments(minSegments int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetMasterHlsVideoPlaylistRequest) DeviceId(deviceId string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AudioCodec(audioCodec string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetMasterHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetMasterHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Profile(profile string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Profile(profile string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Level(level string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Level(level string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Framerate(framerate float32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetMasterHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetMasterHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Width(width int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Width(width int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Height(height int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Height(height int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetMasterHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetMasterHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetMasterHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetMasterHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetMasterHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetMasterHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetMasterHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetMasterHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetMasterHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetMasterHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetMasterHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetMasterHlsVideoPlaylistRequest) VideoCodec(videoCodec string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetMasterHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetMasterHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetMasterHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetMasterHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetMasterHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Enable adaptive bitrate streaming.
-func (r ApiGetMasterHlsVideoPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.enableAdaptiveBitrateStreaming = &enableAdaptiveBitrateStreaming
 	return r
 }
 
 // Enable trickplay image playlists being added to master playlist.
-func (r ApiGetMasterHlsVideoPlaylistRequest) EnableTrickplay(enableTrickplay bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) EnableTrickplay(enableTrickplay bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.enableTrickplay = &enableTrickplay
 	return r
 }
 
 // Whether to enable Audio Encoding.
-func (r ApiGetMasterHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Whether to always burn in subtitles when transcoding.
-func (r ApiGetMasterHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiGetMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
-func (r ApiGetMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetMasterHlsVideoPlaylistExecute(r)
 }
 
@@ -2995,10 +2995,10 @@ GetMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetMasterHlsVideoPlaylistRequest
+ @return DynamicHlsAPIGetMasterHlsVideoPlaylistRequest
 */
-func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetMasterHlsVideoPlaylistRequest {
-	return ApiGetMasterHlsVideoPlaylistRequest{
+func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylist(ctx context.Context, itemId string) DynamicHlsAPIGetMasterHlsVideoPlaylistRequest {
+	return DynamicHlsAPIGetMasterHlsVideoPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -3007,7 +3007,7 @@ func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylist(ctx context.Context, it
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylistExecute(r ApiGetMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylistExecute(r DynamicHlsAPIGetMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3267,7 +3267,7 @@ func (a *DynamicHlsAPIService) GetMasterHlsVideoPlaylistExecute(r ApiGetMasterHl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetVariantHlsAudioPlaylistRequest struct {
+type DynamicHlsAPIGetVariantHlsAudioPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -3323,301 +3323,301 @@ type ApiGetVariantHlsAudioPlaylistRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Static(static bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Static(static bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Params(params string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Params(params string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Tag(tag string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Tag(tag string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetVariantHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetVariantHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetVariantHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetVariantHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MinSegments(minSegments int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetVariantHlsAudioPlaylistRequest) DeviceId(deviceId string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AudioCodec(audioCodec string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetVariantHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetVariantHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Profile(profile string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Profile(profile string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Level(level string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Level(level string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Framerate(framerate float32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetVariantHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetVariantHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Width(width int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Width(width int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Height(height int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Height(height int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetVariantHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetVariantHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetVariantHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetVariantHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetVariantHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetVariantHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetVariantHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetVariantHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetVariantHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetVariantHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetVariantHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetVariantHlsAudioPlaylistRequest) VideoCodec(videoCodec string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetVariantHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetVariantHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetVariantHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetVariantHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetVariantHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetVariantHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetVariantHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetVariantHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetVariantHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetVariantHlsAudioPlaylistExecute(r)
 }
 
@@ -3626,10 +3626,10 @@ GetVariantHlsAudioPlaylist Gets an audio stream using HTTP live streaming.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetVariantHlsAudioPlaylistRequest
+ @return DynamicHlsAPIGetVariantHlsAudioPlaylistRequest
 */
-func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsAudioPlaylistRequest {
-	return ApiGetVariantHlsAudioPlaylistRequest{
+func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylist(ctx context.Context, itemId string) DynamicHlsAPIGetVariantHlsAudioPlaylistRequest {
+	return DynamicHlsAPIGetVariantHlsAudioPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -3638,7 +3638,7 @@ func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylist(ctx context.Context, i
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylistExecute(r ApiGetVariantHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylistExecute(r DynamicHlsAPIGetVariantHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3876,7 +3876,7 @@ func (a *DynamicHlsAPIService) GetVariantHlsAudioPlaylistExecute(r ApiGetVariant
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetVariantHlsVideoPlaylistRequest struct {
+type DynamicHlsAPIGetVariantHlsVideoPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -3934,313 +3934,313 @@ type ApiGetVariantHlsVideoPlaylistRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Static(static bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Static(static bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Params(params string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Params(params string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Tag(tag string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Tag(tag string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetVariantHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetVariantHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetVariantHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetVariantHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MinSegments(minSegments int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetVariantHlsVideoPlaylistRequest) DeviceId(deviceId string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AudioCodec(audioCodec string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetVariantHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetVariantHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Profile(profile string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Profile(profile string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Level(level string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Level(level string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Framerate(framerate float32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetVariantHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetVariantHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Width(width int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Width(width int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Height(height int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Height(height int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetVariantHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetVariantHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetVariantHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetVariantHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetVariantHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetVariantHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetVariantHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetVariantHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetVariantHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetVariantHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetVariantHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiGetVariantHlsVideoPlaylistRequest) VideoCodec(videoCodec string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetVariantHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetVariantHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetVariantHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetVariantHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetVariantHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetVariantHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Whether to always burn in subtitles when transcoding.
-func (r ApiGetVariantHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiGetVariantHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
-func (r ApiGetVariantHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetVariantHlsVideoPlaylistExecute(r)
 }
 
@@ -4249,10 +4249,10 @@ GetVariantHlsVideoPlaylist Gets a video stream using HTTP live streaming.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetVariantHlsVideoPlaylistRequest
+ @return DynamicHlsAPIGetVariantHlsVideoPlaylistRequest
 */
-func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylist(ctx context.Context, itemId string) ApiGetVariantHlsVideoPlaylistRequest {
-	return ApiGetVariantHlsVideoPlaylistRequest{
+func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylist(ctx context.Context, itemId string) DynamicHlsAPIGetVariantHlsVideoPlaylistRequest {
+	return DynamicHlsAPIGetVariantHlsVideoPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -4261,7 +4261,7 @@ func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylist(ctx context.Context, i
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylistExecute(r ApiGetVariantHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylistExecute(r DynamicHlsAPIGetVariantHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4508,7 +4508,7 @@ func (a *DynamicHlsAPIService) GetVariantHlsVideoPlaylistExecute(r ApiGetVariant
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadMasterHlsAudioPlaylistRequest struct {
+type DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -4565,307 +4565,307 @@ type ApiHeadMasterHlsAudioPlaylistRequest struct {
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Static(static bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Static(static bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Params(params string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Params(params string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Tag(tag string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Tag(tag string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiHeadMasterHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MinSegments(minSegments int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) DeviceId(deviceId string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AudioCodec(audioCodec string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxStreamingBitrate(maxStreamingBitrate int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Profile(profile string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Profile(profile string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Level(level string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Level(level string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Framerate(framerate float32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Width(width int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Width(width int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Height(height int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Height(height int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) VideoCodec(videoCodec string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Enable adaptive bitrate streaming.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.enableAdaptiveBitrateStreaming = &enableAdaptiveBitrateStreaming
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadMasterHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadMasterHlsAudioPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiHeadMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadMasterHlsAudioPlaylistExecute(r)
 }
 
@@ -4874,10 +4874,10 @@ HeadMasterHlsAudioPlaylist Gets an audio hls playlist stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiHeadMasterHlsAudioPlaylistRequest
+ @return DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest
 */
-func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsAudioPlaylistRequest {
-	return ApiHeadMasterHlsAudioPlaylistRequest{
+func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylist(ctx context.Context, itemId string) DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest {
+	return DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -4886,7 +4886,7 @@ func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylist(ctx context.Context, i
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylistExecute(r ApiHeadMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylistExecute(r DynamicHlsAPIHeadMasterHlsAudioPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -5131,7 +5131,7 @@ func (a *DynamicHlsAPIService) HeadMasterHlsAudioPlaylistExecute(r ApiHeadMaster
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadMasterHlsVideoPlaylistRequest struct {
+type DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest struct {
 	ctx context.Context
 	ApiService *DynamicHlsAPIService
 	itemId string
@@ -5191,325 +5191,325 @@ type ApiHeadMasterHlsVideoPlaylistRequest struct {
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MediaSourceId(mediaSourceId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Static(static bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Static(static bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Params(params string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Params(params string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Tag(tag string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Tag(tag string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiHeadMasterHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) DeviceProfileId(deviceProfileId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) PlaySessionId(playSessionId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) SegmentContainer(segmentContainer string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) SegmentLength(segmentLength int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MinSegments(minSegments int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MinSegments(minSegments int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) DeviceId(deviceId string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) DeviceId(deviceId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AudioCodec(audioCodec string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AudioCodec(audioCodec string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AudioSampleRate(audioSampleRate int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxAudioBitDepth(maxAudioBitDepth int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AudioBitRate(audioBitRate int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AudioChannels(audioChannels int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxAudioChannels(maxAudioChannels int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Profile(profile string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Profile(profile string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Level(level string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Level(level string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Framerate(framerate float32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Framerate(framerate float32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxFramerate(maxFramerate float32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) CopyTimestamps(copyTimestamps bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) StartTimeTicks(startTimeTicks int64) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Width(width int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Width(width int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Height(height int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Height(height int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxWidth(maxWidth int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxHeight(maxHeight int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) VideoBitRate(videoBitRate int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) SubtitleStreamIndex(subtitleStreamIndex int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxRefFrames(maxRefFrames int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) MaxVideoBitDepth(maxVideoBitDepth int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) RequireAvc(requireAvc bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) DeInterlace(deInterlace bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) RequireNonAnamorphic(requireNonAnamorphic bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) CpuCoreLimit(cpuCoreLimit int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) LiveStreamId(liveStreamId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) VideoCodec(videoCodec string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) VideoCodec(videoCodec string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) SubtitleCodec(subtitleCodec string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) TranscodeReasons(transcodeReasons string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AudioStreamIndex(audioStreamIndex int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) VideoStreamIndex(videoStreamIndex int32) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Context(context JellyfinEncodingContext) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) StreamOptions(streamOptions map[string]string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Enable adaptive bitrate streaming.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) EnableAdaptiveBitrateStreaming(enableAdaptiveBitrateStreaming bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.enableAdaptiveBitrateStreaming = &enableAdaptiveBitrateStreaming
 	return r
 }
 
 // Enable trickplay image playlists being added to master playlist.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) EnableTrickplay(enableTrickplay bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) EnableTrickplay(enableTrickplay bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.enableTrickplay = &enableTrickplay
 	return r
 }
 
 // Whether to enable Audio Encoding.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Whether to always burn in subtitles when transcoding.
-func (r ApiHeadMasterHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiHeadMasterHlsVideoPlaylistRequest {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
-func (r ApiHeadMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadMasterHlsVideoPlaylistExecute(r)
 }
 
@@ -5518,10 +5518,10 @@ HeadMasterHlsVideoPlaylist Gets a video hls playlist stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiHeadMasterHlsVideoPlaylistRequest
+ @return DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest
 */
-func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylist(ctx context.Context, itemId string) ApiHeadMasterHlsVideoPlaylistRequest {
-	return ApiHeadMasterHlsVideoPlaylistRequest{
+func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylist(ctx context.Context, itemId string) DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest {
+	return DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -5530,7 +5530,7 @@ func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylist(ctx context.Context, i
 
 // Execute executes the request
 //  @return *os.File
-func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylistExecute(r ApiHeadMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
+func (a *DynamicHlsAPIService) HeadMasterHlsVideoPlaylistExecute(r DynamicHlsAPIHeadMasterHlsVideoPlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}

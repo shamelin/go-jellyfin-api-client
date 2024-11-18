@@ -23,7 +23,7 @@ import (
 // SearchAPIService SearchAPI service
 type SearchAPIService service
 
-type ApiGetSearchHintsRequest struct {
+type SearchAPIGetSearchHintsRequest struct {
 	ctx context.Context
 	ApiService *SearchAPIService
 	searchTerm *string
@@ -47,114 +47,114 @@ type ApiGetSearchHintsRequest struct {
 }
 
 // The search term to filter on.
-func (r ApiGetSearchHintsRequest) SearchTerm(searchTerm string) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) SearchTerm(searchTerm string) SearchAPIGetSearchHintsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetSearchHintsRequest) StartIndex(startIndex int32) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) StartIndex(startIndex int32) SearchAPIGetSearchHintsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSearchHintsRequest) Limit(limit int32) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) Limit(limit int32) SearchAPIGetSearchHintsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Supply a user id to search within a user&#39;s library or omit to search all.
-func (r ApiGetSearchHintsRequest) UserId(userId string) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) UserId(userId string) SearchAPIGetSearchHintsRequest {
 	r.userId = &userId
 	return r
 }
 
 // If specified, only results with the specified item types are returned. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) SearchAPIGetSearchHintsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // If specified, results with these item types are filtered out. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) SearchAPIGetSearchHintsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // If specified, only results with the specified media types are returned. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) MediaTypes(mediaTypes []JellyfinMediaType) SearchAPIGetSearchHintsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // If specified, only children of the parent are returned.
-func (r ApiGetSearchHintsRequest) ParentId(parentId string) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) ParentId(parentId string) SearchAPIGetSearchHintsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional filter for movies.
-func (r ApiGetSearchHintsRequest) IsMovie(isMovie bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IsMovie(isMovie bool) SearchAPIGetSearchHintsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional filter for series.
-func (r ApiGetSearchHintsRequest) IsSeries(isSeries bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IsSeries(isSeries bool) SearchAPIGetSearchHintsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional filter for news.
-func (r ApiGetSearchHintsRequest) IsNews(isNews bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IsNews(isNews bool) SearchAPIGetSearchHintsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional filter for kids.
-func (r ApiGetSearchHintsRequest) IsKids(isKids bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IsKids(isKids bool) SearchAPIGetSearchHintsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional filter for sports.
-func (r ApiGetSearchHintsRequest) IsSports(isSports bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IsSports(isSports bool) SearchAPIGetSearchHintsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional filter whether to include people.
-func (r ApiGetSearchHintsRequest) IncludePeople(includePeople bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludePeople(includePeople bool) SearchAPIGetSearchHintsRequest {
 	r.includePeople = &includePeople
 	return r
 }
 
 // Optional filter whether to include media.
-func (r ApiGetSearchHintsRequest) IncludeMedia(includeMedia bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludeMedia(includeMedia bool) SearchAPIGetSearchHintsRequest {
 	r.includeMedia = &includeMedia
 	return r
 }
 
 // Optional filter whether to include genres.
-func (r ApiGetSearchHintsRequest) IncludeGenres(includeGenres bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludeGenres(includeGenres bool) SearchAPIGetSearchHintsRequest {
 	r.includeGenres = &includeGenres
 	return r
 }
 
 // Optional filter whether to include studios.
-func (r ApiGetSearchHintsRequest) IncludeStudios(includeStudios bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludeStudios(includeStudios bool) SearchAPIGetSearchHintsRequest {
 	r.includeStudios = &includeStudios
 	return r
 }
 
 // Optional filter whether to include artists.
-func (r ApiGetSearchHintsRequest) IncludeArtists(includeArtists bool) ApiGetSearchHintsRequest {
+func (r SearchAPIGetSearchHintsRequest) IncludeArtists(includeArtists bool) SearchAPIGetSearchHintsRequest {
 	r.includeArtists = &includeArtists
 	return r
 }
 
-func (r ApiGetSearchHintsRequest) Execute() (*JellyfinSearchHintResult, *http.Response, error) {
+func (r SearchAPIGetSearchHintsRequest) Execute() (*JellyfinSearchHintResult, *http.Response, error) {
 	return r.ApiService.GetSearchHintsExecute(r)
 }
 
@@ -162,10 +162,10 @@ func (r ApiGetSearchHintsRequest) Execute() (*JellyfinSearchHintResult, *http.Re
 GetSearchHints Gets the search hint result.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSearchHintsRequest
+ @return SearchAPIGetSearchHintsRequest
 */
-func (a *SearchAPIService) GetSearchHints(ctx context.Context) ApiGetSearchHintsRequest {
-	return ApiGetSearchHintsRequest{
+func (a *SearchAPIService) GetSearchHints(ctx context.Context) SearchAPIGetSearchHintsRequest {
+	return SearchAPIGetSearchHintsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -173,7 +173,7 @@ func (a *SearchAPIService) GetSearchHints(ctx context.Context) ApiGetSearchHints
 
 // Execute executes the request
 //  @return JellyfinSearchHintResult
-func (a *SearchAPIService) GetSearchHintsExecute(r ApiGetSearchHintsRequest) (*JellyfinSearchHintResult, *http.Response, error) {
+func (a *SearchAPIService) GetSearchHintsExecute(r SearchAPIGetSearchHintsRequest) (*JellyfinSearchHintResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

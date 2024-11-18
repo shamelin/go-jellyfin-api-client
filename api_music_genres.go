@@ -24,7 +24,7 @@ import (
 // MusicGenresAPIService MusicGenresAPI service
 type MusicGenresAPIService service
 
-type ApiGetMusicGenreRequest struct {
+type MusicGenresAPIGetMusicGenreRequest struct {
 	ctx context.Context
 	ApiService *MusicGenresAPIService
 	genreName string
@@ -32,12 +32,12 @@ type ApiGetMusicGenreRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetMusicGenreRequest) UserId(userId string) ApiGetMusicGenreRequest {
+func (r MusicGenresAPIGetMusicGenreRequest) UserId(userId string) MusicGenresAPIGetMusicGenreRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetMusicGenreRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r MusicGenresAPIGetMusicGenreRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetMusicGenreExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetMusicGenre Gets a music genre, by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param genreName The genre name.
- @return ApiGetMusicGenreRequest
+ @return MusicGenresAPIGetMusicGenreRequest
 */
-func (a *MusicGenresAPIService) GetMusicGenre(ctx context.Context, genreName string) ApiGetMusicGenreRequest {
-	return ApiGetMusicGenreRequest{
+func (a *MusicGenresAPIService) GetMusicGenre(ctx context.Context, genreName string) MusicGenresAPIGetMusicGenreRequest {
+	return MusicGenresAPIGetMusicGenreRequest{
 		ApiService: a,
 		ctx: ctx,
 		genreName: genreName,
@@ -58,7 +58,7 @@ func (a *MusicGenresAPIService) GetMusicGenre(ctx context.Context, genreName str
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *MusicGenresAPIService) GetMusicGenreExecute(r ApiGetMusicGenreRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *MusicGenresAPIService) GetMusicGenreExecute(r MusicGenresAPIGetMusicGenreRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *MusicGenresAPIService) GetMusicGenreExecute(r ApiGetMusicGenreRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicGenresRequest struct {
+type MusicGenresAPIGetMusicGenresRequest struct {
 	ctx context.Context
 	ApiService *MusicGenresAPIService
 	startIndex *int32
@@ -173,114 +173,114 @@ type ApiGetMusicGenresRequest struct {
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetMusicGenresRequest) StartIndex(startIndex int32) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) StartIndex(startIndex int32) MusicGenresAPIGetMusicGenresRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetMusicGenresRequest) Limit(limit int32) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) Limit(limit int32) MusicGenresAPIGetMusicGenresRequest {
 	r.limit = &limit
 	return r
 }
 
 // The search term.
-func (r ApiGetMusicGenresRequest) SearchTerm(searchTerm string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) SearchTerm(searchTerm string) MusicGenresAPIGetMusicGenresRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetMusicGenresRequest) ParentId(parentId string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) ParentId(parentId string) MusicGenresAPIGetMusicGenresRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetMusicGenresRequest) Fields(fields []JellyfinItemFields) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) Fields(fields []JellyfinItemFields) MusicGenresAPIGetMusicGenresRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetMusicGenresRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) MusicGenresAPIGetMusicGenresRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered in based on item type. This allows multiple, comma delimited.
-func (r ApiGetMusicGenresRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) MusicGenresAPIGetMusicGenresRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetMusicGenresRequest) IsFavorite(isFavorite bool) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) IsFavorite(isFavorite bool) MusicGenresAPIGetMusicGenresRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetMusicGenresRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) ImageTypeLimit(imageTypeLimit int32) MusicGenresAPIGetMusicGenresRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetMusicGenresRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) MusicGenresAPIGetMusicGenresRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // User id.
-func (r ApiGetMusicGenresRequest) UserId(userId string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) UserId(userId string) MusicGenresAPIGetMusicGenresRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetMusicGenresRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) MusicGenresAPIGetMusicGenresRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetMusicGenresRequest) NameStartsWith(nameStartsWith string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) NameStartsWith(nameStartsWith string) MusicGenresAPIGetMusicGenresRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetMusicGenresRequest) NameLessThan(nameLessThan string) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) NameLessThan(nameLessThan string) MusicGenresAPIGetMusicGenresRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetMusicGenresRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) SortBy(sortBy []JellyfinItemSortBy) MusicGenresAPIGetMusicGenresRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetMusicGenresRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) SortOrder(sortOrder []JellyfinSortOrder) MusicGenresAPIGetMusicGenresRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetMusicGenresRequest) EnableImages(enableImages bool) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) EnableImages(enableImages bool) MusicGenresAPIGetMusicGenresRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include total record count.
-func (r ApiGetMusicGenresRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetMusicGenresRequest {
+func (r MusicGenresAPIGetMusicGenresRequest) EnableTotalRecordCount(enableTotalRecordCount bool) MusicGenresAPIGetMusicGenresRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetMusicGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r MusicGenresAPIGetMusicGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetMusicGenresExecute(r)
 }
 
@@ -288,12 +288,12 @@ func (r ApiGetMusicGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *h
 GetMusicGenres Gets all music genres from a given item, folder, or the entire library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicGenresRequest
+ @return MusicGenresAPIGetMusicGenresRequest
 
 Deprecated
 */
-func (a *MusicGenresAPIService) GetMusicGenres(ctx context.Context) ApiGetMusicGenresRequest {
-	return ApiGetMusicGenresRequest{
+func (a *MusicGenresAPIService) GetMusicGenres(ctx context.Context) MusicGenresAPIGetMusicGenresRequest {
+	return MusicGenresAPIGetMusicGenresRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -302,7 +302,7 @@ func (a *MusicGenresAPIService) GetMusicGenres(ctx context.Context) ApiGetMusicG
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *MusicGenresAPIService) GetMusicGenresExecute(r ApiGetMusicGenresRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *MusicGenresAPIService) GetMusicGenresExecute(r MusicGenresAPIGetMusicGenresRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

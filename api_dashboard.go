@@ -23,19 +23,19 @@ import (
 // DashboardAPIService DashboardAPI service
 type DashboardAPIService service
 
-type ApiGetConfigurationPagesRequest struct {
+type DashboardAPIGetConfigurationPagesRequest struct {
 	ctx context.Context
 	ApiService *DashboardAPIService
 	enableInMainMenu *bool
 }
 
 // Whether to enable in the main menu.
-func (r ApiGetConfigurationPagesRequest) EnableInMainMenu(enableInMainMenu bool) ApiGetConfigurationPagesRequest {
+func (r DashboardAPIGetConfigurationPagesRequest) EnableInMainMenu(enableInMainMenu bool) DashboardAPIGetConfigurationPagesRequest {
 	r.enableInMainMenu = &enableInMainMenu
 	return r
 }
 
-func (r ApiGetConfigurationPagesRequest) Execute() ([]JellyfinConfigurationPageInfo, *http.Response, error) {
+func (r DashboardAPIGetConfigurationPagesRequest) Execute() ([]JellyfinConfigurationPageInfo, *http.Response, error) {
 	return r.ApiService.GetConfigurationPagesExecute(r)
 }
 
@@ -43,10 +43,10 @@ func (r ApiGetConfigurationPagesRequest) Execute() ([]JellyfinConfigurationPageI
 GetConfigurationPages Gets the configuration pages.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigurationPagesRequest
+ @return DashboardAPIGetConfigurationPagesRequest
 */
-func (a *DashboardAPIService) GetConfigurationPages(ctx context.Context) ApiGetConfigurationPagesRequest {
-	return ApiGetConfigurationPagesRequest{
+func (a *DashboardAPIService) GetConfigurationPages(ctx context.Context) DashboardAPIGetConfigurationPagesRequest {
+	return DashboardAPIGetConfigurationPagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -54,7 +54,7 @@ func (a *DashboardAPIService) GetConfigurationPages(ctx context.Context) ApiGetC
 
 // Execute executes the request
 //  @return []JellyfinConfigurationPageInfo
-func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfigurationPagesRequest) ([]JellyfinConfigurationPageInfo, *http.Response, error) {
+func (a *DashboardAPIService) GetConfigurationPagesExecute(r DashboardAPIGetConfigurationPagesRequest) ([]JellyfinConfigurationPageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -155,19 +155,19 @@ func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfiguration
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDashboardConfigurationPageRequest struct {
+type DashboardAPIGetDashboardConfigurationPageRequest struct {
 	ctx context.Context
 	ApiService *DashboardAPIService
 	name *string
 }
 
 // The name of the page.
-func (r ApiGetDashboardConfigurationPageRequest) Name(name string) ApiGetDashboardConfigurationPageRequest {
+func (r DashboardAPIGetDashboardConfigurationPageRequest) Name(name string) DashboardAPIGetDashboardConfigurationPageRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiGetDashboardConfigurationPageRequest) Execute() (*os.File, *http.Response, error) {
+func (r DashboardAPIGetDashboardConfigurationPageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetDashboardConfigurationPageExecute(r)
 }
 
@@ -175,10 +175,10 @@ func (r ApiGetDashboardConfigurationPageRequest) Execute() (*os.File, *http.Resp
 GetDashboardConfigurationPage Gets a dashboard configuration page.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDashboardConfigurationPageRequest
+ @return DashboardAPIGetDashboardConfigurationPageRequest
 */
-func (a *DashboardAPIService) GetDashboardConfigurationPage(ctx context.Context) ApiGetDashboardConfigurationPageRequest {
-	return ApiGetDashboardConfigurationPageRequest{
+func (a *DashboardAPIService) GetDashboardConfigurationPage(ctx context.Context) DashboardAPIGetDashboardConfigurationPageRequest {
+	return DashboardAPIGetDashboardConfigurationPageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -186,7 +186,7 @@ func (a *DashboardAPIService) GetDashboardConfigurationPage(ctx context.Context)
 
 // Execute executes the request
 //  @return *os.File
-func (a *DashboardAPIService) GetDashboardConfigurationPageExecute(r ApiGetDashboardConfigurationPageRequest) (*os.File, *http.Response, error) {
+func (a *DashboardAPIService) GetDashboardConfigurationPageExecute(r DashboardAPIGetDashboardConfigurationPageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

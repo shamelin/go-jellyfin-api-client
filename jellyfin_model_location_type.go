@@ -20,10 +20,10 @@ type JellyfinLocationType string
 
 // List of LocationType
 const (
-	FILE_SYSTEM JellyfinLocationType = "FileSystem"
-	REMOTE JellyfinLocationType = "Remote"
-	VIRTUAL JellyfinLocationType = "Virtual"
-	OFFLINE JellyfinLocationType = "Offline"
+	JELLYFINLOCATIONTYPE_FILE_SYSTEM JellyfinLocationType = "FileSystem"
+	JELLYFINLOCATIONTYPE_REMOTE JellyfinLocationType = "Remote"
+	JELLYFINLOCATIONTYPE_VIRTUAL JellyfinLocationType = "Virtual"
+	JELLYFINLOCATIONTYPE_OFFLINE JellyfinLocationType = "Offline"
 )
 
 // All allowed values of JellyfinLocationType enum

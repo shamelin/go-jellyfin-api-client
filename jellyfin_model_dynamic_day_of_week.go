@@ -20,16 +20,16 @@ type JellyfinDynamicDayOfWeek string
 
 // List of DynamicDayOfWeek
 const (
-	SUNDAY JellyfinDynamicDayOfWeek = "Sunday"
-	MONDAY JellyfinDynamicDayOfWeek = "Monday"
-	TUESDAY JellyfinDynamicDayOfWeek = "Tuesday"
-	WEDNESDAY JellyfinDynamicDayOfWeek = "Wednesday"
-	THURSDAY JellyfinDynamicDayOfWeek = "Thursday"
-	FRIDAY JellyfinDynamicDayOfWeek = "Friday"
-	SATURDAY JellyfinDynamicDayOfWeek = "Saturday"
-	EVERYDAY JellyfinDynamicDayOfWeek = "Everyday"
-	WEEKDAY JellyfinDynamicDayOfWeek = "Weekday"
-	WEEKEND JellyfinDynamicDayOfWeek = "Weekend"
+	JELLYFINDYNAMICDAYOFWEEK_SUNDAY JellyfinDynamicDayOfWeek = "Sunday"
+	JELLYFINDYNAMICDAYOFWEEK_MONDAY JellyfinDynamicDayOfWeek = "Monday"
+	JELLYFINDYNAMICDAYOFWEEK_TUESDAY JellyfinDynamicDayOfWeek = "Tuesday"
+	JELLYFINDYNAMICDAYOFWEEK_WEDNESDAY JellyfinDynamicDayOfWeek = "Wednesday"
+	JELLYFINDYNAMICDAYOFWEEK_THURSDAY JellyfinDynamicDayOfWeek = "Thursday"
+	JELLYFINDYNAMICDAYOFWEEK_FRIDAY JellyfinDynamicDayOfWeek = "Friday"
+	JELLYFINDYNAMICDAYOFWEEK_SATURDAY JellyfinDynamicDayOfWeek = "Saturday"
+	JELLYFINDYNAMICDAYOFWEEK_EVERYDAY JellyfinDynamicDayOfWeek = "Everyday"
+	JELLYFINDYNAMICDAYOFWEEK_WEEKDAY JellyfinDynamicDayOfWeek = "Weekday"
+	JELLYFINDYNAMICDAYOFWEEK_WEEKEND JellyfinDynamicDayOfWeek = "Weekend"
 )
 
 // All allowed values of JellyfinDynamicDayOfWeek enum

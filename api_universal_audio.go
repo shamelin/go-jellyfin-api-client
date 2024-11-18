@@ -25,7 +25,7 @@ import (
 // UniversalAudioAPIService UniversalAudioAPI service
 type UniversalAudioAPIService service
 
-type ApiGetUniversalAudioStreamRequest struct {
+type UniversalAudioAPIGetUniversalAudioStreamRequest struct {
 	ctx context.Context
 	ApiService *UniversalAudioAPIService
 	itemId string
@@ -50,114 +50,114 @@ type ApiGetUniversalAudioStreamRequest struct {
 }
 
 // Optional. The audio container.
-func (r ApiGetUniversalAudioStreamRequest) Container(container []string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) Container(container []string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.container = &container
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetUniversalAudioStreamRequest) MediaSourceId(mediaSourceId string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) MediaSourceId(mediaSourceId string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetUniversalAudioStreamRequest) DeviceId(deviceId string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) DeviceId(deviceId string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. The user id.
-func (r ApiGetUniversalAudioStreamRequest) UserId(userId string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) UserId(userId string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The audio codec to transcode to.
-func (r ApiGetUniversalAudioStreamRequest) AudioCodec(audioCodec string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) AudioCodec(audioCodec string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Optional. The maximum number of audio channels.
-func (r ApiGetUniversalAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. The number of how many audio channels to transcode to.
-func (r ApiGetUniversalAudioStreamRequest) TranscodingAudioChannels(transcodingAudioChannels int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) TranscodingAudioChannels(transcodingAudioChannels int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.transcodingAudioChannels = &transcodingAudioChannels
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiGetUniversalAudioStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetUniversalAudioStreamRequest) AudioBitRate(audioBitRate int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) AudioBitRate(audioBitRate int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetUniversalAudioStreamRequest) StartTimeTicks(startTimeTicks int64) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) StartTimeTicks(startTimeTicks int64) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The container to transcode to.
-func (r ApiGetUniversalAudioStreamRequest) TranscodingContainer(transcodingContainer string) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) TranscodingContainer(transcodingContainer string) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.transcodingContainer = &transcodingContainer
 	return r
 }
 
 // Optional. The transcoding protocol.
-func (r ApiGetUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.transcodingProtocol = &transcodingProtocol
 	return r
 }
 
 // Optional. The maximum audio sample rate.
-func (r ApiGetUniversalAudioStreamRequest) MaxAudioSampleRate(maxAudioSampleRate int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) MaxAudioSampleRate(maxAudioSampleRate int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.maxAudioSampleRate = &maxAudioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetUniversalAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Whether to enable remote media.
-func (r ApiGetUniversalAudioStreamRequest) EnableRemoteMedia(enableRemoteMedia bool) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) EnableRemoteMedia(enableRemoteMedia bool) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.enableRemoteMedia = &enableRemoteMedia
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetUniversalAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetUniversalAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Whether to enable redirection. Defaults to true.
-func (r ApiGetUniversalAudioStreamRequest) EnableRedirection(enableRedirection bool) ApiGetUniversalAudioStreamRequest {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) EnableRedirection(enableRedirection bool) UniversalAudioAPIGetUniversalAudioStreamRequest {
 	r.enableRedirection = &enableRedirection
 	return r
 }
 
-func (r ApiGetUniversalAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r UniversalAudioAPIGetUniversalAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetUniversalAudioStreamExecute(r)
 }
 
@@ -166,10 +166,10 @@ GetUniversalAudioStream Gets an audio stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetUniversalAudioStreamRequest
+ @return UniversalAudioAPIGetUniversalAudioStreamRequest
 */
-func (a *UniversalAudioAPIService) GetUniversalAudioStream(ctx context.Context, itemId string) ApiGetUniversalAudioStreamRequest {
-	return ApiGetUniversalAudioStreamRequest{
+func (a *UniversalAudioAPIService) GetUniversalAudioStream(ctx context.Context, itemId string) UniversalAudioAPIGetUniversalAudioStreamRequest {
+	return UniversalAudioAPIGetUniversalAudioStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -178,7 +178,7 @@ func (a *UniversalAudioAPIService) GetUniversalAudioStream(ctx context.Context, 
 
 // Execute executes the request
 //  @return *os.File
-func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
+func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r UniversalAudioAPIGetUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -348,7 +348,7 @@ func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniver
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadUniversalAudioStreamRequest struct {
+type UniversalAudioAPIHeadUniversalAudioStreamRequest struct {
 	ctx context.Context
 	ApiService *UniversalAudioAPIService
 	itemId string
@@ -373,114 +373,114 @@ type ApiHeadUniversalAudioStreamRequest struct {
 }
 
 // Optional. The audio container.
-func (r ApiHeadUniversalAudioStreamRequest) Container(container []string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) Container(container []string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.container = &container
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadUniversalAudioStreamRequest) MediaSourceId(mediaSourceId string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) MediaSourceId(mediaSourceId string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadUniversalAudioStreamRequest) DeviceId(deviceId string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) DeviceId(deviceId string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. The user id.
-func (r ApiHeadUniversalAudioStreamRequest) UserId(userId string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) UserId(userId string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The audio codec to transcode to.
-func (r ApiHeadUniversalAudioStreamRequest) AudioCodec(audioCodec string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) AudioCodec(audioCodec string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Optional. The maximum number of audio channels.
-func (r ApiHeadUniversalAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. The number of how many audio channels to transcode to.
-func (r ApiHeadUniversalAudioStreamRequest) TranscodingAudioChannels(transcodingAudioChannels int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) TranscodingAudioChannels(transcodingAudioChannels int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.transcodingAudioChannels = &transcodingAudioChannels
 	return r
 }
 
 // Optional. The maximum streaming bitrate.
-func (r ApiHeadUniversalAudioStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadUniversalAudioStreamRequest) AudioBitRate(audioBitRate int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) AudioBitRate(audioBitRate int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadUniversalAudioStreamRequest) StartTimeTicks(startTimeTicks int64) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) StartTimeTicks(startTimeTicks int64) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The container to transcode to.
-func (r ApiHeadUniversalAudioStreamRequest) TranscodingContainer(transcodingContainer string) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) TranscodingContainer(transcodingContainer string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.transcodingContainer = &transcodingContainer
 	return r
 }
 
 // Optional. The transcoding protocol.
-func (r ApiHeadUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.transcodingProtocol = &transcodingProtocol
 	return r
 }
 
 // Optional. The maximum audio sample rate.
-func (r ApiHeadUniversalAudioStreamRequest) MaxAudioSampleRate(maxAudioSampleRate int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) MaxAudioSampleRate(maxAudioSampleRate int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.maxAudioSampleRate = &maxAudioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadUniversalAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Whether to enable remote media.
-func (r ApiHeadUniversalAudioStreamRequest) EnableRemoteMedia(enableRemoteMedia bool) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) EnableRemoteMedia(enableRemoteMedia bool) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.enableRemoteMedia = &enableRemoteMedia
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadUniversalAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadUniversalAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Whether to enable redirection. Defaults to true.
-func (r ApiHeadUniversalAudioStreamRequest) EnableRedirection(enableRedirection bool) ApiHeadUniversalAudioStreamRequest {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) EnableRedirection(enableRedirection bool) UniversalAudioAPIHeadUniversalAudioStreamRequest {
 	r.enableRedirection = &enableRedirection
 	return r
 }
 
-func (r ApiHeadUniversalAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r UniversalAudioAPIHeadUniversalAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadUniversalAudioStreamExecute(r)
 }
 
@@ -489,10 +489,10 @@ HeadUniversalAudioStream Gets an audio stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiHeadUniversalAudioStreamRequest
+ @return UniversalAudioAPIHeadUniversalAudioStreamRequest
 */
-func (a *UniversalAudioAPIService) HeadUniversalAudioStream(ctx context.Context, itemId string) ApiHeadUniversalAudioStreamRequest {
-	return ApiHeadUniversalAudioStreamRequest{
+func (a *UniversalAudioAPIService) HeadUniversalAudioStream(ctx context.Context, itemId string) UniversalAudioAPIHeadUniversalAudioStreamRequest {
+	return UniversalAudioAPIHeadUniversalAudioStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -501,7 +501,7 @@ func (a *UniversalAudioAPIService) HeadUniversalAudioStream(ctx context.Context,
 
 // Execute executes the request
 //  @return *os.File
-func (a *UniversalAudioAPIService) HeadUniversalAudioStreamExecute(r ApiHeadUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
+func (a *UniversalAudioAPIService) HeadUniversalAudioStreamExecute(r UniversalAudioAPIHeadUniversalAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}

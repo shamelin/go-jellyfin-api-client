@@ -24,12 +24,12 @@ import (
 // ImageAPIService ImageAPI service
 type ImageAPIService service
 
-type ApiDeleteCustomSplashscreenRequest struct {
+type ImageAPIDeleteCustomSplashscreenRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 }
 
-func (r ApiDeleteCustomSplashscreenRequest) Execute() (*http.Response, error) {
+func (r ImageAPIDeleteCustomSplashscreenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCustomSplashscreenExecute(r)
 }
 
@@ -37,17 +37,17 @@ func (r ApiDeleteCustomSplashscreenRequest) Execute() (*http.Response, error) {
 DeleteCustomSplashscreen Delete a custom splashscreen.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteCustomSplashscreenRequest
+ @return ImageAPIDeleteCustomSplashscreenRequest
 */
-func (a *ImageAPIService) DeleteCustomSplashscreen(ctx context.Context) ApiDeleteCustomSplashscreenRequest {
-	return ApiDeleteCustomSplashscreenRequest{
+func (a *ImageAPIService) DeleteCustomSplashscreen(ctx context.Context) ImageAPIDeleteCustomSplashscreenRequest {
+	return ImageAPIDeleteCustomSplashscreenRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImageAPIService) DeleteCustomSplashscreenExecute(r ApiDeleteCustomSplashscreenRequest) (*http.Response, error) {
+func (a *ImageAPIService) DeleteCustomSplashscreenExecute(r ImageAPIDeleteCustomSplashscreenRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -124,7 +124,7 @@ func (a *ImageAPIService) DeleteCustomSplashscreenExecute(r ApiDeleteCustomSplas
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteItemImageRequest struct {
+type ImageAPIDeleteItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -133,12 +133,12 @@ type ApiDeleteItemImageRequest struct {
 }
 
 // The image index.
-func (r ApiDeleteItemImageRequest) ImageIndex(imageIndex int32) ApiDeleteItemImageRequest {
+func (r ImageAPIDeleteItemImageRequest) ImageIndex(imageIndex int32) ImageAPIDeleteItemImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiDeleteItemImageRequest) Execute() (*http.Response, error) {
+func (r ImageAPIDeleteItemImageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteItemImageExecute(r)
 }
 
@@ -148,10 +148,10 @@ DeleteItemImage Delete an item's image.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
  @param imageType Image type.
- @return ApiDeleteItemImageRequest
+ @return ImageAPIDeleteItemImageRequest
 */
-func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiDeleteItemImageRequest {
-	return ApiDeleteItemImageRequest{
+func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ImageAPIDeleteItemImageRequest {
+	return ImageAPIDeleteItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -160,7 +160,7 @@ func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, im
 }
 
 // Execute executes the request
-func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*http.Response, error) {
+func (a *ImageAPIService) DeleteItemImageExecute(r ImageAPIDeleteItemImageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -253,7 +253,7 @@ func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteItemImageByIndexRequest struct {
+type ImageAPIDeleteItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -261,7 +261,7 @@ type ApiDeleteItemImageByIndexRequest struct {
 	imageIndex int32
 }
 
-func (r ApiDeleteItemImageByIndexRequest) Execute() (*http.Response, error) {
+func (r ImageAPIDeleteItemImageByIndexRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteItemImageByIndexExecute(r)
 }
 
@@ -272,10 +272,10 @@ DeleteItemImageByIndex Delete an item's image.
  @param itemId Item id.
  @param imageType Image type.
  @param imageIndex The image index.
- @return ApiDeleteItemImageByIndexRequest
+ @return ImageAPIDeleteItemImageByIndexRequest
 */
-func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiDeleteItemImageByIndexRequest {
-	return ApiDeleteItemImageByIndexRequest{
+func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ImageAPIDeleteItemImageByIndexRequest {
+	return ImageAPIDeleteItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -285,7 +285,7 @@ func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId str
 }
 
 // Execute executes the request
-func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIndexRequest) (*http.Response, error) {
+func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ImageAPIDeleteItemImageByIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -376,19 +376,19 @@ func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIn
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteUserImageRequest struct {
+type ImageAPIDeleteUserImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	userId *string
 }
 
 // User Id.
-func (r ApiDeleteUserImageRequest) UserId(userId string) ApiDeleteUserImageRequest {
+func (r ImageAPIDeleteUserImageRequest) UserId(userId string) ImageAPIDeleteUserImageRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiDeleteUserImageRequest) Execute() (*http.Response, error) {
+func (r ImageAPIDeleteUserImageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteUserImageExecute(r)
 }
 
@@ -396,17 +396,17 @@ func (r ApiDeleteUserImageRequest) Execute() (*http.Response, error) {
 DeleteUserImage Delete the user's image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteUserImageRequest
+ @return ImageAPIDeleteUserImageRequest
 */
-func (a *ImageAPIService) DeleteUserImage(ctx context.Context) ApiDeleteUserImageRequest {
-	return ApiDeleteUserImageRequest{
+func (a *ImageAPIService) DeleteUserImage(ctx context.Context) ImageAPIDeleteUserImageRequest {
+	return ImageAPIDeleteUserImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*http.Response, error) {
+func (a *ImageAPIService) DeleteUserImageExecute(r ImageAPIDeleteUserImageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -497,7 +497,7 @@ func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetArtistImageRequest struct {
+type ImageAPIGetArtistImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -520,90 +520,90 @@ type ApiGetArtistImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetArtistImageRequest) Tag(tag string) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Tag(tag string) ImageAPIGetArtistImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetArtistImageRequest) Format(format JellyfinImageFormat) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Format(format JellyfinImageFormat) ImageAPIGetArtistImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetArtistImageRequest) MaxWidth(maxWidth int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) MaxWidth(maxWidth int32) ImageAPIGetArtistImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetArtistImageRequest) MaxHeight(maxHeight int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) MaxHeight(maxHeight int32) ImageAPIGetArtistImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetArtistImageRequest) PercentPlayed(percentPlayed float64) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetArtistImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetArtistImageRequest) UnplayedCount(unplayedCount int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetArtistImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetArtistImageRequest) Width(width int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Width(width int32) ImageAPIGetArtistImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetArtistImageRequest) Height(height int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Height(height int32) ImageAPIGetArtistImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetArtistImageRequest) Quality(quality int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Quality(quality int32) ImageAPIGetArtistImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetArtistImageRequest) FillWidth(fillWidth int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) FillWidth(fillWidth int32) ImageAPIGetArtistImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetArtistImageRequest) FillHeight(fillHeight int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) FillHeight(fillHeight int32) ImageAPIGetArtistImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetArtistImageRequest) Blur(blur int32) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) Blur(blur int32) ImageAPIGetArtistImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetArtistImageRequest) BackgroundColor(backgroundColor string) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetArtistImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetArtistImageRequest) ForegroundLayer(foregroundLayer string) ApiGetArtistImageRequest {
+func (r ImageAPIGetArtistImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetArtistImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetArtistImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetArtistImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetArtistImageExecute(r)
 }
 
@@ -614,10 +614,10 @@ GetArtistImage Get artist image by name.
  @param name Artist name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetArtistImageRequest
+ @return ImageAPIGetArtistImageRequest
 */
-func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetArtistImageRequest {
-	return ApiGetArtistImageRequest{
+func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetArtistImageRequest {
+	return ImageAPIGetArtistImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -628,7 +628,7 @@ func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, image
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetArtistImageExecute(r ImageAPIGetArtistImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -756,7 +756,7 @@ func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetGenreImageRequest struct {
+type ImageAPIGetGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -779,96 +779,96 @@ type ApiGetGenreImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetGenreImageRequest) Tag(tag string) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Tag(tag string) ImageAPIGetGenreImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetGenreImageRequest) Format(format JellyfinImageFormat) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Format(format JellyfinImageFormat) ImageAPIGetGenreImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetGenreImageRequest) MaxWidth(maxWidth int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) MaxWidth(maxWidth int32) ImageAPIGetGenreImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetGenreImageRequest) MaxHeight(maxHeight int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) MaxHeight(maxHeight int32) ImageAPIGetGenreImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetGenreImageRequest) PercentPlayed(percentPlayed float64) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetGenreImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetGenreImageRequest) UnplayedCount(unplayedCount int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetGenreImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetGenreImageRequest) Width(width int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Width(width int32) ImageAPIGetGenreImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetGenreImageRequest) Height(height int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Height(height int32) ImageAPIGetGenreImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetGenreImageRequest) Quality(quality int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Quality(quality int32) ImageAPIGetGenreImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetGenreImageRequest) FillWidth(fillWidth int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) FillWidth(fillWidth int32) ImageAPIGetGenreImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetGenreImageRequest) FillHeight(fillHeight int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) FillHeight(fillHeight int32) ImageAPIGetGenreImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetGenreImageRequest) Blur(blur int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) Blur(blur int32) ImageAPIGetGenreImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetGenreImageRequest) BackgroundColor(backgroundColor string) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetGenreImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetGenreImageRequest) ForegroundLayer(foregroundLayer string) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetGenreImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetGenreImageRequest) ImageIndex(imageIndex int32) ApiGetGenreImageRequest {
+func (r ImageAPIGetGenreImageRequest) ImageIndex(imageIndex int32) ImageAPIGetGenreImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetGenreImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetGenreImageExecute(r)
 }
 
@@ -878,10 +878,10 @@ GetGenreImage Get genre image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Genre name.
  @param imageType Image type.
- @return ApiGetGenreImageRequest
+ @return ImageAPIGetGenreImageRequest
 */
-func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetGenreImageRequest {
-	return ApiGetGenreImageRequest{
+func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIGetGenreImageRequest {
+	return ImageAPIGetGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -891,7 +891,7 @@ func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageT
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetGenreImageExecute(r ImageAPIGetGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1021,7 +1021,7 @@ func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.F
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetGenreImageByIndexRequest struct {
+type ImageAPIGetGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -1044,90 +1044,90 @@ type ApiGetGenreImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetGenreImageByIndexRequest) Tag(tag string) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Tag(tag string) ImageAPIGetGenreImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIGetGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetGenreImageByIndexRequest) MaxWidth(maxWidth int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIGetGenreImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetGenreImageByIndexRequest) MaxHeight(maxHeight int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIGetGenreImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIGetGenreImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIGetGenreImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetGenreImageByIndexRequest) Width(width int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Width(width int32) ImageAPIGetGenreImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetGenreImageByIndexRequest) Height(height int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Height(height int32) ImageAPIGetGenreImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetGenreImageByIndexRequest) Quality(quality int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Quality(quality int32) ImageAPIGetGenreImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetGenreImageByIndexRequest) FillWidth(fillWidth int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIGetGenreImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetGenreImageByIndexRequest) FillHeight(fillHeight int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIGetGenreImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetGenreImageByIndexRequest) Blur(blur int32) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) Blur(blur int32) ImageAPIGetGenreImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIGetGenreImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiGetGenreImageByIndexRequest {
+func (r ImageAPIGetGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetGenreImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetGenreImageByIndexExecute(r)
 }
 
@@ -1138,10 +1138,10 @@ GetGenreImageByIndex Get genre image by name.
  @param name Genre name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetGenreImageByIndexRequest
+ @return ImageAPIGetGenreImageByIndexRequest
 */
-func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetGenreImageByIndexRequest {
-	return ApiGetGenreImageByIndexRequest{
+func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetGenreImageByIndexRequest {
+	return ImageAPIGetGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -1152,7 +1152,7 @@ func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string,
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetGenreImageByIndexExecute(r ImageAPIGetGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1280,7 +1280,7 @@ func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemImageRequest struct {
+type ImageAPIGetItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -1303,96 +1303,96 @@ type ApiGetItemImageRequest struct {
 }
 
 // The maximum image width to return.
-func (r ApiGetItemImageRequest) MaxWidth(maxWidth int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) MaxWidth(maxWidth int32) ImageAPIGetItemImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetItemImageRequest) MaxHeight(maxHeight int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) MaxHeight(maxHeight int32) ImageAPIGetItemImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetItemImageRequest) Width(width int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Width(width int32) ImageAPIGetItemImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetItemImageRequest) Height(height int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Height(height int32) ImageAPIGetItemImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetItemImageRequest) Quality(quality int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Quality(quality int32) ImageAPIGetItemImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetItemImageRequest) FillWidth(fillWidth int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) FillWidth(fillWidth int32) ImageAPIGetItemImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetItemImageRequest) FillHeight(fillHeight int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) FillHeight(fillHeight int32) ImageAPIGetItemImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetItemImageRequest) Tag(tag string) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Tag(tag string) ImageAPIGetItemImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiGetItemImageRequest) Format(format JellyfinImageFormat) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Format(format JellyfinImageFormat) ImageAPIGetItemImageRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetItemImageRequest) PercentPlayed(percentPlayed float64) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetItemImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetItemImageRequest) UnplayedCount(unplayedCount int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetItemImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetItemImageRequest) Blur(blur int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) Blur(blur int32) ImageAPIGetItemImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetItemImageRequest) BackgroundColor(backgroundColor string) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetItemImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetItemImageRequest) ForegroundLayer(foregroundLayer string) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetItemImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetItemImageRequest) ImageIndex(imageIndex int32) ApiGetItemImageRequest {
+func (r ImageAPIGetItemImageRequest) ImageIndex(imageIndex int32) ImageAPIGetItemImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetItemImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetItemImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetItemImageExecute(r)
 }
 
@@ -1402,10 +1402,10 @@ GetItemImage Gets the item's image.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
  @param imageType Image type.
- @return ApiGetItemImageRequest
+ @return ImageAPIGetItemImageRequest
 */
-func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiGetItemImageRequest {
-	return ApiGetItemImageRequest{
+func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ImageAPIGetItemImageRequest {
+	return ImageAPIGetItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1415,7 +1415,7 @@ func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, image
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetItemImageExecute(r ImageAPIGetItemImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1545,7 +1545,7 @@ func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.Fil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemImage2Request struct {
+type ImageAPIGetItemImage2Request struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -1568,54 +1568,54 @@ type ApiGetItemImage2Request struct {
 }
 
 // The fixed image width to return.
-func (r ApiGetItemImage2Request) Width(width int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) Width(width int32) ImageAPIGetItemImage2Request {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetItemImage2Request) Height(height int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) Height(height int32) ImageAPIGetItemImage2Request {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetItemImage2Request) Quality(quality int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) Quality(quality int32) ImageAPIGetItemImage2Request {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetItemImage2Request) FillWidth(fillWidth int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) FillWidth(fillWidth int32) ImageAPIGetItemImage2Request {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetItemImage2Request) FillHeight(fillHeight int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) FillHeight(fillHeight int32) ImageAPIGetItemImage2Request {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetItemImage2Request) Blur(blur int32) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) Blur(blur int32) ImageAPIGetItemImage2Request {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetItemImage2Request) BackgroundColor(backgroundColor string) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) BackgroundColor(backgroundColor string) ImageAPIGetItemImage2Request {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetItemImage2Request) ForegroundLayer(foregroundLayer string) ApiGetItemImage2Request {
+func (r ImageAPIGetItemImage2Request) ForegroundLayer(foregroundLayer string) ImageAPIGetItemImage2Request {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetItemImage2Request) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetItemImage2Request) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetItemImage2Execute(r)
 }
 
@@ -1632,10 +1632,10 @@ GetItemImage2 Gets the item's image.
  @param percentPlayed Optional. Percent to render for the percent played overlay.
  @param unplayedCount Optional. Unplayed count overlay to render.
  @param imageIndex Image index.
- @return ApiGetItemImage2Request
+ @return ImageAPIGetItemImage2Request
 */
-func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiGetItemImage2Request {
-	return ApiGetItemImage2Request{
+func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ImageAPIGetItemImage2Request {
+	return ImageAPIGetItemImage2Request{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1652,7 +1652,7 @@ func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imag
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetItemImage2Execute(r ImageAPIGetItemImage2Request) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1768,7 +1768,7 @@ func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.F
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemImageByIndexRequest struct {
+type ImageAPIGetItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -1791,90 +1791,90 @@ type ApiGetItemImageByIndexRequest struct {
 }
 
 // The maximum image width to return.
-func (r ApiGetItemImageByIndexRequest) MaxWidth(maxWidth int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIGetItemImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetItemImageByIndexRequest) MaxHeight(maxHeight int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIGetItemImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetItemImageByIndexRequest) Width(width int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Width(width int32) ImageAPIGetItemImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetItemImageByIndexRequest) Height(height int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Height(height int32) ImageAPIGetItemImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetItemImageByIndexRequest) Quality(quality int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Quality(quality int32) ImageAPIGetItemImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetItemImageByIndexRequest) FillWidth(fillWidth int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIGetItemImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetItemImageByIndexRequest) FillHeight(fillHeight int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIGetItemImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetItemImageByIndexRequest) Tag(tag string) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Tag(tag string) ImageAPIGetItemImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiGetItemImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIGetItemImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetItemImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIGetItemImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetItemImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIGetItemImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetItemImageByIndexRequest) Blur(blur int32) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) Blur(blur int32) ImageAPIGetItemImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetItemImageByIndexRequest) BackgroundColor(backgroundColor string) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIGetItemImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetItemImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiGetItemImageByIndexRequest {
+func (r ImageAPIGetItemImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetItemImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetItemImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetItemImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetItemImageByIndexExecute(r)
 }
 
@@ -1885,10 +1885,10 @@ GetItemImageByIndex Gets the item's image.
  @param itemId Item id.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetItemImageByIndexRequest
+ @return ImageAPIGetItemImageByIndexRequest
 */
-func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiGetItemImageByIndexRequest {
-	return ApiGetItemImageByIndexRequest{
+func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetItemImageByIndexRequest {
+	return ImageAPIGetItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1899,7 +1899,7 @@ func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetItemImageByIndexExecute(r ImageAPIGetItemImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2027,13 +2027,13 @@ func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemImageInfosRequest struct {
+type ImageAPIGetItemImageInfosRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
 }
 
-func (r ApiGetItemImageInfosRequest) Execute() ([]JellyfinImageInfo, *http.Response, error) {
+func (r ImageAPIGetItemImageInfosRequest) Execute() ([]JellyfinImageInfo, *http.Response, error) {
 	return r.ApiService.GetItemImageInfosExecute(r)
 }
 
@@ -2042,10 +2042,10 @@ GetItemImageInfos Get item image infos.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetItemImageInfosRequest
+ @return ImageAPIGetItemImageInfosRequest
 */
-func (a *ImageAPIService) GetItemImageInfos(ctx context.Context, itemId string) ApiGetItemImageInfosRequest {
-	return ApiGetItemImageInfosRequest{
+func (a *ImageAPIService) GetItemImageInfos(ctx context.Context, itemId string) ImageAPIGetItemImageInfosRequest {
+	return ImageAPIGetItemImageInfosRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2054,7 +2054,7 @@ func (a *ImageAPIService) GetItemImageInfos(ctx context.Context, itemId string) 
 
 // Execute executes the request
 //  @return []JellyfinImageInfo
-func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest) ([]JellyfinImageInfo, *http.Response, error) {
+func (a *ImageAPIService) GetItemImageInfosExecute(r ImageAPIGetItemImageInfosRequest) ([]JellyfinImageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2153,7 +2153,7 @@ func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicGenreImageRequest struct {
+type ImageAPIGetMusicGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -2176,96 +2176,96 @@ type ApiGetMusicGenreImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetMusicGenreImageRequest) Tag(tag string) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Tag(tag string) ImageAPIGetMusicGenreImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetMusicGenreImageRequest) Format(format JellyfinImageFormat) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Format(format JellyfinImageFormat) ImageAPIGetMusicGenreImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetMusicGenreImageRequest) MaxWidth(maxWidth int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) MaxWidth(maxWidth int32) ImageAPIGetMusicGenreImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetMusicGenreImageRequest) MaxHeight(maxHeight int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) MaxHeight(maxHeight int32) ImageAPIGetMusicGenreImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetMusicGenreImageRequest) PercentPlayed(percentPlayed float64) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetMusicGenreImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetMusicGenreImageRequest) UnplayedCount(unplayedCount int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetMusicGenreImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetMusicGenreImageRequest) Width(width int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Width(width int32) ImageAPIGetMusicGenreImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetMusicGenreImageRequest) Height(height int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Height(height int32) ImageAPIGetMusicGenreImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetMusicGenreImageRequest) Quality(quality int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Quality(quality int32) ImageAPIGetMusicGenreImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetMusicGenreImageRequest) FillWidth(fillWidth int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) FillWidth(fillWidth int32) ImageAPIGetMusicGenreImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetMusicGenreImageRequest) FillHeight(fillHeight int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) FillHeight(fillHeight int32) ImageAPIGetMusicGenreImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetMusicGenreImageRequest) Blur(blur int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) Blur(blur int32) ImageAPIGetMusicGenreImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetMusicGenreImageRequest) BackgroundColor(backgroundColor string) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetMusicGenreImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetMusicGenreImageRequest) ForegroundLayer(foregroundLayer string) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetMusicGenreImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetMusicGenreImageRequest) ImageIndex(imageIndex int32) ApiGetMusicGenreImageRequest {
+func (r ImageAPIGetMusicGenreImageRequest) ImageIndex(imageIndex int32) ImageAPIGetMusicGenreImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetMusicGenreImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetMusicGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetMusicGenreImageExecute(r)
 }
 
@@ -2275,10 +2275,10 @@ GetMusicGenreImage Get music genre image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Music genre name.
  @param imageType Image type.
- @return ApiGetMusicGenreImageRequest
+ @return ImageAPIGetMusicGenreImageRequest
 */
-func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetMusicGenreImageRequest {
-	return ApiGetMusicGenreImageRequest{
+func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIGetMusicGenreImageRequest {
+	return ImageAPIGetMusicGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -2288,7 +2288,7 @@ func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, i
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetMusicGenreImageExecute(r ImageAPIGetMusicGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2418,7 +2418,7 @@ func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicGenreImageByIndexRequest struct {
+type ImageAPIGetMusicGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -2441,90 +2441,90 @@ type ApiGetMusicGenreImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetMusicGenreImageByIndexRequest) Tag(tag string) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Tag(tag string) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetMusicGenreImageByIndexRequest) MaxWidth(maxWidth int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetMusicGenreImageByIndexRequest) MaxHeight(maxHeight int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetMusicGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetMusicGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetMusicGenreImageByIndexRequest) Width(width int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Width(width int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetMusicGenreImageByIndexRequest) Height(height int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Height(height int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetMusicGenreImageByIndexRequest) Quality(quality int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Quality(quality int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetMusicGenreImageByIndexRequest) FillWidth(fillWidth int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetMusicGenreImageByIndexRequest) FillHeight(fillHeight int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetMusicGenreImageByIndexRequest) Blur(blur int32) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Blur(blur int32) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetMusicGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetMusicGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiGetMusicGenreImageByIndexRequest {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetMusicGenreImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetMusicGenreImageByIndexExecute(r)
 }
 
@@ -2535,10 +2535,10 @@ GetMusicGenreImageByIndex Get music genre image by name.
  @param name Music genre name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetMusicGenreImageByIndexRequest
+ @return ImageAPIGetMusicGenreImageByIndexRequest
 */
-func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetMusicGenreImageByIndexRequest {
-	return ApiGetMusicGenreImageByIndexRequest{
+func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetMusicGenreImageByIndexRequest {
+	return ImageAPIGetMusicGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -2549,7 +2549,7 @@ func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name st
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ImageAPIGetMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2677,7 +2677,7 @@ func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreIma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPersonImageRequest struct {
+type ImageAPIGetPersonImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -2700,96 +2700,96 @@ type ApiGetPersonImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetPersonImageRequest) Tag(tag string) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Tag(tag string) ImageAPIGetPersonImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetPersonImageRequest) Format(format JellyfinImageFormat) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Format(format JellyfinImageFormat) ImageAPIGetPersonImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetPersonImageRequest) MaxWidth(maxWidth int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) MaxWidth(maxWidth int32) ImageAPIGetPersonImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetPersonImageRequest) MaxHeight(maxHeight int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) MaxHeight(maxHeight int32) ImageAPIGetPersonImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetPersonImageRequest) PercentPlayed(percentPlayed float64) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetPersonImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetPersonImageRequest) UnplayedCount(unplayedCount int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetPersonImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetPersonImageRequest) Width(width int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Width(width int32) ImageAPIGetPersonImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetPersonImageRequest) Height(height int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Height(height int32) ImageAPIGetPersonImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetPersonImageRequest) Quality(quality int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Quality(quality int32) ImageAPIGetPersonImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetPersonImageRequest) FillWidth(fillWidth int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) FillWidth(fillWidth int32) ImageAPIGetPersonImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetPersonImageRequest) FillHeight(fillHeight int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) FillHeight(fillHeight int32) ImageAPIGetPersonImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetPersonImageRequest) Blur(blur int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) Blur(blur int32) ImageAPIGetPersonImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetPersonImageRequest) BackgroundColor(backgroundColor string) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetPersonImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetPersonImageRequest) ForegroundLayer(foregroundLayer string) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetPersonImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetPersonImageRequest) ImageIndex(imageIndex int32) ApiGetPersonImageRequest {
+func (r ImageAPIGetPersonImageRequest) ImageIndex(imageIndex int32) ImageAPIGetPersonImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetPersonImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetPersonImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetPersonImageExecute(r)
 }
 
@@ -2799,10 +2799,10 @@ GetPersonImage Get person image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Person name.
  @param imageType Image type.
- @return ApiGetPersonImageRequest
+ @return ImageAPIGetPersonImageRequest
 */
-func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetPersonImageRequest {
-	return ApiGetPersonImageRequest{
+func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIGetPersonImageRequest {
+	return ImageAPIGetPersonImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -2812,7 +2812,7 @@ func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, image
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetPersonImageExecute(r ImageAPIGetPersonImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2942,7 +2942,7 @@ func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPersonImageByIndexRequest struct {
+type ImageAPIGetPersonImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -2965,90 +2965,90 @@ type ApiGetPersonImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetPersonImageByIndexRequest) Tag(tag string) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Tag(tag string) ImageAPIGetPersonImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetPersonImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIGetPersonImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetPersonImageByIndexRequest) MaxWidth(maxWidth int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIGetPersonImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetPersonImageByIndexRequest) MaxHeight(maxHeight int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIGetPersonImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetPersonImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIGetPersonImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetPersonImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIGetPersonImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetPersonImageByIndexRequest) Width(width int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Width(width int32) ImageAPIGetPersonImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetPersonImageByIndexRequest) Height(height int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Height(height int32) ImageAPIGetPersonImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetPersonImageByIndexRequest) Quality(quality int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Quality(quality int32) ImageAPIGetPersonImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetPersonImageByIndexRequest) FillWidth(fillWidth int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIGetPersonImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetPersonImageByIndexRequest) FillHeight(fillHeight int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIGetPersonImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetPersonImageByIndexRequest) Blur(blur int32) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) Blur(blur int32) ImageAPIGetPersonImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetPersonImageByIndexRequest) BackgroundColor(backgroundColor string) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIGetPersonImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetPersonImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiGetPersonImageByIndexRequest {
+func (r ImageAPIGetPersonImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetPersonImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetPersonImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetPersonImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetPersonImageByIndexExecute(r)
 }
 
@@ -3059,10 +3059,10 @@ GetPersonImageByIndex Get person image by name.
  @param name Person name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetPersonImageByIndexRequest
+ @return ImageAPIGetPersonImageByIndexRequest
 */
-func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetPersonImageByIndexRequest {
-	return ApiGetPersonImageByIndexRequest{
+func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetPersonImageByIndexRequest {
+	return ImageAPIGetPersonImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -3073,7 +3073,7 @@ func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetPersonImageByIndexExecute(r ImageAPIGetPersonImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3201,7 +3201,7 @@ func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByInde
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSplashscreenRequest struct {
+type ImageAPIGetSplashscreenRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	tag *string
@@ -3219,78 +3219,78 @@ type ApiGetSplashscreenRequest struct {
 }
 
 // Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetSplashscreenRequest) Tag(tag string) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Tag(tag string) ImageAPIGetSplashscreenRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetSplashscreenRequest) Format(format JellyfinImageFormat) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Format(format JellyfinImageFormat) ImageAPIGetSplashscreenRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetSplashscreenRequest) MaxWidth(maxWidth int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) MaxWidth(maxWidth int32) ImageAPIGetSplashscreenRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetSplashscreenRequest) MaxHeight(maxHeight int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) MaxHeight(maxHeight int32) ImageAPIGetSplashscreenRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetSplashscreenRequest) Width(width int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Width(width int32) ImageAPIGetSplashscreenRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetSplashscreenRequest) Height(height int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Height(height int32) ImageAPIGetSplashscreenRequest {
 	r.height = &height
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetSplashscreenRequest) FillWidth(fillWidth int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) FillWidth(fillWidth int32) ImageAPIGetSplashscreenRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetSplashscreenRequest) FillHeight(fillHeight int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) FillHeight(fillHeight int32) ImageAPIGetSplashscreenRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Blur image.
-func (r ApiGetSplashscreenRequest) Blur(blur int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Blur(blur int32) ImageAPIGetSplashscreenRequest {
 	r.blur = &blur
 	return r
 }
 
 // Apply a background color for transparent images.
-func (r ApiGetSplashscreenRequest) BackgroundColor(backgroundColor string) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) BackgroundColor(backgroundColor string) ImageAPIGetSplashscreenRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Apply a foreground layer on top of the image.
-func (r ApiGetSplashscreenRequest) ForegroundLayer(foregroundLayer string) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetSplashscreenRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Quality setting, from 0-100.
-func (r ApiGetSplashscreenRequest) Quality(quality int32) ApiGetSplashscreenRequest {
+func (r ImageAPIGetSplashscreenRequest) Quality(quality int32) ImageAPIGetSplashscreenRequest {
 	r.quality = &quality
 	return r
 }
 
-func (r ApiGetSplashscreenRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetSplashscreenRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetSplashscreenExecute(r)
 }
 
@@ -3298,10 +3298,10 @@ func (r ApiGetSplashscreenRequest) Execute() (*os.File, *http.Response, error) {
 GetSplashscreen Generates or gets the splashscreen.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSplashscreenRequest
+ @return ImageAPIGetSplashscreenRequest
 */
-func (a *ImageAPIService) GetSplashscreen(ctx context.Context) ApiGetSplashscreenRequest {
-	return ApiGetSplashscreenRequest{
+func (a *ImageAPIService) GetSplashscreen(ctx context.Context) ImageAPIGetSplashscreenRequest {
+	return ImageAPIGetSplashscreenRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3309,7 +3309,7 @@ func (a *ImageAPIService) GetSplashscreen(ctx context.Context) ApiGetSplashscree
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetSplashscreenExecute(r ApiGetSplashscreenRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetSplashscreenExecute(r ImageAPIGetSplashscreenRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3421,7 +3421,7 @@ func (a *ImageAPIService) GetSplashscreenExecute(r ApiGetSplashscreenRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStudioImageRequest struct {
+type ImageAPIGetStudioImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -3444,96 +3444,96 @@ type ApiGetStudioImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetStudioImageRequest) Tag(tag string) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Tag(tag string) ImageAPIGetStudioImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetStudioImageRequest) Format(format JellyfinImageFormat) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Format(format JellyfinImageFormat) ImageAPIGetStudioImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetStudioImageRequest) MaxWidth(maxWidth int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) MaxWidth(maxWidth int32) ImageAPIGetStudioImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetStudioImageRequest) MaxHeight(maxHeight int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) MaxHeight(maxHeight int32) ImageAPIGetStudioImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetStudioImageRequest) PercentPlayed(percentPlayed float64) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetStudioImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetStudioImageRequest) UnplayedCount(unplayedCount int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetStudioImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetStudioImageRequest) Width(width int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Width(width int32) ImageAPIGetStudioImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetStudioImageRequest) Height(height int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Height(height int32) ImageAPIGetStudioImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetStudioImageRequest) Quality(quality int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Quality(quality int32) ImageAPIGetStudioImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetStudioImageRequest) FillWidth(fillWidth int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) FillWidth(fillWidth int32) ImageAPIGetStudioImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetStudioImageRequest) FillHeight(fillHeight int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) FillHeight(fillHeight int32) ImageAPIGetStudioImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetStudioImageRequest) Blur(blur int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) Blur(blur int32) ImageAPIGetStudioImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetStudioImageRequest) BackgroundColor(backgroundColor string) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetStudioImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetStudioImageRequest) ForegroundLayer(foregroundLayer string) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetStudioImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetStudioImageRequest) ImageIndex(imageIndex int32) ApiGetStudioImageRequest {
+func (r ImageAPIGetStudioImageRequest) ImageIndex(imageIndex int32) ImageAPIGetStudioImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetStudioImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetStudioImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetStudioImageExecute(r)
 }
 
@@ -3543,10 +3543,10 @@ GetStudioImage Get studio image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Studio name.
  @param imageType Image type.
- @return ApiGetStudioImageRequest
+ @return ImageAPIGetStudioImageRequest
 */
-func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetStudioImageRequest {
-	return ApiGetStudioImageRequest{
+func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIGetStudioImageRequest {
+	return ImageAPIGetStudioImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -3556,7 +3556,7 @@ func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, image
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetStudioImageExecute(r ImageAPIGetStudioImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3686,7 +3686,7 @@ func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStudioImageByIndexRequest struct {
+type ImageAPIGetStudioImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -3709,90 +3709,90 @@ type ApiGetStudioImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetStudioImageByIndexRequest) Tag(tag string) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Tag(tag string) ImageAPIGetStudioImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetStudioImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIGetStudioImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetStudioImageByIndexRequest) MaxWidth(maxWidth int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIGetStudioImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetStudioImageByIndexRequest) MaxHeight(maxHeight int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIGetStudioImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetStudioImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIGetStudioImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetStudioImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIGetStudioImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetStudioImageByIndexRequest) Width(width int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Width(width int32) ImageAPIGetStudioImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetStudioImageByIndexRequest) Height(height int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Height(height int32) ImageAPIGetStudioImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetStudioImageByIndexRequest) Quality(quality int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Quality(quality int32) ImageAPIGetStudioImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetStudioImageByIndexRequest) FillWidth(fillWidth int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIGetStudioImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetStudioImageByIndexRequest) FillHeight(fillHeight int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIGetStudioImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetStudioImageByIndexRequest) Blur(blur int32) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) Blur(blur int32) ImageAPIGetStudioImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetStudioImageByIndexRequest) BackgroundColor(backgroundColor string) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIGetStudioImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetStudioImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiGetStudioImageByIndexRequest {
+func (r ImageAPIGetStudioImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetStudioImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiGetStudioImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetStudioImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetStudioImageByIndexExecute(r)
 }
 
@@ -3803,10 +3803,10 @@ GetStudioImageByIndex Get studio image by name.
  @param name Studio name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiGetStudioImageByIndexRequest
+ @return ImageAPIGetStudioImageByIndexRequest
 */
-func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetStudioImageByIndexRequest {
-	return ApiGetStudioImageByIndexRequest{
+func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIGetStudioImageByIndexRequest {
+	return ImageAPIGetStudioImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -3817,7 +3817,7 @@ func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetStudioImageByIndexExecute(r ImageAPIGetStudioImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3945,7 +3945,7 @@ func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByInde
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUserImageRequest struct {
+type ImageAPIGetUserImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	userId *string
@@ -3967,102 +3967,102 @@ type ApiGetUserImageRequest struct {
 }
 
 // User id.
-func (r ApiGetUserImageRequest) UserId(userId string) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) UserId(userId string) ImageAPIGetUserImageRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiGetUserImageRequest) Tag(tag string) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Tag(tag string) ImageAPIGetUserImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetUserImageRequest) Format(format JellyfinImageFormat) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Format(format JellyfinImageFormat) ImageAPIGetUserImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiGetUserImageRequest) MaxWidth(maxWidth int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) MaxWidth(maxWidth int32) ImageAPIGetUserImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiGetUserImageRequest) MaxHeight(maxHeight int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) MaxHeight(maxHeight int32) ImageAPIGetUserImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiGetUserImageRequest) PercentPlayed(percentPlayed float64) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) PercentPlayed(percentPlayed float64) ImageAPIGetUserImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiGetUserImageRequest) UnplayedCount(unplayedCount int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) UnplayedCount(unplayedCount int32) ImageAPIGetUserImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiGetUserImageRequest) Width(width int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Width(width int32) ImageAPIGetUserImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiGetUserImageRequest) Height(height int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Height(height int32) ImageAPIGetUserImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiGetUserImageRequest) Quality(quality int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Quality(quality int32) ImageAPIGetUserImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiGetUserImageRequest) FillWidth(fillWidth int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) FillWidth(fillWidth int32) ImageAPIGetUserImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiGetUserImageRequest) FillHeight(fillHeight int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) FillHeight(fillHeight int32) ImageAPIGetUserImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiGetUserImageRequest) Blur(blur int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) Blur(blur int32) ImageAPIGetUserImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiGetUserImageRequest) BackgroundColor(backgroundColor string) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) BackgroundColor(backgroundColor string) ImageAPIGetUserImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiGetUserImageRequest) ForegroundLayer(foregroundLayer string) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIGetUserImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiGetUserImageRequest) ImageIndex(imageIndex int32) ApiGetUserImageRequest {
+func (r ImageAPIGetUserImageRequest) ImageIndex(imageIndex int32) ImageAPIGetUserImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiGetUserImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIGetUserImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetUserImageExecute(r)
 }
 
@@ -4070,10 +4070,10 @@ func (r ApiGetUserImageRequest) Execute() (*os.File, *http.Response, error) {
 GetUserImage Get user profile image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserImageRequest
+ @return ImageAPIGetUserImageRequest
 */
-func (a *ImageAPIService) GetUserImage(ctx context.Context) ApiGetUserImageRequest {
-	return ApiGetUserImageRequest{
+func (a *ImageAPIService) GetUserImage(ctx context.Context) ImageAPIGetUserImageRequest {
+	return ImageAPIGetUserImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4081,7 +4081,7 @@ func (a *ImageAPIService) GetUserImage(ctx context.Context) ApiGetUserImageReque
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) GetUserImageExecute(r ImageAPIGetUserImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4223,7 +4223,7 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadArtistImageRequest struct {
+type ImageAPIHeadArtistImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -4246,90 +4246,90 @@ type ApiHeadArtistImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadArtistImageRequest) Tag(tag string) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Tag(tag string) ImageAPIHeadArtistImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadArtistImageRequest) Format(format JellyfinImageFormat) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadArtistImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadArtistImageRequest) MaxWidth(maxWidth int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadArtistImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadArtistImageRequest) MaxHeight(maxHeight int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadArtistImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadArtistImageRequest) PercentPlayed(percentPlayed float64) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadArtistImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadArtistImageRequest) UnplayedCount(unplayedCount int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadArtistImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadArtistImageRequest) Width(width int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Width(width int32) ImageAPIHeadArtistImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadArtistImageRequest) Height(height int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Height(height int32) ImageAPIHeadArtistImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadArtistImageRequest) Quality(quality int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Quality(quality int32) ImageAPIHeadArtistImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadArtistImageRequest) FillWidth(fillWidth int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) FillWidth(fillWidth int32) ImageAPIHeadArtistImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadArtistImageRequest) FillHeight(fillHeight int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) FillHeight(fillHeight int32) ImageAPIHeadArtistImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadArtistImageRequest) Blur(blur int32) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) Blur(blur int32) ImageAPIHeadArtistImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadArtistImageRequest) BackgroundColor(backgroundColor string) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadArtistImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadArtistImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadArtistImageRequest {
+func (r ImageAPIHeadArtistImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadArtistImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadArtistImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadArtistImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadArtistImageExecute(r)
 }
 
@@ -4340,10 +4340,10 @@ HeadArtistImage Get artist image by name.
  @param name Artist name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadArtistImageRequest
+ @return ImageAPIHeadArtistImageRequest
 */
-func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadArtistImageRequest {
-	return ApiHeadArtistImageRequest{
+func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadArtistImageRequest {
+	return ImageAPIHeadArtistImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -4354,7 +4354,7 @@ func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imag
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadArtistImageExecute(r ImageAPIHeadArtistImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -4482,7 +4482,7 @@ func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadGenreImageRequest struct {
+type ImageAPIHeadGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -4505,96 +4505,96 @@ type ApiHeadGenreImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadGenreImageRequest) Tag(tag string) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Tag(tag string) ImageAPIHeadGenreImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadGenreImageRequest) Format(format JellyfinImageFormat) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadGenreImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadGenreImageRequest) MaxWidth(maxWidth int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadGenreImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadGenreImageRequest) MaxHeight(maxHeight int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadGenreImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadGenreImageRequest) PercentPlayed(percentPlayed float64) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadGenreImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadGenreImageRequest) UnplayedCount(unplayedCount int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadGenreImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadGenreImageRequest) Width(width int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Width(width int32) ImageAPIHeadGenreImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadGenreImageRequest) Height(height int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Height(height int32) ImageAPIHeadGenreImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadGenreImageRequest) Quality(quality int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Quality(quality int32) ImageAPIHeadGenreImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadGenreImageRequest) FillWidth(fillWidth int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) FillWidth(fillWidth int32) ImageAPIHeadGenreImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadGenreImageRequest) FillHeight(fillHeight int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) FillHeight(fillHeight int32) ImageAPIHeadGenreImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadGenreImageRequest) Blur(blur int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) Blur(blur int32) ImageAPIHeadGenreImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadGenreImageRequest) BackgroundColor(backgroundColor string) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadGenreImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadGenreImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadGenreImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadGenreImageRequest) ImageIndex(imageIndex int32) ApiHeadGenreImageRequest {
+func (r ImageAPIHeadGenreImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadGenreImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadGenreImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadGenreImageExecute(r)
 }
 
@@ -4604,10 +4604,10 @@ HeadGenreImage Get genre image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Genre name.
  @param imageType Image type.
- @return ApiHeadGenreImageRequest
+ @return ImageAPIHeadGenreImageRequest
 */
-func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadGenreImageRequest {
-	return ApiHeadGenreImageRequest{
+func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIHeadGenreImageRequest {
+	return ImageAPIHeadGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -4617,7 +4617,7 @@ func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, image
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadGenreImageExecute(r ImageAPIHeadGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -4747,7 +4747,7 @@ func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadGenreImageByIndexRequest struct {
+type ImageAPIHeadGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -4770,90 +4770,90 @@ type ApiHeadGenreImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadGenreImageByIndexRequest) Tag(tag string) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Tag(tag string) ImageAPIHeadGenreImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIHeadGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadGenreImageByIndexRequest) MaxWidth(maxWidth int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadGenreImageByIndexRequest) MaxHeight(maxHeight int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadGenreImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadGenreImageByIndexRequest) Width(width int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Width(width int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadGenreImageByIndexRequest) Height(height int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Height(height int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadGenreImageByIndexRequest) Quality(quality int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Quality(quality int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadGenreImageByIndexRequest) FillWidth(fillWidth int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadGenreImageByIndexRequest) FillHeight(fillHeight int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadGenreImageByIndexRequest) Blur(blur int32) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) Blur(blur int32) ImageAPIHeadGenreImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIHeadGenreImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiHeadGenreImageByIndexRequest {
+func (r ImageAPIHeadGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadGenreImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadGenreImageByIndexExecute(r)
 }
 
@@ -4864,10 +4864,10 @@ HeadGenreImageByIndex Get genre image by name.
  @param name Genre name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadGenreImageByIndexRequest
+ @return ImageAPIHeadGenreImageByIndexRequest
 */
-func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadGenreImageByIndexRequest {
-	return ApiHeadGenreImageByIndexRequest{
+func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadGenreImageByIndexRequest {
+	return ImageAPIHeadGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -4878,7 +4878,7 @@ func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ImageAPIHeadGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -5006,7 +5006,7 @@ func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByInde
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadItemImageRequest struct {
+type ImageAPIHeadItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -5029,96 +5029,96 @@ type ApiHeadItemImageRequest struct {
 }
 
 // The maximum image width to return.
-func (r ApiHeadItemImageRequest) MaxWidth(maxWidth int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadItemImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadItemImageRequest) MaxHeight(maxHeight int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadItemImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadItemImageRequest) Width(width int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Width(width int32) ImageAPIHeadItemImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadItemImageRequest) Height(height int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Height(height int32) ImageAPIHeadItemImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadItemImageRequest) Quality(quality int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Quality(quality int32) ImageAPIHeadItemImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadItemImageRequest) FillWidth(fillWidth int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) FillWidth(fillWidth int32) ImageAPIHeadItemImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadItemImageRequest) FillHeight(fillHeight int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) FillHeight(fillHeight int32) ImageAPIHeadItemImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadItemImageRequest) Tag(tag string) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Tag(tag string) ImageAPIHeadItemImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiHeadItemImageRequest) Format(format JellyfinImageFormat) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadItemImageRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadItemImageRequest) PercentPlayed(percentPlayed float64) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadItemImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadItemImageRequest) UnplayedCount(unplayedCount int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadItemImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadItemImageRequest) Blur(blur int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) Blur(blur int32) ImageAPIHeadItemImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadItemImageRequest) BackgroundColor(backgroundColor string) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadItemImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadItemImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadItemImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadItemImageRequest) ImageIndex(imageIndex int32) ApiHeadItemImageRequest {
+func (r ImageAPIHeadItemImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadItemImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadItemImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadItemImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadItemImageExecute(r)
 }
 
@@ -5128,10 +5128,10 @@ HeadItemImage Gets the item's image.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
  @param imageType Image type.
- @return ApiHeadItemImageRequest
+ @return ImageAPIHeadItemImageRequest
 */
-func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiHeadItemImageRequest {
-	return ApiHeadItemImageRequest{
+func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ImageAPIHeadItemImageRequest {
+	return ImageAPIHeadItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -5141,7 +5141,7 @@ func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imag
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadItemImageExecute(r ImageAPIHeadItemImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -5271,7 +5271,7 @@ func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.F
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadItemImage2Request struct {
+type ImageAPIHeadItemImage2Request struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -5294,54 +5294,54 @@ type ApiHeadItemImage2Request struct {
 }
 
 // The fixed image width to return.
-func (r ApiHeadItemImage2Request) Width(width int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) Width(width int32) ImageAPIHeadItemImage2Request {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadItemImage2Request) Height(height int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) Height(height int32) ImageAPIHeadItemImage2Request {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadItemImage2Request) Quality(quality int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) Quality(quality int32) ImageAPIHeadItemImage2Request {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadItemImage2Request) FillWidth(fillWidth int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) FillWidth(fillWidth int32) ImageAPIHeadItemImage2Request {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadItemImage2Request) FillHeight(fillHeight int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) FillHeight(fillHeight int32) ImageAPIHeadItemImage2Request {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadItemImage2Request) Blur(blur int32) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) Blur(blur int32) ImageAPIHeadItemImage2Request {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadItemImage2Request) BackgroundColor(backgroundColor string) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) BackgroundColor(backgroundColor string) ImageAPIHeadItemImage2Request {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadItemImage2Request) ForegroundLayer(foregroundLayer string) ApiHeadItemImage2Request {
+func (r ImageAPIHeadItemImage2Request) ForegroundLayer(foregroundLayer string) ImageAPIHeadItemImage2Request {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadItemImage2Request) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadItemImage2Request) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadItemImage2Execute(r)
 }
 
@@ -5358,10 +5358,10 @@ HeadItemImage2 Gets the item's image.
  @param percentPlayed Optional. Percent to render for the percent played overlay.
  @param unplayedCount Optional. Unplayed count overlay to render.
  @param imageIndex Image index.
- @return ApiHeadItemImage2Request
+ @return ImageAPIHeadItemImage2Request
 */
-func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiHeadItemImage2Request {
-	return ApiHeadItemImage2Request{
+func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ImageAPIHeadItemImage2Request {
+	return ImageAPIHeadItemImage2Request{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -5378,7 +5378,7 @@ func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, ima
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadItemImage2Execute(r ImageAPIHeadItemImage2Request) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -5494,7 +5494,7 @@ func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadItemImageByIndexRequest struct {
+type ImageAPIHeadItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -5517,90 +5517,90 @@ type ApiHeadItemImageByIndexRequest struct {
 }
 
 // The maximum image width to return.
-func (r ApiHeadItemImageByIndexRequest) MaxWidth(maxWidth int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIHeadItemImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadItemImageByIndexRequest) MaxHeight(maxHeight int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIHeadItemImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadItemImageByIndexRequest) Width(width int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Width(width int32) ImageAPIHeadItemImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadItemImageByIndexRequest) Height(height int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Height(height int32) ImageAPIHeadItemImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadItemImageByIndexRequest) Quality(quality int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Quality(quality int32) ImageAPIHeadItemImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadItemImageByIndexRequest) FillWidth(fillWidth int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIHeadItemImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadItemImageByIndexRequest) FillHeight(fillHeight int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIHeadItemImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadItemImageByIndexRequest) Tag(tag string) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Tag(tag string) ImageAPIHeadItemImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiHeadItemImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIHeadItemImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadItemImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadItemImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadItemImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadItemImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadItemImageByIndexRequest) Blur(blur int32) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) Blur(blur int32) ImageAPIHeadItemImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadItemImageByIndexRequest) BackgroundColor(backgroundColor string) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIHeadItemImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadItemImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiHeadItemImageByIndexRequest {
+func (r ImageAPIHeadItemImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadItemImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadItemImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadItemImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadItemImageByIndexExecute(r)
 }
 
@@ -5611,10 +5611,10 @@ HeadItemImageByIndex Gets the item's image.
  @param itemId Item id.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadItemImageByIndexRequest
+ @return ImageAPIHeadItemImageByIndexRequest
 */
-func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiHeadItemImageByIndexRequest {
-	return ApiHeadItemImageByIndexRequest{
+func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadItemImageByIndexRequest {
+	return ImageAPIHeadItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -5625,7 +5625,7 @@ func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId strin
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadItemImageByIndexExecute(r ImageAPIHeadItemImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -5753,7 +5753,7 @@ func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadMusicGenreImageRequest struct {
+type ImageAPIHeadMusicGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -5776,96 +5776,96 @@ type ApiHeadMusicGenreImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadMusicGenreImageRequest) Tag(tag string) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Tag(tag string) ImageAPIHeadMusicGenreImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadMusicGenreImageRequest) Format(format JellyfinImageFormat) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadMusicGenreImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadMusicGenreImageRequest) MaxWidth(maxWidth int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadMusicGenreImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadMusicGenreImageRequest) MaxHeight(maxHeight int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadMusicGenreImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadMusicGenreImageRequest) PercentPlayed(percentPlayed float64) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadMusicGenreImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadMusicGenreImageRequest) UnplayedCount(unplayedCount int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadMusicGenreImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadMusicGenreImageRequest) Width(width int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Width(width int32) ImageAPIHeadMusicGenreImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadMusicGenreImageRequest) Height(height int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Height(height int32) ImageAPIHeadMusicGenreImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadMusicGenreImageRequest) Quality(quality int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Quality(quality int32) ImageAPIHeadMusicGenreImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadMusicGenreImageRequest) FillWidth(fillWidth int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) FillWidth(fillWidth int32) ImageAPIHeadMusicGenreImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadMusicGenreImageRequest) FillHeight(fillHeight int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) FillHeight(fillHeight int32) ImageAPIHeadMusicGenreImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadMusicGenreImageRequest) Blur(blur int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) Blur(blur int32) ImageAPIHeadMusicGenreImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadMusicGenreImageRequest) BackgroundColor(backgroundColor string) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadMusicGenreImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadMusicGenreImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadMusicGenreImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadMusicGenreImageRequest) ImageIndex(imageIndex int32) ApiHeadMusicGenreImageRequest {
+func (r ImageAPIHeadMusicGenreImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadMusicGenreImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadMusicGenreImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadMusicGenreImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadMusicGenreImageExecute(r)
 }
 
@@ -5875,10 +5875,10 @@ HeadMusicGenreImage Get music genre image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Music genre name.
  @param imageType Image type.
- @return ApiHeadMusicGenreImageRequest
+ @return ImageAPIHeadMusicGenreImageRequest
 */
-func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadMusicGenreImageRequest {
-	return ApiHeadMusicGenreImageRequest{
+func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIHeadMusicGenreImageRequest {
+	return ImageAPIHeadMusicGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -5888,7 +5888,7 @@ func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, 
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadMusicGenreImageExecute(r ImageAPIHeadMusicGenreImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -6018,7 +6018,7 @@ func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadMusicGenreImageByIndexRequest struct {
+type ImageAPIHeadMusicGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -6041,90 +6041,90 @@ type ApiHeadMusicGenreImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadMusicGenreImageByIndexRequest) Tag(tag string) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Tag(tag string) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadMusicGenreImageByIndexRequest) MaxWidth(maxWidth int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadMusicGenreImageByIndexRequest) MaxHeight(maxHeight int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadMusicGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadMusicGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadMusicGenreImageByIndexRequest) Width(width int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Width(width int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadMusicGenreImageByIndexRequest) Height(height int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Height(height int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadMusicGenreImageByIndexRequest) Quality(quality int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Quality(quality int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadMusicGenreImageByIndexRequest) FillWidth(fillWidth int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadMusicGenreImageByIndexRequest) FillHeight(fillHeight int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadMusicGenreImageByIndexRequest) Blur(blur int32) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Blur(blur int32) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadMusicGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadMusicGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiHeadMusicGenreImageByIndexRequest {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadMusicGenreImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadMusicGenreImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadMusicGenreImageByIndexExecute(r)
 }
 
@@ -6135,10 +6135,10 @@ HeadMusicGenreImageByIndex Get music genre image by name.
  @param name Music genre name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadMusicGenreImageByIndexRequest
+ @return ImageAPIHeadMusicGenreImageByIndexRequest
 */
-func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadMusicGenreImageByIndexRequest {
-	return ApiHeadMusicGenreImageByIndexRequest{
+func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadMusicGenreImageByIndexRequest {
+	return ImageAPIHeadMusicGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -6149,7 +6149,7 @@ func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name s
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ImageAPIHeadMusicGenreImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -6277,7 +6277,7 @@ func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadPersonImageRequest struct {
+type ImageAPIHeadPersonImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -6300,96 +6300,96 @@ type ApiHeadPersonImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadPersonImageRequest) Tag(tag string) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Tag(tag string) ImageAPIHeadPersonImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadPersonImageRequest) Format(format JellyfinImageFormat) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadPersonImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadPersonImageRequest) MaxWidth(maxWidth int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadPersonImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadPersonImageRequest) MaxHeight(maxHeight int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadPersonImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadPersonImageRequest) PercentPlayed(percentPlayed float64) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadPersonImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadPersonImageRequest) UnplayedCount(unplayedCount int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadPersonImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadPersonImageRequest) Width(width int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Width(width int32) ImageAPIHeadPersonImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadPersonImageRequest) Height(height int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Height(height int32) ImageAPIHeadPersonImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadPersonImageRequest) Quality(quality int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Quality(quality int32) ImageAPIHeadPersonImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadPersonImageRequest) FillWidth(fillWidth int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) FillWidth(fillWidth int32) ImageAPIHeadPersonImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadPersonImageRequest) FillHeight(fillHeight int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) FillHeight(fillHeight int32) ImageAPIHeadPersonImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadPersonImageRequest) Blur(blur int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) Blur(blur int32) ImageAPIHeadPersonImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadPersonImageRequest) BackgroundColor(backgroundColor string) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadPersonImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadPersonImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadPersonImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadPersonImageRequest) ImageIndex(imageIndex int32) ApiHeadPersonImageRequest {
+func (r ImageAPIHeadPersonImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadPersonImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadPersonImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadPersonImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadPersonImageExecute(r)
 }
 
@@ -6399,10 +6399,10 @@ HeadPersonImage Get person image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Person name.
  @param imageType Image type.
- @return ApiHeadPersonImageRequest
+ @return ImageAPIHeadPersonImageRequest
 */
-func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadPersonImageRequest {
-	return ApiHeadPersonImageRequest{
+func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIHeadPersonImageRequest {
+	return ImageAPIHeadPersonImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -6412,7 +6412,7 @@ func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imag
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadPersonImageExecute(r ImageAPIHeadPersonImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -6542,7 +6542,7 @@ func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadPersonImageByIndexRequest struct {
+type ImageAPIHeadPersonImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -6565,90 +6565,90 @@ type ApiHeadPersonImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadPersonImageByIndexRequest) Tag(tag string) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Tag(tag string) ImageAPIHeadPersonImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadPersonImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIHeadPersonImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadPersonImageByIndexRequest) MaxWidth(maxWidth int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadPersonImageByIndexRequest) MaxHeight(maxHeight int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadPersonImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadPersonImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadPersonImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadPersonImageByIndexRequest) Width(width int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Width(width int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadPersonImageByIndexRequest) Height(height int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Height(height int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadPersonImageByIndexRequest) Quality(quality int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Quality(quality int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadPersonImageByIndexRequest) FillWidth(fillWidth int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadPersonImageByIndexRequest) FillHeight(fillHeight int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadPersonImageByIndexRequest) Blur(blur int32) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) Blur(blur int32) ImageAPIHeadPersonImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadPersonImageByIndexRequest) BackgroundColor(backgroundColor string) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIHeadPersonImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadPersonImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiHeadPersonImageByIndexRequest {
+func (r ImageAPIHeadPersonImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadPersonImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadPersonImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadPersonImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadPersonImageByIndexExecute(r)
 }
 
@@ -6659,10 +6659,10 @@ HeadPersonImageByIndex Get person image by name.
  @param name Person name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadPersonImageByIndexRequest
+ @return ImageAPIHeadPersonImageByIndexRequest
 */
-func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadPersonImageByIndexRequest {
-	return ApiHeadPersonImageByIndexRequest{
+func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadPersonImageByIndexRequest {
+	return ImageAPIHeadPersonImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -6673,7 +6673,7 @@ func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name strin
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ImageAPIHeadPersonImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -6801,7 +6801,7 @@ func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadStudioImageRequest struct {
+type ImageAPIHeadStudioImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -6824,96 +6824,96 @@ type ApiHeadStudioImageRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadStudioImageRequest) Tag(tag string) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Tag(tag string) ImageAPIHeadStudioImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadStudioImageRequest) Format(format JellyfinImageFormat) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadStudioImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadStudioImageRequest) MaxWidth(maxWidth int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadStudioImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadStudioImageRequest) MaxHeight(maxHeight int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadStudioImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadStudioImageRequest) PercentPlayed(percentPlayed float64) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadStudioImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadStudioImageRequest) UnplayedCount(unplayedCount int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadStudioImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadStudioImageRequest) Width(width int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Width(width int32) ImageAPIHeadStudioImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadStudioImageRequest) Height(height int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Height(height int32) ImageAPIHeadStudioImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadStudioImageRequest) Quality(quality int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Quality(quality int32) ImageAPIHeadStudioImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadStudioImageRequest) FillWidth(fillWidth int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) FillWidth(fillWidth int32) ImageAPIHeadStudioImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadStudioImageRequest) FillHeight(fillHeight int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) FillHeight(fillHeight int32) ImageAPIHeadStudioImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadStudioImageRequest) Blur(blur int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) Blur(blur int32) ImageAPIHeadStudioImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadStudioImageRequest) BackgroundColor(backgroundColor string) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadStudioImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadStudioImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadStudioImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadStudioImageRequest) ImageIndex(imageIndex int32) ApiHeadStudioImageRequest {
+func (r ImageAPIHeadStudioImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadStudioImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadStudioImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadStudioImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadStudioImageExecute(r)
 }
 
@@ -6923,10 +6923,10 @@ HeadStudioImage Get studio image by name.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Studio name.
  @param imageType Image type.
- @return ApiHeadStudioImageRequest
+ @return ImageAPIHeadStudioImageRequest
 */
-func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadStudioImageRequest {
-	return ApiHeadStudioImageRequest{
+func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ImageAPIHeadStudioImageRequest {
+	return ImageAPIHeadStudioImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -6936,7 +6936,7 @@ func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imag
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadStudioImageExecute(r ImageAPIHeadStudioImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -7066,7 +7066,7 @@ func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadStudioImageByIndexRequest struct {
+type ImageAPIHeadStudioImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
@@ -7089,90 +7089,90 @@ type ApiHeadStudioImageByIndexRequest struct {
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadStudioImageByIndexRequest) Tag(tag string) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Tag(tag string) ImageAPIHeadStudioImageByIndexRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadStudioImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Format(format JellyfinImageFormat) ImageAPIHeadStudioImageByIndexRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadStudioImageByIndexRequest) MaxWidth(maxWidth int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) MaxWidth(maxWidth int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadStudioImageByIndexRequest) MaxHeight(maxHeight int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) MaxHeight(maxHeight int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadStudioImageByIndexRequest) PercentPlayed(percentPlayed float64) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadStudioImageByIndexRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadStudioImageByIndexRequest) UnplayedCount(unplayedCount int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadStudioImageByIndexRequest) Width(width int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Width(width int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadStudioImageByIndexRequest) Height(height int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Height(height int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadStudioImageByIndexRequest) Quality(quality int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Quality(quality int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadStudioImageByIndexRequest) FillWidth(fillWidth int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) FillWidth(fillWidth int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadStudioImageByIndexRequest) FillHeight(fillHeight int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) FillHeight(fillHeight int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadStudioImageByIndexRequest) Blur(blur int32) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) Blur(blur int32) ImageAPIHeadStudioImageByIndexRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadStudioImageByIndexRequest) BackgroundColor(backgroundColor string) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) BackgroundColor(backgroundColor string) ImageAPIHeadStudioImageByIndexRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadStudioImageByIndexRequest) ForegroundLayer(foregroundLayer string) ApiHeadStudioImageByIndexRequest {
+func (r ImageAPIHeadStudioImageByIndexRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadStudioImageByIndexRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
-func (r ApiHeadStudioImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadStudioImageByIndexRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadStudioImageByIndexExecute(r)
 }
 
@@ -7183,10 +7183,10 @@ HeadStudioImageByIndex Get studio image by name.
  @param name Studio name.
  @param imageType Image type.
  @param imageIndex Image index.
- @return ApiHeadStudioImageByIndexRequest
+ @return ImageAPIHeadStudioImageByIndexRequest
 */
-func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadStudioImageByIndexRequest {
-	return ApiHeadStudioImageByIndexRequest{
+func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ImageAPIHeadStudioImageByIndexRequest {
+	return ImageAPIHeadStudioImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -7197,7 +7197,7 @@ func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name strin
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIndexRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ImageAPIHeadStudioImageByIndexRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -7325,7 +7325,7 @@ func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadUserImageRequest struct {
+type ImageAPIHeadUserImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	userId *string
@@ -7347,102 +7347,102 @@ type ApiHeadUserImageRequest struct {
 }
 
 // User id.
-func (r ApiHeadUserImageRequest) UserId(userId string) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) UserId(userId string) ImageAPIHeadUserImageRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Supply the cache tag from the item object to receive strong caching headers.
-func (r ApiHeadUserImageRequest) Tag(tag string) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Tag(tag string) ImageAPIHeadUserImageRequest {
 	r.tag = &tag
 	return r
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadUserImageRequest) Format(format JellyfinImageFormat) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Format(format JellyfinImageFormat) ImageAPIHeadUserImageRequest {
 	r.format = &format
 	return r
 }
 
 // The maximum image width to return.
-func (r ApiHeadUserImageRequest) MaxWidth(maxWidth int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) MaxWidth(maxWidth int32) ImageAPIHeadUserImageRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // The maximum image height to return.
-func (r ApiHeadUserImageRequest) MaxHeight(maxHeight int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) MaxHeight(maxHeight int32) ImageAPIHeadUserImageRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Percent to render for the percent played overlay.
-func (r ApiHeadUserImageRequest) PercentPlayed(percentPlayed float64) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) PercentPlayed(percentPlayed float64) ImageAPIHeadUserImageRequest {
 	r.percentPlayed = &percentPlayed
 	return r
 }
 
 // Optional. Unplayed count overlay to render.
-func (r ApiHeadUserImageRequest) UnplayedCount(unplayedCount int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) UnplayedCount(unplayedCount int32) ImageAPIHeadUserImageRequest {
 	r.unplayedCount = &unplayedCount
 	return r
 }
 
 // The fixed image width to return.
-func (r ApiHeadUserImageRequest) Width(width int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Width(width int32) ImageAPIHeadUserImageRequest {
 	r.width = &width
 	return r
 }
 
 // The fixed image height to return.
-func (r ApiHeadUserImageRequest) Height(height int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Height(height int32) ImageAPIHeadUserImageRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
-func (r ApiHeadUserImageRequest) Quality(quality int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Quality(quality int32) ImageAPIHeadUserImageRequest {
 	r.quality = &quality
 	return r
 }
 
 // Width of box to fill.
-func (r ApiHeadUserImageRequest) FillWidth(fillWidth int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) FillWidth(fillWidth int32) ImageAPIHeadUserImageRequest {
 	r.fillWidth = &fillWidth
 	return r
 }
 
 // Height of box to fill.
-func (r ApiHeadUserImageRequest) FillHeight(fillHeight int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) FillHeight(fillHeight int32) ImageAPIHeadUserImageRequest {
 	r.fillHeight = &fillHeight
 	return r
 }
 
 // Optional. Blur image.
-func (r ApiHeadUserImageRequest) Blur(blur int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) Blur(blur int32) ImageAPIHeadUserImageRequest {
 	r.blur = &blur
 	return r
 }
 
 // Optional. Apply a background color for transparent images.
-func (r ApiHeadUserImageRequest) BackgroundColor(backgroundColor string) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) BackgroundColor(backgroundColor string) ImageAPIHeadUserImageRequest {
 	r.backgroundColor = &backgroundColor
 	return r
 }
 
 // Optional. Apply a foreground layer on top of the image.
-func (r ApiHeadUserImageRequest) ForegroundLayer(foregroundLayer string) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) ForegroundLayer(foregroundLayer string) ImageAPIHeadUserImageRequest {
 	r.foregroundLayer = &foregroundLayer
 	return r
 }
 
 // Image index.
-func (r ApiHeadUserImageRequest) ImageIndex(imageIndex int32) ApiHeadUserImageRequest {
+func (r ImageAPIHeadUserImageRequest) ImageIndex(imageIndex int32) ImageAPIHeadUserImageRequest {
 	r.imageIndex = &imageIndex
 	return r
 }
 
-func (r ApiHeadUserImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r ImageAPIHeadUserImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadUserImageExecute(r)
 }
 
@@ -7450,10 +7450,10 @@ func (r ApiHeadUserImageRequest) Execute() (*os.File, *http.Response, error) {
 HeadUserImage Get user profile image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiHeadUserImageRequest
+ @return ImageAPIHeadUserImageRequest
 */
-func (a *ImageAPIService) HeadUserImage(ctx context.Context) ApiHeadUserImageRequest {
-	return ApiHeadUserImageRequest{
+func (a *ImageAPIService) HeadUserImage(ctx context.Context) ImageAPIHeadUserImageRequest {
+	return ImageAPIHeadUserImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -7461,7 +7461,7 @@ func (a *ImageAPIService) HeadUserImage(ctx context.Context) ApiHeadUserImageReq
 
 // Execute executes the request
 //  @return *os.File
-func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.File, *http.Response, error) {
+func (a *ImageAPIService) HeadUserImageExecute(r ImageAPIHeadUserImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -7603,7 +7603,7 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostUserImageRequest struct {
+type ImageAPIPostUserImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	userId *string
@@ -7611,17 +7611,17 @@ type ApiPostUserImageRequest struct {
 }
 
 // User Id.
-func (r ApiPostUserImageRequest) UserId(userId string) ApiPostUserImageRequest {
+func (r ImageAPIPostUserImageRequest) UserId(userId string) ImageAPIPostUserImageRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiPostUserImageRequest) Body(body *os.File) ApiPostUserImageRequest {
+func (r ImageAPIPostUserImageRequest) Body(body *os.File) ImageAPIPostUserImageRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiPostUserImageRequest) Execute() (*http.Response, error) {
+func (r ImageAPIPostUserImageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostUserImageExecute(r)
 }
 
@@ -7629,17 +7629,17 @@ func (r ApiPostUserImageRequest) Execute() (*http.Response, error) {
 PostUserImage Sets the user image.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUserImageRequest
+ @return ImageAPIPostUserImageRequest
 */
-func (a *ImageAPIService) PostUserImage(ctx context.Context) ApiPostUserImageRequest {
-	return ApiPostUserImageRequest{
+func (a *ImageAPIService) PostUserImage(ctx context.Context) ImageAPIPostUserImageRequest {
+	return ImageAPIPostUserImageRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http.Response, error) {
+func (a *ImageAPIService) PostUserImageExecute(r ImageAPIPostUserImageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7754,7 +7754,7 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiSetItemImageRequest struct {
+type ImageAPISetItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -7762,12 +7762,12 @@ type ApiSetItemImageRequest struct {
 	body *os.File
 }
 
-func (r ApiSetItemImageRequest) Body(body *os.File) ApiSetItemImageRequest {
+func (r ImageAPISetItemImageRequest) Body(body *os.File) ImageAPISetItemImageRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiSetItemImageRequest) Execute() (*http.Response, error) {
+func (r ImageAPISetItemImageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SetItemImageExecute(r)
 }
 
@@ -7777,10 +7777,10 @@ SetItemImage Set item image.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
  @param imageType Image type.
- @return ApiSetItemImageRequest
+ @return ImageAPISetItemImageRequest
 */
-func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiSetItemImageRequest {
-	return ApiSetItemImageRequest{
+func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ImageAPISetItemImageRequest {
+	return ImageAPISetItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -7789,7 +7789,7 @@ func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, image
 }
 
 // Execute executes the request
-func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.Response, error) {
+func (a *ImageAPIService) SetItemImageExecute(r ImageAPISetItemImageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -7892,7 +7892,7 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiSetItemImageByIndexRequest struct {
+type ImageAPISetItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -7901,12 +7901,12 @@ type ApiSetItemImageByIndexRequest struct {
 	body *os.File
 }
 
-func (r ApiSetItemImageByIndexRequest) Body(body *os.File) ApiSetItemImageByIndexRequest {
+func (r ImageAPISetItemImageByIndexRequest) Body(body *os.File) ImageAPISetItemImageByIndexRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiSetItemImageByIndexRequest) Execute() (*http.Response, error) {
+func (r ImageAPISetItemImageByIndexRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SetItemImageByIndexExecute(r)
 }
 
@@ -7917,10 +7917,10 @@ SetItemImageByIndex Set item image.
  @param itemId Item id.
  @param imageType Image type.
  @param imageIndex (Unused) Image index.
- @return ApiSetItemImageByIndexRequest
+ @return ImageAPISetItemImageByIndexRequest
 */
-func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiSetItemImageByIndexRequest {
-	return ApiSetItemImageByIndexRequest{
+func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ImageAPISetItemImageByIndexRequest {
+	return ImageAPISetItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -7930,7 +7930,7 @@ func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string
 }
 
 // Execute executes the request
-func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexRequest) (*http.Response, error) {
+func (a *ImageAPIService) SetItemImageByIndexExecute(r ImageAPISetItemImageByIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8034,7 +8034,7 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateItemImageIndexRequest struct {
+type ImageAPIUpdateItemImageIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
@@ -8044,12 +8044,12 @@ type ApiUpdateItemImageIndexRequest struct {
 }
 
 // New image index.
-func (r ApiUpdateItemImageIndexRequest) NewIndex(newIndex int32) ApiUpdateItemImageIndexRequest {
+func (r ImageAPIUpdateItemImageIndexRequest) NewIndex(newIndex int32) ImageAPIUpdateItemImageIndexRequest {
 	r.newIndex = &newIndex
 	return r
 }
 
-func (r ApiUpdateItemImageIndexRequest) Execute() (*http.Response, error) {
+func (r ImageAPIUpdateItemImageIndexRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateItemImageIndexExecute(r)
 }
 
@@ -8060,10 +8060,10 @@ UpdateItemImageIndex Updates the index for an item image.
  @param itemId Item id.
  @param imageType Image type.
  @param imageIndex Old image index.
- @return ApiUpdateItemImageIndexRequest
+ @return ImageAPIUpdateItemImageIndexRequest
 */
-func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiUpdateItemImageIndexRequest {
-	return ApiUpdateItemImageIndexRequest{
+func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ImageAPIUpdateItemImageIndexRequest {
+	return ImageAPIUpdateItemImageIndexRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -8073,7 +8073,7 @@ func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId strin
 }
 
 // Execute executes the request
-func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexRequest) (*http.Response, error) {
+func (a *ImageAPIService) UpdateItemImageIndexExecute(r ImageAPIUpdateItemImageIndexRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -8168,18 +8168,18 @@ func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexR
 	return localVarHTTPResponse, nil
 }
 
-type ApiUploadCustomSplashscreenRequest struct {
+type ImageAPIUploadCustomSplashscreenRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	body *os.File
 }
 
-func (r ApiUploadCustomSplashscreenRequest) Body(body *os.File) ApiUploadCustomSplashscreenRequest {
+func (r ImageAPIUploadCustomSplashscreenRequest) Body(body *os.File) ImageAPIUploadCustomSplashscreenRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiUploadCustomSplashscreenRequest) Execute() (*http.Response, error) {
+func (r ImageAPIUploadCustomSplashscreenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UploadCustomSplashscreenExecute(r)
 }
 
@@ -8187,17 +8187,17 @@ func (r ApiUploadCustomSplashscreenRequest) Execute() (*http.Response, error) {
 UploadCustomSplashscreen Uploads a custom splashscreen.  The body is expected to the image contents base64 encoded.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUploadCustomSplashscreenRequest
+ @return ImageAPIUploadCustomSplashscreenRequest
 */
-func (a *ImageAPIService) UploadCustomSplashscreen(ctx context.Context) ApiUploadCustomSplashscreenRequest {
-	return ApiUploadCustomSplashscreenRequest{
+func (a *ImageAPIService) UploadCustomSplashscreen(ctx context.Context) ImageAPIUploadCustomSplashscreenRequest {
+	return ImageAPIUploadCustomSplashscreenRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplashscreenRequest) (*http.Response, error) {
+func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ImageAPIUploadCustomSplashscreenRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

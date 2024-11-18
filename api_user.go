@@ -23,19 +23,19 @@ import (
 // UserAPIService UserAPI service
 type UserAPIService service
 
-type ApiAuthenticateUserByNameRequest struct {
+type UserAPIAuthenticateUserByNameRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinAuthenticateUserByName *JellyfinAuthenticateUserByName
 }
 
 // The M:Jellyfin.Api.Controllers.UserController.AuthenticateUserByName(Jellyfin.Api.Models.UserDtos.AuthenticateUserByName) request.
-func (r ApiAuthenticateUserByNameRequest) JellyfinAuthenticateUserByName(jellyfinAuthenticateUserByName JellyfinAuthenticateUserByName) ApiAuthenticateUserByNameRequest {
+func (r UserAPIAuthenticateUserByNameRequest) JellyfinAuthenticateUserByName(jellyfinAuthenticateUserByName JellyfinAuthenticateUserByName) UserAPIAuthenticateUserByNameRequest {
 	r.jellyfinAuthenticateUserByName = &jellyfinAuthenticateUserByName
 	return r
 }
 
-func (r ApiAuthenticateUserByNameRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
+func (r UserAPIAuthenticateUserByNameRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
 	return r.ApiService.AuthenticateUserByNameExecute(r)
 }
 
@@ -43,10 +43,10 @@ func (r ApiAuthenticateUserByNameRequest) Execute() (*JellyfinAuthenticationResu
 AuthenticateUserByName Authenticates a user by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuthenticateUserByNameRequest
+ @return UserAPIAuthenticateUserByNameRequest
 */
-func (a *UserAPIService) AuthenticateUserByName(ctx context.Context) ApiAuthenticateUserByNameRequest {
-	return ApiAuthenticateUserByNameRequest{
+func (a *UserAPIService) AuthenticateUserByName(ctx context.Context) UserAPIAuthenticateUserByNameRequest {
+	return UserAPIAuthenticateUserByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -54,7 +54,7 @@ func (a *UserAPIService) AuthenticateUserByName(ctx context.Context) ApiAuthenti
 
 // Execute executes the request
 //  @return JellyfinAuthenticationResult
-func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNameRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
+func (a *UserAPIService) AuthenticateUserByNameExecute(r UserAPIAuthenticateUserByNameRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -132,19 +132,19 @@ func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAuthenticateWithQuickConnectRequest struct {
+type UserAPIAuthenticateWithQuickConnectRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinQuickConnectDto *JellyfinQuickConnectDto
 }
 
 // The Jellyfin.Api.Models.UserDtos.QuickConnectDto request.
-func (r ApiAuthenticateWithQuickConnectRequest) JellyfinQuickConnectDto(jellyfinQuickConnectDto JellyfinQuickConnectDto) ApiAuthenticateWithQuickConnectRequest {
+func (r UserAPIAuthenticateWithQuickConnectRequest) JellyfinQuickConnectDto(jellyfinQuickConnectDto JellyfinQuickConnectDto) UserAPIAuthenticateWithQuickConnectRequest {
 	r.jellyfinQuickConnectDto = &jellyfinQuickConnectDto
 	return r
 }
 
-func (r ApiAuthenticateWithQuickConnectRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
+func (r UserAPIAuthenticateWithQuickConnectRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
 	return r.ApiService.AuthenticateWithQuickConnectExecute(r)
 }
 
@@ -152,10 +152,10 @@ func (r ApiAuthenticateWithQuickConnectRequest) Execute() (*JellyfinAuthenticati
 AuthenticateWithQuickConnect Authenticates a user with quick connect.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuthenticateWithQuickConnectRequest
+ @return UserAPIAuthenticateWithQuickConnectRequest
 */
-func (a *UserAPIService) AuthenticateWithQuickConnect(ctx context.Context) ApiAuthenticateWithQuickConnectRequest {
-	return ApiAuthenticateWithQuickConnectRequest{
+func (a *UserAPIService) AuthenticateWithQuickConnect(ctx context.Context) UserAPIAuthenticateWithQuickConnectRequest {
+	return UserAPIAuthenticateWithQuickConnectRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -163,7 +163,7 @@ func (a *UserAPIService) AuthenticateWithQuickConnect(ctx context.Context) ApiAu
 
 // Execute executes the request
 //  @return JellyfinAuthenticationResult
-func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWithQuickConnectRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
+func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r UserAPIAuthenticateWithQuickConnectRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -241,19 +241,19 @@ func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCreateUserByNameRequest struct {
+type UserAPICreateUserByNameRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinCreateUserByName *JellyfinCreateUserByName
 }
 
 // The create user by name request body.
-func (r ApiCreateUserByNameRequest) JellyfinCreateUserByName(jellyfinCreateUserByName JellyfinCreateUserByName) ApiCreateUserByNameRequest {
+func (r UserAPICreateUserByNameRequest) JellyfinCreateUserByName(jellyfinCreateUserByName JellyfinCreateUserByName) UserAPICreateUserByNameRequest {
 	r.jellyfinCreateUserByName = &jellyfinCreateUserByName
 	return r
 }
 
-func (r ApiCreateUserByNameRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
+func (r UserAPICreateUserByNameRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.CreateUserByNameExecute(r)
 }
 
@@ -261,10 +261,10 @@ func (r ApiCreateUserByNameRequest) Execute() (*JellyfinUserDto, *http.Response,
 CreateUserByName Creates a user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateUserByNameRequest
+ @return UserAPICreateUserByNameRequest
 */
-func (a *UserAPIService) CreateUserByName(ctx context.Context) ApiCreateUserByNameRequest {
-	return ApiCreateUserByNameRequest{
+func (a *UserAPIService) CreateUserByName(ctx context.Context) UserAPICreateUserByNameRequest {
+	return UserAPICreateUserByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -272,7 +272,7 @@ func (a *UserAPIService) CreateUserByName(ctx context.Context) ApiCreateUserByNa
 
 // Execute executes the request
 //  @return JellyfinUserDto
-func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (*JellyfinUserDto, *http.Response, error) {
+func (a *UserAPIService) CreateUserByNameExecute(r UserAPICreateUserByNameRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -364,13 +364,13 @@ func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDeleteUserRequest struct {
+type UserAPIDeleteUserRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	userId string
 }
 
-func (r ApiDeleteUserRequest) Execute() (*http.Response, error) {
+func (r UserAPIDeleteUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteUserExecute(r)
 }
 
@@ -379,10 +379,10 @@ DeleteUser Deletes a user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userId The user id.
- @return ApiDeleteUserRequest
+ @return UserAPIDeleteUserRequest
 */
-func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) ApiDeleteUserRequest {
-	return ApiDeleteUserRequest{
+func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) UserAPIDeleteUserRequest {
+	return UserAPIDeleteUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		userId: userId,
@@ -390,7 +390,7 @@ func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) ApiDelet
 }
 
 // Execute executes the request
-func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Response, error) {
+func (a *UserAPIService) DeleteUserExecute(r UserAPIDeleteUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -479,19 +479,19 @@ func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiForgotPasswordRequest struct {
+type UserAPIForgotPasswordRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinForgotPasswordDto *JellyfinForgotPasswordDto
 }
 
 // The forgot password request containing the entered username.
-func (r ApiForgotPasswordRequest) JellyfinForgotPasswordDto(jellyfinForgotPasswordDto JellyfinForgotPasswordDto) ApiForgotPasswordRequest {
+func (r UserAPIForgotPasswordRequest) JellyfinForgotPasswordDto(jellyfinForgotPasswordDto JellyfinForgotPasswordDto) UserAPIForgotPasswordRequest {
 	r.jellyfinForgotPasswordDto = &jellyfinForgotPasswordDto
 	return r
 }
 
-func (r ApiForgotPasswordRequest) Execute() (*JellyfinForgotPasswordResult, *http.Response, error) {
+func (r UserAPIForgotPasswordRequest) Execute() (*JellyfinForgotPasswordResult, *http.Response, error) {
 	return r.ApiService.ForgotPasswordExecute(r)
 }
 
@@ -499,10 +499,10 @@ func (r ApiForgotPasswordRequest) Execute() (*JellyfinForgotPasswordResult, *htt
 ForgotPassword Initiates the forgot password process for a local user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiForgotPasswordRequest
+ @return UserAPIForgotPasswordRequest
 */
-func (a *UserAPIService) ForgotPassword(ctx context.Context) ApiForgotPasswordRequest {
-	return ApiForgotPasswordRequest{
+func (a *UserAPIService) ForgotPassword(ctx context.Context) UserAPIForgotPasswordRequest {
+	return UserAPIForgotPasswordRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -510,7 +510,7 @@ func (a *UserAPIService) ForgotPassword(ctx context.Context) ApiForgotPasswordRe
 
 // Execute executes the request
 //  @return JellyfinForgotPasswordResult
-func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*JellyfinForgotPasswordResult, *http.Response, error) {
+func (a *UserAPIService) ForgotPasswordExecute(r UserAPIForgotPasswordRequest) (*JellyfinForgotPasswordResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -588,19 +588,19 @@ func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiForgotPasswordPinRequest struct {
+type UserAPIForgotPasswordPinRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinForgotPasswordPinDto *JellyfinForgotPasswordPinDto
 }
 
 // The forgot password pin request containing the entered pin.
-func (r ApiForgotPasswordPinRequest) JellyfinForgotPasswordPinDto(jellyfinForgotPasswordPinDto JellyfinForgotPasswordPinDto) ApiForgotPasswordPinRequest {
+func (r UserAPIForgotPasswordPinRequest) JellyfinForgotPasswordPinDto(jellyfinForgotPasswordPinDto JellyfinForgotPasswordPinDto) UserAPIForgotPasswordPinRequest {
 	r.jellyfinForgotPasswordPinDto = &jellyfinForgotPasswordPinDto
 	return r
 }
 
-func (r ApiForgotPasswordPinRequest) Execute() (*JellyfinPinRedeemResult, *http.Response, error) {
+func (r UserAPIForgotPasswordPinRequest) Execute() (*JellyfinPinRedeemResult, *http.Response, error) {
 	return r.ApiService.ForgotPasswordPinExecute(r)
 }
 
@@ -608,10 +608,10 @@ func (r ApiForgotPasswordPinRequest) Execute() (*JellyfinPinRedeemResult, *http.
 ForgotPasswordPin Redeems a forgot password pin.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiForgotPasswordPinRequest
+ @return UserAPIForgotPasswordPinRequest
 */
-func (a *UserAPIService) ForgotPasswordPin(ctx context.Context) ApiForgotPasswordPinRequest {
-	return ApiForgotPasswordPinRequest{
+func (a *UserAPIService) ForgotPasswordPin(ctx context.Context) UserAPIForgotPasswordPinRequest {
+	return UserAPIForgotPasswordPinRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -619,7 +619,7 @@ func (a *UserAPIService) ForgotPasswordPin(ctx context.Context) ApiForgotPasswor
 
 // Execute executes the request
 //  @return JellyfinPinRedeemResult
-func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest) (*JellyfinPinRedeemResult, *http.Response, error) {
+func (a *UserAPIService) ForgotPasswordPinExecute(r UserAPIForgotPasswordPinRequest) (*JellyfinPinRedeemResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -697,12 +697,12 @@ func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetCurrentUserRequest struct {
+type UserAPIGetCurrentUserRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 }
 
-func (r ApiGetCurrentUserRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
+func (r UserAPIGetCurrentUserRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetCurrentUserExecute(r)
 }
 
@@ -710,10 +710,10 @@ func (r ApiGetCurrentUserRequest) Execute() (*JellyfinUserDto, *http.Response, e
 GetCurrentUser Gets the user based on auth token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCurrentUserRequest
+ @return UserAPIGetCurrentUserRequest
 */
-func (a *UserAPIService) GetCurrentUser(ctx context.Context) ApiGetCurrentUserRequest {
-	return ApiGetCurrentUserRequest{
+func (a *UserAPIService) GetCurrentUser(ctx context.Context) UserAPIGetCurrentUserRequest {
+	return UserAPIGetCurrentUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -721,7 +721,7 @@ func (a *UserAPIService) GetCurrentUser(ctx context.Context) ApiGetCurrentUserRe
 
 // Execute executes the request
 //  @return JellyfinUserDto
-func (a *UserAPIService) GetCurrentUserExecute(r ApiGetCurrentUserRequest) (*JellyfinUserDto, *http.Response, error) {
+func (a *UserAPIService) GetCurrentUserExecute(r UserAPIGetCurrentUserRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -819,12 +819,12 @@ func (a *UserAPIService) GetCurrentUserExecute(r ApiGetCurrentUserRequest) (*Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPublicUsersRequest struct {
+type UserAPIGetPublicUsersRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 }
 
-func (r ApiGetPublicUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
+func (r UserAPIGetPublicUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetPublicUsersExecute(r)
 }
 
@@ -832,10 +832,10 @@ func (r ApiGetPublicUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, 
 GetPublicUsers Gets a list of publicly visible users for display on a login screen.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPublicUsersRequest
+ @return UserAPIGetPublicUsersRequest
 */
-func (a *UserAPIService) GetPublicUsers(ctx context.Context) ApiGetPublicUsersRequest {
-	return ApiGetPublicUsersRequest{
+func (a *UserAPIService) GetPublicUsers(ctx context.Context) UserAPIGetPublicUsersRequest {
+	return UserAPIGetPublicUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -843,7 +843,7 @@ func (a *UserAPIService) GetPublicUsers(ctx context.Context) ApiGetPublicUsersRe
 
 // Execute executes the request
 //  @return []JellyfinUserDto
-func (a *UserAPIService) GetPublicUsersExecute(r ApiGetPublicUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
+func (a *UserAPIService) GetPublicUsersExecute(r UserAPIGetPublicUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -916,13 +916,13 @@ func (a *UserAPIService) GetPublicUsersExecute(r ApiGetPublicUsersRequest) ([]Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUserByIdRequest struct {
+type UserAPIGetUserByIdRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	userId string
 }
 
-func (r ApiGetUserByIdRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
+func (r UserAPIGetUserByIdRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetUserByIdExecute(r)
 }
 
@@ -931,10 +931,10 @@ GetUserById Gets a user by Id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userId The user id.
- @return ApiGetUserByIdRequest
+ @return UserAPIGetUserByIdRequest
 */
-func (a *UserAPIService) GetUserById(ctx context.Context, userId string) ApiGetUserByIdRequest {
-	return ApiGetUserByIdRequest{
+func (a *UserAPIService) GetUserById(ctx context.Context, userId string) UserAPIGetUserByIdRequest {
+	return UserAPIGetUserByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		userId: userId,
@@ -943,7 +943,7 @@ func (a *UserAPIService) GetUserById(ctx context.Context, userId string) ApiGetU
 
 // Execute executes the request
 //  @return JellyfinUserDto
-func (a *UserAPIService) GetUserByIdExecute(r ApiGetUserByIdRequest) (*JellyfinUserDto, *http.Response, error) {
+func (a *UserAPIService) GetUserByIdExecute(r UserAPIGetUserByIdRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1042,7 +1042,7 @@ func (a *UserAPIService) GetUserByIdExecute(r ApiGetUserByIdRequest) (*JellyfinU
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUsersRequest struct {
+type UserAPIGetUsersRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	isHidden *bool
@@ -1050,18 +1050,18 @@ type ApiGetUsersRequest struct {
 }
 
 // Optional filter by IsHidden&#x3D;true or false.
-func (r ApiGetUsersRequest) IsHidden(isHidden bool) ApiGetUsersRequest {
+func (r UserAPIGetUsersRequest) IsHidden(isHidden bool) UserAPIGetUsersRequest {
 	r.isHidden = &isHidden
 	return r
 }
 
 // Optional filter by IsDisabled&#x3D;true or false.
-func (r ApiGetUsersRequest) IsDisabled(isDisabled bool) ApiGetUsersRequest {
+func (r UserAPIGetUsersRequest) IsDisabled(isDisabled bool) UserAPIGetUsersRequest {
 	r.isDisabled = &isDisabled
 	return r
 }
 
-func (r ApiGetUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
+func (r UserAPIGetUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetUsersExecute(r)
 }
 
@@ -1069,10 +1069,10 @@ func (r ApiGetUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error)
 GetUsers Gets a list of users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUsersRequest
+ @return UserAPIGetUsersRequest
 */
-func (a *UserAPIService) GetUsers(ctx context.Context) ApiGetUsersRequest {
-	return ApiGetUsersRequest{
+func (a *UserAPIService) GetUsers(ctx context.Context) UserAPIGetUsersRequest {
+	return UserAPIGetUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1080,7 +1080,7 @@ func (a *UserAPIService) GetUsers(ctx context.Context) ApiGetUsersRequest {
 
 // Execute executes the request
 //  @return []JellyfinUserDto
-func (a *UserAPIService) GetUsersExecute(r ApiGetUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
+func (a *UserAPIService) GetUsersExecute(r UserAPIGetUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1173,7 +1173,7 @@ func (a *UserAPIService) GetUsersExecute(r ApiGetUsersRequest) ([]JellyfinUserDt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateUserRequest struct {
+type UserAPIUpdateUserRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinUserDto *JellyfinUserDto
@@ -1181,18 +1181,18 @@ type ApiUpdateUserRequest struct {
 }
 
 // The updated user model.
-func (r ApiUpdateUserRequest) JellyfinUserDto(jellyfinUserDto JellyfinUserDto) ApiUpdateUserRequest {
+func (r UserAPIUpdateUserRequest) JellyfinUserDto(jellyfinUserDto JellyfinUserDto) UserAPIUpdateUserRequest {
 	r.jellyfinUserDto = &jellyfinUserDto
 	return r
 }
 
 // The user id.
-func (r ApiUpdateUserRequest) UserId(userId string) ApiUpdateUserRequest {
+func (r UserAPIUpdateUserRequest) UserId(userId string) UserAPIUpdateUserRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUpdateUserRequest) Execute() (*http.Response, error) {
+func (r UserAPIUpdateUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateUserExecute(r)
 }
 
@@ -1200,17 +1200,17 @@ func (r ApiUpdateUserRequest) Execute() (*http.Response, error) {
 UpdateUser Updates a user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateUserRequest
+ @return UserAPIUpdateUserRequest
 */
-func (a *UserAPIService) UpdateUser(ctx context.Context) ApiUpdateUserRequest {
-	return ApiUpdateUserRequest{
+func (a *UserAPIService) UpdateUser(ctx context.Context) UserAPIUpdateUserRequest {
+	return UserAPIUpdateUserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Response, error) {
+func (a *UserAPIService) UpdateUserExecute(r UserAPIUpdateUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1317,7 +1317,7 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateUserConfigurationRequest struct {
+type UserAPIUpdateUserConfigurationRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinUserConfiguration *JellyfinUserConfiguration
@@ -1325,18 +1325,18 @@ type ApiUpdateUserConfigurationRequest struct {
 }
 
 // The new user configuration.
-func (r ApiUpdateUserConfigurationRequest) JellyfinUserConfiguration(jellyfinUserConfiguration JellyfinUserConfiguration) ApiUpdateUserConfigurationRequest {
+func (r UserAPIUpdateUserConfigurationRequest) JellyfinUserConfiguration(jellyfinUserConfiguration JellyfinUserConfiguration) UserAPIUpdateUserConfigurationRequest {
 	r.jellyfinUserConfiguration = &jellyfinUserConfiguration
 	return r
 }
 
 // The user id.
-func (r ApiUpdateUserConfigurationRequest) UserId(userId string) ApiUpdateUserConfigurationRequest {
+func (r UserAPIUpdateUserConfigurationRequest) UserId(userId string) UserAPIUpdateUserConfigurationRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUpdateUserConfigurationRequest) Execute() (*http.Response, error) {
+func (r UserAPIUpdateUserConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateUserConfigurationExecute(r)
 }
 
@@ -1344,17 +1344,17 @@ func (r ApiUpdateUserConfigurationRequest) Execute() (*http.Response, error) {
 UpdateUserConfiguration Updates a user configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateUserConfigurationRequest
+ @return UserAPIUpdateUserConfigurationRequest
 */
-func (a *UserAPIService) UpdateUserConfiguration(ctx context.Context) ApiUpdateUserConfigurationRequest {
-	return ApiUpdateUserConfigurationRequest{
+func (a *UserAPIService) UpdateUserConfiguration(ctx context.Context) UserAPIUpdateUserConfigurationRequest {
+	return UserAPIUpdateUserConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigurationRequest) (*http.Response, error) {
+func (a *UserAPIService) UpdateUserConfigurationExecute(r UserAPIUpdateUserConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1450,7 +1450,7 @@ func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigura
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateUserPasswordRequest struct {
+type UserAPIUpdateUserPasswordRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	jellyfinUpdateUserPassword *JellyfinUpdateUserPassword
@@ -1458,18 +1458,18 @@ type ApiUpdateUserPasswordRequest struct {
 }
 
 // The M:Jellyfin.Api.Controllers.UserController.UpdateUserPassword(System.Nullable{System.Guid},Jellyfin.Api.Models.UserDtos.UpdateUserPassword) request.
-func (r ApiUpdateUserPasswordRequest) JellyfinUpdateUserPassword(jellyfinUpdateUserPassword JellyfinUpdateUserPassword) ApiUpdateUserPasswordRequest {
+func (r UserAPIUpdateUserPasswordRequest) JellyfinUpdateUserPassword(jellyfinUpdateUserPassword JellyfinUpdateUserPassword) UserAPIUpdateUserPasswordRequest {
 	r.jellyfinUpdateUserPassword = &jellyfinUpdateUserPassword
 	return r
 }
 
 // The user id.
-func (r ApiUpdateUserPasswordRequest) UserId(userId string) ApiUpdateUserPasswordRequest {
+func (r UserAPIUpdateUserPasswordRequest) UserId(userId string) UserAPIUpdateUserPasswordRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUpdateUserPasswordRequest) Execute() (*http.Response, error) {
+func (r UserAPIUpdateUserPasswordRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateUserPasswordExecute(r)
 }
 
@@ -1477,17 +1477,17 @@ func (r ApiUpdateUserPasswordRequest) Execute() (*http.Response, error) {
 UpdateUserPassword Updates a user's password.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateUserPasswordRequest
+ @return UserAPIUpdateUserPasswordRequest
 */
-func (a *UserAPIService) UpdateUserPassword(ctx context.Context) ApiUpdateUserPasswordRequest {
-	return ApiUpdateUserPasswordRequest{
+func (a *UserAPIService) UpdateUserPassword(ctx context.Context) UserAPIUpdateUserPasswordRequest {
+	return UserAPIUpdateUserPasswordRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordRequest) (*http.Response, error) {
+func (a *UserAPIService) UpdateUserPasswordExecute(r UserAPIUpdateUserPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1594,7 +1594,7 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateUserPolicyRequest struct {
+type UserAPIUpdateUserPolicyRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	userId string
@@ -1602,12 +1602,12 @@ type ApiUpdateUserPolicyRequest struct {
 }
 
 // The new user policy.
-func (r ApiUpdateUserPolicyRequest) JellyfinUserPolicy(jellyfinUserPolicy JellyfinUserPolicy) ApiUpdateUserPolicyRequest {
+func (r UserAPIUpdateUserPolicyRequest) JellyfinUserPolicy(jellyfinUserPolicy JellyfinUserPolicy) UserAPIUpdateUserPolicyRequest {
 	r.jellyfinUserPolicy = &jellyfinUserPolicy
 	return r
 }
 
-func (r ApiUpdateUserPolicyRequest) Execute() (*http.Response, error) {
+func (r UserAPIUpdateUserPolicyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateUserPolicyExecute(r)
 }
 
@@ -1616,10 +1616,10 @@ UpdateUserPolicy Updates a user policy.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param userId The user id.
- @return ApiUpdateUserPolicyRequest
+ @return UserAPIUpdateUserPolicyRequest
 */
-func (a *UserAPIService) UpdateUserPolicy(ctx context.Context, userId string) ApiUpdateUserPolicyRequest {
-	return ApiUpdateUserPolicyRequest{
+func (a *UserAPIService) UpdateUserPolicy(ctx context.Context, userId string) UserAPIUpdateUserPolicyRequest {
+	return UserAPIUpdateUserPolicyRequest{
 		ApiService: a,
 		ctx: ctx,
 		userId: userId,
@@ -1627,7 +1627,7 @@ func (a *UserAPIService) UpdateUserPolicy(ctx context.Context, userId string) Ap
 }
 
 // Execute executes the request
-func (a *UserAPIService) UpdateUserPolicyExecute(r ApiUpdateUserPolicyRequest) (*http.Response, error) {
+func (a *UserAPIService) UpdateUserPolicyExecute(r UserAPIUpdateUserPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

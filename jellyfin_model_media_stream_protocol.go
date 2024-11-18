@@ -20,8 +20,8 @@ type JellyfinMediaStreamProtocol string
 
 // List of MediaStreamProtocol
 const (
-	HTTP JellyfinMediaStreamProtocol = "http"
-	HLS JellyfinMediaStreamProtocol = "hls"
+	JELLYFINMEDIASTREAMPROTOCOL_HTTP JellyfinMediaStreamProtocol = "http"
+	JELLYFINMEDIASTREAMPROTOCOL_HLS JellyfinMediaStreamProtocol = "hls"
 )
 
 // All allowed values of JellyfinMediaStreamProtocol enum

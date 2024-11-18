@@ -24,7 +24,7 @@ import (
 // ArtistsAPIService ArtistsAPI service
 type ArtistsAPIService service
 
-type ApiGetAlbumArtistsRequest struct {
+type ArtistsAPIGetAlbumArtistsRequest struct {
 	ctx context.Context
 	ApiService *ArtistsAPIService
 	minCommunityRating *float64
@@ -62,198 +62,198 @@ type ApiGetAlbumArtistsRequest struct {
 }
 
 // Optional filter by minimum community rating.
-func (r ApiGetAlbumArtistsRequest) MinCommunityRating(minCommunityRating float64) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) MinCommunityRating(minCommunityRating float64) ArtistsAPIGetAlbumArtistsRequest {
 	r.minCommunityRating = &minCommunityRating
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetAlbumArtistsRequest) StartIndex(startIndex int32) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) StartIndex(startIndex int32) ArtistsAPIGetAlbumArtistsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetAlbumArtistsRequest) Limit(limit int32) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Limit(limit int32) ArtistsAPIGetAlbumArtistsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Search term.
-func (r ApiGetAlbumArtistsRequest) SearchTerm(searchTerm string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) SearchTerm(searchTerm string) ArtistsAPIGetAlbumArtistsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetAlbumArtistsRequest) ParentId(parentId string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) ParentId(parentId string) ArtistsAPIGetAlbumArtistsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetAlbumArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Fields(fields []JellyfinItemFields) ArtistsAPIGetAlbumArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ArtistsAPIGetAlbumArtistsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ArtistsAPIGetAlbumArtistsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetAlbumArtistsRequest) Filters(filters []JellyfinItemFilter) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Filters(filters []JellyfinItemFilter) ArtistsAPIGetAlbumArtistsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetAlbumArtistsRequest) IsFavorite(isFavorite bool) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) IsFavorite(isFavorite bool) ArtistsAPIGetAlbumArtistsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ArtistsAPIGetAlbumArtistsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) Genres(genres []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Genres(genres []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.genres = &genres
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) GenreIds(genreIds []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) GenreIds(genreIds []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) OfficialRatings(officialRatings []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) OfficialRatings(officialRatings []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.officialRatings = &officialRatings
 	return r
 }
 
 // Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) Tags(tags []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Tags(tags []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) Years(years []int32) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Years(years []int32) ArtistsAPIGetAlbumArtistsRequest {
 	r.years = &years
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetAlbumArtistsRequest) EnableUserData(enableUserData bool) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) EnableUserData(enableUserData bool) ArtistsAPIGetAlbumArtistsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetAlbumArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ArtistsAPIGetAlbumArtistsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetAlbumArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ArtistsAPIGetAlbumArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person.
-func (r ApiGetAlbumArtistsRequest) Person(person string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Person(person string) ArtistsAPIGetAlbumArtistsRequest {
 	r.person = &person
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person ids.
-func (r ApiGetAlbumArtistsRequest) PersonIds(personIds []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) PersonIds(personIds []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.personIds = &personIds
 	return r
 }
 
 // Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited.
-func (r ApiGetAlbumArtistsRequest) PersonTypes(personTypes []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) PersonTypes(personTypes []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.personTypes = &personTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) Studios(studios []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) Studios(studios []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.studios = &studios
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio id. This allows multiple, pipe delimited.
-func (r ApiGetAlbumArtistsRequest) StudioIds(studioIds []string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) StudioIds(studioIds []string) ArtistsAPIGetAlbumArtistsRequest {
 	r.studioIds = &studioIds
 	return r
 }
 
 // User id.
-func (r ApiGetAlbumArtistsRequest) UserId(userId string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) UserId(userId string) ArtistsAPIGetAlbumArtistsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetAlbumArtistsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ArtistsAPIGetAlbumArtistsRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetAlbumArtistsRequest) NameStartsWith(nameStartsWith string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) NameStartsWith(nameStartsWith string) ArtistsAPIGetAlbumArtistsRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetAlbumArtistsRequest) NameLessThan(nameLessThan string) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) NameLessThan(nameLessThan string) ArtistsAPIGetAlbumArtistsRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetAlbumArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ArtistsAPIGetAlbumArtistsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetAlbumArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ArtistsAPIGetAlbumArtistsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetAlbumArtistsRequest) EnableImages(enableImages bool) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) EnableImages(enableImages bool) ArtistsAPIGetAlbumArtistsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Total record count.
-func (r ApiGetAlbumArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetAlbumArtistsRequest {
+func (r ArtistsAPIGetAlbumArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ArtistsAPIGetAlbumArtistsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetAlbumArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ArtistsAPIGetAlbumArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetAlbumArtistsExecute(r)
 }
 
@@ -261,10 +261,10 @@ func (r ApiGetAlbumArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *
 GetAlbumArtists Gets all album artists from a given item, folder, or the entire library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAlbumArtistsRequest
+ @return ArtistsAPIGetAlbumArtistsRequest
 */
-func (a *ArtistsAPIService) GetAlbumArtists(ctx context.Context) ApiGetAlbumArtistsRequest {
-	return ApiGetAlbumArtistsRequest{
+func (a *ArtistsAPIService) GetAlbumArtists(ctx context.Context) ArtistsAPIGetAlbumArtistsRequest {
+	return ArtistsAPIGetAlbumArtistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -272,7 +272,7 @@ func (a *ArtistsAPIService) GetAlbumArtists(ctx context.Context) ApiGetAlbumArti
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ArtistsAPIGetAlbumArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -597,7 +597,7 @@ func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetArtistByNameRequest struct {
+type ArtistsAPIGetArtistByNameRequest struct {
 	ctx context.Context
 	ApiService *ArtistsAPIService
 	name string
@@ -605,12 +605,12 @@ type ApiGetArtistByNameRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetArtistByNameRequest) UserId(userId string) ApiGetArtistByNameRequest {
+func (r ArtistsAPIGetArtistByNameRequest) UserId(userId string) ArtistsAPIGetArtistByNameRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetArtistByNameRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r ArtistsAPIGetArtistByNameRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetArtistByNameExecute(r)
 }
 
@@ -619,10 +619,10 @@ GetArtistByName Gets an artist by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Studio name.
- @return ApiGetArtistByNameRequest
+ @return ArtistsAPIGetArtistByNameRequest
 */
-func (a *ArtistsAPIService) GetArtistByName(ctx context.Context, name string) ApiGetArtistByNameRequest {
-	return ApiGetArtistByNameRequest{
+func (a *ArtistsAPIService) GetArtistByName(ctx context.Context, name string) ArtistsAPIGetArtistByNameRequest {
+	return ArtistsAPIGetArtistByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -631,7 +631,7 @@ func (a *ArtistsAPIService) GetArtistByName(ctx context.Context, name string) Ap
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *ArtistsAPIService) GetArtistByNameExecute(r ArtistsAPIGetArtistByNameRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -722,7 +722,7 @@ func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetArtistsRequest struct {
+type ArtistsAPIGetArtistsRequest struct {
 	ctx context.Context
 	ApiService *ArtistsAPIService
 	minCommunityRating *float64
@@ -760,198 +760,198 @@ type ApiGetArtistsRequest struct {
 }
 
 // Optional filter by minimum community rating.
-func (r ApiGetArtistsRequest) MinCommunityRating(minCommunityRating float64) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) MinCommunityRating(minCommunityRating float64) ArtistsAPIGetArtistsRequest {
 	r.minCommunityRating = &minCommunityRating
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetArtistsRequest) StartIndex(startIndex int32) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) StartIndex(startIndex int32) ArtistsAPIGetArtistsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetArtistsRequest) Limit(limit int32) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Limit(limit int32) ArtistsAPIGetArtistsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Search term.
-func (r ApiGetArtistsRequest) SearchTerm(searchTerm string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) SearchTerm(searchTerm string) ArtistsAPIGetArtistsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetArtistsRequest) ParentId(parentId string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) ParentId(parentId string) ArtistsAPIGetArtistsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Fields(fields []JellyfinItemFields) ArtistsAPIGetArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ArtistsAPIGetArtistsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ArtistsAPIGetArtistsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetArtistsRequest) Filters(filters []JellyfinItemFilter) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Filters(filters []JellyfinItemFilter) ArtistsAPIGetArtistsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetArtistsRequest) IsFavorite(isFavorite bool) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) IsFavorite(isFavorite bool) ArtistsAPIGetArtistsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ArtistsAPIGetArtistsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) Genres(genres []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Genres(genres []string) ArtistsAPIGetArtistsRequest {
 	r.genres = &genres
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) GenreIds(genreIds []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) GenreIds(genreIds []string) ArtistsAPIGetArtistsRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) OfficialRatings(officialRatings []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) OfficialRatings(officialRatings []string) ArtistsAPIGetArtistsRequest {
 	r.officialRatings = &officialRatings
 	return r
 }
 
 // Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) Tags(tags []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Tags(tags []string) ArtistsAPIGetArtistsRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) Years(years []int32) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Years(years []int32) ArtistsAPIGetArtistsRequest {
 	r.years = &years
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetArtistsRequest) EnableUserData(enableUserData bool) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) EnableUserData(enableUserData bool) ArtistsAPIGetArtistsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ArtistsAPIGetArtistsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ArtistsAPIGetArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person.
-func (r ApiGetArtistsRequest) Person(person string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Person(person string) ArtistsAPIGetArtistsRequest {
 	r.person = &person
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person ids.
-func (r ApiGetArtistsRequest) PersonIds(personIds []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) PersonIds(personIds []string) ArtistsAPIGetArtistsRequest {
 	r.personIds = &personIds
 	return r
 }
 
 // Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited.
-func (r ApiGetArtistsRequest) PersonTypes(personTypes []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) PersonTypes(personTypes []string) ArtistsAPIGetArtistsRequest {
 	r.personTypes = &personTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) Studios(studios []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) Studios(studios []string) ArtistsAPIGetArtistsRequest {
 	r.studios = &studios
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio id. This allows multiple, pipe delimited.
-func (r ApiGetArtistsRequest) StudioIds(studioIds []string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) StudioIds(studioIds []string) ArtistsAPIGetArtistsRequest {
 	r.studioIds = &studioIds
 	return r
 }
 
 // User id.
-func (r ApiGetArtistsRequest) UserId(userId string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) UserId(userId string) ArtistsAPIGetArtistsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetArtistsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ArtistsAPIGetArtistsRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetArtistsRequest) NameStartsWith(nameStartsWith string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) NameStartsWith(nameStartsWith string) ArtistsAPIGetArtistsRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetArtistsRequest) NameLessThan(nameLessThan string) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) NameLessThan(nameLessThan string) ArtistsAPIGetArtistsRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ArtistsAPIGetArtistsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ArtistsAPIGetArtistsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetArtistsRequest) EnableImages(enableImages bool) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) EnableImages(enableImages bool) ArtistsAPIGetArtistsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Total record count.
-func (r ApiGetArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetArtistsRequest {
+func (r ArtistsAPIGetArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ArtistsAPIGetArtistsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ArtistsAPIGetArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetArtistsExecute(r)
 }
 
@@ -959,10 +959,10 @@ func (r ApiGetArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.
 GetArtists Gets all artists from a given item, folder, or the entire library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetArtistsRequest
+ @return ArtistsAPIGetArtistsRequest
 */
-func (a *ArtistsAPIService) GetArtists(ctx context.Context) ApiGetArtistsRequest {
-	return ApiGetArtistsRequest{
+func (a *ArtistsAPIService) GetArtists(ctx context.Context) ArtistsAPIGetArtistsRequest {
+	return ArtistsAPIGetArtistsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -970,7 +970,7 @@ func (a *ArtistsAPIService) GetArtists(ctx context.Context) ApiGetArtistsRequest
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ArtistsAPIService) GetArtistsExecute(r ApiGetArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ArtistsAPIService) GetArtistsExecute(r ArtistsAPIGetArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

@@ -26,7 +26,7 @@ import (
 // LiveTvAPIService LiveTvAPI service
 type LiveTvAPIService service
 
-type ApiAddListingProviderRequest struct {
+type LiveTvAPIAddListingProviderRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	pw *string
@@ -36,30 +36,30 @@ type ApiAddListingProviderRequest struct {
 }
 
 // Password.
-func (r ApiAddListingProviderRequest) Pw(pw string) ApiAddListingProviderRequest {
+func (r LiveTvAPIAddListingProviderRequest) Pw(pw string) LiveTvAPIAddListingProviderRequest {
 	r.pw = &pw
 	return r
 }
 
 // Validate listings.
-func (r ApiAddListingProviderRequest) ValidateListings(validateListings bool) ApiAddListingProviderRequest {
+func (r LiveTvAPIAddListingProviderRequest) ValidateListings(validateListings bool) LiveTvAPIAddListingProviderRequest {
 	r.validateListings = &validateListings
 	return r
 }
 
 // Validate login.
-func (r ApiAddListingProviderRequest) ValidateLogin(validateLogin bool) ApiAddListingProviderRequest {
+func (r LiveTvAPIAddListingProviderRequest) ValidateLogin(validateLogin bool) LiveTvAPIAddListingProviderRequest {
 	r.validateLogin = &validateLogin
 	return r
 }
 
 // New listings info.
-func (r ApiAddListingProviderRequest) JellyfinListingsProviderInfo(jellyfinListingsProviderInfo JellyfinListingsProviderInfo) ApiAddListingProviderRequest {
+func (r LiveTvAPIAddListingProviderRequest) JellyfinListingsProviderInfo(jellyfinListingsProviderInfo JellyfinListingsProviderInfo) LiveTvAPIAddListingProviderRequest {
 	r.jellyfinListingsProviderInfo = &jellyfinListingsProviderInfo
 	return r
 }
 
-func (r ApiAddListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
+func (r LiveTvAPIAddListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
 	return r.ApiService.AddListingProviderExecute(r)
 }
 
@@ -67,10 +67,10 @@ func (r ApiAddListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, 
 AddListingProvider Adds a listings provider.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddListingProviderRequest
+ @return LiveTvAPIAddListingProviderRequest
 */
-func (a *LiveTvAPIService) AddListingProvider(ctx context.Context) ApiAddListingProviderRequest {
-	return ApiAddListingProviderRequest{
+func (a *LiveTvAPIService) AddListingProvider(ctx context.Context) LiveTvAPIAddListingProviderRequest {
+	return LiveTvAPIAddListingProviderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -78,7 +78,7 @@ func (a *LiveTvAPIService) AddListingProvider(ctx context.Context) ApiAddListing
 
 // Execute executes the request
 //  @return JellyfinListingsProviderInfo
-func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
+func (a *LiveTvAPIService) AddListingProviderExecute(r LiveTvAPIAddListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -182,19 +182,19 @@ func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAddTunerHostRequest struct {
+type LiveTvAPIAddTunerHostRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	jellyfinTunerHostInfo *JellyfinTunerHostInfo
 }
 
 // New tuner host.
-func (r ApiAddTunerHostRequest) JellyfinTunerHostInfo(jellyfinTunerHostInfo JellyfinTunerHostInfo) ApiAddTunerHostRequest {
+func (r LiveTvAPIAddTunerHostRequest) JellyfinTunerHostInfo(jellyfinTunerHostInfo JellyfinTunerHostInfo) LiveTvAPIAddTunerHostRequest {
 	r.jellyfinTunerHostInfo = &jellyfinTunerHostInfo
 	return r
 }
 
-func (r ApiAddTunerHostRequest) Execute() (*JellyfinTunerHostInfo, *http.Response, error) {
+func (r LiveTvAPIAddTunerHostRequest) Execute() (*JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.AddTunerHostExecute(r)
 }
 
@@ -202,10 +202,10 @@ func (r ApiAddTunerHostRequest) Execute() (*JellyfinTunerHostInfo, *http.Respons
 AddTunerHost Adds a tuner host.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddTunerHostRequest
+ @return LiveTvAPIAddTunerHostRequest
 */
-func (a *LiveTvAPIService) AddTunerHost(ctx context.Context) ApiAddTunerHostRequest {
-	return ApiAddTunerHostRequest{
+func (a *LiveTvAPIService) AddTunerHost(ctx context.Context) LiveTvAPIAddTunerHostRequest {
+	return LiveTvAPIAddTunerHostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -213,7 +213,7 @@ func (a *LiveTvAPIService) AddTunerHost(ctx context.Context) ApiAddTunerHostRequ
 
 // Execute executes the request
 //  @return JellyfinTunerHostInfo
-func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*JellyfinTunerHostInfo, *http.Response, error) {
+func (a *LiveTvAPIService) AddTunerHostExecute(r LiveTvAPIAddTunerHostRequest) (*JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -302,13 +302,13 @@ func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiCancelSeriesTimerRequest struct {
+type LiveTvAPICancelSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
 }
 
-func (r ApiCancelSeriesTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPICancelSeriesTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CancelSeriesTimerExecute(r)
 }
 
@@ -317,10 +317,10 @@ CancelSeriesTimer Cancels a live tv series timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiCancelSeriesTimerRequest
+ @return LiveTvAPICancelSeriesTimerRequest
 */
-func (a *LiveTvAPIService) CancelSeriesTimer(ctx context.Context, timerId string) ApiCancelSeriesTimerRequest {
-	return ApiCancelSeriesTimerRequest{
+func (a *LiveTvAPIService) CancelSeriesTimer(ctx context.Context, timerId string) LiveTvAPICancelSeriesTimerRequest {
+	return LiveTvAPICancelSeriesTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -328,7 +328,7 @@ func (a *LiveTvAPIService) CancelSeriesTimer(ctx context.Context, timerId string
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) CancelSeriesTimerExecute(r ApiCancelSeriesTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) CancelSeriesTimerExecute(r LiveTvAPICancelSeriesTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -406,13 +406,13 @@ func (a *LiveTvAPIService) CancelSeriesTimerExecute(r ApiCancelSeriesTimerReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiCancelTimerRequest struct {
+type LiveTvAPICancelTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
 }
 
-func (r ApiCancelTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPICancelTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CancelTimerExecute(r)
 }
 
@@ -421,10 +421,10 @@ CancelTimer Cancels a live tv timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiCancelTimerRequest
+ @return LiveTvAPICancelTimerRequest
 */
-func (a *LiveTvAPIService) CancelTimer(ctx context.Context, timerId string) ApiCancelTimerRequest {
-	return ApiCancelTimerRequest{
+func (a *LiveTvAPIService) CancelTimer(ctx context.Context, timerId string) LiveTvAPICancelTimerRequest {
+	return LiveTvAPICancelTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -432,7 +432,7 @@ func (a *LiveTvAPIService) CancelTimer(ctx context.Context, timerId string) ApiC
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) CancelTimerExecute(r ApiCancelTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) CancelTimerExecute(r LiveTvAPICancelTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -510,19 +510,19 @@ func (a *LiveTvAPIService) CancelTimerExecute(r ApiCancelTimerRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiCreateSeriesTimerRequest struct {
+type LiveTvAPICreateSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	jellyfinSeriesTimerInfoDto *JellyfinSeriesTimerInfoDto
 }
 
 // New series timer info.
-func (r ApiCreateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) ApiCreateSeriesTimerRequest {
+func (r LiveTvAPICreateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) LiveTvAPICreateSeriesTimerRequest {
 	r.jellyfinSeriesTimerInfoDto = &jellyfinSeriesTimerInfoDto
 	return r
 }
 
-func (r ApiCreateSeriesTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPICreateSeriesTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateSeriesTimerExecute(r)
 }
 
@@ -530,17 +530,17 @@ func (r ApiCreateSeriesTimerRequest) Execute() (*http.Response, error) {
 CreateSeriesTimer Creates a live tv series timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateSeriesTimerRequest
+ @return LiveTvAPICreateSeriesTimerRequest
 */
-func (a *LiveTvAPIService) CreateSeriesTimer(ctx context.Context) ApiCreateSeriesTimerRequest {
-	return ApiCreateSeriesTimerRequest{
+func (a *LiveTvAPIService) CreateSeriesTimer(ctx context.Context) LiveTvAPICreateSeriesTimerRequest {
+	return LiveTvAPICreateSeriesTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) CreateSeriesTimerExecute(r LiveTvAPICreateSeriesTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -619,19 +619,19 @@ func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiCreateTimerRequest struct {
+type LiveTvAPICreateTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	jellyfinTimerInfoDto *JellyfinTimerInfoDto
 }
 
 // New timer info.
-func (r ApiCreateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) ApiCreateTimerRequest {
+func (r LiveTvAPICreateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) LiveTvAPICreateTimerRequest {
 	r.jellyfinTimerInfoDto = &jellyfinTimerInfoDto
 	return r
 }
 
-func (r ApiCreateTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPICreateTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateTimerExecute(r)
 }
 
@@ -639,17 +639,17 @@ func (r ApiCreateTimerRequest) Execute() (*http.Response, error) {
 CreateTimer Creates a live tv timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateTimerRequest
+ @return LiveTvAPICreateTimerRequest
 */
-func (a *LiveTvAPIService) CreateTimer(ctx context.Context) ApiCreateTimerRequest {
-	return ApiCreateTimerRequest{
+func (a *LiveTvAPIService) CreateTimer(ctx context.Context) LiveTvAPICreateTimerRequest {
+	return LiveTvAPICreateTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) CreateTimerExecute(r ApiCreateTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) CreateTimerExecute(r LiveTvAPICreateTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -728,19 +728,19 @@ func (a *LiveTvAPIService) CreateTimerExecute(r ApiCreateTimerRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteListingProviderRequest struct {
+type LiveTvAPIDeleteListingProviderRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	id *string
 }
 
 // Listing provider id.
-func (r ApiDeleteListingProviderRequest) Id(id string) ApiDeleteListingProviderRequest {
+func (r LiveTvAPIDeleteListingProviderRequest) Id(id string) LiveTvAPIDeleteListingProviderRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiDeleteListingProviderRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIDeleteListingProviderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteListingProviderExecute(r)
 }
 
@@ -748,17 +748,17 @@ func (r ApiDeleteListingProviderRequest) Execute() (*http.Response, error) {
 DeleteListingProvider Delete listing provider.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteListingProviderRequest
+ @return LiveTvAPIDeleteListingProviderRequest
 */
-func (a *LiveTvAPIService) DeleteListingProvider(ctx context.Context) ApiDeleteListingProviderRequest {
-	return ApiDeleteListingProviderRequest{
+func (a *LiveTvAPIService) DeleteListingProvider(ctx context.Context) LiveTvAPIDeleteListingProviderRequest {
+	return LiveTvAPIDeleteListingProviderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) DeleteListingProviderExecute(r ApiDeleteListingProviderRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) DeleteListingProviderExecute(r LiveTvAPIDeleteListingProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -838,13 +838,13 @@ func (a *LiveTvAPIService) DeleteListingProviderExecute(r ApiDeleteListingProvid
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteRecordingRequest struct {
+type LiveTvAPIDeleteRecordingRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	recordingId string
 }
 
-func (r ApiDeleteRecordingRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIDeleteRecordingRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteRecordingExecute(r)
 }
 
@@ -853,10 +853,10 @@ DeleteRecording Deletes a live tv recording.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param recordingId Recording id.
- @return ApiDeleteRecordingRequest
+ @return LiveTvAPIDeleteRecordingRequest
 */
-func (a *LiveTvAPIService) DeleteRecording(ctx context.Context, recordingId string) ApiDeleteRecordingRequest {
-	return ApiDeleteRecordingRequest{
+func (a *LiveTvAPIService) DeleteRecording(ctx context.Context, recordingId string) LiveTvAPIDeleteRecordingRequest {
+	return LiveTvAPIDeleteRecordingRequest{
 		ApiService: a,
 		ctx: ctx,
 		recordingId: recordingId,
@@ -864,7 +864,7 @@ func (a *LiveTvAPIService) DeleteRecording(ctx context.Context, recordingId stri
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) DeleteRecordingExecute(r LiveTvAPIDeleteRecordingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -953,19 +953,19 @@ func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteTunerHostRequest struct {
+type LiveTvAPIDeleteTunerHostRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	id *string
 }
 
 // Tuner host id.
-func (r ApiDeleteTunerHostRequest) Id(id string) ApiDeleteTunerHostRequest {
+func (r LiveTvAPIDeleteTunerHostRequest) Id(id string) LiveTvAPIDeleteTunerHostRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiDeleteTunerHostRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIDeleteTunerHostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteTunerHostExecute(r)
 }
 
@@ -973,17 +973,17 @@ func (r ApiDeleteTunerHostRequest) Execute() (*http.Response, error) {
 DeleteTunerHost Deletes a tuner host.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteTunerHostRequest
+ @return LiveTvAPIDeleteTunerHostRequest
 */
-func (a *LiveTvAPIService) DeleteTunerHost(ctx context.Context) ApiDeleteTunerHostRequest {
-	return ApiDeleteTunerHostRequest{
+func (a *LiveTvAPIService) DeleteTunerHost(ctx context.Context) LiveTvAPIDeleteTunerHostRequest {
+	return LiveTvAPIDeleteTunerHostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) DeleteTunerHostExecute(r ApiDeleteTunerHostRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) DeleteTunerHostExecute(r LiveTvAPIDeleteTunerHostRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -1063,19 +1063,19 @@ func (a *LiveTvAPIService) DeleteTunerHostExecute(r ApiDeleteTunerHostRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiDiscoverTunersRequest struct {
+type LiveTvAPIDiscoverTunersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	newDevicesOnly *bool
 }
 
 // Only discover new tuners.
-func (r ApiDiscoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) ApiDiscoverTunersRequest {
+func (r LiveTvAPIDiscoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) LiveTvAPIDiscoverTunersRequest {
 	r.newDevicesOnly = &newDevicesOnly
 	return r
 }
 
-func (r ApiDiscoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
+func (r LiveTvAPIDiscoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.DiscoverTunersExecute(r)
 }
 
@@ -1083,10 +1083,10 @@ func (r ApiDiscoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Resp
 DiscoverTuners Discover tuners.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDiscoverTunersRequest
+ @return LiveTvAPIDiscoverTunersRequest
 */
-func (a *LiveTvAPIService) DiscoverTuners(ctx context.Context) ApiDiscoverTunersRequest {
-	return ApiDiscoverTunersRequest{
+func (a *LiveTvAPIService) DiscoverTuners(ctx context.Context) LiveTvAPIDiscoverTunersRequest {
+	return LiveTvAPIDiscoverTunersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1094,7 +1094,7 @@ func (a *LiveTvAPIService) DiscoverTuners(ctx context.Context) ApiDiscoverTuners
 
 // Execute executes the request
 //  @return []JellyfinTunerHostInfo
-func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
+func (a *LiveTvAPIService) DiscoverTunersExecute(r LiveTvAPIDiscoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1187,19 +1187,19 @@ func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiDiscvoverTunersRequest struct {
+type LiveTvAPIDiscvoverTunersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	newDevicesOnly *bool
 }
 
 // Only discover new tuners.
-func (r ApiDiscvoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) ApiDiscvoverTunersRequest {
+func (r LiveTvAPIDiscvoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) LiveTvAPIDiscvoverTunersRequest {
 	r.newDevicesOnly = &newDevicesOnly
 	return r
 }
 
-func (r ApiDiscvoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
+func (r LiveTvAPIDiscvoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.DiscvoverTunersExecute(r)
 }
 
@@ -1207,10 +1207,10 @@ func (r ApiDiscvoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Res
 DiscvoverTuners Discover tuners.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDiscvoverTunersRequest
+ @return LiveTvAPIDiscvoverTunersRequest
 */
-func (a *LiveTvAPIService) DiscvoverTuners(ctx context.Context) ApiDiscvoverTunersRequest {
-	return ApiDiscvoverTunersRequest{
+func (a *LiveTvAPIService) DiscvoverTuners(ctx context.Context) LiveTvAPIDiscvoverTunersRequest {
+	return LiveTvAPIDiscvoverTunersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1218,7 +1218,7 @@ func (a *LiveTvAPIService) DiscvoverTuners(ctx context.Context) ApiDiscvoverTune
 
 // Execute executes the request
 //  @return []JellyfinTunerHostInfo
-func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
+func (a *LiveTvAPIService) DiscvoverTunersExecute(r LiveTvAPIDiscvoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1311,7 +1311,7 @@ func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChannelRequest struct {
+type LiveTvAPIGetChannelRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	channelId string
@@ -1319,12 +1319,12 @@ type ApiGetChannelRequest struct {
 }
 
 // Optional. Attach user data.
-func (r ApiGetChannelRequest) UserId(userId string) ApiGetChannelRequest {
+func (r LiveTvAPIGetChannelRequest) UserId(userId string) LiveTvAPIGetChannelRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetChannelRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r LiveTvAPIGetChannelRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetChannelExecute(r)
 }
 
@@ -1333,10 +1333,10 @@ GetChannel Gets a live tv channel.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelId Channel id.
- @return ApiGetChannelRequest
+ @return LiveTvAPIGetChannelRequest
 */
-func (a *LiveTvAPIService) GetChannel(ctx context.Context, channelId string) ApiGetChannelRequest {
-	return ApiGetChannelRequest{
+func (a *LiveTvAPIService) GetChannel(ctx context.Context, channelId string) LiveTvAPIGetChannelRequest {
+	return LiveTvAPIGetChannelRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelId: channelId,
@@ -1345,7 +1345,7 @@ func (a *LiveTvAPIService) GetChannel(ctx context.Context, channelId string) Api
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetChannelExecute(r LiveTvAPIGetChannelRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1447,19 +1447,19 @@ func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*JellyfinB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChannelMappingOptionsRequest struct {
+type LiveTvAPIGetChannelMappingOptionsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	providerId *string
 }
 
 // Provider id.
-func (r ApiGetChannelMappingOptionsRequest) ProviderId(providerId string) ApiGetChannelMappingOptionsRequest {
+func (r LiveTvAPIGetChannelMappingOptionsRequest) ProviderId(providerId string) LiveTvAPIGetChannelMappingOptionsRequest {
 	r.providerId = &providerId
 	return r
 }
 
-func (r ApiGetChannelMappingOptionsRequest) Execute() (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
+func (r LiveTvAPIGetChannelMappingOptionsRequest) Execute() (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
 	return r.ApiService.GetChannelMappingOptionsExecute(r)
 }
 
@@ -1467,10 +1467,10 @@ func (r ApiGetChannelMappingOptionsRequest) Execute() (*JellyfinChannelMappingOp
 GetChannelMappingOptions Get channel mapping options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChannelMappingOptionsRequest
+ @return LiveTvAPIGetChannelMappingOptionsRequest
 */
-func (a *LiveTvAPIService) GetChannelMappingOptions(ctx context.Context) ApiGetChannelMappingOptionsRequest {
-	return ApiGetChannelMappingOptionsRequest{
+func (a *LiveTvAPIService) GetChannelMappingOptions(ctx context.Context) LiveTvAPIGetChannelMappingOptionsRequest {
+	return LiveTvAPIGetChannelMappingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1478,7 +1478,7 @@ func (a *LiveTvAPIService) GetChannelMappingOptions(ctx context.Context) ApiGetC
 
 // Execute executes the request
 //  @return JellyfinChannelMappingOptionsDto
-func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappingOptionsRequest) (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r LiveTvAPIGetChannelMappingOptionsRequest) (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1568,12 +1568,12 @@ func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDefaultListingProviderRequest struct {
+type LiveTvAPIGetDefaultListingProviderRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetDefaultListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
+func (r LiveTvAPIGetDefaultListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
 	return r.ApiService.GetDefaultListingProviderExecute(r)
 }
 
@@ -1581,10 +1581,10 @@ func (r ApiGetDefaultListingProviderRequest) Execute() (*JellyfinListingsProvide
 GetDefaultListingProvider Gets default listings provider info.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultListingProviderRequest
+ @return LiveTvAPIGetDefaultListingProviderRequest
 */
-func (a *LiveTvAPIService) GetDefaultListingProvider(ctx context.Context) ApiGetDefaultListingProviderRequest {
-	return ApiGetDefaultListingProviderRequest{
+func (a *LiveTvAPIService) GetDefaultListingProvider(ctx context.Context) LiveTvAPIGetDefaultListingProviderRequest {
+	return LiveTvAPIGetDefaultListingProviderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1592,7 +1592,7 @@ func (a *LiveTvAPIService) GetDefaultListingProvider(ctx context.Context) ApiGet
 
 // Execute executes the request
 //  @return JellyfinListingsProviderInfo
-func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
+func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r LiveTvAPIGetDefaultListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1679,19 +1679,19 @@ func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDefaultTimerRequest struct {
+type LiveTvAPIGetDefaultTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	programId *string
 }
 
 // Optional. To attach default values based on a program.
-func (r ApiGetDefaultTimerRequest) ProgramId(programId string) ApiGetDefaultTimerRequest {
+func (r LiveTvAPIGetDefaultTimerRequest) ProgramId(programId string) LiveTvAPIGetDefaultTimerRequest {
 	r.programId = &programId
 	return r
 }
 
-func (r ApiGetDefaultTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
+func (r LiveTvAPIGetDefaultTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetDefaultTimerExecute(r)
 }
 
@@ -1699,10 +1699,10 @@ func (r ApiGetDefaultTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http
 GetDefaultTimer Gets the default values for a new timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultTimerRequest
+ @return LiveTvAPIGetDefaultTimerRequest
 */
-func (a *LiveTvAPIService) GetDefaultTimer(ctx context.Context) ApiGetDefaultTimerRequest {
-	return ApiGetDefaultTimerRequest{
+func (a *LiveTvAPIService) GetDefaultTimer(ctx context.Context) LiveTvAPIGetDefaultTimerRequest {
+	return LiveTvAPIGetDefaultTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1710,7 +1710,7 @@ func (a *LiveTvAPIService) GetDefaultTimer(ctx context.Context) ApiGetDefaultTim
 
 // Execute executes the request
 //  @return JellyfinSeriesTimerInfoDto
-func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetDefaultTimerExecute(r LiveTvAPIGetDefaultTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1800,12 +1800,12 @@ func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetGuideInfoRequest struct {
+type LiveTvAPIGetGuideInfoRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetGuideInfoRequest) Execute() (*JellyfinGuideInfo, *http.Response, error) {
+func (r LiveTvAPIGetGuideInfoRequest) Execute() (*JellyfinGuideInfo, *http.Response, error) {
 	return r.ApiService.GetGuideInfoExecute(r)
 }
 
@@ -1813,10 +1813,10 @@ func (r ApiGetGuideInfoRequest) Execute() (*JellyfinGuideInfo, *http.Response, e
 GetGuideInfo Get guid info.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGuideInfoRequest
+ @return LiveTvAPIGetGuideInfoRequest
 */
-func (a *LiveTvAPIService) GetGuideInfo(ctx context.Context) ApiGetGuideInfoRequest {
-	return ApiGetGuideInfoRequest{
+func (a *LiveTvAPIService) GetGuideInfo(ctx context.Context) LiveTvAPIGetGuideInfoRequest {
+	return LiveTvAPIGetGuideInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1824,7 +1824,7 @@ func (a *LiveTvAPIService) GetGuideInfo(ctx context.Context) ApiGetGuideInfoRequ
 
 // Execute executes the request
 //  @return JellyfinGuideInfo
-func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*JellyfinGuideInfo, *http.Response, error) {
+func (a *LiveTvAPIService) GetGuideInfoExecute(r LiveTvAPIGetGuideInfoRequest) (*JellyfinGuideInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1911,7 +1911,7 @@ func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLineupsRequest struct {
+type LiveTvAPIGetLineupsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	id *string
@@ -1921,30 +1921,30 @@ type ApiGetLineupsRequest struct {
 }
 
 // Provider id.
-func (r ApiGetLineupsRequest) Id(id string) ApiGetLineupsRequest {
+func (r LiveTvAPIGetLineupsRequest) Id(id string) LiveTvAPIGetLineupsRequest {
 	r.id = &id
 	return r
 }
 
 // Provider type.
-func (r ApiGetLineupsRequest) Type_(type_ string) ApiGetLineupsRequest {
+func (r LiveTvAPIGetLineupsRequest) Type_(type_ string) LiveTvAPIGetLineupsRequest {
 	r.type_ = &type_
 	return r
 }
 
 // Location.
-func (r ApiGetLineupsRequest) Location(location string) ApiGetLineupsRequest {
+func (r LiveTvAPIGetLineupsRequest) Location(location string) LiveTvAPIGetLineupsRequest {
 	r.location = &location
 	return r
 }
 
 // Country.
-func (r ApiGetLineupsRequest) Country(country string) ApiGetLineupsRequest {
+func (r LiveTvAPIGetLineupsRequest) Country(country string) LiveTvAPIGetLineupsRequest {
 	r.country = &country
 	return r
 }
 
-func (r ApiGetLineupsRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
+func (r LiveTvAPIGetLineupsRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetLineupsExecute(r)
 }
 
@@ -1952,10 +1952,10 @@ func (r ApiGetLineupsRequest) Execute() ([]JellyfinNameIdPair, *http.Response, e
 GetLineups Gets available lineups.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLineupsRequest
+ @return LiveTvAPIGetLineupsRequest
 */
-func (a *LiveTvAPIService) GetLineups(ctx context.Context) ApiGetLineupsRequest {
-	return ApiGetLineupsRequest{
+func (a *LiveTvAPIService) GetLineups(ctx context.Context) LiveTvAPIGetLineupsRequest {
+	return LiveTvAPIGetLineupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1963,7 +1963,7 @@ func (a *LiveTvAPIService) GetLineups(ctx context.Context) ApiGetLineupsRequest 
 
 // Execute executes the request
 //  @return []JellyfinNameIdPair
-func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]JellyfinNameIdPair, *http.Response, error) {
+func (a *LiveTvAPIService) GetLineupsExecute(r LiveTvAPIGetLineupsRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2062,13 +2062,13 @@ func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]Jellyfin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveRecordingFileRequest struct {
+type LiveTvAPIGetLiveRecordingFileRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	recordingId string
 }
 
-func (r ApiGetLiveRecordingFileRequest) Execute() (*os.File, *http.Response, error) {
+func (r LiveTvAPIGetLiveRecordingFileRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetLiveRecordingFileExecute(r)
 }
 
@@ -2077,10 +2077,10 @@ GetLiveRecordingFile Gets a live tv recording stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param recordingId Recording id.
- @return ApiGetLiveRecordingFileRequest
+ @return LiveTvAPIGetLiveRecordingFileRequest
 */
-func (a *LiveTvAPIService) GetLiveRecordingFile(ctx context.Context, recordingId string) ApiGetLiveRecordingFileRequest {
-	return ApiGetLiveRecordingFileRequest{
+func (a *LiveTvAPIService) GetLiveRecordingFile(ctx context.Context, recordingId string) LiveTvAPIGetLiveRecordingFileRequest {
+	return LiveTvAPIGetLiveRecordingFileRequest{
 		ApiService: a,
 		ctx: ctx,
 		recordingId: recordingId,
@@ -2089,7 +2089,7 @@ func (a *LiveTvAPIService) GetLiveRecordingFile(ctx context.Context, recordingId
 
 // Execute executes the request
 //  @return *os.File
-func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFileRequest) (*os.File, *http.Response, error) {
+func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r LiveTvAPIGetLiveRecordingFileRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2173,14 +2173,14 @@ func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFile
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveStreamFileRequest struct {
+type LiveTvAPIGetLiveStreamFileRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	streamId string
 	container string
 }
 
-func (r ApiGetLiveStreamFileRequest) Execute() (*os.File, *http.Response, error) {
+func (r LiveTvAPIGetLiveStreamFileRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetLiveStreamFileExecute(r)
 }
 
@@ -2190,10 +2190,10 @@ GetLiveStreamFile Gets a live tv channel stream.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param streamId Stream id.
  @param container Container type.
- @return ApiGetLiveStreamFileRequest
+ @return LiveTvAPIGetLiveStreamFileRequest
 */
-func (a *LiveTvAPIService) GetLiveStreamFile(ctx context.Context, streamId string, container string) ApiGetLiveStreamFileRequest {
-	return ApiGetLiveStreamFileRequest{
+func (a *LiveTvAPIService) GetLiveStreamFile(ctx context.Context, streamId string, container string) LiveTvAPIGetLiveStreamFileRequest {
+	return LiveTvAPIGetLiveStreamFileRequest{
 		ApiService: a,
 		ctx: ctx,
 		streamId: streamId,
@@ -2203,7 +2203,7 @@ func (a *LiveTvAPIService) GetLiveStreamFile(ctx context.Context, streamId strin
 
 // Execute executes the request
 //  @return *os.File
-func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileRequest) (*os.File, *http.Response, error) {
+func (a *LiveTvAPIService) GetLiveStreamFileExecute(r LiveTvAPIGetLiveStreamFileRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2288,7 +2288,7 @@ func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveTvChannelsRequest struct {
+type LiveTvAPIGetLiveTvChannelsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	type_ *JellyfinChannelType
@@ -2315,132 +2315,132 @@ type ApiGetLiveTvChannelsRequest struct {
 }
 
 // Optional. Filter by channel type.
-func (r ApiGetLiveTvChannelsRequest) Type_(type_ JellyfinChannelType) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) Type_(type_ JellyfinChannelType) LiveTvAPIGetLiveTvChannelsRequest {
 	r.type_ = &type_
 	return r
 }
 
 // Optional. Filter by user and attach user data.
-func (r ApiGetLiveTvChannelsRequest) UserId(userId string) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) UserId(userId string) LiveTvAPIGetLiveTvChannelsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetLiveTvChannelsRequest) StartIndex(startIndex int32) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) StartIndex(startIndex int32) LiveTvAPIGetLiveTvChannelsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. Filter for movies.
-func (r ApiGetLiveTvChannelsRequest) IsMovie(isMovie bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsMovie(isMovie bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional. Filter for series.
-func (r ApiGetLiveTvChannelsRequest) IsSeries(isSeries bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsSeries(isSeries bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional. Filter for news.
-func (r ApiGetLiveTvChannelsRequest) IsNews(isNews bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsNews(isNews bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional. Filter for kids.
-func (r ApiGetLiveTvChannelsRequest) IsKids(isKids bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsKids(isKids bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional. Filter for sports.
-func (r ApiGetLiveTvChannelsRequest) IsSports(isSports bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsSports(isSports bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetLiveTvChannelsRequest) Limit(limit int32) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) Limit(limit int32) LiveTvAPIGetLiveTvChannelsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Filter by channels that are favorites, or not.
-func (r ApiGetLiveTvChannelsRequest) IsFavorite(isFavorite bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsFavorite(isFavorite bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional. Filter by channels that are liked, or not.
-func (r ApiGetLiveTvChannelsRequest) IsLiked(isLiked bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsLiked(isLiked bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isLiked = &isLiked
 	return r
 }
 
 // Optional. Filter by channels that are disliked, or not.
-func (r ApiGetLiveTvChannelsRequest) IsDisliked(isDisliked bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) IsDisliked(isDisliked bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.isDisliked = &isDisliked
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetLiveTvChannelsRequest) EnableImages(enableImages bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) EnableImages(enableImages bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetLiveTvChannelsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) ImageTypeLimit(imageTypeLimit int32) LiveTvAPIGetLiveTvChannelsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // \&quot;Optional. The image types to include in the output.
-func (r ApiGetLiveTvChannelsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) LiveTvAPIGetLiveTvChannelsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLiveTvChannelsRequest) Fields(fields []JellyfinItemFields) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) Fields(fields []JellyfinItemFields) LiveTvAPIGetLiveTvChannelsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetLiveTvChannelsRequest) EnableUserData(enableUserData bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) EnableUserData(enableUserData bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Key to sort by.
-func (r ApiGetLiveTvChannelsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) SortBy(sortBy []JellyfinItemSortBy) LiveTvAPIGetLiveTvChannelsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort order.
-func (r ApiGetLiveTvChannelsRequest) SortOrder(sortOrder JellyfinSortOrder) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) SortOrder(sortOrder JellyfinSortOrder) LiveTvAPIGetLiveTvChannelsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional. Incorporate favorite and like status into channel sorting.
-func (r ApiGetLiveTvChannelsRequest) EnableFavoriteSorting(enableFavoriteSorting bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) EnableFavoriteSorting(enableFavoriteSorting bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.enableFavoriteSorting = &enableFavoriteSorting
 	return r
 }
 
 // Optional. Adds current program info to each channel.
-func (r ApiGetLiveTvChannelsRequest) AddCurrentProgram(addCurrentProgram bool) ApiGetLiveTvChannelsRequest {
+func (r LiveTvAPIGetLiveTvChannelsRequest) AddCurrentProgram(addCurrentProgram bool) LiveTvAPIGetLiveTvChannelsRequest {
 	r.addCurrentProgram = &addCurrentProgram
 	return r
 }
 
-func (r ApiGetLiveTvChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetLiveTvChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLiveTvChannelsExecute(r)
 }
 
@@ -2448,10 +2448,10 @@ func (r ApiGetLiveTvChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult,
 GetLiveTvChannels Gets available live tv channels.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvChannelsRequest
+ @return LiveTvAPIGetLiveTvChannelsRequest
 */
-func (a *LiveTvAPIService) GetLiveTvChannels(ctx context.Context) ApiGetLiveTvChannelsRequest {
-	return ApiGetLiveTvChannelsRequest{
+func (a *LiveTvAPIService) GetLiveTvChannels(ctx context.Context) LiveTvAPIGetLiveTvChannelsRequest {
+	return LiveTvAPIGetLiveTvChannelsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2459,7 +2459,7 @@ func (a *LiveTvAPIService) GetLiveTvChannels(ctx context.Context) ApiGetLiveTvCh
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r LiveTvAPIGetLiveTvChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2639,12 +2639,12 @@ func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveTvInfoRequest struct {
+type LiveTvAPIGetLiveTvInfoRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetLiveTvInfoRequest) Execute() (*JellyfinLiveTvInfo, *http.Response, error) {
+func (r LiveTvAPIGetLiveTvInfoRequest) Execute() (*JellyfinLiveTvInfo, *http.Response, error) {
 	return r.ApiService.GetLiveTvInfoExecute(r)
 }
 
@@ -2652,10 +2652,10 @@ func (r ApiGetLiveTvInfoRequest) Execute() (*JellyfinLiveTvInfo, *http.Response,
 GetLiveTvInfo Gets available live tv services.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvInfoRequest
+ @return LiveTvAPIGetLiveTvInfoRequest
 */
-func (a *LiveTvAPIService) GetLiveTvInfo(ctx context.Context) ApiGetLiveTvInfoRequest {
-	return ApiGetLiveTvInfoRequest{
+func (a *LiveTvAPIService) GetLiveTvInfo(ctx context.Context) LiveTvAPIGetLiveTvInfoRequest {
+	return LiveTvAPIGetLiveTvInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2663,7 +2663,7 @@ func (a *LiveTvAPIService) GetLiveTvInfo(ctx context.Context) ApiGetLiveTvInfoRe
 
 // Execute executes the request
 //  @return JellyfinLiveTvInfo
-func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*JellyfinLiveTvInfo, *http.Response, error) {
+func (a *LiveTvAPIService) GetLiveTvInfoExecute(r LiveTvAPIGetLiveTvInfoRequest) (*JellyfinLiveTvInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2750,7 +2750,7 @@ func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLiveTvProgramsRequest struct {
+type LiveTvAPIGetLiveTvProgramsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	channelIds *[]string
@@ -2783,168 +2783,168 @@ type ApiGetLiveTvProgramsRequest struct {
 }
 
 // The channels to return guide information for.
-func (r ApiGetLiveTvProgramsRequest) ChannelIds(channelIds []string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) ChannelIds(channelIds []string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.channelIds = &channelIds
 	return r
 }
 
 // Optional. Filter by user id.
-func (r ApiGetLiveTvProgramsRequest) UserId(userId string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) UserId(userId string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The minimum premiere start date.
-func (r ApiGetLiveTvProgramsRequest) MinStartDate(minStartDate time.Time) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) MinStartDate(minStartDate time.Time) LiveTvAPIGetLiveTvProgramsRequest {
 	r.minStartDate = &minStartDate
 	return r
 }
 
 // Optional. Filter by programs that have completed airing, or not.
-func (r ApiGetLiveTvProgramsRequest) HasAired(hasAired bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) HasAired(hasAired bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.hasAired = &hasAired
 	return r
 }
 
 // Optional. Filter by programs that are currently airing, or not.
-func (r ApiGetLiveTvProgramsRequest) IsAiring(isAiring bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsAiring(isAiring bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isAiring = &isAiring
 	return r
 }
 
 // Optional. The maximum premiere start date.
-func (r ApiGetLiveTvProgramsRequest) MaxStartDate(maxStartDate time.Time) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) MaxStartDate(maxStartDate time.Time) LiveTvAPIGetLiveTvProgramsRequest {
 	r.maxStartDate = &maxStartDate
 	return r
 }
 
 // Optional. The minimum premiere end date.
-func (r ApiGetLiveTvProgramsRequest) MinEndDate(minEndDate time.Time) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) MinEndDate(minEndDate time.Time) LiveTvAPIGetLiveTvProgramsRequest {
 	r.minEndDate = &minEndDate
 	return r
 }
 
 // Optional. The maximum premiere end date.
-func (r ApiGetLiveTvProgramsRequest) MaxEndDate(maxEndDate time.Time) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) MaxEndDate(maxEndDate time.Time) LiveTvAPIGetLiveTvProgramsRequest {
 	r.maxEndDate = &maxEndDate
 	return r
 }
 
 // Optional. Filter for movies.
-func (r ApiGetLiveTvProgramsRequest) IsMovie(isMovie bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsMovie(isMovie bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional. Filter for series.
-func (r ApiGetLiveTvProgramsRequest) IsSeries(isSeries bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsSeries(isSeries bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional. Filter for news.
-func (r ApiGetLiveTvProgramsRequest) IsNews(isNews bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsNews(isNews bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional. Filter for kids.
-func (r ApiGetLiveTvProgramsRequest) IsKids(isKids bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsKids(isKids bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional. Filter for sports.
-func (r ApiGetLiveTvProgramsRequest) IsSports(isSports bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) IsSports(isSports bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetLiveTvProgramsRequest) StartIndex(startIndex int32) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) StartIndex(startIndex int32) LiveTvAPIGetLiveTvProgramsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetLiveTvProgramsRequest) Limit(limit int32) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) Limit(limit int32) LiveTvAPIGetLiveTvProgramsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate.
-func (r ApiGetLiveTvProgramsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) SortBy(sortBy []JellyfinItemSortBy) LiveTvAPIGetLiveTvProgramsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetLiveTvProgramsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) SortOrder(sortOrder []JellyfinSortOrder) LiveTvAPIGetLiveTvProgramsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // The genres to return guide information for.
-func (r ApiGetLiveTvProgramsRequest) Genres(genres []string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) Genres(genres []string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.genres = &genres
 	return r
 }
 
 // The genre ids to return guide information for.
-func (r ApiGetLiveTvProgramsRequest) GenreIds(genreIds []string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) GenreIds(genreIds []string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetLiveTvProgramsRequest) EnableImages(enableImages bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) EnableImages(enableImages bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetLiveTvProgramsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) ImageTypeLimit(imageTypeLimit int32) LiveTvAPIGetLiveTvProgramsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetLiveTvProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) LiveTvAPIGetLiveTvProgramsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetLiveTvProgramsRequest) EnableUserData(enableUserData bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) EnableUserData(enableUserData bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Filter by series timer id.
-func (r ApiGetLiveTvProgramsRequest) SeriesTimerId(seriesTimerId string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) SeriesTimerId(seriesTimerId string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.seriesTimerId = &seriesTimerId
 	return r
 }
 
 // Optional. Filter by library series id.
-func (r ApiGetLiveTvProgramsRequest) LibrarySeriesId(librarySeriesId string) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) LibrarySeriesId(librarySeriesId string) LiveTvAPIGetLiveTvProgramsRequest {
 	r.librarySeriesId = &librarySeriesId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLiveTvProgramsRequest) Fields(fields []JellyfinItemFields) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) Fields(fields []JellyfinItemFields) LiveTvAPIGetLiveTvProgramsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Retrieve total record count.
-func (r ApiGetLiveTvProgramsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetLiveTvProgramsRequest {
+func (r LiveTvAPIGetLiveTvProgramsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) LiveTvAPIGetLiveTvProgramsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetLiveTvProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetLiveTvProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLiveTvProgramsExecute(r)
 }
 
@@ -2952,10 +2952,10 @@ func (r ApiGetLiveTvProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult,
 GetLiveTvPrograms Gets available live tv epgs.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLiveTvProgramsRequest
+ @return LiveTvAPIGetLiveTvProgramsRequest
 */
-func (a *LiveTvAPIService) GetLiveTvPrograms(ctx context.Context) ApiGetLiveTvProgramsRequest {
-	return ApiGetLiveTvProgramsRequest{
+func (a *LiveTvAPIService) GetLiveTvPrograms(ctx context.Context) LiveTvAPIGetLiveTvProgramsRequest {
+	return LiveTvAPIGetLiveTvProgramsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -2963,7 +2963,7 @@ func (a *LiveTvAPIService) GetLiveTvPrograms(ctx context.Context) ApiGetLiveTvPr
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r LiveTvAPIGetLiveTvProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3190,7 +3190,7 @@ func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetProgramRequest struct {
+type LiveTvAPIGetProgramRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	programId string
@@ -3198,12 +3198,12 @@ type ApiGetProgramRequest struct {
 }
 
 // Optional. Attach user data.
-func (r ApiGetProgramRequest) UserId(userId string) ApiGetProgramRequest {
+func (r LiveTvAPIGetProgramRequest) UserId(userId string) LiveTvAPIGetProgramRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetProgramRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r LiveTvAPIGetProgramRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetProgramExecute(r)
 }
 
@@ -3212,10 +3212,10 @@ GetProgram Gets a live tv program.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param programId Program id.
- @return ApiGetProgramRequest
+ @return LiveTvAPIGetProgramRequest
 */
-func (a *LiveTvAPIService) GetProgram(ctx context.Context, programId string) ApiGetProgramRequest {
-	return ApiGetProgramRequest{
+func (a *LiveTvAPIService) GetProgram(ctx context.Context, programId string) LiveTvAPIGetProgramRequest {
+	return LiveTvAPIGetProgramRequest{
 		ApiService: a,
 		ctx: ctx,
 		programId: programId,
@@ -3224,7 +3224,7 @@ func (a *LiveTvAPIService) GetProgram(ctx context.Context, programId string) Api
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetProgramExecute(r LiveTvAPIGetProgramRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3315,19 +3315,19 @@ func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*JellyfinB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetProgramsRequest struct {
+type LiveTvAPIGetProgramsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	jellyfinGetProgramsDto *JellyfinGetProgramsDto
 }
 
 // Request body.
-func (r ApiGetProgramsRequest) JellyfinGetProgramsDto(jellyfinGetProgramsDto JellyfinGetProgramsDto) ApiGetProgramsRequest {
+func (r LiveTvAPIGetProgramsRequest) JellyfinGetProgramsDto(jellyfinGetProgramsDto JellyfinGetProgramsDto) LiveTvAPIGetProgramsRequest {
 	r.jellyfinGetProgramsDto = &jellyfinGetProgramsDto
 	return r
 }
 
-func (r ApiGetProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetProgramsExecute(r)
 }
 
@@ -3335,10 +3335,10 @@ func (r ApiGetProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http
 GetPrograms Gets available live tv epgs.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetProgramsRequest
+ @return LiveTvAPIGetProgramsRequest
 */
-func (a *LiveTvAPIService) GetPrograms(ctx context.Context) ApiGetProgramsRequest {
-	return ApiGetProgramsRequest{
+func (a *LiveTvAPIService) GetPrograms(ctx context.Context) LiveTvAPIGetProgramsRequest {
+	return LiveTvAPIGetProgramsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3346,7 +3346,7 @@ func (a *LiveTvAPIService) GetPrograms(ctx context.Context) ApiGetProgramsReques
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetProgramsExecute(r LiveTvAPIGetProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3435,7 +3435,7 @@ func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*Jellyfi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecommendedProgramsRequest struct {
+type LiveTvAPIGetRecommendedProgramsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	userId *string
@@ -3457,102 +3457,102 @@ type ApiGetRecommendedProgramsRequest struct {
 }
 
 // Optional. filter by user id.
-func (r ApiGetRecommendedProgramsRequest) UserId(userId string) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) UserId(userId string) LiveTvAPIGetRecommendedProgramsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetRecommendedProgramsRequest) Limit(limit int32) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) Limit(limit int32) LiveTvAPIGetRecommendedProgramsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Filter by programs that are currently airing, or not.
-func (r ApiGetRecommendedProgramsRequest) IsAiring(isAiring bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsAiring(isAiring bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isAiring = &isAiring
 	return r
 }
 
 // Optional. Filter by programs that have completed airing, or not.
-func (r ApiGetRecommendedProgramsRequest) HasAired(hasAired bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) HasAired(hasAired bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.hasAired = &hasAired
 	return r
 }
 
 // Optional. Filter for series.
-func (r ApiGetRecommendedProgramsRequest) IsSeries(isSeries bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsSeries(isSeries bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional. Filter for movies.
-func (r ApiGetRecommendedProgramsRequest) IsMovie(isMovie bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsMovie(isMovie bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional. Filter for news.
-func (r ApiGetRecommendedProgramsRequest) IsNews(isNews bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsNews(isNews bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional. Filter for kids.
-func (r ApiGetRecommendedProgramsRequest) IsKids(isKids bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsKids(isKids bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional. Filter for sports.
-func (r ApiGetRecommendedProgramsRequest) IsSports(isSports bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) IsSports(isSports bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetRecommendedProgramsRequest) EnableImages(enableImages bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) EnableImages(enableImages bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetRecommendedProgramsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) ImageTypeLimit(imageTypeLimit int32) LiveTvAPIGetRecommendedProgramsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecommendedProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) LiveTvAPIGetRecommendedProgramsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // The genres to return guide information for.
-func (r ApiGetRecommendedProgramsRequest) GenreIds(genreIds []string) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) GenreIds(genreIds []string) LiveTvAPIGetRecommendedProgramsRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecommendedProgramsRequest) Fields(fields []JellyfinItemFields) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) Fields(fields []JellyfinItemFields) LiveTvAPIGetRecommendedProgramsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. include user data.
-func (r ApiGetRecommendedProgramsRequest) EnableUserData(enableUserData bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) EnableUserData(enableUserData bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Retrieve total record count.
-func (r ApiGetRecommendedProgramsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetRecommendedProgramsRequest {
+func (r LiveTvAPIGetRecommendedProgramsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) LiveTvAPIGetRecommendedProgramsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetRecommendedProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetRecommendedProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecommendedProgramsExecute(r)
 }
 
@@ -3560,10 +3560,10 @@ func (r ApiGetRecommendedProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryRe
 GetRecommendedPrograms Gets recommended live tv epgs.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecommendedProgramsRequest
+ @return LiveTvAPIGetRecommendedProgramsRequest
 */
-func (a *LiveTvAPIService) GetRecommendedPrograms(ctx context.Context) ApiGetRecommendedProgramsRequest {
-	return ApiGetRecommendedProgramsRequest{
+func (a *LiveTvAPIService) GetRecommendedPrograms(ctx context.Context) LiveTvAPIGetRecommendedProgramsRequest {
+	return LiveTvAPIGetRecommendedProgramsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3571,7 +3571,7 @@ func (a *LiveTvAPIService) GetRecommendedPrograms(ctx context.Context) ApiGetRec
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r LiveTvAPIGetRecommendedProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3733,7 +3733,7 @@ func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProg
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingRequest struct {
+type LiveTvAPIGetRecordingRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	recordingId string
@@ -3741,12 +3741,12 @@ type ApiGetRecordingRequest struct {
 }
 
 // Optional. Attach user data.
-func (r ApiGetRecordingRequest) UserId(userId string) ApiGetRecordingRequest {
+func (r LiveTvAPIGetRecordingRequest) UserId(userId string) LiveTvAPIGetRecordingRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetRecordingRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r LiveTvAPIGetRecordingRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetRecordingExecute(r)
 }
 
@@ -3755,10 +3755,10 @@ GetRecording Gets a live tv recording.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param recordingId Recording id.
- @return ApiGetRecordingRequest
+ @return LiveTvAPIGetRecordingRequest
 */
-func (a *LiveTvAPIService) GetRecording(ctx context.Context, recordingId string) ApiGetRecordingRequest {
-	return ApiGetRecordingRequest{
+func (a *LiveTvAPIService) GetRecording(ctx context.Context, recordingId string) LiveTvAPIGetRecordingRequest {
+	return LiveTvAPIGetRecordingRequest{
 		ApiService: a,
 		ctx: ctx,
 		recordingId: recordingId,
@@ -3767,7 +3767,7 @@ func (a *LiveTvAPIService) GetRecording(ctx context.Context, recordingId string)
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingExecute(r LiveTvAPIGetRecordingRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3869,19 +3869,19 @@ func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingFoldersRequest struct {
+type LiveTvAPIGetRecordingFoldersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	userId *string
 }
 
 // Optional. Filter by user and attach user data.
-func (r ApiGetRecordingFoldersRequest) UserId(userId string) ApiGetRecordingFoldersRequest {
+func (r LiveTvAPIGetRecordingFoldersRequest) UserId(userId string) LiveTvAPIGetRecordingFoldersRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetRecordingFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetRecordingFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingFoldersExecute(r)
 }
 
@@ -3889,10 +3889,10 @@ func (r ApiGetRecordingFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResul
 GetRecordingFolders Gets recording folders.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingFoldersRequest
+ @return LiveTvAPIGetRecordingFoldersRequest
 */
-func (a *LiveTvAPIService) GetRecordingFolders(ctx context.Context) ApiGetRecordingFoldersRequest {
-	return ApiGetRecordingFoldersRequest{
+func (a *LiveTvAPIService) GetRecordingFolders(ctx context.Context) LiveTvAPIGetRecordingFoldersRequest {
+	return LiveTvAPIGetRecordingFoldersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -3900,7 +3900,7 @@ func (a *LiveTvAPIService) GetRecordingFolders(ctx context.Context) ApiGetRecord
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingFoldersExecute(r LiveTvAPIGetRecordingFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -3990,13 +3990,13 @@ func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingGroupRequest struct {
+type LiveTvAPIGetRecordingGroupRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	groupId string
 }
 
-func (r ApiGetRecordingGroupRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIGetRecordingGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetRecordingGroupExecute(r)
 }
 
@@ -4005,12 +4005,12 @@ GetRecordingGroup Get recording group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param groupId Group id.
- @return ApiGetRecordingGroupRequest
+ @return LiveTvAPIGetRecordingGroupRequest
 
 Deprecated
 */
-func (a *LiveTvAPIService) GetRecordingGroup(ctx context.Context, groupId string) ApiGetRecordingGroupRequest {
-	return ApiGetRecordingGroupRequest{
+func (a *LiveTvAPIService) GetRecordingGroup(ctx context.Context, groupId string) LiveTvAPIGetRecordingGroupRequest {
+	return LiveTvAPIGetRecordingGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 		groupId: groupId,
@@ -4019,7 +4019,7 @@ func (a *LiveTvAPIService) GetRecordingGroup(ctx context.Context, groupId string
 
 // Execute executes the request
 // Deprecated
-func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingGroupExecute(r LiveTvAPIGetRecordingGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4108,19 +4108,19 @@ func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingGroupsRequest struct {
+type LiveTvAPIGetRecordingGroupsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	userId *string
 }
 
 // Optional. Filter by user and attach user data.
-func (r ApiGetRecordingGroupsRequest) UserId(userId string) ApiGetRecordingGroupsRequest {
+func (r LiveTvAPIGetRecordingGroupsRequest) UserId(userId string) LiveTvAPIGetRecordingGroupsRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetRecordingGroupsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetRecordingGroupsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingGroupsExecute(r)
 }
 
@@ -4128,12 +4128,12 @@ func (r ApiGetRecordingGroupsRequest) Execute() (*JellyfinBaseItemDtoQueryResult
 GetRecordingGroups Gets live tv recording groups.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingGroupsRequest
+ @return LiveTvAPIGetRecordingGroupsRequest
 
 Deprecated
 */
-func (a *LiveTvAPIService) GetRecordingGroups(ctx context.Context) ApiGetRecordingGroupsRequest {
-	return ApiGetRecordingGroupsRequest{
+func (a *LiveTvAPIService) GetRecordingGroups(ctx context.Context) LiveTvAPIGetRecordingGroupsRequest {
+	return LiveTvAPIGetRecordingGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4142,7 +4142,7 @@ func (a *LiveTvAPIService) GetRecordingGroups(ctx context.Context) ApiGetRecordi
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingGroupsExecute(r LiveTvAPIGetRecordingGroupsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4232,7 +4232,7 @@ func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingsRequest struct {
+type LiveTvAPIGetRecordingsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	channelId *string
@@ -4257,120 +4257,120 @@ type ApiGetRecordingsRequest struct {
 }
 
 // Optional. Filter by channel id.
-func (r ApiGetRecordingsRequest) ChannelId(channelId string) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) ChannelId(channelId string) LiveTvAPIGetRecordingsRequest {
 	r.channelId = &channelId
 	return r
 }
 
 // Optional. Filter by user and attach user data.
-func (r ApiGetRecordingsRequest) UserId(userId string) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) UserId(userId string) LiveTvAPIGetRecordingsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetRecordingsRequest) StartIndex(startIndex int32) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) StartIndex(startIndex int32) LiveTvAPIGetRecordingsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetRecordingsRequest) Limit(limit int32) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) Limit(limit int32) LiveTvAPIGetRecordingsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Filter by recording status.
-func (r ApiGetRecordingsRequest) Status(status JellyfinRecordingStatus) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) Status(status JellyfinRecordingStatus) LiveTvAPIGetRecordingsRequest {
 	r.status = &status
 	return r
 }
 
 // Optional. Filter by recordings that are in progress, or not.
-func (r ApiGetRecordingsRequest) IsInProgress(isInProgress bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsInProgress(isInProgress bool) LiveTvAPIGetRecordingsRequest {
 	r.isInProgress = &isInProgress
 	return r
 }
 
 // Optional. Filter by recordings belonging to a series timer.
-func (r ApiGetRecordingsRequest) SeriesTimerId(seriesTimerId string) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) SeriesTimerId(seriesTimerId string) LiveTvAPIGetRecordingsRequest {
 	r.seriesTimerId = &seriesTimerId
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetRecordingsRequest) EnableImages(enableImages bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) EnableImages(enableImages bool) LiveTvAPIGetRecordingsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetRecordingsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) ImageTypeLimit(imageTypeLimit int32) LiveTvAPIGetRecordingsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecordingsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) LiveTvAPIGetRecordingsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecordingsRequest) Fields(fields []JellyfinItemFields) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) Fields(fields []JellyfinItemFields) LiveTvAPIGetRecordingsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetRecordingsRequest) EnableUserData(enableUserData bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) EnableUserData(enableUserData bool) LiveTvAPIGetRecordingsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Filter for movies.
-func (r ApiGetRecordingsRequest) IsMovie(isMovie bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsMovie(isMovie bool) LiveTvAPIGetRecordingsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional. Filter for series.
-func (r ApiGetRecordingsRequest) IsSeries(isSeries bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsSeries(isSeries bool) LiveTvAPIGetRecordingsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional. Filter for kids.
-func (r ApiGetRecordingsRequest) IsKids(isKids bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsKids(isKids bool) LiveTvAPIGetRecordingsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional. Filter for sports.
-func (r ApiGetRecordingsRequest) IsSports(isSports bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsSports(isSports bool) LiveTvAPIGetRecordingsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. Filter for news.
-func (r ApiGetRecordingsRequest) IsNews(isNews bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsNews(isNews bool) LiveTvAPIGetRecordingsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional. Filter for is library item.
-func (r ApiGetRecordingsRequest) IsLibraryItem(isLibraryItem bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) IsLibraryItem(isLibraryItem bool) LiveTvAPIGetRecordingsRequest {
 	r.isLibraryItem = &isLibraryItem
 	return r
 }
 
 // Optional. Return total record count.
-func (r ApiGetRecordingsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetRecordingsRequest {
+func (r LiveTvAPIGetRecordingsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) LiveTvAPIGetRecordingsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetRecordingsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetRecordingsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingsExecute(r)
 }
 
@@ -4378,10 +4378,10 @@ func (r ApiGetRecordingsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *ht
 GetRecordings Gets live tv recordings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingsRequest
+ @return LiveTvAPIGetRecordingsRequest
 */
-func (a *LiveTvAPIService) GetRecordings(ctx context.Context) ApiGetRecordingsRequest {
-	return ApiGetRecordingsRequest{
+func (a *LiveTvAPIService) GetRecordings(ctx context.Context) LiveTvAPIGetRecordingsRequest {
+	return LiveTvAPIGetRecordingsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4389,7 +4389,7 @@ func (a *LiveTvAPIService) GetRecordings(ctx context.Context) ApiGetRecordingsRe
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingsExecute(r LiveTvAPIGetRecordingsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4552,7 +4552,7 @@ func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRecordingsSeriesRequest struct {
+type LiveTvAPIGetRecordingsSeriesRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	channelId *string
@@ -4572,90 +4572,90 @@ type ApiGetRecordingsSeriesRequest struct {
 }
 
 // Optional. Filter by channel id.
-func (r ApiGetRecordingsSeriesRequest) ChannelId(channelId string) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) ChannelId(channelId string) LiveTvAPIGetRecordingsSeriesRequest {
 	r.channelId = &channelId
 	return r
 }
 
 // Optional. Filter by user and attach user data.
-func (r ApiGetRecordingsSeriesRequest) UserId(userId string) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) UserId(userId string) LiveTvAPIGetRecordingsSeriesRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Filter by recording group.
-func (r ApiGetRecordingsSeriesRequest) GroupId(groupId string) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) GroupId(groupId string) LiveTvAPIGetRecordingsSeriesRequest {
 	r.groupId = &groupId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetRecordingsSeriesRequest) StartIndex(startIndex int32) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) StartIndex(startIndex int32) LiveTvAPIGetRecordingsSeriesRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetRecordingsSeriesRequest) Limit(limit int32) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) Limit(limit int32) LiveTvAPIGetRecordingsSeriesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Filter by recording status.
-func (r ApiGetRecordingsSeriesRequest) Status(status JellyfinRecordingStatus) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) Status(status JellyfinRecordingStatus) LiveTvAPIGetRecordingsSeriesRequest {
 	r.status = &status
 	return r
 }
 
 // Optional. Filter by recordings that are in progress, or not.
-func (r ApiGetRecordingsSeriesRequest) IsInProgress(isInProgress bool) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) IsInProgress(isInProgress bool) LiveTvAPIGetRecordingsSeriesRequest {
 	r.isInProgress = &isInProgress
 	return r
 }
 
 // Optional. Filter by recordings belonging to a series timer.
-func (r ApiGetRecordingsSeriesRequest) SeriesTimerId(seriesTimerId string) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) SeriesTimerId(seriesTimerId string) LiveTvAPIGetRecordingsSeriesRequest {
 	r.seriesTimerId = &seriesTimerId
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetRecordingsSeriesRequest) EnableImages(enableImages bool) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) EnableImages(enableImages bool) LiveTvAPIGetRecordingsSeriesRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetRecordingsSeriesRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) ImageTypeLimit(imageTypeLimit int32) LiveTvAPIGetRecordingsSeriesRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecordingsSeriesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) LiveTvAPIGetRecordingsSeriesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecordingsSeriesRequest) Fields(fields []JellyfinItemFields) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) Fields(fields []JellyfinItemFields) LiveTvAPIGetRecordingsSeriesRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetRecordingsSeriesRequest) EnableUserData(enableUserData bool) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) EnableUserData(enableUserData bool) LiveTvAPIGetRecordingsSeriesRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Return total record count.
-func (r ApiGetRecordingsSeriesRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetRecordingsSeriesRequest {
+func (r LiveTvAPIGetRecordingsSeriesRequest) EnableTotalRecordCount(enableTotalRecordCount bool) LiveTvAPIGetRecordingsSeriesRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetRecordingsSeriesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetRecordingsSeriesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingsSeriesExecute(r)
 }
 
@@ -4663,12 +4663,12 @@ func (r ApiGetRecordingsSeriesRequest) Execute() (*JellyfinBaseItemDtoQueryResul
 GetRecordingsSeries Gets live tv recording series.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRecordingsSeriesRequest
+ @return LiveTvAPIGetRecordingsSeriesRequest
 
 Deprecated
 */
-func (a *LiveTvAPIService) GetRecordingsSeries(ctx context.Context) ApiGetRecordingsSeriesRequest {
-	return ApiGetRecordingsSeriesRequest{
+func (a *LiveTvAPIService) GetRecordingsSeries(ctx context.Context) LiveTvAPIGetRecordingsSeriesRequest {
+	return LiveTvAPIGetRecordingsSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4677,7 +4677,7 @@ func (a *LiveTvAPIService) GetRecordingsSeries(ctx context.Context) ApiGetRecord
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r LiveTvAPIGetRecordingsSeriesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4825,12 +4825,12 @@ func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSchedulesDirectCountriesRequest struct {
+type LiveTvAPIGetSchedulesDirectCountriesRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetSchedulesDirectCountriesRequest) Execute() (*os.File, *http.Response, error) {
+func (r LiveTvAPIGetSchedulesDirectCountriesRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetSchedulesDirectCountriesExecute(r)
 }
 
@@ -4838,10 +4838,10 @@ func (r ApiGetSchedulesDirectCountriesRequest) Execute() (*os.File, *http.Respon
 GetSchedulesDirectCountries Gets available countries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSchedulesDirectCountriesRequest
+ @return LiveTvAPIGetSchedulesDirectCountriesRequest
 */
-func (a *LiveTvAPIService) GetSchedulesDirectCountries(ctx context.Context) ApiGetSchedulesDirectCountriesRequest {
-	return ApiGetSchedulesDirectCountriesRequest{
+func (a *LiveTvAPIService) GetSchedulesDirectCountries(ctx context.Context) LiveTvAPIGetSchedulesDirectCountriesRequest {
+	return LiveTvAPIGetSchedulesDirectCountriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -4849,7 +4849,7 @@ func (a *LiveTvAPIService) GetSchedulesDirectCountries(ctx context.Context) ApiG
 
 // Execute executes the request
 //  @return *os.File
-func (a *LiveTvAPIService) GetSchedulesDirectCountriesExecute(r ApiGetSchedulesDirectCountriesRequest) (*os.File, *http.Response, error) {
+func (a *LiveTvAPIService) GetSchedulesDirectCountriesExecute(r LiveTvAPIGetSchedulesDirectCountriesRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -4936,13 +4936,13 @@ func (a *LiveTvAPIService) GetSchedulesDirectCountriesExecute(r ApiGetSchedulesD
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSeriesTimerRequest struct {
+type LiveTvAPIGetSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
 }
 
-func (r ApiGetSeriesTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
+func (r LiveTvAPIGetSeriesTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetSeriesTimerExecute(r)
 }
 
@@ -4951,10 +4951,10 @@ GetSeriesTimer Gets a live tv series timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiGetSeriesTimerRequest
+ @return LiveTvAPIGetSeriesTimerRequest
 */
-func (a *LiveTvAPIService) GetSeriesTimer(ctx context.Context, timerId string) ApiGetSeriesTimerRequest {
-	return ApiGetSeriesTimerRequest{
+func (a *LiveTvAPIService) GetSeriesTimer(ctx context.Context, timerId string) LiveTvAPIGetSeriesTimerRequest {
+	return LiveTvAPIGetSeriesTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -4963,7 +4963,7 @@ func (a *LiveTvAPIService) GetSeriesTimer(ctx context.Context, timerId string) A
 
 // Execute executes the request
 //  @return JellyfinSeriesTimerInfoDto
-func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetSeriesTimerExecute(r LiveTvAPIGetSeriesTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5062,7 +5062,7 @@ func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*J
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSeriesTimersRequest struct {
+type LiveTvAPIGetSeriesTimersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	sortBy *string
@@ -5070,18 +5070,18 @@ type ApiGetSeriesTimersRequest struct {
 }
 
 // Optional. Sort by SortName or Priority.
-func (r ApiGetSeriesTimersRequest) SortBy(sortBy string) ApiGetSeriesTimersRequest {
+func (r LiveTvAPIGetSeriesTimersRequest) SortBy(sortBy string) LiveTvAPIGetSeriesTimersRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort in Ascending or Descending order.
-func (r ApiGetSeriesTimersRequest) SortOrder(sortOrder JellyfinSortOrder) ApiGetSeriesTimersRequest {
+func (r LiveTvAPIGetSeriesTimersRequest) SortOrder(sortOrder JellyfinSortOrder) LiveTvAPIGetSeriesTimersRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetSeriesTimersRequest) Execute() (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetSeriesTimersRequest) Execute() (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSeriesTimersExecute(r)
 }
 
@@ -5089,10 +5089,10 @@ func (r ApiGetSeriesTimersRequest) Execute() (*JellyfinSeriesTimerInfoDtoQueryRe
 GetSeriesTimers Gets live tv series timers.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesTimersRequest
+ @return LiveTvAPIGetSeriesTimersRequest
 */
-func (a *LiveTvAPIService) GetSeriesTimers(ctx context.Context) ApiGetSeriesTimersRequest {
-	return ApiGetSeriesTimersRequest{
+func (a *LiveTvAPIService) GetSeriesTimers(ctx context.Context) LiveTvAPIGetSeriesTimersRequest {
+	return LiveTvAPIGetSeriesTimersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5100,7 +5100,7 @@ func (a *LiveTvAPIService) GetSeriesTimers(ctx context.Context) ApiGetSeriesTime
 
 // Execute executes the request
 //  @return JellyfinSeriesTimerInfoDtoQueryResult
-func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetSeriesTimersExecute(r LiveTvAPIGetSeriesTimersRequest) (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5193,13 +5193,13 @@ func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTimerRequest struct {
+type LiveTvAPIGetTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
 }
 
-func (r ApiGetTimerRequest) Execute() (*JellyfinTimerInfoDto, *http.Response, error) {
+func (r LiveTvAPIGetTimerRequest) Execute() (*JellyfinTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetTimerExecute(r)
 }
 
@@ -5208,10 +5208,10 @@ GetTimer Gets a timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiGetTimerRequest
+ @return LiveTvAPIGetTimerRequest
 */
-func (a *LiveTvAPIService) GetTimer(ctx context.Context, timerId string) ApiGetTimerRequest {
-	return ApiGetTimerRequest{
+func (a *LiveTvAPIService) GetTimer(ctx context.Context, timerId string) LiveTvAPIGetTimerRequest {
+	return LiveTvAPIGetTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -5220,7 +5220,7 @@ func (a *LiveTvAPIService) GetTimer(ctx context.Context, timerId string) ApiGetT
 
 // Execute executes the request
 //  @return JellyfinTimerInfoDto
-func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*JellyfinTimerInfoDto, *http.Response, error) {
+func (a *LiveTvAPIService) GetTimerExecute(r LiveTvAPIGetTimerRequest) (*JellyfinTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5308,7 +5308,7 @@ func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*JellyfinTimer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTimersRequest struct {
+type LiveTvAPIGetTimersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	channelId *string
@@ -5318,30 +5318,30 @@ type ApiGetTimersRequest struct {
 }
 
 // Optional. Filter by channel id.
-func (r ApiGetTimersRequest) ChannelId(channelId string) ApiGetTimersRequest {
+func (r LiveTvAPIGetTimersRequest) ChannelId(channelId string) LiveTvAPIGetTimersRequest {
 	r.channelId = &channelId
 	return r
 }
 
 // Optional. Filter by timers belonging to a series timer.
-func (r ApiGetTimersRequest) SeriesTimerId(seriesTimerId string) ApiGetTimersRequest {
+func (r LiveTvAPIGetTimersRequest) SeriesTimerId(seriesTimerId string) LiveTvAPIGetTimersRequest {
 	r.seriesTimerId = &seriesTimerId
 	return r
 }
 
 // Optional. Filter by timers that are active.
-func (r ApiGetTimersRequest) IsActive(isActive bool) ApiGetTimersRequest {
+func (r LiveTvAPIGetTimersRequest) IsActive(isActive bool) LiveTvAPIGetTimersRequest {
 	r.isActive = &isActive
 	return r
 }
 
 // Optional. Filter by timers that are scheduled.
-func (r ApiGetTimersRequest) IsScheduled(isScheduled bool) ApiGetTimersRequest {
+func (r LiveTvAPIGetTimersRequest) IsScheduled(isScheduled bool) LiveTvAPIGetTimersRequest {
 	r.isScheduled = &isScheduled
 	return r
 }
 
-func (r ApiGetTimersRequest) Execute() (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
+func (r LiveTvAPIGetTimersRequest) Execute() (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetTimersExecute(r)
 }
 
@@ -5349,10 +5349,10 @@ func (r ApiGetTimersRequest) Execute() (*JellyfinTimerInfoDtoQueryResult, *http.
 GetTimers Gets the live tv timers.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTimersRequest
+ @return LiveTvAPIGetTimersRequest
 */
-func (a *LiveTvAPIService) GetTimers(ctx context.Context) ApiGetTimersRequest {
-	return ApiGetTimersRequest{
+func (a *LiveTvAPIService) GetTimers(ctx context.Context) LiveTvAPIGetTimersRequest {
+	return LiveTvAPIGetTimersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5360,7 +5360,7 @@ func (a *LiveTvAPIService) GetTimers(ctx context.Context) ApiGetTimersRequest {
 
 // Execute executes the request
 //  @return JellyfinTimerInfoDtoQueryResult
-func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetTimersExecute(r LiveTvAPIGetTimersRequest) (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5459,12 +5459,12 @@ func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*JellyfinTim
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTunerHostTypesRequest struct {
+type LiveTvAPIGetTunerHostTypesRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetTunerHostTypesRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
+func (r LiveTvAPIGetTunerHostTypesRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetTunerHostTypesExecute(r)
 }
 
@@ -5472,10 +5472,10 @@ func (r ApiGetTunerHostTypesRequest) Execute() ([]JellyfinNameIdPair, *http.Resp
 GetTunerHostTypes Get tuner host types.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTunerHostTypesRequest
+ @return LiveTvAPIGetTunerHostTypesRequest
 */
-func (a *LiveTvAPIService) GetTunerHostTypes(ctx context.Context) ApiGetTunerHostTypesRequest {
-	return ApiGetTunerHostTypesRequest{
+func (a *LiveTvAPIService) GetTunerHostTypes(ctx context.Context) LiveTvAPIGetTunerHostTypesRequest {
+	return LiveTvAPIGetTunerHostTypesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5483,7 +5483,7 @@ func (a *LiveTvAPIService) GetTunerHostTypes(ctx context.Context) ApiGetTunerHos
 
 // Execute executes the request
 //  @return []JellyfinNameIdPair
-func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesRequest) ([]JellyfinNameIdPair, *http.Response, error) {
+func (a *LiveTvAPIService) GetTunerHostTypesExecute(r LiveTvAPIGetTunerHostTypesRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -5570,13 +5570,13 @@ func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiResetTunerRequest struct {
+type LiveTvAPIResetTunerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	tunerId string
 }
 
-func (r ApiResetTunerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIResetTunerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ResetTunerExecute(r)
 }
 
@@ -5585,10 +5585,10 @@ ResetTuner Resets a tv tuner.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tunerId Tuner id.
- @return ApiResetTunerRequest
+ @return LiveTvAPIResetTunerRequest
 */
-func (a *LiveTvAPIService) ResetTuner(ctx context.Context, tunerId string) ApiResetTunerRequest {
-	return ApiResetTunerRequest{
+func (a *LiveTvAPIService) ResetTuner(ctx context.Context, tunerId string) LiveTvAPIResetTunerRequest {
+	return LiveTvAPIResetTunerRequest{
 		ApiService: a,
 		ctx: ctx,
 		tunerId: tunerId,
@@ -5596,7 +5596,7 @@ func (a *LiveTvAPIService) ResetTuner(ctx context.Context, tunerId string) ApiRe
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) ResetTunerExecute(r ApiResetTunerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) ResetTunerExecute(r LiveTvAPIResetTunerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5674,19 +5674,19 @@ func (a *LiveTvAPIService) ResetTunerExecute(r ApiResetTunerRequest) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-type ApiSetChannelMappingRequest struct {
+type LiveTvAPISetChannelMappingRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	jellyfinSetChannelMappingDto *JellyfinSetChannelMappingDto
 }
 
 // The set channel mapping dto.
-func (r ApiSetChannelMappingRequest) JellyfinSetChannelMappingDto(jellyfinSetChannelMappingDto JellyfinSetChannelMappingDto) ApiSetChannelMappingRequest {
+func (r LiveTvAPISetChannelMappingRequest) JellyfinSetChannelMappingDto(jellyfinSetChannelMappingDto JellyfinSetChannelMappingDto) LiveTvAPISetChannelMappingRequest {
 	r.jellyfinSetChannelMappingDto = &jellyfinSetChannelMappingDto
 	return r
 }
 
-func (r ApiSetChannelMappingRequest) Execute() (*JellyfinTunerChannelMapping, *http.Response, error) {
+func (r LiveTvAPISetChannelMappingRequest) Execute() (*JellyfinTunerChannelMapping, *http.Response, error) {
 	return r.ApiService.SetChannelMappingExecute(r)
 }
 
@@ -5694,10 +5694,10 @@ func (r ApiSetChannelMappingRequest) Execute() (*JellyfinTunerChannelMapping, *h
 SetChannelMapping Set channel mappings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetChannelMappingRequest
+ @return LiveTvAPISetChannelMappingRequest
 */
-func (a *LiveTvAPIService) SetChannelMapping(ctx context.Context) ApiSetChannelMappingRequest {
-	return ApiSetChannelMappingRequest{
+func (a *LiveTvAPIService) SetChannelMapping(ctx context.Context) LiveTvAPISetChannelMappingRequest {
+	return LiveTvAPISetChannelMappingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -5705,7 +5705,7 @@ func (a *LiveTvAPIService) SetChannelMapping(ctx context.Context) ApiSetChannelM
 
 // Execute executes the request
 //  @return JellyfinTunerChannelMapping
-func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingRequest) (*JellyfinTunerChannelMapping, *http.Response, error) {
+func (a *LiveTvAPIService) SetChannelMappingExecute(r LiveTvAPISetChannelMappingRequest) (*JellyfinTunerChannelMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5797,7 +5797,7 @@ func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateSeriesTimerRequest struct {
+type LiveTvAPIUpdateSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
@@ -5805,12 +5805,12 @@ type ApiUpdateSeriesTimerRequest struct {
 }
 
 // New series timer info.
-func (r ApiUpdateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) ApiUpdateSeriesTimerRequest {
+func (r LiveTvAPIUpdateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) LiveTvAPIUpdateSeriesTimerRequest {
 	r.jellyfinSeriesTimerInfoDto = &jellyfinSeriesTimerInfoDto
 	return r
 }
 
-func (r ApiUpdateSeriesTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIUpdateSeriesTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateSeriesTimerExecute(r)
 }
 
@@ -5819,10 +5819,10 @@ UpdateSeriesTimer Updates a live tv series timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiUpdateSeriesTimerRequest
+ @return LiveTvAPIUpdateSeriesTimerRequest
 */
-func (a *LiveTvAPIService) UpdateSeriesTimer(ctx context.Context, timerId string) ApiUpdateSeriesTimerRequest {
-	return ApiUpdateSeriesTimerRequest{
+func (a *LiveTvAPIService) UpdateSeriesTimer(ctx context.Context, timerId string) LiveTvAPIUpdateSeriesTimerRequest {
+	return LiveTvAPIUpdateSeriesTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -5830,7 +5830,7 @@ func (a *LiveTvAPIService) UpdateSeriesTimer(ctx context.Context, timerId string
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r LiveTvAPIUpdateSeriesTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -5910,7 +5910,7 @@ func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateTimerRequest struct {
+type LiveTvAPIUpdateTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
@@ -5918,12 +5918,12 @@ type ApiUpdateTimerRequest struct {
 }
 
 // New timer info.
-func (r ApiUpdateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) ApiUpdateTimerRequest {
+func (r LiveTvAPIUpdateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) LiveTvAPIUpdateTimerRequest {
 	r.jellyfinTimerInfoDto = &jellyfinTimerInfoDto
 	return r
 }
 
-func (r ApiUpdateTimerRequest) Execute() (*http.Response, error) {
+func (r LiveTvAPIUpdateTimerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateTimerExecute(r)
 }
 
@@ -5932,10 +5932,10 @@ UpdateTimer Updates a live tv timer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param timerId Timer id.
- @return ApiUpdateTimerRequest
+ @return LiveTvAPIUpdateTimerRequest
 */
-func (a *LiveTvAPIService) UpdateTimer(ctx context.Context, timerId string) ApiUpdateTimerRequest {
-	return ApiUpdateTimerRequest{
+func (a *LiveTvAPIService) UpdateTimer(ctx context.Context, timerId string) LiveTvAPIUpdateTimerRequest {
+	return LiveTvAPIUpdateTimerRequest{
 		ApiService: a,
 		ctx: ctx,
 		timerId: timerId,
@@ -5943,7 +5943,7 @@ func (a *LiveTvAPIService) UpdateTimer(ctx context.Context, timerId string) ApiU
 }
 
 // Execute executes the request
-func (a *LiveTvAPIService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*http.Response, error) {
+func (a *LiveTvAPIService) UpdateTimerExecute(r LiveTvAPIUpdateTimerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

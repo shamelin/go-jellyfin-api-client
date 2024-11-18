@@ -20,8 +20,8 @@ type JellyfinGroupQueueMode string
 
 // List of GroupQueueMode
 const (
-	QUEUE JellyfinGroupQueueMode = "Queue"
-	QUEUE_NEXT JellyfinGroupQueueMode = "QueueNext"
+	JELLYFINGROUPQUEUEMODE_QUEUE JellyfinGroupQueueMode = "Queue"
+	JELLYFINGROUPQUEUEMODE_QUEUE_NEXT JellyfinGroupQueueMode = "QueueNext"
 )
 
 // All allowed values of JellyfinGroupQueueMode enum

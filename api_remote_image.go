@@ -23,7 +23,7 @@ import (
 // RemoteImageAPIService RemoteImageAPI service
 type RemoteImageAPIService service
 
-type ApiDownloadRemoteImageRequest struct {
+type RemoteImageAPIDownloadRemoteImageRequest struct {
 	ctx context.Context
 	ApiService *RemoteImageAPIService
 	itemId string
@@ -32,18 +32,18 @@ type ApiDownloadRemoteImageRequest struct {
 }
 
 // The image type.
-func (r ApiDownloadRemoteImageRequest) Type_(type_ JellyfinImageType) ApiDownloadRemoteImageRequest {
+func (r RemoteImageAPIDownloadRemoteImageRequest) Type_(type_ JellyfinImageType) RemoteImageAPIDownloadRemoteImageRequest {
 	r.type_ = &type_
 	return r
 }
 
 // The image url.
-func (r ApiDownloadRemoteImageRequest) ImageUrl(imageUrl string) ApiDownloadRemoteImageRequest {
+func (r RemoteImageAPIDownloadRemoteImageRequest) ImageUrl(imageUrl string) RemoteImageAPIDownloadRemoteImageRequest {
 	r.imageUrl = &imageUrl
 	return r
 }
 
-func (r ApiDownloadRemoteImageRequest) Execute() (*http.Response, error) {
+func (r RemoteImageAPIDownloadRemoteImageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DownloadRemoteImageExecute(r)
 }
 
@@ -52,10 +52,10 @@ DownloadRemoteImage Downloads a remote image for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item Id.
- @return ApiDownloadRemoteImageRequest
+ @return RemoteImageAPIDownloadRemoteImageRequest
 */
-func (a *RemoteImageAPIService) DownloadRemoteImage(ctx context.Context, itemId string) ApiDownloadRemoteImageRequest {
-	return ApiDownloadRemoteImageRequest{
+func (a *RemoteImageAPIService) DownloadRemoteImage(ctx context.Context, itemId string) RemoteImageAPIDownloadRemoteImageRequest {
+	return RemoteImageAPIDownloadRemoteImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -63,7 +63,7 @@ func (a *RemoteImageAPIService) DownloadRemoteImage(ctx context.Context, itemId 
 }
 
 // Execute executes the request
-func (a *RemoteImageAPIService) DownloadRemoteImageExecute(r ApiDownloadRemoteImageRequest) (*http.Response, error) {
+func (a *RemoteImageAPIService) DownloadRemoteImageExecute(r RemoteImageAPIDownloadRemoteImageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -159,13 +159,13 @@ func (a *RemoteImageAPIService) DownloadRemoteImageExecute(r ApiDownloadRemoteIm
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetRemoteImageProvidersRequest struct {
+type RemoteImageAPIGetRemoteImageProvidersRequest struct {
 	ctx context.Context
 	ApiService *RemoteImageAPIService
 	itemId string
 }
 
-func (r ApiGetRemoteImageProvidersRequest) Execute() ([]JellyfinImageProviderInfo, *http.Response, error) {
+func (r RemoteImageAPIGetRemoteImageProvidersRequest) Execute() ([]JellyfinImageProviderInfo, *http.Response, error) {
 	return r.ApiService.GetRemoteImageProvidersExecute(r)
 }
 
@@ -174,10 +174,10 @@ GetRemoteImageProviders Gets available remote image providers for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item Id.
- @return ApiGetRemoteImageProvidersRequest
+ @return RemoteImageAPIGetRemoteImageProvidersRequest
 */
-func (a *RemoteImageAPIService) GetRemoteImageProviders(ctx context.Context, itemId string) ApiGetRemoteImageProvidersRequest {
-	return ApiGetRemoteImageProvidersRequest{
+func (a *RemoteImageAPIService) GetRemoteImageProviders(ctx context.Context, itemId string) RemoteImageAPIGetRemoteImageProvidersRequest {
+	return RemoteImageAPIGetRemoteImageProvidersRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -186,7 +186,7 @@ func (a *RemoteImageAPIService) GetRemoteImageProviders(ctx context.Context, ite
 
 // Execute executes the request
 //  @return []JellyfinImageProviderInfo
-func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r ApiGetRemoteImageProvidersRequest) ([]JellyfinImageProviderInfo, *http.Response, error) {
+func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r RemoteImageAPIGetRemoteImageProvidersRequest) ([]JellyfinImageProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -285,7 +285,7 @@ func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r ApiGetRemoteIma
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRemoteImagesRequest struct {
+type RemoteImageAPIGetRemoteImagesRequest struct {
 	ctx context.Context
 	ApiService *RemoteImageAPIService
 	itemId string
@@ -297,36 +297,36 @@ type ApiGetRemoteImagesRequest struct {
 }
 
 // The image type.
-func (r ApiGetRemoteImagesRequest) Type_(type_ JellyfinImageType) ApiGetRemoteImagesRequest {
+func (r RemoteImageAPIGetRemoteImagesRequest) Type_(type_ JellyfinImageType) RemoteImageAPIGetRemoteImagesRequest {
 	r.type_ = &type_
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetRemoteImagesRequest) StartIndex(startIndex int32) ApiGetRemoteImagesRequest {
+func (r RemoteImageAPIGetRemoteImagesRequest) StartIndex(startIndex int32) RemoteImageAPIGetRemoteImagesRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetRemoteImagesRequest) Limit(limit int32) ApiGetRemoteImagesRequest {
+func (r RemoteImageAPIGetRemoteImagesRequest) Limit(limit int32) RemoteImageAPIGetRemoteImagesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. The image provider to use.
-func (r ApiGetRemoteImagesRequest) ProviderName(providerName string) ApiGetRemoteImagesRequest {
+func (r RemoteImageAPIGetRemoteImagesRequest) ProviderName(providerName string) RemoteImageAPIGetRemoteImagesRequest {
 	r.providerName = &providerName
 	return r
 }
 
 // Optional. Include all languages.
-func (r ApiGetRemoteImagesRequest) IncludeAllLanguages(includeAllLanguages bool) ApiGetRemoteImagesRequest {
+func (r RemoteImageAPIGetRemoteImagesRequest) IncludeAllLanguages(includeAllLanguages bool) RemoteImageAPIGetRemoteImagesRequest {
 	r.includeAllLanguages = &includeAllLanguages
 	return r
 }
 
-func (r ApiGetRemoteImagesRequest) Execute() (*JellyfinRemoteImageResult, *http.Response, error) {
+func (r RemoteImageAPIGetRemoteImagesRequest) Execute() (*JellyfinRemoteImageResult, *http.Response, error) {
 	return r.ApiService.GetRemoteImagesExecute(r)
 }
 
@@ -335,10 +335,10 @@ GetRemoteImages Gets available remote images for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item Id.
- @return ApiGetRemoteImagesRequest
+ @return RemoteImageAPIGetRemoteImagesRequest
 */
-func (a *RemoteImageAPIService) GetRemoteImages(ctx context.Context, itemId string) ApiGetRemoteImagesRequest {
-	return ApiGetRemoteImagesRequest{
+func (a *RemoteImageAPIService) GetRemoteImages(ctx context.Context, itemId string) RemoteImageAPIGetRemoteImagesRequest {
+	return RemoteImageAPIGetRemoteImagesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -347,7 +347,7 @@ func (a *RemoteImageAPIService) GetRemoteImages(ctx context.Context, itemId stri
 
 // Execute executes the request
 //  @return JellyfinRemoteImageResult
-func (a *RemoteImageAPIService) GetRemoteImagesExecute(r ApiGetRemoteImagesRequest) (*JellyfinRemoteImageResult, *http.Response, error) {
+func (a *RemoteImageAPIService) GetRemoteImagesExecute(r RemoteImageAPIGetRemoteImagesRequest) (*JellyfinRemoteImageResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

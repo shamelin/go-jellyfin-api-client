@@ -20,9 +20,9 @@ type JellyfinForgotPasswordAction string
 
 // List of ForgotPasswordAction
 const (
-	CONTACT_ADMIN JellyfinForgotPasswordAction = "ContactAdmin"
-	PIN_CODE JellyfinForgotPasswordAction = "PinCode"
-	IN_NETWORK_REQUIRED JellyfinForgotPasswordAction = "InNetworkRequired"
+	JELLYFINFORGOTPASSWORDACTION_CONTACT_ADMIN JellyfinForgotPasswordAction = "ContactAdmin"
+	JELLYFINFORGOTPASSWORDACTION_PIN_CODE JellyfinForgotPasswordAction = "PinCode"
+	JELLYFINFORGOTPASSWORDACTION_IN_NETWORK_REQUIRED JellyfinForgotPasswordAction = "InNetworkRequired"
 )
 
 // All allowed values of JellyfinForgotPasswordAction enum

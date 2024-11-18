@@ -20,9 +20,9 @@ type JellyfinMediaSourceType string
 
 // List of MediaSourceType
 const (
-	DEFAULT JellyfinMediaSourceType = "Default"
-	GROUPING JellyfinMediaSourceType = "Grouping"
-	PLACEHOLDER JellyfinMediaSourceType = "Placeholder"
+	JELLYFINMEDIASOURCETYPE_DEFAULT JellyfinMediaSourceType = "Default"
+	JELLYFINMEDIASOURCETYPE_GROUPING JellyfinMediaSourceType = "Grouping"
+	JELLYFINMEDIASOURCETYPE_PLACEHOLDER JellyfinMediaSourceType = "Placeholder"
 )
 
 // All allowed values of JellyfinMediaSourceType enum

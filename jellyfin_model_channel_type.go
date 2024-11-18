@@ -20,8 +20,8 @@ type JellyfinChannelType string
 
 // List of ChannelType
 const (
-	TV JellyfinChannelType = "TV"
-	RADIO JellyfinChannelType = "Radio"
+	JELLYFINCHANNELTYPE_TV JellyfinChannelType = "TV"
+	JELLYFINCHANNELTYPE_RADIO JellyfinChannelType = "Radio"
 )
 
 // All allowed values of JellyfinChannelType enum

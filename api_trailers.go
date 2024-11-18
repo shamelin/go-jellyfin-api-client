@@ -24,7 +24,7 @@ import (
 // TrailersAPIService TrailersAPI service
 type TrailersAPIService service
 
-type ApiGetTrailersRequest struct {
+type TrailersAPIGetTrailersRequest struct {
 	ctx context.Context
 	ApiService *TrailersAPIService
 	userId *string
@@ -114,510 +114,510 @@ type ApiGetTrailersRequest struct {
 }
 
 // The user id supplied as query parameter; this is required when not using an API key.
-func (r ApiGetTrailersRequest) UserId(userId string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) UserId(userId string) TrailersAPIGetTrailersRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by maximum official rating (PG, PG-13, TV-MA, etc).
-func (r ApiGetTrailersRequest) MaxOfficialRating(maxOfficialRating string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MaxOfficialRating(maxOfficialRating string) TrailersAPIGetTrailersRequest {
 	r.maxOfficialRating = &maxOfficialRating
 	return r
 }
 
 // Optional filter by items with theme songs.
-func (r ApiGetTrailersRequest) HasThemeSong(hasThemeSong bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasThemeSong(hasThemeSong bool) TrailersAPIGetTrailersRequest {
 	r.hasThemeSong = &hasThemeSong
 	return r
 }
 
 // Optional filter by items with theme videos.
-func (r ApiGetTrailersRequest) HasThemeVideo(hasThemeVideo bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasThemeVideo(hasThemeVideo bool) TrailersAPIGetTrailersRequest {
 	r.hasThemeVideo = &hasThemeVideo
 	return r
 }
 
 // Optional filter by items with subtitles.
-func (r ApiGetTrailersRequest) HasSubtitles(hasSubtitles bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasSubtitles(hasSubtitles bool) TrailersAPIGetTrailersRequest {
 	r.hasSubtitles = &hasSubtitles
 	return r
 }
 
 // Optional filter by items with special features.
-func (r ApiGetTrailersRequest) HasSpecialFeature(hasSpecialFeature bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasSpecialFeature(hasSpecialFeature bool) TrailersAPIGetTrailersRequest {
 	r.hasSpecialFeature = &hasSpecialFeature
 	return r
 }
 
 // Optional filter by items with trailers.
-func (r ApiGetTrailersRequest) HasTrailer(hasTrailer bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasTrailer(hasTrailer bool) TrailersAPIGetTrailersRequest {
 	r.hasTrailer = &hasTrailer
 	return r
 }
 
 // Optional. Return items that are siblings of a supplied item.
-func (r ApiGetTrailersRequest) AdjacentTo(adjacentTo string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) AdjacentTo(adjacentTo string) TrailersAPIGetTrailersRequest {
 	r.adjacentTo = &adjacentTo
 	return r
 }
 
 // Optional filter by parent index number.
-func (r ApiGetTrailersRequest) ParentIndexNumber(parentIndexNumber int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ParentIndexNumber(parentIndexNumber int32) TrailersAPIGetTrailersRequest {
 	r.parentIndexNumber = &parentIndexNumber
 	return r
 }
 
 // Optional filter by items that have or do not have a parental rating.
-func (r ApiGetTrailersRequest) HasParentalRating(hasParentalRating bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasParentalRating(hasParentalRating bool) TrailersAPIGetTrailersRequest {
 	r.hasParentalRating = &hasParentalRating
 	return r
 }
 
 // Optional filter by items that are HD or not.
-func (r ApiGetTrailersRequest) IsHd(isHd bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsHd(isHd bool) TrailersAPIGetTrailersRequest {
 	r.isHd = &isHd
 	return r
 }
 
 // Optional filter by items that are 4K or not.
-func (r ApiGetTrailersRequest) Is4K(is4K bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Is4K(is4K bool) TrailersAPIGetTrailersRequest {
 	r.is4K = &is4K
 	return r
 }
 
 // Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) LocationTypes(locationTypes []JellyfinLocationType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) LocationTypes(locationTypes []JellyfinLocationType) TrailersAPIGetTrailersRequest {
 	r.locationTypes = &locationTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) TrailersAPIGetTrailersRequest {
 	r.excludeLocationTypes = &excludeLocationTypes
 	return r
 }
 
 // Optional filter by items that are missing episodes or not.
-func (r ApiGetTrailersRequest) IsMissing(isMissing bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsMissing(isMissing bool) TrailersAPIGetTrailersRequest {
 	r.isMissing = &isMissing
 	return r
 }
 
 // Optional filter by items that are unaired episodes or not.
-func (r ApiGetTrailersRequest) IsUnaired(isUnaired bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsUnaired(isUnaired bool) TrailersAPIGetTrailersRequest {
 	r.isUnaired = &isUnaired
 	return r
 }
 
 // Optional filter by minimum community rating.
-func (r ApiGetTrailersRequest) MinCommunityRating(minCommunityRating float64) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinCommunityRating(minCommunityRating float64) TrailersAPIGetTrailersRequest {
 	r.minCommunityRating = &minCommunityRating
 	return r
 }
 
 // Optional filter by minimum critic rating.
-func (r ApiGetTrailersRequest) MinCriticRating(minCriticRating float64) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinCriticRating(minCriticRating float64) TrailersAPIGetTrailersRequest {
 	r.minCriticRating = &minCriticRating
 	return r
 }
 
 // Optional. The minimum premiere date. Format &#x3D; ISO.
-func (r ApiGetTrailersRequest) MinPremiereDate(minPremiereDate time.Time) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinPremiereDate(minPremiereDate time.Time) TrailersAPIGetTrailersRequest {
 	r.minPremiereDate = &minPremiereDate
 	return r
 }
 
 // Optional. The minimum last saved date. Format &#x3D; ISO.
-func (r ApiGetTrailersRequest) MinDateLastSaved(minDateLastSaved time.Time) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinDateLastSaved(minDateLastSaved time.Time) TrailersAPIGetTrailersRequest {
 	r.minDateLastSaved = &minDateLastSaved
 	return r
 }
 
 // Optional. The minimum last saved date for the current user. Format &#x3D; ISO.
-func (r ApiGetTrailersRequest) MinDateLastSavedForUser(minDateLastSavedForUser time.Time) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinDateLastSavedForUser(minDateLastSavedForUser time.Time) TrailersAPIGetTrailersRequest {
 	r.minDateLastSavedForUser = &minDateLastSavedForUser
 	return r
 }
 
 // Optional. The maximum premiere date. Format &#x3D; ISO.
-func (r ApiGetTrailersRequest) MaxPremiereDate(maxPremiereDate time.Time) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MaxPremiereDate(maxPremiereDate time.Time) TrailersAPIGetTrailersRequest {
 	r.maxPremiereDate = &maxPremiereDate
 	return r
 }
 
 // Optional filter by items that have an overview or not.
-func (r ApiGetTrailersRequest) HasOverview(hasOverview bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasOverview(hasOverview bool) TrailersAPIGetTrailersRequest {
 	r.hasOverview = &hasOverview
 	return r
 }
 
 // Optional filter by items that have an IMDb id or not.
-func (r ApiGetTrailersRequest) HasImdbId(hasImdbId bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasImdbId(hasImdbId bool) TrailersAPIGetTrailersRequest {
 	r.hasImdbId = &hasImdbId
 	return r
 }
 
 // Optional filter by items that have a TMDb id or not.
-func (r ApiGetTrailersRequest) HasTmdbId(hasTmdbId bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasTmdbId(hasTmdbId bool) TrailersAPIGetTrailersRequest {
 	r.hasTmdbId = &hasTmdbId
 	return r
 }
 
 // Optional filter by items that have a TVDb id or not.
-func (r ApiGetTrailersRequest) HasTvdbId(hasTvdbId bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasTvdbId(hasTvdbId bool) TrailersAPIGetTrailersRequest {
 	r.hasTvdbId = &hasTvdbId
 	return r
 }
 
 // Optional filter for live tv movies.
-func (r ApiGetTrailersRequest) IsMovie(isMovie bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsMovie(isMovie bool) TrailersAPIGetTrailersRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional filter for live tv series.
-func (r ApiGetTrailersRequest) IsSeries(isSeries bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsSeries(isSeries bool) TrailersAPIGetTrailersRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional filter for live tv news.
-func (r ApiGetTrailersRequest) IsNews(isNews bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsNews(isNews bool) TrailersAPIGetTrailersRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional filter for live tv kids.
-func (r ApiGetTrailersRequest) IsKids(isKids bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsKids(isKids bool) TrailersAPIGetTrailersRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional filter for live tv sports.
-func (r ApiGetTrailersRequest) IsSports(isSports bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsSports(isSports bool) TrailersAPIGetTrailersRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. If specified, results will be filtered by excluding item ids. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ExcludeItemIds(excludeItemIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ExcludeItemIds(excludeItemIds []string) TrailersAPIGetTrailersRequest {
 	r.excludeItemIds = &excludeItemIds
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetTrailersRequest) StartIndex(startIndex int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) StartIndex(startIndex int32) TrailersAPIGetTrailersRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetTrailersRequest) Limit(limit int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Limit(limit int32) TrailersAPIGetTrailersRequest {
 	r.limit = &limit
 	return r
 }
 
 // When searching within folders, this determines whether or not the search will be recursive. true/false.
-func (r ApiGetTrailersRequest) Recursive(recursive bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Recursive(recursive bool) TrailersAPIGetTrailersRequest {
 	r.recursive = &recursive
 	return r
 }
 
 // Optional. Filter based on a search term.
-func (r ApiGetTrailersRequest) SearchTerm(searchTerm string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) SearchTerm(searchTerm string) TrailersAPIGetTrailersRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Sort Order - Ascending, Descending.
-func (r ApiGetTrailersRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) SortOrder(sortOrder []JellyfinSortOrder) TrailersAPIGetTrailersRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetTrailersRequest) ParentId(parentId string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ParentId(parentId string) TrailersAPIGetTrailersRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetTrailersRequest) Fields(fields []JellyfinItemFields) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Fields(fields []JellyfinItemFields) TrailersAPIGetTrailersRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) TrailersAPIGetTrailersRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes.
-func (r ApiGetTrailersRequest) Filters(filters []JellyfinItemFilter) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Filters(filters []JellyfinItemFilter) TrailersAPIGetTrailersRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetTrailersRequest) IsFavorite(isFavorite bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsFavorite(isFavorite bool) TrailersAPIGetTrailersRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MediaTypes(mediaTypes []JellyfinMediaType) TrailersAPIGetTrailersRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ImageTypes(imageTypes []JellyfinImageType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ImageTypes(imageTypes []JellyfinImageType) TrailersAPIGetTrailersRequest {
 	r.imageTypes = &imageTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetTrailersRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) SortBy(sortBy []JellyfinItemSortBy) TrailersAPIGetTrailersRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional filter by items that are played, or not.
-func (r ApiGetTrailersRequest) IsPlayed(isPlayed bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsPlayed(isPlayed bool) TrailersAPIGetTrailersRequest {
 	r.isPlayed = &isPlayed
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) Genres(genres []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Genres(genres []string) TrailersAPIGetTrailersRequest {
 	r.genres = &genres
 	return r
 }
 
 // Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) OfficialRatings(officialRatings []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) OfficialRatings(officialRatings []string) TrailersAPIGetTrailersRequest {
 	r.officialRatings = &officialRatings
 	return r
 }
 
 // Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) Tags(tags []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Tags(tags []string) TrailersAPIGetTrailersRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) Years(years []int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Years(years []int32) TrailersAPIGetTrailersRequest {
 	r.years = &years
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetTrailersRequest) EnableUserData(enableUserData bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) EnableUserData(enableUserData bool) TrailersAPIGetTrailersRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetTrailersRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ImageTypeLimit(imageTypeLimit int32) TrailersAPIGetTrailersRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetTrailersRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) TrailersAPIGetTrailersRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person.
-func (r ApiGetTrailersRequest) Person(person string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Person(person string) TrailersAPIGetTrailersRequest {
 	r.person = &person
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person id.
-func (r ApiGetTrailersRequest) PersonIds(personIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) PersonIds(personIds []string) TrailersAPIGetTrailersRequest {
 	r.personIds = &personIds
 	return r
 }
 
 // Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited.
-func (r ApiGetTrailersRequest) PersonTypes(personTypes []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) PersonTypes(personTypes []string) TrailersAPIGetTrailersRequest {
 	r.personTypes = &personTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) Studios(studios []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Studios(studios []string) TrailersAPIGetTrailersRequest {
 	r.studios = &studios
 	return r
 }
 
 // Optional. If specified, results will be filtered based on artists. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) Artists(artists []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Artists(artists []string) TrailersAPIGetTrailersRequest {
 	r.artists = &artists
 	return r
 }
 
 // Optional. If specified, results will be filtered based on artist id. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ExcludeArtistIds(excludeArtistIds []string) TrailersAPIGetTrailersRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified artist id.
-func (r ApiGetTrailersRequest) ArtistIds(artistIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ArtistIds(artistIds []string) TrailersAPIGetTrailersRequest {
 	r.artistIds = &artistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified album artist id.
-func (r ApiGetTrailersRequest) AlbumArtistIds(albumArtistIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) AlbumArtistIds(albumArtistIds []string) TrailersAPIGetTrailersRequest {
 	r.albumArtistIds = &albumArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified contributing artist id.
-func (r ApiGetTrailersRequest) ContributingArtistIds(contributingArtistIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) ContributingArtistIds(contributingArtistIds []string) TrailersAPIGetTrailersRequest {
 	r.contributingArtistIds = &contributingArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) Albums(albums []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Albums(albums []string) TrailersAPIGetTrailersRequest {
 	r.albums = &albums
 	return r
 }
 
 // Optional. If specified, results will be filtered based on album id. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) AlbumIds(albumIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) AlbumIds(albumIds []string) TrailersAPIGetTrailersRequest {
 	r.albumIds = &albumIds
 	return r
 }
 
 // Optional. If specific items are needed, specify a list of item id&#39;s to retrieve. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) Ids(ids []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Ids(ids []string) TrailersAPIGetTrailersRequest {
 	r.ids = &ids
 	return r
 }
 
 // Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) VideoTypes(videoTypes []JellyfinVideoType) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) VideoTypes(videoTypes []JellyfinVideoType) TrailersAPIGetTrailersRequest {
 	r.videoTypes = &videoTypes
 	return r
 }
 
 // Optional filter by minimum official rating (PG, PG-13, TV-MA, etc).
-func (r ApiGetTrailersRequest) MinOfficialRating(minOfficialRating string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinOfficialRating(minOfficialRating string) TrailersAPIGetTrailersRequest {
 	r.minOfficialRating = &minOfficialRating
 	return r
 }
 
 // Optional filter by items that are locked.
-func (r ApiGetTrailersRequest) IsLocked(isLocked bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsLocked(isLocked bool) TrailersAPIGetTrailersRequest {
 	r.isLocked = &isLocked
 	return r
 }
 
 // Optional filter by items that are placeholders.
-func (r ApiGetTrailersRequest) IsPlaceHolder(isPlaceHolder bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) IsPlaceHolder(isPlaceHolder bool) TrailersAPIGetTrailersRequest {
 	r.isPlaceHolder = &isPlaceHolder
 	return r
 }
 
 // Optional filter by items that have official ratings.
-func (r ApiGetTrailersRequest) HasOfficialRating(hasOfficialRating bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) HasOfficialRating(hasOfficialRating bool) TrailersAPIGetTrailersRequest {
 	r.hasOfficialRating = &hasOfficialRating
 	return r
 }
 
 // Whether or not to hide items behind their boxsets.
-func (r ApiGetTrailersRequest) CollapseBoxSetItems(collapseBoxSetItems bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) CollapseBoxSetItems(collapseBoxSetItems bool) TrailersAPIGetTrailersRequest {
 	r.collapseBoxSetItems = &collapseBoxSetItems
 	return r
 }
 
 // Optional. Filter by the minimum width of the item.
-func (r ApiGetTrailersRequest) MinWidth(minWidth int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinWidth(minWidth int32) TrailersAPIGetTrailersRequest {
 	r.minWidth = &minWidth
 	return r
 }
 
 // Optional. Filter by the minimum height of the item.
-func (r ApiGetTrailersRequest) MinHeight(minHeight int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MinHeight(minHeight int32) TrailersAPIGetTrailersRequest {
 	r.minHeight = &minHeight
 	return r
 }
 
 // Optional. Filter by the maximum width of the item.
-func (r ApiGetTrailersRequest) MaxWidth(maxWidth int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MaxWidth(maxWidth int32) TrailersAPIGetTrailersRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. Filter by the maximum height of the item.
-func (r ApiGetTrailersRequest) MaxHeight(maxHeight int32) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) MaxHeight(maxHeight int32) TrailersAPIGetTrailersRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional filter by items that are 3D, or not.
-func (r ApiGetTrailersRequest) Is3D(is3D bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) Is3D(is3D bool) TrailersAPIGetTrailersRequest {
 	r.is3D = &is3D
 	return r
 }
 
 // Optional filter by Series Status. Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) TrailersAPIGetTrailersRequest {
 	r.seriesStatus = &seriesStatus
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetTrailersRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) TrailersAPIGetTrailersRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetTrailersRequest) NameStartsWith(nameStartsWith string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) NameStartsWith(nameStartsWith string) TrailersAPIGetTrailersRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetTrailersRequest) NameLessThan(nameLessThan string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) NameLessThan(nameLessThan string) TrailersAPIGetTrailersRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio id. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) StudioIds(studioIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) StudioIds(studioIds []string) TrailersAPIGetTrailersRequest {
 	r.studioIds = &studioIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.
-func (r ApiGetTrailersRequest) GenreIds(genreIds []string) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) GenreIds(genreIds []string) TrailersAPIGetTrailersRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. Enable the total record count.
-func (r ApiGetTrailersRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) EnableTotalRecordCount(enableTotalRecordCount bool) TrailersAPIGetTrailersRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetTrailersRequest) EnableImages(enableImages bool) ApiGetTrailersRequest {
+func (r TrailersAPIGetTrailersRequest) EnableImages(enableImages bool) TrailersAPIGetTrailersRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
-func (r ApiGetTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r TrailersAPIGetTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetTrailersExecute(r)
 }
 
@@ -625,10 +625,10 @@ func (r ApiGetTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http
 GetTrailers Finds movies and trailers similar to a given trailer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTrailersRequest
+ @return TrailersAPIGetTrailersRequest
 */
-func (a *TrailersAPIService) GetTrailers(ctx context.Context) ApiGetTrailersRequest {
-	return ApiGetTrailersRequest{
+func (a *TrailersAPIService) GetTrailers(ctx context.Context) TrailersAPIGetTrailersRequest {
+	return TrailersAPIGetTrailersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -636,7 +636,7 @@ func (a *TrailersAPIService) GetTrailers(ctx context.Context) ApiGetTrailersRequ
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *TrailersAPIService) GetTrailersExecute(r ApiGetTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *TrailersAPIService) GetTrailersExecute(r TrailersAPIGetTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

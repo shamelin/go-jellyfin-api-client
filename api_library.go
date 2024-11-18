@@ -25,13 +25,13 @@ import (
 // LibraryAPIService LibraryAPI service
 type LibraryAPIService service
 
-type ApiDeleteItemRequest struct {
+type LibraryAPIDeleteItemRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
 }
 
-func (r ApiDeleteItemRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIDeleteItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteItemExecute(r)
 }
 
@@ -40,10 +40,10 @@ DeleteItem Deletes an item from the library and filesystem.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiDeleteItemRequest
+ @return LibraryAPIDeleteItemRequest
 */
-func (a *LibraryAPIService) DeleteItem(ctx context.Context, itemId string) ApiDeleteItemRequest {
-	return ApiDeleteItemRequest{
+func (a *LibraryAPIService) DeleteItem(ctx context.Context, itemId string) LibraryAPIDeleteItemRequest {
+	return LibraryAPIDeleteItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -51,7 +51,7 @@ func (a *LibraryAPIService) DeleteItem(ctx context.Context, itemId string) ApiDe
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Response, error) {
+func (a *LibraryAPIService) DeleteItemExecute(r LibraryAPIDeleteItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -151,19 +151,19 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteItemsRequest struct {
+type LibraryAPIDeleteItemsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	ids *[]string
 }
 
 // The item ids.
-func (r ApiDeleteItemsRequest) Ids(ids []string) ApiDeleteItemsRequest {
+func (r LibraryAPIDeleteItemsRequest) Ids(ids []string) LibraryAPIDeleteItemsRequest {
 	r.ids = &ids
 	return r
 }
 
-func (r ApiDeleteItemsRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIDeleteItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteItemsExecute(r)
 }
 
@@ -171,17 +171,17 @@ func (r ApiDeleteItemsRequest) Execute() (*http.Response, error) {
 DeleteItems Deletes items from the library and filesystem.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteItemsRequest
+ @return LibraryAPIDeleteItemsRequest
 */
-func (a *LibraryAPIService) DeleteItems(ctx context.Context) ApiDeleteItemsRequest {
-	return ApiDeleteItemsRequest{
+func (a *LibraryAPIService) DeleteItems(ctx context.Context) LibraryAPIDeleteItemsRequest {
+	return LibraryAPIDeleteItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.Response, error) {
+func (a *LibraryAPIService) DeleteItemsExecute(r LibraryAPIDeleteItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -291,7 +291,7 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetAncestorsRequest struct {
+type LibraryAPIGetAncestorsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -299,12 +299,12 @@ type ApiGetAncestorsRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetAncestorsRequest) UserId(userId string) ApiGetAncestorsRequest {
+func (r LibraryAPIGetAncestorsRequest) UserId(userId string) LibraryAPIGetAncestorsRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetAncestorsRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
+func (r LibraryAPIGetAncestorsRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetAncestorsExecute(r)
 }
 
@@ -313,10 +313,10 @@ GetAncestors Gets all parents of an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetAncestorsRequest
+ @return LibraryAPIGetAncestorsRequest
 */
-func (a *LibraryAPIService) GetAncestors(ctx context.Context, itemId string) ApiGetAncestorsRequest {
-	return ApiGetAncestorsRequest{
+func (a *LibraryAPIService) GetAncestors(ctx context.Context, itemId string) LibraryAPIGetAncestorsRequest {
+	return LibraryAPIGetAncestorsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -325,7 +325,7 @@ func (a *LibraryAPIService) GetAncestors(ctx context.Context, itemId string) Api
 
 // Execute executes the request
 //  @return []JellyfinBaseItemDto
-func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
+func (a *LibraryAPIService) GetAncestorsExecute(r LibraryAPIGetAncestorsRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -427,13 +427,13 @@ func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetCriticReviewsRequest struct {
+type LibraryAPIGetCriticReviewsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
 }
 
-func (r ApiGetCriticReviewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetCriticReviewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetCriticReviewsExecute(r)
 }
 
@@ -442,12 +442,12 @@ GetCriticReviews Gets critic review for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId
- @return ApiGetCriticReviewsRequest
+ @return LibraryAPIGetCriticReviewsRequest
 
 Deprecated
 */
-func (a *LibraryAPIService) GetCriticReviews(ctx context.Context, itemId string) ApiGetCriticReviewsRequest {
-	return ApiGetCriticReviewsRequest{
+func (a *LibraryAPIService) GetCriticReviews(ctx context.Context, itemId string) LibraryAPIGetCriticReviewsRequest {
+	return LibraryAPIGetCriticReviewsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -457,7 +457,7 @@ func (a *LibraryAPIService) GetCriticReviews(ctx context.Context, itemId string)
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetCriticReviewsExecute(r LibraryAPIGetCriticReviewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -545,13 +545,13 @@ func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDownloadRequest struct {
+type LibraryAPIGetDownloadRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
 }
 
-func (r ApiGetDownloadRequest) Execute() (*os.File, *http.Response, error) {
+func (r LibraryAPIGetDownloadRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetDownloadExecute(r)
 }
 
@@ -560,10 +560,10 @@ GetDownload Downloads item media.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetDownloadRequest
+ @return LibraryAPIGetDownloadRequest
 */
-func (a *LibraryAPIService) GetDownload(ctx context.Context, itemId string) ApiGetDownloadRequest {
-	return ApiGetDownloadRequest{
+func (a *LibraryAPIService) GetDownload(ctx context.Context, itemId string) LibraryAPIGetDownloadRequest {
+	return LibraryAPIGetDownloadRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -572,7 +572,7 @@ func (a *LibraryAPIService) GetDownload(ctx context.Context, itemId string) ApiG
 
 // Execute executes the request
 //  @return *os.File
-func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.File, *http.Response, error) {
+func (a *LibraryAPIService) GetDownloadExecute(r LibraryAPIGetDownloadRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -671,13 +671,13 @@ func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.Fil
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetFileRequest struct {
+type LibraryAPIGetFileRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
 }
 
-func (r ApiGetFileRequest) Execute() (*os.File, *http.Response, error) {
+func (r LibraryAPIGetFileRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetFileExecute(r)
 }
 
@@ -686,10 +686,10 @@ GetFile Get the original file of an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetFileRequest
+ @return LibraryAPIGetFileRequest
 */
-func (a *LibraryAPIService) GetFile(ctx context.Context, itemId string) ApiGetFileRequest {
-	return ApiGetFileRequest{
+func (a *LibraryAPIService) GetFile(ctx context.Context, itemId string) LibraryAPIGetFileRequest {
+	return LibraryAPIGetFileRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -698,7 +698,7 @@ func (a *LibraryAPIService) GetFile(ctx context.Context, itemId string) ApiGetFi
 
 // Execute executes the request
 //  @return *os.File
-func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http.Response, error) {
+func (a *LibraryAPIService) GetFileExecute(r LibraryAPIGetFileRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -797,7 +797,7 @@ func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemCountsRequest struct {
+type LibraryAPIGetItemCountsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	userId *string
@@ -805,18 +805,18 @@ type ApiGetItemCountsRequest struct {
 }
 
 // Optional. Get counts from a specific user&#39;s library.
-func (r ApiGetItemCountsRequest) UserId(userId string) ApiGetItemCountsRequest {
+func (r LibraryAPIGetItemCountsRequest) UserId(userId string) LibraryAPIGetItemCountsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Get counts of favorite items.
-func (r ApiGetItemCountsRequest) IsFavorite(isFavorite bool) ApiGetItemCountsRequest {
+func (r LibraryAPIGetItemCountsRequest) IsFavorite(isFavorite bool) LibraryAPIGetItemCountsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
-func (r ApiGetItemCountsRequest) Execute() (*JellyfinItemCounts, *http.Response, error) {
+func (r LibraryAPIGetItemCountsRequest) Execute() (*JellyfinItemCounts, *http.Response, error) {
 	return r.ApiService.GetItemCountsExecute(r)
 }
 
@@ -824,10 +824,10 @@ func (r ApiGetItemCountsRequest) Execute() (*JellyfinItemCounts, *http.Response,
 GetItemCounts Get item counts.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetItemCountsRequest
+ @return LibraryAPIGetItemCountsRequest
 */
-func (a *LibraryAPIService) GetItemCounts(ctx context.Context) ApiGetItemCountsRequest {
-	return ApiGetItemCountsRequest{
+func (a *LibraryAPIService) GetItemCounts(ctx context.Context) LibraryAPIGetItemCountsRequest {
+	return LibraryAPIGetItemCountsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -835,7 +835,7 @@ func (a *LibraryAPIService) GetItemCounts(ctx context.Context) ApiGetItemCountsR
 
 // Execute executes the request
 //  @return JellyfinItemCounts
-func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*JellyfinItemCounts, *http.Response, error) {
+func (a *LibraryAPIService) GetItemCountsExecute(r LibraryAPIGetItemCountsRequest) (*JellyfinItemCounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -928,7 +928,7 @@ func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLibraryOptionsInfoRequest struct {
+type LibraryAPIGetLibraryOptionsInfoRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	libraryContentType *JellyfinCollectionType
@@ -936,18 +936,18 @@ type ApiGetLibraryOptionsInfoRequest struct {
 }
 
 // Library content type.
-func (r ApiGetLibraryOptionsInfoRequest) LibraryContentType(libraryContentType JellyfinCollectionType) ApiGetLibraryOptionsInfoRequest {
+func (r LibraryAPIGetLibraryOptionsInfoRequest) LibraryContentType(libraryContentType JellyfinCollectionType) LibraryAPIGetLibraryOptionsInfoRequest {
 	r.libraryContentType = &libraryContentType
 	return r
 }
 
 // Whether this is a new library.
-func (r ApiGetLibraryOptionsInfoRequest) IsNewLibrary(isNewLibrary bool) ApiGetLibraryOptionsInfoRequest {
+func (r LibraryAPIGetLibraryOptionsInfoRequest) IsNewLibrary(isNewLibrary bool) LibraryAPIGetLibraryOptionsInfoRequest {
 	r.isNewLibrary = &isNewLibrary
 	return r
 }
 
-func (r ApiGetLibraryOptionsInfoRequest) Execute() (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
+func (r LibraryAPIGetLibraryOptionsInfoRequest) Execute() (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
 	return r.ApiService.GetLibraryOptionsInfoExecute(r)
 }
 
@@ -955,10 +955,10 @@ func (r ApiGetLibraryOptionsInfoRequest) Execute() (*JellyfinLibraryOptionsResul
 GetLibraryOptionsInfo Gets the library options info.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLibraryOptionsInfoRequest
+ @return LibraryAPIGetLibraryOptionsInfoRequest
 */
-func (a *LibraryAPIService) GetLibraryOptionsInfo(ctx context.Context) ApiGetLibraryOptionsInfoRequest {
-	return ApiGetLibraryOptionsInfoRequest{
+func (a *LibraryAPIService) GetLibraryOptionsInfo(ctx context.Context) LibraryAPIGetLibraryOptionsInfoRequest {
+	return LibraryAPIGetLibraryOptionsInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -966,7 +966,7 @@ func (a *LibraryAPIService) GetLibraryOptionsInfo(ctx context.Context) ApiGetLib
 
 // Execute executes the request
 //  @return JellyfinLibraryOptionsResultDto
-func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsInfoRequest) (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
+func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r LibraryAPIGetLibraryOptionsInfoRequest) (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1062,19 +1062,19 @@ func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMediaFoldersRequest struct {
+type LibraryAPIGetMediaFoldersRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	isHidden *bool
 }
 
 // Optional. Filter by folders that are marked hidden, or not.
-func (r ApiGetMediaFoldersRequest) IsHidden(isHidden bool) ApiGetMediaFoldersRequest {
+func (r LibraryAPIGetMediaFoldersRequest) IsHidden(isHidden bool) LibraryAPIGetMediaFoldersRequest {
 	r.isHidden = &isHidden
 	return r
 }
 
-func (r ApiGetMediaFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetMediaFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetMediaFoldersExecute(r)
 }
 
@@ -1082,10 +1082,10 @@ func (r ApiGetMediaFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *
 GetMediaFolders Gets all user media folders.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMediaFoldersRequest
+ @return LibraryAPIGetMediaFoldersRequest
 */
-func (a *LibraryAPIService) GetMediaFolders(ctx context.Context) ApiGetMediaFoldersRequest {
-	return ApiGetMediaFoldersRequest{
+func (a *LibraryAPIService) GetMediaFolders(ctx context.Context) LibraryAPIGetMediaFoldersRequest {
+	return LibraryAPIGetMediaFoldersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1093,7 +1093,7 @@ func (a *LibraryAPIService) GetMediaFolders(ctx context.Context) ApiGetMediaFold
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetMediaFoldersExecute(r LibraryAPIGetMediaFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1183,12 +1183,12 @@ func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPhysicalPathsRequest struct {
+type LibraryAPIGetPhysicalPathsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 }
 
-func (r ApiGetPhysicalPathsRequest) Execute() ([]string, *http.Response, error) {
+func (r LibraryAPIGetPhysicalPathsRequest) Execute() ([]string, *http.Response, error) {
 	return r.ApiService.GetPhysicalPathsExecute(r)
 }
 
@@ -1196,10 +1196,10 @@ func (r ApiGetPhysicalPathsRequest) Execute() ([]string, *http.Response, error) 
 GetPhysicalPaths Gets a list of physical paths from virtual folders.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPhysicalPathsRequest
+ @return LibraryAPIGetPhysicalPathsRequest
 */
-func (a *LibraryAPIService) GetPhysicalPaths(ctx context.Context) ApiGetPhysicalPathsRequest {
-	return ApiGetPhysicalPathsRequest{
+func (a *LibraryAPIService) GetPhysicalPaths(ctx context.Context) LibraryAPIGetPhysicalPathsRequest {
+	return LibraryAPIGetPhysicalPathsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1207,7 +1207,7 @@ func (a *LibraryAPIService) GetPhysicalPaths(ctx context.Context) ApiGetPhysical
 
 // Execute executes the request
 //  @return []string
-func (a *LibraryAPIService) GetPhysicalPathsExecute(r ApiGetPhysicalPathsRequest) ([]string, *http.Response, error) {
+func (a *LibraryAPIService) GetPhysicalPathsExecute(r LibraryAPIGetPhysicalPathsRequest) ([]string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1294,7 +1294,7 @@ func (a *LibraryAPIService) GetPhysicalPathsExecute(r ApiGetPhysicalPathsRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarAlbumsRequest struct {
+type LibraryAPIGetSimilarAlbumsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -1305,30 +1305,30 @@ type ApiGetSimilarAlbumsRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarAlbumsRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarAlbumsRequest {
+func (r LibraryAPIGetSimilarAlbumsRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarAlbumsRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarAlbumsRequest) UserId(userId string) ApiGetSimilarAlbumsRequest {
+func (r LibraryAPIGetSimilarAlbumsRequest) UserId(userId string) LibraryAPIGetSimilarAlbumsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarAlbumsRequest) Limit(limit int32) ApiGetSimilarAlbumsRequest {
+func (r LibraryAPIGetSimilarAlbumsRequest) Limit(limit int32) LibraryAPIGetSimilarAlbumsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarAlbumsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarAlbumsRequest {
+func (r LibraryAPIGetSimilarAlbumsRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarAlbumsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarAlbumsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarAlbumsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarAlbumsExecute(r)
 }
 
@@ -1337,10 +1337,10 @@ GetSimilarAlbums Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarAlbumsRequest
+ @return LibraryAPIGetSimilarAlbumsRequest
 */
-func (a *LibraryAPIService) GetSimilarAlbums(ctx context.Context, itemId string) ApiGetSimilarAlbumsRequest {
-	return ApiGetSimilarAlbumsRequest{
+func (a *LibraryAPIService) GetSimilarAlbums(ctx context.Context, itemId string) LibraryAPIGetSimilarAlbumsRequest {
+	return LibraryAPIGetSimilarAlbumsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1349,7 +1349,7 @@ func (a *LibraryAPIService) GetSimilarAlbums(ctx context.Context, itemId string)
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarAlbumsExecute(r LibraryAPIGetSimilarAlbumsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1465,7 +1465,7 @@ func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarArtistsRequest struct {
+type LibraryAPIGetSimilarArtistsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -1476,30 +1476,30 @@ type ApiGetSimilarArtistsRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarArtistsRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarArtistsRequest {
+func (r LibraryAPIGetSimilarArtistsRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarArtistsRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarArtistsRequest) UserId(userId string) ApiGetSimilarArtistsRequest {
+func (r LibraryAPIGetSimilarArtistsRequest) UserId(userId string) LibraryAPIGetSimilarArtistsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarArtistsRequest) Limit(limit int32) ApiGetSimilarArtistsRequest {
+func (r LibraryAPIGetSimilarArtistsRequest) Limit(limit int32) LibraryAPIGetSimilarArtistsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarArtistsRequest {
+func (r LibraryAPIGetSimilarArtistsRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarArtistsExecute(r)
 }
 
@@ -1508,10 +1508,10 @@ GetSimilarArtists Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarArtistsRequest
+ @return LibraryAPIGetSimilarArtistsRequest
 */
-func (a *LibraryAPIService) GetSimilarArtists(ctx context.Context, itemId string) ApiGetSimilarArtistsRequest {
-	return ApiGetSimilarArtistsRequest{
+func (a *LibraryAPIService) GetSimilarArtists(ctx context.Context, itemId string) LibraryAPIGetSimilarArtistsRequest {
+	return LibraryAPIGetSimilarArtistsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1520,7 +1520,7 @@ func (a *LibraryAPIService) GetSimilarArtists(ctx context.Context, itemId string
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarArtistsExecute(r LibraryAPIGetSimilarArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1636,7 +1636,7 @@ func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarItemsRequest struct {
+type LibraryAPIGetSimilarItemsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -1647,30 +1647,30 @@ type ApiGetSimilarItemsRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarItemsRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarItemsRequest {
+func (r LibraryAPIGetSimilarItemsRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarItemsRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarItemsRequest) UserId(userId string) ApiGetSimilarItemsRequest {
+func (r LibraryAPIGetSimilarItemsRequest) UserId(userId string) LibraryAPIGetSimilarItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarItemsRequest) Limit(limit int32) ApiGetSimilarItemsRequest {
+func (r LibraryAPIGetSimilarItemsRequest) Limit(limit int32) LibraryAPIGetSimilarItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarItemsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarItemsRequest {
+func (r LibraryAPIGetSimilarItemsRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarItemsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarItemsExecute(r)
 }
 
@@ -1679,10 +1679,10 @@ GetSimilarItems Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarItemsRequest
+ @return LibraryAPIGetSimilarItemsRequest
 */
-func (a *LibraryAPIService) GetSimilarItems(ctx context.Context, itemId string) ApiGetSimilarItemsRequest {
-	return ApiGetSimilarItemsRequest{
+func (a *LibraryAPIService) GetSimilarItems(ctx context.Context, itemId string) LibraryAPIGetSimilarItemsRequest {
+	return LibraryAPIGetSimilarItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1691,7 +1691,7 @@ func (a *LibraryAPIService) GetSimilarItems(ctx context.Context, itemId string) 
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarItemsExecute(r LibraryAPIGetSimilarItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1807,7 +1807,7 @@ func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarMoviesRequest struct {
+type LibraryAPIGetSimilarMoviesRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -1818,30 +1818,30 @@ type ApiGetSimilarMoviesRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarMoviesRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarMoviesRequest {
+func (r LibraryAPIGetSimilarMoviesRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarMoviesRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarMoviesRequest) UserId(userId string) ApiGetSimilarMoviesRequest {
+func (r LibraryAPIGetSimilarMoviesRequest) UserId(userId string) LibraryAPIGetSimilarMoviesRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarMoviesRequest) Limit(limit int32) ApiGetSimilarMoviesRequest {
+func (r LibraryAPIGetSimilarMoviesRequest) Limit(limit int32) LibraryAPIGetSimilarMoviesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarMoviesRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarMoviesRequest {
+func (r LibraryAPIGetSimilarMoviesRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarMoviesRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarMoviesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarMoviesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarMoviesExecute(r)
 }
 
@@ -1850,10 +1850,10 @@ GetSimilarMovies Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarMoviesRequest
+ @return LibraryAPIGetSimilarMoviesRequest
 */
-func (a *LibraryAPIService) GetSimilarMovies(ctx context.Context, itemId string) ApiGetSimilarMoviesRequest {
-	return ApiGetSimilarMoviesRequest{
+func (a *LibraryAPIService) GetSimilarMovies(ctx context.Context, itemId string) LibraryAPIGetSimilarMoviesRequest {
+	return LibraryAPIGetSimilarMoviesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1862,7 +1862,7 @@ func (a *LibraryAPIService) GetSimilarMovies(ctx context.Context, itemId string)
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarMoviesExecute(r LibraryAPIGetSimilarMoviesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1978,7 +1978,7 @@ func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarShowsRequest struct {
+type LibraryAPIGetSimilarShowsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -1989,30 +1989,30 @@ type ApiGetSimilarShowsRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarShowsRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarShowsRequest {
+func (r LibraryAPIGetSimilarShowsRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarShowsRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarShowsRequest) UserId(userId string) ApiGetSimilarShowsRequest {
+func (r LibraryAPIGetSimilarShowsRequest) UserId(userId string) LibraryAPIGetSimilarShowsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarShowsRequest) Limit(limit int32) ApiGetSimilarShowsRequest {
+func (r LibraryAPIGetSimilarShowsRequest) Limit(limit int32) LibraryAPIGetSimilarShowsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarShowsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarShowsRequest {
+func (r LibraryAPIGetSimilarShowsRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarShowsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarShowsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarShowsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarShowsExecute(r)
 }
 
@@ -2021,10 +2021,10 @@ GetSimilarShows Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarShowsRequest
+ @return LibraryAPIGetSimilarShowsRequest
 */
-func (a *LibraryAPIService) GetSimilarShows(ctx context.Context, itemId string) ApiGetSimilarShowsRequest {
-	return ApiGetSimilarShowsRequest{
+func (a *LibraryAPIService) GetSimilarShows(ctx context.Context, itemId string) LibraryAPIGetSimilarShowsRequest {
+	return LibraryAPIGetSimilarShowsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2033,7 +2033,7 @@ func (a *LibraryAPIService) GetSimilarShows(ctx context.Context, itemId string) 
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarShowsExecute(r LibraryAPIGetSimilarShowsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2149,7 +2149,7 @@ func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSimilarTrailersRequest struct {
+type LibraryAPIGetSimilarTrailersRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -2160,30 +2160,30 @@ type ApiGetSimilarTrailersRequest struct {
 }
 
 // Exclude artist ids.
-func (r ApiGetSimilarTrailersRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetSimilarTrailersRequest {
+func (r LibraryAPIGetSimilarTrailersRequest) ExcludeArtistIds(excludeArtistIds []string) LibraryAPIGetSimilarTrailersRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetSimilarTrailersRequest) UserId(userId string) ApiGetSimilarTrailersRequest {
+func (r LibraryAPIGetSimilarTrailersRequest) UserId(userId string) LibraryAPIGetSimilarTrailersRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetSimilarTrailersRequest) Limit(limit int32) ApiGetSimilarTrailersRequest {
+func (r LibraryAPIGetSimilarTrailersRequest) Limit(limit int32) LibraryAPIGetSimilarTrailersRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarTrailersRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarTrailersRequest {
+func (r LibraryAPIGetSimilarTrailersRequest) Fields(fields []JellyfinItemFields) LibraryAPIGetSimilarTrailersRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r LibraryAPIGetSimilarTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarTrailersExecute(r)
 }
 
@@ -2192,10 +2192,10 @@ GetSimilarTrailers Gets similar items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetSimilarTrailersRequest
+ @return LibraryAPIGetSimilarTrailersRequest
 */
-func (a *LibraryAPIService) GetSimilarTrailers(ctx context.Context, itemId string) ApiGetSimilarTrailersRequest {
-	return ApiGetSimilarTrailersRequest{
+func (a *LibraryAPIService) GetSimilarTrailers(ctx context.Context, itemId string) LibraryAPIGetSimilarTrailersRequest {
+	return LibraryAPIGetSimilarTrailersRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2204,7 +2204,7 @@ func (a *LibraryAPIService) GetSimilarTrailers(ctx context.Context, itemId strin
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetSimilarTrailersExecute(r LibraryAPIGetSimilarTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2320,7 +2320,7 @@ func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetThemeMediaRequest struct {
+type LibraryAPIGetThemeMediaRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -2331,30 +2331,30 @@ type ApiGetThemeMediaRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetThemeMediaRequest) UserId(userId string) ApiGetThemeMediaRequest {
+func (r LibraryAPIGetThemeMediaRequest) UserId(userId string) LibraryAPIGetThemeMediaRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Determines whether or not parent items should be searched for theme media.
-func (r ApiGetThemeMediaRequest) InheritFromParent(inheritFromParent bool) ApiGetThemeMediaRequest {
+func (r LibraryAPIGetThemeMediaRequest) InheritFromParent(inheritFromParent bool) LibraryAPIGetThemeMediaRequest {
 	r.inheritFromParent = &inheritFromParent
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeMediaRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeMediaRequest {
+func (r LibraryAPIGetThemeMediaRequest) SortBy(sortBy []JellyfinItemSortBy) LibraryAPIGetThemeMediaRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeMediaRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeMediaRequest {
+func (r LibraryAPIGetThemeMediaRequest) SortOrder(sortOrder []JellyfinSortOrder) LibraryAPIGetThemeMediaRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeMediaRequest) Execute() (*JellyfinAllThemeMediaResult, *http.Response, error) {
+func (r LibraryAPIGetThemeMediaRequest) Execute() (*JellyfinAllThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeMediaExecute(r)
 }
 
@@ -2363,10 +2363,10 @@ GetThemeMedia Get theme songs and videos for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetThemeMediaRequest
+ @return LibraryAPIGetThemeMediaRequest
 */
-func (a *LibraryAPIService) GetThemeMedia(ctx context.Context, itemId string) ApiGetThemeMediaRequest {
-	return ApiGetThemeMediaRequest{
+func (a *LibraryAPIService) GetThemeMedia(ctx context.Context, itemId string) LibraryAPIGetThemeMediaRequest {
+	return LibraryAPIGetThemeMediaRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2375,7 +2375,7 @@ func (a *LibraryAPIService) GetThemeMedia(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return JellyfinAllThemeMediaResult
-func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*JellyfinAllThemeMediaResult, *http.Response, error) {
+func (a *LibraryAPIService) GetThemeMediaExecute(r LibraryAPIGetThemeMediaRequest) (*JellyfinAllThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2494,7 +2494,7 @@ func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetThemeSongsRequest struct {
+type LibraryAPIGetThemeSongsRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -2505,30 +2505,30 @@ type ApiGetThemeSongsRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetThemeSongsRequest) UserId(userId string) ApiGetThemeSongsRequest {
+func (r LibraryAPIGetThemeSongsRequest) UserId(userId string) LibraryAPIGetThemeSongsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Determines whether or not parent items should be searched for theme media.
-func (r ApiGetThemeSongsRequest) InheritFromParent(inheritFromParent bool) ApiGetThemeSongsRequest {
+func (r LibraryAPIGetThemeSongsRequest) InheritFromParent(inheritFromParent bool) LibraryAPIGetThemeSongsRequest {
 	r.inheritFromParent = &inheritFromParent
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeSongsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeSongsRequest {
+func (r LibraryAPIGetThemeSongsRequest) SortBy(sortBy []JellyfinItemSortBy) LibraryAPIGetThemeSongsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeSongsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeSongsRequest {
+func (r LibraryAPIGetThemeSongsRequest) SortOrder(sortOrder []JellyfinSortOrder) LibraryAPIGetThemeSongsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeSongsRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
+func (r LibraryAPIGetThemeSongsRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeSongsExecute(r)
 }
 
@@ -2537,10 +2537,10 @@ GetThemeSongs Get theme songs for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetThemeSongsRequest
+ @return LibraryAPIGetThemeSongsRequest
 */
-func (a *LibraryAPIService) GetThemeSongs(ctx context.Context, itemId string) ApiGetThemeSongsRequest {
-	return ApiGetThemeSongsRequest{
+func (a *LibraryAPIService) GetThemeSongs(ctx context.Context, itemId string) LibraryAPIGetThemeSongsRequest {
+	return LibraryAPIGetThemeSongsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2549,7 +2549,7 @@ func (a *LibraryAPIService) GetThemeSongs(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return JellyfinThemeMediaResult
-func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
+func (a *LibraryAPIService) GetThemeSongsExecute(r LibraryAPIGetThemeSongsRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2679,7 +2679,7 @@ func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetThemeVideosRequest struct {
+type LibraryAPIGetThemeVideosRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	itemId string
@@ -2690,30 +2690,30 @@ type ApiGetThemeVideosRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetThemeVideosRequest) UserId(userId string) ApiGetThemeVideosRequest {
+func (r LibraryAPIGetThemeVideosRequest) UserId(userId string) LibraryAPIGetThemeVideosRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Determines whether or not parent items should be searched for theme media.
-func (r ApiGetThemeVideosRequest) InheritFromParent(inheritFromParent bool) ApiGetThemeVideosRequest {
+func (r LibraryAPIGetThemeVideosRequest) InheritFromParent(inheritFromParent bool) LibraryAPIGetThemeVideosRequest {
 	r.inheritFromParent = &inheritFromParent
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeVideosRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeVideosRequest {
+func (r LibraryAPIGetThemeVideosRequest) SortBy(sortBy []JellyfinItemSortBy) LibraryAPIGetThemeVideosRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeVideosRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeVideosRequest {
+func (r LibraryAPIGetThemeVideosRequest) SortOrder(sortOrder []JellyfinSortOrder) LibraryAPIGetThemeVideosRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeVideosRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
+func (r LibraryAPIGetThemeVideosRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeVideosExecute(r)
 }
 
@@ -2722,10 +2722,10 @@ GetThemeVideos Get theme videos for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetThemeVideosRequest
+ @return LibraryAPIGetThemeVideosRequest
 */
-func (a *LibraryAPIService) GetThemeVideos(ctx context.Context, itemId string) ApiGetThemeVideosRequest {
-	return ApiGetThemeVideosRequest{
+func (a *LibraryAPIService) GetThemeVideos(ctx context.Context, itemId string) LibraryAPIGetThemeVideosRequest {
+	return LibraryAPIGetThemeVideosRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2734,7 +2734,7 @@ func (a *LibraryAPIService) GetThemeVideos(ctx context.Context, itemId string) A
 
 // Execute executes the request
 //  @return JellyfinThemeMediaResult
-func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
+func (a *LibraryAPIService) GetThemeVideosExecute(r LibraryAPIGetThemeVideosRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -2864,7 +2864,7 @@ func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostAddedMoviesRequest struct {
+type LibraryAPIPostAddedMoviesRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	tmdbId *string
@@ -2872,18 +2872,18 @@ type ApiPostAddedMoviesRequest struct {
 }
 
 // The tmdbId.
-func (r ApiPostAddedMoviesRequest) TmdbId(tmdbId string) ApiPostAddedMoviesRequest {
+func (r LibraryAPIPostAddedMoviesRequest) TmdbId(tmdbId string) LibraryAPIPostAddedMoviesRequest {
 	r.tmdbId = &tmdbId
 	return r
 }
 
 // The imdbId.
-func (r ApiPostAddedMoviesRequest) ImdbId(imdbId string) ApiPostAddedMoviesRequest {
+func (r LibraryAPIPostAddedMoviesRequest) ImdbId(imdbId string) LibraryAPIPostAddedMoviesRequest {
 	r.imdbId = &imdbId
 	return r
 }
 
-func (r ApiPostAddedMoviesRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIPostAddedMoviesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAddedMoviesExecute(r)
 }
 
@@ -2891,17 +2891,17 @@ func (r ApiPostAddedMoviesRequest) Execute() (*http.Response, error) {
 PostAddedMovies Reports that new movies have been added by an external source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAddedMoviesRequest
+ @return LibraryAPIPostAddedMoviesRequest
 */
-func (a *LibraryAPIService) PostAddedMovies(ctx context.Context) ApiPostAddedMoviesRequest {
-	return ApiPostAddedMoviesRequest{
+func (a *LibraryAPIService) PostAddedMovies(ctx context.Context) LibraryAPIPostAddedMoviesRequest {
+	return LibraryAPIPostAddedMoviesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) PostAddedMoviesExecute(r ApiPostAddedMoviesRequest) (*http.Response, error) {
+func (a *LibraryAPIService) PostAddedMoviesExecute(r LibraryAPIPostAddedMoviesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2984,19 +2984,19 @@ func (a *LibraryAPIService) PostAddedMoviesExecute(r ApiPostAddedMoviesRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostAddedSeriesRequest struct {
+type LibraryAPIPostAddedSeriesRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	tvdbId *string
 }
 
 // The tvdbId.
-func (r ApiPostAddedSeriesRequest) TvdbId(tvdbId string) ApiPostAddedSeriesRequest {
+func (r LibraryAPIPostAddedSeriesRequest) TvdbId(tvdbId string) LibraryAPIPostAddedSeriesRequest {
 	r.tvdbId = &tvdbId
 	return r
 }
 
-func (r ApiPostAddedSeriesRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIPostAddedSeriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAddedSeriesExecute(r)
 }
 
@@ -3004,17 +3004,17 @@ func (r ApiPostAddedSeriesRequest) Execute() (*http.Response, error) {
 PostAddedSeries Reports that new episodes of a series have been added by an external source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAddedSeriesRequest
+ @return LibraryAPIPostAddedSeriesRequest
 */
-func (a *LibraryAPIService) PostAddedSeries(ctx context.Context) ApiPostAddedSeriesRequest {
-	return ApiPostAddedSeriesRequest{
+func (a *LibraryAPIService) PostAddedSeries(ctx context.Context) LibraryAPIPostAddedSeriesRequest {
+	return LibraryAPIPostAddedSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) (*http.Response, error) {
+func (a *LibraryAPIService) PostAddedSeriesExecute(r LibraryAPIPostAddedSeriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3094,19 +3094,19 @@ func (a *LibraryAPIService) PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostUpdatedMediaRequest struct {
+type LibraryAPIPostUpdatedMediaRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	jellyfinMediaUpdateInfoDto *JellyfinMediaUpdateInfoDto
 }
 
 // The update paths.
-func (r ApiPostUpdatedMediaRequest) JellyfinMediaUpdateInfoDto(jellyfinMediaUpdateInfoDto JellyfinMediaUpdateInfoDto) ApiPostUpdatedMediaRequest {
+func (r LibraryAPIPostUpdatedMediaRequest) JellyfinMediaUpdateInfoDto(jellyfinMediaUpdateInfoDto JellyfinMediaUpdateInfoDto) LibraryAPIPostUpdatedMediaRequest {
 	r.jellyfinMediaUpdateInfoDto = &jellyfinMediaUpdateInfoDto
 	return r
 }
 
-func (r ApiPostUpdatedMediaRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIPostUpdatedMediaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostUpdatedMediaExecute(r)
 }
 
@@ -3114,17 +3114,17 @@ func (r ApiPostUpdatedMediaRequest) Execute() (*http.Response, error) {
 PostUpdatedMedia Reports that new movies have been added by an external source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedMediaRequest
+ @return LibraryAPIPostUpdatedMediaRequest
 */
-func (a *LibraryAPIService) PostUpdatedMedia(ctx context.Context) ApiPostUpdatedMediaRequest {
-	return ApiPostUpdatedMediaRequest{
+func (a *LibraryAPIService) PostUpdatedMedia(ctx context.Context) LibraryAPIPostUpdatedMediaRequest {
+	return LibraryAPIPostUpdatedMediaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest) (*http.Response, error) {
+func (a *LibraryAPIService) PostUpdatedMediaExecute(r LibraryAPIPostUpdatedMediaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3206,7 +3206,7 @@ func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostUpdatedMoviesRequest struct {
+type LibraryAPIPostUpdatedMoviesRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	tmdbId *string
@@ -3214,18 +3214,18 @@ type ApiPostUpdatedMoviesRequest struct {
 }
 
 // The tmdbId.
-func (r ApiPostUpdatedMoviesRequest) TmdbId(tmdbId string) ApiPostUpdatedMoviesRequest {
+func (r LibraryAPIPostUpdatedMoviesRequest) TmdbId(tmdbId string) LibraryAPIPostUpdatedMoviesRequest {
 	r.tmdbId = &tmdbId
 	return r
 }
 
 // The imdbId.
-func (r ApiPostUpdatedMoviesRequest) ImdbId(imdbId string) ApiPostUpdatedMoviesRequest {
+func (r LibraryAPIPostUpdatedMoviesRequest) ImdbId(imdbId string) LibraryAPIPostUpdatedMoviesRequest {
 	r.imdbId = &imdbId
 	return r
 }
 
-func (r ApiPostUpdatedMoviesRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIPostUpdatedMoviesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostUpdatedMoviesExecute(r)
 }
 
@@ -3233,17 +3233,17 @@ func (r ApiPostUpdatedMoviesRequest) Execute() (*http.Response, error) {
 PostUpdatedMovies Reports that new movies have been added by an external source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedMoviesRequest
+ @return LibraryAPIPostUpdatedMoviesRequest
 */
-func (a *LibraryAPIService) PostUpdatedMovies(ctx context.Context) ApiPostUpdatedMoviesRequest {
-	return ApiPostUpdatedMoviesRequest{
+func (a *LibraryAPIService) PostUpdatedMovies(ctx context.Context) LibraryAPIPostUpdatedMoviesRequest {
+	return LibraryAPIPostUpdatedMoviesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) PostUpdatedMoviesExecute(r ApiPostUpdatedMoviesRequest) (*http.Response, error) {
+func (a *LibraryAPIService) PostUpdatedMoviesExecute(r LibraryAPIPostUpdatedMoviesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3326,19 +3326,19 @@ func (a *LibraryAPIService) PostUpdatedMoviesExecute(r ApiPostUpdatedMoviesReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostUpdatedSeriesRequest struct {
+type LibraryAPIPostUpdatedSeriesRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 	tvdbId *string
 }
 
 // The tvdbId.
-func (r ApiPostUpdatedSeriesRequest) TvdbId(tvdbId string) ApiPostUpdatedSeriesRequest {
+func (r LibraryAPIPostUpdatedSeriesRequest) TvdbId(tvdbId string) LibraryAPIPostUpdatedSeriesRequest {
 	r.tvdbId = &tvdbId
 	return r
 }
 
-func (r ApiPostUpdatedSeriesRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIPostUpdatedSeriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostUpdatedSeriesExecute(r)
 }
 
@@ -3346,17 +3346,17 @@ func (r ApiPostUpdatedSeriesRequest) Execute() (*http.Response, error) {
 PostUpdatedSeries Reports that new episodes of a series have been added by an external source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostUpdatedSeriesRequest
+ @return LibraryAPIPostUpdatedSeriesRequest
 */
-func (a *LibraryAPIService) PostUpdatedSeries(ctx context.Context) ApiPostUpdatedSeriesRequest {
-	return ApiPostUpdatedSeriesRequest{
+func (a *LibraryAPIService) PostUpdatedSeries(ctx context.Context) LibraryAPIPostUpdatedSeriesRequest {
+	return LibraryAPIPostUpdatedSeriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) PostUpdatedSeriesExecute(r ApiPostUpdatedSeriesRequest) (*http.Response, error) {
+func (a *LibraryAPIService) PostUpdatedSeriesExecute(r LibraryAPIPostUpdatedSeriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -3436,12 +3436,12 @@ func (a *LibraryAPIService) PostUpdatedSeriesExecute(r ApiPostUpdatedSeriesReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiRefreshLibraryRequest struct {
+type LibraryAPIRefreshLibraryRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
 }
 
-func (r ApiRefreshLibraryRequest) Execute() (*http.Response, error) {
+func (r LibraryAPIRefreshLibraryRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RefreshLibraryExecute(r)
 }
 
@@ -3449,17 +3449,17 @@ func (r ApiRefreshLibraryRequest) Execute() (*http.Response, error) {
 RefreshLibrary Starts a library scan.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRefreshLibraryRequest
+ @return LibraryAPIRefreshLibraryRequest
 */
-func (a *LibraryAPIService) RefreshLibrary(ctx context.Context) ApiRefreshLibraryRequest {
-	return ApiRefreshLibraryRequest{
+func (a *LibraryAPIService) RefreshLibrary(ctx context.Context) LibraryAPIRefreshLibraryRequest {
+	return LibraryAPIRefreshLibraryRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryAPIService) RefreshLibraryExecute(r ApiRefreshLibraryRequest) (*http.Response, error) {
+func (a *LibraryAPIService) RefreshLibraryExecute(r LibraryAPIRefreshLibraryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

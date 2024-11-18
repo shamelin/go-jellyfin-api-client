@@ -20,12 +20,12 @@ type JellyfinProcessPriorityClass string
 
 // List of ProcessPriorityClass
 const (
-	NORMAL JellyfinProcessPriorityClass = "Normal"
-	IDLE JellyfinProcessPriorityClass = "Idle"
-	HIGH JellyfinProcessPriorityClass = "High"
-	REAL_TIME JellyfinProcessPriorityClass = "RealTime"
-	BELOW_NORMAL JellyfinProcessPriorityClass = "BelowNormal"
-	ABOVE_NORMAL JellyfinProcessPriorityClass = "AboveNormal"
+	JELLYFINPROCESSPRIORITYCLASS_NORMAL JellyfinProcessPriorityClass = "Normal"
+	JELLYFINPROCESSPRIORITYCLASS_IDLE JellyfinProcessPriorityClass = "Idle"
+	JELLYFINPROCESSPRIORITYCLASS_HIGH JellyfinProcessPriorityClass = "High"
+	JELLYFINPROCESSPRIORITYCLASS_REAL_TIME JellyfinProcessPriorityClass = "RealTime"
+	JELLYFINPROCESSPRIORITYCLASS_BELOW_NORMAL JellyfinProcessPriorityClass = "BelowNormal"
+	JELLYFINPROCESSPRIORITYCLASS_ABOVE_NORMAL JellyfinProcessPriorityClass = "AboveNormal"
 )
 
 // All allowed values of JellyfinProcessPriorityClass enum

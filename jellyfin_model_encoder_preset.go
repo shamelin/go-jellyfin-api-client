@@ -20,17 +20,17 @@ type JellyfinEncoderPreset string
 
 // List of EncoderPreset
 const (
-	AUTO JellyfinEncoderPreset = "auto"
-	PLACEBO JellyfinEncoderPreset = "placebo"
-	VERYSLOW JellyfinEncoderPreset = "veryslow"
-	SLOWER JellyfinEncoderPreset = "slower"
-	SLOW JellyfinEncoderPreset = "slow"
-	MEDIUM JellyfinEncoderPreset = "medium"
-	FAST JellyfinEncoderPreset = "fast"
-	FASTER JellyfinEncoderPreset = "faster"
-	VERYFAST JellyfinEncoderPreset = "veryfast"
-	SUPERFAST JellyfinEncoderPreset = "superfast"
-	ULTRAFAST JellyfinEncoderPreset = "ultrafast"
+	JELLYFINENCODERPRESET_AUTO JellyfinEncoderPreset = "auto"
+	JELLYFINENCODERPRESET_PLACEBO JellyfinEncoderPreset = "placebo"
+	JELLYFINENCODERPRESET_VERYSLOW JellyfinEncoderPreset = "veryslow"
+	JELLYFINENCODERPRESET_SLOWER JellyfinEncoderPreset = "slower"
+	JELLYFINENCODERPRESET_SLOW JellyfinEncoderPreset = "slow"
+	JELLYFINENCODERPRESET_MEDIUM JellyfinEncoderPreset = "medium"
+	JELLYFINENCODERPRESET_FAST JellyfinEncoderPreset = "fast"
+	JELLYFINENCODERPRESET_FASTER JellyfinEncoderPreset = "faster"
+	JELLYFINENCODERPRESET_VERYFAST JellyfinEncoderPreset = "veryfast"
+	JELLYFINENCODERPRESET_SUPERFAST JellyfinEncoderPreset = "superfast"
+	JELLYFINENCODERPRESET_ULTRAFAST JellyfinEncoderPreset = "ultrafast"
 )
 
 // All allowed values of JellyfinEncoderPreset enum

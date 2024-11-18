@@ -20,10 +20,10 @@ type JellyfinEmbeddedSubtitleOptions string
 
 // List of EmbeddedSubtitleOptions
 const (
-	ALLOW_ALL JellyfinEmbeddedSubtitleOptions = "AllowAll"
-	ALLOW_TEXT JellyfinEmbeddedSubtitleOptions = "AllowText"
-	ALLOW_IMAGE JellyfinEmbeddedSubtitleOptions = "AllowImage"
-	ALLOW_NONE JellyfinEmbeddedSubtitleOptions = "AllowNone"
+	JELLYFINEMBEDDEDSUBTITLEOPTIONS_ALLOW_ALL JellyfinEmbeddedSubtitleOptions = "AllowAll"
+	JELLYFINEMBEDDEDSUBTITLEOPTIONS_ALLOW_TEXT JellyfinEmbeddedSubtitleOptions = "AllowText"
+	JELLYFINEMBEDDEDSUBTITLEOPTIONS_ALLOW_IMAGE JellyfinEmbeddedSubtitleOptions = "AllowImage"
+	JELLYFINEMBEDDEDSUBTITLEOPTIONS_ALLOW_NONE JellyfinEmbeddedSubtitleOptions = "AllowNone"
 )
 
 // All allowed values of JellyfinEmbeddedSubtitleOptions enum

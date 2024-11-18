@@ -20,8 +20,8 @@ type JellyfinSortOrder string
 
 // List of SortOrder
 const (
-	ASCENDING JellyfinSortOrder = "Ascending"
-	DESCENDING JellyfinSortOrder = "Descending"
+	JELLYFINSORTORDER_ASCENDING JellyfinSortOrder = "Ascending"
+	JELLYFINSORTORDER_DESCENDING JellyfinSortOrder = "Descending"
 )
 
 // All allowed values of JellyfinSortOrder enum

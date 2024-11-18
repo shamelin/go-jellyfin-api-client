@@ -20,12 +20,12 @@ type JellyfinMediaStreamType string
 
 // List of MediaStreamType
 const (
-	AUDIO JellyfinMediaStreamType = "Audio"
-	VIDEO JellyfinMediaStreamType = "Video"
-	SUBTITLE JellyfinMediaStreamType = "Subtitle"
-	EMBEDDED_IMAGE JellyfinMediaStreamType = "EmbeddedImage"
-	DATA JellyfinMediaStreamType = "Data"
-	LYRIC JellyfinMediaStreamType = "Lyric"
+	JELLYFINMEDIASTREAMTYPE_AUDIO JellyfinMediaStreamType = "Audio"
+	JELLYFINMEDIASTREAMTYPE_VIDEO JellyfinMediaStreamType = "Video"
+	JELLYFINMEDIASTREAMTYPE_SUBTITLE JellyfinMediaStreamType = "Subtitle"
+	JELLYFINMEDIASTREAMTYPE_EMBEDDED_IMAGE JellyfinMediaStreamType = "EmbeddedImage"
+	JELLYFINMEDIASTREAMTYPE_DATA JellyfinMediaStreamType = "Data"
+	JELLYFINMEDIASTREAMTYPE_LYRIC JellyfinMediaStreamType = "Lyric"
 )
 
 // All allowed values of JellyfinMediaStreamType enum

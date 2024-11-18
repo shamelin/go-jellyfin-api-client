@@ -20,9 +20,9 @@ type JellyfinVideoRange string
 
 // List of VideoRange
 const (
-	UNKNOWN JellyfinVideoRange = "Unknown"
-	SDR JellyfinVideoRange = "SDR"
-	HDR JellyfinVideoRange = "HDR"
+	JELLYFINVIDEORANGE_UNKNOWN JellyfinVideoRange = "Unknown"
+	JELLYFINVIDEORANGE_SDR JellyfinVideoRange = "SDR"
+	JELLYFINVIDEORANGE_HDR JellyfinVideoRange = "HDR"
 )
 
 // All allowed values of JellyfinVideoRange enum

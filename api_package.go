@@ -23,13 +23,13 @@ import (
 // PackageAPIService PackageAPI service
 type PackageAPIService service
 
-type ApiCancelPackageInstallationRequest struct {
+type PackageAPICancelPackageInstallationRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 	packageId string
 }
 
-func (r ApiCancelPackageInstallationRequest) Execute() (*http.Response, error) {
+func (r PackageAPICancelPackageInstallationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CancelPackageInstallationExecute(r)
 }
 
@@ -38,10 +38,10 @@ CancelPackageInstallation Cancels a package installation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId Installation Id.
- @return ApiCancelPackageInstallationRequest
+ @return PackageAPICancelPackageInstallationRequest
 */
-func (a *PackageAPIService) CancelPackageInstallation(ctx context.Context, packageId string) ApiCancelPackageInstallationRequest {
-	return ApiCancelPackageInstallationRequest{
+func (a *PackageAPIService) CancelPackageInstallation(ctx context.Context, packageId string) PackageAPICancelPackageInstallationRequest {
+	return PackageAPICancelPackageInstallationRequest{
 		ApiService: a,
 		ctx: ctx,
 		packageId: packageId,
@@ -49,7 +49,7 @@ func (a *PackageAPIService) CancelPackageInstallation(ctx context.Context, packa
 }
 
 // Execute executes the request
-func (a *PackageAPIService) CancelPackageInstallationExecute(r ApiCancelPackageInstallationRequest) (*http.Response, error) {
+func (a *PackageAPIService) CancelPackageInstallationExecute(r PackageAPICancelPackageInstallationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -127,7 +127,7 @@ func (a *PackageAPIService) CancelPackageInstallationExecute(r ApiCancelPackageI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetPackageInfoRequest struct {
+type PackageAPIGetPackageInfoRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 	name string
@@ -135,12 +135,12 @@ type ApiGetPackageInfoRequest struct {
 }
 
 // The GUID of the associated assembly.
-func (r ApiGetPackageInfoRequest) AssemblyGuid(assemblyGuid string) ApiGetPackageInfoRequest {
+func (r PackageAPIGetPackageInfoRequest) AssemblyGuid(assemblyGuid string) PackageAPIGetPackageInfoRequest {
 	r.assemblyGuid = &assemblyGuid
 	return r
 }
 
-func (r ApiGetPackageInfoRequest) Execute() (*JellyfinPackageInfo, *http.Response, error) {
+func (r PackageAPIGetPackageInfoRequest) Execute() (*JellyfinPackageInfo, *http.Response, error) {
 	return r.ApiService.GetPackageInfoExecute(r)
 }
 
@@ -149,10 +149,10 @@ GetPackageInfo Gets a package by name or assembly GUID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name The name of the package.
- @return ApiGetPackageInfoRequest
+ @return PackageAPIGetPackageInfoRequest
 */
-func (a *PackageAPIService) GetPackageInfo(ctx context.Context, name string) ApiGetPackageInfoRequest {
-	return ApiGetPackageInfoRequest{
+func (a *PackageAPIService) GetPackageInfo(ctx context.Context, name string) PackageAPIGetPackageInfoRequest {
+	return PackageAPIGetPackageInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -161,7 +161,7 @@ func (a *PackageAPIService) GetPackageInfo(ctx context.Context, name string) Api
 
 // Execute executes the request
 //  @return JellyfinPackageInfo
-func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*JellyfinPackageInfo, *http.Response, error) {
+func (a *PackageAPIService) GetPackageInfoExecute(r PackageAPIGetPackageInfoRequest) (*JellyfinPackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -252,12 +252,12 @@ func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPackagesRequest struct {
+type PackageAPIGetPackagesRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 }
 
-func (r ApiGetPackagesRequest) Execute() ([]JellyfinPackageInfo, *http.Response, error) {
+func (r PackageAPIGetPackagesRequest) Execute() ([]JellyfinPackageInfo, *http.Response, error) {
 	return r.ApiService.GetPackagesExecute(r)
 }
 
@@ -265,10 +265,10 @@ func (r ApiGetPackagesRequest) Execute() ([]JellyfinPackageInfo, *http.Response,
 GetPackages Gets available packages.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPackagesRequest
+ @return PackageAPIGetPackagesRequest
 */
-func (a *PackageAPIService) GetPackages(ctx context.Context) ApiGetPackagesRequest {
-	return ApiGetPackagesRequest{
+func (a *PackageAPIService) GetPackages(ctx context.Context) PackageAPIGetPackagesRequest {
+	return PackageAPIGetPackagesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -276,7 +276,7 @@ func (a *PackageAPIService) GetPackages(ctx context.Context) ApiGetPackagesReque
 
 // Execute executes the request
 //  @return []JellyfinPackageInfo
-func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]JellyfinPackageInfo, *http.Response, error) {
+func (a *PackageAPIService) GetPackagesExecute(r PackageAPIGetPackagesRequest) ([]JellyfinPackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -363,12 +363,12 @@ func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRepositoriesRequest struct {
+type PackageAPIGetRepositoriesRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 }
 
-func (r ApiGetRepositoriesRequest) Execute() ([]JellyfinRepositoryInfo, *http.Response, error) {
+func (r PackageAPIGetRepositoriesRequest) Execute() ([]JellyfinRepositoryInfo, *http.Response, error) {
 	return r.ApiService.GetRepositoriesExecute(r)
 }
 
@@ -376,10 +376,10 @@ func (r ApiGetRepositoriesRequest) Execute() ([]JellyfinRepositoryInfo, *http.Re
 GetRepositories Gets all package repositories.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRepositoriesRequest
+ @return PackageAPIGetRepositoriesRequest
 */
-func (a *PackageAPIService) GetRepositories(ctx context.Context) ApiGetRepositoriesRequest {
-	return ApiGetRepositoriesRequest{
+func (a *PackageAPIService) GetRepositories(ctx context.Context) PackageAPIGetRepositoriesRequest {
+	return PackageAPIGetRepositoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -387,7 +387,7 @@ func (a *PackageAPIService) GetRepositories(ctx context.Context) ApiGetRepositor
 
 // Execute executes the request
 //  @return []JellyfinRepositoryInfo
-func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) ([]JellyfinRepositoryInfo, *http.Response, error) {
+func (a *PackageAPIService) GetRepositoriesExecute(r PackageAPIGetRepositoriesRequest) ([]JellyfinRepositoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -474,7 +474,7 @@ func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInstallPackageRequest struct {
+type PackageAPIInstallPackageRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 	name string
@@ -484,24 +484,24 @@ type ApiInstallPackageRequest struct {
 }
 
 // GUID of the associated assembly.
-func (r ApiInstallPackageRequest) AssemblyGuid(assemblyGuid string) ApiInstallPackageRequest {
+func (r PackageAPIInstallPackageRequest) AssemblyGuid(assemblyGuid string) PackageAPIInstallPackageRequest {
 	r.assemblyGuid = &assemblyGuid
 	return r
 }
 
 // Optional version. Defaults to latest version.
-func (r ApiInstallPackageRequest) Version(version string) ApiInstallPackageRequest {
+func (r PackageAPIInstallPackageRequest) Version(version string) PackageAPIInstallPackageRequest {
 	r.version = &version
 	return r
 }
 
 // Optional. Specify the repository to install from.
-func (r ApiInstallPackageRequest) RepositoryUrl(repositoryUrl string) ApiInstallPackageRequest {
+func (r PackageAPIInstallPackageRequest) RepositoryUrl(repositoryUrl string) PackageAPIInstallPackageRequest {
 	r.repositoryUrl = &repositoryUrl
 	return r
 }
 
-func (r ApiInstallPackageRequest) Execute() (*http.Response, error) {
+func (r PackageAPIInstallPackageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.InstallPackageExecute(r)
 }
 
@@ -510,10 +510,10 @@ InstallPackage Installs a package.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Package name.
- @return ApiInstallPackageRequest
+ @return PackageAPIInstallPackageRequest
 */
-func (a *PackageAPIService) InstallPackage(ctx context.Context, name string) ApiInstallPackageRequest {
-	return ApiInstallPackageRequest{
+func (a *PackageAPIService) InstallPackage(ctx context.Context, name string) PackageAPIInstallPackageRequest {
+	return PackageAPIInstallPackageRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -521,7 +521,7 @@ func (a *PackageAPIService) InstallPackage(ctx context.Context, name string) Api
 }
 
 // Execute executes the request
-func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*http.Response, error) {
+func (a *PackageAPIService) InstallPackageExecute(r PackageAPIInstallPackageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -619,19 +619,19 @@ func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiSetRepositoriesRequest struct {
+type PackageAPISetRepositoriesRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
 	jellyfinRepositoryInfo *[]JellyfinRepositoryInfo
 }
 
 // The list of package repositories.
-func (r ApiSetRepositoriesRequest) JellyfinRepositoryInfo(jellyfinRepositoryInfo []JellyfinRepositoryInfo) ApiSetRepositoriesRequest {
+func (r PackageAPISetRepositoriesRequest) JellyfinRepositoryInfo(jellyfinRepositoryInfo []JellyfinRepositoryInfo) PackageAPISetRepositoriesRequest {
 	r.jellyfinRepositoryInfo = &jellyfinRepositoryInfo
 	return r
 }
 
-func (r ApiSetRepositoriesRequest) Execute() (*http.Response, error) {
+func (r PackageAPISetRepositoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SetRepositoriesExecute(r)
 }
 
@@ -639,17 +639,17 @@ func (r ApiSetRepositoriesRequest) Execute() (*http.Response, error) {
 SetRepositories Sets the enabled and existing package repositories.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSetRepositoriesRequest
+ @return PackageAPISetRepositoriesRequest
 */
-func (a *PackageAPIService) SetRepositories(ctx context.Context) ApiSetRepositoriesRequest {
-	return ApiSetRepositoriesRequest{
+func (a *PackageAPIService) SetRepositories(ctx context.Context) PackageAPISetRepositoriesRequest {
+	return PackageAPISetRepositoriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PackageAPIService) SetRepositoriesExecute(r ApiSetRepositoriesRequest) (*http.Response, error) {
+func (a *PackageAPIService) SetRepositoriesExecute(r PackageAPISetRepositoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

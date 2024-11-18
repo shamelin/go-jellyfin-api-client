@@ -20,15 +20,15 @@ type JellyfinImageResolution string
 
 // List of ImageResolution
 const (
-	MATCH_SOURCE JellyfinImageResolution = "MatchSource"
-	P144 JellyfinImageResolution = "P144"
-	P240 JellyfinImageResolution = "P240"
-	P360 JellyfinImageResolution = "P360"
-	P480 JellyfinImageResolution = "P480"
-	P720 JellyfinImageResolution = "P720"
-	P1080 JellyfinImageResolution = "P1080"
-	P1440 JellyfinImageResolution = "P1440"
-	P2160 JellyfinImageResolution = "P2160"
+	JELLYFINIMAGERESOLUTION_MATCH_SOURCE JellyfinImageResolution = "MatchSource"
+	JELLYFINIMAGERESOLUTION_P144 JellyfinImageResolution = "P144"
+	JELLYFINIMAGERESOLUTION_P240 JellyfinImageResolution = "P240"
+	JELLYFINIMAGERESOLUTION_P360 JellyfinImageResolution = "P360"
+	JELLYFINIMAGERESOLUTION_P480 JellyfinImageResolution = "P480"
+	JELLYFINIMAGERESOLUTION_P720 JellyfinImageResolution = "P720"
+	JELLYFINIMAGERESOLUTION_P1080 JellyfinImageResolution = "P1080"
+	JELLYFINIMAGERESOLUTION_P1440 JellyfinImageResolution = "P1440"
+	JELLYFINIMAGERESOLUTION_P2160 JellyfinImageResolution = "P2160"
 )
 
 // All allowed values of JellyfinImageResolution enum

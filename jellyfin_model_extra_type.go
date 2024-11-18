@@ -20,18 +20,18 @@ type JellyfinExtraType string
 
 // List of ExtraType
 const (
-	UNKNOWN JellyfinExtraType = "Unknown"
-	CLIP JellyfinExtraType = "Clip"
-	TRAILER JellyfinExtraType = "Trailer"
-	BEHIND_THE_SCENES JellyfinExtraType = "BehindTheScenes"
-	DELETED_SCENE JellyfinExtraType = "DeletedScene"
-	INTERVIEW JellyfinExtraType = "Interview"
-	SCENE JellyfinExtraType = "Scene"
-	SAMPLE JellyfinExtraType = "Sample"
-	THEME_SONG JellyfinExtraType = "ThemeSong"
-	THEME_VIDEO JellyfinExtraType = "ThemeVideo"
-	FEATURETTE JellyfinExtraType = "Featurette"
-	SHORT JellyfinExtraType = "Short"
+	JELLYFINEXTRATYPE_UNKNOWN JellyfinExtraType = "Unknown"
+	JELLYFINEXTRATYPE_CLIP JellyfinExtraType = "Clip"
+	JELLYFINEXTRATYPE_TRAILER JellyfinExtraType = "Trailer"
+	JELLYFINEXTRATYPE_BEHIND_THE_SCENES JellyfinExtraType = "BehindTheScenes"
+	JELLYFINEXTRATYPE_DELETED_SCENE JellyfinExtraType = "DeletedScene"
+	JELLYFINEXTRATYPE_INTERVIEW JellyfinExtraType = "Interview"
+	JELLYFINEXTRATYPE_SCENE JellyfinExtraType = "Scene"
+	JELLYFINEXTRATYPE_SAMPLE JellyfinExtraType = "Sample"
+	JELLYFINEXTRATYPE_THEME_SONG JellyfinExtraType = "ThemeSong"
+	JELLYFINEXTRATYPE_THEME_VIDEO JellyfinExtraType = "ThemeVideo"
+	JELLYFINEXTRATYPE_FEATURETTE JellyfinExtraType = "Featurette"
+	JELLYFINEXTRATYPE_SHORT JellyfinExtraType = "Short"
 )
 
 // All allowed values of JellyfinExtraType enum

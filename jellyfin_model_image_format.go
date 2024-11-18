@@ -20,12 +20,12 @@ type JellyfinImageFormat string
 
 // List of ImageFormat
 const (
-	BMP JellyfinImageFormat = "Bmp"
-	GIF JellyfinImageFormat = "Gif"
-	JPG JellyfinImageFormat = "Jpg"
-	PNG JellyfinImageFormat = "Png"
-	WEBP JellyfinImageFormat = "Webp"
-	SVG JellyfinImageFormat = "Svg"
+	JELLYFINIMAGEFORMAT_BMP JellyfinImageFormat = "Bmp"
+	JELLYFINIMAGEFORMAT_GIF JellyfinImageFormat = "Gif"
+	JELLYFINIMAGEFORMAT_JPG JellyfinImageFormat = "Jpg"
+	JELLYFINIMAGEFORMAT_PNG JellyfinImageFormat = "Png"
+	JELLYFINIMAGEFORMAT_WEBP JellyfinImageFormat = "Webp"
+	JELLYFINIMAGEFORMAT_SVG JellyfinImageFormat = "Svg"
 )
 
 // All allowed values of JellyfinImageFormat enum

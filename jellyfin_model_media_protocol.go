@@ -20,13 +20,13 @@ type JellyfinMediaProtocol string
 
 // List of MediaProtocol
 const (
-	FILE JellyfinMediaProtocol = "File"
-	HTTP JellyfinMediaProtocol = "Http"
-	RTMP JellyfinMediaProtocol = "Rtmp"
-	RTSP JellyfinMediaProtocol = "Rtsp"
-	UDP JellyfinMediaProtocol = "Udp"
-	RTP JellyfinMediaProtocol = "Rtp"
-	FTP JellyfinMediaProtocol = "Ftp"
+	JELLYFINMEDIAPROTOCOL_FILE JellyfinMediaProtocol = "File"
+	JELLYFINMEDIAPROTOCOL_HTTP JellyfinMediaProtocol = "Http"
+	JELLYFINMEDIAPROTOCOL_RTMP JellyfinMediaProtocol = "Rtmp"
+	JELLYFINMEDIAPROTOCOL_RTSP JellyfinMediaProtocol = "Rtsp"
+	JELLYFINMEDIAPROTOCOL_UDP JellyfinMediaProtocol = "Udp"
+	JELLYFINMEDIAPROTOCOL_RTP JellyfinMediaProtocol = "Rtp"
+	JELLYFINMEDIAPROTOCOL_FTP JellyfinMediaProtocol = "Ftp"
 )
 
 // All allowed values of JellyfinMediaProtocol enum

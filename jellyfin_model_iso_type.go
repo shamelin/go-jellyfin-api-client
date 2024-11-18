@@ -20,8 +20,8 @@ type JellyfinIsoType string
 
 // List of IsoType
 const (
-	DVD JellyfinIsoType = "Dvd"
-	BLU_RAY JellyfinIsoType = "BluRay"
+	JELLYFINISOTYPE_DVD JellyfinIsoType = "Dvd"
+	JELLYFINISOTYPE_BLU_RAY JellyfinIsoType = "BluRay"
 )
 
 // All allowed values of JellyfinIsoType enum

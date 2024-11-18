@@ -20,10 +20,10 @@ type JellyfinKeepUntil string
 
 // List of KeepUntil
 const (
-	UNTIL_DELETED JellyfinKeepUntil = "UntilDeleted"
-	UNTIL_SPACE_NEEDED JellyfinKeepUntil = "UntilSpaceNeeded"
-	UNTIL_WATCHED JellyfinKeepUntil = "UntilWatched"
-	UNTIL_DATE JellyfinKeepUntil = "UntilDate"
+	JELLYFINKEEPUNTIL_UNTIL_DELETED JellyfinKeepUntil = "UntilDeleted"
+	JELLYFINKEEPUNTIL_UNTIL_SPACE_NEEDED JellyfinKeepUntil = "UntilSpaceNeeded"
+	JELLYFINKEEPUNTIL_UNTIL_WATCHED JellyfinKeepUntil = "UntilWatched"
+	JELLYFINKEEPUNTIL_UNTIL_DATE JellyfinKeepUntil = "UntilDate"
 )
 
 // All allowed values of JellyfinKeepUntil enum

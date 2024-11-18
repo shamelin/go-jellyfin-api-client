@@ -20,17 +20,17 @@ type JellyfinGroupUpdateType string
 
 // List of GroupUpdateType
 const (
-	USER_JOINED JellyfinGroupUpdateType = "UserJoined"
-	USER_LEFT JellyfinGroupUpdateType = "UserLeft"
-	GROUP_JOINED JellyfinGroupUpdateType = "GroupJoined"
-	GROUP_LEFT JellyfinGroupUpdateType = "GroupLeft"
-	STATE_UPDATE JellyfinGroupUpdateType = "StateUpdate"
-	PLAY_QUEUE JellyfinGroupUpdateType = "PlayQueue"
-	NOT_IN_GROUP JellyfinGroupUpdateType = "NotInGroup"
-	GROUP_DOES_NOT_EXIST JellyfinGroupUpdateType = "GroupDoesNotExist"
-	CREATE_GROUP_DENIED JellyfinGroupUpdateType = "CreateGroupDenied"
-	JOIN_GROUP_DENIED JellyfinGroupUpdateType = "JoinGroupDenied"
-	LIBRARY_ACCESS_DENIED JellyfinGroupUpdateType = "LibraryAccessDenied"
+	JELLYFINGROUPUPDATETYPE_USER_JOINED JellyfinGroupUpdateType = "UserJoined"
+	JELLYFINGROUPUPDATETYPE_USER_LEFT JellyfinGroupUpdateType = "UserLeft"
+	JELLYFINGROUPUPDATETYPE_GROUP_JOINED JellyfinGroupUpdateType = "GroupJoined"
+	JELLYFINGROUPUPDATETYPE_GROUP_LEFT JellyfinGroupUpdateType = "GroupLeft"
+	JELLYFINGROUPUPDATETYPE_STATE_UPDATE JellyfinGroupUpdateType = "StateUpdate"
+	JELLYFINGROUPUPDATETYPE_PLAY_QUEUE JellyfinGroupUpdateType = "PlayQueue"
+	JELLYFINGROUPUPDATETYPE_NOT_IN_GROUP JellyfinGroupUpdateType = "NotInGroup"
+	JELLYFINGROUPUPDATETYPE_GROUP_DOES_NOT_EXIST JellyfinGroupUpdateType = "GroupDoesNotExist"
+	JELLYFINGROUPUPDATETYPE_CREATE_GROUP_DENIED JellyfinGroupUpdateType = "CreateGroupDenied"
+	JELLYFINGROUPUPDATETYPE_JOIN_GROUP_DENIED JellyfinGroupUpdateType = "JoinGroupDenied"
+	JELLYFINGROUPUPDATETYPE_LIBRARY_ACCESS_DENIED JellyfinGroupUpdateType = "LibraryAccessDenied"
 )
 
 // All allowed values of JellyfinGroupUpdateType enum

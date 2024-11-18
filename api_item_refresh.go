@@ -23,7 +23,7 @@ import (
 // ItemRefreshAPIService ItemRefreshAPI service
 type ItemRefreshAPIService service
 
-type ApiRefreshItemRequest struct {
+type ItemRefreshAPIRefreshItemRequest struct {
 	ctx context.Context
 	ApiService *ItemRefreshAPIService
 	itemId string
@@ -35,36 +35,36 @@ type ApiRefreshItemRequest struct {
 }
 
 // (Optional) Specifies the metadata refresh mode.
-func (r ApiRefreshItemRequest) MetadataRefreshMode(metadataRefreshMode JellyfinMetadataRefreshMode) ApiRefreshItemRequest {
+func (r ItemRefreshAPIRefreshItemRequest) MetadataRefreshMode(metadataRefreshMode JellyfinMetadataRefreshMode) ItemRefreshAPIRefreshItemRequest {
 	r.metadataRefreshMode = &metadataRefreshMode
 	return r
 }
 
 // (Optional) Specifies the image refresh mode.
-func (r ApiRefreshItemRequest) ImageRefreshMode(imageRefreshMode JellyfinMetadataRefreshMode) ApiRefreshItemRequest {
+func (r ItemRefreshAPIRefreshItemRequest) ImageRefreshMode(imageRefreshMode JellyfinMetadataRefreshMode) ItemRefreshAPIRefreshItemRequest {
 	r.imageRefreshMode = &imageRefreshMode
 	return r
 }
 
 // (Optional) Determines if metadata should be replaced. Only applicable if mode is FullRefresh.
-func (r ApiRefreshItemRequest) ReplaceAllMetadata(replaceAllMetadata bool) ApiRefreshItemRequest {
+func (r ItemRefreshAPIRefreshItemRequest) ReplaceAllMetadata(replaceAllMetadata bool) ItemRefreshAPIRefreshItemRequest {
 	r.replaceAllMetadata = &replaceAllMetadata
 	return r
 }
 
 // (Optional) Determines if images should be replaced. Only applicable if mode is FullRefresh.
-func (r ApiRefreshItemRequest) ReplaceAllImages(replaceAllImages bool) ApiRefreshItemRequest {
+func (r ItemRefreshAPIRefreshItemRequest) ReplaceAllImages(replaceAllImages bool) ItemRefreshAPIRefreshItemRequest {
 	r.replaceAllImages = &replaceAllImages
 	return r
 }
 
 // (Optional) Determines if trickplay images should be replaced. Only applicable if mode is FullRefresh.
-func (r ApiRefreshItemRequest) RegenerateTrickplay(regenerateTrickplay bool) ApiRefreshItemRequest {
+func (r ItemRefreshAPIRefreshItemRequest) RegenerateTrickplay(regenerateTrickplay bool) ItemRefreshAPIRefreshItemRequest {
 	r.regenerateTrickplay = &regenerateTrickplay
 	return r
 }
 
-func (r ApiRefreshItemRequest) Execute() (*http.Response, error) {
+func (r ItemRefreshAPIRefreshItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RefreshItemExecute(r)
 }
 
@@ -73,10 +73,10 @@ RefreshItem Refreshes metadata for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiRefreshItemRequest
+ @return ItemRefreshAPIRefreshItemRequest
 */
-func (a *ItemRefreshAPIService) RefreshItem(ctx context.Context, itemId string) ApiRefreshItemRequest {
-	return ApiRefreshItemRequest{
+func (a *ItemRefreshAPIService) RefreshItem(ctx context.Context, itemId string) ItemRefreshAPIRefreshItemRequest {
+	return ItemRefreshAPIRefreshItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -84,7 +84,7 @@ func (a *ItemRefreshAPIService) RefreshItem(ctx context.Context, itemId string) 
 }
 
 // Execute executes the request
-func (a *ItemRefreshAPIService) RefreshItemExecute(r ApiRefreshItemRequest) (*http.Response, error) {
+func (a *ItemRefreshAPIService) RefreshItemExecute(r ItemRefreshAPIRefreshItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

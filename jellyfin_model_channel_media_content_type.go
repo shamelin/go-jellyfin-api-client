@@ -20,14 +20,14 @@ type JellyfinChannelMediaContentType string
 
 // List of ChannelMediaContentType
 const (
-	CLIP JellyfinChannelMediaContentType = "Clip"
-	PODCAST JellyfinChannelMediaContentType = "Podcast"
-	TRAILER JellyfinChannelMediaContentType = "Trailer"
-	MOVIE JellyfinChannelMediaContentType = "Movie"
-	EPISODE JellyfinChannelMediaContentType = "Episode"
-	SONG JellyfinChannelMediaContentType = "Song"
-	MOVIE_EXTRA JellyfinChannelMediaContentType = "MovieExtra"
-	TV_EXTRA JellyfinChannelMediaContentType = "TvExtra"
+	JELLYFINCHANNELMEDIACONTENTTYPE_CLIP JellyfinChannelMediaContentType = "Clip"
+	JELLYFINCHANNELMEDIACONTENTTYPE_PODCAST JellyfinChannelMediaContentType = "Podcast"
+	JELLYFINCHANNELMEDIACONTENTTYPE_TRAILER JellyfinChannelMediaContentType = "Trailer"
+	JELLYFINCHANNELMEDIACONTENTTYPE_MOVIE JellyfinChannelMediaContentType = "Movie"
+	JELLYFINCHANNELMEDIACONTENTTYPE_EPISODE JellyfinChannelMediaContentType = "Episode"
+	JELLYFINCHANNELMEDIACONTENTTYPE_SONG JellyfinChannelMediaContentType = "Song"
+	JELLYFINCHANNELMEDIACONTENTTYPE_MOVIE_EXTRA JellyfinChannelMediaContentType = "MovieExtra"
+	JELLYFINCHANNELMEDIACONTENTTYPE_TV_EXTRA JellyfinChannelMediaContentType = "TvExtra"
 )
 
 // All allowed values of JellyfinChannelMediaContentType enum

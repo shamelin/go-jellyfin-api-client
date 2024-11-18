@@ -24,13 +24,13 @@ import (
 // LyricsAPIService LyricsAPI service
 type LyricsAPIService service
 
-type ApiDeleteLyricsRequest struct {
+type LyricsAPIDeleteLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	itemId string
 }
 
-func (r ApiDeleteLyricsRequest) Execute() (*http.Response, error) {
+func (r LyricsAPIDeleteLyricsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteLyricsExecute(r)
 }
 
@@ -39,10 +39,10 @@ DeleteLyrics Deletes an external lyric file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiDeleteLyricsRequest
+ @return LyricsAPIDeleteLyricsRequest
 */
-func (a *LyricsAPIService) DeleteLyrics(ctx context.Context, itemId string) ApiDeleteLyricsRequest {
-	return ApiDeleteLyricsRequest{
+func (a *LyricsAPIService) DeleteLyrics(ctx context.Context, itemId string) LyricsAPIDeleteLyricsRequest {
+	return LyricsAPIDeleteLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -50,7 +50,7 @@ func (a *LyricsAPIService) DeleteLyrics(ctx context.Context, itemId string) ApiD
 }
 
 // Execute executes the request
-func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.Response, error) {
+func (a *LyricsAPIService) DeleteLyricsExecute(r LyricsAPIDeleteLyricsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -139,14 +139,14 @@ func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiDownloadRemoteLyricsRequest struct {
+type LyricsAPIDownloadRemoteLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	itemId string
 	lyricId string
 }
 
-func (r ApiDownloadRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
+func (r LyricsAPIDownloadRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.DownloadRemoteLyricsExecute(r)
 }
 
@@ -156,10 +156,10 @@ DownloadRemoteLyrics Downloads a remote lyric.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param lyricId The lyric id.
- @return ApiDownloadRemoteLyricsRequest
+ @return LyricsAPIDownloadRemoteLyricsRequest
 */
-func (a *LyricsAPIService) DownloadRemoteLyrics(ctx context.Context, itemId string, lyricId string) ApiDownloadRemoteLyricsRequest {
-	return ApiDownloadRemoteLyricsRequest{
+func (a *LyricsAPIService) DownloadRemoteLyrics(ctx context.Context, itemId string, lyricId string) LyricsAPIDownloadRemoteLyricsRequest {
+	return LyricsAPIDownloadRemoteLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -169,7 +169,7 @@ func (a *LyricsAPIService) DownloadRemoteLyrics(ctx context.Context, itemId stri
 
 // Execute executes the request
 //  @return JellyfinLyricDto
-func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
+func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r LyricsAPIDownloadRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -269,13 +269,13 @@ func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyrics
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLyricsRequest struct {
+type LyricsAPIGetLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	itemId string
 }
 
-func (r ApiGetLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
+func (r LyricsAPIGetLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.GetLyricsExecute(r)
 }
 
@@ -284,10 +284,10 @@ GetLyrics Gets an item's lyrics.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetLyricsRequest
+ @return LyricsAPIGetLyricsRequest
 */
-func (a *LyricsAPIService) GetLyrics(ctx context.Context, itemId string) ApiGetLyricsRequest {
-	return ApiGetLyricsRequest{
+func (a *LyricsAPIService) GetLyrics(ctx context.Context, itemId string) LyricsAPIGetLyricsRequest {
+	return LyricsAPIGetLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -296,7 +296,7 @@ func (a *LyricsAPIService) GetLyrics(ctx context.Context, itemId string) ApiGetL
 
 // Execute executes the request
 //  @return JellyfinLyricDto
-func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
+func (a *LyricsAPIService) GetLyricsExecute(r LyricsAPIGetLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -395,13 +395,13 @@ func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*JellyfinLyr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRemoteLyricsRequest struct {
+type LyricsAPIGetRemoteLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	lyricId string
 }
 
-func (r ApiGetRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
+func (r LyricsAPIGetRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.GetRemoteLyricsExecute(r)
 }
 
@@ -410,10 +410,10 @@ GetRemoteLyrics Gets the remote lyrics.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lyricId The remote provider item id.
- @return ApiGetRemoteLyricsRequest
+ @return LyricsAPIGetRemoteLyricsRequest
 */
-func (a *LyricsAPIService) GetRemoteLyrics(ctx context.Context, lyricId string) ApiGetRemoteLyricsRequest {
-	return ApiGetRemoteLyricsRequest{
+func (a *LyricsAPIService) GetRemoteLyrics(ctx context.Context, lyricId string) LyricsAPIGetRemoteLyricsRequest {
+	return LyricsAPIGetRemoteLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		lyricId: lyricId,
@@ -422,7 +422,7 @@ func (a *LyricsAPIService) GetRemoteLyrics(ctx context.Context, lyricId string) 
 
 // Execute executes the request
 //  @return JellyfinLyricDto
-func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
+func (a *LyricsAPIService) GetRemoteLyricsExecute(r LyricsAPIGetRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -521,13 +521,13 @@ func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchRemoteLyricsRequest struct {
+type LyricsAPISearchRemoteLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	itemId string
 }
 
-func (r ApiSearchRemoteLyricsRequest) Execute() ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
+func (r LyricsAPISearchRemoteLyricsRequest) Execute() ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
 	return r.ApiService.SearchRemoteLyricsExecute(r)
 }
 
@@ -536,10 +536,10 @@ SearchRemoteLyrics Search remote lyrics.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiSearchRemoteLyricsRequest
+ @return LyricsAPISearchRemoteLyricsRequest
 */
-func (a *LyricsAPIService) SearchRemoteLyrics(ctx context.Context, itemId string) ApiSearchRemoteLyricsRequest {
-	return ApiSearchRemoteLyricsRequest{
+func (a *LyricsAPIService) SearchRemoteLyrics(ctx context.Context, itemId string) LyricsAPISearchRemoteLyricsRequest {
+	return LyricsAPISearchRemoteLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -548,7 +548,7 @@ func (a *LyricsAPIService) SearchRemoteLyrics(ctx context.Context, itemId string
 
 // Execute executes the request
 //  @return []JellyfinRemoteLyricInfoDto
-func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequest) ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
+func (a *LyricsAPIService) SearchRemoteLyricsExecute(r LyricsAPISearchRemoteLyricsRequest) ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -647,7 +647,7 @@ func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUploadLyricsRequest struct {
+type LyricsAPIUploadLyricsRequest struct {
 	ctx context.Context
 	ApiService *LyricsAPIService
 	itemId string
@@ -656,17 +656,17 @@ type ApiUploadLyricsRequest struct {
 }
 
 // Name of the file being uploaded.
-func (r ApiUploadLyricsRequest) FileName(fileName string) ApiUploadLyricsRequest {
+func (r LyricsAPIUploadLyricsRequest) FileName(fileName string) LyricsAPIUploadLyricsRequest {
 	r.fileName = &fileName
 	return r
 }
 
-func (r ApiUploadLyricsRequest) Body(body *os.File) ApiUploadLyricsRequest {
+func (r LyricsAPIUploadLyricsRequest) Body(body *os.File) LyricsAPIUploadLyricsRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiUploadLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
+func (r LyricsAPIUploadLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.UploadLyricsExecute(r)
 }
 
@@ -675,10 +675,10 @@ UploadLyrics Upload an external lyric file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item the lyric belongs to.
- @return ApiUploadLyricsRequest
+ @return LyricsAPIUploadLyricsRequest
 */
-func (a *LyricsAPIService) UploadLyrics(ctx context.Context, itemId string) ApiUploadLyricsRequest {
-	return ApiUploadLyricsRequest{
+func (a *LyricsAPIService) UploadLyrics(ctx context.Context, itemId string) LyricsAPIUploadLyricsRequest {
+	return LyricsAPIUploadLyricsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -687,7 +687,7 @@ func (a *LyricsAPIService) UploadLyrics(ctx context.Context, itemId string) ApiU
 
 // Execute executes the request
 //  @return JellyfinLyricDto
-func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
+func (a *LyricsAPIService) UploadLyricsExecute(r LyricsAPIUploadLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

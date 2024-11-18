@@ -22,7 +22,7 @@ import (
 // QuickConnectAPIService QuickConnectAPI service
 type QuickConnectAPIService service
 
-type ApiAuthorizeQuickConnectRequest struct {
+type QuickConnectAPIAuthorizeQuickConnectRequest struct {
 	ctx context.Context
 	ApiService *QuickConnectAPIService
 	code *string
@@ -30,18 +30,18 @@ type ApiAuthorizeQuickConnectRequest struct {
 }
 
 // Quick connect code to authorize.
-func (r ApiAuthorizeQuickConnectRequest) Code(code string) ApiAuthorizeQuickConnectRequest {
+func (r QuickConnectAPIAuthorizeQuickConnectRequest) Code(code string) QuickConnectAPIAuthorizeQuickConnectRequest {
 	r.code = &code
 	return r
 }
 
 // The user the authorize. Access to the requested user is required.
-func (r ApiAuthorizeQuickConnectRequest) UserId(userId string) ApiAuthorizeQuickConnectRequest {
+func (r QuickConnectAPIAuthorizeQuickConnectRequest) UserId(userId string) QuickConnectAPIAuthorizeQuickConnectRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiAuthorizeQuickConnectRequest) Execute() (bool, *http.Response, error) {
+func (r QuickConnectAPIAuthorizeQuickConnectRequest) Execute() (bool, *http.Response, error) {
 	return r.ApiService.AuthorizeQuickConnectExecute(r)
 }
 
@@ -49,10 +49,10 @@ func (r ApiAuthorizeQuickConnectRequest) Execute() (bool, *http.Response, error)
 AuthorizeQuickConnect Authorizes a pending quick connect request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAuthorizeQuickConnectRequest
+ @return QuickConnectAPIAuthorizeQuickConnectRequest
 */
-func (a *QuickConnectAPIService) AuthorizeQuickConnect(ctx context.Context) ApiAuthorizeQuickConnectRequest {
-	return ApiAuthorizeQuickConnectRequest{
+func (a *QuickConnectAPIService) AuthorizeQuickConnect(ctx context.Context) QuickConnectAPIAuthorizeQuickConnectRequest {
+	return QuickConnectAPIAuthorizeQuickConnectRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -60,7 +60,7 @@ func (a *QuickConnectAPIService) AuthorizeQuickConnect(ctx context.Context) ApiA
 
 // Execute executes the request
 //  @return bool
-func (a *QuickConnectAPIService) AuthorizeQuickConnectExecute(r ApiAuthorizeQuickConnectRequest) (bool, *http.Response, error) {
+func (a *QuickConnectAPIService) AuthorizeQuickConnectExecute(r QuickConnectAPIAuthorizeQuickConnectRequest) (bool, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -165,12 +165,12 @@ func (a *QuickConnectAPIService) AuthorizeQuickConnectExecute(r ApiAuthorizeQuic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetQuickConnectEnabledRequest struct {
+type QuickConnectAPIGetQuickConnectEnabledRequest struct {
 	ctx context.Context
 	ApiService *QuickConnectAPIService
 }
 
-func (r ApiGetQuickConnectEnabledRequest) Execute() (bool, *http.Response, error) {
+func (r QuickConnectAPIGetQuickConnectEnabledRequest) Execute() (bool, *http.Response, error) {
 	return r.ApiService.GetQuickConnectEnabledExecute(r)
 }
 
@@ -178,10 +178,10 @@ func (r ApiGetQuickConnectEnabledRequest) Execute() (bool, *http.Response, error
 GetQuickConnectEnabled Gets the current quick connect state.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQuickConnectEnabledRequest
+ @return QuickConnectAPIGetQuickConnectEnabledRequest
 */
-func (a *QuickConnectAPIService) GetQuickConnectEnabled(ctx context.Context) ApiGetQuickConnectEnabledRequest {
-	return ApiGetQuickConnectEnabledRequest{
+func (a *QuickConnectAPIService) GetQuickConnectEnabled(ctx context.Context) QuickConnectAPIGetQuickConnectEnabledRequest {
+	return QuickConnectAPIGetQuickConnectEnabledRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -189,7 +189,7 @@ func (a *QuickConnectAPIService) GetQuickConnectEnabled(ctx context.Context) Api
 
 // Execute executes the request
 //  @return bool
-func (a *QuickConnectAPIService) GetQuickConnectEnabledExecute(r ApiGetQuickConnectEnabledRequest) (bool, *http.Response, error) {
+func (a *QuickConnectAPIService) GetQuickConnectEnabledExecute(r QuickConnectAPIGetQuickConnectEnabledRequest) (bool, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -262,19 +262,19 @@ func (a *QuickConnectAPIService) GetQuickConnectEnabledExecute(r ApiGetQuickConn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetQuickConnectStateRequest struct {
+type QuickConnectAPIGetQuickConnectStateRequest struct {
 	ctx context.Context
 	ApiService *QuickConnectAPIService
 	secret *string
 }
 
 // Secret previously returned from the Initiate endpoint.
-func (r ApiGetQuickConnectStateRequest) Secret(secret string) ApiGetQuickConnectStateRequest {
+func (r QuickConnectAPIGetQuickConnectStateRequest) Secret(secret string) QuickConnectAPIGetQuickConnectStateRequest {
 	r.secret = &secret
 	return r
 }
 
-func (r ApiGetQuickConnectStateRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
+func (r QuickConnectAPIGetQuickConnectStateRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
 	return r.ApiService.GetQuickConnectStateExecute(r)
 }
 
@@ -282,10 +282,10 @@ func (r ApiGetQuickConnectStateRequest) Execute() (*JellyfinQuickConnectResult, 
 GetQuickConnectState Attempts to retrieve authentication information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetQuickConnectStateRequest
+ @return QuickConnectAPIGetQuickConnectStateRequest
 */
-func (a *QuickConnectAPIService) GetQuickConnectState(ctx context.Context) ApiGetQuickConnectStateRequest {
-	return ApiGetQuickConnectStateRequest{
+func (a *QuickConnectAPIService) GetQuickConnectState(ctx context.Context) QuickConnectAPIGetQuickConnectStateRequest {
+	return QuickConnectAPIGetQuickConnectStateRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -293,7 +293,7 @@ func (a *QuickConnectAPIService) GetQuickConnectState(ctx context.Context) ApiGe
 
 // Execute executes the request
 //  @return JellyfinQuickConnectResult
-func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r ApiGetQuickConnectStateRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
+func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r QuickConnectAPIGetQuickConnectStateRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -380,12 +380,12 @@ func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r ApiGetQuickConnec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiInitiateQuickConnectRequest struct {
+type QuickConnectAPIInitiateQuickConnectRequest struct {
 	ctx context.Context
 	ApiService *QuickConnectAPIService
 }
 
-func (r ApiInitiateQuickConnectRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
+func (r QuickConnectAPIInitiateQuickConnectRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
 	return r.ApiService.InitiateQuickConnectExecute(r)
 }
 
@@ -393,10 +393,10 @@ func (r ApiInitiateQuickConnectRequest) Execute() (*JellyfinQuickConnectResult, 
 InitiateQuickConnect Initiate a new quick connect request.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiInitiateQuickConnectRequest
+ @return QuickConnectAPIInitiateQuickConnectRequest
 */
-func (a *QuickConnectAPIService) InitiateQuickConnect(ctx context.Context) ApiInitiateQuickConnectRequest {
-	return ApiInitiateQuickConnectRequest{
+func (a *QuickConnectAPIService) InitiateQuickConnect(ctx context.Context) QuickConnectAPIInitiateQuickConnectRequest {
+	return QuickConnectAPIInitiateQuickConnectRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -404,7 +404,7 @@ func (a *QuickConnectAPIService) InitiateQuickConnect(ctx context.Context) ApiIn
 
 // Execute executes the request
 //  @return JellyfinQuickConnectResult
-func (a *QuickConnectAPIService) InitiateQuickConnectExecute(r ApiInitiateQuickConnectRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
+func (a *QuickConnectAPIService) InitiateQuickConnectExecute(r QuickConnectAPIInitiateQuickConnectRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

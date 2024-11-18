@@ -20,15 +20,15 @@ type JellyfinUnratedItem string
 
 // List of UnratedItem
 const (
-	MOVIE JellyfinUnratedItem = "Movie"
-	TRAILER JellyfinUnratedItem = "Trailer"
-	SERIES JellyfinUnratedItem = "Series"
-	MUSIC JellyfinUnratedItem = "Music"
-	BOOK JellyfinUnratedItem = "Book"
-	LIVE_TV_CHANNEL JellyfinUnratedItem = "LiveTvChannel"
-	LIVE_TV_PROGRAM JellyfinUnratedItem = "LiveTvProgram"
-	CHANNEL_CONTENT JellyfinUnratedItem = "ChannelContent"
-	OTHER JellyfinUnratedItem = "Other"
+	JELLYFINUNRATEDITEM_MOVIE JellyfinUnratedItem = "Movie"
+	JELLYFINUNRATEDITEM_TRAILER JellyfinUnratedItem = "Trailer"
+	JELLYFINUNRATEDITEM_SERIES JellyfinUnratedItem = "Series"
+	JELLYFINUNRATEDITEM_MUSIC JellyfinUnratedItem = "Music"
+	JELLYFINUNRATEDITEM_BOOK JellyfinUnratedItem = "Book"
+	JELLYFINUNRATEDITEM_LIVE_TV_CHANNEL JellyfinUnratedItem = "LiveTvChannel"
+	JELLYFINUNRATEDITEM_LIVE_TV_PROGRAM JellyfinUnratedItem = "LiveTvProgram"
+	JELLYFINUNRATEDITEM_CHANNEL_CONTENT JellyfinUnratedItem = "ChannelContent"
+	JELLYFINUNRATEDITEM_OTHER JellyfinUnratedItem = "Other"
 )
 
 // All allowed values of JellyfinUnratedItem enum

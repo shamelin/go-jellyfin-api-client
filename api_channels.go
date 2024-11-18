@@ -24,12 +24,12 @@ import (
 // ChannelsAPIService ChannelsAPI service
 type ChannelsAPIService service
 
-type ApiGetAllChannelFeaturesRequest struct {
+type ChannelsAPIGetAllChannelFeaturesRequest struct {
 	ctx context.Context
 	ApiService *ChannelsAPIService
 }
 
-func (r ApiGetAllChannelFeaturesRequest) Execute() ([]JellyfinChannelFeatures, *http.Response, error) {
+func (r ChannelsAPIGetAllChannelFeaturesRequest) Execute() ([]JellyfinChannelFeatures, *http.Response, error) {
 	return r.ApiService.GetAllChannelFeaturesExecute(r)
 }
 
@@ -37,10 +37,10 @@ func (r ApiGetAllChannelFeaturesRequest) Execute() ([]JellyfinChannelFeatures, *
 GetAllChannelFeatures Get all channel features.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAllChannelFeaturesRequest
+ @return ChannelsAPIGetAllChannelFeaturesRequest
 */
-func (a *ChannelsAPIService) GetAllChannelFeatures(ctx context.Context) ApiGetAllChannelFeaturesRequest {
-	return ApiGetAllChannelFeaturesRequest{
+func (a *ChannelsAPIService) GetAllChannelFeatures(ctx context.Context) ChannelsAPIGetAllChannelFeaturesRequest {
+	return ChannelsAPIGetAllChannelFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -48,7 +48,7 @@ func (a *ChannelsAPIService) GetAllChannelFeatures(ctx context.Context) ApiGetAl
 
 // Execute executes the request
 //  @return []JellyfinChannelFeatures
-func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeaturesRequest) ([]JellyfinChannelFeatures, *http.Response, error) {
+func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ChannelsAPIGetAllChannelFeaturesRequest) ([]JellyfinChannelFeatures, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -135,13 +135,13 @@ func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChannelFeaturesRequest struct {
+type ChannelsAPIGetChannelFeaturesRequest struct {
 	ctx context.Context
 	ApiService *ChannelsAPIService
 	channelId string
 }
 
-func (r ApiGetChannelFeaturesRequest) Execute() (*JellyfinChannelFeatures, *http.Response, error) {
+func (r ChannelsAPIGetChannelFeaturesRequest) Execute() (*JellyfinChannelFeatures, *http.Response, error) {
 	return r.ApiService.GetChannelFeaturesExecute(r)
 }
 
@@ -150,10 +150,10 @@ GetChannelFeatures Get channel features.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelId Channel id.
- @return ApiGetChannelFeaturesRequest
+ @return ChannelsAPIGetChannelFeaturesRequest
 */
-func (a *ChannelsAPIService) GetChannelFeatures(ctx context.Context, channelId string) ApiGetChannelFeaturesRequest {
-	return ApiGetChannelFeaturesRequest{
+func (a *ChannelsAPIService) GetChannelFeatures(ctx context.Context, channelId string) ChannelsAPIGetChannelFeaturesRequest {
+	return ChannelsAPIGetChannelFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelId: channelId,
@@ -162,7 +162,7 @@ func (a *ChannelsAPIService) GetChannelFeatures(ctx context.Context, channelId s
 
 // Execute executes the request
 //  @return JellyfinChannelFeatures
-func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRequest) (*JellyfinChannelFeatures, *http.Response, error) {
+func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ChannelsAPIGetChannelFeaturesRequest) (*JellyfinChannelFeatures, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -250,7 +250,7 @@ func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChannelItemsRequest struct {
+type ChannelsAPIGetChannelItemsRequest struct {
 	ctx context.Context
 	ApiService *ChannelsAPIService
 	channelId string
@@ -265,54 +265,54 @@ type ApiGetChannelItemsRequest struct {
 }
 
 // Optional. Folder Id.
-func (r ApiGetChannelItemsRequest) FolderId(folderId string) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) FolderId(folderId string) ChannelsAPIGetChannelItemsRequest {
 	r.folderId = &folderId
 	return r
 }
 
 // Optional. User Id.
-func (r ApiGetChannelItemsRequest) UserId(userId string) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) UserId(userId string) ChannelsAPIGetChannelItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetChannelItemsRequest) StartIndex(startIndex int32) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) StartIndex(startIndex int32) ChannelsAPIGetChannelItemsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetChannelItemsRequest) Limit(limit int32) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) Limit(limit int32) ChannelsAPIGetChannelItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Sort Order - Ascending,Descending.
-func (r ApiGetChannelItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ChannelsAPIGetChannelItemsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetChannelItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) Filters(filters []JellyfinItemFilter) ChannelsAPIGetChannelItemsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetChannelItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ChannelsAPIGetChannelItemsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetChannelItemsRequest) Fields(fields []JellyfinItemFields) ApiGetChannelItemsRequest {
+func (r ChannelsAPIGetChannelItemsRequest) Fields(fields []JellyfinItemFields) ChannelsAPIGetChannelItemsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ChannelsAPIGetChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetChannelItemsExecute(r)
 }
 
@@ -321,10 +321,10 @@ GetChannelItems Get channel items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param channelId Channel Id.
- @return ApiGetChannelItemsRequest
+ @return ChannelsAPIGetChannelItemsRequest
 */
-func (a *ChannelsAPIService) GetChannelItems(ctx context.Context, channelId string) ApiGetChannelItemsRequest {
-	return ApiGetChannelItemsRequest{
+func (a *ChannelsAPIService) GetChannelItems(ctx context.Context, channelId string) ChannelsAPIGetChannelItemsRequest {
+	return ChannelsAPIGetChannelItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 		channelId: channelId,
@@ -333,7 +333,7 @@ func (a *ChannelsAPIService) GetChannelItems(ctx context.Context, channelId stri
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ChannelsAPIService) GetChannelItemsExecute(r ChannelsAPIGetChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -477,7 +477,7 @@ func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetChannelsRequest struct {
+type ChannelsAPIGetChannelsRequest struct {
 	ctx context.Context
 	ApiService *ChannelsAPIService
 	userId *string
@@ -489,42 +489,42 @@ type ApiGetChannelsRequest struct {
 }
 
 // User Id to filter by. Use System.Guid.Empty to not filter by user.
-func (r ApiGetChannelsRequest) UserId(userId string) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) UserId(userId string) ChannelsAPIGetChannelsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetChannelsRequest) StartIndex(startIndex int32) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) StartIndex(startIndex int32) ChannelsAPIGetChannelsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetChannelsRequest) Limit(limit int32) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) Limit(limit int32) ChannelsAPIGetChannelsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Filter by channels that support getting latest items.
-func (r ApiGetChannelsRequest) SupportsLatestItems(supportsLatestItems bool) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) SupportsLatestItems(supportsLatestItems bool) ChannelsAPIGetChannelsRequest {
 	r.supportsLatestItems = &supportsLatestItems
 	return r
 }
 
 // Optional. Filter by channels that support media deletion.
-func (r ApiGetChannelsRequest) SupportsMediaDeletion(supportsMediaDeletion bool) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) SupportsMediaDeletion(supportsMediaDeletion bool) ChannelsAPIGetChannelsRequest {
 	r.supportsMediaDeletion = &supportsMediaDeletion
 	return r
 }
 
 // Optional. Filter by channels that are favorite.
-func (r ApiGetChannelsRequest) IsFavorite(isFavorite bool) ApiGetChannelsRequest {
+func (r ChannelsAPIGetChannelsRequest) IsFavorite(isFavorite bool) ChannelsAPIGetChannelsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
-func (r ApiGetChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ChannelsAPIGetChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetChannelsExecute(r)
 }
 
@@ -532,10 +532,10 @@ func (r ApiGetChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http
 GetChannels Gets available channels.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetChannelsRequest
+ @return ChannelsAPIGetChannelsRequest
 */
-func (a *ChannelsAPIService) GetChannels(ctx context.Context) ApiGetChannelsRequest {
-	return ApiGetChannelsRequest{
+func (a *ChannelsAPIService) GetChannels(ctx context.Context) ChannelsAPIGetChannelsRequest {
+	return ChannelsAPIGetChannelsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -543,7 +543,7 @@ func (a *ChannelsAPIService) GetChannels(ctx context.Context) ApiGetChannelsRequ
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ChannelsAPIService) GetChannelsExecute(r ChannelsAPIGetChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -648,7 +648,7 @@ func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLatestChannelItemsRequest struct {
+type ChannelsAPIGetLatestChannelItemsRequest struct {
 	ctx context.Context
 	ApiService *ChannelsAPIService
 	userId *string
@@ -660,42 +660,42 @@ type ApiGetLatestChannelItemsRequest struct {
 }
 
 // Optional. User Id.
-func (r ApiGetLatestChannelItemsRequest) UserId(userId string) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) UserId(userId string) ChannelsAPIGetLatestChannelItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetLatestChannelItemsRequest) StartIndex(startIndex int32) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) StartIndex(startIndex int32) ChannelsAPIGetLatestChannelItemsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetLatestChannelItemsRequest) Limit(limit int32) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) Limit(limit int32) ChannelsAPIGetLatestChannelItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetLatestChannelItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) Filters(filters []JellyfinItemFilter) ChannelsAPIGetLatestChannelItemsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLatestChannelItemsRequest) Fields(fields []JellyfinItemFields) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) Fields(fields []JellyfinItemFields) ChannelsAPIGetLatestChannelItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Specify one or more channel id&#39;s, comma delimited.
-func (r ApiGetLatestChannelItemsRequest) ChannelIds(channelIds []string) ApiGetLatestChannelItemsRequest {
+func (r ChannelsAPIGetLatestChannelItemsRequest) ChannelIds(channelIds []string) ChannelsAPIGetLatestChannelItemsRequest {
 	r.channelIds = &channelIds
 	return r
 }
 
-func (r ApiGetLatestChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ChannelsAPIGetLatestChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLatestChannelItemsExecute(r)
 }
 
@@ -703,10 +703,10 @@ func (r ApiGetLatestChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryRes
 GetLatestChannelItems Gets latest channel items.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLatestChannelItemsRequest
+ @return ChannelsAPIGetLatestChannelItemsRequest
 */
-func (a *ChannelsAPIService) GetLatestChannelItems(ctx context.Context) ApiGetLatestChannelItemsRequest {
-	return ApiGetLatestChannelItemsRequest{
+func (a *ChannelsAPIService) GetLatestChannelItems(ctx context.Context) ChannelsAPIGetLatestChannelItemsRequest {
+	return ChannelsAPIGetLatestChannelItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -714,7 +714,7 @@ func (a *ChannelsAPIService) GetLatestChannelItems(ctx context.Context) ApiGetLa
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetLatestChannelItemsExecute(r ApiGetLatestChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ChannelsAPIService) GetLatestChannelItemsExecute(r ChannelsAPIGetLatestChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

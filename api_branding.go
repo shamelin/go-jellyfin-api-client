@@ -22,12 +22,12 @@ import (
 // BrandingAPIService BrandingAPI service
 type BrandingAPIService service
 
-type ApiGetBrandingCssRequest struct {
+type BrandingAPIGetBrandingCssRequest struct {
 	ctx context.Context
 	ApiService *BrandingAPIService
 }
 
-func (r ApiGetBrandingCssRequest) Execute() (string, *http.Response, error) {
+func (r BrandingAPIGetBrandingCssRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetBrandingCssExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r ApiGetBrandingCssRequest) Execute() (string, *http.Response, error) {
 GetBrandingCss Gets branding css.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingCssRequest
+ @return BrandingAPIGetBrandingCssRequest
 */
-func (a *BrandingAPIService) GetBrandingCss(ctx context.Context) ApiGetBrandingCssRequest {
-	return ApiGetBrandingCssRequest{
+func (a *BrandingAPIService) GetBrandingCss(ctx context.Context) BrandingAPIGetBrandingCssRequest {
+	return BrandingAPIGetBrandingCssRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *BrandingAPIService) GetBrandingCss(ctx context.Context) ApiGetBrandingC
 
 // Execute executes the request
 //  @return string
-func (a *BrandingAPIService) GetBrandingCssExecute(r ApiGetBrandingCssRequest) (string, *http.Response, error) {
+func (a *BrandingAPIService) GetBrandingCssExecute(r BrandingAPIGetBrandingCssRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -119,12 +119,12 @@ func (a *BrandingAPIService) GetBrandingCssExecute(r ApiGetBrandingCssRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBrandingCss2Request struct {
+type BrandingAPIGetBrandingCss2Request struct {
 	ctx context.Context
 	ApiService *BrandingAPIService
 }
 
-func (r ApiGetBrandingCss2Request) Execute() (string, *http.Response, error) {
+func (r BrandingAPIGetBrandingCss2Request) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetBrandingCss2Execute(r)
 }
 
@@ -132,10 +132,10 @@ func (r ApiGetBrandingCss2Request) Execute() (string, *http.Response, error) {
 GetBrandingCss2 Gets branding css.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingCss2Request
+ @return BrandingAPIGetBrandingCss2Request
 */
-func (a *BrandingAPIService) GetBrandingCss2(ctx context.Context) ApiGetBrandingCss2Request {
-	return ApiGetBrandingCss2Request{
+func (a *BrandingAPIService) GetBrandingCss2(ctx context.Context) BrandingAPIGetBrandingCss2Request {
+	return BrandingAPIGetBrandingCss2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -143,7 +143,7 @@ func (a *BrandingAPIService) GetBrandingCss2(ctx context.Context) ApiGetBranding
 
 // Execute executes the request
 //  @return string
-func (a *BrandingAPIService) GetBrandingCss2Execute(r ApiGetBrandingCss2Request) (string, *http.Response, error) {
+func (a *BrandingAPIService) GetBrandingCss2Execute(r BrandingAPIGetBrandingCss2Request) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -216,12 +216,12 @@ func (a *BrandingAPIService) GetBrandingCss2Execute(r ApiGetBrandingCss2Request)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBrandingOptionsRequest struct {
+type BrandingAPIGetBrandingOptionsRequest struct {
 	ctx context.Context
 	ApiService *BrandingAPIService
 }
 
-func (r ApiGetBrandingOptionsRequest) Execute() (*JellyfinBrandingOptions, *http.Response, error) {
+func (r BrandingAPIGetBrandingOptionsRequest) Execute() (*JellyfinBrandingOptions, *http.Response, error) {
 	return r.ApiService.GetBrandingOptionsExecute(r)
 }
 
@@ -229,10 +229,10 @@ func (r ApiGetBrandingOptionsRequest) Execute() (*JellyfinBrandingOptions, *http
 GetBrandingOptions Gets branding configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBrandingOptionsRequest
+ @return BrandingAPIGetBrandingOptionsRequest
 */
-func (a *BrandingAPIService) GetBrandingOptions(ctx context.Context) ApiGetBrandingOptionsRequest {
-	return ApiGetBrandingOptionsRequest{
+func (a *BrandingAPIService) GetBrandingOptions(ctx context.Context) BrandingAPIGetBrandingOptionsRequest {
+	return BrandingAPIGetBrandingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -240,7 +240,7 @@ func (a *BrandingAPIService) GetBrandingOptions(ctx context.Context) ApiGetBrand
 
 // Execute executes the request
 //  @return JellyfinBrandingOptions
-func (a *BrandingAPIService) GetBrandingOptionsExecute(r ApiGetBrandingOptionsRequest) (*JellyfinBrandingOptions, *http.Response, error) {
+func (a *BrandingAPIService) GetBrandingOptionsExecute(r BrandingAPIGetBrandingOptionsRequest) (*JellyfinBrandingOptions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

@@ -24,7 +24,7 @@ import (
 // CollectionAPIService CollectionAPI service
 type CollectionAPIService service
 
-type ApiAddToCollectionRequest struct {
+type CollectionAPIAddToCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
 	collectionId string
@@ -32,12 +32,12 @@ type ApiAddToCollectionRequest struct {
 }
 
 // Item ids, comma delimited.
-func (r ApiAddToCollectionRequest) Ids(ids []string) ApiAddToCollectionRequest {
+func (r CollectionAPIAddToCollectionRequest) Ids(ids []string) CollectionAPIAddToCollectionRequest {
 	r.ids = &ids
 	return r
 }
 
-func (r ApiAddToCollectionRequest) Execute() (*http.Response, error) {
+func (r CollectionAPIAddToCollectionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AddToCollectionExecute(r)
 }
 
@@ -46,10 +46,10 @@ AddToCollection Adds items to a collection.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param collectionId The collection id.
- @return ApiAddToCollectionRequest
+ @return CollectionAPIAddToCollectionRequest
 */
-func (a *CollectionAPIService) AddToCollection(ctx context.Context, collectionId string) ApiAddToCollectionRequest {
-	return ApiAddToCollectionRequest{
+func (a *CollectionAPIService) AddToCollection(ctx context.Context, collectionId string) CollectionAPIAddToCollectionRequest {
+	return CollectionAPIAddToCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		collectionId: collectionId,
@@ -57,7 +57,7 @@ func (a *CollectionAPIService) AddToCollection(ctx context.Context, collectionId
 }
 
 // Execute executes the request
-func (a *CollectionAPIService) AddToCollectionExecute(r ApiAddToCollectionRequest) (*http.Response, error) {
+func (a *CollectionAPIService) AddToCollectionExecute(r CollectionAPIAddToCollectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *CollectionAPIService) AddToCollectionExecute(r ApiAddToCollectionReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiCreateCollectionRequest struct {
+type CollectionAPICreateCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
 	name *string
@@ -159,30 +159,30 @@ type ApiCreateCollectionRequest struct {
 }
 
 // The name of the collection.
-func (r ApiCreateCollectionRequest) Name(name string) ApiCreateCollectionRequest {
+func (r CollectionAPICreateCollectionRequest) Name(name string) CollectionAPICreateCollectionRequest {
 	r.name = &name
 	return r
 }
 
 // Item Ids to add to the collection.
-func (r ApiCreateCollectionRequest) Ids(ids []string) ApiCreateCollectionRequest {
+func (r CollectionAPICreateCollectionRequest) Ids(ids []string) CollectionAPICreateCollectionRequest {
 	r.ids = &ids
 	return r
 }
 
 // Optional. Create the collection within a specific folder.
-func (r ApiCreateCollectionRequest) ParentId(parentId string) ApiCreateCollectionRequest {
+func (r CollectionAPICreateCollectionRequest) ParentId(parentId string) CollectionAPICreateCollectionRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Whether or not to lock the new collection.
-func (r ApiCreateCollectionRequest) IsLocked(isLocked bool) ApiCreateCollectionRequest {
+func (r CollectionAPICreateCollectionRequest) IsLocked(isLocked bool) CollectionAPICreateCollectionRequest {
 	r.isLocked = &isLocked
 	return r
 }
 
-func (r ApiCreateCollectionRequest) Execute() (*JellyfinCollectionCreationResult, *http.Response, error) {
+func (r CollectionAPICreateCollectionRequest) Execute() (*JellyfinCollectionCreationResult, *http.Response, error) {
 	return r.ApiService.CreateCollectionExecute(r)
 }
 
@@ -190,10 +190,10 @@ func (r ApiCreateCollectionRequest) Execute() (*JellyfinCollectionCreationResult
 CreateCollection Creates a new collection.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateCollectionRequest
+ @return CollectionAPICreateCollectionRequest
 */
-func (a *CollectionAPIService) CreateCollection(ctx context.Context) ApiCreateCollectionRequest {
-	return ApiCreateCollectionRequest{
+func (a *CollectionAPIService) CreateCollection(ctx context.Context) CollectionAPICreateCollectionRequest {
+	return CollectionAPICreateCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -201,7 +201,7 @@ func (a *CollectionAPIService) CreateCollection(ctx context.Context) ApiCreateCo
 
 // Execute executes the request
 //  @return JellyfinCollectionCreationResult
-func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequest) (*JellyfinCollectionCreationResult, *http.Response, error) {
+func (a *CollectionAPIService) CreateCollectionExecute(r CollectionAPICreateCollectionRequest) (*JellyfinCollectionCreationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -311,7 +311,7 @@ func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveFromCollectionRequest struct {
+type CollectionAPIRemoveFromCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
 	collectionId string
@@ -319,12 +319,12 @@ type ApiRemoveFromCollectionRequest struct {
 }
 
 // Item ids, comma delimited.
-func (r ApiRemoveFromCollectionRequest) Ids(ids []string) ApiRemoveFromCollectionRequest {
+func (r CollectionAPIRemoveFromCollectionRequest) Ids(ids []string) CollectionAPIRemoveFromCollectionRequest {
 	r.ids = &ids
 	return r
 }
 
-func (r ApiRemoveFromCollectionRequest) Execute() (*http.Response, error) {
+func (r CollectionAPIRemoveFromCollectionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveFromCollectionExecute(r)
 }
 
@@ -333,10 +333,10 @@ RemoveFromCollection Removes items from a collection.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param collectionId The collection id.
- @return ApiRemoveFromCollectionRequest
+ @return CollectionAPIRemoveFromCollectionRequest
 */
-func (a *CollectionAPIService) RemoveFromCollection(ctx context.Context, collectionId string) ApiRemoveFromCollectionRequest {
-	return ApiRemoveFromCollectionRequest{
+func (a *CollectionAPIService) RemoveFromCollection(ctx context.Context, collectionId string) CollectionAPIRemoveFromCollectionRequest {
+	return CollectionAPIRemoveFromCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
 		collectionId: collectionId,
@@ -344,7 +344,7 @@ func (a *CollectionAPIService) RemoveFromCollection(ctx context.Context, collect
 }
 
 // Execute executes the request
-func (a *CollectionAPIService) RemoveFromCollectionExecute(r ApiRemoveFromCollectionRequest) (*http.Response, error) {
+func (a *CollectionAPIService) RemoveFromCollectionExecute(r CollectionAPIRemoveFromCollectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}

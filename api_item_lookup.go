@@ -23,7 +23,7 @@ import (
 // ItemLookupAPIService ItemLookupAPI service
 type ItemLookupAPIService service
 
-type ApiApplySearchCriteriaRequest struct {
+type ItemLookupAPIApplySearchCriteriaRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	itemId string
@@ -32,18 +32,18 @@ type ApiApplySearchCriteriaRequest struct {
 }
 
 // The remote search result.
-func (r ApiApplySearchCriteriaRequest) JellyfinRemoteSearchResult(jellyfinRemoteSearchResult JellyfinRemoteSearchResult) ApiApplySearchCriteriaRequest {
+func (r ItemLookupAPIApplySearchCriteriaRequest) JellyfinRemoteSearchResult(jellyfinRemoteSearchResult JellyfinRemoteSearchResult) ItemLookupAPIApplySearchCriteriaRequest {
 	r.jellyfinRemoteSearchResult = &jellyfinRemoteSearchResult
 	return r
 }
 
 // Optional. Whether or not to replace all images. Default: True.
-func (r ApiApplySearchCriteriaRequest) ReplaceAllImages(replaceAllImages bool) ApiApplySearchCriteriaRequest {
+func (r ItemLookupAPIApplySearchCriteriaRequest) ReplaceAllImages(replaceAllImages bool) ItemLookupAPIApplySearchCriteriaRequest {
 	r.replaceAllImages = &replaceAllImages
 	return r
 }
 
-func (r ApiApplySearchCriteriaRequest) Execute() (*http.Response, error) {
+func (r ItemLookupAPIApplySearchCriteriaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ApplySearchCriteriaExecute(r)
 }
 
@@ -52,10 +52,10 @@ ApplySearchCriteria Applies search criteria to an item and refreshes metadata.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiApplySearchCriteriaRequest
+ @return ItemLookupAPIApplySearchCriteriaRequest
 */
-func (a *ItemLookupAPIService) ApplySearchCriteria(ctx context.Context, itemId string) ApiApplySearchCriteriaRequest {
-	return ApiApplySearchCriteriaRequest{
+func (a *ItemLookupAPIService) ApplySearchCriteria(ctx context.Context, itemId string) ItemLookupAPIApplySearchCriteriaRequest {
+	return ItemLookupAPIApplySearchCriteriaRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -63,7 +63,7 @@ func (a *ItemLookupAPIService) ApplySearchCriteria(ctx context.Context, itemId s
 }
 
 // Execute executes the request
-func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ApiApplySearchCriteriaRequest) (*http.Response, error) {
+func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ItemLookupAPIApplySearchCriteriaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -163,19 +163,19 @@ func (a *ItemLookupAPIService) ApplySearchCriteriaExecute(r ApiApplySearchCriter
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetBookRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetBookRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinBookInfoRemoteSearchQuery *JellyfinBookInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetBookRemoteSearchResultsRequest) JellyfinBookInfoRemoteSearchQuery(jellyfinBookInfoRemoteSearchQuery JellyfinBookInfoRemoteSearchQuery) ApiGetBookRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetBookRemoteSearchResultsRequest) JellyfinBookInfoRemoteSearchQuery(jellyfinBookInfoRemoteSearchQuery JellyfinBookInfoRemoteSearchQuery) ItemLookupAPIGetBookRemoteSearchResultsRequest {
 	r.jellyfinBookInfoRemoteSearchQuery = &jellyfinBookInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetBookRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetBookRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetBookRemoteSearchResultsExecute(r)
 }
 
@@ -183,10 +183,10 @@ func (r ApiGetBookRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchR
 GetBookRemoteSearchResults Get book remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBookRemoteSearchResultsRequest
+ @return ItemLookupAPIGetBookRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetBookRemoteSearchResults(ctx context.Context) ApiGetBookRemoteSearchResultsRequest {
-	return ApiGetBookRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetBookRemoteSearchResults(ctx context.Context) ItemLookupAPIGetBookRemoteSearchResultsRequest {
+	return ItemLookupAPIGetBookRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -194,7 +194,7 @@ func (a *ItemLookupAPIService) GetBookRemoteSearchResults(ctx context.Context) A
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetBookRemoteSearchResultsExecute(r ApiGetBookRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetBookRemoteSearchResultsExecute(r ItemLookupAPIGetBookRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -286,19 +286,19 @@ func (a *ItemLookupAPIService) GetBookRemoteSearchResultsExecute(r ApiGetBookRem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetBoxSetRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetBoxSetRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinBoxSetInfoRemoteSearchQuery *JellyfinBoxSetInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetBoxSetRemoteSearchResultsRequest) JellyfinBoxSetInfoRemoteSearchQuery(jellyfinBoxSetInfoRemoteSearchQuery JellyfinBoxSetInfoRemoteSearchQuery) ApiGetBoxSetRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetBoxSetRemoteSearchResultsRequest) JellyfinBoxSetInfoRemoteSearchQuery(jellyfinBoxSetInfoRemoteSearchQuery JellyfinBoxSetInfoRemoteSearchQuery) ItemLookupAPIGetBoxSetRemoteSearchResultsRequest {
 	r.jellyfinBoxSetInfoRemoteSearchQuery = &jellyfinBoxSetInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetBoxSetRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetBoxSetRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetBoxSetRemoteSearchResultsExecute(r)
 }
 
@@ -306,10 +306,10 @@ func (r ApiGetBoxSetRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearc
 GetBoxSetRemoteSearchResults Get box set remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBoxSetRemoteSearchResultsRequest
+ @return ItemLookupAPIGetBoxSetRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResults(ctx context.Context) ApiGetBoxSetRemoteSearchResultsRequest {
-	return ApiGetBoxSetRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResults(ctx context.Context) ItemLookupAPIGetBoxSetRemoteSearchResultsRequest {
+	return ItemLookupAPIGetBoxSetRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -317,7 +317,7 @@ func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResults(ctx context.Context)
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResultsExecute(r ApiGetBoxSetRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResultsExecute(r ItemLookupAPIGetBoxSetRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -409,13 +409,13 @@ func (a *ItemLookupAPIService) GetBoxSetRemoteSearchResultsExecute(r ApiGetBoxSe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetExternalIdInfosRequest struct {
+type ItemLookupAPIGetExternalIdInfosRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	itemId string
 }
 
-func (r ApiGetExternalIdInfosRequest) Execute() ([]JellyfinExternalIdInfo, *http.Response, error) {
+func (r ItemLookupAPIGetExternalIdInfosRequest) Execute() ([]JellyfinExternalIdInfo, *http.Response, error) {
 	return r.ApiService.GetExternalIdInfosExecute(r)
 }
 
@@ -424,10 +424,10 @@ GetExternalIdInfos Get the item's external id info.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetExternalIdInfosRequest
+ @return ItemLookupAPIGetExternalIdInfosRequest
 */
-func (a *ItemLookupAPIService) GetExternalIdInfos(ctx context.Context, itemId string) ApiGetExternalIdInfosRequest {
-	return ApiGetExternalIdInfosRequest{
+func (a *ItemLookupAPIService) GetExternalIdInfos(ctx context.Context, itemId string) ItemLookupAPIGetExternalIdInfosRequest {
+	return ItemLookupAPIGetExternalIdInfosRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -436,7 +436,7 @@ func (a *ItemLookupAPIService) GetExternalIdInfos(ctx context.Context, itemId st
 
 // Execute executes the request
 //  @return []JellyfinExternalIdInfo
-func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ApiGetExternalIdInfosRequest) ([]JellyfinExternalIdInfo, *http.Response, error) {
+func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ItemLookupAPIGetExternalIdInfosRequest) ([]JellyfinExternalIdInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -535,19 +535,19 @@ func (a *ItemLookupAPIService) GetExternalIdInfosExecute(r ApiGetExternalIdInfos
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMovieRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetMovieRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinMovieInfoRemoteSearchQuery *JellyfinMovieInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetMovieRemoteSearchResultsRequest) JellyfinMovieInfoRemoteSearchQuery(jellyfinMovieInfoRemoteSearchQuery JellyfinMovieInfoRemoteSearchQuery) ApiGetMovieRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetMovieRemoteSearchResultsRequest) JellyfinMovieInfoRemoteSearchQuery(jellyfinMovieInfoRemoteSearchQuery JellyfinMovieInfoRemoteSearchQuery) ItemLookupAPIGetMovieRemoteSearchResultsRequest {
 	r.jellyfinMovieInfoRemoteSearchQuery = &jellyfinMovieInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetMovieRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetMovieRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetMovieRemoteSearchResultsExecute(r)
 }
 
@@ -555,10 +555,10 @@ func (r ApiGetMovieRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearch
 GetMovieRemoteSearchResults Get movie remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieRemoteSearchResultsRequest
+ @return ItemLookupAPIGetMovieRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetMovieRemoteSearchResults(ctx context.Context) ApiGetMovieRemoteSearchResultsRequest {
-	return ApiGetMovieRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetMovieRemoteSearchResults(ctx context.Context) ItemLookupAPIGetMovieRemoteSearchResultsRequest {
+	return ItemLookupAPIGetMovieRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -566,7 +566,7 @@ func (a *ItemLookupAPIService) GetMovieRemoteSearchResults(ctx context.Context) 
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetMovieRemoteSearchResultsExecute(r ApiGetMovieRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetMovieRemoteSearchResultsExecute(r ItemLookupAPIGetMovieRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -658,19 +658,19 @@ func (a *ItemLookupAPIService) GetMovieRemoteSearchResultsExecute(r ApiGetMovieR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicAlbumRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinAlbumInfoRemoteSearchQuery *JellyfinAlbumInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetMusicAlbumRemoteSearchResultsRequest) JellyfinAlbumInfoRemoteSearchQuery(jellyfinAlbumInfoRemoteSearchQuery JellyfinAlbumInfoRemoteSearchQuery) ApiGetMusicAlbumRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest) JellyfinAlbumInfoRemoteSearchQuery(jellyfinAlbumInfoRemoteSearchQuery JellyfinAlbumInfoRemoteSearchQuery) ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest {
 	r.jellyfinAlbumInfoRemoteSearchQuery = &jellyfinAlbumInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetMusicAlbumRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetMusicAlbumRemoteSearchResultsExecute(r)
 }
 
@@ -678,10 +678,10 @@ func (r ApiGetMusicAlbumRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteS
 GetMusicAlbumRemoteSearchResults Get music album remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicAlbumRemoteSearchResultsRequest
+ @return ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResults(ctx context.Context) ApiGetMusicAlbumRemoteSearchResultsRequest {
-	return ApiGetMusicAlbumRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResults(ctx context.Context) ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest {
+	return ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -689,7 +689,7 @@ func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResults(ctx context.Cont
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResultsExecute(r ApiGetMusicAlbumRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResultsExecute(r ItemLookupAPIGetMusicAlbumRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -781,19 +781,19 @@ func (a *ItemLookupAPIService) GetMusicAlbumRemoteSearchResultsExecute(r ApiGetM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicArtistRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinArtistInfoRemoteSearchQuery *JellyfinArtistInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetMusicArtistRemoteSearchResultsRequest) JellyfinArtistInfoRemoteSearchQuery(jellyfinArtistInfoRemoteSearchQuery JellyfinArtistInfoRemoteSearchQuery) ApiGetMusicArtistRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest) JellyfinArtistInfoRemoteSearchQuery(jellyfinArtistInfoRemoteSearchQuery JellyfinArtistInfoRemoteSearchQuery) ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest {
 	r.jellyfinArtistInfoRemoteSearchQuery = &jellyfinArtistInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetMusicArtistRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetMusicArtistRemoteSearchResultsExecute(r)
 }
 
@@ -801,10 +801,10 @@ func (r ApiGetMusicArtistRemoteSearchResultsRequest) Execute() ([]JellyfinRemote
 GetMusicArtistRemoteSearchResults Get music artist remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicArtistRemoteSearchResultsRequest
+ @return ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResults(ctx context.Context) ApiGetMusicArtistRemoteSearchResultsRequest {
-	return ApiGetMusicArtistRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResults(ctx context.Context) ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest {
+	return ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -812,7 +812,7 @@ func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResults(ctx context.Con
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResultsExecute(r ApiGetMusicArtistRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResultsExecute(r ItemLookupAPIGetMusicArtistRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -904,19 +904,19 @@ func (a *ItemLookupAPIService) GetMusicArtistRemoteSearchResultsExecute(r ApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMusicVideoRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinMusicVideoInfoRemoteSearchQuery *JellyfinMusicVideoInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetMusicVideoRemoteSearchResultsRequest) JellyfinMusicVideoInfoRemoteSearchQuery(jellyfinMusicVideoInfoRemoteSearchQuery JellyfinMusicVideoInfoRemoteSearchQuery) ApiGetMusicVideoRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest) JellyfinMusicVideoInfoRemoteSearchQuery(jellyfinMusicVideoInfoRemoteSearchQuery JellyfinMusicVideoInfoRemoteSearchQuery) ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest {
 	r.jellyfinMusicVideoInfoRemoteSearchQuery = &jellyfinMusicVideoInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetMusicVideoRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetMusicVideoRemoteSearchResultsExecute(r)
 }
 
@@ -924,10 +924,10 @@ func (r ApiGetMusicVideoRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteS
 GetMusicVideoRemoteSearchResults Get music video remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMusicVideoRemoteSearchResultsRequest
+ @return ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResults(ctx context.Context) ApiGetMusicVideoRemoteSearchResultsRequest {
-	return ApiGetMusicVideoRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResults(ctx context.Context) ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest {
+	return ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -935,7 +935,7 @@ func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResults(ctx context.Cont
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResultsExecute(r ApiGetMusicVideoRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResultsExecute(r ItemLookupAPIGetMusicVideoRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1027,19 +1027,19 @@ func (a *ItemLookupAPIService) GetMusicVideoRemoteSearchResultsExecute(r ApiGetM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPersonRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetPersonRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinPersonLookupInfoRemoteSearchQuery *JellyfinPersonLookupInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetPersonRemoteSearchResultsRequest) JellyfinPersonLookupInfoRemoteSearchQuery(jellyfinPersonLookupInfoRemoteSearchQuery JellyfinPersonLookupInfoRemoteSearchQuery) ApiGetPersonRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetPersonRemoteSearchResultsRequest) JellyfinPersonLookupInfoRemoteSearchQuery(jellyfinPersonLookupInfoRemoteSearchQuery JellyfinPersonLookupInfoRemoteSearchQuery) ItemLookupAPIGetPersonRemoteSearchResultsRequest {
 	r.jellyfinPersonLookupInfoRemoteSearchQuery = &jellyfinPersonLookupInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetPersonRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetPersonRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetPersonRemoteSearchResultsExecute(r)
 }
 
@@ -1047,10 +1047,10 @@ func (r ApiGetPersonRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearc
 GetPersonRemoteSearchResults Get person remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPersonRemoteSearchResultsRequest
+ @return ItemLookupAPIGetPersonRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetPersonRemoteSearchResults(ctx context.Context) ApiGetPersonRemoteSearchResultsRequest {
-	return ApiGetPersonRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetPersonRemoteSearchResults(ctx context.Context) ItemLookupAPIGetPersonRemoteSearchResultsRequest {
+	return ItemLookupAPIGetPersonRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1058,7 +1058,7 @@ func (a *ItemLookupAPIService) GetPersonRemoteSearchResults(ctx context.Context)
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetPersonRemoteSearchResultsExecute(r ApiGetPersonRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetPersonRemoteSearchResultsExecute(r ItemLookupAPIGetPersonRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1150,19 +1150,19 @@ func (a *ItemLookupAPIService) GetPersonRemoteSearchResultsExecute(r ApiGetPerso
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSeriesRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetSeriesRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinSeriesInfoRemoteSearchQuery *JellyfinSeriesInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetSeriesRemoteSearchResultsRequest) JellyfinSeriesInfoRemoteSearchQuery(jellyfinSeriesInfoRemoteSearchQuery JellyfinSeriesInfoRemoteSearchQuery) ApiGetSeriesRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetSeriesRemoteSearchResultsRequest) JellyfinSeriesInfoRemoteSearchQuery(jellyfinSeriesInfoRemoteSearchQuery JellyfinSeriesInfoRemoteSearchQuery) ItemLookupAPIGetSeriesRemoteSearchResultsRequest {
 	r.jellyfinSeriesInfoRemoteSearchQuery = &jellyfinSeriesInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetSeriesRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetSeriesRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetSeriesRemoteSearchResultsExecute(r)
 }
 
@@ -1170,10 +1170,10 @@ func (r ApiGetSeriesRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearc
 GetSeriesRemoteSearchResults Get series remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSeriesRemoteSearchResultsRequest
+ @return ItemLookupAPIGetSeriesRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetSeriesRemoteSearchResults(ctx context.Context) ApiGetSeriesRemoteSearchResultsRequest {
-	return ApiGetSeriesRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetSeriesRemoteSearchResults(ctx context.Context) ItemLookupAPIGetSeriesRemoteSearchResultsRequest {
+	return ItemLookupAPIGetSeriesRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1181,7 +1181,7 @@ func (a *ItemLookupAPIService) GetSeriesRemoteSearchResults(ctx context.Context)
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetSeriesRemoteSearchResultsExecute(r ApiGetSeriesRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetSeriesRemoteSearchResultsExecute(r ItemLookupAPIGetSeriesRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1273,19 +1273,19 @@ func (a *ItemLookupAPIService) GetSeriesRemoteSearchResultsExecute(r ApiGetSerie
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetTrailerRemoteSearchResultsRequest struct {
+type ItemLookupAPIGetTrailerRemoteSearchResultsRequest struct {
 	ctx context.Context
 	ApiService *ItemLookupAPIService
 	jellyfinTrailerInfoRemoteSearchQuery *JellyfinTrailerInfoRemoteSearchQuery
 }
 
 // Remote search query.
-func (r ApiGetTrailerRemoteSearchResultsRequest) JellyfinTrailerInfoRemoteSearchQuery(jellyfinTrailerInfoRemoteSearchQuery JellyfinTrailerInfoRemoteSearchQuery) ApiGetTrailerRemoteSearchResultsRequest {
+func (r ItemLookupAPIGetTrailerRemoteSearchResultsRequest) JellyfinTrailerInfoRemoteSearchQuery(jellyfinTrailerInfoRemoteSearchQuery JellyfinTrailerInfoRemoteSearchQuery) ItemLookupAPIGetTrailerRemoteSearchResultsRequest {
 	r.jellyfinTrailerInfoRemoteSearchQuery = &jellyfinTrailerInfoRemoteSearchQuery
 	return r
 }
 
-func (r ApiGetTrailerRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (r ItemLookupAPIGetTrailerRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	return r.ApiService.GetTrailerRemoteSearchResultsExecute(r)
 }
 
@@ -1293,10 +1293,10 @@ func (r ApiGetTrailerRemoteSearchResultsRequest) Execute() ([]JellyfinRemoteSear
 GetTrailerRemoteSearchResults Get trailer remote search.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTrailerRemoteSearchResultsRequest
+ @return ItemLookupAPIGetTrailerRemoteSearchResultsRequest
 */
-func (a *ItemLookupAPIService) GetTrailerRemoteSearchResults(ctx context.Context) ApiGetTrailerRemoteSearchResultsRequest {
-	return ApiGetTrailerRemoteSearchResultsRequest{
+func (a *ItemLookupAPIService) GetTrailerRemoteSearchResults(ctx context.Context) ItemLookupAPIGetTrailerRemoteSearchResultsRequest {
+	return ItemLookupAPIGetTrailerRemoteSearchResultsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1304,7 +1304,7 @@ func (a *ItemLookupAPIService) GetTrailerRemoteSearchResults(ctx context.Context
 
 // Execute executes the request
 //  @return []JellyfinRemoteSearchResult
-func (a *ItemLookupAPIService) GetTrailerRemoteSearchResultsExecute(r ApiGetTrailerRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
+func (a *ItemLookupAPIService) GetTrailerRemoteSearchResultsExecute(r ItemLookupAPIGetTrailerRemoteSearchResultsRequest) ([]JellyfinRemoteSearchResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

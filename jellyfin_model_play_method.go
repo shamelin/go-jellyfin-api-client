@@ -20,9 +20,9 @@ type JellyfinPlayMethod string
 
 // List of PlayMethod
 const (
-	TRANSCODE JellyfinPlayMethod = "Transcode"
-	DIRECT_STREAM JellyfinPlayMethod = "DirectStream"
-	DIRECT_PLAY JellyfinPlayMethod = "DirectPlay"
+	JELLYFINPLAYMETHOD_TRANSCODE JellyfinPlayMethod = "Transcode"
+	JELLYFINPLAYMETHOD_DIRECT_STREAM JellyfinPlayMethod = "DirectStream"
+	JELLYFINPLAYMETHOD_DIRECT_PLAY JellyfinPlayMethod = "DirectPlay"
 )
 
 // All allowed values of JellyfinPlayMethod enum

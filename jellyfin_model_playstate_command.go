@@ -20,15 +20,15 @@ type JellyfinPlaystateCommand string
 
 // List of PlaystateCommand
 const (
-	STOP JellyfinPlaystateCommand = "Stop"
-	PAUSE JellyfinPlaystateCommand = "Pause"
-	UNPAUSE JellyfinPlaystateCommand = "Unpause"
-	NEXT_TRACK JellyfinPlaystateCommand = "NextTrack"
-	PREVIOUS_TRACK JellyfinPlaystateCommand = "PreviousTrack"
-	SEEK JellyfinPlaystateCommand = "Seek"
-	REWIND JellyfinPlaystateCommand = "Rewind"
-	FAST_FORWARD JellyfinPlaystateCommand = "FastForward"
-	PLAY_PAUSE JellyfinPlaystateCommand = "PlayPause"
+	JELLYFINPLAYSTATECOMMAND_STOP JellyfinPlaystateCommand = "Stop"
+	JELLYFINPLAYSTATECOMMAND_PAUSE JellyfinPlaystateCommand = "Pause"
+	JELLYFINPLAYSTATECOMMAND_UNPAUSE JellyfinPlaystateCommand = "Unpause"
+	JELLYFINPLAYSTATECOMMAND_NEXT_TRACK JellyfinPlaystateCommand = "NextTrack"
+	JELLYFINPLAYSTATECOMMAND_PREVIOUS_TRACK JellyfinPlaystateCommand = "PreviousTrack"
+	JELLYFINPLAYSTATECOMMAND_SEEK JellyfinPlaystateCommand = "Seek"
+	JELLYFINPLAYSTATECOMMAND_REWIND JellyfinPlaystateCommand = "Rewind"
+	JELLYFINPLAYSTATECOMMAND_FAST_FORWARD JellyfinPlaystateCommand = "FastForward"
+	JELLYFINPLAYSTATECOMMAND_PLAY_PAUSE JellyfinPlaystateCommand = "PlayPause"
 )
 
 // All allowed values of JellyfinPlaystateCommand enum

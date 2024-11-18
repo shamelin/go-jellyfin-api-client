@@ -20,14 +20,14 @@ type JellyfinTonemappingAlgorithm string
 
 // List of TonemappingAlgorithm
 const (
-	NONE JellyfinTonemappingAlgorithm = "none"
-	CLIP JellyfinTonemappingAlgorithm = "clip"
-	LINEAR JellyfinTonemappingAlgorithm = "linear"
-	GAMMA JellyfinTonemappingAlgorithm = "gamma"
-	REINHARD JellyfinTonemappingAlgorithm = "reinhard"
-	HABLE JellyfinTonemappingAlgorithm = "hable"
-	MOBIUS JellyfinTonemappingAlgorithm = "mobius"
-	BT2390 JellyfinTonemappingAlgorithm = "bt2390"
+	JELLYFINTONEMAPPINGALGORITHM_NONE JellyfinTonemappingAlgorithm = "none"
+	JELLYFINTONEMAPPINGALGORITHM_CLIP JellyfinTonemappingAlgorithm = "clip"
+	JELLYFINTONEMAPPINGALGORITHM_LINEAR JellyfinTonemappingAlgorithm = "linear"
+	JELLYFINTONEMAPPINGALGORITHM_GAMMA JellyfinTonemappingAlgorithm = "gamma"
+	JELLYFINTONEMAPPINGALGORITHM_REINHARD JellyfinTonemappingAlgorithm = "reinhard"
+	JELLYFINTONEMAPPINGALGORITHM_HABLE JellyfinTonemappingAlgorithm = "hable"
+	JELLYFINTONEMAPPINGALGORITHM_MOBIUS JellyfinTonemappingAlgorithm = "mobius"
+	JELLYFINTONEMAPPINGALGORITHM_BT2390 JellyfinTonemappingAlgorithm = "bt2390"
 )
 
 // All allowed values of JellyfinTonemappingAlgorithm enum

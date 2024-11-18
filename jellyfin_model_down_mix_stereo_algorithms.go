@@ -20,11 +20,11 @@ type JellyfinDownMixStereoAlgorithms string
 
 // List of DownMixStereoAlgorithms
 const (
-	NONE JellyfinDownMixStereoAlgorithms = "None"
-	DAVE750 JellyfinDownMixStereoAlgorithms = "Dave750"
-	NIGHTMODE_DIALOGUE JellyfinDownMixStereoAlgorithms = "NightmodeDialogue"
-	RFC7845 JellyfinDownMixStereoAlgorithms = "Rfc7845"
-	AC4 JellyfinDownMixStereoAlgorithms = "Ac4"
+	JELLYFINDOWNMIXSTEREOALGORITHMS_NONE JellyfinDownMixStereoAlgorithms = "None"
+	JELLYFINDOWNMIXSTEREOALGORITHMS_DAVE750 JellyfinDownMixStereoAlgorithms = "Dave750"
+	JELLYFINDOWNMIXSTEREOALGORITHMS_NIGHTMODE_DIALOGUE JellyfinDownMixStereoAlgorithms = "NightmodeDialogue"
+	JELLYFINDOWNMIXSTEREOALGORITHMS_RFC7845 JellyfinDownMixStereoAlgorithms = "Rfc7845"
+	JELLYFINDOWNMIXSTEREOALGORITHMS_AC4 JellyfinDownMixStereoAlgorithms = "Ac4"
 )
 
 // All allowed values of JellyfinDownMixStereoAlgorithms enum

@@ -24,14 +24,14 @@ import (
 // SessionAPIService SessionAPI service
 type SessionAPIService service
 
-type ApiAddUserToSessionRequest struct {
+type SessionAPIAddUserToSessionRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
 	userId string
 }
 
-func (r ApiAddUserToSessionRequest) Execute() (*http.Response, error) {
+func (r SessionAPIAddUserToSessionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AddUserToSessionExecute(r)
 }
 
@@ -41,10 +41,10 @@ AddUserToSession Adds an additional user to a session.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
  @param userId The user id.
- @return ApiAddUserToSessionRequest
+ @return SessionAPIAddUserToSessionRequest
 */
-func (a *SessionAPIService) AddUserToSession(ctx context.Context, sessionId string, userId string) ApiAddUserToSessionRequest {
-	return ApiAddUserToSessionRequest{
+func (a *SessionAPIService) AddUserToSession(ctx context.Context, sessionId string, userId string) SessionAPIAddUserToSessionRequest {
+	return SessionAPIAddUserToSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -53,7 +53,7 @@ func (a *SessionAPIService) AddUserToSession(ctx context.Context, sessionId stri
 }
 
 // Execute executes the request
-func (a *SessionAPIService) AddUserToSessionExecute(r ApiAddUserToSessionRequest) (*http.Response, error) {
+func (a *SessionAPIService) AddUserToSessionExecute(r SessionAPIAddUserToSessionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -132,7 +132,7 @@ func (a *SessionAPIService) AddUserToSessionExecute(r ApiAddUserToSessionRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiDisplayContentRequest struct {
+type SessionAPIDisplayContentRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
@@ -142,24 +142,24 @@ type ApiDisplayContentRequest struct {
 }
 
 // The type of item to browse to.
-func (r ApiDisplayContentRequest) ItemType(itemType JellyfinBaseItemKind) ApiDisplayContentRequest {
+func (r SessionAPIDisplayContentRequest) ItemType(itemType JellyfinBaseItemKind) SessionAPIDisplayContentRequest {
 	r.itemType = &itemType
 	return r
 }
 
 // The Id of the item.
-func (r ApiDisplayContentRequest) ItemId(itemId string) ApiDisplayContentRequest {
+func (r SessionAPIDisplayContentRequest) ItemId(itemId string) SessionAPIDisplayContentRequest {
 	r.itemId = &itemId
 	return r
 }
 
 // The name of the item.
-func (r ApiDisplayContentRequest) ItemName(itemName string) ApiDisplayContentRequest {
+func (r SessionAPIDisplayContentRequest) ItemName(itemName string) SessionAPIDisplayContentRequest {
 	r.itemName = &itemName
 	return r
 }
 
-func (r ApiDisplayContentRequest) Execute() (*http.Response, error) {
+func (r SessionAPIDisplayContentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DisplayContentExecute(r)
 }
 
@@ -168,10 +168,10 @@ DisplayContent Instructs a session to browse to an item or view.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session Id.
- @return ApiDisplayContentRequest
+ @return SessionAPIDisplayContentRequest
 */
-func (a *SessionAPIService) DisplayContent(ctx context.Context, sessionId string) ApiDisplayContentRequest {
-	return ApiDisplayContentRequest{
+func (a *SessionAPIService) DisplayContent(ctx context.Context, sessionId string) SessionAPIDisplayContentRequest {
+	return SessionAPIDisplayContentRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -179,7 +179,7 @@ func (a *SessionAPIService) DisplayContent(ctx context.Context, sessionId string
 }
 
 // Execute executes the request
-func (a *SessionAPIService) DisplayContentExecute(r ApiDisplayContentRequest) (*http.Response, error) {
+func (a *SessionAPIService) DisplayContentExecute(r SessionAPIDisplayContentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -269,12 +269,12 @@ func (a *SessionAPIService) DisplayContentExecute(r ApiDisplayContentRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetAuthProvidersRequest struct {
+type SessionAPIGetAuthProvidersRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 }
 
-func (r ApiGetAuthProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
+func (r SessionAPIGetAuthProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetAuthProvidersExecute(r)
 }
 
@@ -282,10 +282,10 @@ func (r ApiGetAuthProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Respo
 GetAuthProviders Get all auth providers.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthProvidersRequest
+ @return SessionAPIGetAuthProvidersRequest
 */
-func (a *SessionAPIService) GetAuthProviders(ctx context.Context) ApiGetAuthProvidersRequest {
-	return ApiGetAuthProvidersRequest{
+func (a *SessionAPIService) GetAuthProviders(ctx context.Context) SessionAPIGetAuthProvidersRequest {
+	return SessionAPIGetAuthProvidersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -293,7 +293,7 @@ func (a *SessionAPIService) GetAuthProviders(ctx context.Context) ApiGetAuthProv
 
 // Execute executes the request
 //  @return []JellyfinNameIdPair
-func (a *SessionAPIService) GetAuthProvidersExecute(r ApiGetAuthProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
+func (a *SessionAPIService) GetAuthProvidersExecute(r SessionAPIGetAuthProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -380,12 +380,12 @@ func (a *SessionAPIService) GetAuthProvidersExecute(r ApiGetAuthProvidersRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPasswordResetProvidersRequest struct {
+type SessionAPIGetPasswordResetProvidersRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 }
 
-func (r ApiGetPasswordResetProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
+func (r SessionAPIGetPasswordResetProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetPasswordResetProvidersExecute(r)
 }
 
@@ -393,10 +393,10 @@ func (r ApiGetPasswordResetProvidersRequest) Execute() ([]JellyfinNameIdPair, *h
 GetPasswordResetProviders Get all password reset providers.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPasswordResetProvidersRequest
+ @return SessionAPIGetPasswordResetProvidersRequest
 */
-func (a *SessionAPIService) GetPasswordResetProviders(ctx context.Context) ApiGetPasswordResetProvidersRequest {
-	return ApiGetPasswordResetProvidersRequest{
+func (a *SessionAPIService) GetPasswordResetProviders(ctx context.Context) SessionAPIGetPasswordResetProvidersRequest {
+	return SessionAPIGetPasswordResetProvidersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -404,7 +404,7 @@ func (a *SessionAPIService) GetPasswordResetProviders(ctx context.Context) ApiGe
 
 // Execute executes the request
 //  @return []JellyfinNameIdPair
-func (a *SessionAPIService) GetPasswordResetProvidersExecute(r ApiGetPasswordResetProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
+func (a *SessionAPIService) GetPasswordResetProvidersExecute(r SessionAPIGetPasswordResetProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -491,7 +491,7 @@ func (a *SessionAPIService) GetPasswordResetProvidersExecute(r ApiGetPasswordRes
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSessionsRequest struct {
+type SessionAPIGetSessionsRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	controllableByUserId *string
@@ -500,24 +500,24 @@ type ApiGetSessionsRequest struct {
 }
 
 // Filter by sessions that a given user is allowed to remote control.
-func (r ApiGetSessionsRequest) ControllableByUserId(controllableByUserId string) ApiGetSessionsRequest {
+func (r SessionAPIGetSessionsRequest) ControllableByUserId(controllableByUserId string) SessionAPIGetSessionsRequest {
 	r.controllableByUserId = &controllableByUserId
 	return r
 }
 
 // Filter by device Id.
-func (r ApiGetSessionsRequest) DeviceId(deviceId string) ApiGetSessionsRequest {
+func (r SessionAPIGetSessionsRequest) DeviceId(deviceId string) SessionAPIGetSessionsRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Filter by sessions that were active in the last n seconds.
-func (r ApiGetSessionsRequest) ActiveWithinSeconds(activeWithinSeconds int32) ApiGetSessionsRequest {
+func (r SessionAPIGetSessionsRequest) ActiveWithinSeconds(activeWithinSeconds int32) SessionAPIGetSessionsRequest {
 	r.activeWithinSeconds = &activeWithinSeconds
 	return r
 }
 
-func (r ApiGetSessionsRequest) Execute() ([]JellyfinSessionInfoDto, *http.Response, error) {
+func (r SessionAPIGetSessionsRequest) Execute() ([]JellyfinSessionInfoDto, *http.Response, error) {
 	return r.ApiService.GetSessionsExecute(r)
 }
 
@@ -525,10 +525,10 @@ func (r ApiGetSessionsRequest) Execute() ([]JellyfinSessionInfoDto, *http.Respon
 GetSessions Gets a list of sessions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSessionsRequest
+ @return SessionAPIGetSessionsRequest
 */
-func (a *SessionAPIService) GetSessions(ctx context.Context) ApiGetSessionsRequest {
-	return ApiGetSessionsRequest{
+func (a *SessionAPIService) GetSessions(ctx context.Context) SessionAPIGetSessionsRequest {
+	return SessionAPIGetSessionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -536,7 +536,7 @@ func (a *SessionAPIService) GetSessions(ctx context.Context) ApiGetSessionsReque
 
 // Execute executes the request
 //  @return []JellyfinSessionInfoDto
-func (a *SessionAPIService) GetSessionsExecute(r ApiGetSessionsRequest) ([]JellyfinSessionInfoDto, *http.Response, error) {
+func (a *SessionAPIService) GetSessionsExecute(r SessionAPIGetSessionsRequest) ([]JellyfinSessionInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -632,7 +632,7 @@ func (a *SessionAPIService) GetSessionsExecute(r ApiGetSessionsRequest) ([]Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPlayRequest struct {
+type SessionAPIPlayRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
@@ -646,48 +646,48 @@ type ApiPlayRequest struct {
 }
 
 // The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
-func (r ApiPlayRequest) PlayCommand(playCommand JellyfinPlayCommand) ApiPlayRequest {
+func (r SessionAPIPlayRequest) PlayCommand(playCommand JellyfinPlayCommand) SessionAPIPlayRequest {
 	r.playCommand = &playCommand
 	return r
 }
 
 // The ids of the items to play, comma delimited.
-func (r ApiPlayRequest) ItemIds(itemIds []string) ApiPlayRequest {
+func (r SessionAPIPlayRequest) ItemIds(itemIds []string) SessionAPIPlayRequest {
 	r.itemIds = &itemIds
 	return r
 }
 
 // The starting position of the first item.
-func (r ApiPlayRequest) StartPositionTicks(startPositionTicks int64) ApiPlayRequest {
+func (r SessionAPIPlayRequest) StartPositionTicks(startPositionTicks int64) SessionAPIPlayRequest {
 	r.startPositionTicks = &startPositionTicks
 	return r
 }
 
 // Optional. The media source id.
-func (r ApiPlayRequest) MediaSourceId(mediaSourceId string) ApiPlayRequest {
+func (r SessionAPIPlayRequest) MediaSourceId(mediaSourceId string) SessionAPIPlayRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // Optional. The index of the audio stream to play.
-func (r ApiPlayRequest) AudioStreamIndex(audioStreamIndex int32) ApiPlayRequest {
+func (r SessionAPIPlayRequest) AudioStreamIndex(audioStreamIndex int32) SessionAPIPlayRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the subtitle stream to play.
-func (r ApiPlayRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiPlayRequest {
+func (r SessionAPIPlayRequest) SubtitleStreamIndex(subtitleStreamIndex int32) SessionAPIPlayRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. The start index.
-func (r ApiPlayRequest) StartIndex(startIndex int32) ApiPlayRequest {
+func (r SessionAPIPlayRequest) StartIndex(startIndex int32) SessionAPIPlayRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
-func (r ApiPlayRequest) Execute() (*http.Response, error) {
+func (r SessionAPIPlayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PlayExecute(r)
 }
 
@@ -696,10 +696,10 @@ Play Instructs a session to play an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
- @return ApiPlayRequest
+ @return SessionAPIPlayRequest
 */
-func (a *SessionAPIService) Play(ctx context.Context, sessionId string) ApiPlayRequest {
-	return ApiPlayRequest{
+func (a *SessionAPIService) Play(ctx context.Context, sessionId string) SessionAPIPlayRequest {
+	return SessionAPIPlayRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -707,7 +707,7 @@ func (a *SessionAPIService) Play(ctx context.Context, sessionId string) ApiPlayR
 }
 
 // Execute executes the request
-func (a *SessionAPIService) PlayExecute(r ApiPlayRequest) (*http.Response, error) {
+func (a *SessionAPIService) PlayExecute(r SessionAPIPlayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -818,7 +818,7 @@ func (a *SessionAPIService) PlayExecute(r ApiPlayRequest) (*http.Response, error
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostCapabilitiesRequest struct {
+type SessionAPIPostCapabilitiesRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	id *string
@@ -829,36 +829,36 @@ type ApiPostCapabilitiesRequest struct {
 }
 
 // The session id.
-func (r ApiPostCapabilitiesRequest) Id(id string) ApiPostCapabilitiesRequest {
+func (r SessionAPIPostCapabilitiesRequest) Id(id string) SessionAPIPostCapabilitiesRequest {
 	r.id = &id
 	return r
 }
 
 // A list of playable media types, comma delimited. Audio, Video, Book, Photo.
-func (r ApiPostCapabilitiesRequest) PlayableMediaTypes(playableMediaTypes []JellyfinMediaType) ApiPostCapabilitiesRequest {
+func (r SessionAPIPostCapabilitiesRequest) PlayableMediaTypes(playableMediaTypes []JellyfinMediaType) SessionAPIPostCapabilitiesRequest {
 	r.playableMediaTypes = &playableMediaTypes
 	return r
 }
 
 // A list of supported remote control commands, comma delimited.
-func (r ApiPostCapabilitiesRequest) SupportedCommands(supportedCommands []JellyfinGeneralCommandType) ApiPostCapabilitiesRequest {
+func (r SessionAPIPostCapabilitiesRequest) SupportedCommands(supportedCommands []JellyfinGeneralCommandType) SessionAPIPostCapabilitiesRequest {
 	r.supportedCommands = &supportedCommands
 	return r
 }
 
 // Determines whether media can be played remotely..
-func (r ApiPostCapabilitiesRequest) SupportsMediaControl(supportsMediaControl bool) ApiPostCapabilitiesRequest {
+func (r SessionAPIPostCapabilitiesRequest) SupportsMediaControl(supportsMediaControl bool) SessionAPIPostCapabilitiesRequest {
 	r.supportsMediaControl = &supportsMediaControl
 	return r
 }
 
 // Determines whether the device supports a unique identifier.
-func (r ApiPostCapabilitiesRequest) SupportsPersistentIdentifier(supportsPersistentIdentifier bool) ApiPostCapabilitiesRequest {
+func (r SessionAPIPostCapabilitiesRequest) SupportsPersistentIdentifier(supportsPersistentIdentifier bool) SessionAPIPostCapabilitiesRequest {
 	r.supportsPersistentIdentifier = &supportsPersistentIdentifier
 	return r
 }
 
-func (r ApiPostCapabilitiesRequest) Execute() (*http.Response, error) {
+func (r SessionAPIPostCapabilitiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostCapabilitiesExecute(r)
 }
 
@@ -866,17 +866,17 @@ func (r ApiPostCapabilitiesRequest) Execute() (*http.Response, error) {
 PostCapabilities Updates capabilities for a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCapabilitiesRequest
+ @return SessionAPIPostCapabilitiesRequest
 */
-func (a *SessionAPIService) PostCapabilities(ctx context.Context) ApiPostCapabilitiesRequest {
-	return ApiPostCapabilitiesRequest{
+func (a *SessionAPIService) PostCapabilities(ctx context.Context) SessionAPIPostCapabilitiesRequest {
+	return SessionAPIPostCapabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SessionAPIService) PostCapabilitiesExecute(r ApiPostCapabilitiesRequest) (*http.Response, error) {
+func (a *SessionAPIService) PostCapabilitiesExecute(r SessionAPIPostCapabilitiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -990,7 +990,7 @@ func (a *SessionAPIService) PostCapabilitiesExecute(r ApiPostCapabilitiesRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostFullCapabilitiesRequest struct {
+type SessionAPIPostFullCapabilitiesRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	jellyfinClientCapabilitiesDto *JellyfinClientCapabilitiesDto
@@ -998,18 +998,18 @@ type ApiPostFullCapabilitiesRequest struct {
 }
 
 // The MediaBrowser.Model.Session.ClientCapabilities.
-func (r ApiPostFullCapabilitiesRequest) JellyfinClientCapabilitiesDto(jellyfinClientCapabilitiesDto JellyfinClientCapabilitiesDto) ApiPostFullCapabilitiesRequest {
+func (r SessionAPIPostFullCapabilitiesRequest) JellyfinClientCapabilitiesDto(jellyfinClientCapabilitiesDto JellyfinClientCapabilitiesDto) SessionAPIPostFullCapabilitiesRequest {
 	r.jellyfinClientCapabilitiesDto = &jellyfinClientCapabilitiesDto
 	return r
 }
 
 // The session id.
-func (r ApiPostFullCapabilitiesRequest) Id(id string) ApiPostFullCapabilitiesRequest {
+func (r SessionAPIPostFullCapabilitiesRequest) Id(id string) SessionAPIPostFullCapabilitiesRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiPostFullCapabilitiesRequest) Execute() (*http.Response, error) {
+func (r SessionAPIPostFullCapabilitiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostFullCapabilitiesExecute(r)
 }
 
@@ -1017,17 +1017,17 @@ func (r ApiPostFullCapabilitiesRequest) Execute() (*http.Response, error) {
 PostFullCapabilities Updates capabilities for a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostFullCapabilitiesRequest
+ @return SessionAPIPostFullCapabilitiesRequest
 */
-func (a *SessionAPIService) PostFullCapabilities(ctx context.Context) ApiPostFullCapabilitiesRequest {
-	return ApiPostFullCapabilitiesRequest{
+func (a *SessionAPIService) PostFullCapabilities(ctx context.Context) SessionAPIPostFullCapabilitiesRequest {
+	return SessionAPIPostFullCapabilitiesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SessionAPIService) PostFullCapabilitiesExecute(r ApiPostFullCapabilitiesRequest) (*http.Response, error) {
+func (a *SessionAPIService) PostFullCapabilitiesExecute(r SessionAPIPostFullCapabilitiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1112,14 +1112,14 @@ func (a *SessionAPIService) PostFullCapabilitiesExecute(r ApiPostFullCapabilitie
 	return localVarHTTPResponse, nil
 }
 
-type ApiRemoveUserFromSessionRequest struct {
+type SessionAPIRemoveUserFromSessionRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
 	userId string
 }
 
-func (r ApiRemoveUserFromSessionRequest) Execute() (*http.Response, error) {
+func (r SessionAPIRemoveUserFromSessionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveUserFromSessionExecute(r)
 }
 
@@ -1129,10 +1129,10 @@ RemoveUserFromSession Removes an additional user from a session.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
  @param userId The user id.
- @return ApiRemoveUserFromSessionRequest
+ @return SessionAPIRemoveUserFromSessionRequest
 */
-func (a *SessionAPIService) RemoveUserFromSession(ctx context.Context, sessionId string, userId string) ApiRemoveUserFromSessionRequest {
-	return ApiRemoveUserFromSessionRequest{
+func (a *SessionAPIService) RemoveUserFromSession(ctx context.Context, sessionId string, userId string) SessionAPIRemoveUserFromSessionRequest {
+	return SessionAPIRemoveUserFromSessionRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1141,7 +1141,7 @@ func (a *SessionAPIService) RemoveUserFromSession(ctx context.Context, sessionId
 }
 
 // Execute executes the request
-func (a *SessionAPIService) RemoveUserFromSessionExecute(r ApiRemoveUserFromSessionRequest) (*http.Response, error) {
+func (a *SessionAPIService) RemoveUserFromSessionExecute(r SessionAPIRemoveUserFromSessionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -1220,12 +1220,12 @@ func (a *SessionAPIService) RemoveUserFromSessionExecute(r ApiRemoveUserFromSess
 	return localVarHTTPResponse, nil
 }
 
-type ApiReportSessionEndedRequest struct {
+type SessionAPIReportSessionEndedRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 }
 
-func (r ApiReportSessionEndedRequest) Execute() (*http.Response, error) {
+func (r SessionAPIReportSessionEndedRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ReportSessionEndedExecute(r)
 }
 
@@ -1233,17 +1233,17 @@ func (r ApiReportSessionEndedRequest) Execute() (*http.Response, error) {
 ReportSessionEnded Reports that a session has ended.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportSessionEndedRequest
+ @return SessionAPIReportSessionEndedRequest
 */
-func (a *SessionAPIService) ReportSessionEnded(ctx context.Context) ApiReportSessionEndedRequest {
-	return ApiReportSessionEndedRequest{
+func (a *SessionAPIService) ReportSessionEnded(ctx context.Context) SessionAPIReportSessionEndedRequest {
+	return SessionAPIReportSessionEndedRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SessionAPIService) ReportSessionEndedExecute(r ApiReportSessionEndedRequest) (*http.Response, error) {
+func (a *SessionAPIService) ReportSessionEndedExecute(r SessionAPIReportSessionEndedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1320,7 +1320,7 @@ func (a *SessionAPIService) ReportSessionEndedExecute(r ApiReportSessionEndedReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiReportViewingRequest struct {
+type SessionAPIReportViewingRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	itemId *string
@@ -1328,18 +1328,18 @@ type ApiReportViewingRequest struct {
 }
 
 // The item id.
-func (r ApiReportViewingRequest) ItemId(itemId string) ApiReportViewingRequest {
+func (r SessionAPIReportViewingRequest) ItemId(itemId string) SessionAPIReportViewingRequest {
 	r.itemId = &itemId
 	return r
 }
 
 // The session id.
-func (r ApiReportViewingRequest) SessionId(sessionId string) ApiReportViewingRequest {
+func (r SessionAPIReportViewingRequest) SessionId(sessionId string) SessionAPIReportViewingRequest {
 	r.sessionId = &sessionId
 	return r
 }
 
-func (r ApiReportViewingRequest) Execute() (*http.Response, error) {
+func (r SessionAPIReportViewingRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ReportViewingExecute(r)
 }
 
@@ -1347,17 +1347,17 @@ func (r ApiReportViewingRequest) Execute() (*http.Response, error) {
 ReportViewing Reports that a session is viewing an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiReportViewingRequest
+ @return SessionAPIReportViewingRequest
 */
-func (a *SessionAPIService) ReportViewing(ctx context.Context) ApiReportViewingRequest {
-	return ApiReportViewingRequest{
+func (a *SessionAPIService) ReportViewing(ctx context.Context) SessionAPIReportViewingRequest {
+	return SessionAPIReportViewingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SessionAPIService) ReportViewingExecute(r ApiReportViewingRequest) (*http.Response, error) {
+func (a *SessionAPIService) ReportViewingExecute(r SessionAPIReportViewingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1441,7 +1441,7 @@ func (a *SessionAPIService) ReportViewingExecute(r ApiReportViewingRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendFullGeneralCommandRequest struct {
+type SessionAPISendFullGeneralCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
@@ -1449,12 +1449,12 @@ type ApiSendFullGeneralCommandRequest struct {
 }
 
 // The MediaBrowser.Model.Session.GeneralCommand.
-func (r ApiSendFullGeneralCommandRequest) JellyfinGeneralCommand(jellyfinGeneralCommand JellyfinGeneralCommand) ApiSendFullGeneralCommandRequest {
+func (r SessionAPISendFullGeneralCommandRequest) JellyfinGeneralCommand(jellyfinGeneralCommand JellyfinGeneralCommand) SessionAPISendFullGeneralCommandRequest {
 	r.jellyfinGeneralCommand = &jellyfinGeneralCommand
 	return r
 }
 
-func (r ApiSendFullGeneralCommandRequest) Execute() (*http.Response, error) {
+func (r SessionAPISendFullGeneralCommandRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SendFullGeneralCommandExecute(r)
 }
 
@@ -1463,10 +1463,10 @@ SendFullGeneralCommand Issues a full general command to a client.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
- @return ApiSendFullGeneralCommandRequest
+ @return SessionAPISendFullGeneralCommandRequest
 */
-func (a *SessionAPIService) SendFullGeneralCommand(ctx context.Context, sessionId string) ApiSendFullGeneralCommandRequest {
-	return ApiSendFullGeneralCommandRequest{
+func (a *SessionAPIService) SendFullGeneralCommand(ctx context.Context, sessionId string) SessionAPISendFullGeneralCommandRequest {
+	return SessionAPISendFullGeneralCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1474,7 +1474,7 @@ func (a *SessionAPIService) SendFullGeneralCommand(ctx context.Context, sessionI
 }
 
 // Execute executes the request
-func (a *SessionAPIService) SendFullGeneralCommandExecute(r ApiSendFullGeneralCommandRequest) (*http.Response, error) {
+func (a *SessionAPIService) SendFullGeneralCommandExecute(r SessionAPISendFullGeneralCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1557,14 +1557,14 @@ func (a *SessionAPIService) SendFullGeneralCommandExecute(r ApiSendFullGeneralCo
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendGeneralCommandRequest struct {
+type SessionAPISendGeneralCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
 	command JellyfinGeneralCommandType
 }
 
-func (r ApiSendGeneralCommandRequest) Execute() (*http.Response, error) {
+func (r SessionAPISendGeneralCommandRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SendGeneralCommandExecute(r)
 }
 
@@ -1574,10 +1574,10 @@ SendGeneralCommand Issues a general command to a client.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
  @param command The command to send.
- @return ApiSendGeneralCommandRequest
+ @return SessionAPISendGeneralCommandRequest
 */
-func (a *SessionAPIService) SendGeneralCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) ApiSendGeneralCommandRequest {
-	return ApiSendGeneralCommandRequest{
+func (a *SessionAPIService) SendGeneralCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) SessionAPISendGeneralCommandRequest {
+	return SessionAPISendGeneralCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1586,7 +1586,7 @@ func (a *SessionAPIService) SendGeneralCommand(ctx context.Context, sessionId st
 }
 
 // Execute executes the request
-func (a *SessionAPIService) SendGeneralCommandExecute(r ApiSendGeneralCommandRequest) (*http.Response, error) {
+func (a *SessionAPIService) SendGeneralCommandExecute(r SessionAPISendGeneralCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1665,7 +1665,7 @@ func (a *SessionAPIService) SendGeneralCommandExecute(r ApiSendGeneralCommandReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendMessageCommandRequest struct {
+type SessionAPISendMessageCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
@@ -1673,12 +1673,12 @@ type ApiSendMessageCommandRequest struct {
 }
 
 // The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs.
-func (r ApiSendMessageCommandRequest) JellyfinMessageCommand(jellyfinMessageCommand JellyfinMessageCommand) ApiSendMessageCommandRequest {
+func (r SessionAPISendMessageCommandRequest) JellyfinMessageCommand(jellyfinMessageCommand JellyfinMessageCommand) SessionAPISendMessageCommandRequest {
 	r.jellyfinMessageCommand = &jellyfinMessageCommand
 	return r
 }
 
-func (r ApiSendMessageCommandRequest) Execute() (*http.Response, error) {
+func (r SessionAPISendMessageCommandRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SendMessageCommandExecute(r)
 }
 
@@ -1687,10 +1687,10 @@ SendMessageCommand Issues a command to a client to display a message to the user
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
- @return ApiSendMessageCommandRequest
+ @return SessionAPISendMessageCommandRequest
 */
-func (a *SessionAPIService) SendMessageCommand(ctx context.Context, sessionId string) ApiSendMessageCommandRequest {
-	return ApiSendMessageCommandRequest{
+func (a *SessionAPIService) SendMessageCommand(ctx context.Context, sessionId string) SessionAPISendMessageCommandRequest {
+	return SessionAPISendMessageCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1698,7 +1698,7 @@ func (a *SessionAPIService) SendMessageCommand(ctx context.Context, sessionId st
 }
 
 // Execute executes the request
-func (a *SessionAPIService) SendMessageCommandExecute(r ApiSendMessageCommandRequest) (*http.Response, error) {
+func (a *SessionAPIService) SendMessageCommandExecute(r SessionAPISendMessageCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1781,7 +1781,7 @@ func (a *SessionAPIService) SendMessageCommandExecute(r ApiSendMessageCommandReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendPlaystateCommandRequest struct {
+type SessionAPISendPlaystateCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
@@ -1791,18 +1791,18 @@ type ApiSendPlaystateCommandRequest struct {
 }
 
 // The optional position ticks.
-func (r ApiSendPlaystateCommandRequest) SeekPositionTicks(seekPositionTicks int64) ApiSendPlaystateCommandRequest {
+func (r SessionAPISendPlaystateCommandRequest) SeekPositionTicks(seekPositionTicks int64) SessionAPISendPlaystateCommandRequest {
 	r.seekPositionTicks = &seekPositionTicks
 	return r
 }
 
 // The optional controlling user id.
-func (r ApiSendPlaystateCommandRequest) ControllingUserId(controllingUserId string) ApiSendPlaystateCommandRequest {
+func (r SessionAPISendPlaystateCommandRequest) ControllingUserId(controllingUserId string) SessionAPISendPlaystateCommandRequest {
 	r.controllingUserId = &controllingUserId
 	return r
 }
 
-func (r ApiSendPlaystateCommandRequest) Execute() (*http.Response, error) {
+func (r SessionAPISendPlaystateCommandRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SendPlaystateCommandExecute(r)
 }
 
@@ -1812,10 +1812,10 @@ SendPlaystateCommand Issues a playstate command to a client.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
  @param command The MediaBrowser.Model.Session.PlaystateCommand.
- @return ApiSendPlaystateCommandRequest
+ @return SessionAPISendPlaystateCommandRequest
 */
-func (a *SessionAPIService) SendPlaystateCommand(ctx context.Context, sessionId string, command JellyfinPlaystateCommand) ApiSendPlaystateCommandRequest {
-	return ApiSendPlaystateCommandRequest{
+func (a *SessionAPIService) SendPlaystateCommand(ctx context.Context, sessionId string, command JellyfinPlaystateCommand) SessionAPISendPlaystateCommandRequest {
+	return SessionAPISendPlaystateCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1824,7 +1824,7 @@ func (a *SessionAPIService) SendPlaystateCommand(ctx context.Context, sessionId 
 }
 
 // Execute executes the request
-func (a *SessionAPIService) SendPlaystateCommandExecute(r ApiSendPlaystateCommandRequest) (*http.Response, error) {
+func (a *SessionAPIService) SendPlaystateCommandExecute(r SessionAPISendPlaystateCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1909,14 +1909,14 @@ func (a *SessionAPIService) SendPlaystateCommandExecute(r ApiSendPlaystateComman
 	return localVarHTTPResponse, nil
 }
 
-type ApiSendSystemCommandRequest struct {
+type SessionAPISendSystemCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
 	command JellyfinGeneralCommandType
 }
 
-func (r ApiSendSystemCommandRequest) Execute() (*http.Response, error) {
+func (r SessionAPISendSystemCommandRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SendSystemCommandExecute(r)
 }
 
@@ -1926,10 +1926,10 @@ SendSystemCommand Issues a system command to a client.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param sessionId The session id.
  @param command The command to send.
- @return ApiSendSystemCommandRequest
+ @return SessionAPISendSystemCommandRequest
 */
-func (a *SessionAPIService) SendSystemCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) ApiSendSystemCommandRequest {
-	return ApiSendSystemCommandRequest{
+func (a *SessionAPIService) SendSystemCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) SessionAPISendSystemCommandRequest {
+	return SessionAPISendSystemCommandRequest{
 		ApiService: a,
 		ctx: ctx,
 		sessionId: sessionId,
@@ -1938,7 +1938,7 @@ func (a *SessionAPIService) SendSystemCommand(ctx context.Context, sessionId str
 }
 
 // Execute executes the request
-func (a *SessionAPIService) SendSystemCommandExecute(r ApiSendSystemCommandRequest) (*http.Response, error) {
+func (a *SessionAPIService) SendSystemCommandExecute(r SessionAPISendSystemCommandRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

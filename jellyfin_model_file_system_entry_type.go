@@ -20,10 +20,10 @@ type JellyfinFileSystemEntryType string
 
 // List of FileSystemEntryType
 const (
-	FILE JellyfinFileSystemEntryType = "File"
-	DIRECTORY JellyfinFileSystemEntryType = "Directory"
-	NETWORK_COMPUTER JellyfinFileSystemEntryType = "NetworkComputer"
-	NETWORK_SHARE JellyfinFileSystemEntryType = "NetworkShare"
+	JELLYFINFILESYSTEMENTRYTYPE_FILE JellyfinFileSystemEntryType = "File"
+	JELLYFINFILESYSTEMENTRYTYPE_DIRECTORY JellyfinFileSystemEntryType = "Directory"
+	JELLYFINFILESYSTEMENTRYTYPE_NETWORK_COMPUTER JellyfinFileSystemEntryType = "NetworkComputer"
+	JELLYFINFILESYSTEMENTRYTYPE_NETWORK_SHARE JellyfinFileSystemEntryType = "NetworkShare"
 )
 
 // All allowed values of JellyfinFileSystemEntryType enum

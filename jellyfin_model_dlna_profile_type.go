@@ -20,11 +20,11 @@ type JellyfinDlnaProfileType string
 
 // List of DlnaProfileType
 const (
-	AUDIO JellyfinDlnaProfileType = "Audio"
-	VIDEO JellyfinDlnaProfileType = "Video"
-	PHOTO JellyfinDlnaProfileType = "Photo"
-	SUBTITLE JellyfinDlnaProfileType = "Subtitle"
-	LYRIC JellyfinDlnaProfileType = "Lyric"
+	JELLYFINDLNAPROFILETYPE_AUDIO JellyfinDlnaProfileType = "Audio"
+	JELLYFINDLNAPROFILETYPE_VIDEO JellyfinDlnaProfileType = "Video"
+	JELLYFINDLNAPROFILETYPE_PHOTO JellyfinDlnaProfileType = "Photo"
+	JELLYFINDLNAPROFILETYPE_SUBTITLE JellyfinDlnaProfileType = "Subtitle"
+	JELLYFINDLNAPROFILETYPE_LYRIC JellyfinDlnaProfileType = "Lyric"
 )
 
 // All allowed values of JellyfinDlnaProfileType enum

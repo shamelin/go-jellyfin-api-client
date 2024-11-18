@@ -20,8 +20,8 @@ type JellyfinImageSavingConvention string
 
 // List of ImageSavingConvention
 const (
-	LEGACY JellyfinImageSavingConvention = "Legacy"
-	COMPATIBLE JellyfinImageSavingConvention = "Compatible"
+	JELLYFINIMAGESAVINGCONVENTION_LEGACY JellyfinImageSavingConvention = "Legacy"
+	JELLYFINIMAGESAVINGCONVENTION_COMPATIBLE JellyfinImageSavingConvention = "Compatible"
 )
 
 // All allowed values of JellyfinImageSavingConvention enum

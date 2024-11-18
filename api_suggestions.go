@@ -23,7 +23,7 @@ import (
 // SuggestionsAPIService SuggestionsAPI service
 type SuggestionsAPIService service
 
-type ApiGetSuggestionsRequest struct {
+type SuggestionsAPIGetSuggestionsRequest struct {
 	ctx context.Context
 	ApiService *SuggestionsAPIService
 	userId *string
@@ -35,42 +35,42 @@ type ApiGetSuggestionsRequest struct {
 }
 
 // The user id.
-func (r ApiGetSuggestionsRequest) UserId(userId string) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) UserId(userId string) SuggestionsAPIGetSuggestionsRequest {
 	r.userId = &userId
 	return r
 }
 
 // The media types.
-func (r ApiGetSuggestionsRequest) MediaType(mediaType []JellyfinMediaType) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) MediaType(mediaType []JellyfinMediaType) SuggestionsAPIGetSuggestionsRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The type.
-func (r ApiGetSuggestionsRequest) Type_(type_ []JellyfinBaseItemKind) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) Type_(type_ []JellyfinBaseItemKind) SuggestionsAPIGetSuggestionsRequest {
 	r.type_ = &type_
 	return r
 }
 
 // Optional. The start index.
-func (r ApiGetSuggestionsRequest) StartIndex(startIndex int32) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) StartIndex(startIndex int32) SuggestionsAPIGetSuggestionsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The limit.
-func (r ApiGetSuggestionsRequest) Limit(limit int32) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) Limit(limit int32) SuggestionsAPIGetSuggestionsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Whether to enable the total record count.
-func (r ApiGetSuggestionsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetSuggestionsRequest {
+func (r SuggestionsAPIGetSuggestionsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) SuggestionsAPIGetSuggestionsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetSuggestionsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r SuggestionsAPIGetSuggestionsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSuggestionsExecute(r)
 }
 
@@ -78,10 +78,10 @@ func (r ApiGetSuggestionsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *h
 GetSuggestions Gets suggestions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSuggestionsRequest
+ @return SuggestionsAPIGetSuggestionsRequest
 */
-func (a *SuggestionsAPIService) GetSuggestions(ctx context.Context) ApiGetSuggestionsRequest {
-	return ApiGetSuggestionsRequest{
+func (a *SuggestionsAPIService) GetSuggestions(ctx context.Context) SuggestionsAPIGetSuggestionsRequest {
+	return SuggestionsAPIGetSuggestionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -89,7 +89,7 @@ func (a *SuggestionsAPIService) GetSuggestions(ctx context.Context) ApiGetSugges
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *SuggestionsAPIService) GetSuggestionsExecute(r ApiGetSuggestionsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *SuggestionsAPIService) GetSuggestionsExecute(r SuggestionsAPIGetSuggestionsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

@@ -20,11 +20,11 @@ type JellyfinSubtitlePlaybackMode string
 
 // List of SubtitlePlaybackMode
 const (
-	DEFAULT JellyfinSubtitlePlaybackMode = "Default"
-	ALWAYS JellyfinSubtitlePlaybackMode = "Always"
-	ONLY_FORCED JellyfinSubtitlePlaybackMode = "OnlyForced"
-	NONE JellyfinSubtitlePlaybackMode = "None"
-	SMART JellyfinSubtitlePlaybackMode = "Smart"
+	JELLYFINSUBTITLEPLAYBACKMODE_DEFAULT JellyfinSubtitlePlaybackMode = "Default"
+	JELLYFINSUBTITLEPLAYBACKMODE_ALWAYS JellyfinSubtitlePlaybackMode = "Always"
+	JELLYFINSUBTITLEPLAYBACKMODE_ONLY_FORCED JellyfinSubtitlePlaybackMode = "OnlyForced"
+	JELLYFINSUBTITLEPLAYBACKMODE_NONE JellyfinSubtitlePlaybackMode = "None"
+	JELLYFINSUBTITLEPLAYBACKMODE_SMART JellyfinSubtitlePlaybackMode = "Smart"
 )
 
 // All allowed values of JellyfinSubtitlePlaybackMode enum

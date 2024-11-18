@@ -20,8 +20,8 @@ type JellyfinEncodingContext string
 
 // List of EncodingContext
 const (
-	STREAMING JellyfinEncodingContext = "Streaming"
-	STATIC JellyfinEncodingContext = "Static"
+	JELLYFINENCODINGCONTEXT_STREAMING JellyfinEncodingContext = "Streaming"
+	JELLYFINENCODINGCONTEXT_STATIC JellyfinEncodingContext = "Static"
 )
 
 // All allowed values of JellyfinEncodingContext enum

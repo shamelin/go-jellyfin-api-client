@@ -20,10 +20,10 @@ type JellyfinMetadataRefreshMode string
 
 // List of MetadataRefreshMode
 const (
-	NONE JellyfinMetadataRefreshMode = "None"
-	VALIDATION_ONLY JellyfinMetadataRefreshMode = "ValidationOnly"
-	DEFAULT JellyfinMetadataRefreshMode = "Default"
-	FULL_REFRESH JellyfinMetadataRefreshMode = "FullRefresh"
+	JELLYFINMETADATAREFRESHMODE_NONE JellyfinMetadataRefreshMode = "None"
+	JELLYFINMETADATAREFRESHMODE_VALIDATION_ONLY JellyfinMetadataRefreshMode = "ValidationOnly"
+	JELLYFINMETADATAREFRESHMODE_DEFAULT JellyfinMetadataRefreshMode = "Default"
+	JELLYFINMETADATAREFRESHMODE_FULL_REFRESH JellyfinMetadataRefreshMode = "FullRefresh"
 )
 
 // All allowed values of JellyfinMetadataRefreshMode enum

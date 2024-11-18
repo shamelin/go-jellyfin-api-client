@@ -20,11 +20,11 @@ type JellyfinSubtitleDeliveryMethod string
 
 // List of SubtitleDeliveryMethod
 const (
-	ENCODE JellyfinSubtitleDeliveryMethod = "Encode"
-	EMBED JellyfinSubtitleDeliveryMethod = "Embed"
-	EXTERNAL JellyfinSubtitleDeliveryMethod = "External"
-	HLS JellyfinSubtitleDeliveryMethod = "Hls"
-	DROP JellyfinSubtitleDeliveryMethod = "Drop"
+	JELLYFINSUBTITLEDELIVERYMETHOD_ENCODE JellyfinSubtitleDeliveryMethod = "Encode"
+	JELLYFINSUBTITLEDELIVERYMETHOD_EMBED JellyfinSubtitleDeliveryMethod = "Embed"
+	JELLYFINSUBTITLEDELIVERYMETHOD_EXTERNAL JellyfinSubtitleDeliveryMethod = "External"
+	JELLYFINSUBTITLEDELIVERYMETHOD_HLS JellyfinSubtitleDeliveryMethod = "Hls"
+	JELLYFINSUBTITLEDELIVERYMETHOD_DROP JellyfinSubtitleDeliveryMethod = "Drop"
 )
 
 // All allowed values of JellyfinSubtitleDeliveryMethod enum

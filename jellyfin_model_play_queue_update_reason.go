@@ -20,16 +20,16 @@ type JellyfinPlayQueueUpdateReason string
 
 // List of PlayQueueUpdateReason
 const (
-	NEW_PLAYLIST JellyfinPlayQueueUpdateReason = "NewPlaylist"
-	SET_CURRENT_ITEM JellyfinPlayQueueUpdateReason = "SetCurrentItem"
-	REMOVE_ITEMS JellyfinPlayQueueUpdateReason = "RemoveItems"
-	MOVE_ITEM JellyfinPlayQueueUpdateReason = "MoveItem"
-	QUEUE JellyfinPlayQueueUpdateReason = "Queue"
-	QUEUE_NEXT JellyfinPlayQueueUpdateReason = "QueueNext"
-	NEXT_ITEM JellyfinPlayQueueUpdateReason = "NextItem"
-	PREVIOUS_ITEM JellyfinPlayQueueUpdateReason = "PreviousItem"
-	REPEAT_MODE JellyfinPlayQueueUpdateReason = "RepeatMode"
-	SHUFFLE_MODE JellyfinPlayQueueUpdateReason = "ShuffleMode"
+	JELLYFINPLAYQUEUEUPDATEREASON_NEW_PLAYLIST JellyfinPlayQueueUpdateReason = "NewPlaylist"
+	JELLYFINPLAYQUEUEUPDATEREASON_SET_CURRENT_ITEM JellyfinPlayQueueUpdateReason = "SetCurrentItem"
+	JELLYFINPLAYQUEUEUPDATEREASON_REMOVE_ITEMS JellyfinPlayQueueUpdateReason = "RemoveItems"
+	JELLYFINPLAYQUEUEUPDATEREASON_MOVE_ITEM JellyfinPlayQueueUpdateReason = "MoveItem"
+	JELLYFINPLAYQUEUEUPDATEREASON_QUEUE JellyfinPlayQueueUpdateReason = "Queue"
+	JELLYFINPLAYQUEUEUPDATEREASON_QUEUE_NEXT JellyfinPlayQueueUpdateReason = "QueueNext"
+	JELLYFINPLAYQUEUEUPDATEREASON_NEXT_ITEM JellyfinPlayQueueUpdateReason = "NextItem"
+	JELLYFINPLAYQUEUEUPDATEREASON_PREVIOUS_ITEM JellyfinPlayQueueUpdateReason = "PreviousItem"
+	JELLYFINPLAYQUEUEUPDATEREASON_REPEAT_MODE JellyfinPlayQueueUpdateReason = "RepeatMode"
+	JELLYFINPLAYQUEUEUPDATEREASON_SHUFFLE_MODE JellyfinPlayQueueUpdateReason = "ShuffleMode"
 )
 
 // All allowed values of JellyfinPlayQueueUpdateReason enum

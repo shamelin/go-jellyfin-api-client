@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**NullableJellyfinJellyfinGroupUpdate**](JellyfinGroupUpdate.md) | Group update without data. | [optional] 
 **MessageId** | Pointer to **string** | Gets or sets the message id. | [optional] 
-**MessageType** | Pointer to [**JellyfinJellyfinSessionMessageType**](JellyfinSessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to SYNC_PLAY_GROUP_UPDATE]
+**MessageType** | Pointer to [**JellyfinJellyfinSessionMessageType**](JellyfinSessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to JELLYFINJELLYFINSESSIONMESSAGETYPE_SYNC_PLAY_GROUP_UPDATE]
 
 ## Methods
 

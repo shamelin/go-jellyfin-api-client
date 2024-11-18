@@ -20,11 +20,11 @@ type JellyfinMediaType string
 
 // List of MediaType
 const (
-	UNKNOWN JellyfinMediaType = "Unknown"
-	VIDEO JellyfinMediaType = "Video"
-	AUDIO JellyfinMediaType = "Audio"
-	PHOTO JellyfinMediaType = "Photo"
-	BOOK JellyfinMediaType = "Book"
+	JELLYFINMEDIATYPE_UNKNOWN JellyfinMediaType = "Unknown"
+	JELLYFINMEDIATYPE_VIDEO JellyfinMediaType = "Video"
+	JELLYFINMEDIATYPE_AUDIO JellyfinMediaType = "Audio"
+	JELLYFINMEDIATYPE_PHOTO JellyfinMediaType = "Photo"
+	JELLYFINMEDIATYPE_BOOK JellyfinMediaType = "Book"
 )
 
 // All allowed values of JellyfinMediaType enum

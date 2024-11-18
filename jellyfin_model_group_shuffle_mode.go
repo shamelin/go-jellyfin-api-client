@@ -20,8 +20,8 @@ type JellyfinGroupShuffleMode string
 
 // List of GroupShuffleMode
 const (
-	SORTED JellyfinGroupShuffleMode = "Sorted"
-	SHUFFLE JellyfinGroupShuffleMode = "Shuffle"
+	JELLYFINGROUPSHUFFLEMODE_SORTED JellyfinGroupShuffleMode = "Sorted"
+	JELLYFINGROUPSHUFFLEMODE_SHUFFLE JellyfinGroupShuffleMode = "Shuffle"
 )
 
 // All allowed values of JellyfinGroupShuffleMode enum

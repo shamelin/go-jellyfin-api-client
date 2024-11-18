@@ -20,10 +20,10 @@ type JellyfinTaskCompletionStatus string
 
 // List of TaskCompletionStatus
 const (
-	COMPLETED JellyfinTaskCompletionStatus = "Completed"
-	FAILED JellyfinTaskCompletionStatus = "Failed"
-	CANCELLED JellyfinTaskCompletionStatus = "Cancelled"
-	ABORTED JellyfinTaskCompletionStatus = "Aborted"
+	JELLYFINTASKCOMPLETIONSTATUS_COMPLETED JellyfinTaskCompletionStatus = "Completed"
+	JELLYFINTASKCOMPLETIONSTATUS_FAILED JellyfinTaskCompletionStatus = "Failed"
+	JELLYFINTASKCOMPLETIONSTATUS_CANCELLED JellyfinTaskCompletionStatus = "Cancelled"
+	JELLYFINTASKCOMPLETIONSTATUS_ABORTED JellyfinTaskCompletionStatus = "Aborted"
 )
 
 // All allowed values of JellyfinTaskCompletionStatus enum

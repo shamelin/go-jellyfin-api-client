@@ -20,15 +20,15 @@ type JellyfinItemFilter string
 
 // List of ItemFilter
 const (
-	IS_FOLDER JellyfinItemFilter = "IsFolder"
-	IS_NOT_FOLDER JellyfinItemFilter = "IsNotFolder"
-	IS_UNPLAYED JellyfinItemFilter = "IsUnplayed"
-	IS_PLAYED JellyfinItemFilter = "IsPlayed"
-	IS_FAVORITE JellyfinItemFilter = "IsFavorite"
-	IS_RESUMABLE JellyfinItemFilter = "IsResumable"
-	LIKES JellyfinItemFilter = "Likes"
-	DISLIKES JellyfinItemFilter = "Dislikes"
-	IS_FAVORITE_OR_LIKES JellyfinItemFilter = "IsFavoriteOrLikes"
+	JELLYFINITEMFILTER_IS_FOLDER JellyfinItemFilter = "IsFolder"
+	JELLYFINITEMFILTER_IS_NOT_FOLDER JellyfinItemFilter = "IsNotFolder"
+	JELLYFINITEMFILTER_IS_UNPLAYED JellyfinItemFilter = "IsUnplayed"
+	JELLYFINITEMFILTER_IS_PLAYED JellyfinItemFilter = "IsPlayed"
+	JELLYFINITEMFILTER_IS_FAVORITE JellyfinItemFilter = "IsFavorite"
+	JELLYFINITEMFILTER_IS_RESUMABLE JellyfinItemFilter = "IsResumable"
+	JELLYFINITEMFILTER_LIKES JellyfinItemFilter = "Likes"
+	JELLYFINITEMFILTER_DISLIKES JellyfinItemFilter = "Dislikes"
+	JELLYFINITEMFILTER_IS_FAVORITE_OR_LIKES JellyfinItemFilter = "IsFavoriteOrLikes"
 )
 
 // All allowed values of JellyfinItemFilter enum

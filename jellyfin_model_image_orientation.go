@@ -20,14 +20,14 @@ type JellyfinImageOrientation string
 
 // List of ImageOrientation
 const (
-	TOP_LEFT JellyfinImageOrientation = "TopLeft"
-	TOP_RIGHT JellyfinImageOrientation = "TopRight"
-	BOTTOM_RIGHT JellyfinImageOrientation = "BottomRight"
-	BOTTOM_LEFT JellyfinImageOrientation = "BottomLeft"
-	LEFT_TOP JellyfinImageOrientation = "LeftTop"
-	RIGHT_TOP JellyfinImageOrientation = "RightTop"
-	RIGHT_BOTTOM JellyfinImageOrientation = "RightBottom"
-	LEFT_BOTTOM JellyfinImageOrientation = "LeftBottom"
+	JELLYFINIMAGEORIENTATION_TOP_LEFT JellyfinImageOrientation = "TopLeft"
+	JELLYFINIMAGEORIENTATION_TOP_RIGHT JellyfinImageOrientation = "TopRight"
+	JELLYFINIMAGEORIENTATION_BOTTOM_RIGHT JellyfinImageOrientation = "BottomRight"
+	JELLYFINIMAGEORIENTATION_BOTTOM_LEFT JellyfinImageOrientation = "BottomLeft"
+	JELLYFINIMAGEORIENTATION_LEFT_TOP JellyfinImageOrientation = "LeftTop"
+	JELLYFINIMAGEORIENTATION_RIGHT_TOP JellyfinImageOrientation = "RightTop"
+	JELLYFINIMAGEORIENTATION_RIGHT_BOTTOM JellyfinImageOrientation = "RightBottom"
+	JELLYFINIMAGEORIENTATION_LEFT_BOTTOM JellyfinImageOrientation = "LeftBottom"
 )
 
 // All allowed values of JellyfinImageOrientation enum

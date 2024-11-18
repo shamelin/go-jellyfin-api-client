@@ -24,7 +24,7 @@ import (
 // UserLibraryAPIService UserLibraryAPI service
 type UserLibraryAPIService service
 
-type ApiDeleteUserItemRatingRequest struct {
+type UserLibraryAPIDeleteUserItemRatingRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -32,12 +32,12 @@ type ApiDeleteUserItemRatingRequest struct {
 }
 
 // User id.
-func (r ApiDeleteUserItemRatingRequest) UserId(userId string) ApiDeleteUserItemRatingRequest {
+func (r UserLibraryAPIDeleteUserItemRatingRequest) UserId(userId string) UserLibraryAPIDeleteUserItemRatingRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiDeleteUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r UserLibraryAPIDeleteUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.DeleteUserItemRatingExecute(r)
 }
 
@@ -46,10 +46,10 @@ DeleteUserItemRating Deletes a user's saved personal rating for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiDeleteUserItemRatingRequest
+ @return UserLibraryAPIDeleteUserItemRatingRequest
 */
-func (a *UserLibraryAPIService) DeleteUserItemRating(ctx context.Context, itemId string) ApiDeleteUserItemRatingRequest {
-	return ApiDeleteUserItemRatingRequest{
+func (a *UserLibraryAPIService) DeleteUserItemRating(ctx context.Context, itemId string) UserLibraryAPIDeleteUserItemRatingRequest {
+	return UserLibraryAPIDeleteUserItemRatingRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -58,7 +58,7 @@ func (a *UserLibraryAPIService) DeleteUserItemRating(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r UserLibraryAPIDeleteUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetIntrosRequest struct {
+type UserLibraryAPIGetIntrosRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -157,12 +157,12 @@ type ApiGetIntrosRequest struct {
 }
 
 // User id.
-func (r ApiGetIntrosRequest) UserId(userId string) ApiGetIntrosRequest {
+func (r UserLibraryAPIGetIntrosRequest) UserId(userId string) UserLibraryAPIGetIntrosRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetIntrosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r UserLibraryAPIGetIntrosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetIntrosExecute(r)
 }
 
@@ -171,10 +171,10 @@ GetIntros Gets intros to play before the main media item plays.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetIntrosRequest
+ @return UserLibraryAPIGetIntrosRequest
 */
-func (a *UserLibraryAPIService) GetIntros(ctx context.Context, itemId string) ApiGetIntrosRequest {
-	return ApiGetIntrosRequest{
+func (a *UserLibraryAPIService) GetIntros(ctx context.Context, itemId string) UserLibraryAPIGetIntrosRequest {
+	return UserLibraryAPIGetIntrosRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -183,7 +183,7 @@ func (a *UserLibraryAPIService) GetIntros(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *UserLibraryAPIService) GetIntrosExecute(r UserLibraryAPIGetIntrosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -274,7 +274,7 @@ func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*Jellyf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemRequest struct {
+type UserLibraryAPIGetItemRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -282,12 +282,12 @@ type ApiGetItemRequest struct {
 }
 
 // User id.
-func (r ApiGetItemRequest) UserId(userId string) ApiGetItemRequest {
+func (r UserLibraryAPIGetItemRequest) UserId(userId string) UserLibraryAPIGetItemRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetItemRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r UserLibraryAPIGetItemRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetItemExecute(r)
 }
 
@@ -296,10 +296,10 @@ GetItem Gets an item from a user's library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetItemRequest
+ @return UserLibraryAPIGetItemRequest
 */
-func (a *UserLibraryAPIService) GetItem(ctx context.Context, itemId string) ApiGetItemRequest {
-	return ApiGetItemRequest{
+func (a *UserLibraryAPIService) GetItem(ctx context.Context, itemId string) UserLibraryAPIGetItemRequest {
+	return UserLibraryAPIGetItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -308,7 +308,7 @@ func (a *UserLibraryAPIService) GetItem(ctx context.Context, itemId string) ApiG
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *UserLibraryAPIService) GetItemExecute(r UserLibraryAPIGetItemRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -399,7 +399,7 @@ func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*JellyfinBa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLatestMediaRequest struct {
+type UserLibraryAPIGetLatestMediaRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	userId *string
@@ -416,72 +416,72 @@ type ApiGetLatestMediaRequest struct {
 }
 
 // User id.
-func (r ApiGetLatestMediaRequest) UserId(userId string) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) UserId(userId string) UserLibraryAPIGetLatestMediaRequest {
 	r.userId = &userId
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetLatestMediaRequest) ParentId(parentId string) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) ParentId(parentId string) UserLibraryAPIGetLatestMediaRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLatestMediaRequest) Fields(fields []JellyfinItemFields) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) Fields(fields []JellyfinItemFields) UserLibraryAPIGetLatestMediaRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetLatestMediaRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) UserLibraryAPIGetLatestMediaRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Filter by items that are played, or not.
-func (r ApiGetLatestMediaRequest) IsPlayed(isPlayed bool) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) IsPlayed(isPlayed bool) UserLibraryAPIGetLatestMediaRequest {
 	r.isPlayed = &isPlayed
 	return r
 }
 
 // Optional. include image information in output.
-func (r ApiGetLatestMediaRequest) EnableImages(enableImages bool) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) EnableImages(enableImages bool) UserLibraryAPIGetLatestMediaRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. the max number of images to return, per image type.
-func (r ApiGetLatestMediaRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) ImageTypeLimit(imageTypeLimit int32) UserLibraryAPIGetLatestMediaRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetLatestMediaRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) UserLibraryAPIGetLatestMediaRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. include user data.
-func (r ApiGetLatestMediaRequest) EnableUserData(enableUserData bool) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) EnableUserData(enableUserData bool) UserLibraryAPIGetLatestMediaRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Return item limit.
-func (r ApiGetLatestMediaRequest) Limit(limit int32) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) Limit(limit int32) UserLibraryAPIGetLatestMediaRequest {
 	r.limit = &limit
 	return r
 }
 
 // Whether or not to group items into a parent container.
-func (r ApiGetLatestMediaRequest) GroupItems(groupItems bool) ApiGetLatestMediaRequest {
+func (r UserLibraryAPIGetLatestMediaRequest) GroupItems(groupItems bool) UserLibraryAPIGetLatestMediaRequest {
 	r.groupItems = &groupItems
 	return r
 }
 
-func (r ApiGetLatestMediaRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
+func (r UserLibraryAPIGetLatestMediaRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetLatestMediaExecute(r)
 }
 
@@ -489,10 +489,10 @@ func (r ApiGetLatestMediaRequest) Execute() ([]JellyfinBaseItemDto, *http.Respon
 GetLatestMedia Gets latest media.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLatestMediaRequest
+ @return UserLibraryAPIGetLatestMediaRequest
 */
-func (a *UserLibraryAPIService) GetLatestMedia(ctx context.Context) ApiGetLatestMediaRequest {
-	return ApiGetLatestMediaRequest{
+func (a *UserLibraryAPIService) GetLatestMedia(ctx context.Context) UserLibraryAPIGetLatestMediaRequest {
+	return UserLibraryAPIGetLatestMediaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -500,7 +500,7 @@ func (a *UserLibraryAPIService) GetLatestMedia(ctx context.Context) ApiGetLatest
 
 // Execute executes the request
 //  @return []JellyfinBaseItemDto
-func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
+func (a *UserLibraryAPIService) GetLatestMediaExecute(r UserLibraryAPIGetLatestMediaRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -650,7 +650,7 @@ func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLocalTrailersRequest struct {
+type UserLibraryAPIGetLocalTrailersRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -658,12 +658,12 @@ type ApiGetLocalTrailersRequest struct {
 }
 
 // User id.
-func (r ApiGetLocalTrailersRequest) UserId(userId string) ApiGetLocalTrailersRequest {
+func (r UserLibraryAPIGetLocalTrailersRequest) UserId(userId string) UserLibraryAPIGetLocalTrailersRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetLocalTrailersRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
+func (r UserLibraryAPIGetLocalTrailersRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetLocalTrailersExecute(r)
 }
 
@@ -672,10 +672,10 @@ GetLocalTrailers Gets local trailers for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetLocalTrailersRequest
+ @return UserLibraryAPIGetLocalTrailersRequest
 */
-func (a *UserLibraryAPIService) GetLocalTrailers(ctx context.Context, itemId string) ApiGetLocalTrailersRequest {
-	return ApiGetLocalTrailersRequest{
+func (a *UserLibraryAPIService) GetLocalTrailers(ctx context.Context, itemId string) UserLibraryAPIGetLocalTrailersRequest {
+	return UserLibraryAPIGetLocalTrailersRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -684,7 +684,7 @@ func (a *UserLibraryAPIService) GetLocalTrailers(ctx context.Context, itemId str
 
 // Execute executes the request
 //  @return []JellyfinBaseItemDto
-func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
+func (a *UserLibraryAPIService) GetLocalTrailersExecute(r UserLibraryAPIGetLocalTrailersRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -775,19 +775,19 @@ func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRootFolderRequest struct {
+type UserLibraryAPIGetRootFolderRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	userId *string
 }
 
 // User id.
-func (r ApiGetRootFolderRequest) UserId(userId string) ApiGetRootFolderRequest {
+func (r UserLibraryAPIGetRootFolderRequest) UserId(userId string) UserLibraryAPIGetRootFolderRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetRootFolderRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r UserLibraryAPIGetRootFolderRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetRootFolderExecute(r)
 }
 
@@ -795,10 +795,10 @@ func (r ApiGetRootFolderRequest) Execute() (*JellyfinBaseItemDto, *http.Response
 GetRootFolder Gets the root folder from a user's library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRootFolderRequest
+ @return UserLibraryAPIGetRootFolderRequest
 */
-func (a *UserLibraryAPIService) GetRootFolder(ctx context.Context) ApiGetRootFolderRequest {
-	return ApiGetRootFolderRequest{
+func (a *UserLibraryAPIService) GetRootFolder(ctx context.Context) UserLibraryAPIGetRootFolderRequest {
+	return UserLibraryAPIGetRootFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -806,7 +806,7 @@ func (a *UserLibraryAPIService) GetRootFolder(ctx context.Context) ApiGetRootFol
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *UserLibraryAPIService) GetRootFolderExecute(r UserLibraryAPIGetRootFolderRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -896,7 +896,7 @@ func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSpecialFeaturesRequest struct {
+type UserLibraryAPIGetSpecialFeaturesRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -904,12 +904,12 @@ type ApiGetSpecialFeaturesRequest struct {
 }
 
 // User id.
-func (r ApiGetSpecialFeaturesRequest) UserId(userId string) ApiGetSpecialFeaturesRequest {
+func (r UserLibraryAPIGetSpecialFeaturesRequest) UserId(userId string) UserLibraryAPIGetSpecialFeaturesRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetSpecialFeaturesRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
+func (r UserLibraryAPIGetSpecialFeaturesRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetSpecialFeaturesExecute(r)
 }
 
@@ -918,10 +918,10 @@ GetSpecialFeatures Gets special features for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiGetSpecialFeaturesRequest
+ @return UserLibraryAPIGetSpecialFeaturesRequest
 */
-func (a *UserLibraryAPIService) GetSpecialFeatures(ctx context.Context, itemId string) ApiGetSpecialFeaturesRequest {
-	return ApiGetSpecialFeaturesRequest{
+func (a *UserLibraryAPIService) GetSpecialFeatures(ctx context.Context, itemId string) UserLibraryAPIGetSpecialFeaturesRequest {
+	return UserLibraryAPIGetSpecialFeaturesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -930,7 +930,7 @@ func (a *UserLibraryAPIService) GetSpecialFeatures(ctx context.Context, itemId s
 
 // Execute executes the request
 //  @return []JellyfinBaseItemDto
-func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeaturesRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
+func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r UserLibraryAPIGetSpecialFeaturesRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1021,7 +1021,7 @@ func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeature
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarkFavoriteItemRequest struct {
+type UserLibraryAPIMarkFavoriteItemRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -1029,12 +1029,12 @@ type ApiMarkFavoriteItemRequest struct {
 }
 
 // User id.
-func (r ApiMarkFavoriteItemRequest) UserId(userId string) ApiMarkFavoriteItemRequest {
+func (r UserLibraryAPIMarkFavoriteItemRequest) UserId(userId string) UserLibraryAPIMarkFavoriteItemRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiMarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r UserLibraryAPIMarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkFavoriteItemExecute(r)
 }
 
@@ -1043,10 +1043,10 @@ MarkFavoriteItem Marks an item as a favorite.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiMarkFavoriteItemRequest
+ @return UserLibraryAPIMarkFavoriteItemRequest
 */
-func (a *UserLibraryAPIService) MarkFavoriteItem(ctx context.Context, itemId string) ApiMarkFavoriteItemRequest {
-	return ApiMarkFavoriteItemRequest{
+func (a *UserLibraryAPIService) MarkFavoriteItem(ctx context.Context, itemId string) UserLibraryAPIMarkFavoriteItemRequest {
+	return UserLibraryAPIMarkFavoriteItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1055,7 +1055,7 @@ func (a *UserLibraryAPIService) MarkFavoriteItem(ctx context.Context, itemId str
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r UserLibraryAPIMarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1146,7 +1146,7 @@ func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUnmarkFavoriteItemRequest struct {
+type UserLibraryAPIUnmarkFavoriteItemRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -1154,12 +1154,12 @@ type ApiUnmarkFavoriteItemRequest struct {
 }
 
 // User id.
-func (r ApiUnmarkFavoriteItemRequest) UserId(userId string) ApiUnmarkFavoriteItemRequest {
+func (r UserLibraryAPIUnmarkFavoriteItemRequest) UserId(userId string) UserLibraryAPIUnmarkFavoriteItemRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUnmarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r UserLibraryAPIUnmarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UnmarkFavoriteItemExecute(r)
 }
 
@@ -1168,10 +1168,10 @@ UnmarkFavoriteItem Unmarks item as a favorite.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiUnmarkFavoriteItemRequest
+ @return UserLibraryAPIUnmarkFavoriteItemRequest
 */
-func (a *UserLibraryAPIService) UnmarkFavoriteItem(ctx context.Context, itemId string) ApiUnmarkFavoriteItemRequest {
-	return ApiUnmarkFavoriteItemRequest{
+func (a *UserLibraryAPIService) UnmarkFavoriteItem(ctx context.Context, itemId string) UserLibraryAPIUnmarkFavoriteItemRequest {
+	return UserLibraryAPIUnmarkFavoriteItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1180,7 +1180,7 @@ func (a *UserLibraryAPIService) UnmarkFavoriteItem(ctx context.Context, itemId s
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r UserLibraryAPIUnmarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -1271,7 +1271,7 @@ func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteIte
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateUserItemRatingRequest struct {
+type UserLibraryAPIUpdateUserItemRatingRequest struct {
 	ctx context.Context
 	ApiService *UserLibraryAPIService
 	itemId string
@@ -1280,18 +1280,18 @@ type ApiUpdateUserItemRatingRequest struct {
 }
 
 // User id.
-func (r ApiUpdateUserItemRatingRequest) UserId(userId string) ApiUpdateUserItemRatingRequest {
+func (r UserLibraryAPIUpdateUserItemRatingRequest) UserId(userId string) UserLibraryAPIUpdateUserItemRatingRequest {
 	r.userId = &userId
 	return r
 }
 
 // Whether this M:Jellyfin.Api.Controllers.UserLibraryController.UpdateUserItemRating(System.Nullable{System.Guid},System.Guid,System.Nullable{System.Boolean}) is likes.
-func (r ApiUpdateUserItemRatingRequest) Likes(likes bool) ApiUpdateUserItemRatingRequest {
+func (r UserLibraryAPIUpdateUserItemRatingRequest) Likes(likes bool) UserLibraryAPIUpdateUserItemRatingRequest {
 	r.likes = &likes
 	return r
 }
 
-func (r ApiUpdateUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r UserLibraryAPIUpdateUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UpdateUserItemRatingExecute(r)
 }
 
@@ -1300,10 +1300,10 @@ UpdateUserItemRating Updates a user's rating for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId Item id.
- @return ApiUpdateUserItemRatingRequest
+ @return UserLibraryAPIUpdateUserItemRatingRequest
 */
-func (a *UserLibraryAPIService) UpdateUserItemRating(ctx context.Context, itemId string) ApiUpdateUserItemRatingRequest {
-	return ApiUpdateUserItemRatingRequest{
+func (a *UserLibraryAPIService) UpdateUserItemRating(ctx context.Context, itemId string) UserLibraryAPIUpdateUserItemRatingRequest {
+	return UserLibraryAPIUpdateUserItemRatingRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1312,7 +1312,7 @@ func (a *UserLibraryAPIService) UpdateUserItemRating(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *UserLibraryAPIService) UpdateUserItemRatingExecute(r ApiUpdateUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *UserLibraryAPIService) UpdateUserItemRatingExecute(r UserLibraryAPIUpdateUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

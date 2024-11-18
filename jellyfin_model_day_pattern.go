@@ -20,9 +20,9 @@ type JellyfinDayPattern string
 
 // List of DayPattern
 const (
-	DAILY JellyfinDayPattern = "Daily"
-	WEEKDAYS JellyfinDayPattern = "Weekdays"
-	WEEKENDS JellyfinDayPattern = "Weekends"
+	JELLYFINDAYPATTERN_DAILY JellyfinDayPattern = "Daily"
+	JELLYFINDAYPATTERN_WEEKDAYS JellyfinDayPattern = "Weekdays"
+	JELLYFINDAYPATTERN_WEEKENDS JellyfinDayPattern = "Weekends"
 )
 
 // All allowed values of JellyfinDayPattern enum

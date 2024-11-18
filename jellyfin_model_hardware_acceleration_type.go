@@ -20,14 +20,14 @@ type JellyfinHardwareAccelerationType string
 
 // List of HardwareAccelerationType
 const (
-	NONE JellyfinHardwareAccelerationType = "none"
-	AMF JellyfinHardwareAccelerationType = "amf"
-	QSV JellyfinHardwareAccelerationType = "qsv"
-	NVENC JellyfinHardwareAccelerationType = "nvenc"
-	V4L2M2M JellyfinHardwareAccelerationType = "v4l2m2m"
-	VAAPI JellyfinHardwareAccelerationType = "vaapi"
-	VIDEOTOOLBOX JellyfinHardwareAccelerationType = "videotoolbox"
-	RKMPP JellyfinHardwareAccelerationType = "rkmpp"
+	JELLYFINHARDWAREACCELERATIONTYPE_NONE JellyfinHardwareAccelerationType = "none"
+	JELLYFINHARDWAREACCELERATIONTYPE_AMF JellyfinHardwareAccelerationType = "amf"
+	JELLYFINHARDWAREACCELERATIONTYPE_QSV JellyfinHardwareAccelerationType = "qsv"
+	JELLYFINHARDWAREACCELERATIONTYPE_NVENC JellyfinHardwareAccelerationType = "nvenc"
+	JELLYFINHARDWAREACCELERATIONTYPE_V4L2M2M JellyfinHardwareAccelerationType = "v4l2m2m"
+	JELLYFINHARDWAREACCELERATIONTYPE_VAAPI JellyfinHardwareAccelerationType = "vaapi"
+	JELLYFINHARDWAREACCELERATIONTYPE_VIDEOTOOLBOX JellyfinHardwareAccelerationType = "videotoolbox"
+	JELLYFINHARDWAREACCELERATIONTYPE_RKMPP JellyfinHardwareAccelerationType = "rkmpp"
 )
 
 // All allowed values of JellyfinHardwareAccelerationType enum

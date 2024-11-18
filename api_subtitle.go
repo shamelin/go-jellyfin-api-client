@@ -24,14 +24,14 @@ import (
 // SubtitleAPIService SubtitleAPI service
 type SubtitleAPIService service
 
-type ApiDeleteSubtitleRequest struct {
+type SubtitleAPIDeleteSubtitleRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
 	index int32
 }
 
-func (r ApiDeleteSubtitleRequest) Execute() (*http.Response, error) {
+func (r SubtitleAPIDeleteSubtitleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSubtitleExecute(r)
 }
 
@@ -41,10 +41,10 @@ DeleteSubtitle Deletes an external subtitle file.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param index The index of the subtitle file.
- @return ApiDeleteSubtitleRequest
+ @return SubtitleAPIDeleteSubtitleRequest
 */
-func (a *SubtitleAPIService) DeleteSubtitle(ctx context.Context, itemId string, index int32) ApiDeleteSubtitleRequest {
-	return ApiDeleteSubtitleRequest{
+func (a *SubtitleAPIService) DeleteSubtitle(ctx context.Context, itemId string, index int32) SubtitleAPIDeleteSubtitleRequest {
+	return SubtitleAPIDeleteSubtitleRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -53,7 +53,7 @@ func (a *SubtitleAPIService) DeleteSubtitle(ctx context.Context, itemId string, 
 }
 
 // Execute executes the request
-func (a *SubtitleAPIService) DeleteSubtitleExecute(r ApiDeleteSubtitleRequest) (*http.Response, error) {
+func (a *SubtitleAPIService) DeleteSubtitleExecute(r SubtitleAPIDeleteSubtitleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -143,14 +143,14 @@ func (a *SubtitleAPIService) DeleteSubtitleExecute(r ApiDeleteSubtitleRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiDownloadRemoteSubtitlesRequest struct {
+type SubtitleAPIDownloadRemoteSubtitlesRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
 	subtitleId string
 }
 
-func (r ApiDownloadRemoteSubtitlesRequest) Execute() (*http.Response, error) {
+func (r SubtitleAPIDownloadRemoteSubtitlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DownloadRemoteSubtitlesExecute(r)
 }
 
@@ -160,10 +160,10 @@ DownloadRemoteSubtitles Downloads a remote subtitle.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param subtitleId The subtitle id.
- @return ApiDownloadRemoteSubtitlesRequest
+ @return SubtitleAPIDownloadRemoteSubtitlesRequest
 */
-func (a *SubtitleAPIService) DownloadRemoteSubtitles(ctx context.Context, itemId string, subtitleId string) ApiDownloadRemoteSubtitlesRequest {
-	return ApiDownloadRemoteSubtitlesRequest{
+func (a *SubtitleAPIService) DownloadRemoteSubtitles(ctx context.Context, itemId string, subtitleId string) SubtitleAPIDownloadRemoteSubtitlesRequest {
+	return SubtitleAPIDownloadRemoteSubtitlesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -172,7 +172,7 @@ func (a *SubtitleAPIService) DownloadRemoteSubtitles(ctx context.Context, itemId
 }
 
 // Execute executes the request
-func (a *SubtitleAPIService) DownloadRemoteSubtitlesExecute(r ApiDownloadRemoteSubtitlesRequest) (*http.Response, error) {
+func (a *SubtitleAPIService) DownloadRemoteSubtitlesExecute(r SubtitleAPIDownloadRemoteSubtitlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -262,13 +262,13 @@ func (a *SubtitleAPIService) DownloadRemoteSubtitlesExecute(r ApiDownloadRemoteS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetFallbackFontRequest struct {
+type SubtitleAPIGetFallbackFontRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	name string
 }
 
-func (r ApiGetFallbackFontRequest) Execute() (*os.File, *http.Response, error) {
+func (r SubtitleAPIGetFallbackFontRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetFallbackFontExecute(r)
 }
 
@@ -277,10 +277,10 @@ GetFallbackFont Gets a fallback font file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name The name of the fallback font file to get.
- @return ApiGetFallbackFontRequest
+ @return SubtitleAPIGetFallbackFontRequest
 */
-func (a *SubtitleAPIService) GetFallbackFont(ctx context.Context, name string) ApiGetFallbackFontRequest {
-	return ApiGetFallbackFontRequest{
+func (a *SubtitleAPIService) GetFallbackFont(ctx context.Context, name string) SubtitleAPIGetFallbackFontRequest {
+	return SubtitleAPIGetFallbackFontRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -289,7 +289,7 @@ func (a *SubtitleAPIService) GetFallbackFont(ctx context.Context, name string) A
 
 // Execute executes the request
 //  @return *os.File
-func (a *SubtitleAPIService) GetFallbackFontExecute(r ApiGetFallbackFontRequest) (*os.File, *http.Response, error) {
+func (a *SubtitleAPIService) GetFallbackFontExecute(r SubtitleAPIGetFallbackFontRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -377,12 +377,12 @@ func (a *SubtitleAPIService) GetFallbackFontExecute(r ApiGetFallbackFontRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetFallbackFontListRequest struct {
+type SubtitleAPIGetFallbackFontListRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 }
 
-func (r ApiGetFallbackFontListRequest) Execute() ([]JellyfinFontFile, *http.Response, error) {
+func (r SubtitleAPIGetFallbackFontListRequest) Execute() ([]JellyfinFontFile, *http.Response, error) {
 	return r.ApiService.GetFallbackFontListExecute(r)
 }
 
@@ -390,10 +390,10 @@ func (r ApiGetFallbackFontListRequest) Execute() ([]JellyfinFontFile, *http.Resp
 GetFallbackFontList Gets a list of available fallback font files.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFallbackFontListRequest
+ @return SubtitleAPIGetFallbackFontListRequest
 */
-func (a *SubtitleAPIService) GetFallbackFontList(ctx context.Context) ApiGetFallbackFontListRequest {
-	return ApiGetFallbackFontListRequest{
+func (a *SubtitleAPIService) GetFallbackFontList(ctx context.Context) SubtitleAPIGetFallbackFontListRequest {
+	return SubtitleAPIGetFallbackFontListRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -401,7 +401,7 @@ func (a *SubtitleAPIService) GetFallbackFontList(ctx context.Context) ApiGetFall
 
 // Execute executes the request
 //  @return []JellyfinFontFile
-func (a *SubtitleAPIService) GetFallbackFontListExecute(r ApiGetFallbackFontListRequest) ([]JellyfinFontFile, *http.Response, error) {
+func (a *SubtitleAPIService) GetFallbackFontListExecute(r SubtitleAPIGetFallbackFontListRequest) ([]JellyfinFontFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -488,13 +488,13 @@ func (a *SubtitleAPIService) GetFallbackFontListExecute(r ApiGetFallbackFontList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetRemoteSubtitlesRequest struct {
+type SubtitleAPIGetRemoteSubtitlesRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	subtitleId string
 }
 
-func (r ApiGetRemoteSubtitlesRequest) Execute() (*os.File, *http.Response, error) {
+func (r SubtitleAPIGetRemoteSubtitlesRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetRemoteSubtitlesExecute(r)
 }
 
@@ -503,10 +503,10 @@ GetRemoteSubtitles Gets the remote subtitles.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param subtitleId The item id.
- @return ApiGetRemoteSubtitlesRequest
+ @return SubtitleAPIGetRemoteSubtitlesRequest
 */
-func (a *SubtitleAPIService) GetRemoteSubtitles(ctx context.Context, subtitleId string) ApiGetRemoteSubtitlesRequest {
-	return ApiGetRemoteSubtitlesRequest{
+func (a *SubtitleAPIService) GetRemoteSubtitles(ctx context.Context, subtitleId string) SubtitleAPIGetRemoteSubtitlesRequest {
+	return SubtitleAPIGetRemoteSubtitlesRequest{
 		ApiService: a,
 		ctx: ctx,
 		subtitleId: subtitleId,
@@ -515,7 +515,7 @@ func (a *SubtitleAPIService) GetRemoteSubtitles(ctx context.Context, subtitleId 
 
 // Execute executes the request
 //  @return *os.File
-func (a *SubtitleAPIService) GetRemoteSubtitlesExecute(r ApiGetRemoteSubtitlesRequest) (*os.File, *http.Response, error) {
+func (a *SubtitleAPIService) GetRemoteSubtitlesExecute(r SubtitleAPIGetRemoteSubtitlesRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -603,7 +603,7 @@ func (a *SubtitleAPIService) GetRemoteSubtitlesExecute(r ApiGetRemoteSubtitlesRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSubtitleRequest struct {
+type SubtitleAPIGetSubtitleRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	routeItemId string
@@ -622,57 +622,57 @@ type ApiGetSubtitleRequest struct {
 
 // The item id.
 // Deprecated
-func (r ApiGetSubtitleRequest) ItemId(itemId string) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) ItemId(itemId string) SubtitleAPIGetSubtitleRequest {
 	r.itemId = &itemId
 	return r
 }
 
 // The media source id.
 // Deprecated
-func (r ApiGetSubtitleRequest) MediaSourceId(mediaSourceId string) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) MediaSourceId(mediaSourceId string) SubtitleAPIGetSubtitleRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The subtitle stream index.
 // Deprecated
-func (r ApiGetSubtitleRequest) Index(index int32) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) Index(index int32) SubtitleAPIGetSubtitleRequest {
 	r.index = &index
 	return r
 }
 
 // The format of the returned subtitle.
 // Deprecated
-func (r ApiGetSubtitleRequest) Format(format string) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) Format(format string) SubtitleAPIGetSubtitleRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. The end position of the subtitle in ticks.
-func (r ApiGetSubtitleRequest) EndPositionTicks(endPositionTicks int64) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) EndPositionTicks(endPositionTicks int64) SubtitleAPIGetSubtitleRequest {
 	r.endPositionTicks = &endPositionTicks
 	return r
 }
 
 // Optional. Whether to copy the timestamps.
-func (r ApiGetSubtitleRequest) CopyTimestamps(copyTimestamps bool) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) CopyTimestamps(copyTimestamps bool) SubtitleAPIGetSubtitleRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Whether to add a VTT time map.
-func (r ApiGetSubtitleRequest) AddVttTimeMap(addVttTimeMap bool) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) AddVttTimeMap(addVttTimeMap bool) SubtitleAPIGetSubtitleRequest {
 	r.addVttTimeMap = &addVttTimeMap
 	return r
 }
 
 // The start position of the subtitle in ticks.
-func (r ApiGetSubtitleRequest) StartPositionTicks(startPositionTicks int64) ApiGetSubtitleRequest {
+func (r SubtitleAPIGetSubtitleRequest) StartPositionTicks(startPositionTicks int64) SubtitleAPIGetSubtitleRequest {
 	r.startPositionTicks = &startPositionTicks
 	return r
 }
 
-func (r ApiGetSubtitleRequest) Execute() (*os.File, *http.Response, error) {
+func (r SubtitleAPIGetSubtitleRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetSubtitleExecute(r)
 }
 
@@ -684,10 +684,10 @@ GetSubtitle Gets subtitles in a specified format.
  @param routeMediaSourceId The (route) media source id.
  @param routeIndex The (route) subtitle stream index.
  @param routeFormat The (route) format of the returned subtitle.
- @return ApiGetSubtitleRequest
+ @return SubtitleAPIGetSubtitleRequest
 */
-func (a *SubtitleAPIService) GetSubtitle(ctx context.Context, routeItemId string, routeMediaSourceId string, routeIndex int32, routeFormat string) ApiGetSubtitleRequest {
-	return ApiGetSubtitleRequest{
+func (a *SubtitleAPIService) GetSubtitle(ctx context.Context, routeItemId string, routeMediaSourceId string, routeIndex int32, routeFormat string) SubtitleAPIGetSubtitleRequest {
+	return SubtitleAPIGetSubtitleRequest{
 		ApiService: a,
 		ctx: ctx,
 		routeItemId: routeItemId,
@@ -699,7 +699,7 @@ func (a *SubtitleAPIService) GetSubtitle(ctx context.Context, routeItemId string
 
 // Execute executes the request
 //  @return *os.File
-func (a *SubtitleAPIService) GetSubtitleExecute(r ApiGetSubtitleRequest) (*os.File, *http.Response, error) {
+func (a *SubtitleAPIService) GetSubtitleExecute(r SubtitleAPIGetSubtitleRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -809,7 +809,7 @@ func (a *SubtitleAPIService) GetSubtitleExecute(r ApiGetSubtitleRequest) (*os.Fi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSubtitlePlaylistRequest struct {
+type SubtitleAPIGetSubtitlePlaylistRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
@@ -819,12 +819,12 @@ type ApiGetSubtitlePlaylistRequest struct {
 }
 
 // The subtitle segment length.
-func (r ApiGetSubtitlePlaylistRequest) SegmentLength(segmentLength int32) ApiGetSubtitlePlaylistRequest {
+func (r SubtitleAPIGetSubtitlePlaylistRequest) SegmentLength(segmentLength int32) SubtitleAPIGetSubtitlePlaylistRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
-func (r ApiGetSubtitlePlaylistRequest) Execute() (*os.File, *http.Response, error) {
+func (r SubtitleAPIGetSubtitlePlaylistRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetSubtitlePlaylistExecute(r)
 }
 
@@ -835,10 +835,10 @@ GetSubtitlePlaylist Gets an HLS subtitle playlist.
  @param itemId The item id.
  @param index The subtitle stream index.
  @param mediaSourceId The media source id.
- @return ApiGetSubtitlePlaylistRequest
+ @return SubtitleAPIGetSubtitlePlaylistRequest
 */
-func (a *SubtitleAPIService) GetSubtitlePlaylist(ctx context.Context, itemId string, index int32, mediaSourceId string) ApiGetSubtitlePlaylistRequest {
-	return ApiGetSubtitlePlaylistRequest{
+func (a *SubtitleAPIService) GetSubtitlePlaylist(ctx context.Context, itemId string, index int32, mediaSourceId string) SubtitleAPIGetSubtitlePlaylistRequest {
+	return SubtitleAPIGetSubtitlePlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -849,7 +849,7 @@ func (a *SubtitleAPIService) GetSubtitlePlaylist(ctx context.Context, itemId str
 
 // Execute executes the request
 //  @return *os.File
-func (a *SubtitleAPIService) GetSubtitlePlaylistExecute(r ApiGetSubtitlePlaylistRequest) (*os.File, *http.Response, error) {
+func (a *SubtitleAPIService) GetSubtitlePlaylistExecute(r SubtitleAPIGetSubtitlePlaylistRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -954,7 +954,7 @@ func (a *SubtitleAPIService) GetSubtitlePlaylistExecute(r ApiGetSubtitlePlaylist
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSubtitleWithTicksRequest struct {
+type SubtitleAPIGetSubtitleWithTicksRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	routeItemId string
@@ -974,58 +974,58 @@ type ApiGetSubtitleWithTicksRequest struct {
 
 // The item id.
 // Deprecated
-func (r ApiGetSubtitleWithTicksRequest) ItemId(itemId string) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) ItemId(itemId string) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.itemId = &itemId
 	return r
 }
 
 // The media source id.
 // Deprecated
-func (r ApiGetSubtitleWithTicksRequest) MediaSourceId(mediaSourceId string) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) MediaSourceId(mediaSourceId string) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The subtitle stream index.
 // Deprecated
-func (r ApiGetSubtitleWithTicksRequest) Index(index int32) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) Index(index int32) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.index = &index
 	return r
 }
 
 // The start position of the subtitle in ticks.
 // Deprecated
-func (r ApiGetSubtitleWithTicksRequest) StartPositionTicks(startPositionTicks int64) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) StartPositionTicks(startPositionTicks int64) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.startPositionTicks = &startPositionTicks
 	return r
 }
 
 // The format of the returned subtitle.
 // Deprecated
-func (r ApiGetSubtitleWithTicksRequest) Format(format string) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) Format(format string) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.format = &format
 	return r
 }
 
 // Optional. The end position of the subtitle in ticks.
-func (r ApiGetSubtitleWithTicksRequest) EndPositionTicks(endPositionTicks int64) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) EndPositionTicks(endPositionTicks int64) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.endPositionTicks = &endPositionTicks
 	return r
 }
 
 // Optional. Whether to copy the timestamps.
-func (r ApiGetSubtitleWithTicksRequest) CopyTimestamps(copyTimestamps bool) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) CopyTimestamps(copyTimestamps bool) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Whether to add a VTT time map.
-func (r ApiGetSubtitleWithTicksRequest) AddVttTimeMap(addVttTimeMap bool) ApiGetSubtitleWithTicksRequest {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) AddVttTimeMap(addVttTimeMap bool) SubtitleAPIGetSubtitleWithTicksRequest {
 	r.addVttTimeMap = &addVttTimeMap
 	return r
 }
 
-func (r ApiGetSubtitleWithTicksRequest) Execute() (*os.File, *http.Response, error) {
+func (r SubtitleAPIGetSubtitleWithTicksRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetSubtitleWithTicksExecute(r)
 }
 
@@ -1038,10 +1038,10 @@ GetSubtitleWithTicks Gets subtitles in a specified format.
  @param routeIndex The (route) subtitle stream index.
  @param routeStartPositionTicks The (route) start position of the subtitle in ticks.
  @param routeFormat The (route) format of the returned subtitle.
- @return ApiGetSubtitleWithTicksRequest
+ @return SubtitleAPIGetSubtitleWithTicksRequest
 */
-func (a *SubtitleAPIService) GetSubtitleWithTicks(ctx context.Context, routeItemId string, routeMediaSourceId string, routeIndex int32, routeStartPositionTicks int64, routeFormat string) ApiGetSubtitleWithTicksRequest {
-	return ApiGetSubtitleWithTicksRequest{
+func (a *SubtitleAPIService) GetSubtitleWithTicks(ctx context.Context, routeItemId string, routeMediaSourceId string, routeIndex int32, routeStartPositionTicks int64, routeFormat string) SubtitleAPIGetSubtitleWithTicksRequest {
+	return SubtitleAPIGetSubtitleWithTicksRequest{
 		ApiService: a,
 		ctx: ctx,
 		routeItemId: routeItemId,
@@ -1054,7 +1054,7 @@ func (a *SubtitleAPIService) GetSubtitleWithTicks(ctx context.Context, routeItem
 
 // Execute executes the request
 //  @return *os.File
-func (a *SubtitleAPIService) GetSubtitleWithTicksExecute(r ApiGetSubtitleWithTicksRequest) (*os.File, *http.Response, error) {
+func (a *SubtitleAPIService) GetSubtitleWithTicksExecute(r SubtitleAPIGetSubtitleWithTicksRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1162,7 +1162,7 @@ func (a *SubtitleAPIService) GetSubtitleWithTicksExecute(r ApiGetSubtitleWithTic
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSearchRemoteSubtitlesRequest struct {
+type SubtitleAPISearchRemoteSubtitlesRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
@@ -1171,12 +1171,12 @@ type ApiSearchRemoteSubtitlesRequest struct {
 }
 
 // Optional. Only show subtitles which are a perfect match.
-func (r ApiSearchRemoteSubtitlesRequest) IsPerfectMatch(isPerfectMatch bool) ApiSearchRemoteSubtitlesRequest {
+func (r SubtitleAPISearchRemoteSubtitlesRequest) IsPerfectMatch(isPerfectMatch bool) SubtitleAPISearchRemoteSubtitlesRequest {
 	r.isPerfectMatch = &isPerfectMatch
 	return r
 }
 
-func (r ApiSearchRemoteSubtitlesRequest) Execute() ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
+func (r SubtitleAPISearchRemoteSubtitlesRequest) Execute() ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
 	return r.ApiService.SearchRemoteSubtitlesExecute(r)
 }
 
@@ -1186,10 +1186,10 @@ SearchRemoteSubtitles Search remote subtitles.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param language The language of the subtitles.
- @return ApiSearchRemoteSubtitlesRequest
+ @return SubtitleAPISearchRemoteSubtitlesRequest
 */
-func (a *SubtitleAPIService) SearchRemoteSubtitles(ctx context.Context, itemId string, language string) ApiSearchRemoteSubtitlesRequest {
-	return ApiSearchRemoteSubtitlesRequest{
+func (a *SubtitleAPIService) SearchRemoteSubtitles(ctx context.Context, itemId string, language string) SubtitleAPISearchRemoteSubtitlesRequest {
+	return SubtitleAPISearchRemoteSubtitlesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1199,7 +1199,7 @@ func (a *SubtitleAPIService) SearchRemoteSubtitles(ctx context.Context, itemId s
 
 // Execute executes the request
 //  @return []JellyfinRemoteSubtitleInfo
-func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r ApiSearchRemoteSubtitlesRequest) ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
+func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r SubtitleAPISearchRemoteSubtitlesRequest) ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1302,7 +1302,7 @@ func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r ApiSearchRemoteSubti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUploadSubtitleRequest struct {
+type SubtitleAPIUploadSubtitleRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
@@ -1310,12 +1310,12 @@ type ApiUploadSubtitleRequest struct {
 }
 
 // The request body.
-func (r ApiUploadSubtitleRequest) JellyfinUploadSubtitleDto(jellyfinUploadSubtitleDto JellyfinUploadSubtitleDto) ApiUploadSubtitleRequest {
+func (r SubtitleAPIUploadSubtitleRequest) JellyfinUploadSubtitleDto(jellyfinUploadSubtitleDto JellyfinUploadSubtitleDto) SubtitleAPIUploadSubtitleRequest {
 	r.jellyfinUploadSubtitleDto = &jellyfinUploadSubtitleDto
 	return r
 }
 
-func (r ApiUploadSubtitleRequest) Execute() (*http.Response, error) {
+func (r SubtitleAPIUploadSubtitleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UploadSubtitleExecute(r)
 }
 
@@ -1324,10 +1324,10 @@ UploadSubtitle Upload an external subtitle file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item the subtitle belongs to.
- @return ApiUploadSubtitleRequest
+ @return SubtitleAPIUploadSubtitleRequest
 */
-func (a *SubtitleAPIService) UploadSubtitle(ctx context.Context, itemId string) ApiUploadSubtitleRequest {
-	return ApiUploadSubtitleRequest{
+func (a *SubtitleAPIService) UploadSubtitle(ctx context.Context, itemId string) SubtitleAPIUploadSubtitleRequest {
+	return SubtitleAPIUploadSubtitleRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1335,7 +1335,7 @@ func (a *SubtitleAPIService) UploadSubtitle(ctx context.Context, itemId string) 
 }
 
 // Execute executes the request
-func (a *SubtitleAPIService) UploadSubtitleExecute(r ApiUploadSubtitleRequest) (*http.Response, error) {
+func (a *SubtitleAPIService) UploadSubtitleExecute(r SubtitleAPIUploadSubtitleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

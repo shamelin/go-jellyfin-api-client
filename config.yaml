@@ -5,5 +5,5 @@ additionalProperties:
   packageName: jellyfin
 
 modelNamePrefix: Jellyfin
-#structPrefix: true
-#enumClassPrefix: true
+structPrefix: true
+enumClassPrefix: true

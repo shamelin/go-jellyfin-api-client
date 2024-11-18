@@ -24,7 +24,7 @@ import (
 // StudiosAPIService StudiosAPI service
 type StudiosAPIService service
 
-type ApiGetStudioRequest struct {
+type StudiosAPIGetStudioRequest struct {
 	ctx context.Context
 	ApiService *StudiosAPIService
 	name string
@@ -32,12 +32,12 @@ type ApiGetStudioRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetStudioRequest) UserId(userId string) ApiGetStudioRequest {
+func (r StudiosAPIGetStudioRequest) UserId(userId string) StudiosAPIGetStudioRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetStudioRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r StudiosAPIGetStudioRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetStudioExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetStudio Gets a studio by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Studio name.
- @return ApiGetStudioRequest
+ @return StudiosAPIGetStudioRequest
 */
-func (a *StudiosAPIService) GetStudio(ctx context.Context, name string) ApiGetStudioRequest {
-	return ApiGetStudioRequest{
+func (a *StudiosAPIService) GetStudio(ctx context.Context, name string) StudiosAPIGetStudioRequest {
+	return StudiosAPIGetStudioRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -58,7 +58,7 @@ func (a *StudiosAPIService) GetStudio(ctx context.Context, name string) ApiGetSt
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *StudiosAPIService) GetStudioExecute(r StudiosAPIGetStudioRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*JellyfinBa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetStudiosRequest struct {
+type StudiosAPIGetStudiosRequest struct {
 	ctx context.Context
 	ApiService *StudiosAPIService
 	startIndex *int32
@@ -172,108 +172,108 @@ type ApiGetStudiosRequest struct {
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetStudiosRequest) StartIndex(startIndex int32) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) StartIndex(startIndex int32) StudiosAPIGetStudiosRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetStudiosRequest) Limit(limit int32) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) Limit(limit int32) StudiosAPIGetStudiosRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Search term.
-func (r ApiGetStudiosRequest) SearchTerm(searchTerm string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) SearchTerm(searchTerm string) StudiosAPIGetStudiosRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetStudiosRequest) ParentId(parentId string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) ParentId(parentId string) StudiosAPIGetStudiosRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetStudiosRequest) Fields(fields []JellyfinItemFields) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) Fields(fields []JellyfinItemFields) StudiosAPIGetStudiosRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetStudiosRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) StudiosAPIGetStudiosRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetStudiosRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) StudiosAPIGetStudiosRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetStudiosRequest) IsFavorite(isFavorite bool) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) IsFavorite(isFavorite bool) StudiosAPIGetStudiosRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetStudiosRequest) EnableUserData(enableUserData bool) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) EnableUserData(enableUserData bool) StudiosAPIGetStudiosRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetStudiosRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) ImageTypeLimit(imageTypeLimit int32) StudiosAPIGetStudiosRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetStudiosRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) StudiosAPIGetStudiosRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // User id.
-func (r ApiGetStudiosRequest) UserId(userId string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) UserId(userId string) StudiosAPIGetStudiosRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetStudiosRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) StudiosAPIGetStudiosRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetStudiosRequest) NameStartsWith(nameStartsWith string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) NameStartsWith(nameStartsWith string) StudiosAPIGetStudiosRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetStudiosRequest) NameLessThan(nameLessThan string) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) NameLessThan(nameLessThan string) StudiosAPIGetStudiosRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetStudiosRequest) EnableImages(enableImages bool) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) EnableImages(enableImages bool) StudiosAPIGetStudiosRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Total record count.
-func (r ApiGetStudiosRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetStudiosRequest {
+func (r StudiosAPIGetStudiosRequest) EnableTotalRecordCount(enableTotalRecordCount bool) StudiosAPIGetStudiosRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetStudiosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r StudiosAPIGetStudiosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetStudiosExecute(r)
 }
 
@@ -281,10 +281,10 @@ func (r ApiGetStudiosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.
 GetStudios Gets all studios from a given item, folder, or the entire library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetStudiosRequest
+ @return StudiosAPIGetStudiosRequest
 */
-func (a *StudiosAPIService) GetStudios(ctx context.Context) ApiGetStudiosRequest {
-	return ApiGetStudiosRequest{
+func (a *StudiosAPIService) GetStudios(ctx context.Context) StudiosAPIGetStudiosRequest {
+	return StudiosAPIGetStudiosRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -292,7 +292,7 @@ func (a *StudiosAPIService) GetStudios(ctx context.Context) ApiGetStudiosRequest
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *StudiosAPIService) GetStudiosExecute(r ApiGetStudiosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *StudiosAPIService) GetStudiosExecute(r StudiosAPIGetStudiosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

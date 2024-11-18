@@ -20,8 +20,8 @@ type JellyfinPlayAccess string
 
 // List of PlayAccess
 const (
-	FULL JellyfinPlayAccess = "Full"
-	NONE JellyfinPlayAccess = "None"
+	JELLYFINPLAYACCESS_FULL JellyfinPlayAccess = "Full"
+	JELLYFINPLAYACCESS_NONE JellyfinPlayAccess = "None"
 )
 
 // All allowed values of JellyfinPlayAccess enum

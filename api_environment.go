@@ -22,12 +22,12 @@ import (
 // EnvironmentAPIService EnvironmentAPI service
 type EnvironmentAPIService service
 
-type ApiGetDefaultDirectoryBrowserRequest struct {
+type EnvironmentAPIGetDefaultDirectoryBrowserRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetDefaultDirectoryBrowserRequest) Execute() (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
+func (r EnvironmentAPIGetDefaultDirectoryBrowserRequest) Execute() (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
 	return r.ApiService.GetDefaultDirectoryBrowserExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r ApiGetDefaultDirectoryBrowserRequest) Execute() (*JellyfinDefaultDirecto
 GetDefaultDirectoryBrowser Get Default directory browser.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultDirectoryBrowserRequest
+ @return EnvironmentAPIGetDefaultDirectoryBrowserRequest
 */
-func (a *EnvironmentAPIService) GetDefaultDirectoryBrowser(ctx context.Context) ApiGetDefaultDirectoryBrowserRequest {
-	return ApiGetDefaultDirectoryBrowserRequest{
+func (a *EnvironmentAPIService) GetDefaultDirectoryBrowser(ctx context.Context) EnvironmentAPIGetDefaultDirectoryBrowserRequest {
+	return EnvironmentAPIGetDefaultDirectoryBrowserRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *EnvironmentAPIService) GetDefaultDirectoryBrowser(ctx context.Context) 
 
 // Execute executes the request
 //  @return JellyfinDefaultDirectoryBrowserInfoDto
-func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaultDirectoryBrowserRequest) (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
+func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r EnvironmentAPIGetDefaultDirectoryBrowserRequest) (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -133,7 +133,7 @@ func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaul
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDirectoryContentsRequest struct {
+type EnvironmentAPIGetDirectoryContentsRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 	path *string
@@ -142,24 +142,24 @@ type ApiGetDirectoryContentsRequest struct {
 }
 
 // The path.
-func (r ApiGetDirectoryContentsRequest) Path(path string) ApiGetDirectoryContentsRequest {
+func (r EnvironmentAPIGetDirectoryContentsRequest) Path(path string) EnvironmentAPIGetDirectoryContentsRequest {
 	r.path = &path
 	return r
 }
 
 // An optional filter to include or exclude files from the results. true/false.
-func (r ApiGetDirectoryContentsRequest) IncludeFiles(includeFiles bool) ApiGetDirectoryContentsRequest {
+func (r EnvironmentAPIGetDirectoryContentsRequest) IncludeFiles(includeFiles bool) EnvironmentAPIGetDirectoryContentsRequest {
 	r.includeFiles = &includeFiles
 	return r
 }
 
 // An optional filter to include or exclude folders from the results. true/false.
-func (r ApiGetDirectoryContentsRequest) IncludeDirectories(includeDirectories bool) ApiGetDirectoryContentsRequest {
+func (r EnvironmentAPIGetDirectoryContentsRequest) IncludeDirectories(includeDirectories bool) EnvironmentAPIGetDirectoryContentsRequest {
 	r.includeDirectories = &includeDirectories
 	return r
 }
 
-func (r ApiGetDirectoryContentsRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (r EnvironmentAPIGetDirectoryContentsRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetDirectoryContentsExecute(r)
 }
 
@@ -167,10 +167,10 @@ func (r ApiGetDirectoryContentsRequest) Execute() ([]JellyfinFileSystemEntryInfo
 GetDirectoryContents Gets the contents of a given directory in the file system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDirectoryContentsRequest
+ @return EnvironmentAPIGetDirectoryContentsRequest
 */
-func (a *EnvironmentAPIService) GetDirectoryContents(ctx context.Context) ApiGetDirectoryContentsRequest {
-	return ApiGetDirectoryContentsRequest{
+func (a *EnvironmentAPIService) GetDirectoryContents(ctx context.Context) EnvironmentAPIGetDirectoryContentsRequest {
+	return EnvironmentAPIGetDirectoryContentsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -178,7 +178,7 @@ func (a *EnvironmentAPIService) GetDirectoryContents(ctx context.Context) ApiGet
 
 // Execute executes the request
 //  @return []JellyfinFileSystemEntryInfo
-func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryContentsRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r EnvironmentAPIGetDirectoryContentsRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -281,12 +281,12 @@ func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryCon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDrivesRequest struct {
+type EnvironmentAPIGetDrivesRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetDrivesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (r EnvironmentAPIGetDrivesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetDrivesExecute(r)
 }
 
@@ -294,10 +294,10 @@ func (r ApiGetDrivesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Res
 GetDrives Gets available drives from the server's file system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDrivesRequest
+ @return EnvironmentAPIGetDrivesRequest
 */
-func (a *EnvironmentAPIService) GetDrives(ctx context.Context) ApiGetDrivesRequest {
-	return ApiGetDrivesRequest{
+func (a *EnvironmentAPIService) GetDrives(ctx context.Context) EnvironmentAPIGetDrivesRequest {
+	return EnvironmentAPIGetDrivesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -305,7 +305,7 @@ func (a *EnvironmentAPIService) GetDrives(ctx context.Context) ApiGetDrivesReque
 
 // Execute executes the request
 //  @return []JellyfinFileSystemEntryInfo
-func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (a *EnvironmentAPIService) GetDrivesExecute(r EnvironmentAPIGetDrivesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -392,12 +392,12 @@ func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]Jelly
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetNetworkSharesRequest struct {
+type EnvironmentAPIGetNetworkSharesRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetNetworkSharesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (r EnvironmentAPIGetNetworkSharesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetNetworkSharesExecute(r)
 }
 
@@ -405,12 +405,12 @@ func (r ApiGetNetworkSharesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *h
 GetNetworkShares Gets network paths.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNetworkSharesRequest
+ @return EnvironmentAPIGetNetworkSharesRequest
 
 Deprecated
 */
-func (a *EnvironmentAPIService) GetNetworkShares(ctx context.Context) ApiGetNetworkSharesRequest {
-	return ApiGetNetworkSharesRequest{
+func (a *EnvironmentAPIService) GetNetworkShares(ctx context.Context) EnvironmentAPIGetNetworkSharesRequest {
+	return EnvironmentAPIGetNetworkSharesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -419,7 +419,7 @@ func (a *EnvironmentAPIService) GetNetworkShares(ctx context.Context) ApiGetNetw
 // Execute executes the request
 //  @return []JellyfinFileSystemEntryInfo
 // Deprecated
-func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
+func (a *EnvironmentAPIService) GetNetworkSharesExecute(r EnvironmentAPIGetNetworkSharesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -506,19 +506,19 @@ func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetParentPathRequest struct {
+type EnvironmentAPIGetParentPathRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 	path *string
 }
 
 // The path.
-func (r ApiGetParentPathRequest) Path(path string) ApiGetParentPathRequest {
+func (r EnvironmentAPIGetParentPathRequest) Path(path string) EnvironmentAPIGetParentPathRequest {
 	r.path = &path
 	return r
 }
 
-func (r ApiGetParentPathRequest) Execute() (string, *http.Response, error) {
+func (r EnvironmentAPIGetParentPathRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetParentPathExecute(r)
 }
 
@@ -526,10 +526,10 @@ func (r ApiGetParentPathRequest) Execute() (string, *http.Response, error) {
 GetParentPath Gets the parent path of a given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetParentPathRequest
+ @return EnvironmentAPIGetParentPathRequest
 */
-func (a *EnvironmentAPIService) GetParentPath(ctx context.Context) ApiGetParentPathRequest {
-	return ApiGetParentPathRequest{
+func (a *EnvironmentAPIService) GetParentPath(ctx context.Context) EnvironmentAPIGetParentPathRequest {
+	return EnvironmentAPIGetParentPathRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -537,7 +537,7 @@ func (a *EnvironmentAPIService) GetParentPath(ctx context.Context) ApiGetParentP
 
 // Execute executes the request
 //  @return string
-func (a *EnvironmentAPIService) GetParentPathExecute(r ApiGetParentPathRequest) (string, *http.Response, error) {
+func (a *EnvironmentAPIService) GetParentPathExecute(r EnvironmentAPIGetParentPathRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -628,19 +628,19 @@ func (a *EnvironmentAPIService) GetParentPathExecute(r ApiGetParentPathRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiValidatePathRequest struct {
+type EnvironmentAPIValidatePathRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
 	jellyfinValidatePathDto *JellyfinValidatePathDto
 }
 
 // Validate request object.
-func (r ApiValidatePathRequest) JellyfinValidatePathDto(jellyfinValidatePathDto JellyfinValidatePathDto) ApiValidatePathRequest {
+func (r EnvironmentAPIValidatePathRequest) JellyfinValidatePathDto(jellyfinValidatePathDto JellyfinValidatePathDto) EnvironmentAPIValidatePathRequest {
 	r.jellyfinValidatePathDto = &jellyfinValidatePathDto
 	return r
 }
 
-func (r ApiValidatePathRequest) Execute() (*http.Response, error) {
+func (r EnvironmentAPIValidatePathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ValidatePathExecute(r)
 }
 
@@ -648,17 +648,17 @@ func (r ApiValidatePathRequest) Execute() (*http.Response, error) {
 ValidatePath Validates path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiValidatePathRequest
+ @return EnvironmentAPIValidatePathRequest
 */
-func (a *EnvironmentAPIService) ValidatePath(ctx context.Context) ApiValidatePathRequest {
-	return ApiValidatePathRequest{
+func (a *EnvironmentAPIService) ValidatePath(ctx context.Context) EnvironmentAPIValidatePathRequest {
+	return EnvironmentAPIValidatePathRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*http.Response, error) {
+func (a *EnvironmentAPIService) ValidatePathExecute(r EnvironmentAPIValidatePathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

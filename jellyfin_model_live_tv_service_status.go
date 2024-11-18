@@ -20,8 +20,8 @@ type JellyfinLiveTvServiceStatus string
 
 // List of LiveTvServiceStatus
 const (
-	OK JellyfinLiveTvServiceStatus = "Ok"
-	UNAVAILABLE JellyfinLiveTvServiceStatus = "Unavailable"
+	JELLYFINLIVETVSERVICESTATUS_OK JellyfinLiveTvServiceStatus = "Ok"
+	JELLYFINLIVETVSERVICESTATUS_UNAVAILABLE JellyfinLiveTvServiceStatus = "Unavailable"
 )
 
 // All allowed values of JellyfinLiveTvServiceStatus enum

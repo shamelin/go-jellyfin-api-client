@@ -22,19 +22,19 @@ import (
 // DevicesAPIService DevicesAPI service
 type DevicesAPIService service
 
-type ApiDeleteDeviceRequest struct {
+type DevicesAPIDeleteDeviceRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	id *string
 }
 
 // Device Id.
-func (r ApiDeleteDeviceRequest) Id(id string) ApiDeleteDeviceRequest {
+func (r DevicesAPIDeleteDeviceRequest) Id(id string) DevicesAPIDeleteDeviceRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiDeleteDeviceRequest) Execute() (*http.Response, error) {
+func (r DevicesAPIDeleteDeviceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteDeviceExecute(r)
 }
 
@@ -42,17 +42,17 @@ func (r ApiDeleteDeviceRequest) Execute() (*http.Response, error) {
 DeleteDevice Deletes a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteDeviceRequest
+ @return DevicesAPIDeleteDeviceRequest
 */
-func (a *DevicesAPIService) DeleteDevice(ctx context.Context) ApiDeleteDeviceRequest {
-	return ApiDeleteDeviceRequest{
+func (a *DevicesAPIService) DeleteDevice(ctx context.Context) DevicesAPIDeleteDeviceRequest {
+	return DevicesAPIDeleteDeviceRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DevicesAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) (*http.Response, error) {
+func (a *DevicesAPIService) DeleteDeviceExecute(r DevicesAPIDeleteDeviceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -144,19 +144,19 @@ func (a *DevicesAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceInfoRequest struct {
+type DevicesAPIGetDeviceInfoRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	id *string
 }
 
 // Device Id.
-func (r ApiGetDeviceInfoRequest) Id(id string) ApiGetDeviceInfoRequest {
+func (r DevicesAPIGetDeviceInfoRequest) Id(id string) DevicesAPIGetDeviceInfoRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiGetDeviceInfoRequest) Execute() (*JellyfinDeviceInfoDto, *http.Response, error) {
+func (r DevicesAPIGetDeviceInfoRequest) Execute() (*JellyfinDeviceInfoDto, *http.Response, error) {
 	return r.ApiService.GetDeviceInfoExecute(r)
 }
 
@@ -164,10 +164,10 @@ func (r ApiGetDeviceInfoRequest) Execute() (*JellyfinDeviceInfoDto, *http.Respon
 GetDeviceInfo Get info for a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDeviceInfoRequest
+ @return DevicesAPIGetDeviceInfoRequest
 */
-func (a *DevicesAPIService) GetDeviceInfo(ctx context.Context) ApiGetDeviceInfoRequest {
-	return ApiGetDeviceInfoRequest{
+func (a *DevicesAPIService) GetDeviceInfo(ctx context.Context) DevicesAPIGetDeviceInfoRequest {
+	return DevicesAPIGetDeviceInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -175,7 +175,7 @@ func (a *DevicesAPIService) GetDeviceInfo(ctx context.Context) ApiGetDeviceInfoR
 
 // Execute executes the request
 //  @return JellyfinDeviceInfoDto
-func (a *DevicesAPIService) GetDeviceInfoExecute(r ApiGetDeviceInfoRequest) (*JellyfinDeviceInfoDto, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceInfoExecute(r DevicesAPIGetDeviceInfoRequest) (*JellyfinDeviceInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -277,19 +277,19 @@ func (a *DevicesAPIService) GetDeviceInfoExecute(r ApiGetDeviceInfoRequest) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDeviceOptionsRequest struct {
+type DevicesAPIGetDeviceOptionsRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	id *string
 }
 
 // Device Id.
-func (r ApiGetDeviceOptionsRequest) Id(id string) ApiGetDeviceOptionsRequest {
+func (r DevicesAPIGetDeviceOptionsRequest) Id(id string) DevicesAPIGetDeviceOptionsRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiGetDeviceOptionsRequest) Execute() (*JellyfinDeviceOptionsDto, *http.Response, error) {
+func (r DevicesAPIGetDeviceOptionsRequest) Execute() (*JellyfinDeviceOptionsDto, *http.Response, error) {
 	return r.ApiService.GetDeviceOptionsExecute(r)
 }
 
@@ -297,10 +297,10 @@ func (r ApiGetDeviceOptionsRequest) Execute() (*JellyfinDeviceOptionsDto, *http.
 GetDeviceOptions Get options for a device.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDeviceOptionsRequest
+ @return DevicesAPIGetDeviceOptionsRequest
 */
-func (a *DevicesAPIService) GetDeviceOptions(ctx context.Context) ApiGetDeviceOptionsRequest {
-	return ApiGetDeviceOptionsRequest{
+func (a *DevicesAPIService) GetDeviceOptions(ctx context.Context) DevicesAPIGetDeviceOptionsRequest {
+	return DevicesAPIGetDeviceOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -308,7 +308,7 @@ func (a *DevicesAPIService) GetDeviceOptions(ctx context.Context) ApiGetDeviceOp
 
 // Execute executes the request
 //  @return JellyfinDeviceOptionsDto
-func (a *DevicesAPIService) GetDeviceOptionsExecute(r ApiGetDeviceOptionsRequest) (*JellyfinDeviceOptionsDto, *http.Response, error) {
+func (a *DevicesAPIService) GetDeviceOptionsExecute(r DevicesAPIGetDeviceOptionsRequest) (*JellyfinDeviceOptionsDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -410,19 +410,19 @@ func (a *DevicesAPIService) GetDeviceOptionsExecute(r ApiGetDeviceOptionsRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDevicesRequest struct {
+type DevicesAPIGetDevicesRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	userId *string
 }
 
 // Gets or sets the user identifier.
-func (r ApiGetDevicesRequest) UserId(userId string) ApiGetDevicesRequest {
+func (r DevicesAPIGetDevicesRequest) UserId(userId string) DevicesAPIGetDevicesRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetDevicesRequest) Execute() (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
+func (r DevicesAPIGetDevicesRequest) Execute() (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetDevicesExecute(r)
 }
 
@@ -430,10 +430,10 @@ func (r ApiGetDevicesRequest) Execute() (*JellyfinDeviceInfoDtoQueryResult, *htt
 GetDevices Get Devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDevicesRequest
+ @return DevicesAPIGetDevicesRequest
 */
-func (a *DevicesAPIService) GetDevices(ctx context.Context) ApiGetDevicesRequest {
-	return ApiGetDevicesRequest{
+func (a *DevicesAPIService) GetDevices(ctx context.Context) DevicesAPIGetDevicesRequest {
+	return DevicesAPIGetDevicesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -441,7 +441,7 @@ func (a *DevicesAPIService) GetDevices(ctx context.Context) ApiGetDevicesRequest
 
 // Execute executes the request
 //  @return JellyfinDeviceInfoDtoQueryResult
-func (a *DevicesAPIService) GetDevicesExecute(r ApiGetDevicesRequest) (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
+func (a *DevicesAPIService) GetDevicesExecute(r DevicesAPIGetDevicesRequest) (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -531,7 +531,7 @@ func (a *DevicesAPIService) GetDevicesExecute(r ApiGetDevicesRequest) (*Jellyfin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateDeviceOptionsRequest struct {
+type DevicesAPIUpdateDeviceOptionsRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	id *string
@@ -539,18 +539,18 @@ type ApiUpdateDeviceOptionsRequest struct {
 }
 
 // Device Id.
-func (r ApiUpdateDeviceOptionsRequest) Id(id string) ApiUpdateDeviceOptionsRequest {
+func (r DevicesAPIUpdateDeviceOptionsRequest) Id(id string) DevicesAPIUpdateDeviceOptionsRequest {
 	r.id = &id
 	return r
 }
 
 // Device Options.
-func (r ApiUpdateDeviceOptionsRequest) JellyfinDeviceOptionsDto(jellyfinDeviceOptionsDto JellyfinDeviceOptionsDto) ApiUpdateDeviceOptionsRequest {
+func (r DevicesAPIUpdateDeviceOptionsRequest) JellyfinDeviceOptionsDto(jellyfinDeviceOptionsDto JellyfinDeviceOptionsDto) DevicesAPIUpdateDeviceOptionsRequest {
 	r.jellyfinDeviceOptionsDto = &jellyfinDeviceOptionsDto
 	return r
 }
 
-func (r ApiUpdateDeviceOptionsRequest) Execute() (*http.Response, error) {
+func (r DevicesAPIUpdateDeviceOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateDeviceOptionsExecute(r)
 }
 
@@ -558,17 +558,17 @@ func (r ApiUpdateDeviceOptionsRequest) Execute() (*http.Response, error) {
 UpdateDeviceOptions Update device options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateDeviceOptionsRequest
+ @return DevicesAPIUpdateDeviceOptionsRequest
 */
-func (a *DevicesAPIService) UpdateDeviceOptions(ctx context.Context) ApiUpdateDeviceOptionsRequest {
-	return ApiUpdateDeviceOptionsRequest{
+func (a *DevicesAPIService) UpdateDeviceOptions(ctx context.Context) DevicesAPIUpdateDeviceOptionsRequest {
+	return DevicesAPIUpdateDeviceOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *DevicesAPIService) UpdateDeviceOptionsExecute(r ApiUpdateDeviceOptionsRequest) (*http.Response, error) {
+func (a *DevicesAPIService) UpdateDeviceOptionsExecute(r DevicesAPIUpdateDeviceOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

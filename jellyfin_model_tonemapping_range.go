@@ -20,9 +20,9 @@ type JellyfinTonemappingRange string
 
 // List of TonemappingRange
 const (
-	AUTO JellyfinTonemappingRange = "auto"
-	TV JellyfinTonemappingRange = "tv"
-	PC JellyfinTonemappingRange = "pc"
+	JELLYFINTONEMAPPINGRANGE_AUTO JellyfinTonemappingRange = "auto"
+	JELLYFINTONEMAPPINGRANGE_TV JellyfinTonemappingRange = "tv"
+	JELLYFINTONEMAPPINGRANGE_PC JellyfinTonemappingRange = "pc"
 )
 
 // All allowed values of JellyfinTonemappingRange enum

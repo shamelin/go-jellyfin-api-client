@@ -20,10 +20,10 @@ type JellyfinGroupStateType string
 
 // List of GroupStateType
 const (
-	IDLE JellyfinGroupStateType = "Idle"
-	WAITING JellyfinGroupStateType = "Waiting"
-	PAUSED JellyfinGroupStateType = "Paused"
-	PLAYING JellyfinGroupStateType = "Playing"
+	JELLYFINGROUPSTATETYPE_IDLE JellyfinGroupStateType = "Idle"
+	JELLYFINGROUPSTATETYPE_WAITING JellyfinGroupStateType = "Waiting"
+	JELLYFINGROUPSTATETYPE_PAUSED JellyfinGroupStateType = "Paused"
+	JELLYFINGROUPSTATETYPE_PLAYING JellyfinGroupStateType = "Playing"
 )
 
 // All allowed values of JellyfinGroupStateType enum

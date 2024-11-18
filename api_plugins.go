@@ -24,14 +24,14 @@ import (
 // PluginsAPIService PluginsAPI service
 type PluginsAPIService service
 
-type ApiDisablePluginRequest struct {
+type PluginsAPIDisablePluginRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 	version string
 }
 
-func (r ApiDisablePluginRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIDisablePluginRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DisablePluginExecute(r)
 }
 
@@ -41,10 +41,10 @@ DisablePlugin Disable a plugin.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
  @param version Plugin version.
- @return ApiDisablePluginRequest
+ @return PluginsAPIDisablePluginRequest
 */
-func (a *PluginsAPIService) DisablePlugin(ctx context.Context, pluginId string, version string) ApiDisablePluginRequest {
-	return ApiDisablePluginRequest{
+func (a *PluginsAPIService) DisablePlugin(ctx context.Context, pluginId string, version string) PluginsAPIDisablePluginRequest {
+	return PluginsAPIDisablePluginRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -53,7 +53,7 @@ func (a *PluginsAPIService) DisablePlugin(ctx context.Context, pluginId string, 
 }
 
 // Execute executes the request
-func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*http.Response, error) {
+func (a *PluginsAPIService) DisablePluginExecute(r PluginsAPIDisablePluginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -143,14 +143,14 @@ func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiEnablePluginRequest struct {
+type PluginsAPIEnablePluginRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 	version string
 }
 
-func (r ApiEnablePluginRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIEnablePluginRequest) Execute() (*http.Response, error) {
 	return r.ApiService.EnablePluginExecute(r)
 }
 
@@ -160,10 +160,10 @@ EnablePlugin Enables a disabled plugin.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
  @param version Plugin version.
- @return ApiEnablePluginRequest
+ @return PluginsAPIEnablePluginRequest
 */
-func (a *PluginsAPIService) EnablePlugin(ctx context.Context, pluginId string, version string) ApiEnablePluginRequest {
-	return ApiEnablePluginRequest{
+func (a *PluginsAPIService) EnablePlugin(ctx context.Context, pluginId string, version string) PluginsAPIEnablePluginRequest {
+	return PluginsAPIEnablePluginRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -172,7 +172,7 @@ func (a *PluginsAPIService) EnablePlugin(ctx context.Context, pluginId string, v
 }
 
 // Execute executes the request
-func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http.Response, error) {
+func (a *PluginsAPIService) EnablePluginExecute(r PluginsAPIEnablePluginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -262,13 +262,13 @@ func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetPluginConfigurationRequest struct {
+type PluginsAPIGetPluginConfigurationRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 }
 
-func (r ApiGetPluginConfigurationRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r PluginsAPIGetPluginConfigurationRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.GetPluginConfigurationExecute(r)
 }
 
@@ -277,10 +277,10 @@ GetPluginConfiguration Gets plugin configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
- @return ApiGetPluginConfigurationRequest
+ @return PluginsAPIGetPluginConfigurationRequest
 */
-func (a *PluginsAPIService) GetPluginConfiguration(ctx context.Context, pluginId string) ApiGetPluginConfigurationRequest {
-	return ApiGetPluginConfigurationRequest{
+func (a *PluginsAPIService) GetPluginConfiguration(ctx context.Context, pluginId string) PluginsAPIGetPluginConfigurationRequest {
+	return PluginsAPIGetPluginConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -289,7 +289,7 @@ func (a *PluginsAPIService) GetPluginConfiguration(ctx context.Context, pluginId
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigurationRequest) (map[string]interface{}, *http.Response, error) {
+func (a *PluginsAPIService) GetPluginConfigurationExecute(r PluginsAPIGetPluginConfigurationRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -388,14 +388,14 @@ func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigur
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPluginImageRequest struct {
+type PluginsAPIGetPluginImageRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 	version string
 }
 
-func (r ApiGetPluginImageRequest) Execute() (*os.File, *http.Response, error) {
+func (r PluginsAPIGetPluginImageRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetPluginImageExecute(r)
 }
 
@@ -405,10 +405,10 @@ GetPluginImage Gets a plugin's image.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
  @param version Plugin version.
- @return ApiGetPluginImageRequest
+ @return PluginsAPIGetPluginImageRequest
 */
-func (a *PluginsAPIService) GetPluginImage(ctx context.Context, pluginId string, version string) ApiGetPluginImageRequest {
-	return ApiGetPluginImageRequest{
+func (a *PluginsAPIService) GetPluginImage(ctx context.Context, pluginId string, version string) PluginsAPIGetPluginImageRequest {
+	return PluginsAPIGetPluginImageRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -418,7 +418,7 @@ func (a *PluginsAPIService) GetPluginImage(ctx context.Context, pluginId string,
 
 // Execute executes the request
 //  @return *os.File
-func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*os.File, *http.Response, error) {
+func (a *PluginsAPIService) GetPluginImageExecute(r PluginsAPIGetPluginImageRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -518,13 +518,13 @@ func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPluginManifestRequest struct {
+type PluginsAPIGetPluginManifestRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 }
 
-func (r ApiGetPluginManifestRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIGetPluginManifestRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPluginManifestExecute(r)
 }
 
@@ -533,10 +533,10 @@ GetPluginManifest Gets a plugin's manifest.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
- @return ApiGetPluginManifestRequest
+ @return PluginsAPIGetPluginManifestRequest
 */
-func (a *PluginsAPIService) GetPluginManifest(ctx context.Context, pluginId string) ApiGetPluginManifestRequest {
-	return ApiGetPluginManifestRequest{
+func (a *PluginsAPIService) GetPluginManifest(ctx context.Context, pluginId string) PluginsAPIGetPluginManifestRequest {
+	return PluginsAPIGetPluginManifestRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -544,7 +544,7 @@ func (a *PluginsAPIService) GetPluginManifest(ctx context.Context, pluginId stri
 }
 
 // Execute executes the request
-func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestRequest) (*http.Response, error) {
+func (a *PluginsAPIService) GetPluginManifestExecute(r PluginsAPIGetPluginManifestRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -633,12 +633,12 @@ func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetPluginsRequest struct {
+type PluginsAPIGetPluginsRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 }
 
-func (r ApiGetPluginsRequest) Execute() ([]JellyfinPluginInfo, *http.Response, error) {
+func (r PluginsAPIGetPluginsRequest) Execute() ([]JellyfinPluginInfo, *http.Response, error) {
 	return r.ApiService.GetPluginsExecute(r)
 }
 
@@ -646,10 +646,10 @@ func (r ApiGetPluginsRequest) Execute() ([]JellyfinPluginInfo, *http.Response, e
 GetPlugins Gets a list of currently installed plugins.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPluginsRequest
+ @return PluginsAPIGetPluginsRequest
 */
-func (a *PluginsAPIService) GetPlugins(ctx context.Context) ApiGetPluginsRequest {
-	return ApiGetPluginsRequest{
+func (a *PluginsAPIService) GetPlugins(ctx context.Context) PluginsAPIGetPluginsRequest {
+	return PluginsAPIGetPluginsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -657,7 +657,7 @@ func (a *PluginsAPIService) GetPlugins(ctx context.Context) ApiGetPluginsRequest
 
 // Execute executes the request
 //  @return []JellyfinPluginInfo
-func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]JellyfinPluginInfo, *http.Response, error) {
+func (a *PluginsAPIService) GetPluginsExecute(r PluginsAPIGetPluginsRequest) ([]JellyfinPluginInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -744,13 +744,13 @@ func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]Jellyfi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUninstallPluginRequest struct {
+type PluginsAPIUninstallPluginRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 }
 
-func (r ApiUninstallPluginRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIUninstallPluginRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UninstallPluginExecute(r)
 }
 
@@ -759,12 +759,12 @@ UninstallPlugin Uninstalls a plugin.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
- @return ApiUninstallPluginRequest
+ @return PluginsAPIUninstallPluginRequest
 
 Deprecated
 */
-func (a *PluginsAPIService) UninstallPlugin(ctx context.Context, pluginId string) ApiUninstallPluginRequest {
-	return ApiUninstallPluginRequest{
+func (a *PluginsAPIService) UninstallPlugin(ctx context.Context, pluginId string) PluginsAPIUninstallPluginRequest {
+	return PluginsAPIUninstallPluginRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -773,7 +773,7 @@ func (a *PluginsAPIService) UninstallPlugin(ctx context.Context, pluginId string
 
 // Execute executes the request
 // Deprecated
-func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) (*http.Response, error) {
+func (a *PluginsAPIService) UninstallPluginExecute(r PluginsAPIUninstallPluginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -862,14 +862,14 @@ func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiUninstallPluginByVersionRequest struct {
+type PluginsAPIUninstallPluginByVersionRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 	version string
 }
 
-func (r ApiUninstallPluginByVersionRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIUninstallPluginByVersionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UninstallPluginByVersionExecute(r)
 }
 
@@ -879,10 +879,10 @@ UninstallPluginByVersion Uninstalls a plugin by version.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
  @param version Plugin version.
- @return ApiUninstallPluginByVersionRequest
+ @return PluginsAPIUninstallPluginByVersionRequest
 */
-func (a *PluginsAPIService) UninstallPluginByVersion(ctx context.Context, pluginId string, version string) ApiUninstallPluginByVersionRequest {
-	return ApiUninstallPluginByVersionRequest{
+func (a *PluginsAPIService) UninstallPluginByVersion(ctx context.Context, pluginId string, version string) PluginsAPIUninstallPluginByVersionRequest {
+	return PluginsAPIUninstallPluginByVersionRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -891,7 +891,7 @@ func (a *PluginsAPIService) UninstallPluginByVersion(ctx context.Context, plugin
 }
 
 // Execute executes the request
-func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPluginByVersionRequest) (*http.Response, error) {
+func (a *PluginsAPIService) UninstallPluginByVersionExecute(r PluginsAPIUninstallPluginByVersionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -981,13 +981,13 @@ func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPlugin
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdatePluginConfigurationRequest struct {
+type PluginsAPIUpdatePluginConfigurationRequest struct {
 	ctx context.Context
 	ApiService *PluginsAPIService
 	pluginId string
 }
 
-func (r ApiUpdatePluginConfigurationRequest) Execute() (*http.Response, error) {
+func (r PluginsAPIUpdatePluginConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdatePluginConfigurationExecute(r)
 }
 
@@ -998,10 +998,10 @@ Accepts plugin configuration as JSON body.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param pluginId Plugin id.
- @return ApiUpdatePluginConfigurationRequest
+ @return PluginsAPIUpdatePluginConfigurationRequest
 */
-func (a *PluginsAPIService) UpdatePluginConfiguration(ctx context.Context, pluginId string) ApiUpdatePluginConfigurationRequest {
-	return ApiUpdatePluginConfigurationRequest{
+func (a *PluginsAPIService) UpdatePluginConfiguration(ctx context.Context, pluginId string) PluginsAPIUpdatePluginConfigurationRequest {
+	return PluginsAPIUpdatePluginConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 		pluginId: pluginId,
@@ -1009,7 +1009,7 @@ func (a *PluginsAPIService) UpdatePluginConfiguration(ctx context.Context, plugi
 }
 
 // Execute executes the request
-func (a *PluginsAPIService) UpdatePluginConfigurationExecute(r ApiUpdatePluginConfigurationRequest) (*http.Response, error) {
+func (a *PluginsAPIService) UpdatePluginConfigurationExecute(r PluginsAPIUpdatePluginConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

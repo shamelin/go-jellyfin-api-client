@@ -20,9 +20,9 @@ type JellyfinPlaybackErrorCode string
 
 // List of PlaybackErrorCode
 const (
-	NOT_ALLOWED JellyfinPlaybackErrorCode = "NotAllowed"
-	NO_COMPATIBLE_STREAM JellyfinPlaybackErrorCode = "NoCompatibleStream"
-	RATE_LIMIT_EXCEEDED JellyfinPlaybackErrorCode = "RateLimitExceeded"
+	JELLYFINPLAYBACKERRORCODE_NOT_ALLOWED JellyfinPlaybackErrorCode = "NotAllowed"
+	JELLYFINPLAYBACKERRORCODE_NO_COMPATIBLE_STREAM JellyfinPlaybackErrorCode = "NoCompatibleStream"
+	JELLYFINPLAYBACKERRORCODE_RATE_LIMIT_EXCEEDED JellyfinPlaybackErrorCode = "RateLimitExceeded"
 )
 
 // All allowed values of JellyfinPlaybackErrorCode enum

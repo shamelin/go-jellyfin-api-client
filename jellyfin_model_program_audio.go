@@ -20,12 +20,12 @@ type JellyfinProgramAudio string
 
 // List of ProgramAudio
 const (
-	MONO JellyfinProgramAudio = "Mono"
-	STEREO JellyfinProgramAudio = "Stereo"
-	DOLBY JellyfinProgramAudio = "Dolby"
-	DOLBY_DIGITAL JellyfinProgramAudio = "DolbyDigital"
-	THX JellyfinProgramAudio = "Thx"
-	ATMOS JellyfinProgramAudio = "Atmos"
+	JELLYFINPROGRAMAUDIO_MONO JellyfinProgramAudio = "Mono"
+	JELLYFINPROGRAMAUDIO_STEREO JellyfinProgramAudio = "Stereo"
+	JELLYFINPROGRAMAUDIO_DOLBY JellyfinProgramAudio = "Dolby"
+	JELLYFINPROGRAMAUDIO_DOLBY_DIGITAL JellyfinProgramAudio = "DolbyDigital"
+	JELLYFINPROGRAMAUDIO_THX JellyfinProgramAudio = "Thx"
+	JELLYFINPROGRAMAUDIO_ATMOS JellyfinProgramAudio = "Atmos"
 )
 
 // All allowed values of JellyfinProgramAudio enum

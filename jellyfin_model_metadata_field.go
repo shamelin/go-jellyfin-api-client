@@ -20,15 +20,15 @@ type JellyfinMetadataField string
 
 // List of MetadataField
 const (
-	CAST JellyfinMetadataField = "Cast"
-	GENRES JellyfinMetadataField = "Genres"
-	PRODUCTION_LOCATIONS JellyfinMetadataField = "ProductionLocations"
-	STUDIOS JellyfinMetadataField = "Studios"
-	TAGS JellyfinMetadataField = "Tags"
-	NAME JellyfinMetadataField = "Name"
-	OVERVIEW JellyfinMetadataField = "Overview"
-	RUNTIME JellyfinMetadataField = "Runtime"
-	OFFICIAL_RATING JellyfinMetadataField = "OfficialRating"
+	JELLYFINMETADATAFIELD_CAST JellyfinMetadataField = "Cast"
+	JELLYFINMETADATAFIELD_GENRES JellyfinMetadataField = "Genres"
+	JELLYFINMETADATAFIELD_PRODUCTION_LOCATIONS JellyfinMetadataField = "ProductionLocations"
+	JELLYFINMETADATAFIELD_STUDIOS JellyfinMetadataField = "Studios"
+	JELLYFINMETADATAFIELD_TAGS JellyfinMetadataField = "Tags"
+	JELLYFINMETADATAFIELD_NAME JellyfinMetadataField = "Name"
+	JELLYFINMETADATAFIELD_OVERVIEW JellyfinMetadataField = "Overview"
+	JELLYFINMETADATAFIELD_RUNTIME JellyfinMetadataField = "Runtime"
+	JELLYFINMETADATAFIELD_OFFICIAL_RATING JellyfinMetadataField = "OfficialRating"
 )
 
 // All allowed values of JellyfinMetadataField enum

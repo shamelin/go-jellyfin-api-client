@@ -23,19 +23,19 @@ import (
 // UserViewsAPIService UserViewsAPI service
 type UserViewsAPIService service
 
-type ApiGetGroupingOptionsRequest struct {
+type UserViewsAPIGetGroupingOptionsRequest struct {
 	ctx context.Context
 	ApiService *UserViewsAPIService
 	userId *string
 }
 
 // User id.
-func (r ApiGetGroupingOptionsRequest) UserId(userId string) ApiGetGroupingOptionsRequest {
+func (r UserViewsAPIGetGroupingOptionsRequest) UserId(userId string) UserViewsAPIGetGroupingOptionsRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetGroupingOptionsRequest) Execute() ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
+func (r UserViewsAPIGetGroupingOptionsRequest) Execute() ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
 	return r.ApiService.GetGroupingOptionsExecute(r)
 }
 
@@ -43,10 +43,10 @@ func (r ApiGetGroupingOptionsRequest) Execute() ([]JellyfinSpecialViewOptionDto,
 GetGroupingOptions Get user view grouping options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGroupingOptionsRequest
+ @return UserViewsAPIGetGroupingOptionsRequest
 */
-func (a *UserViewsAPIService) GetGroupingOptions(ctx context.Context) ApiGetGroupingOptionsRequest {
-	return ApiGetGroupingOptionsRequest{
+func (a *UserViewsAPIService) GetGroupingOptions(ctx context.Context) UserViewsAPIGetGroupingOptionsRequest {
+	return UserViewsAPIGetGroupingOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -54,7 +54,7 @@ func (a *UserViewsAPIService) GetGroupingOptions(ctx context.Context) ApiGetGrou
 
 // Execute executes the request
 //  @return []JellyfinSpecialViewOptionDto
-func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsRequest) ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
+func (a *UserViewsAPIService) GetGroupingOptionsExecute(r UserViewsAPIGetGroupingOptionsRequest) ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -155,7 +155,7 @@ func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUserViewsRequest struct {
+type UserViewsAPIGetUserViewsRequest struct {
 	ctx context.Context
 	ApiService *UserViewsAPIService
 	userId *string
@@ -165,30 +165,30 @@ type ApiGetUserViewsRequest struct {
 }
 
 // User id.
-func (r ApiGetUserViewsRequest) UserId(userId string) ApiGetUserViewsRequest {
+func (r UserViewsAPIGetUserViewsRequest) UserId(userId string) UserViewsAPIGetUserViewsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Whether or not to include external views such as channels or live tv.
-func (r ApiGetUserViewsRequest) IncludeExternalContent(includeExternalContent bool) ApiGetUserViewsRequest {
+func (r UserViewsAPIGetUserViewsRequest) IncludeExternalContent(includeExternalContent bool) UserViewsAPIGetUserViewsRequest {
 	r.includeExternalContent = &includeExternalContent
 	return r
 }
 
 // Preset views.
-func (r ApiGetUserViewsRequest) PresetViews(presetViews []JellyfinCollectionType) ApiGetUserViewsRequest {
+func (r UserViewsAPIGetUserViewsRequest) PresetViews(presetViews []JellyfinCollectionType) UserViewsAPIGetUserViewsRequest {
 	r.presetViews = &presetViews
 	return r
 }
 
 // Whether or not to include hidden content.
-func (r ApiGetUserViewsRequest) IncludeHidden(includeHidden bool) ApiGetUserViewsRequest {
+func (r UserViewsAPIGetUserViewsRequest) IncludeHidden(includeHidden bool) UserViewsAPIGetUserViewsRequest {
 	r.includeHidden = &includeHidden
 	return r
 }
 
-func (r ApiGetUserViewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r UserViewsAPIGetUserViewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetUserViewsExecute(r)
 }
 
@@ -196,10 +196,10 @@ func (r ApiGetUserViewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *htt
 GetUserViews Get user views.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUserViewsRequest
+ @return UserViewsAPIGetUserViewsRequest
 */
-func (a *UserViewsAPIService) GetUserViews(ctx context.Context) ApiGetUserViewsRequest {
-	return ApiGetUserViewsRequest{
+func (a *UserViewsAPIService) GetUserViews(ctx context.Context) UserViewsAPIGetUserViewsRequest {
+	return UserViewsAPIGetUserViewsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -207,7 +207,7 @@ func (a *UserViewsAPIService) GetUserViews(ctx context.Context) ApiGetUserViewsR
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *UserViewsAPIService) GetUserViewsExecute(r ApiGetUserViewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *UserViewsAPIService) GetUserViewsExecute(r UserViewsAPIGetUserViewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

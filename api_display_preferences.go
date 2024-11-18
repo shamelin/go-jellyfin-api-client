@@ -23,7 +23,7 @@ import (
 // DisplayPreferencesAPIService DisplayPreferencesAPI service
 type DisplayPreferencesAPIService service
 
-type ApiGetDisplayPreferencesRequest struct {
+type DisplayPreferencesAPIGetDisplayPreferencesRequest struct {
 	ctx context.Context
 	ApiService *DisplayPreferencesAPIService
 	displayPreferencesId string
@@ -32,18 +32,18 @@ type ApiGetDisplayPreferencesRequest struct {
 }
 
 // Client.
-func (r ApiGetDisplayPreferencesRequest) Client(client string) ApiGetDisplayPreferencesRequest {
+func (r DisplayPreferencesAPIGetDisplayPreferencesRequest) Client(client string) DisplayPreferencesAPIGetDisplayPreferencesRequest {
 	r.client = &client
 	return r
 }
 
 // User id.
-func (r ApiGetDisplayPreferencesRequest) UserId(userId string) ApiGetDisplayPreferencesRequest {
+func (r DisplayPreferencesAPIGetDisplayPreferencesRequest) UserId(userId string) DisplayPreferencesAPIGetDisplayPreferencesRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetDisplayPreferencesRequest) Execute() (*JellyfinDisplayPreferencesDto, *http.Response, error) {
+func (r DisplayPreferencesAPIGetDisplayPreferencesRequest) Execute() (*JellyfinDisplayPreferencesDto, *http.Response, error) {
 	return r.ApiService.GetDisplayPreferencesExecute(r)
 }
 
@@ -52,10 +52,10 @@ GetDisplayPreferences Get Display Preferences.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param displayPreferencesId Display preferences id.
- @return ApiGetDisplayPreferencesRequest
+ @return DisplayPreferencesAPIGetDisplayPreferencesRequest
 */
-func (a *DisplayPreferencesAPIService) GetDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiGetDisplayPreferencesRequest {
-	return ApiGetDisplayPreferencesRequest{
+func (a *DisplayPreferencesAPIService) GetDisplayPreferences(ctx context.Context, displayPreferencesId string) DisplayPreferencesAPIGetDisplayPreferencesRequest {
+	return DisplayPreferencesAPIGetDisplayPreferencesRequest{
 		ApiService: a,
 		ctx: ctx,
 		displayPreferencesId: displayPreferencesId,
@@ -64,7 +64,7 @@ func (a *DisplayPreferencesAPIService) GetDisplayPreferences(ctx context.Context
 
 // Execute executes the request
 //  @return JellyfinDisplayPreferencesDto
-func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisplayPreferencesRequest) (*JellyfinDisplayPreferencesDto, *http.Response, error) {
+func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r DisplayPreferencesAPIGetDisplayPreferencesRequest) (*JellyfinDisplayPreferencesDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -159,7 +159,7 @@ func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateDisplayPreferencesRequest struct {
+type DisplayPreferencesAPIUpdateDisplayPreferencesRequest struct {
 	ctx context.Context
 	ApiService *DisplayPreferencesAPIService
 	displayPreferencesId string
@@ -169,24 +169,24 @@ type ApiUpdateDisplayPreferencesRequest struct {
 }
 
 // Client.
-func (r ApiUpdateDisplayPreferencesRequest) Client(client string) ApiUpdateDisplayPreferencesRequest {
+func (r DisplayPreferencesAPIUpdateDisplayPreferencesRequest) Client(client string) DisplayPreferencesAPIUpdateDisplayPreferencesRequest {
 	r.client = &client
 	return r
 }
 
 // New Display Preferences object.
-func (r ApiUpdateDisplayPreferencesRequest) JellyfinDisplayPreferencesDto(jellyfinDisplayPreferencesDto JellyfinDisplayPreferencesDto) ApiUpdateDisplayPreferencesRequest {
+func (r DisplayPreferencesAPIUpdateDisplayPreferencesRequest) JellyfinDisplayPreferencesDto(jellyfinDisplayPreferencesDto JellyfinDisplayPreferencesDto) DisplayPreferencesAPIUpdateDisplayPreferencesRequest {
 	r.jellyfinDisplayPreferencesDto = &jellyfinDisplayPreferencesDto
 	return r
 }
 
 // User Id.
-func (r ApiUpdateDisplayPreferencesRequest) UserId(userId string) ApiUpdateDisplayPreferencesRequest {
+func (r DisplayPreferencesAPIUpdateDisplayPreferencesRequest) UserId(userId string) DisplayPreferencesAPIUpdateDisplayPreferencesRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUpdateDisplayPreferencesRequest) Execute() (*http.Response, error) {
+func (r DisplayPreferencesAPIUpdateDisplayPreferencesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateDisplayPreferencesExecute(r)
 }
 
@@ -195,10 +195,10 @@ UpdateDisplayPreferences Update Display Preferences.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param displayPreferencesId Display preferences id.
- @return ApiUpdateDisplayPreferencesRequest
+ @return DisplayPreferencesAPIUpdateDisplayPreferencesRequest
 */
-func (a *DisplayPreferencesAPIService) UpdateDisplayPreferences(ctx context.Context, displayPreferencesId string) ApiUpdateDisplayPreferencesRequest {
-	return ApiUpdateDisplayPreferencesRequest{
+func (a *DisplayPreferencesAPIService) UpdateDisplayPreferences(ctx context.Context, displayPreferencesId string) DisplayPreferencesAPIUpdateDisplayPreferencesRequest {
+	return DisplayPreferencesAPIUpdateDisplayPreferencesRequest{
 		ApiService: a,
 		ctx: ctx,
 		displayPreferencesId: displayPreferencesId,
@@ -206,7 +206,7 @@ func (a *DisplayPreferencesAPIService) UpdateDisplayPreferences(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *DisplayPreferencesAPIService) UpdateDisplayPreferencesExecute(r ApiUpdateDisplayPreferencesRequest) (*http.Response, error) {
+func (a *DisplayPreferencesAPIService) UpdateDisplayPreferencesExecute(r DisplayPreferencesAPIUpdateDisplayPreferencesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

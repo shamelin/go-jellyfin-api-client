@@ -25,7 +25,7 @@ import (
 // ItemsAPIService ItemsAPI service
 type ItemsAPIService service
 
-type ApiGetItemUserDataRequest struct {
+type ItemsAPIGetItemUserDataRequest struct {
 	ctx context.Context
 	ApiService *ItemsAPIService
 	itemId string
@@ -33,12 +33,12 @@ type ApiGetItemUserDataRequest struct {
 }
 
 // The user id.
-func (r ApiGetItemUserDataRequest) UserId(userId string) ApiGetItemUserDataRequest {
+func (r ItemsAPIGetItemUserDataRequest) UserId(userId string) ItemsAPIGetItemUserDataRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r ItemsAPIGetItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.GetItemUserDataExecute(r)
 }
 
@@ -47,10 +47,10 @@ GetItemUserData Get Item User Data.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetItemUserDataRequest
+ @return ItemsAPIGetItemUserDataRequest
 */
-func (a *ItemsAPIService) GetItemUserData(ctx context.Context, itemId string) ApiGetItemUserDataRequest {
-	return ApiGetItemUserDataRequest{
+func (a *ItemsAPIService) GetItemUserData(ctx context.Context, itemId string) ItemsAPIGetItemUserDataRequest {
+	return ItemsAPIGetItemUserDataRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -59,7 +59,7 @@ func (a *ItemsAPIService) GetItemUserData(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *ItemsAPIService) GetItemUserDataExecute(r ItemsAPIGetItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -161,7 +161,7 @@ func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetItemsRequest struct {
+type ItemsAPIGetItemsRequest struct {
 	ctx context.Context
 	ApiService *ItemsAPIService
 	userId *string
@@ -253,522 +253,522 @@ type ApiGetItemsRequest struct {
 }
 
 // The user id supplied as query parameter; this is required when not using an API key.
-func (r ApiGetItemsRequest) UserId(userId string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) UserId(userId string) ItemsAPIGetItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by maximum official rating (PG, PG-13, TV-MA, etc).
-func (r ApiGetItemsRequest) MaxOfficialRating(maxOfficialRating string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MaxOfficialRating(maxOfficialRating string) ItemsAPIGetItemsRequest {
 	r.maxOfficialRating = &maxOfficialRating
 	return r
 }
 
 // Optional filter by items with theme songs.
-func (r ApiGetItemsRequest) HasThemeSong(hasThemeSong bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasThemeSong(hasThemeSong bool) ItemsAPIGetItemsRequest {
 	r.hasThemeSong = &hasThemeSong
 	return r
 }
 
 // Optional filter by items with theme videos.
-func (r ApiGetItemsRequest) HasThemeVideo(hasThemeVideo bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasThemeVideo(hasThemeVideo bool) ItemsAPIGetItemsRequest {
 	r.hasThemeVideo = &hasThemeVideo
 	return r
 }
 
 // Optional filter by items with subtitles.
-func (r ApiGetItemsRequest) HasSubtitles(hasSubtitles bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasSubtitles(hasSubtitles bool) ItemsAPIGetItemsRequest {
 	r.hasSubtitles = &hasSubtitles
 	return r
 }
 
 // Optional filter by items with special features.
-func (r ApiGetItemsRequest) HasSpecialFeature(hasSpecialFeature bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasSpecialFeature(hasSpecialFeature bool) ItemsAPIGetItemsRequest {
 	r.hasSpecialFeature = &hasSpecialFeature
 	return r
 }
 
 // Optional filter by items with trailers.
-func (r ApiGetItemsRequest) HasTrailer(hasTrailer bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasTrailer(hasTrailer bool) ItemsAPIGetItemsRequest {
 	r.hasTrailer = &hasTrailer
 	return r
 }
 
 // Optional. Return items that are siblings of a supplied item.
-func (r ApiGetItemsRequest) AdjacentTo(adjacentTo string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) AdjacentTo(adjacentTo string) ItemsAPIGetItemsRequest {
 	r.adjacentTo = &adjacentTo
 	return r
 }
 
 // Optional filter by index number.
-func (r ApiGetItemsRequest) IndexNumber(indexNumber int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IndexNumber(indexNumber int32) ItemsAPIGetItemsRequest {
 	r.indexNumber = &indexNumber
 	return r
 }
 
 // Optional filter by parent index number.
-func (r ApiGetItemsRequest) ParentIndexNumber(parentIndexNumber int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ParentIndexNumber(parentIndexNumber int32) ItemsAPIGetItemsRequest {
 	r.parentIndexNumber = &parentIndexNumber
 	return r
 }
 
 // Optional filter by items that have or do not have a parental rating.
-func (r ApiGetItemsRequest) HasParentalRating(hasParentalRating bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasParentalRating(hasParentalRating bool) ItemsAPIGetItemsRequest {
 	r.hasParentalRating = &hasParentalRating
 	return r
 }
 
 // Optional filter by items that are HD or not.
-func (r ApiGetItemsRequest) IsHd(isHd bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsHd(isHd bool) ItemsAPIGetItemsRequest {
 	r.isHd = &isHd
 	return r
 }
 
 // Optional filter by items that are 4K or not.
-func (r ApiGetItemsRequest) Is4K(is4K bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Is4K(is4K bool) ItemsAPIGetItemsRequest {
 	r.is4K = &is4K
 	return r
 }
 
 // Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) LocationTypes(locationTypes []JellyfinLocationType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) LocationTypes(locationTypes []JellyfinLocationType) ItemsAPIGetItemsRequest {
 	r.locationTypes = &locationTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) ItemsAPIGetItemsRequest {
 	r.excludeLocationTypes = &excludeLocationTypes
 	return r
 }
 
 // Optional filter by items that are missing episodes or not.
-func (r ApiGetItemsRequest) IsMissing(isMissing bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsMissing(isMissing bool) ItemsAPIGetItemsRequest {
 	r.isMissing = &isMissing
 	return r
 }
 
 // Optional filter by items that are unaired episodes or not.
-func (r ApiGetItemsRequest) IsUnaired(isUnaired bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsUnaired(isUnaired bool) ItemsAPIGetItemsRequest {
 	r.isUnaired = &isUnaired
 	return r
 }
 
 // Optional filter by minimum community rating.
-func (r ApiGetItemsRequest) MinCommunityRating(minCommunityRating float64) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinCommunityRating(minCommunityRating float64) ItemsAPIGetItemsRequest {
 	r.minCommunityRating = &minCommunityRating
 	return r
 }
 
 // Optional filter by minimum critic rating.
-func (r ApiGetItemsRequest) MinCriticRating(minCriticRating float64) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinCriticRating(minCriticRating float64) ItemsAPIGetItemsRequest {
 	r.minCriticRating = &minCriticRating
 	return r
 }
 
 // Optional. The minimum premiere date. Format &#x3D; ISO.
-func (r ApiGetItemsRequest) MinPremiereDate(minPremiereDate time.Time) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinPremiereDate(minPremiereDate time.Time) ItemsAPIGetItemsRequest {
 	r.minPremiereDate = &minPremiereDate
 	return r
 }
 
 // Optional. The minimum last saved date. Format &#x3D; ISO.
-func (r ApiGetItemsRequest) MinDateLastSaved(minDateLastSaved time.Time) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinDateLastSaved(minDateLastSaved time.Time) ItemsAPIGetItemsRequest {
 	r.minDateLastSaved = &minDateLastSaved
 	return r
 }
 
 // Optional. The minimum last saved date for the current user. Format &#x3D; ISO.
-func (r ApiGetItemsRequest) MinDateLastSavedForUser(minDateLastSavedForUser time.Time) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinDateLastSavedForUser(minDateLastSavedForUser time.Time) ItemsAPIGetItemsRequest {
 	r.minDateLastSavedForUser = &minDateLastSavedForUser
 	return r
 }
 
 // Optional. The maximum premiere date. Format &#x3D; ISO.
-func (r ApiGetItemsRequest) MaxPremiereDate(maxPremiereDate time.Time) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MaxPremiereDate(maxPremiereDate time.Time) ItemsAPIGetItemsRequest {
 	r.maxPremiereDate = &maxPremiereDate
 	return r
 }
 
 // Optional filter by items that have an overview or not.
-func (r ApiGetItemsRequest) HasOverview(hasOverview bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasOverview(hasOverview bool) ItemsAPIGetItemsRequest {
 	r.hasOverview = &hasOverview
 	return r
 }
 
 // Optional filter by items that have an IMDb id or not.
-func (r ApiGetItemsRequest) HasImdbId(hasImdbId bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasImdbId(hasImdbId bool) ItemsAPIGetItemsRequest {
 	r.hasImdbId = &hasImdbId
 	return r
 }
 
 // Optional filter by items that have a TMDb id or not.
-func (r ApiGetItemsRequest) HasTmdbId(hasTmdbId bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasTmdbId(hasTmdbId bool) ItemsAPIGetItemsRequest {
 	r.hasTmdbId = &hasTmdbId
 	return r
 }
 
 // Optional filter by items that have a TVDb id or not.
-func (r ApiGetItemsRequest) HasTvdbId(hasTvdbId bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasTvdbId(hasTvdbId bool) ItemsAPIGetItemsRequest {
 	r.hasTvdbId = &hasTvdbId
 	return r
 }
 
 // Optional filter for live tv movies.
-func (r ApiGetItemsRequest) IsMovie(isMovie bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsMovie(isMovie bool) ItemsAPIGetItemsRequest {
 	r.isMovie = &isMovie
 	return r
 }
 
 // Optional filter for live tv series.
-func (r ApiGetItemsRequest) IsSeries(isSeries bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsSeries(isSeries bool) ItemsAPIGetItemsRequest {
 	r.isSeries = &isSeries
 	return r
 }
 
 // Optional filter for live tv news.
-func (r ApiGetItemsRequest) IsNews(isNews bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsNews(isNews bool) ItemsAPIGetItemsRequest {
 	r.isNews = &isNews
 	return r
 }
 
 // Optional filter for live tv kids.
-func (r ApiGetItemsRequest) IsKids(isKids bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsKids(isKids bool) ItemsAPIGetItemsRequest {
 	r.isKids = &isKids
 	return r
 }
 
 // Optional filter for live tv sports.
-func (r ApiGetItemsRequest) IsSports(isSports bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsSports(isSports bool) ItemsAPIGetItemsRequest {
 	r.isSports = &isSports
 	return r
 }
 
 // Optional. If specified, results will be filtered by excluding item ids. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ExcludeItemIds(excludeItemIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ExcludeItemIds(excludeItemIds []string) ItemsAPIGetItemsRequest {
 	r.excludeItemIds = &excludeItemIds
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetItemsRequest) StartIndex(startIndex int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) StartIndex(startIndex int32) ItemsAPIGetItemsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetItemsRequest) Limit(limit int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Limit(limit int32) ItemsAPIGetItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // When searching within folders, this determines whether or not the search will be recursive. true/false.
-func (r ApiGetItemsRequest) Recursive(recursive bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Recursive(recursive bool) ItemsAPIGetItemsRequest {
 	r.recursive = &recursive
 	return r
 }
 
 // Optional. Filter based on a search term.
-func (r ApiGetItemsRequest) SearchTerm(searchTerm string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) SearchTerm(searchTerm string) ItemsAPIGetItemsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Sort Order - Ascending, Descending.
-func (r ApiGetItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ItemsAPIGetItemsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetItemsRequest) ParentId(parentId string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ParentId(parentId string) ItemsAPIGetItemsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetItemsRequest) Fields(fields []JellyfinItemFields) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Fields(fields []JellyfinItemFields) ItemsAPIGetItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ItemsAPIGetItemsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ItemsAPIGetItemsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes.
-func (r ApiGetItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Filters(filters []JellyfinItemFilter) ItemsAPIGetItemsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetItemsRequest) IsFavorite(isFavorite bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsFavorite(isFavorite bool) ItemsAPIGetItemsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ItemsAPIGetItemsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ImageTypes(imageTypes []JellyfinImageType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ImageTypes(imageTypes []JellyfinImageType) ItemsAPIGetItemsRequest {
 	r.imageTypes = &imageTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ItemsAPIGetItemsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional filter by items that are played, or not.
-func (r ApiGetItemsRequest) IsPlayed(isPlayed bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsPlayed(isPlayed bool) ItemsAPIGetItemsRequest {
 	r.isPlayed = &isPlayed
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) Genres(genres []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Genres(genres []string) ItemsAPIGetItemsRequest {
 	r.genres = &genres
 	return r
 }
 
 // Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) OfficialRatings(officialRatings []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) OfficialRatings(officialRatings []string) ItemsAPIGetItemsRequest {
 	r.officialRatings = &officialRatings
 	return r
 }
 
 // Optional. If specified, results will be filtered based on tag. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) Tags(tags []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Tags(tags []string) ItemsAPIGetItemsRequest {
 	r.tags = &tags
 	return r
 }
 
 // Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) Years(years []int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Years(years []int32) ItemsAPIGetItemsRequest {
 	r.years = &years
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetItemsRequest) EnableUserData(enableUserData bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) EnableUserData(enableUserData bool) ItemsAPIGetItemsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ImageTypeLimit(imageTypeLimit int32) ItemsAPIGetItemsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ItemsAPIGetItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person.
-func (r ApiGetItemsRequest) Person(person string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Person(person string) ItemsAPIGetItemsRequest {
 	r.person = &person
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified person id.
-func (r ApiGetItemsRequest) PersonIds(personIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) PersonIds(personIds []string) ItemsAPIGetItemsRequest {
 	r.personIds = &personIds
 	return r
 }
 
 // Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited.
-func (r ApiGetItemsRequest) PersonTypes(personTypes []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) PersonTypes(personTypes []string) ItemsAPIGetItemsRequest {
 	r.personTypes = &personTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) Studios(studios []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Studios(studios []string) ItemsAPIGetItemsRequest {
 	r.studios = &studios
 	return r
 }
 
 // Optional. If specified, results will be filtered based on artists. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) Artists(artists []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Artists(artists []string) ItemsAPIGetItemsRequest {
 	r.artists = &artists
 	return r
 }
 
 // Optional. If specified, results will be filtered based on artist id. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) ExcludeArtistIds(excludeArtistIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ExcludeArtistIds(excludeArtistIds []string) ItemsAPIGetItemsRequest {
 	r.excludeArtistIds = &excludeArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified artist id.
-func (r ApiGetItemsRequest) ArtistIds(artistIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ArtistIds(artistIds []string) ItemsAPIGetItemsRequest {
 	r.artistIds = &artistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified album artist id.
-func (r ApiGetItemsRequest) AlbumArtistIds(albumArtistIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) AlbumArtistIds(albumArtistIds []string) ItemsAPIGetItemsRequest {
 	r.albumArtistIds = &albumArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered to include only those containing the specified contributing artist id.
-func (r ApiGetItemsRequest) ContributingArtistIds(contributingArtistIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) ContributingArtistIds(contributingArtistIds []string) ItemsAPIGetItemsRequest {
 	r.contributingArtistIds = &contributingArtistIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) Albums(albums []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Albums(albums []string) ItemsAPIGetItemsRequest {
 	r.albums = &albums
 	return r
 }
 
 // Optional. If specified, results will be filtered based on album id. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) AlbumIds(albumIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) AlbumIds(albumIds []string) ItemsAPIGetItemsRequest {
 	r.albumIds = &albumIds
 	return r
 }
 
 // Optional. If specific items are needed, specify a list of item id&#39;s to retrieve. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) Ids(ids []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Ids(ids []string) ItemsAPIGetItemsRequest {
 	r.ids = &ids
 	return r
 }
 
 // Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) VideoTypes(videoTypes []JellyfinVideoType) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) VideoTypes(videoTypes []JellyfinVideoType) ItemsAPIGetItemsRequest {
 	r.videoTypes = &videoTypes
 	return r
 }
 
 // Optional filter by minimum official rating (PG, PG-13, TV-MA, etc).
-func (r ApiGetItemsRequest) MinOfficialRating(minOfficialRating string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinOfficialRating(minOfficialRating string) ItemsAPIGetItemsRequest {
 	r.minOfficialRating = &minOfficialRating
 	return r
 }
 
 // Optional filter by items that are locked.
-func (r ApiGetItemsRequest) IsLocked(isLocked bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsLocked(isLocked bool) ItemsAPIGetItemsRequest {
 	r.isLocked = &isLocked
 	return r
 }
 
 // Optional filter by items that are placeholders.
-func (r ApiGetItemsRequest) IsPlaceHolder(isPlaceHolder bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) IsPlaceHolder(isPlaceHolder bool) ItemsAPIGetItemsRequest {
 	r.isPlaceHolder = &isPlaceHolder
 	return r
 }
 
 // Optional filter by items that have official ratings.
-func (r ApiGetItemsRequest) HasOfficialRating(hasOfficialRating bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) HasOfficialRating(hasOfficialRating bool) ItemsAPIGetItemsRequest {
 	r.hasOfficialRating = &hasOfficialRating
 	return r
 }
 
 // Whether or not to hide items behind their boxsets.
-func (r ApiGetItemsRequest) CollapseBoxSetItems(collapseBoxSetItems bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) CollapseBoxSetItems(collapseBoxSetItems bool) ItemsAPIGetItemsRequest {
 	r.collapseBoxSetItems = &collapseBoxSetItems
 	return r
 }
 
 // Optional. Filter by the minimum width of the item.
-func (r ApiGetItemsRequest) MinWidth(minWidth int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinWidth(minWidth int32) ItemsAPIGetItemsRequest {
 	r.minWidth = &minWidth
 	return r
 }
 
 // Optional. Filter by the minimum height of the item.
-func (r ApiGetItemsRequest) MinHeight(minHeight int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MinHeight(minHeight int32) ItemsAPIGetItemsRequest {
 	r.minHeight = &minHeight
 	return r
 }
 
 // Optional. Filter by the maximum width of the item.
-func (r ApiGetItemsRequest) MaxWidth(maxWidth int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MaxWidth(maxWidth int32) ItemsAPIGetItemsRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. Filter by the maximum height of the item.
-func (r ApiGetItemsRequest) MaxHeight(maxHeight int32) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) MaxHeight(maxHeight int32) ItemsAPIGetItemsRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional filter by items that are 3D, or not.
-func (r ApiGetItemsRequest) Is3D(is3D bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) Is3D(is3D bool) ItemsAPIGetItemsRequest {
 	r.is3D = &is3D
 	return r
 }
 
 // Optional filter by Series Status. Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) ItemsAPIGetItemsRequest {
 	r.seriesStatus = &seriesStatus
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetItemsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ItemsAPIGetItemsRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetItemsRequest) NameStartsWith(nameStartsWith string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) NameStartsWith(nameStartsWith string) ItemsAPIGetItemsRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetItemsRequest) NameLessThan(nameLessThan string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) NameLessThan(nameLessThan string) ItemsAPIGetItemsRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. If specified, results will be filtered based on studio id. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) StudioIds(studioIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) StudioIds(studioIds []string) ItemsAPIGetItemsRequest {
 	r.studioIds = &studioIds
 	return r
 }
 
 // Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited.
-func (r ApiGetItemsRequest) GenreIds(genreIds []string) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) GenreIds(genreIds []string) ItemsAPIGetItemsRequest {
 	r.genreIds = &genreIds
 	return r
 }
 
 // Optional. Enable the total record count.
-func (r ApiGetItemsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ItemsAPIGetItemsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetItemsRequest) EnableImages(enableImages bool) ApiGetItemsRequest {
+func (r ItemsAPIGetItemsRequest) EnableImages(enableImages bool) ItemsAPIGetItemsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
-func (r ApiGetItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ItemsAPIGetItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetItemsExecute(r)
 }
 
@@ -776,10 +776,10 @@ func (r ApiGetItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Re
 GetItems Gets items based on a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetItemsRequest
+ @return ItemsAPIGetItemsRequest
 */
-func (a *ItemsAPIService) GetItems(ctx context.Context) ApiGetItemsRequest {
-	return ApiGetItemsRequest{
+func (a *ItemsAPIService) GetItems(ctx context.Context) ItemsAPIGetItemsRequest {
+	return ItemsAPIGetItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -787,7 +787,7 @@ func (a *ItemsAPIService) GetItems(ctx context.Context) ApiGetItemsRequest {
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ItemsAPIService) GetItemsExecute(r ItemsAPIGetItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1386,7 +1386,7 @@ func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*JellyfinBaseIt
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetResumeItemsRequest struct {
+type ItemsAPIGetResumeItemsRequest struct {
 	ctx context.Context
 	ApiService *ItemsAPIService
 	userId *string
@@ -1407,96 +1407,96 @@ type ApiGetResumeItemsRequest struct {
 }
 
 // The user id.
-func (r ApiGetResumeItemsRequest) UserId(userId string) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) UserId(userId string) ItemsAPIGetResumeItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // The start index.
-func (r ApiGetResumeItemsRequest) StartIndex(startIndex int32) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) StartIndex(startIndex int32) ItemsAPIGetResumeItemsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // The item limit.
-func (r ApiGetResumeItemsRequest) Limit(limit int32) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) Limit(limit int32) ItemsAPIGetResumeItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // The search term.
-func (r ApiGetResumeItemsRequest) SearchTerm(searchTerm string) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) SearchTerm(searchTerm string) ItemsAPIGetResumeItemsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetResumeItemsRequest) ParentId(parentId string) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) ParentId(parentId string) ItemsAPIGetResumeItemsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetResumeItemsRequest) Fields(fields []JellyfinItemFields) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) Fields(fields []JellyfinItemFields) ItemsAPIGetResumeItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ItemsAPIGetResumeItemsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetResumeItemsRequest) EnableUserData(enableUserData bool) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) EnableUserData(enableUserData bool) ItemsAPIGetResumeItemsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetResumeItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) ImageTypeLimit(imageTypeLimit int32) ItemsAPIGetResumeItemsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetResumeItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ItemsAPIGetResumeItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ItemsAPIGetResumeItemsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ItemsAPIGetResumeItemsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Enable the total record count.
-func (r ApiGetResumeItemsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ItemsAPIGetResumeItemsRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetResumeItemsRequest) EnableImages(enableImages bool) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) EnableImages(enableImages bool) ItemsAPIGetResumeItemsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Whether to exclude the currently active sessions.
-func (r ApiGetResumeItemsRequest) ExcludeActiveSessions(excludeActiveSessions bool) ApiGetResumeItemsRequest {
+func (r ItemsAPIGetResumeItemsRequest) ExcludeActiveSessions(excludeActiveSessions bool) ItemsAPIGetResumeItemsRequest {
 	r.excludeActiveSessions = &excludeActiveSessions
 	return r
 }
 
-func (r ApiGetResumeItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r ItemsAPIGetResumeItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetResumeItemsExecute(r)
 }
 
@@ -1504,10 +1504,10 @@ func (r ApiGetResumeItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *h
 GetResumeItems Gets items based on a query.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetResumeItemsRequest
+ @return ItemsAPIGetResumeItemsRequest
 */
-func (a *ItemsAPIService) GetResumeItems(ctx context.Context) ApiGetResumeItemsRequest {
-	return ApiGetResumeItemsRequest{
+func (a *ItemsAPIService) GetResumeItems(ctx context.Context) ItemsAPIGetResumeItemsRequest {
+	return ItemsAPIGetResumeItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -1515,7 +1515,7 @@ func (a *ItemsAPIService) GetResumeItems(ctx context.Context) ApiGetResumeItemsR
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *ItemsAPIService) GetResumeItemsExecute(r ItemsAPIGetResumeItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1696,7 +1696,7 @@ func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateItemUserDataRequest struct {
+type ItemsAPIUpdateItemUserDataRequest struct {
 	ctx context.Context
 	ApiService *ItemsAPIService
 	itemId string
@@ -1705,18 +1705,18 @@ type ApiUpdateItemUserDataRequest struct {
 }
 
 // New user data object.
-func (r ApiUpdateItemUserDataRequest) JellyfinUpdateUserItemDataDto(jellyfinUpdateUserItemDataDto JellyfinUpdateUserItemDataDto) ApiUpdateItemUserDataRequest {
+func (r ItemsAPIUpdateItemUserDataRequest) JellyfinUpdateUserItemDataDto(jellyfinUpdateUserItemDataDto JellyfinUpdateUserItemDataDto) ItemsAPIUpdateItemUserDataRequest {
 	r.jellyfinUpdateUserItemDataDto = &jellyfinUpdateUserItemDataDto
 	return r
 }
 
 // The user id.
-func (r ApiUpdateItemUserDataRequest) UserId(userId string) ApiUpdateItemUserDataRequest {
+func (r ItemsAPIUpdateItemUserDataRequest) UserId(userId string) ItemsAPIUpdateItemUserDataRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiUpdateItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
+func (r ItemsAPIUpdateItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UpdateItemUserDataExecute(r)
 }
 
@@ -1725,10 +1725,10 @@ UpdateItemUserData Update Item User Data.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiUpdateItemUserDataRequest
+ @return ItemsAPIUpdateItemUserDataRequest
 */
-func (a *ItemsAPIService) UpdateItemUserData(ctx context.Context, itemId string) ApiUpdateItemUserDataRequest {
-	return ApiUpdateItemUserDataRequest{
+func (a *ItemsAPIService) UpdateItemUserData(ctx context.Context, itemId string) ItemsAPIUpdateItemUserDataRequest {
+	return ItemsAPIUpdateItemUserDataRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1737,7 +1737,7 @@ func (a *ItemsAPIService) UpdateItemUserData(ctx context.Context, itemId string)
 
 // Execute executes the request
 //  @return JellyfinUserItemDataDto
-func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
+func (a *ItemsAPIService) UpdateItemUserDataExecute(r ItemsAPIUpdateItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

@@ -20,9 +20,9 @@ type JellyfinCodecType string
 
 // List of CodecType
 const (
-	VIDEO JellyfinCodecType = "Video"
-	VIDEO_AUDIO JellyfinCodecType = "VideoAudio"
-	AUDIO JellyfinCodecType = "Audio"
+	JELLYFINCODECTYPE_VIDEO JellyfinCodecType = "Video"
+	JELLYFINCODECTYPE_VIDEO_AUDIO JellyfinCodecType = "VideoAudio"
+	JELLYFINCODECTYPE_AUDIO JellyfinCodecType = "Audio"
 )
 
 // All allowed values of JellyfinCodecType enum

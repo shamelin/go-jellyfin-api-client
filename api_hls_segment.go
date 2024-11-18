@@ -24,14 +24,14 @@ import (
 // HlsSegmentAPIService HlsSegmentAPI service
 type HlsSegmentAPIService service
 
-type ApiGetHlsAudioSegmentLegacyAacRequest struct {
+type HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest struct {
 	ctx context.Context
 	ApiService *HlsSegmentAPIService
 	itemId string
 	segmentId string
 }
 
-func (r ApiGetHlsAudioSegmentLegacyAacRequest) Execute() (*os.File, *http.Response, error) {
+func (r HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsAudioSegmentLegacyAacExecute(r)
 }
 
@@ -41,10 +41,10 @@ GetHlsAudioSegmentLegacyAac Gets the specified audio segment for an audio item.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param segmentId The segment id.
- @return ApiGetHlsAudioSegmentLegacyAacRequest
+ @return HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest
 */
-func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAac(ctx context.Context, itemId string, segmentId string) ApiGetHlsAudioSegmentLegacyAacRequest {
-	return ApiGetHlsAudioSegmentLegacyAacRequest{
+func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAac(ctx context.Context, itemId string, segmentId string) HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest {
+	return HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -54,7 +54,7 @@ func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAac(ctx context.Context, 
 
 // Execute executes the request
 //  @return *os.File
-func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAacExecute(r ApiGetHlsAudioSegmentLegacyAacRequest) (*os.File, *http.Response, error) {
+func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAacExecute(r HlsSegmentAPIGetHlsAudioSegmentLegacyAacRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -129,14 +129,14 @@ func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyAacExecute(r ApiGetHlsAud
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetHlsAudioSegmentLegacyMp3Request struct {
+type HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request struct {
 	ctx context.Context
 	ApiService *HlsSegmentAPIService
 	itemId string
 	segmentId string
 }
 
-func (r ApiGetHlsAudioSegmentLegacyMp3Request) Execute() (*os.File, *http.Response, error) {
+func (r HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsAudioSegmentLegacyMp3Execute(r)
 }
 
@@ -146,10 +146,10 @@ GetHlsAudioSegmentLegacyMp3 Gets the specified audio segment for an audio item.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param segmentId The segment id.
- @return ApiGetHlsAudioSegmentLegacyMp3Request
+ @return HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request
 */
-func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3(ctx context.Context, itemId string, segmentId string) ApiGetHlsAudioSegmentLegacyMp3Request {
-	return ApiGetHlsAudioSegmentLegacyMp3Request{
+func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3(ctx context.Context, itemId string, segmentId string) HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request {
+	return HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -159,7 +159,7 @@ func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3(ctx context.Context, 
 
 // Execute executes the request
 //  @return *os.File
-func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3Execute(r ApiGetHlsAudioSegmentLegacyMp3Request) (*os.File, *http.Response, error) {
+func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3Execute(r HlsSegmentAPIGetHlsAudioSegmentLegacyMp3Request) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -234,14 +234,14 @@ func (a *HlsSegmentAPIService) GetHlsAudioSegmentLegacyMp3Execute(r ApiGetHlsAud
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetHlsPlaylistLegacyRequest struct {
+type HlsSegmentAPIGetHlsPlaylistLegacyRequest struct {
 	ctx context.Context
 	ApiService *HlsSegmentAPIService
 	itemId string
 	playlistId string
 }
 
-func (r ApiGetHlsPlaylistLegacyRequest) Execute() (*os.File, *http.Response, error) {
+func (r HlsSegmentAPIGetHlsPlaylistLegacyRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsPlaylistLegacyExecute(r)
 }
 
@@ -251,10 +251,10 @@ GetHlsPlaylistLegacy Gets a hls video playlist.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The video id.
  @param playlistId The playlist id.
- @return ApiGetHlsPlaylistLegacyRequest
+ @return HlsSegmentAPIGetHlsPlaylistLegacyRequest
 */
-func (a *HlsSegmentAPIService) GetHlsPlaylistLegacy(ctx context.Context, itemId string, playlistId string) ApiGetHlsPlaylistLegacyRequest {
-	return ApiGetHlsPlaylistLegacyRequest{
+func (a *HlsSegmentAPIService) GetHlsPlaylistLegacy(ctx context.Context, itemId string, playlistId string) HlsSegmentAPIGetHlsPlaylistLegacyRequest {
+	return HlsSegmentAPIGetHlsPlaylistLegacyRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -264,7 +264,7 @@ func (a *HlsSegmentAPIService) GetHlsPlaylistLegacy(ctx context.Context, itemId 
 
 // Execute executes the request
 //  @return *os.File
-func (a *HlsSegmentAPIService) GetHlsPlaylistLegacyExecute(r ApiGetHlsPlaylistLegacyRequest) (*os.File, *http.Response, error) {
+func (a *HlsSegmentAPIService) GetHlsPlaylistLegacyExecute(r HlsSegmentAPIGetHlsPlaylistLegacyRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -353,7 +353,7 @@ func (a *HlsSegmentAPIService) GetHlsPlaylistLegacyExecute(r ApiGetHlsPlaylistLe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetHlsVideoSegmentLegacyRequest struct {
+type HlsSegmentAPIGetHlsVideoSegmentLegacyRequest struct {
 	ctx context.Context
 	ApiService *HlsSegmentAPIService
 	itemId string
@@ -362,7 +362,7 @@ type ApiGetHlsVideoSegmentLegacyRequest struct {
 	segmentContainer string
 }
 
-func (r ApiGetHlsVideoSegmentLegacyRequest) Execute() (*os.File, *http.Response, error) {
+func (r HlsSegmentAPIGetHlsVideoSegmentLegacyRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetHlsVideoSegmentLegacyExecute(r)
 }
 
@@ -374,10 +374,10 @@ GetHlsVideoSegmentLegacy Gets a hls video segment.
  @param playlistId The playlist id.
  @param segmentId The segment id.
  @param segmentContainer The segment container.
- @return ApiGetHlsVideoSegmentLegacyRequest
+ @return HlsSegmentAPIGetHlsVideoSegmentLegacyRequest
 */
-func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacy(ctx context.Context, itemId string, playlistId string, segmentId string, segmentContainer string) ApiGetHlsVideoSegmentLegacyRequest {
-	return ApiGetHlsVideoSegmentLegacyRequest{
+func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacy(ctx context.Context, itemId string, playlistId string, segmentId string, segmentContainer string) HlsSegmentAPIGetHlsVideoSegmentLegacyRequest {
+	return HlsSegmentAPIGetHlsVideoSegmentLegacyRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -389,7 +389,7 @@ func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacy(ctx context.Context, ite
 
 // Execute executes the request
 //  @return *os.File
-func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacyExecute(r ApiGetHlsVideoSegmentLegacyRequest) (*os.File, *http.Response, error) {
+func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacyExecute(r HlsSegmentAPIGetHlsVideoSegmentLegacyRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -476,7 +476,7 @@ func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacyExecute(r ApiGetHlsVideoS
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiStopEncodingProcessRequest struct {
+type HlsSegmentAPIStopEncodingProcessRequest struct {
 	ctx context.Context
 	ApiService *HlsSegmentAPIService
 	deviceId *string
@@ -484,18 +484,18 @@ type ApiStopEncodingProcessRequest struct {
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiStopEncodingProcessRequest) DeviceId(deviceId string) ApiStopEncodingProcessRequest {
+func (r HlsSegmentAPIStopEncodingProcessRequest) DeviceId(deviceId string) HlsSegmentAPIStopEncodingProcessRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // The play session id.
-func (r ApiStopEncodingProcessRequest) PlaySessionId(playSessionId string) ApiStopEncodingProcessRequest {
+func (r HlsSegmentAPIStopEncodingProcessRequest) PlaySessionId(playSessionId string) HlsSegmentAPIStopEncodingProcessRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
-func (r ApiStopEncodingProcessRequest) Execute() (*http.Response, error) {
+func (r HlsSegmentAPIStopEncodingProcessRequest) Execute() (*http.Response, error) {
 	return r.ApiService.StopEncodingProcessExecute(r)
 }
 
@@ -503,17 +503,17 @@ func (r ApiStopEncodingProcessRequest) Execute() (*http.Response, error) {
 StopEncodingProcess Stops an active encoding.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiStopEncodingProcessRequest
+ @return HlsSegmentAPIStopEncodingProcessRequest
 */
-func (a *HlsSegmentAPIService) StopEncodingProcess(ctx context.Context) ApiStopEncodingProcessRequest {
-	return ApiStopEncodingProcessRequest{
+func (a *HlsSegmentAPIService) StopEncodingProcess(ctx context.Context) HlsSegmentAPIStopEncodingProcessRequest {
+	return HlsSegmentAPIStopEncodingProcessRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *HlsSegmentAPIService) StopEncodingProcessExecute(r ApiStopEncodingProcessRequest) (*http.Response, error) {
+func (a *HlsSegmentAPIService) StopEncodingProcessExecute(r HlsSegmentAPIStopEncodingProcessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}

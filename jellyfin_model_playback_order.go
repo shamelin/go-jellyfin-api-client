@@ -20,8 +20,8 @@ type JellyfinPlaybackOrder string
 
 // List of PlaybackOrder
 const (
-	DEFAULT JellyfinPlaybackOrder = "Default"
-	SHUFFLE JellyfinPlaybackOrder = "Shuffle"
+	JELLYFINPLAYBACKORDER_DEFAULT JellyfinPlaybackOrder = "Default"
+	JELLYFINPLAYBACKORDER_SHUFFLE JellyfinPlaybackOrder = "Shuffle"
 )
 
 // All allowed values of JellyfinPlaybackOrder enum

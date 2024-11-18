@@ -20,14 +20,14 @@ type JellyfinCollectionTypeOptions string
 
 // List of CollectionTypeOptions
 const (
-	MOVIES JellyfinCollectionTypeOptions = "movies"
-	TVSHOWS JellyfinCollectionTypeOptions = "tvshows"
-	MUSIC JellyfinCollectionTypeOptions = "music"
-	MUSICVIDEOS JellyfinCollectionTypeOptions = "musicvideos"
-	HOMEVIDEOS JellyfinCollectionTypeOptions = "homevideos"
-	BOXSETS JellyfinCollectionTypeOptions = "boxsets"
-	BOOKS JellyfinCollectionTypeOptions = "books"
-	MIXED JellyfinCollectionTypeOptions = "mixed"
+	JELLYFINCOLLECTIONTYPEOPTIONS_MOVIES JellyfinCollectionTypeOptions = "movies"
+	JELLYFINCOLLECTIONTYPEOPTIONS_TVSHOWS JellyfinCollectionTypeOptions = "tvshows"
+	JELLYFINCOLLECTIONTYPEOPTIONS_MUSIC JellyfinCollectionTypeOptions = "music"
+	JELLYFINCOLLECTIONTYPEOPTIONS_MUSICVIDEOS JellyfinCollectionTypeOptions = "musicvideos"
+	JELLYFINCOLLECTIONTYPEOPTIONS_HOMEVIDEOS JellyfinCollectionTypeOptions = "homevideos"
+	JELLYFINCOLLECTIONTYPEOPTIONS_BOXSETS JellyfinCollectionTypeOptions = "boxsets"
+	JELLYFINCOLLECTIONTYPEOPTIONS_BOOKS JellyfinCollectionTypeOptions = "books"
+	JELLYFINCOLLECTIONTYPEOPTIONS_MIXED JellyfinCollectionTypeOptions = "mixed"
 )
 
 // All allowed values of JellyfinCollectionTypeOptions enum

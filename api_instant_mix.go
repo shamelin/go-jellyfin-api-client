@@ -24,7 +24,7 @@ import (
 // InstantMixAPIService InstantMixAPI service
 type InstantMixAPIService service
 
-type ApiGetInstantMixFromAlbumRequest struct {
+type InstantMixAPIGetInstantMixFromAlbumRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	itemId string
@@ -38,48 +38,48 @@ type ApiGetInstantMixFromAlbumRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromAlbumRequest) UserId(userId string) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) UserId(userId string) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromAlbumRequest) Limit(limit int32) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromAlbumRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromAlbumRequest) EnableImages(enableImages bool) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromAlbumRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromAlbumRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromAlbumRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromAlbumRequest {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromAlbumRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromAlbumRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromAlbumRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromAlbumExecute(r)
 }
 
@@ -88,10 +88,10 @@ GetInstantMixFromAlbum Creates an instant playlist based on a given album.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetInstantMixFromAlbumRequest
+ @return InstantMixAPIGetInstantMixFromAlbumRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromAlbum(ctx context.Context, itemId string) ApiGetInstantMixFromAlbumRequest {
-	return ApiGetInstantMixFromAlbumRequest{
+func (a *InstantMixAPIService) GetInstantMixFromAlbum(ctx context.Context, itemId string) InstantMixAPIGetInstantMixFromAlbumRequest {
+	return InstantMixAPIGetInstantMixFromAlbumRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -100,7 +100,7 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbum(ctx context.Context, itemI
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixFromAlbumRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r InstantMixAPIGetInstantMixFromAlbumRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -236,7 +236,7 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixF
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromArtistsRequest struct {
+type InstantMixAPIGetInstantMixFromArtistsRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	itemId string
@@ -250,48 +250,48 @@ type ApiGetInstantMixFromArtistsRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromArtistsRequest) UserId(userId string) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) UserId(userId string) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromArtistsRequest) Limit(limit int32) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromArtistsRequest) EnableImages(enableImages bool) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromArtistsRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromArtistsRequest {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromArtistsExecute(r)
 }
 
@@ -300,10 +300,10 @@ GetInstantMixFromArtists Creates an instant playlist based on a given artist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetInstantMixFromArtistsRequest
+ @return InstantMixAPIGetInstantMixFromArtistsRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromArtists(ctx context.Context, itemId string) ApiGetInstantMixFromArtistsRequest {
-	return ApiGetInstantMixFromArtistsRequest{
+func (a *InstantMixAPIService) GetInstantMixFromArtists(ctx context.Context, itemId string) InstantMixAPIGetInstantMixFromArtistsRequest {
+	return InstantMixAPIGetInstantMixFromArtistsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -312,7 +312,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists(ctx context.Context, ite
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMixFromArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r InstantMixAPIGetInstantMixFromArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -448,7 +448,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromArtists2Request struct {
+type InstantMixAPIGetInstantMixFromArtists2Request struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	id *string
@@ -462,54 +462,54 @@ type ApiGetInstantMixFromArtists2Request struct {
 }
 
 // The item id.
-func (r ApiGetInstantMixFromArtists2Request) Id(id string) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) Id(id string) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.id = &id
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromArtists2Request) UserId(userId string) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) UserId(userId string) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromArtists2Request) Limit(limit int32) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) Limit(limit int32) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromArtists2Request) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromArtists2Request) EnableImages(enableImages bool) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromArtists2Request) EnableUserData(enableUserData bool) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromArtists2Request) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromArtists2Request) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromArtists2Request {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromArtists2Request {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromArtists2Request) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromArtists2Request) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromArtists2Execute(r)
 }
 
@@ -517,12 +517,12 @@ func (r ApiGetInstantMixFromArtists2Request) Execute() (*JellyfinBaseItemDtoQuer
 GetInstantMixFromArtists2 Creates an instant playlist based on a given artist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetInstantMixFromArtists2Request
+ @return InstantMixAPIGetInstantMixFromArtists2Request
 
 Deprecated
 */
-func (a *InstantMixAPIService) GetInstantMixFromArtists2(ctx context.Context) ApiGetInstantMixFromArtists2Request {
-	return ApiGetInstantMixFromArtists2Request{
+func (a *InstantMixAPIService) GetInstantMixFromArtists2(ctx context.Context) InstantMixAPIGetInstantMixFromArtists2Request {
+	return InstantMixAPIGetInstantMixFromArtists2Request{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -531,7 +531,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2(ctx context.Context) Ap
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantMixFromArtists2Request) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r InstantMixAPIGetInstantMixFromArtists2Request) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -670,7 +670,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromItemRequest struct {
+type InstantMixAPIGetInstantMixFromItemRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	itemId string
@@ -684,48 +684,48 @@ type ApiGetInstantMixFromItemRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromItemRequest) UserId(userId string) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) UserId(userId string) InstantMixAPIGetInstantMixFromItemRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromItemRequest) Limit(limit int32) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromItemRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromItemRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromItemRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromItemRequest) EnableImages(enableImages bool) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromItemRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromItemRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromItemRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromItemRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromItemRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromItemRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromItemRequest {
+func (r InstantMixAPIGetInstantMixFromItemRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromItemRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromItemRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromItemRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromItemExecute(r)
 }
 
@@ -734,10 +734,10 @@ GetInstantMixFromItem Creates an instant playlist based on a given item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetInstantMixFromItemRequest
+ @return InstantMixAPIGetInstantMixFromItemRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromItem(ctx context.Context, itemId string) ApiGetInstantMixFromItemRequest {
-	return ApiGetInstantMixFromItemRequest{
+func (a *InstantMixAPIService) GetInstantMixFromItem(ctx context.Context, itemId string) InstantMixAPIGetInstantMixFromItemRequest {
+	return InstantMixAPIGetInstantMixFromItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -746,7 +746,7 @@ func (a *InstantMixAPIService) GetInstantMixFromItem(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFromItemRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r InstantMixAPIGetInstantMixFromItemRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -882,7 +882,7 @@ func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromMusicGenreByIdRequest struct {
+type InstantMixAPIGetInstantMixFromMusicGenreByIdRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	id *string
@@ -896,54 +896,54 @@ type ApiGetInstantMixFromMusicGenreByIdRequest struct {
 }
 
 // The item id.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Id(id string) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) Id(id string) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.id = &id
 	return r
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) UserId(userId string) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) UserId(userId string) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Limit(limit int32) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) EnableImages(enableImages bool) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromMusicGenreByIdExecute(r)
 }
 
@@ -951,10 +951,10 @@ func (r ApiGetInstantMixFromMusicGenreByIdRequest) Execute() (*JellyfinBaseItemD
 GetInstantMixFromMusicGenreById Creates an instant playlist based on a given genre.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetInstantMixFromMusicGenreByIdRequest
+ @return InstantMixAPIGetInstantMixFromMusicGenreByIdRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreById(ctx context.Context) ApiGetInstantMixFromMusicGenreByIdRequest {
-	return ApiGetInstantMixFromMusicGenreByIdRequest{
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreById(ctx context.Context) InstantMixAPIGetInstantMixFromMusicGenreByIdRequest {
+	return InstantMixAPIGetInstantMixFromMusicGenreByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -962,7 +962,7 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreById(ctx context.Conte
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetInstantMixFromMusicGenreByIdRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r InstantMixAPIGetInstantMixFromMusicGenreByIdRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1101,7 +1101,7 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetIn
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromMusicGenreByNameRequest struct {
+type InstantMixAPIGetInstantMixFromMusicGenreByNameRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	name string
@@ -1115,48 +1115,48 @@ type ApiGetInstantMixFromMusicGenreByNameRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) UserId(userId string) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) UserId(userId string) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) Limit(limit int32) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) EnableImages(enableImages bool) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromMusicGenreByNameExecute(r)
 }
 
@@ -1165,10 +1165,10 @@ GetInstantMixFromMusicGenreByName Creates an instant playlist based on a given g
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name The genre name.
- @return ApiGetInstantMixFromMusicGenreByNameRequest
+ @return InstantMixAPIGetInstantMixFromMusicGenreByNameRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByName(ctx context.Context, name string) ApiGetInstantMixFromMusicGenreByNameRequest {
-	return ApiGetInstantMixFromMusicGenreByNameRequest{
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByName(ctx context.Context, name string) InstantMixAPIGetInstantMixFromMusicGenreByNameRequest {
+	return InstantMixAPIGetInstantMixFromMusicGenreByNameRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -1177,7 +1177,7 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByName(ctx context.Con
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGetInstantMixFromMusicGenreByNameRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r InstantMixAPIGetInstantMixFromMusicGenreByNameRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1302,7 +1302,7 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromPlaylistRequest struct {
+type InstantMixAPIGetInstantMixFromPlaylistRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	itemId string
@@ -1316,48 +1316,48 @@ type ApiGetInstantMixFromPlaylistRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromPlaylistRequest) UserId(userId string) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) UserId(userId string) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromPlaylistRequest) Limit(limit int32) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromPlaylistRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromPlaylistRequest) EnableImages(enableImages bool) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromPlaylistRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromPlaylistRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromPlaylistRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromPlaylistRequest {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromPlaylistRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromPlaylistRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromPlaylistRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromPlaylistExecute(r)
 }
 
@@ -1366,10 +1366,10 @@ GetInstantMixFromPlaylist Creates an instant playlist based on a given playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetInstantMixFromPlaylistRequest
+ @return InstantMixAPIGetInstantMixFromPlaylistRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromPlaylist(ctx context.Context, itemId string) ApiGetInstantMixFromPlaylistRequest {
-	return ApiGetInstantMixFromPlaylistRequest{
+func (a *InstantMixAPIService) GetInstantMixFromPlaylist(ctx context.Context, itemId string) InstantMixAPIGetInstantMixFromPlaylistRequest {
+	return InstantMixAPIGetInstantMixFromPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1378,7 +1378,7 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylist(ctx context.Context, it
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantMixFromPlaylistRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r InstantMixAPIGetInstantMixFromPlaylistRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1514,7 +1514,7 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantM
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetInstantMixFromSongRequest struct {
+type InstantMixAPIGetInstantMixFromSongRequest struct {
 	ctx context.Context
 	ApiService *InstantMixAPIService
 	itemId string
@@ -1528,48 +1528,48 @@ type ApiGetInstantMixFromSongRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetInstantMixFromSongRequest) UserId(userId string) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) UserId(userId string) InstantMixAPIGetInstantMixFromSongRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetInstantMixFromSongRequest) Limit(limit int32) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) Limit(limit int32) InstantMixAPIGetInstantMixFromSongRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromSongRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) Fields(fields []JellyfinItemFields) InstantMixAPIGetInstantMixFromSongRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetInstantMixFromSongRequest) EnableImages(enableImages bool) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) EnableImages(enableImages bool) InstantMixAPIGetInstantMixFromSongRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetInstantMixFromSongRequest) EnableUserData(enableUserData bool) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) EnableUserData(enableUserData bool) InstantMixAPIGetInstantMixFromSongRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetInstantMixFromSongRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) ImageTypeLimit(imageTypeLimit int32) InstantMixAPIGetInstantMixFromSongRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromSongRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromSongRequest {
+func (r InstantMixAPIGetInstantMixFromSongRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) InstantMixAPIGetInstantMixFromSongRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromSongRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r InstantMixAPIGetInstantMixFromSongRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromSongExecute(r)
 }
 
@@ -1578,10 +1578,10 @@ GetInstantMixFromSong Creates an instant playlist based on a given song.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetInstantMixFromSongRequest
+ @return InstantMixAPIGetInstantMixFromSongRequest
 */
-func (a *InstantMixAPIService) GetInstantMixFromSong(ctx context.Context, itemId string) ApiGetInstantMixFromSongRequest {
-	return ApiGetInstantMixFromSongRequest{
+func (a *InstantMixAPIService) GetInstantMixFromSong(ctx context.Context, itemId string) InstantMixAPIGetInstantMixFromSongRequest {
+	return InstantMixAPIGetInstantMixFromSongRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1590,7 +1590,7 @@ func (a *InstantMixAPIService) GetInstantMixFromSong(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFromSongRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r InstantMixAPIGetInstantMixFromSongRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

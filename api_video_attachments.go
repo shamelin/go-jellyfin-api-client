@@ -24,7 +24,7 @@ import (
 // VideoAttachmentsAPIService VideoAttachmentsAPI service
 type VideoAttachmentsAPIService service
 
-type ApiGetAttachmentRequest struct {
+type VideoAttachmentsAPIGetAttachmentRequest struct {
 	ctx context.Context
 	ApiService *VideoAttachmentsAPIService
 	videoId string
@@ -32,7 +32,7 @@ type ApiGetAttachmentRequest struct {
 	index int32
 }
 
-func (r ApiGetAttachmentRequest) Execute() (*os.File, *http.Response, error) {
+func (r VideoAttachmentsAPIGetAttachmentRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetAttachmentExecute(r)
 }
 
@@ -43,10 +43,10 @@ GetAttachment Get video attachment.
  @param videoId Video ID.
  @param mediaSourceId Media Source ID.
  @param index Attachment Index.
- @return ApiGetAttachmentRequest
+ @return VideoAttachmentsAPIGetAttachmentRequest
 */
-func (a *VideoAttachmentsAPIService) GetAttachment(ctx context.Context, videoId string, mediaSourceId string, index int32) ApiGetAttachmentRequest {
-	return ApiGetAttachmentRequest{
+func (a *VideoAttachmentsAPIService) GetAttachment(ctx context.Context, videoId string, mediaSourceId string, index int32) VideoAttachmentsAPIGetAttachmentRequest {
+	return VideoAttachmentsAPIGetAttachmentRequest{
 		ApiService: a,
 		ctx: ctx,
 		videoId: videoId,
@@ -57,7 +57,7 @@ func (a *VideoAttachmentsAPIService) GetAttachment(ctx context.Context, videoId 
 
 // Execute executes the request
 //  @return *os.File
-func (a *VideoAttachmentsAPIService) GetAttachmentExecute(r ApiGetAttachmentRequest) (*os.File, *http.Response, error) {
+func (a *VideoAttachmentsAPIService) GetAttachmentExecute(r VideoAttachmentsAPIGetAttachmentRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

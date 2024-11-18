@@ -20,9 +20,9 @@ type JellyfinTaskState string
 
 // List of TaskState
 const (
-	IDLE JellyfinTaskState = "Idle"
-	CANCELLING JellyfinTaskState = "Cancelling"
-	RUNNING JellyfinTaskState = "Running"
+	JELLYFINTASKSTATE_IDLE JellyfinTaskState = "Idle"
+	JELLYFINTASKSTATE_CANCELLING JellyfinTaskState = "Cancelling"
+	JELLYFINTASKSTATE_RUNNING JellyfinTaskState = "Running"
 )
 
 // All allowed values of JellyfinTaskState enum

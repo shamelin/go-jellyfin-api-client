@@ -24,7 +24,7 @@ import (
 // PlaylistsAPIService PlaylistsAPI service
 type PlaylistsAPIService service
 
-type ApiAddItemToPlaylistRequest struct {
+type PlaylistsAPIAddItemToPlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -33,18 +33,18 @@ type ApiAddItemToPlaylistRequest struct {
 }
 
 // Item id, comma delimited.
-func (r ApiAddItemToPlaylistRequest) Ids(ids []string) ApiAddItemToPlaylistRequest {
+func (r PlaylistsAPIAddItemToPlaylistRequest) Ids(ids []string) PlaylistsAPIAddItemToPlaylistRequest {
 	r.ids = &ids
 	return r
 }
 
 // The userId.
-func (r ApiAddItemToPlaylistRequest) UserId(userId string) ApiAddItemToPlaylistRequest {
+func (r PlaylistsAPIAddItemToPlaylistRequest) UserId(userId string) PlaylistsAPIAddItemToPlaylistRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiAddItemToPlaylistRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIAddItemToPlaylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AddItemToPlaylistExecute(r)
 }
 
@@ -53,10 +53,10 @@ AddItemToPlaylist Adds items to a playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiAddItemToPlaylistRequest
+ @return PlaylistsAPIAddItemToPlaylistRequest
 */
-func (a *PlaylistsAPIService) AddItemToPlaylist(ctx context.Context, playlistId string) ApiAddItemToPlaylistRequest {
-	return ApiAddItemToPlaylistRequest{
+func (a *PlaylistsAPIService) AddItemToPlaylist(ctx context.Context, playlistId string) PlaylistsAPIAddItemToPlaylistRequest {
+	return PlaylistsAPIAddItemToPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -64,7 +64,7 @@ func (a *PlaylistsAPIService) AddItemToPlaylist(ctx context.Context, playlistId 
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r PlaylistsAPIAddItemToPlaylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiCreatePlaylistRequest struct {
+type PlaylistsAPICreatePlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	name *string
@@ -190,39 +190,39 @@ type ApiCreatePlaylistRequest struct {
 
 // The playlist name.
 // Deprecated
-func (r ApiCreatePlaylistRequest) Name(name string) ApiCreatePlaylistRequest {
+func (r PlaylistsAPICreatePlaylistRequest) Name(name string) PlaylistsAPICreatePlaylistRequest {
 	r.name = &name
 	return r
 }
 
 // The item ids.
 // Deprecated
-func (r ApiCreatePlaylistRequest) Ids(ids []string) ApiCreatePlaylistRequest {
+func (r PlaylistsAPICreatePlaylistRequest) Ids(ids []string) PlaylistsAPICreatePlaylistRequest {
 	r.ids = &ids
 	return r
 }
 
 // The user id.
 // Deprecated
-func (r ApiCreatePlaylistRequest) UserId(userId string) ApiCreatePlaylistRequest {
+func (r PlaylistsAPICreatePlaylistRequest) UserId(userId string) PlaylistsAPICreatePlaylistRequest {
 	r.userId = &userId
 	return r
 }
 
 // The media type.
 // Deprecated
-func (r ApiCreatePlaylistRequest) MediaType(mediaType JellyfinMediaType) ApiCreatePlaylistRequest {
+func (r PlaylistsAPICreatePlaylistRequest) MediaType(mediaType JellyfinMediaType) PlaylistsAPICreatePlaylistRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The create playlist payload.
-func (r ApiCreatePlaylistRequest) JellyfinCreatePlaylistDto(jellyfinCreatePlaylistDto JellyfinCreatePlaylistDto) ApiCreatePlaylistRequest {
+func (r PlaylistsAPICreatePlaylistRequest) JellyfinCreatePlaylistDto(jellyfinCreatePlaylistDto JellyfinCreatePlaylistDto) PlaylistsAPICreatePlaylistRequest {
 	r.jellyfinCreatePlaylistDto = &jellyfinCreatePlaylistDto
 	return r
 }
 
-func (r ApiCreatePlaylistRequest) Execute() (*JellyfinPlaylistCreationResult, *http.Response, error) {
+func (r PlaylistsAPICreatePlaylistRequest) Execute() (*JellyfinPlaylistCreationResult, *http.Response, error) {
 	return r.ApiService.CreatePlaylistExecute(r)
 }
 
@@ -233,10 +233,10 @@ For backwards compatibility parameters can be sent via Query or Body, with Query
 Query parameters are obsolete.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePlaylistRequest
+ @return PlaylistsAPICreatePlaylistRequest
 */
-func (a *PlaylistsAPIService) CreatePlaylist(ctx context.Context) ApiCreatePlaylistRequest {
-	return ApiCreatePlaylistRequest{
+func (a *PlaylistsAPIService) CreatePlaylist(ctx context.Context) PlaylistsAPICreatePlaylistRequest {
+	return PlaylistsAPICreatePlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -244,7 +244,7 @@ func (a *PlaylistsAPIService) CreatePlaylist(ctx context.Context) ApiCreatePlayl
 
 // Execute executes the request
 //  @return JellyfinPlaylistCreationResult
-func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) (*JellyfinPlaylistCreationResult, *http.Response, error) {
+func (a *PlaylistsAPIService) CreatePlaylistExecute(r PlaylistsAPICreatePlaylistRequest) (*JellyfinPlaylistCreationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -353,13 +353,13 @@ func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPlaylistRequest struct {
+type PlaylistsAPIGetPlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
 }
 
-func (r ApiGetPlaylistRequest) Execute() (*JellyfinPlaylistDto, *http.Response, error) {
+func (r PlaylistsAPIGetPlaylistRequest) Execute() (*JellyfinPlaylistDto, *http.Response, error) {
 	return r.ApiService.GetPlaylistExecute(r)
 }
 
@@ -368,10 +368,10 @@ GetPlaylist Get a playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiGetPlaylistRequest
+ @return PlaylistsAPIGetPlaylistRequest
 */
-func (a *PlaylistsAPIService) GetPlaylist(ctx context.Context, playlistId string) ApiGetPlaylistRequest {
-	return ApiGetPlaylistRequest{
+func (a *PlaylistsAPIService) GetPlaylist(ctx context.Context, playlistId string) PlaylistsAPIGetPlaylistRequest {
+	return PlaylistsAPIGetPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -380,7 +380,7 @@ func (a *PlaylistsAPIService) GetPlaylist(ctx context.Context, playlistId string
 
 // Execute executes the request
 //  @return JellyfinPlaylistDto
-func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*JellyfinPlaylistDto, *http.Response, error) {
+func (a *PlaylistsAPIService) GetPlaylistExecute(r PlaylistsAPIGetPlaylistRequest) (*JellyfinPlaylistDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -479,7 +479,7 @@ func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*Jell
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPlaylistItemsRequest struct {
+type PlaylistsAPIGetPlaylistItemsRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -494,54 +494,54 @@ type ApiGetPlaylistItemsRequest struct {
 }
 
 // User id.
-func (r ApiGetPlaylistItemsRequest) UserId(userId string) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) UserId(userId string) PlaylistsAPIGetPlaylistItemsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetPlaylistItemsRequest) StartIndex(startIndex int32) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) StartIndex(startIndex int32) PlaylistsAPIGetPlaylistItemsRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetPlaylistItemsRequest) Limit(limit int32) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) Limit(limit int32) PlaylistsAPIGetPlaylistItemsRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetPlaylistItemsRequest) Fields(fields []JellyfinItemFields) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) Fields(fields []JellyfinItemFields) PlaylistsAPIGetPlaylistItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetPlaylistItemsRequest) EnableImages(enableImages bool) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) EnableImages(enableImages bool) PlaylistsAPIGetPlaylistItemsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetPlaylistItemsRequest) EnableUserData(enableUserData bool) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) EnableUserData(enableUserData bool) PlaylistsAPIGetPlaylistItemsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetPlaylistItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) ImageTypeLimit(imageTypeLimit int32) PlaylistsAPIGetPlaylistItemsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetPlaylistItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetPlaylistItemsRequest {
+func (r PlaylistsAPIGetPlaylistItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) PlaylistsAPIGetPlaylistItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetPlaylistItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r PlaylistsAPIGetPlaylistItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetPlaylistItemsExecute(r)
 }
 
@@ -550,10 +550,10 @@ GetPlaylistItems Gets the original items of a playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiGetPlaylistItemsRequest
+ @return PlaylistsAPIGetPlaylistItemsRequest
 */
-func (a *PlaylistsAPIService) GetPlaylistItems(ctx context.Context, playlistId string) ApiGetPlaylistItemsRequest {
-	return ApiGetPlaylistItemsRequest{
+func (a *PlaylistsAPIService) GetPlaylistItems(ctx context.Context, playlistId string) PlaylistsAPIGetPlaylistItemsRequest {
+	return PlaylistsAPIGetPlaylistItemsRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -562,7 +562,7 @@ func (a *PlaylistsAPIService) GetPlaylistItems(ctx context.Context, playlistId s
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r PlaylistsAPIGetPlaylistItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -712,14 +712,14 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPlaylistUserRequest struct {
+type PlaylistsAPIGetPlaylistUserRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
 	userId string
 }
 
-func (r ApiGetPlaylistUserRequest) Execute() (*JellyfinPlaylistUserPermissions, *http.Response, error) {
+func (r PlaylistsAPIGetPlaylistUserRequest) Execute() (*JellyfinPlaylistUserPermissions, *http.Response, error) {
 	return r.ApiService.GetPlaylistUserExecute(r)
 }
 
@@ -729,10 +729,10 @@ GetPlaylistUser Get a playlist user.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
  @param userId The user id.
- @return ApiGetPlaylistUserRequest
+ @return PlaylistsAPIGetPlaylistUserRequest
 */
-func (a *PlaylistsAPIService) GetPlaylistUser(ctx context.Context, playlistId string, userId string) ApiGetPlaylistUserRequest {
-	return ApiGetPlaylistUserRequest{
+func (a *PlaylistsAPIService) GetPlaylistUser(ctx context.Context, playlistId string, userId string) PlaylistsAPIGetPlaylistUserRequest {
+	return PlaylistsAPIGetPlaylistUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -742,7 +742,7 @@ func (a *PlaylistsAPIService) GetPlaylistUser(ctx context.Context, playlistId st
 
 // Execute executes the request
 //  @return JellyfinPlaylistUserPermissions
-func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest) (*JellyfinPlaylistUserPermissions, *http.Response, error) {
+func (a *PlaylistsAPIService) GetPlaylistUserExecute(r PlaylistsAPIGetPlaylistUserRequest) (*JellyfinPlaylistUserPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -853,13 +853,13 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPlaylistUsersRequest struct {
+type PlaylistsAPIGetPlaylistUsersRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
 }
 
-func (r ApiGetPlaylistUsersRequest) Execute() ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
+func (r PlaylistsAPIGetPlaylistUsersRequest) Execute() ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
 	return r.ApiService.GetPlaylistUsersExecute(r)
 }
 
@@ -868,10 +868,10 @@ GetPlaylistUsers Get a playlist's users.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiGetPlaylistUsersRequest
+ @return PlaylistsAPIGetPlaylistUsersRequest
 */
-func (a *PlaylistsAPIService) GetPlaylistUsers(ctx context.Context, playlistId string) ApiGetPlaylistUsersRequest {
-	return ApiGetPlaylistUsersRequest{
+func (a *PlaylistsAPIService) GetPlaylistUsers(ctx context.Context, playlistId string) PlaylistsAPIGetPlaylistUsersRequest {
+	return PlaylistsAPIGetPlaylistUsersRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -880,7 +880,7 @@ func (a *PlaylistsAPIService) GetPlaylistUsers(ctx context.Context, playlistId s
 
 // Execute executes the request
 //  @return []JellyfinPlaylistUserPermissions
-func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersRequest) ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
+func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r PlaylistsAPIGetPlaylistUsersRequest) ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -990,7 +990,7 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMoveItemRequest struct {
+type PlaylistsAPIMoveItemRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -998,7 +998,7 @@ type ApiMoveItemRequest struct {
 	newIndex int32
 }
 
-func (r ApiMoveItemRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIMoveItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.MoveItemExecute(r)
 }
 
@@ -1009,10 +1009,10 @@ MoveItem Moves a playlist item.
  @param playlistId The playlist id.
  @param itemId The item id.
  @param newIndex The new index.
- @return ApiMoveItemRequest
+ @return PlaylistsAPIMoveItemRequest
 */
-func (a *PlaylistsAPIService) MoveItem(ctx context.Context, playlistId string, itemId string, newIndex int32) ApiMoveItemRequest {
-	return ApiMoveItemRequest{
+func (a *PlaylistsAPIService) MoveItem(ctx context.Context, playlistId string, itemId string, newIndex int32) PlaylistsAPIMoveItemRequest {
+	return PlaylistsAPIMoveItemRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -1022,7 +1022,7 @@ func (a *PlaylistsAPIService) MoveItem(ctx context.Context, playlistId string, i
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) MoveItemExecute(r PlaylistsAPIMoveItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1124,7 +1124,7 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiRemoveItemFromPlaylistRequest struct {
+type PlaylistsAPIRemoveItemFromPlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -1132,12 +1132,12 @@ type ApiRemoveItemFromPlaylistRequest struct {
 }
 
 // The item ids, comma delimited.
-func (r ApiRemoveItemFromPlaylistRequest) EntryIds(entryIds []string) ApiRemoveItemFromPlaylistRequest {
+func (r PlaylistsAPIRemoveItemFromPlaylistRequest) EntryIds(entryIds []string) PlaylistsAPIRemoveItemFromPlaylistRequest {
 	r.entryIds = &entryIds
 	return r
 }
 
-func (r ApiRemoveItemFromPlaylistRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIRemoveItemFromPlaylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveItemFromPlaylistExecute(r)
 }
 
@@ -1146,10 +1146,10 @@ RemoveItemFromPlaylist Removes items from a playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiRemoveItemFromPlaylistRequest
+ @return PlaylistsAPIRemoveItemFromPlaylistRequest
 */
-func (a *PlaylistsAPIService) RemoveItemFromPlaylist(ctx context.Context, playlistId string) ApiRemoveItemFromPlaylistRequest {
-	return ApiRemoveItemFromPlaylistRequest{
+func (a *PlaylistsAPIService) RemoveItemFromPlaylist(ctx context.Context, playlistId string) PlaylistsAPIRemoveItemFromPlaylistRequest {
+	return PlaylistsAPIRemoveItemFromPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -1157,7 +1157,7 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylist(ctx context.Context, playli
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromPlaylistRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r PlaylistsAPIRemoveItemFromPlaylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -1268,14 +1268,14 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 	return localVarHTTPResponse, nil
 }
 
-type ApiRemoveUserFromPlaylistRequest struct {
+type PlaylistsAPIRemoveUserFromPlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
 	userId string
 }
 
-func (r ApiRemoveUserFromPlaylistRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIRemoveUserFromPlaylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveUserFromPlaylistExecute(r)
 }
 
@@ -1285,10 +1285,10 @@ RemoveUserFromPlaylist Remove a user from a playlist's users.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
  @param userId The user id.
- @return ApiRemoveUserFromPlaylistRequest
+ @return PlaylistsAPIRemoveUserFromPlaylistRequest
 */
-func (a *PlaylistsAPIService) RemoveUserFromPlaylist(ctx context.Context, playlistId string, userId string) ApiRemoveUserFromPlaylistRequest {
-	return ApiRemoveUserFromPlaylistRequest{
+func (a *PlaylistsAPIService) RemoveUserFromPlaylist(ctx context.Context, playlistId string, userId string) PlaylistsAPIRemoveUserFromPlaylistRequest {
+	return PlaylistsAPIRemoveUserFromPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -1297,7 +1297,7 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylist(ctx context.Context, playli
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromPlaylistRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r PlaylistsAPIRemoveUserFromPlaylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -1398,7 +1398,7 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdatePlaylistRequest struct {
+type PlaylistsAPIUpdatePlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -1406,12 +1406,12 @@ type ApiUpdatePlaylistRequest struct {
 }
 
 // The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id.
-func (r ApiUpdatePlaylistRequest) JellyfinUpdatePlaylistDto(jellyfinUpdatePlaylistDto JellyfinUpdatePlaylistDto) ApiUpdatePlaylistRequest {
+func (r PlaylistsAPIUpdatePlaylistRequest) JellyfinUpdatePlaylistDto(jellyfinUpdatePlaylistDto JellyfinUpdatePlaylistDto) PlaylistsAPIUpdatePlaylistRequest {
 	r.jellyfinUpdatePlaylistDto = &jellyfinUpdatePlaylistDto
 	return r
 }
 
-func (r ApiUpdatePlaylistRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIUpdatePlaylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdatePlaylistExecute(r)
 }
 
@@ -1420,10 +1420,10 @@ UpdatePlaylist Updates a playlist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
- @return ApiUpdatePlaylistRequest
+ @return PlaylistsAPIUpdatePlaylistRequest
 */
-func (a *PlaylistsAPIService) UpdatePlaylist(ctx context.Context, playlistId string) ApiUpdatePlaylistRequest {
-	return ApiUpdatePlaylistRequest{
+func (a *PlaylistsAPIService) UpdatePlaylist(ctx context.Context, playlistId string) PlaylistsAPIUpdatePlaylistRequest {
+	return PlaylistsAPIUpdatePlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -1431,7 +1431,7 @@ func (a *PlaylistsAPIService) UpdatePlaylist(ctx context.Context, playlistId str
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) UpdatePlaylistExecute(r PlaylistsAPIUpdatePlaylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1536,7 +1536,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdatePlaylistUserRequest struct {
+type PlaylistsAPIUpdatePlaylistUserRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
@@ -1545,12 +1545,12 @@ type ApiUpdatePlaylistUserRequest struct {
 }
 
 // The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto.
-func (r ApiUpdatePlaylistUserRequest) JellyfinUpdatePlaylistUserDto(jellyfinUpdatePlaylistUserDto JellyfinUpdatePlaylistUserDto) ApiUpdatePlaylistUserRequest {
+func (r PlaylistsAPIUpdatePlaylistUserRequest) JellyfinUpdatePlaylistUserDto(jellyfinUpdatePlaylistUserDto JellyfinUpdatePlaylistUserDto) PlaylistsAPIUpdatePlaylistUserRequest {
 	r.jellyfinUpdatePlaylistUserDto = &jellyfinUpdatePlaylistUserDto
 	return r
 }
 
-func (r ApiUpdatePlaylistUserRequest) Execute() (*http.Response, error) {
+func (r PlaylistsAPIUpdatePlaylistUserRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdatePlaylistUserExecute(r)
 }
 
@@ -1560,10 +1560,10 @@ UpdatePlaylistUser Modify a user of a playlist's users.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param playlistId The playlist id.
  @param userId The user id.
- @return ApiUpdatePlaylistUserRequest
+ @return PlaylistsAPIUpdatePlaylistUserRequest
 */
-func (a *PlaylistsAPIService) UpdatePlaylistUser(ctx context.Context, playlistId string, userId string) ApiUpdatePlaylistUserRequest {
-	return ApiUpdatePlaylistUserRequest{
+func (a *PlaylistsAPIService) UpdatePlaylistUser(ctx context.Context, playlistId string, userId string) PlaylistsAPIUpdatePlaylistUserRequest {
+	return PlaylistsAPIUpdatePlaylistUserRequest{
 		ApiService: a,
 		ctx: ctx,
 		playlistId: playlistId,
@@ -1572,7 +1572,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistUser(ctx context.Context, playlistId
 }
 
 // Execute executes the request
-func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserRequest) (*http.Response, error) {
+func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r PlaylistsAPIUpdatePlaylistUserRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

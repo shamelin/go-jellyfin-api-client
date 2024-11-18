@@ -23,7 +23,7 @@ import (
 // MoviesAPIService MoviesAPI service
 type MoviesAPIService service
 
-type ApiGetMovieRecommendationsRequest struct {
+type MoviesAPIGetMovieRecommendationsRequest struct {
 	ctx context.Context
 	ApiService *MoviesAPIService
 	userId *string
@@ -34,36 +34,36 @@ type ApiGetMovieRecommendationsRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetMovieRecommendationsRequest) UserId(userId string) ApiGetMovieRecommendationsRequest {
+func (r MoviesAPIGetMovieRecommendationsRequest) UserId(userId string) MoviesAPIGetMovieRecommendationsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetMovieRecommendationsRequest) ParentId(parentId string) ApiGetMovieRecommendationsRequest {
+func (r MoviesAPIGetMovieRecommendationsRequest) ParentId(parentId string) MoviesAPIGetMovieRecommendationsRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. The fields to return.
-func (r ApiGetMovieRecommendationsRequest) Fields(fields []JellyfinItemFields) ApiGetMovieRecommendationsRequest {
+func (r MoviesAPIGetMovieRecommendationsRequest) Fields(fields []JellyfinItemFields) MoviesAPIGetMovieRecommendationsRequest {
 	r.fields = &fields
 	return r
 }
 
 // The max number of categories to return.
-func (r ApiGetMovieRecommendationsRequest) CategoryLimit(categoryLimit int32) ApiGetMovieRecommendationsRequest {
+func (r MoviesAPIGetMovieRecommendationsRequest) CategoryLimit(categoryLimit int32) MoviesAPIGetMovieRecommendationsRequest {
 	r.categoryLimit = &categoryLimit
 	return r
 }
 
 // The max number of items to return per category.
-func (r ApiGetMovieRecommendationsRequest) ItemLimit(itemLimit int32) ApiGetMovieRecommendationsRequest {
+func (r MoviesAPIGetMovieRecommendationsRequest) ItemLimit(itemLimit int32) MoviesAPIGetMovieRecommendationsRequest {
 	r.itemLimit = &itemLimit
 	return r
 }
 
-func (r ApiGetMovieRecommendationsRequest) Execute() ([]JellyfinRecommendationDto, *http.Response, error) {
+func (r MoviesAPIGetMovieRecommendationsRequest) Execute() ([]JellyfinRecommendationDto, *http.Response, error) {
 	return r.ApiService.GetMovieRecommendationsExecute(r)
 }
 
@@ -71,10 +71,10 @@ func (r ApiGetMovieRecommendationsRequest) Execute() ([]JellyfinRecommendationDt
 GetMovieRecommendations Gets movie recommendations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieRecommendationsRequest
+ @return MoviesAPIGetMovieRecommendationsRequest
 */
-func (a *MoviesAPIService) GetMovieRecommendations(ctx context.Context) ApiGetMovieRecommendationsRequest {
-	return ApiGetMovieRecommendationsRequest{
+func (a *MoviesAPIService) GetMovieRecommendations(ctx context.Context) MoviesAPIGetMovieRecommendationsRequest {
+	return MoviesAPIGetMovieRecommendationsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -82,7 +82,7 @@ func (a *MoviesAPIService) GetMovieRecommendations(ctx context.Context) ApiGetMo
 
 // Execute executes the request
 //  @return []JellyfinRecommendationDto
-func (a *MoviesAPIService) GetMovieRecommendationsExecute(r ApiGetMovieRecommendationsRequest) ([]JellyfinRecommendationDto, *http.Response, error) {
+func (a *MoviesAPIService) GetMovieRecommendationsExecute(r MoviesAPIGetMovieRecommendationsRequest) ([]JellyfinRecommendationDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

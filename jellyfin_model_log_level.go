@@ -20,13 +20,13 @@ type JellyfinLogLevel string
 
 // List of LogLevel
 const (
-	TRACE JellyfinLogLevel = "Trace"
-	DEBUG JellyfinLogLevel = "Debug"
-	INFORMATION JellyfinLogLevel = "Information"
-	WARNING JellyfinLogLevel = "Warning"
-	ERROR JellyfinLogLevel = "Error"
-	CRITICAL JellyfinLogLevel = "Critical"
-	NONE JellyfinLogLevel = "None"
+	JELLYFINLOGLEVEL_TRACE JellyfinLogLevel = "Trace"
+	JELLYFINLOGLEVEL_DEBUG JellyfinLogLevel = "Debug"
+	JELLYFINLOGLEVEL_INFORMATION JellyfinLogLevel = "Information"
+	JELLYFINLOGLEVEL_WARNING JellyfinLogLevel = "Warning"
+	JELLYFINLOGLEVEL_ERROR JellyfinLogLevel = "Error"
+	JELLYFINLOGLEVEL_CRITICAL JellyfinLogLevel = "Critical"
+	JELLYFINLOGLEVEL_NONE JellyfinLogLevel = "None"
 )
 
 // All allowed values of JellyfinLogLevel enum

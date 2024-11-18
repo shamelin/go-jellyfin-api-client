@@ -22,19 +22,19 @@ import (
 // SyncPlayAPIService SyncPlayAPI service
 type SyncPlayAPIService service
 
-type ApiSyncPlayBufferingRequest struct {
+type SyncPlayAPISyncPlayBufferingRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinBufferRequestDto *JellyfinBufferRequestDto
 }
 
 // The player status.
-func (r ApiSyncPlayBufferingRequest) JellyfinBufferRequestDto(jellyfinBufferRequestDto JellyfinBufferRequestDto) ApiSyncPlayBufferingRequest {
+func (r SyncPlayAPISyncPlayBufferingRequest) JellyfinBufferRequestDto(jellyfinBufferRequestDto JellyfinBufferRequestDto) SyncPlayAPISyncPlayBufferingRequest {
 	r.jellyfinBufferRequestDto = &jellyfinBufferRequestDto
 	return r
 }
 
-func (r ApiSyncPlayBufferingRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayBufferingRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayBufferingExecute(r)
 }
 
@@ -42,17 +42,17 @@ func (r ApiSyncPlayBufferingRequest) Execute() (*http.Response, error) {
 SyncPlayBuffering Notify SyncPlay group that member is buffering.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayBufferingRequest
+ @return SyncPlayAPISyncPlayBufferingRequest
 */
-func (a *SyncPlayAPIService) SyncPlayBuffering(ctx context.Context) ApiSyncPlayBufferingRequest {
-	return ApiSyncPlayBufferingRequest{
+func (a *SyncPlayAPIService) SyncPlayBuffering(ctx context.Context) SyncPlayAPISyncPlayBufferingRequest {
+	return SyncPlayAPISyncPlayBufferingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r SyncPlayAPISyncPlayBufferingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -134,19 +134,19 @@ func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayCreateGroupRequest struct {
+type SyncPlayAPISyncPlayCreateGroupRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinNewGroupRequestDto *JellyfinNewGroupRequestDto
 }
 
 // The settings of the new group.
-func (r ApiSyncPlayCreateGroupRequest) JellyfinNewGroupRequestDto(jellyfinNewGroupRequestDto JellyfinNewGroupRequestDto) ApiSyncPlayCreateGroupRequest {
+func (r SyncPlayAPISyncPlayCreateGroupRequest) JellyfinNewGroupRequestDto(jellyfinNewGroupRequestDto JellyfinNewGroupRequestDto) SyncPlayAPISyncPlayCreateGroupRequest {
 	r.jellyfinNewGroupRequestDto = &jellyfinNewGroupRequestDto
 	return r
 }
 
-func (r ApiSyncPlayCreateGroupRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayCreateGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayCreateGroupExecute(r)
 }
 
@@ -154,17 +154,17 @@ func (r ApiSyncPlayCreateGroupRequest) Execute() (*http.Response, error) {
 SyncPlayCreateGroup Create a new SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayCreateGroupRequest
+ @return SyncPlayAPISyncPlayCreateGroupRequest
 */
-func (a *SyncPlayAPIService) SyncPlayCreateGroup(ctx context.Context) ApiSyncPlayCreateGroupRequest {
-	return ApiSyncPlayCreateGroupRequest{
+func (a *SyncPlayAPIService) SyncPlayCreateGroup(ctx context.Context) SyncPlayAPISyncPlayCreateGroupRequest {
+	return SyncPlayAPISyncPlayCreateGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroupRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r SyncPlayAPISyncPlayCreateGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -246,12 +246,12 @@ func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroup
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayGetGroupsRequest struct {
+type SyncPlayAPISyncPlayGetGroupsRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayGetGroupsRequest) Execute() ([]JellyfinGroupInfoDto, *http.Response, error) {
+func (r SyncPlayAPISyncPlayGetGroupsRequest) Execute() ([]JellyfinGroupInfoDto, *http.Response, error) {
 	return r.ApiService.SyncPlayGetGroupsExecute(r)
 }
 
@@ -259,10 +259,10 @@ func (r ApiSyncPlayGetGroupsRequest) Execute() ([]JellyfinGroupInfoDto, *http.Re
 SyncPlayGetGroups Gets all SyncPlay groups.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayGetGroupsRequest
+ @return SyncPlayAPISyncPlayGetGroupsRequest
 */
-func (a *SyncPlayAPIService) SyncPlayGetGroups(ctx context.Context) ApiSyncPlayGetGroupsRequest {
-	return ApiSyncPlayGetGroupsRequest{
+func (a *SyncPlayAPIService) SyncPlayGetGroups(ctx context.Context) SyncPlayAPISyncPlayGetGroupsRequest {
+	return SyncPlayAPISyncPlayGetGroupsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -270,7 +270,7 @@ func (a *SyncPlayAPIService) SyncPlayGetGroups(ctx context.Context) ApiSyncPlayG
 
 // Execute executes the request
 //  @return []JellyfinGroupInfoDto
-func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequest) ([]JellyfinGroupInfoDto, *http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r SyncPlayAPISyncPlayGetGroupsRequest) ([]JellyfinGroupInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -357,19 +357,19 @@ func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayJoinGroupRequest struct {
+type SyncPlayAPISyncPlayJoinGroupRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinJoinGroupRequestDto *JellyfinJoinGroupRequestDto
 }
 
 // The group to join.
-func (r ApiSyncPlayJoinGroupRequest) JellyfinJoinGroupRequestDto(jellyfinJoinGroupRequestDto JellyfinJoinGroupRequestDto) ApiSyncPlayJoinGroupRequest {
+func (r SyncPlayAPISyncPlayJoinGroupRequest) JellyfinJoinGroupRequestDto(jellyfinJoinGroupRequestDto JellyfinJoinGroupRequestDto) SyncPlayAPISyncPlayJoinGroupRequest {
 	r.jellyfinJoinGroupRequestDto = &jellyfinJoinGroupRequestDto
 	return r
 }
 
-func (r ApiSyncPlayJoinGroupRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayJoinGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayJoinGroupExecute(r)
 }
 
@@ -377,17 +377,17 @@ func (r ApiSyncPlayJoinGroupRequest) Execute() (*http.Response, error) {
 SyncPlayJoinGroup Join an existing SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayJoinGroupRequest
+ @return SyncPlayAPISyncPlayJoinGroupRequest
 */
-func (a *SyncPlayAPIService) SyncPlayJoinGroup(ctx context.Context) ApiSyncPlayJoinGroupRequest {
-	return ApiSyncPlayJoinGroupRequest{
+func (a *SyncPlayAPIService) SyncPlayJoinGroup(ctx context.Context) SyncPlayAPISyncPlayJoinGroupRequest {
+	return SyncPlayAPISyncPlayJoinGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r SyncPlayAPISyncPlayJoinGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -469,12 +469,12 @@ func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayLeaveGroupRequest struct {
+type SyncPlayAPISyncPlayLeaveGroupRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayLeaveGroupRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayLeaveGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayLeaveGroupExecute(r)
 }
 
@@ -482,17 +482,17 @@ func (r ApiSyncPlayLeaveGroupRequest) Execute() (*http.Response, error) {
 SyncPlayLeaveGroup Leave the joined SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayLeaveGroupRequest
+ @return SyncPlayAPISyncPlayLeaveGroupRequest
 */
-func (a *SyncPlayAPIService) SyncPlayLeaveGroup(ctx context.Context) ApiSyncPlayLeaveGroupRequest {
-	return ApiSyncPlayLeaveGroupRequest{
+func (a *SyncPlayAPIService) SyncPlayLeaveGroup(ctx context.Context) SyncPlayAPISyncPlayLeaveGroupRequest {
+	return SyncPlayAPISyncPlayLeaveGroupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r SyncPlayAPISyncPlayLeaveGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -569,19 +569,19 @@ func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayMovePlaylistItemRequest struct {
+type SyncPlayAPISyncPlayMovePlaylistItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinMovePlaylistItemRequestDto *JellyfinMovePlaylistItemRequestDto
 }
 
 // The new position for the item.
-func (r ApiSyncPlayMovePlaylistItemRequest) JellyfinMovePlaylistItemRequestDto(jellyfinMovePlaylistItemRequestDto JellyfinMovePlaylistItemRequestDto) ApiSyncPlayMovePlaylistItemRequest {
+func (r SyncPlayAPISyncPlayMovePlaylistItemRequest) JellyfinMovePlaylistItemRequestDto(jellyfinMovePlaylistItemRequestDto JellyfinMovePlaylistItemRequestDto) SyncPlayAPISyncPlayMovePlaylistItemRequest {
 	r.jellyfinMovePlaylistItemRequestDto = &jellyfinMovePlaylistItemRequestDto
 	return r
 }
 
-func (r ApiSyncPlayMovePlaylistItemRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayMovePlaylistItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayMovePlaylistItemExecute(r)
 }
 
@@ -589,17 +589,17 @@ func (r ApiSyncPlayMovePlaylistItemRequest) Execute() (*http.Response, error) {
 SyncPlayMovePlaylistItem Request to move an item in the playlist in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayMovePlaylistItemRequest
+ @return SyncPlayAPISyncPlayMovePlaylistItemRequest
 */
-func (a *SyncPlayAPIService) SyncPlayMovePlaylistItem(ctx context.Context) ApiSyncPlayMovePlaylistItemRequest {
-	return ApiSyncPlayMovePlaylistItemRequest{
+func (a *SyncPlayAPIService) SyncPlayMovePlaylistItem(ctx context.Context) SyncPlayAPISyncPlayMovePlaylistItemRequest {
+	return SyncPlayAPISyncPlayMovePlaylistItemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePlaylistItemRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r SyncPlayAPISyncPlayMovePlaylistItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -681,19 +681,19 @@ func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePl
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayNextItemRequest struct {
+type SyncPlayAPISyncPlayNextItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinNextItemRequestDto *JellyfinNextItemRequestDto
 }
 
 // The current item information.
-func (r ApiSyncPlayNextItemRequest) JellyfinNextItemRequestDto(jellyfinNextItemRequestDto JellyfinNextItemRequestDto) ApiSyncPlayNextItemRequest {
+func (r SyncPlayAPISyncPlayNextItemRequest) JellyfinNextItemRequestDto(jellyfinNextItemRequestDto JellyfinNextItemRequestDto) SyncPlayAPISyncPlayNextItemRequest {
 	r.jellyfinNextItemRequestDto = &jellyfinNextItemRequestDto
 	return r
 }
 
-func (r ApiSyncPlayNextItemRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayNextItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayNextItemExecute(r)
 }
 
@@ -701,17 +701,17 @@ func (r ApiSyncPlayNextItemRequest) Execute() (*http.Response, error) {
 SyncPlayNextItem Request next item in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayNextItemRequest
+ @return SyncPlayAPISyncPlayNextItemRequest
 */
-func (a *SyncPlayAPIService) SyncPlayNextItem(ctx context.Context) ApiSyncPlayNextItemRequest {
-	return ApiSyncPlayNextItemRequest{
+func (a *SyncPlayAPIService) SyncPlayNextItem(ctx context.Context) SyncPlayAPISyncPlayNextItemRequest {
+	return SyncPlayAPISyncPlayNextItemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r SyncPlayAPISyncPlayNextItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -793,12 +793,12 @@ func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayPauseRequest struct {
+type SyncPlayAPISyncPlayPauseRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayPauseRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayPauseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayPauseExecute(r)
 }
 
@@ -806,17 +806,17 @@ func (r ApiSyncPlayPauseRequest) Execute() (*http.Response, error) {
 SyncPlayPause Request pause in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPauseRequest
+ @return SyncPlayAPISyncPlayPauseRequest
 */
-func (a *SyncPlayAPIService) SyncPlayPause(ctx context.Context) ApiSyncPlayPauseRequest {
-	return ApiSyncPlayPauseRequest{
+func (a *SyncPlayAPIService) SyncPlayPause(ctx context.Context) SyncPlayAPISyncPlayPauseRequest {
+	return SyncPlayAPISyncPlayPauseRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayPauseExecute(r SyncPlayAPISyncPlayPauseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -893,19 +893,19 @@ func (a *SyncPlayAPIService) SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayPingRequest struct {
+type SyncPlayAPISyncPlayPingRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinPingRequestDto *JellyfinPingRequestDto
 }
 
 // The new ping.
-func (r ApiSyncPlayPingRequest) JellyfinPingRequestDto(jellyfinPingRequestDto JellyfinPingRequestDto) ApiSyncPlayPingRequest {
+func (r SyncPlayAPISyncPlayPingRequest) JellyfinPingRequestDto(jellyfinPingRequestDto JellyfinPingRequestDto) SyncPlayAPISyncPlayPingRequest {
 	r.jellyfinPingRequestDto = &jellyfinPingRequestDto
 	return r
 }
 
-func (r ApiSyncPlayPingRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayPingRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayPingExecute(r)
 }
 
@@ -913,17 +913,17 @@ func (r ApiSyncPlayPingRequest) Execute() (*http.Response, error) {
 SyncPlayPing Update session ping.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPingRequest
+ @return SyncPlayAPISyncPlayPingRequest
 */
-func (a *SyncPlayAPIService) SyncPlayPing(ctx context.Context) ApiSyncPlayPingRequest {
-	return ApiSyncPlayPingRequest{
+func (a *SyncPlayAPIService) SyncPlayPing(ctx context.Context) SyncPlayAPISyncPlayPingRequest {
+	return SyncPlayAPISyncPlayPingRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayPingExecute(r SyncPlayAPISyncPlayPingRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1005,19 +1005,19 @@ func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayPreviousItemRequest struct {
+type SyncPlayAPISyncPlayPreviousItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinPreviousItemRequestDto *JellyfinPreviousItemRequestDto
 }
 
 // The current item information.
-func (r ApiSyncPlayPreviousItemRequest) JellyfinPreviousItemRequestDto(jellyfinPreviousItemRequestDto JellyfinPreviousItemRequestDto) ApiSyncPlayPreviousItemRequest {
+func (r SyncPlayAPISyncPlayPreviousItemRequest) JellyfinPreviousItemRequestDto(jellyfinPreviousItemRequestDto JellyfinPreviousItemRequestDto) SyncPlayAPISyncPlayPreviousItemRequest {
 	r.jellyfinPreviousItemRequestDto = &jellyfinPreviousItemRequestDto
 	return r
 }
 
-func (r ApiSyncPlayPreviousItemRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayPreviousItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayPreviousItemExecute(r)
 }
 
@@ -1025,17 +1025,17 @@ func (r ApiSyncPlayPreviousItemRequest) Execute() (*http.Response, error) {
 SyncPlayPreviousItem Request previous item in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayPreviousItemRequest
+ @return SyncPlayAPISyncPlayPreviousItemRequest
 */
-func (a *SyncPlayAPIService) SyncPlayPreviousItem(ctx context.Context) ApiSyncPlayPreviousItemRequest {
-	return ApiSyncPlayPreviousItemRequest{
+func (a *SyncPlayAPIService) SyncPlayPreviousItem(ctx context.Context) SyncPlayAPISyncPlayPreviousItemRequest {
+	return SyncPlayAPISyncPlayPreviousItemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousItemRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r SyncPlayAPISyncPlayPreviousItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1117,19 +1117,19 @@ func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousIt
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayQueueRequest struct {
+type SyncPlayAPISyncPlayQueueRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinQueueRequestDto *JellyfinQueueRequestDto
 }
 
 // The items to add.
-func (r ApiSyncPlayQueueRequest) JellyfinQueueRequestDto(jellyfinQueueRequestDto JellyfinQueueRequestDto) ApiSyncPlayQueueRequest {
+func (r SyncPlayAPISyncPlayQueueRequest) JellyfinQueueRequestDto(jellyfinQueueRequestDto JellyfinQueueRequestDto) SyncPlayAPISyncPlayQueueRequest {
 	r.jellyfinQueueRequestDto = &jellyfinQueueRequestDto
 	return r
 }
 
-func (r ApiSyncPlayQueueRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayQueueRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayQueueExecute(r)
 }
 
@@ -1137,17 +1137,17 @@ func (r ApiSyncPlayQueueRequest) Execute() (*http.Response, error) {
 SyncPlayQueue Request to queue items to the playlist of a SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayQueueRequest
+ @return SyncPlayAPISyncPlayQueueRequest
 */
-func (a *SyncPlayAPIService) SyncPlayQueue(ctx context.Context) ApiSyncPlayQueueRequest {
-	return ApiSyncPlayQueueRequest{
+func (a *SyncPlayAPIService) SyncPlayQueue(ctx context.Context) SyncPlayAPISyncPlayQueueRequest {
+	return SyncPlayAPISyncPlayQueueRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayQueueExecute(r SyncPlayAPISyncPlayQueueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1229,19 +1229,19 @@ func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayReadyRequest struct {
+type SyncPlayAPISyncPlayReadyRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinReadyRequestDto *JellyfinReadyRequestDto
 }
 
 // The player status.
-func (r ApiSyncPlayReadyRequest) JellyfinReadyRequestDto(jellyfinReadyRequestDto JellyfinReadyRequestDto) ApiSyncPlayReadyRequest {
+func (r SyncPlayAPISyncPlayReadyRequest) JellyfinReadyRequestDto(jellyfinReadyRequestDto JellyfinReadyRequestDto) SyncPlayAPISyncPlayReadyRequest {
 	r.jellyfinReadyRequestDto = &jellyfinReadyRequestDto
 	return r
 }
 
-func (r ApiSyncPlayReadyRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayReadyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayReadyExecute(r)
 }
 
@@ -1249,17 +1249,17 @@ func (r ApiSyncPlayReadyRequest) Execute() (*http.Response, error) {
 SyncPlayReady Notify SyncPlay group that member is ready for playback.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayReadyRequest
+ @return SyncPlayAPISyncPlayReadyRequest
 */
-func (a *SyncPlayAPIService) SyncPlayReady(ctx context.Context) ApiSyncPlayReadyRequest {
-	return ApiSyncPlayReadyRequest{
+func (a *SyncPlayAPIService) SyncPlayReady(ctx context.Context) SyncPlayAPISyncPlayReadyRequest {
+	return SyncPlayAPISyncPlayReadyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayReadyExecute(r SyncPlayAPISyncPlayReadyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1341,19 +1341,19 @@ func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayRemoveFromPlaylistRequest struct {
+type SyncPlayAPISyncPlayRemoveFromPlaylistRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinRemoveFromPlaylistRequestDto *JellyfinRemoveFromPlaylistRequestDto
 }
 
 // The items to remove.
-func (r ApiSyncPlayRemoveFromPlaylistRequest) JellyfinRemoveFromPlaylistRequestDto(jellyfinRemoveFromPlaylistRequestDto JellyfinRemoveFromPlaylistRequestDto) ApiSyncPlayRemoveFromPlaylistRequest {
+func (r SyncPlayAPISyncPlayRemoveFromPlaylistRequest) JellyfinRemoveFromPlaylistRequestDto(jellyfinRemoveFromPlaylistRequestDto JellyfinRemoveFromPlaylistRequestDto) SyncPlayAPISyncPlayRemoveFromPlaylistRequest {
 	r.jellyfinRemoveFromPlaylistRequestDto = &jellyfinRemoveFromPlaylistRequestDto
 	return r
 }
 
-func (r ApiSyncPlayRemoveFromPlaylistRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayRemoveFromPlaylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayRemoveFromPlaylistExecute(r)
 }
 
@@ -1361,17 +1361,17 @@ func (r ApiSyncPlayRemoveFromPlaylistRequest) Execute() (*http.Response, error) 
 SyncPlayRemoveFromPlaylist Request to remove items from the playlist in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayRemoveFromPlaylistRequest
+ @return SyncPlayAPISyncPlayRemoveFromPlaylistRequest
 */
-func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylist(ctx context.Context) ApiSyncPlayRemoveFromPlaylistRequest {
-	return ApiSyncPlayRemoveFromPlaylistRequest{
+func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylist(ctx context.Context) SyncPlayAPISyncPlayRemoveFromPlaylistRequest {
+	return SyncPlayAPISyncPlayRemoveFromPlaylistRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemoveFromPlaylistRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r SyncPlayAPISyncPlayRemoveFromPlaylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1453,19 +1453,19 @@ func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemo
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySeekRequest struct {
+type SyncPlayAPISyncPlaySeekRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinSeekRequestDto *JellyfinSeekRequestDto
 }
 
 // The new playback position.
-func (r ApiSyncPlaySeekRequest) JellyfinSeekRequestDto(jellyfinSeekRequestDto JellyfinSeekRequestDto) ApiSyncPlaySeekRequest {
+func (r SyncPlayAPISyncPlaySeekRequest) JellyfinSeekRequestDto(jellyfinSeekRequestDto JellyfinSeekRequestDto) SyncPlayAPISyncPlaySeekRequest {
 	r.jellyfinSeekRequestDto = &jellyfinSeekRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySeekRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySeekRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySeekExecute(r)
 }
 
@@ -1473,17 +1473,17 @@ func (r ApiSyncPlaySeekRequest) Execute() (*http.Response, error) {
 SyncPlaySeek Request seek in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySeekRequest
+ @return SyncPlayAPISyncPlaySeekRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySeek(ctx context.Context) ApiSyncPlaySeekRequest {
-	return ApiSyncPlaySeekRequest{
+func (a *SyncPlayAPIService) SyncPlaySeek(ctx context.Context) SyncPlayAPISyncPlaySeekRequest {
+	return SyncPlayAPISyncPlaySeekRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySeekExecute(r SyncPlayAPISyncPlaySeekRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1565,19 +1565,19 @@ func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySetIgnoreWaitRequest struct {
+type SyncPlayAPISyncPlaySetIgnoreWaitRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinIgnoreWaitRequestDto *JellyfinIgnoreWaitRequestDto
 }
 
 // The settings to set.
-func (r ApiSyncPlaySetIgnoreWaitRequest) JellyfinIgnoreWaitRequestDto(jellyfinIgnoreWaitRequestDto JellyfinIgnoreWaitRequestDto) ApiSyncPlaySetIgnoreWaitRequest {
+func (r SyncPlayAPISyncPlaySetIgnoreWaitRequest) JellyfinIgnoreWaitRequestDto(jellyfinIgnoreWaitRequestDto JellyfinIgnoreWaitRequestDto) SyncPlayAPISyncPlaySetIgnoreWaitRequest {
 	r.jellyfinIgnoreWaitRequestDto = &jellyfinIgnoreWaitRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySetIgnoreWaitRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySetIgnoreWaitRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySetIgnoreWaitExecute(r)
 }
 
@@ -1585,17 +1585,17 @@ func (r ApiSyncPlaySetIgnoreWaitRequest) Execute() (*http.Response, error) {
 SyncPlaySetIgnoreWait Request SyncPlay group to ignore member during group-wait.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetIgnoreWaitRequest
+ @return SyncPlayAPISyncPlaySetIgnoreWaitRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySetIgnoreWait(ctx context.Context) ApiSyncPlaySetIgnoreWaitRequest {
-	return ApiSyncPlaySetIgnoreWaitRequest{
+func (a *SyncPlayAPIService) SyncPlaySetIgnoreWait(ctx context.Context) SyncPlayAPISyncPlaySetIgnoreWaitRequest {
+	return SyncPlayAPISyncPlaySetIgnoreWaitRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnoreWaitRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r SyncPlayAPISyncPlaySetIgnoreWaitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1677,19 +1677,19 @@ func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnore
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySetNewQueueRequest struct {
+type SyncPlayAPISyncPlaySetNewQueueRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinPlayRequestDto *JellyfinPlayRequestDto
 }
 
 // The new playlist to play in the group.
-func (r ApiSyncPlaySetNewQueueRequest) JellyfinPlayRequestDto(jellyfinPlayRequestDto JellyfinPlayRequestDto) ApiSyncPlaySetNewQueueRequest {
+func (r SyncPlayAPISyncPlaySetNewQueueRequest) JellyfinPlayRequestDto(jellyfinPlayRequestDto JellyfinPlayRequestDto) SyncPlayAPISyncPlaySetNewQueueRequest {
 	r.jellyfinPlayRequestDto = &jellyfinPlayRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySetNewQueueRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySetNewQueueRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySetNewQueueExecute(r)
 }
 
@@ -1697,17 +1697,17 @@ func (r ApiSyncPlaySetNewQueueRequest) Execute() (*http.Response, error) {
 SyncPlaySetNewQueue Request to set new playlist in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetNewQueueRequest
+ @return SyncPlayAPISyncPlaySetNewQueueRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySetNewQueue(ctx context.Context) ApiSyncPlaySetNewQueueRequest {
-	return ApiSyncPlaySetNewQueueRequest{
+func (a *SyncPlayAPIService) SyncPlaySetNewQueue(ctx context.Context) SyncPlayAPISyncPlaySetNewQueueRequest {
+	return SyncPlayAPISyncPlaySetNewQueueRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueueRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r SyncPlayAPISyncPlaySetNewQueueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1789,19 +1789,19 @@ func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueue
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySetPlaylistItemRequest struct {
+type SyncPlayAPISyncPlaySetPlaylistItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinSetPlaylistItemRequestDto *JellyfinSetPlaylistItemRequestDto
 }
 
 // The new item to play.
-func (r ApiSyncPlaySetPlaylistItemRequest) JellyfinSetPlaylistItemRequestDto(jellyfinSetPlaylistItemRequestDto JellyfinSetPlaylistItemRequestDto) ApiSyncPlaySetPlaylistItemRequest {
+func (r SyncPlayAPISyncPlaySetPlaylistItemRequest) JellyfinSetPlaylistItemRequestDto(jellyfinSetPlaylistItemRequestDto JellyfinSetPlaylistItemRequestDto) SyncPlayAPISyncPlaySetPlaylistItemRequest {
 	r.jellyfinSetPlaylistItemRequestDto = &jellyfinSetPlaylistItemRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySetPlaylistItemRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySetPlaylistItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySetPlaylistItemExecute(r)
 }
 
@@ -1809,17 +1809,17 @@ func (r ApiSyncPlaySetPlaylistItemRequest) Execute() (*http.Response, error) {
 SyncPlaySetPlaylistItem Request to change playlist item in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetPlaylistItemRequest
+ @return SyncPlayAPISyncPlaySetPlaylistItemRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySetPlaylistItem(ctx context.Context) ApiSyncPlaySetPlaylistItemRequest {
-	return ApiSyncPlaySetPlaylistItemRequest{
+func (a *SyncPlayAPIService) SyncPlaySetPlaylistItem(ctx context.Context) SyncPlayAPISyncPlaySetPlaylistItemRequest {
+	return SyncPlayAPISyncPlaySetPlaylistItemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlaylistItemRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r SyncPlayAPISyncPlaySetPlaylistItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1901,19 +1901,19 @@ func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlay
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySetRepeatModeRequest struct {
+type SyncPlayAPISyncPlaySetRepeatModeRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinSetRepeatModeRequestDto *JellyfinSetRepeatModeRequestDto
 }
 
 // The new repeat mode.
-func (r ApiSyncPlaySetRepeatModeRequest) JellyfinSetRepeatModeRequestDto(jellyfinSetRepeatModeRequestDto JellyfinSetRepeatModeRequestDto) ApiSyncPlaySetRepeatModeRequest {
+func (r SyncPlayAPISyncPlaySetRepeatModeRequest) JellyfinSetRepeatModeRequestDto(jellyfinSetRepeatModeRequestDto JellyfinSetRepeatModeRequestDto) SyncPlayAPISyncPlaySetRepeatModeRequest {
 	r.jellyfinSetRepeatModeRequestDto = &jellyfinSetRepeatModeRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySetRepeatModeRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySetRepeatModeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySetRepeatModeExecute(r)
 }
 
@@ -1921,17 +1921,17 @@ func (r ApiSyncPlaySetRepeatModeRequest) Execute() (*http.Response, error) {
 SyncPlaySetRepeatMode Request to set repeat mode in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetRepeatModeRequest
+ @return SyncPlayAPISyncPlaySetRepeatModeRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySetRepeatMode(ctx context.Context) ApiSyncPlaySetRepeatModeRequest {
-	return ApiSyncPlaySetRepeatModeRequest{
+func (a *SyncPlayAPIService) SyncPlaySetRepeatMode(ctx context.Context) SyncPlayAPISyncPlaySetRepeatModeRequest {
+	return SyncPlayAPISyncPlaySetRepeatModeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeatModeRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r SyncPlayAPISyncPlaySetRepeatModeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2013,19 +2013,19 @@ func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeat
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlaySetShuffleModeRequest struct {
+type SyncPlayAPISyncPlaySetShuffleModeRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 	jellyfinSetShuffleModeRequestDto *JellyfinSetShuffleModeRequestDto
 }
 
 // The new shuffle mode.
-func (r ApiSyncPlaySetShuffleModeRequest) JellyfinSetShuffleModeRequestDto(jellyfinSetShuffleModeRequestDto JellyfinSetShuffleModeRequestDto) ApiSyncPlaySetShuffleModeRequest {
+func (r SyncPlayAPISyncPlaySetShuffleModeRequest) JellyfinSetShuffleModeRequestDto(jellyfinSetShuffleModeRequestDto JellyfinSetShuffleModeRequestDto) SyncPlayAPISyncPlaySetShuffleModeRequest {
 	r.jellyfinSetShuffleModeRequestDto = &jellyfinSetShuffleModeRequestDto
 	return r
 }
 
-func (r ApiSyncPlaySetShuffleModeRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlaySetShuffleModeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlaySetShuffleModeExecute(r)
 }
 
@@ -2033,17 +2033,17 @@ func (r ApiSyncPlaySetShuffleModeRequest) Execute() (*http.Response, error) {
 SyncPlaySetShuffleMode Request to set shuffle mode in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlaySetShuffleModeRequest
+ @return SyncPlayAPISyncPlaySetShuffleModeRequest
 */
-func (a *SyncPlayAPIService) SyncPlaySetShuffleMode(ctx context.Context) ApiSyncPlaySetShuffleModeRequest {
-	return ApiSyncPlaySetShuffleModeRequest{
+func (a *SyncPlayAPIService) SyncPlaySetShuffleMode(ctx context.Context) SyncPlayAPISyncPlaySetShuffleModeRequest {
+	return SyncPlayAPISyncPlaySetShuffleModeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuffleModeRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r SyncPlayAPISyncPlaySetShuffleModeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2125,12 +2125,12 @@ func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuff
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayStopRequest struct {
+type SyncPlayAPISyncPlayStopRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayStopRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayStopRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayStopExecute(r)
 }
 
@@ -2138,17 +2138,17 @@ func (r ApiSyncPlayStopRequest) Execute() (*http.Response, error) {
 SyncPlayStop Request stop in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayStopRequest
+ @return SyncPlayAPISyncPlayStopRequest
 */
-func (a *SyncPlayAPIService) SyncPlayStop(ctx context.Context) ApiSyncPlayStopRequest {
-	return ApiSyncPlayStopRequest{
+func (a *SyncPlayAPIService) SyncPlayStop(ctx context.Context) SyncPlayAPISyncPlayStopRequest {
+	return SyncPlayAPISyncPlayStopRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayStopExecute(r ApiSyncPlayStopRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayStopExecute(r SyncPlayAPISyncPlayStopRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -2225,12 +2225,12 @@ func (a *SyncPlayAPIService) SyncPlayStopExecute(r ApiSyncPlayStopRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiSyncPlayUnpauseRequest struct {
+type SyncPlayAPISyncPlayUnpauseRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayUnpauseRequest) Execute() (*http.Response, error) {
+func (r SyncPlayAPISyncPlayUnpauseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.SyncPlayUnpauseExecute(r)
 }
 
@@ -2238,17 +2238,17 @@ func (r ApiSyncPlayUnpauseRequest) Execute() (*http.Response, error) {
 SyncPlayUnpause Request unpause in SyncPlay group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiSyncPlayUnpauseRequest
+ @return SyncPlayAPISyncPlayUnpauseRequest
 */
-func (a *SyncPlayAPIService) SyncPlayUnpause(ctx context.Context) ApiSyncPlayUnpauseRequest {
-	return ApiSyncPlayUnpauseRequest{
+func (a *SyncPlayAPIService) SyncPlayUnpause(ctx context.Context) SyncPlayAPISyncPlayUnpauseRequest {
+	return SyncPlayAPISyncPlayUnpauseRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SyncPlayAPIService) SyncPlayUnpauseExecute(r ApiSyncPlayUnpauseRequest) (*http.Response, error) {
+func (a *SyncPlayAPIService) SyncPlayUnpauseExecute(r SyncPlayAPISyncPlayUnpauseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

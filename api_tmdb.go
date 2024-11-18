@@ -22,12 +22,12 @@ import (
 // TmdbAPIService TmdbAPI service
 type TmdbAPIService service
 
-type ApiTmdbClientConfigurationRequest struct {
+type TmdbAPITmdbClientConfigurationRequest struct {
 	ctx context.Context
 	ApiService *TmdbAPIService
 }
 
-func (r ApiTmdbClientConfigurationRequest) Execute() (*JellyfinConfigImageTypes, *http.Response, error) {
+func (r TmdbAPITmdbClientConfigurationRequest) Execute() (*JellyfinConfigImageTypes, *http.Response, error) {
 	return r.ApiService.TmdbClientConfigurationExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r ApiTmdbClientConfigurationRequest) Execute() (*JellyfinConfigImageTypes,
 TmdbClientConfiguration Gets the TMDb image configuration options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTmdbClientConfigurationRequest
+ @return TmdbAPITmdbClientConfigurationRequest
 */
-func (a *TmdbAPIService) TmdbClientConfiguration(ctx context.Context) ApiTmdbClientConfigurationRequest {
-	return ApiTmdbClientConfigurationRequest{
+func (a *TmdbAPIService) TmdbClientConfiguration(ctx context.Context) TmdbAPITmdbClientConfigurationRequest {
+	return TmdbAPITmdbClientConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *TmdbAPIService) TmdbClientConfiguration(ctx context.Context) ApiTmdbCli
 
 // Execute executes the request
 //  @return JellyfinConfigImageTypes
-func (a *TmdbAPIService) TmdbClientConfigurationExecute(r ApiTmdbClientConfigurationRequest) (*JellyfinConfigImageTypes, *http.Response, error) {
+func (a *TmdbAPIService) TmdbClientConfigurationExecute(r TmdbAPITmdbClientConfigurationRequest) (*JellyfinConfigImageTypes, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

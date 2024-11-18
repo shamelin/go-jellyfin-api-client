@@ -25,13 +25,13 @@ import (
 // VideosAPIService VideosAPI service
 type VideosAPIService service
 
-type ApiDeleteAlternateSourcesRequest struct {
+type VideosAPIDeleteAlternateSourcesRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
 }
 
-func (r ApiDeleteAlternateSourcesRequest) Execute() (*http.Response, error) {
+func (r VideosAPIDeleteAlternateSourcesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlternateSourcesExecute(r)
 }
 
@@ -40,10 +40,10 @@ DeleteAlternateSources Removes alternate video sources.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiDeleteAlternateSourcesRequest
+ @return VideosAPIDeleteAlternateSourcesRequest
 */
-func (a *VideosAPIService) DeleteAlternateSources(ctx context.Context, itemId string) ApiDeleteAlternateSourcesRequest {
-	return ApiDeleteAlternateSourcesRequest{
+func (a *VideosAPIService) DeleteAlternateSources(ctx context.Context, itemId string) VideosAPIDeleteAlternateSourcesRequest {
+	return VideosAPIDeleteAlternateSourcesRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -51,7 +51,7 @@ func (a *VideosAPIService) DeleteAlternateSources(ctx context.Context, itemId st
 }
 
 // Execute executes the request
-func (a *VideosAPIService) DeleteAlternateSourcesExecute(r ApiDeleteAlternateSourcesRequest) (*http.Response, error) {
+func (a *VideosAPIService) DeleteAlternateSourcesExecute(r VideosAPIDeleteAlternateSourcesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -140,7 +140,7 @@ func (a *VideosAPIService) DeleteAlternateSourcesExecute(r ApiDeleteAlternateSou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetAdditionalPartRequest struct {
+type VideosAPIGetAdditionalPartRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
@@ -148,12 +148,12 @@ type ApiGetAdditionalPartRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetAdditionalPartRequest) UserId(userId string) ApiGetAdditionalPartRequest {
+func (r VideosAPIGetAdditionalPartRequest) UserId(userId string) VideosAPIGetAdditionalPartRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetAdditionalPartRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r VideosAPIGetAdditionalPartRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetAdditionalPartExecute(r)
 }
 
@@ -162,10 +162,10 @@ GetAdditionalPart Gets additional parts for a video.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetAdditionalPartRequest
+ @return VideosAPIGetAdditionalPartRequest
 */
-func (a *VideosAPIService) GetAdditionalPart(ctx context.Context, itemId string) ApiGetAdditionalPartRequest {
-	return ApiGetAdditionalPartRequest{
+func (a *VideosAPIService) GetAdditionalPart(ctx context.Context, itemId string) VideosAPIGetAdditionalPartRequest {
+	return VideosAPIGetAdditionalPartRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -174,7 +174,7 @@ func (a *VideosAPIService) GetAdditionalPart(ctx context.Context, itemId string)
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *VideosAPIService) GetAdditionalPartExecute(r ApiGetAdditionalPartRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *VideosAPIService) GetAdditionalPartExecute(r VideosAPIGetAdditionalPartRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -265,7 +265,7 @@ func (a *VideosAPIService) GetAdditionalPartExecute(r ApiGetAdditionalPartReques
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetVideoStreamRequest struct {
+type VideosAPIGetVideoStreamRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
@@ -323,313 +323,313 @@ type ApiGetVideoStreamRequest struct {
 }
 
 // The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-func (r ApiGetVideoStreamRequest) Container(container string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Container(container string) VideosAPIGetVideoStreamRequest {
 	r.container = &container
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetVideoStreamRequest) Static(static bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Static(static bool) VideosAPIGetVideoStreamRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetVideoStreamRequest) Params(params string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Params(params string) VideosAPIGetVideoStreamRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetVideoStreamRequest) Tag(tag string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Tag(tag string) VideosAPIGetVideoStreamRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetVideoStreamRequest) DeviceProfileId(deviceProfileId string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) DeviceProfileId(deviceProfileId string) VideosAPIGetVideoStreamRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetVideoStreamRequest) PlaySessionId(playSessionId string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) PlaySessionId(playSessionId string) VideosAPIGetVideoStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetVideoStreamRequest) SegmentContainer(segmentContainer string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) SegmentContainer(segmentContainer string) VideosAPIGetVideoStreamRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetVideoStreamRequest) SegmentLength(segmentLength int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) SegmentLength(segmentLength int32) VideosAPIGetVideoStreamRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetVideoStreamRequest) MinSegments(minSegments int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MinSegments(minSegments int32) VideosAPIGetVideoStreamRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetVideoStreamRequest) MediaSourceId(mediaSourceId string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MediaSourceId(mediaSourceId string) VideosAPIGetVideoStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetVideoStreamRequest) DeviceId(deviceId string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) DeviceId(deviceId string) VideosAPIGetVideoStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetVideoStreamRequest) AudioCodec(audioCodec string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AudioCodec(audioCodec string) VideosAPIGetVideoStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetVideoStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) VideosAPIGetVideoStreamRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetVideoStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) VideosAPIGetVideoStreamRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetVideoStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) VideosAPIGetVideoStreamRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetVideoStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) VideosAPIGetVideoStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetVideoStreamRequest) AudioSampleRate(audioSampleRate int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AudioSampleRate(audioSampleRate int32) VideosAPIGetVideoStreamRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetVideoStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) VideosAPIGetVideoStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetVideoStreamRequest) AudioBitRate(audioBitRate int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AudioBitRate(audioBitRate int32) VideosAPIGetVideoStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetVideoStreamRequest) AudioChannels(audioChannels int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AudioChannels(audioChannels int32) VideosAPIGetVideoStreamRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetVideoStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxAudioChannels(maxAudioChannels int32) VideosAPIGetVideoStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetVideoStreamRequest) Profile(profile string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Profile(profile string) VideosAPIGetVideoStreamRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetVideoStreamRequest) Level(level string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Level(level string) VideosAPIGetVideoStreamRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVideoStreamRequest) Framerate(framerate float32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Framerate(framerate float32) VideosAPIGetVideoStreamRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVideoStreamRequest) MaxFramerate(maxFramerate float32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxFramerate(maxFramerate float32) VideosAPIGetVideoStreamRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetVideoStreamRequest) CopyTimestamps(copyTimestamps bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) CopyTimestamps(copyTimestamps bool) VideosAPIGetVideoStreamRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetVideoStreamRequest) StartTimeTicks(startTimeTicks int64) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) StartTimeTicks(startTimeTicks int64) VideosAPIGetVideoStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetVideoStreamRequest) Width(width int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Width(width int32) VideosAPIGetVideoStreamRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetVideoStreamRequest) Height(height int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Height(height int32) VideosAPIGetVideoStreamRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiGetVideoStreamRequest) MaxWidth(maxWidth int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxWidth(maxWidth int32) VideosAPIGetVideoStreamRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiGetVideoStreamRequest) MaxHeight(maxHeight int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxHeight(maxHeight int32) VideosAPIGetVideoStreamRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetVideoStreamRequest) VideoBitRate(videoBitRate int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) VideoBitRate(videoBitRate int32) VideosAPIGetVideoStreamRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetVideoStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) VideosAPIGetVideoStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetVideoStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) VideosAPIGetVideoStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetVideoStreamRequest) MaxRefFrames(maxRefFrames int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxRefFrames(maxRefFrames int32) VideosAPIGetVideoStreamRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetVideoStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) VideosAPIGetVideoStreamRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetVideoStreamRequest) RequireAvc(requireAvc bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) RequireAvc(requireAvc bool) VideosAPIGetVideoStreamRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetVideoStreamRequest) DeInterlace(deInterlace bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) DeInterlace(deInterlace bool) VideosAPIGetVideoStreamRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetVideoStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) VideosAPIGetVideoStreamRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetVideoStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) VideosAPIGetVideoStreamRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetVideoStreamRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) CpuCoreLimit(cpuCoreLimit int32) VideosAPIGetVideoStreamRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetVideoStreamRequest) LiveStreamId(liveStreamId string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) LiveStreamId(liveStreamId string) VideosAPIGetVideoStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetVideoStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) VideosAPIGetVideoStreamRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetVideoStreamRequest) VideoCodec(videoCodec string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) VideoCodec(videoCodec string) VideosAPIGetVideoStreamRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetVideoStreamRequest) SubtitleCodec(subtitleCodec string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) SubtitleCodec(subtitleCodec string) VideosAPIGetVideoStreamRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetVideoStreamRequest) TranscodeReasons(transcodeReasons string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) TranscodeReasons(transcodeReasons string) VideosAPIGetVideoStreamRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetVideoStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) AudioStreamIndex(audioStreamIndex int32) VideosAPIGetVideoStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetVideoStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) VideoStreamIndex(videoStreamIndex int32) VideosAPIGetVideoStreamRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetVideoStreamRequest) Context(context JellyfinEncodingContext) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) Context(context JellyfinEncodingContext) VideosAPIGetVideoStreamRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetVideoStreamRequest) StreamOptions(streamOptions map[string]string) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) StreamOptions(streamOptions map[string]string) VideosAPIGetVideoStreamRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetVideoStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetVideoStreamRequest {
+func (r VideosAPIGetVideoStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) VideosAPIGetVideoStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r VideosAPIGetVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetVideoStreamExecute(r)
 }
 
@@ -638,10 +638,10 @@ GetVideoStream Gets a video stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetVideoStreamRequest
+ @return VideosAPIGetVideoStreamRequest
 */
-func (a *VideosAPIService) GetVideoStream(ctx context.Context, itemId string) ApiGetVideoStreamRequest {
-	return ApiGetVideoStreamRequest{
+func (a *VideosAPIService) GetVideoStream(ctx context.Context, itemId string) VideosAPIGetVideoStreamRequest {
+	return VideosAPIGetVideoStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -650,7 +650,7 @@ func (a *VideosAPIService) GetVideoStream(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return *os.File
-func (a *VideosAPIService) GetVideoStreamExecute(r ApiGetVideoStreamRequest) (*os.File, *http.Response, error) {
+func (a *VideosAPIService) GetVideoStreamExecute(r VideosAPIGetVideoStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -880,7 +880,7 @@ func (a *VideosAPIService) GetVideoStreamExecute(r ApiGetVideoStreamRequest) (*o
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetVideoStreamByContainerRequest struct {
+type VideosAPIGetVideoStreamByContainerRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
@@ -938,306 +938,306 @@ type ApiGetVideoStreamByContainerRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetVideoStreamByContainerRequest) Static(static bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Static(static bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetVideoStreamByContainerRequest) Params(params string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Params(params string) VideosAPIGetVideoStreamByContainerRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetVideoStreamByContainerRequest) Tag(tag string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Tag(tag string) VideosAPIGetVideoStreamByContainerRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
-func (r ApiGetVideoStreamByContainerRequest) DeviceProfileId(deviceProfileId string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) DeviceProfileId(deviceProfileId string) VideosAPIGetVideoStreamByContainerRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetVideoStreamByContainerRequest) PlaySessionId(playSessionId string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) PlaySessionId(playSessionId string) VideosAPIGetVideoStreamByContainerRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetVideoStreamByContainerRequest) SegmentContainer(segmentContainer string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) SegmentContainer(segmentContainer string) VideosAPIGetVideoStreamByContainerRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetVideoStreamByContainerRequest) SegmentLength(segmentLength int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) SegmentLength(segmentLength int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetVideoStreamByContainerRequest) MinSegments(minSegments int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MinSegments(minSegments int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetVideoStreamByContainerRequest) MediaSourceId(mediaSourceId string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MediaSourceId(mediaSourceId string) VideosAPIGetVideoStreamByContainerRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetVideoStreamByContainerRequest) DeviceId(deviceId string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) DeviceId(deviceId string) VideosAPIGetVideoStreamByContainerRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetVideoStreamByContainerRequest) AudioCodec(audioCodec string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AudioCodec(audioCodec string) VideosAPIGetVideoStreamByContainerRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetVideoStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetVideoStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetVideoStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetVideoStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetVideoStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetVideoStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetVideoStreamByContainerRequest) AudioBitRate(audioBitRate int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AudioBitRate(audioBitRate int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetVideoStreamByContainerRequest) AudioChannels(audioChannels int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AudioChannels(audioChannels int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetVideoStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetVideoStreamByContainerRequest) Profile(profile string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Profile(profile string) VideosAPIGetVideoStreamByContainerRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetVideoStreamByContainerRequest) Level(level string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Level(level string) VideosAPIGetVideoStreamByContainerRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVideoStreamByContainerRequest) Framerate(framerate float32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Framerate(framerate float32) VideosAPIGetVideoStreamByContainerRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetVideoStreamByContainerRequest) MaxFramerate(maxFramerate float32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxFramerate(maxFramerate float32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetVideoStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetVideoStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) VideosAPIGetVideoStreamByContainerRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetVideoStreamByContainerRequest) Width(width int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Width(width int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetVideoStreamByContainerRequest) Height(height int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Height(height int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiGetVideoStreamByContainerRequest) MaxWidth(maxWidth int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxWidth(maxWidth int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiGetVideoStreamByContainerRequest) MaxHeight(maxHeight int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxHeight(maxHeight int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetVideoStreamByContainerRequest) VideoBitRate(videoBitRate int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) VideoBitRate(videoBitRate int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetVideoStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetVideoStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) VideosAPIGetVideoStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetVideoStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetVideoStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetVideoStreamByContainerRequest) RequireAvc(requireAvc bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) RequireAvc(requireAvc bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetVideoStreamByContainerRequest) DeInterlace(deInterlace bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) DeInterlace(deInterlace bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetVideoStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetVideoStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetVideoStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetVideoStreamByContainerRequest) LiveStreamId(liveStreamId string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) LiveStreamId(liveStreamId string) VideosAPIGetVideoStreamByContainerRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetVideoStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetVideoStreamByContainerRequest) VideoCodec(videoCodec string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) VideoCodec(videoCodec string) VideosAPIGetVideoStreamByContainerRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetVideoStreamByContainerRequest) SubtitleCodec(subtitleCodec string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) SubtitleCodec(subtitleCodec string) VideosAPIGetVideoStreamByContainerRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetVideoStreamByContainerRequest) TranscodeReasons(transcodeReasons string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) TranscodeReasons(transcodeReasons string) VideosAPIGetVideoStreamByContainerRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetVideoStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetVideoStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) VideosAPIGetVideoStreamByContainerRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetVideoStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) Context(context JellyfinEncodingContext) VideosAPIGetVideoStreamByContainerRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetVideoStreamByContainerRequest) StreamOptions(streamOptions map[string]string) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) StreamOptions(streamOptions map[string]string) VideosAPIGetVideoStreamByContainerRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetVideoStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetVideoStreamByContainerRequest {
+func (r VideosAPIGetVideoStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) VideosAPIGetVideoStreamByContainerRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetVideoStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
+func (r VideosAPIGetVideoStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetVideoStreamByContainerExecute(r)
 }
 
@@ -1247,10 +1247,10 @@ GetVideoStreamByContainer Gets a video stream.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiGetVideoStreamByContainerRequest
+ @return VideosAPIGetVideoStreamByContainerRequest
 */
-func (a *VideosAPIService) GetVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiGetVideoStreamByContainerRequest {
-	return ApiGetVideoStreamByContainerRequest{
+func (a *VideosAPIService) GetVideoStreamByContainer(ctx context.Context, itemId string, container string) VideosAPIGetVideoStreamByContainerRequest {
+	return VideosAPIGetVideoStreamByContainerRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1260,7 +1260,7 @@ func (a *VideosAPIService) GetVideoStreamByContainer(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return *os.File
-func (a *VideosAPIService) GetVideoStreamByContainerExecute(r ApiGetVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
+func (a *VideosAPIService) GetVideoStreamByContainerExecute(r VideosAPIGetVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1488,7 +1488,7 @@ func (a *VideosAPIService) GetVideoStreamByContainerExecute(r ApiGetVideoStreamB
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadVideoStreamRequest struct {
+type VideosAPIHeadVideoStreamRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
@@ -1546,313 +1546,313 @@ type ApiHeadVideoStreamRequest struct {
 }
 
 // The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
-func (r ApiHeadVideoStreamRequest) Container(container string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Container(container string) VideosAPIHeadVideoStreamRequest {
 	r.container = &container
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadVideoStreamRequest) Static(static bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Static(static bool) VideosAPIHeadVideoStreamRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadVideoStreamRequest) Params(params string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Params(params string) VideosAPIHeadVideoStreamRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadVideoStreamRequest) Tag(tag string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Tag(tag string) VideosAPIHeadVideoStreamRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiHeadVideoStreamRequest) DeviceProfileId(deviceProfileId string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) DeviceProfileId(deviceProfileId string) VideosAPIHeadVideoStreamRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadVideoStreamRequest) PlaySessionId(playSessionId string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) PlaySessionId(playSessionId string) VideosAPIHeadVideoStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadVideoStreamRequest) SegmentContainer(segmentContainer string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) SegmentContainer(segmentContainer string) VideosAPIHeadVideoStreamRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadVideoStreamRequest) SegmentLength(segmentLength int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) SegmentLength(segmentLength int32) VideosAPIHeadVideoStreamRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadVideoStreamRequest) MinSegments(minSegments int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MinSegments(minSegments int32) VideosAPIHeadVideoStreamRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadVideoStreamRequest) MediaSourceId(mediaSourceId string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MediaSourceId(mediaSourceId string) VideosAPIHeadVideoStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadVideoStreamRequest) DeviceId(deviceId string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) DeviceId(deviceId string) VideosAPIHeadVideoStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadVideoStreamRequest) AudioCodec(audioCodec string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AudioCodec(audioCodec string) VideosAPIHeadVideoStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadVideoStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) VideosAPIHeadVideoStreamRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadVideoStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) VideosAPIHeadVideoStreamRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadVideoStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) VideosAPIHeadVideoStreamRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadVideoStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) VideosAPIHeadVideoStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadVideoStreamRequest) AudioSampleRate(audioSampleRate int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AudioSampleRate(audioSampleRate int32) VideosAPIHeadVideoStreamRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadVideoStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) VideosAPIHeadVideoStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadVideoStreamRequest) AudioBitRate(audioBitRate int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AudioBitRate(audioBitRate int32) VideosAPIHeadVideoStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadVideoStreamRequest) AudioChannels(audioChannels int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AudioChannels(audioChannels int32) VideosAPIHeadVideoStreamRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadVideoStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxAudioChannels(maxAudioChannels int32) VideosAPIHeadVideoStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadVideoStreamRequest) Profile(profile string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Profile(profile string) VideosAPIHeadVideoStreamRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadVideoStreamRequest) Level(level string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Level(level string) VideosAPIHeadVideoStreamRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadVideoStreamRequest) Framerate(framerate float32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Framerate(framerate float32) VideosAPIHeadVideoStreamRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadVideoStreamRequest) MaxFramerate(maxFramerate float32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxFramerate(maxFramerate float32) VideosAPIHeadVideoStreamRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadVideoStreamRequest) CopyTimestamps(copyTimestamps bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) CopyTimestamps(copyTimestamps bool) VideosAPIHeadVideoStreamRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadVideoStreamRequest) StartTimeTicks(startTimeTicks int64) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) StartTimeTicks(startTimeTicks int64) VideosAPIHeadVideoStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadVideoStreamRequest) Width(width int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Width(width int32) VideosAPIHeadVideoStreamRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadVideoStreamRequest) Height(height int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Height(height int32) VideosAPIHeadVideoStreamRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiHeadVideoStreamRequest) MaxWidth(maxWidth int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxWidth(maxWidth int32) VideosAPIHeadVideoStreamRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiHeadVideoStreamRequest) MaxHeight(maxHeight int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxHeight(maxHeight int32) VideosAPIHeadVideoStreamRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadVideoStreamRequest) VideoBitRate(videoBitRate int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) VideoBitRate(videoBitRate int32) VideosAPIHeadVideoStreamRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadVideoStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) VideosAPIHeadVideoStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadVideoStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) VideosAPIHeadVideoStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadVideoStreamRequest) MaxRefFrames(maxRefFrames int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxRefFrames(maxRefFrames int32) VideosAPIHeadVideoStreamRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadVideoStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) VideosAPIHeadVideoStreamRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadVideoStreamRequest) RequireAvc(requireAvc bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) RequireAvc(requireAvc bool) VideosAPIHeadVideoStreamRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadVideoStreamRequest) DeInterlace(deInterlace bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) DeInterlace(deInterlace bool) VideosAPIHeadVideoStreamRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiHeadVideoStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) VideosAPIHeadVideoStreamRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadVideoStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) VideosAPIHeadVideoStreamRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadVideoStreamRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) CpuCoreLimit(cpuCoreLimit int32) VideosAPIHeadVideoStreamRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadVideoStreamRequest) LiveStreamId(liveStreamId string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) LiveStreamId(liveStreamId string) VideosAPIHeadVideoStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadVideoStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) VideosAPIHeadVideoStreamRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadVideoStreamRequest) VideoCodec(videoCodec string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) VideoCodec(videoCodec string) VideosAPIHeadVideoStreamRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadVideoStreamRequest) SubtitleCodec(subtitleCodec string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) SubtitleCodec(subtitleCodec string) VideosAPIHeadVideoStreamRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadVideoStreamRequest) TranscodeReasons(transcodeReasons string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) TranscodeReasons(transcodeReasons string) VideosAPIHeadVideoStreamRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadVideoStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) AudioStreamIndex(audioStreamIndex int32) VideosAPIHeadVideoStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadVideoStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) VideoStreamIndex(videoStreamIndex int32) VideosAPIHeadVideoStreamRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadVideoStreamRequest) Context(context JellyfinEncodingContext) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) Context(context JellyfinEncodingContext) VideosAPIHeadVideoStreamRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadVideoStreamRequest) StreamOptions(streamOptions map[string]string) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) StreamOptions(streamOptions map[string]string) VideosAPIHeadVideoStreamRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadVideoStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadVideoStreamRequest {
+func (r VideosAPIHeadVideoStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) VideosAPIHeadVideoStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiHeadVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r VideosAPIHeadVideoStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadVideoStreamExecute(r)
 }
 
@@ -1861,10 +1861,10 @@ HeadVideoStream Gets a video stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiHeadVideoStreamRequest
+ @return VideosAPIHeadVideoStreamRequest
 */
-func (a *VideosAPIService) HeadVideoStream(ctx context.Context, itemId string) ApiHeadVideoStreamRequest {
-	return ApiHeadVideoStreamRequest{
+func (a *VideosAPIService) HeadVideoStream(ctx context.Context, itemId string) VideosAPIHeadVideoStreamRequest {
+	return VideosAPIHeadVideoStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1873,7 +1873,7 @@ func (a *VideosAPIService) HeadVideoStream(ctx context.Context, itemId string) A
 
 // Execute executes the request
 //  @return *os.File
-func (a *VideosAPIService) HeadVideoStreamExecute(r ApiHeadVideoStreamRequest) (*os.File, *http.Response, error) {
+func (a *VideosAPIService) HeadVideoStreamExecute(r VideosAPIHeadVideoStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -2103,7 +2103,7 @@ func (a *VideosAPIService) HeadVideoStreamExecute(r ApiHeadVideoStreamRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadVideoStreamByContainerRequest struct {
+type VideosAPIHeadVideoStreamByContainerRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	itemId string
@@ -2161,306 +2161,306 @@ type ApiHeadVideoStreamByContainerRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadVideoStreamByContainerRequest) Static(static bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Static(static bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadVideoStreamByContainerRequest) Params(params string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Params(params string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadVideoStreamByContainerRequest) Tag(tag string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Tag(tag string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
-func (r ApiHeadVideoStreamByContainerRequest) DeviceProfileId(deviceProfileId string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) DeviceProfileId(deviceProfileId string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadVideoStreamByContainerRequest) PlaySessionId(playSessionId string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) PlaySessionId(playSessionId string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadVideoStreamByContainerRequest) SegmentContainer(segmentContainer string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) SegmentContainer(segmentContainer string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadVideoStreamByContainerRequest) SegmentLength(segmentLength int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) SegmentLength(segmentLength int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadVideoStreamByContainerRequest) MinSegments(minSegments int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MinSegments(minSegments int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadVideoStreamByContainerRequest) MediaSourceId(mediaSourceId string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MediaSourceId(mediaSourceId string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadVideoStreamByContainerRequest) DeviceId(deviceId string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) DeviceId(deviceId string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadVideoStreamByContainerRequest) AudioCodec(audioCodec string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AudioCodec(audioCodec string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadVideoStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadVideoStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadVideoStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadVideoStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadVideoStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadVideoStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadVideoStreamByContainerRequest) AudioBitRate(audioBitRate int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AudioBitRate(audioBitRate int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadVideoStreamByContainerRequest) AudioChannels(audioChannels int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AudioChannels(audioChannels int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadVideoStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadVideoStreamByContainerRequest) Profile(profile string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Profile(profile string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadVideoStreamByContainerRequest) Level(level string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Level(level string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadVideoStreamByContainerRequest) Framerate(framerate float32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Framerate(framerate float32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadVideoStreamByContainerRequest) MaxFramerate(maxFramerate float32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxFramerate(maxFramerate float32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadVideoStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadVideoStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) VideosAPIHeadVideoStreamByContainerRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadVideoStreamByContainerRequest) Width(width int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Width(width int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadVideoStreamByContainerRequest) Height(height int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Height(height int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. The maximum horizontal resolution of the encoded video.
-func (r ApiHeadVideoStreamByContainerRequest) MaxWidth(maxWidth int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxWidth(maxWidth int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxWidth = &maxWidth
 	return r
 }
 
 // Optional. The maximum vertical resolution of the encoded video.
-func (r ApiHeadVideoStreamByContainerRequest) MaxHeight(maxHeight int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxHeight(maxHeight int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxHeight = &maxHeight
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadVideoStreamByContainerRequest) VideoBitRate(videoBitRate int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) VideoBitRate(videoBitRate int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadVideoStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadVideoStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) VideosAPIHeadVideoStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadVideoStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadVideoStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadVideoStreamByContainerRequest) RequireAvc(requireAvc bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) RequireAvc(requireAvc bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadVideoStreamByContainerRequest) DeInterlace(deInterlace bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) DeInterlace(deInterlace bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiHeadVideoStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadVideoStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadVideoStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadVideoStreamByContainerRequest) LiveStreamId(liveStreamId string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) LiveStreamId(liveStreamId string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadVideoStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadVideoStreamByContainerRequest) VideoCodec(videoCodec string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) VideoCodec(videoCodec string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadVideoStreamByContainerRequest) SubtitleCodec(subtitleCodec string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) SubtitleCodec(subtitleCodec string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadVideoStreamByContainerRequest) TranscodeReasons(transcodeReasons string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) TranscodeReasons(transcodeReasons string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadVideoStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadVideoStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) VideosAPIHeadVideoStreamByContainerRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadVideoStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Context(context JellyfinEncodingContext) VideosAPIHeadVideoStreamByContainerRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadVideoStreamByContainerRequest) StreamOptions(streamOptions map[string]string) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) StreamOptions(streamOptions map[string]string) VideosAPIHeadVideoStreamByContainerRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadVideoStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadVideoStreamByContainerRequest {
+func (r VideosAPIHeadVideoStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) VideosAPIHeadVideoStreamByContainerRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiHeadVideoStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
+func (r VideosAPIHeadVideoStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadVideoStreamByContainerExecute(r)
 }
 
@@ -2470,10 +2470,10 @@ HeadVideoStreamByContainer Gets a video stream.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
- @return ApiHeadVideoStreamByContainerRequest
+ @return VideosAPIHeadVideoStreamByContainerRequest
 */
-func (a *VideosAPIService) HeadVideoStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadVideoStreamByContainerRequest {
-	return ApiHeadVideoStreamByContainerRequest{
+func (a *VideosAPIService) HeadVideoStreamByContainer(ctx context.Context, itemId string, container string) VideosAPIHeadVideoStreamByContainerRequest {
+	return VideosAPIHeadVideoStreamByContainerRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2483,7 +2483,7 @@ func (a *VideosAPIService) HeadVideoStreamByContainer(ctx context.Context, itemI
 
 // Execute executes the request
 //  @return *os.File
-func (a *VideosAPIService) HeadVideoStreamByContainerExecute(r ApiHeadVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
+func (a *VideosAPIService) HeadVideoStreamByContainerExecute(r VideosAPIHeadVideoStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -2711,19 +2711,19 @@ func (a *VideosAPIService) HeadVideoStreamByContainerExecute(r ApiHeadVideoStrea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMergeVersionsRequest struct {
+type VideosAPIMergeVersionsRequest struct {
 	ctx context.Context
 	ApiService *VideosAPIService
 	ids *[]string
 }
 
 // Item id list. This allows multiple, comma delimited.
-func (r ApiMergeVersionsRequest) Ids(ids []string) ApiMergeVersionsRequest {
+func (r VideosAPIMergeVersionsRequest) Ids(ids []string) VideosAPIMergeVersionsRequest {
 	r.ids = &ids
 	return r
 }
 
-func (r ApiMergeVersionsRequest) Execute() (*http.Response, error) {
+func (r VideosAPIMergeVersionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.MergeVersionsExecute(r)
 }
 
@@ -2731,17 +2731,17 @@ func (r ApiMergeVersionsRequest) Execute() (*http.Response, error) {
 MergeVersions Merges videos into a single record.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMergeVersionsRequest
+ @return VideosAPIMergeVersionsRequest
 */
-func (a *VideosAPIService) MergeVersions(ctx context.Context) ApiMergeVersionsRequest {
-	return ApiMergeVersionsRequest{
+func (a *VideosAPIService) MergeVersions(ctx context.Context) VideosAPIMergeVersionsRequest {
+	return VideosAPIMergeVersionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *VideosAPIService) MergeVersionsExecute(r ApiMergeVersionsRequest) (*http.Response, error) {
+func (a *VideosAPIService) MergeVersionsExecute(r VideosAPIMergeVersionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

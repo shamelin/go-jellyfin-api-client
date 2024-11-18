@@ -20,9 +20,9 @@ type JellyfinTransportStreamTimestamp string
 
 // List of TransportStreamTimestamp
 const (
-	NONE JellyfinTransportStreamTimestamp = "None"
-	ZERO JellyfinTransportStreamTimestamp = "Zero"
-	VALID JellyfinTransportStreamTimestamp = "Valid"
+	JELLYFINTRANSPORTSTREAMTIMESTAMP_NONE JellyfinTransportStreamTimestamp = "None"
+	JELLYFINTRANSPORTSTREAMTIMESTAMP_ZERO JellyfinTransportStreamTimestamp = "Zero"
+	JELLYFINTRANSPORTSTREAMTIMESTAMP_VALID JellyfinTransportStreamTimestamp = "Valid"
 )
 
 // All allowed values of JellyfinTransportStreamTimestamp enum

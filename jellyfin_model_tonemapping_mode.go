@@ -20,11 +20,11 @@ type JellyfinTonemappingMode string
 
 // List of TonemappingMode
 const (
-	AUTO JellyfinTonemappingMode = "auto"
-	MAX JellyfinTonemappingMode = "max"
-	RGB JellyfinTonemappingMode = "rgb"
-	LUM JellyfinTonemappingMode = "lum"
-	ITP JellyfinTonemappingMode = "itp"
+	JELLYFINTONEMAPPINGMODE_AUTO JellyfinTonemappingMode = "auto"
+	JELLYFINTONEMAPPINGMODE_MAX JellyfinTonemappingMode = "max"
+	JELLYFINTONEMAPPINGMODE_RGB JellyfinTonemappingMode = "rgb"
+	JELLYFINTONEMAPPINGMODE_LUM JellyfinTonemappingMode = "lum"
+	JELLYFINTONEMAPPINGMODE_ITP JellyfinTonemappingMode = "itp"
 )
 
 // All allowed values of JellyfinTonemappingMode enum

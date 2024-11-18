@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **VideoRange** | Pointer to [**JellyfinJellyfinVideoRange**](JellyfinVideoRange.md) | An enum representing video ranges. | [optional] [readonly] 
 **VideoRangeType** | Pointer to [**JellyfinJellyfinVideoRangeType**](JellyfinVideoRangeType.md) | An enum representing types of video ranges. | [optional] [readonly] 
 **VideoDoViTitle** | Pointer to **NullableString** | Gets the video dovi title. | [optional] [readonly] 
-**AudioSpatialFormat** | Pointer to [**JellyfinJellyfinAudioSpatialFormat**](JellyfinAudioSpatialFormat.md) | An enum representing formats of spatial audio. | [optional] [readonly] [default to NONE]
+**AudioSpatialFormat** | Pointer to [**JellyfinJellyfinAudioSpatialFormat**](JellyfinAudioSpatialFormat.md) | An enum representing formats of spatial audio. | [optional] [readonly] [default to JELLYFINJELLYFINAUDIOSPATIALFORMAT_NONE]
 **LocalizedUndefined** | Pointer to **NullableString** |  | [optional] 
 **LocalizedDefault** | Pointer to **NullableString** |  | [optional] 
 **LocalizedForced** | Pointer to **NullableString** |  | [optional] 

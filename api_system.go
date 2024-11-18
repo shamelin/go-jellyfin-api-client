@@ -23,12 +23,12 @@ import (
 // SystemAPIService SystemAPI service
 type SystemAPIService service
 
-type ApiGetEndpointInfoRequest struct {
+type SystemAPIGetEndpointInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetEndpointInfoRequest) Execute() (*JellyfinEndPointInfo, *http.Response, error) {
+func (r SystemAPIGetEndpointInfoRequest) Execute() (*JellyfinEndPointInfo, *http.Response, error) {
 	return r.ApiService.GetEndpointInfoExecute(r)
 }
 
@@ -36,10 +36,10 @@ func (r ApiGetEndpointInfoRequest) Execute() (*JellyfinEndPointInfo, *http.Respo
 GetEndpointInfo Gets information about the request endpoint.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetEndpointInfoRequest
+ @return SystemAPIGetEndpointInfoRequest
 */
-func (a *SystemAPIService) GetEndpointInfo(ctx context.Context) ApiGetEndpointInfoRequest {
-	return ApiGetEndpointInfoRequest{
+func (a *SystemAPIService) GetEndpointInfo(ctx context.Context) SystemAPIGetEndpointInfoRequest {
+	return SystemAPIGetEndpointInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -47,7 +47,7 @@ func (a *SystemAPIService) GetEndpointInfo(ctx context.Context) ApiGetEndpointIn
 
 // Execute executes the request
 //  @return JellyfinEndPointInfo
-func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (*JellyfinEndPointInfo, *http.Response, error) {
+func (a *SystemAPIService) GetEndpointInfoExecute(r SystemAPIGetEndpointInfoRequest) (*JellyfinEndPointInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -145,19 +145,19 @@ func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLogFileRequest struct {
+type SystemAPIGetLogFileRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 	name *string
 }
 
 // The name of the log file to get.
-func (r ApiGetLogFileRequest) Name(name string) ApiGetLogFileRequest {
+func (r SystemAPIGetLogFileRequest) Name(name string) SystemAPIGetLogFileRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiGetLogFileRequest) Execute() (*os.File, *http.Response, error) {
+func (r SystemAPIGetLogFileRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetLogFileExecute(r)
 }
 
@@ -165,10 +165,10 @@ func (r ApiGetLogFileRequest) Execute() (*os.File, *http.Response, error) {
 GetLogFile Gets a log file.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLogFileRequest
+ @return SystemAPIGetLogFileRequest
 */
-func (a *SystemAPIService) GetLogFile(ctx context.Context) ApiGetLogFileRequest {
-	return ApiGetLogFileRequest{
+func (a *SystemAPIService) GetLogFile(ctx context.Context) SystemAPIGetLogFileRequest {
+	return SystemAPIGetLogFileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -176,7 +176,7 @@ func (a *SystemAPIService) GetLogFile(ctx context.Context) ApiGetLogFileRequest 
 
 // Execute executes the request
 //  @return *os.File
-func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, *http.Response, error) {
+func (a *SystemAPIService) GetLogFileExecute(r SystemAPIGetLogFileRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -289,12 +289,12 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPingSystemRequest struct {
+type SystemAPIGetPingSystemRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetPingSystemRequest) Execute() (string, *http.Response, error) {
+func (r SystemAPIGetPingSystemRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.GetPingSystemExecute(r)
 }
 
@@ -302,10 +302,10 @@ func (r ApiGetPingSystemRequest) Execute() (string, *http.Response, error) {
 GetPingSystem Pings the system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPingSystemRequest
+ @return SystemAPIGetPingSystemRequest
 */
-func (a *SystemAPIService) GetPingSystem(ctx context.Context) ApiGetPingSystemRequest {
-	return ApiGetPingSystemRequest{
+func (a *SystemAPIService) GetPingSystem(ctx context.Context) SystemAPIGetPingSystemRequest {
+	return SystemAPIGetPingSystemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -313,7 +313,7 @@ func (a *SystemAPIService) GetPingSystem(ctx context.Context) ApiGetPingSystemRe
 
 // Execute executes the request
 //  @return string
-func (a *SystemAPIService) GetPingSystemExecute(r ApiGetPingSystemRequest) (string, *http.Response, error) {
+func (a *SystemAPIService) GetPingSystemExecute(r SystemAPIGetPingSystemRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -386,12 +386,12 @@ func (a *SystemAPIService) GetPingSystemExecute(r ApiGetPingSystemRequest) (stri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPublicSystemInfoRequest struct {
+type SystemAPIGetPublicSystemInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetPublicSystemInfoRequest) Execute() (*JellyfinPublicSystemInfo, *http.Response, error) {
+func (r SystemAPIGetPublicSystemInfoRequest) Execute() (*JellyfinPublicSystemInfo, *http.Response, error) {
 	return r.ApiService.GetPublicSystemInfoExecute(r)
 }
 
@@ -399,10 +399,10 @@ func (r ApiGetPublicSystemInfoRequest) Execute() (*JellyfinPublicSystemInfo, *ht
 GetPublicSystemInfo Gets public information about the server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPublicSystemInfoRequest
+ @return SystemAPIGetPublicSystemInfoRequest
 */
-func (a *SystemAPIService) GetPublicSystemInfo(ctx context.Context) ApiGetPublicSystemInfoRequest {
-	return ApiGetPublicSystemInfoRequest{
+func (a *SystemAPIService) GetPublicSystemInfo(ctx context.Context) SystemAPIGetPublicSystemInfoRequest {
+	return SystemAPIGetPublicSystemInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -410,7 +410,7 @@ func (a *SystemAPIService) GetPublicSystemInfo(ctx context.Context) ApiGetPublic
 
 // Execute executes the request
 //  @return JellyfinPublicSystemInfo
-func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRequest) (*JellyfinPublicSystemInfo, *http.Response, error) {
+func (a *SystemAPIService) GetPublicSystemInfoExecute(r SystemAPIGetPublicSystemInfoRequest) (*JellyfinPublicSystemInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -483,12 +483,12 @@ func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetServerLogsRequest struct {
+type SystemAPIGetServerLogsRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetServerLogsRequest) Execute() ([]JellyfinLogFile, *http.Response, error) {
+func (r SystemAPIGetServerLogsRequest) Execute() ([]JellyfinLogFile, *http.Response, error) {
 	return r.ApiService.GetServerLogsExecute(r)
 }
 
@@ -496,10 +496,10 @@ func (r ApiGetServerLogsRequest) Execute() ([]JellyfinLogFile, *http.Response, e
 GetServerLogs Gets a list of available server log files.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetServerLogsRequest
+ @return SystemAPIGetServerLogsRequest
 */
-func (a *SystemAPIService) GetServerLogs(ctx context.Context) ApiGetServerLogsRequest {
-	return ApiGetServerLogsRequest{
+func (a *SystemAPIService) GetServerLogs(ctx context.Context) SystemAPIGetServerLogsRequest {
+	return SystemAPIGetServerLogsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -507,7 +507,7 @@ func (a *SystemAPIService) GetServerLogs(ctx context.Context) ApiGetServerLogsRe
 
 // Execute executes the request
 //  @return []JellyfinLogFile
-func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]JellyfinLogFile, *http.Response, error) {
+func (a *SystemAPIService) GetServerLogsExecute(r SystemAPIGetServerLogsRequest) ([]JellyfinLogFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -605,12 +605,12 @@ func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]Je
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSystemInfoRequest struct {
+type SystemAPIGetSystemInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetSystemInfoRequest) Execute() (*JellyfinSystemInfo, *http.Response, error) {
+func (r SystemAPIGetSystemInfoRequest) Execute() (*JellyfinSystemInfo, *http.Response, error) {
 	return r.ApiService.GetSystemInfoExecute(r)
 }
 
@@ -618,10 +618,10 @@ func (r ApiGetSystemInfoRequest) Execute() (*JellyfinSystemInfo, *http.Response,
 GetSystemInfo Gets information about the server.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSystemInfoRequest
+ @return SystemAPIGetSystemInfoRequest
 */
-func (a *SystemAPIService) GetSystemInfo(ctx context.Context) ApiGetSystemInfoRequest {
-	return ApiGetSystemInfoRequest{
+func (a *SystemAPIService) GetSystemInfo(ctx context.Context) SystemAPIGetSystemInfoRequest {
+	return SystemAPIGetSystemInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -629,7 +629,7 @@ func (a *SystemAPIService) GetSystemInfo(ctx context.Context) ApiGetSystemInfoRe
 
 // Execute executes the request
 //  @return JellyfinSystemInfo
-func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*JellyfinSystemInfo, *http.Response, error) {
+func (a *SystemAPIService) GetSystemInfoExecute(r SystemAPIGetSystemInfoRequest) (*JellyfinSystemInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -727,12 +727,12 @@ func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*Jel
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetWakeOnLanInfoRequest struct {
+type SystemAPIGetWakeOnLanInfoRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetWakeOnLanInfoRequest) Execute() ([]JellyfinWakeOnLanInfo, *http.Response, error) {
+func (r SystemAPIGetWakeOnLanInfoRequest) Execute() ([]JellyfinWakeOnLanInfo, *http.Response, error) {
 	return r.ApiService.GetWakeOnLanInfoExecute(r)
 }
 
@@ -740,12 +740,12 @@ func (r ApiGetWakeOnLanInfoRequest) Execute() ([]JellyfinWakeOnLanInfo, *http.Re
 GetWakeOnLanInfo Gets wake on lan information.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetWakeOnLanInfoRequest
+ @return SystemAPIGetWakeOnLanInfoRequest
 
 Deprecated
 */
-func (a *SystemAPIService) GetWakeOnLanInfo(ctx context.Context) ApiGetWakeOnLanInfoRequest {
-	return ApiGetWakeOnLanInfoRequest{
+func (a *SystemAPIService) GetWakeOnLanInfo(ctx context.Context) SystemAPIGetWakeOnLanInfoRequest {
+	return SystemAPIGetWakeOnLanInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -754,7 +754,7 @@ func (a *SystemAPIService) GetWakeOnLanInfo(ctx context.Context) ApiGetWakeOnLan
 // Execute executes the request
 //  @return []JellyfinWakeOnLanInfo
 // Deprecated
-func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest) ([]JellyfinWakeOnLanInfo, *http.Response, error) {
+func (a *SystemAPIService) GetWakeOnLanInfoExecute(r SystemAPIGetWakeOnLanInfoRequest) ([]JellyfinWakeOnLanInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -841,12 +841,12 @@ func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPostPingSystemRequest struct {
+type SystemAPIPostPingSystemRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiPostPingSystemRequest) Execute() (string, *http.Response, error) {
+func (r SystemAPIPostPingSystemRequest) Execute() (string, *http.Response, error) {
 	return r.ApiService.PostPingSystemExecute(r)
 }
 
@@ -854,10 +854,10 @@ func (r ApiPostPingSystemRequest) Execute() (string, *http.Response, error) {
 PostPingSystem Pings the system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPingSystemRequest
+ @return SystemAPIPostPingSystemRequest
 */
-func (a *SystemAPIService) PostPingSystem(ctx context.Context) ApiPostPingSystemRequest {
-	return ApiPostPingSystemRequest{
+func (a *SystemAPIService) PostPingSystem(ctx context.Context) SystemAPIPostPingSystemRequest {
+	return SystemAPIPostPingSystemRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -865,7 +865,7 @@ func (a *SystemAPIService) PostPingSystem(ctx context.Context) ApiPostPingSystem
 
 // Execute executes the request
 //  @return string
-func (a *SystemAPIService) PostPingSystemExecute(r ApiPostPingSystemRequest) (string, *http.Response, error) {
+func (a *SystemAPIService) PostPingSystemExecute(r SystemAPIPostPingSystemRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -938,12 +938,12 @@ func (a *SystemAPIService) PostPingSystemExecute(r ApiPostPingSystemRequest) (st
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRestartApplicationRequest struct {
+type SystemAPIRestartApplicationRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiRestartApplicationRequest) Execute() (*http.Response, error) {
+func (r SystemAPIRestartApplicationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RestartApplicationExecute(r)
 }
 
@@ -951,17 +951,17 @@ func (r ApiRestartApplicationRequest) Execute() (*http.Response, error) {
 RestartApplication Restarts the application.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRestartApplicationRequest
+ @return SystemAPIRestartApplicationRequest
 */
-func (a *SystemAPIService) RestartApplication(ctx context.Context) ApiRestartApplicationRequest {
-	return ApiRestartApplicationRequest{
+func (a *SystemAPIService) RestartApplication(ctx context.Context) SystemAPIRestartApplicationRequest {
+	return SystemAPIRestartApplicationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequest) (*http.Response, error) {
+func (a *SystemAPIService) RestartApplicationExecute(r SystemAPIRestartApplicationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -1049,12 +1049,12 @@ func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiShutdownApplicationRequest struct {
+type SystemAPIShutdownApplicationRequest struct {
 	ctx context.Context
 	ApiService *SystemAPIService
 }
 
-func (r ApiShutdownApplicationRequest) Execute() (*http.Response, error) {
+func (r SystemAPIShutdownApplicationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.ShutdownApplicationExecute(r)
 }
 
@@ -1062,17 +1062,17 @@ func (r ApiShutdownApplicationRequest) Execute() (*http.Response, error) {
 ShutdownApplication Shuts down the application.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiShutdownApplicationRequest
+ @return SystemAPIShutdownApplicationRequest
 */
-func (a *SystemAPIService) ShutdownApplication(ctx context.Context) ApiShutdownApplicationRequest {
-	return ApiShutdownApplicationRequest{
+func (a *SystemAPIService) ShutdownApplication(ctx context.Context) SystemAPIShutdownApplicationRequest {
+	return SystemAPIShutdownApplicationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SystemAPIService) ShutdownApplicationExecute(r ApiShutdownApplicationRequest) (*http.Response, error) {
+func (a *SystemAPIService) ShutdownApplicationExecute(r SystemAPIShutdownApplicationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

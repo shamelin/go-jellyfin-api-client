@@ -20,9 +20,9 @@ type JellyfinChannelMediaType string
 
 // List of ChannelMediaType
 const (
-	AUDIO JellyfinChannelMediaType = "Audio"
-	VIDEO JellyfinChannelMediaType = "Video"
-	PHOTO JellyfinChannelMediaType = "Photo"
+	JELLYFINCHANNELMEDIATYPE_AUDIO JellyfinChannelMediaType = "Audio"
+	JELLYFINCHANNELMEDIATYPE_VIDEO JellyfinChannelMediaType = "Video"
+	JELLYFINCHANNELMEDIATYPE_PHOTO JellyfinChannelMediaType = "Photo"
 )
 
 // All allowed values of JellyfinChannelMediaType enum

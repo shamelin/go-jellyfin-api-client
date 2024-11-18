@@ -20,13 +20,13 @@ type JellyfinChannelItemSortField string
 
 // List of ChannelItemSortField
 const (
-	NAME JellyfinChannelItemSortField = "Name"
-	COMMUNITY_RATING JellyfinChannelItemSortField = "CommunityRating"
-	PREMIERE_DATE JellyfinChannelItemSortField = "PremiereDate"
-	DATE_CREATED JellyfinChannelItemSortField = "DateCreated"
-	RUNTIME JellyfinChannelItemSortField = "Runtime"
-	PLAY_COUNT JellyfinChannelItemSortField = "PlayCount"
-	COMMUNITY_PLAY_COUNT JellyfinChannelItemSortField = "CommunityPlayCount"
+	JELLYFINCHANNELITEMSORTFIELD_NAME JellyfinChannelItemSortField = "Name"
+	JELLYFINCHANNELITEMSORTFIELD_COMMUNITY_RATING JellyfinChannelItemSortField = "CommunityRating"
+	JELLYFINCHANNELITEMSORTFIELD_PREMIERE_DATE JellyfinChannelItemSortField = "PremiereDate"
+	JELLYFINCHANNELITEMSORTFIELD_DATE_CREATED JellyfinChannelItemSortField = "DateCreated"
+	JELLYFINCHANNELITEMSORTFIELD_RUNTIME JellyfinChannelItemSortField = "Runtime"
+	JELLYFINCHANNELITEMSORTFIELD_PLAY_COUNT JellyfinChannelItemSortField = "PlayCount"
+	JELLYFINCHANNELITEMSORTFIELD_COMMUNITY_PLAY_COUNT JellyfinChannelItemSortField = "CommunityPlayCount"
 )
 
 // All allowed values of JellyfinChannelItemSortField enum

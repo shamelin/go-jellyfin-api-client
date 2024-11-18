@@ -24,7 +24,7 @@ import (
 // AudioAPIService AudioAPI service
 type AudioAPIService service
 
-type ApiGetAudioStreamRequest struct {
+type AudioAPIGetAudioStreamRequest struct {
 	ctx context.Context
 	ApiService *AudioAPIService
 	itemId string
@@ -80,301 +80,301 @@ type ApiGetAudioStreamRequest struct {
 }
 
 // The audio container.
-func (r ApiGetAudioStreamRequest) Container(container string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Container(container string) AudioAPIGetAudioStreamRequest {
 	r.container = &container
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetAudioStreamRequest) Static(static bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Static(static bool) AudioAPIGetAudioStreamRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetAudioStreamRequest) Params(params string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Params(params string) AudioAPIGetAudioStreamRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetAudioStreamRequest) Tag(tag string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Tag(tag string) AudioAPIGetAudioStreamRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetAudioStreamRequest) DeviceProfileId(deviceProfileId string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) DeviceProfileId(deviceProfileId string) AudioAPIGetAudioStreamRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetAudioStreamRequest) PlaySessionId(playSessionId string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) PlaySessionId(playSessionId string) AudioAPIGetAudioStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetAudioStreamRequest) SegmentContainer(segmentContainer string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) SegmentContainer(segmentContainer string) AudioAPIGetAudioStreamRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetAudioStreamRequest) SegmentLength(segmentLength int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) SegmentLength(segmentLength int32) AudioAPIGetAudioStreamRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetAudioStreamRequest) MinSegments(minSegments int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MinSegments(minSegments int32) AudioAPIGetAudioStreamRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetAudioStreamRequest) MediaSourceId(mediaSourceId string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MediaSourceId(mediaSourceId string) AudioAPIGetAudioStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetAudioStreamRequest) DeviceId(deviceId string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) DeviceId(deviceId string) AudioAPIGetAudioStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetAudioStreamRequest) AudioCodec(audioCodec string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AudioCodec(audioCodec string) AudioAPIGetAudioStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetAudioStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) AudioAPIGetAudioStreamRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetAudioStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) AudioAPIGetAudioStreamRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetAudioStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) AudioAPIGetAudioStreamRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) AudioAPIGetAudioStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetAudioStreamRequest) AudioSampleRate(audioSampleRate int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AudioSampleRate(audioSampleRate int32) AudioAPIGetAudioStreamRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) AudioAPIGetAudioStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetAudioStreamRequest) AudioBitRate(audioBitRate int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AudioBitRate(audioBitRate int32) AudioAPIGetAudioStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetAudioStreamRequest) AudioChannels(audioChannels int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AudioChannels(audioChannels int32) AudioAPIGetAudioStreamRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) AudioAPIGetAudioStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetAudioStreamRequest) Profile(profile string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Profile(profile string) AudioAPIGetAudioStreamRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetAudioStreamRequest) Level(level string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Level(level string) AudioAPIGetAudioStreamRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetAudioStreamRequest) Framerate(framerate float32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Framerate(framerate float32) AudioAPIGetAudioStreamRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetAudioStreamRequest) MaxFramerate(maxFramerate float32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MaxFramerate(maxFramerate float32) AudioAPIGetAudioStreamRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetAudioStreamRequest) CopyTimestamps(copyTimestamps bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) CopyTimestamps(copyTimestamps bool) AudioAPIGetAudioStreamRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetAudioStreamRequest) StartTimeTicks(startTimeTicks int64) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) StartTimeTicks(startTimeTicks int64) AudioAPIGetAudioStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetAudioStreamRequest) Width(width int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Width(width int32) AudioAPIGetAudioStreamRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetAudioStreamRequest) Height(height int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Height(height int32) AudioAPIGetAudioStreamRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetAudioStreamRequest) VideoBitRate(videoBitRate int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) VideoBitRate(videoBitRate int32) AudioAPIGetAudioStreamRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) AudioAPIGetAudioStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) AudioAPIGetAudioStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetAudioStreamRequest) MaxRefFrames(maxRefFrames int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MaxRefFrames(maxRefFrames int32) AudioAPIGetAudioStreamRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetAudioStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) AudioAPIGetAudioStreamRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetAudioStreamRequest) RequireAvc(requireAvc bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) RequireAvc(requireAvc bool) AudioAPIGetAudioStreamRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetAudioStreamRequest) DeInterlace(deInterlace bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) DeInterlace(deInterlace bool) AudioAPIGetAudioStreamRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiGetAudioStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) AudioAPIGetAudioStreamRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetAudioStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) AudioAPIGetAudioStreamRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetAudioStreamRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) CpuCoreLimit(cpuCoreLimit int32) AudioAPIGetAudioStreamRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetAudioStreamRequest) LiveStreamId(liveStreamId string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) LiveStreamId(liveStreamId string) AudioAPIGetAudioStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetAudioStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) AudioAPIGetAudioStreamRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetAudioStreamRequest) VideoCodec(videoCodec string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) VideoCodec(videoCodec string) AudioAPIGetAudioStreamRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetAudioStreamRequest) SubtitleCodec(subtitleCodec string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) SubtitleCodec(subtitleCodec string) AudioAPIGetAudioStreamRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetAudioStreamRequest) TranscodeReasons(transcodeReasons string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) TranscodeReasons(transcodeReasons string) AudioAPIGetAudioStreamRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetAudioStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) AudioStreamIndex(audioStreamIndex int32) AudioAPIGetAudioStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) AudioAPIGetAudioStreamRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetAudioStreamRequest) Context(context JellyfinEncodingContext) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) Context(context JellyfinEncodingContext) AudioAPIGetAudioStreamRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetAudioStreamRequest) StreamOptions(streamOptions map[string]string) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) StreamOptions(streamOptions map[string]string) AudioAPIGetAudioStreamRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetAudioStreamRequest {
+func (r AudioAPIGetAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) AudioAPIGetAudioStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r AudioAPIGetAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetAudioStreamExecute(r)
 }
 
@@ -383,10 +383,10 @@ GetAudioStream Gets an audio stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetAudioStreamRequest
+ @return AudioAPIGetAudioStreamRequest
 */
-func (a *AudioAPIService) GetAudioStream(ctx context.Context, itemId string) ApiGetAudioStreamRequest {
-	return ApiGetAudioStreamRequest{
+func (a *AudioAPIService) GetAudioStream(ctx context.Context, itemId string) AudioAPIGetAudioStreamRequest {
+	return AudioAPIGetAudioStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -395,7 +395,7 @@ func (a *AudioAPIService) GetAudioStream(ctx context.Context, itemId string) Api
 
 // Execute executes the request
 //  @return *os.File
-func (a *AudioAPIService) GetAudioStreamExecute(r ApiGetAudioStreamRequest) (*os.File, *http.Response, error) {
+func (a *AudioAPIService) GetAudioStreamExecute(r AudioAPIGetAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -619,7 +619,7 @@ func (a *AudioAPIService) GetAudioStreamExecute(r ApiGetAudioStreamRequest) (*os
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetAudioStreamByContainerRequest struct {
+type AudioAPIGetAudioStreamByContainerRequest struct {
 	ctx context.Context
 	ApiService *AudioAPIService
 	itemId string
@@ -675,295 +675,295 @@ type ApiGetAudioStreamByContainerRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiGetAudioStreamByContainerRequest) Static(static bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Static(static bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiGetAudioStreamByContainerRequest) Params(params string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Params(params string) AudioAPIGetAudioStreamByContainerRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiGetAudioStreamByContainerRequest) Tag(tag string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Tag(tag string) AudioAPIGetAudioStreamByContainerRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiGetAudioStreamByContainerRequest) DeviceProfileId(deviceProfileId string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) DeviceProfileId(deviceProfileId string) AudioAPIGetAudioStreamByContainerRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiGetAudioStreamByContainerRequest) PlaySessionId(playSessionId string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) PlaySessionId(playSessionId string) AudioAPIGetAudioStreamByContainerRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiGetAudioStreamByContainerRequest) SegmentContainer(segmentContainer string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) SegmentContainer(segmentContainer string) AudioAPIGetAudioStreamByContainerRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiGetAudioStreamByContainerRequest) SegmentLength(segmentLength int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) SegmentLength(segmentLength int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiGetAudioStreamByContainerRequest) MinSegments(minSegments int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MinSegments(minSegments int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiGetAudioStreamByContainerRequest) MediaSourceId(mediaSourceId string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MediaSourceId(mediaSourceId string) AudioAPIGetAudioStreamByContainerRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiGetAudioStreamByContainerRequest) DeviceId(deviceId string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) DeviceId(deviceId string) AudioAPIGetAudioStreamByContainerRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetAudioStreamByContainerRequest) AudioCodec(audioCodec string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AudioCodec(audioCodec string) AudioAPIGetAudioStreamByContainerRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiGetAudioStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiGetAudioStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiGetAudioStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiGetAudioStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiGetAudioStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiGetAudioStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiGetAudioStreamByContainerRequest) AudioBitRate(audioBitRate int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AudioBitRate(audioBitRate int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiGetAudioStreamByContainerRequest) AudioChannels(audioChannels int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AudioChannels(audioChannels int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiGetAudioStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiGetAudioStreamByContainerRequest) Profile(profile string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Profile(profile string) AudioAPIGetAudioStreamByContainerRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiGetAudioStreamByContainerRequest) Level(level string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Level(level string) AudioAPIGetAudioStreamByContainerRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetAudioStreamByContainerRequest) Framerate(framerate float32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Framerate(framerate float32) AudioAPIGetAudioStreamByContainerRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiGetAudioStreamByContainerRequest) MaxFramerate(maxFramerate float32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MaxFramerate(maxFramerate float32) AudioAPIGetAudioStreamByContainerRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiGetAudioStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiGetAudioStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) AudioAPIGetAudioStreamByContainerRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiGetAudioStreamByContainerRequest) Width(width int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Width(width int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiGetAudioStreamByContainerRequest) Height(height int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Height(height int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiGetAudioStreamByContainerRequest) VideoBitRate(videoBitRate int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) VideoBitRate(videoBitRate int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiGetAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) AudioAPIGetAudioStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiGetAudioStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiGetAudioStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiGetAudioStreamByContainerRequest) RequireAvc(requireAvc bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) RequireAvc(requireAvc bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiGetAudioStreamByContainerRequest) DeInterlace(deInterlace bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) DeInterlace(deInterlace bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamporphic stream.
-func (r ApiGetAudioStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiGetAudioStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiGetAudioStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiGetAudioStreamByContainerRequest) LiveStreamId(liveStreamId string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) LiveStreamId(liveStreamId string) AudioAPIGetAudioStreamByContainerRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiGetAudioStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiGetAudioStreamByContainerRequest) VideoCodec(videoCodec string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) VideoCodec(videoCodec string) AudioAPIGetAudioStreamByContainerRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiGetAudioStreamByContainerRequest) SubtitleCodec(subtitleCodec string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) SubtitleCodec(subtitleCodec string) AudioAPIGetAudioStreamByContainerRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiGetAudioStreamByContainerRequest) TranscodeReasons(transcodeReasons string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) TranscodeReasons(transcodeReasons string) AudioAPIGetAudioStreamByContainerRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiGetAudioStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiGetAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) AudioAPIGetAudioStreamByContainerRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) AudioAPIGetAudioStreamByContainerRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiGetAudioStreamByContainerRequest) StreamOptions(streamOptions map[string]string) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) StreamOptions(streamOptions map[string]string) AudioAPIGetAudioStreamByContainerRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiGetAudioStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiGetAudioStreamByContainerRequest {
+func (r AudioAPIGetAudioStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) AudioAPIGetAudioStreamByContainerRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiGetAudioStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
+func (r AudioAPIGetAudioStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetAudioStreamByContainerExecute(r)
 }
 
@@ -973,10 +973,10 @@ GetAudioStreamByContainer Gets an audio stream.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param container The audio container.
- @return ApiGetAudioStreamByContainerRequest
+ @return AudioAPIGetAudioStreamByContainerRequest
 */
-func (a *AudioAPIService) GetAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiGetAudioStreamByContainerRequest {
-	return ApiGetAudioStreamByContainerRequest{
+func (a *AudioAPIService) GetAudioStreamByContainer(ctx context.Context, itemId string, container string) AudioAPIGetAudioStreamByContainerRequest {
+	return AudioAPIGetAudioStreamByContainerRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -986,7 +986,7 @@ func (a *AudioAPIService) GetAudioStreamByContainer(ctx context.Context, itemId 
 
 // Execute executes the request
 //  @return *os.File
-func (a *AudioAPIService) GetAudioStreamByContainerExecute(r ApiGetAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
+func (a *AudioAPIService) GetAudioStreamByContainerExecute(r AudioAPIGetAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1208,7 +1208,7 @@ func (a *AudioAPIService) GetAudioStreamByContainerExecute(r ApiGetAudioStreamBy
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadAudioStreamRequest struct {
+type AudioAPIHeadAudioStreamRequest struct {
 	ctx context.Context
 	ApiService *AudioAPIService
 	itemId string
@@ -1264,301 +1264,301 @@ type ApiHeadAudioStreamRequest struct {
 }
 
 // The audio container.
-func (r ApiHeadAudioStreamRequest) Container(container string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Container(container string) AudioAPIHeadAudioStreamRequest {
 	r.container = &container
 	return r
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadAudioStreamRequest) Static(static bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Static(static bool) AudioAPIHeadAudioStreamRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadAudioStreamRequest) Params(params string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Params(params string) AudioAPIHeadAudioStreamRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadAudioStreamRequest) Tag(tag string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Tag(tag string) AudioAPIHeadAudioStreamRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiHeadAudioStreamRequest) DeviceProfileId(deviceProfileId string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) DeviceProfileId(deviceProfileId string) AudioAPIHeadAudioStreamRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadAudioStreamRequest) PlaySessionId(playSessionId string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) PlaySessionId(playSessionId string) AudioAPIHeadAudioStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadAudioStreamRequest) SegmentContainer(segmentContainer string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) SegmentContainer(segmentContainer string) AudioAPIHeadAudioStreamRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadAudioStreamRequest) SegmentLength(segmentLength int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) SegmentLength(segmentLength int32) AudioAPIHeadAudioStreamRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadAudioStreamRequest) MinSegments(minSegments int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MinSegments(minSegments int32) AudioAPIHeadAudioStreamRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadAudioStreamRequest) MediaSourceId(mediaSourceId string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MediaSourceId(mediaSourceId string) AudioAPIHeadAudioStreamRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadAudioStreamRequest) DeviceId(deviceId string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) DeviceId(deviceId string) AudioAPIHeadAudioStreamRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadAudioStreamRequest) AudioCodec(audioCodec string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AudioCodec(audioCodec string) AudioAPIHeadAudioStreamRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadAudioStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) AudioAPIHeadAudioStreamRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadAudioStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) AudioAPIHeadAudioStreamRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadAudioStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) AudioAPIHeadAudioStreamRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) AudioAPIHeadAudioStreamRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadAudioStreamRequest) AudioSampleRate(audioSampleRate int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AudioSampleRate(audioSampleRate int32) AudioAPIHeadAudioStreamRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MaxAudioBitDepth(maxAudioBitDepth int32) AudioAPIHeadAudioStreamRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadAudioStreamRequest) AudioBitRate(audioBitRate int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AudioBitRate(audioBitRate int32) AudioAPIHeadAudioStreamRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadAudioStreamRequest) AudioChannels(audioChannels int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AudioChannels(audioChannels int32) AudioAPIHeadAudioStreamRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MaxAudioChannels(maxAudioChannels int32) AudioAPIHeadAudioStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadAudioStreamRequest) Profile(profile string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Profile(profile string) AudioAPIHeadAudioStreamRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadAudioStreamRequest) Level(level string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Level(level string) AudioAPIHeadAudioStreamRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadAudioStreamRequest) Framerate(framerate float32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Framerate(framerate float32) AudioAPIHeadAudioStreamRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadAudioStreamRequest) MaxFramerate(maxFramerate float32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MaxFramerate(maxFramerate float32) AudioAPIHeadAudioStreamRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadAudioStreamRequest) CopyTimestamps(copyTimestamps bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) CopyTimestamps(copyTimestamps bool) AudioAPIHeadAudioStreamRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadAudioStreamRequest) StartTimeTicks(startTimeTicks int64) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) StartTimeTicks(startTimeTicks int64) AudioAPIHeadAudioStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadAudioStreamRequest) Width(width int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Width(width int32) AudioAPIHeadAudioStreamRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadAudioStreamRequest) Height(height int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Height(height int32) AudioAPIHeadAudioStreamRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadAudioStreamRequest) VideoBitRate(videoBitRate int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) VideoBitRate(videoBitRate int32) AudioAPIHeadAudioStreamRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) AudioAPIHeadAudioStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) AudioAPIHeadAudioStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadAudioStreamRequest) MaxRefFrames(maxRefFrames int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MaxRefFrames(maxRefFrames int32) AudioAPIHeadAudioStreamRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadAudioStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) MaxVideoBitDepth(maxVideoBitDepth int32) AudioAPIHeadAudioStreamRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadAudioStreamRequest) RequireAvc(requireAvc bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) RequireAvc(requireAvc bool) AudioAPIHeadAudioStreamRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadAudioStreamRequest) DeInterlace(deInterlace bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) DeInterlace(deInterlace bool) AudioAPIHeadAudioStreamRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamorphic stream.
-func (r ApiHeadAudioStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) RequireNonAnamorphic(requireNonAnamorphic bool) AudioAPIHeadAudioStreamRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadAudioStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) AudioAPIHeadAudioStreamRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadAudioStreamRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) CpuCoreLimit(cpuCoreLimit int32) AudioAPIHeadAudioStreamRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadAudioStreamRequest) LiveStreamId(liveStreamId string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) LiveStreamId(liveStreamId string) AudioAPIHeadAudioStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadAudioStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) AudioAPIHeadAudioStreamRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadAudioStreamRequest) VideoCodec(videoCodec string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) VideoCodec(videoCodec string) AudioAPIHeadAudioStreamRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadAudioStreamRequest) SubtitleCodec(subtitleCodec string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) SubtitleCodec(subtitleCodec string) AudioAPIHeadAudioStreamRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadAudioStreamRequest) TranscodeReasons(transcodeReasons string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) TranscodeReasons(transcodeReasons string) AudioAPIHeadAudioStreamRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadAudioStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) AudioStreamIndex(audioStreamIndex int32) AudioAPIHeadAudioStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) AudioAPIHeadAudioStreamRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadAudioStreamRequest) Context(context JellyfinEncodingContext) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) Context(context JellyfinEncodingContext) AudioAPIHeadAudioStreamRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadAudioStreamRequest) StreamOptions(streamOptions map[string]string) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) StreamOptions(streamOptions map[string]string) AudioAPIHeadAudioStreamRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadAudioStreamRequest {
+func (r AudioAPIHeadAudioStreamRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) AudioAPIHeadAudioStreamRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiHeadAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
+func (r AudioAPIHeadAudioStreamRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadAudioStreamExecute(r)
 }
 
@@ -1567,10 +1567,10 @@ HeadAudioStream Gets an audio stream.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiHeadAudioStreamRequest
+ @return AudioAPIHeadAudioStreamRequest
 */
-func (a *AudioAPIService) HeadAudioStream(ctx context.Context, itemId string) ApiHeadAudioStreamRequest {
-	return ApiHeadAudioStreamRequest{
+func (a *AudioAPIService) HeadAudioStream(ctx context.Context, itemId string) AudioAPIHeadAudioStreamRequest {
+	return AudioAPIHeadAudioStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -1579,7 +1579,7 @@ func (a *AudioAPIService) HeadAudioStream(ctx context.Context, itemId string) Ap
 
 // Execute executes the request
 //  @return *os.File
-func (a *AudioAPIService) HeadAudioStreamExecute(r ApiHeadAudioStreamRequest) (*os.File, *http.Response, error) {
+func (a *AudioAPIService) HeadAudioStreamExecute(r AudioAPIHeadAudioStreamRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}
@@ -1803,7 +1803,7 @@ func (a *AudioAPIService) HeadAudioStreamExecute(r ApiHeadAudioStreamRequest) (*
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiHeadAudioStreamByContainerRequest struct {
+type AudioAPIHeadAudioStreamByContainerRequest struct {
 	ctx context.Context
 	ApiService *AudioAPIService
 	itemId string
@@ -1859,295 +1859,295 @@ type ApiHeadAudioStreamByContainerRequest struct {
 }
 
 // Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
-func (r ApiHeadAudioStreamByContainerRequest) Static(static bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Static(static bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.static = &static
 	return r
 }
 
 // The streaming parameters.
-func (r ApiHeadAudioStreamByContainerRequest) Params(params string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Params(params string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.params = &params
 	return r
 }
 
 // The tag.
-func (r ApiHeadAudioStreamByContainerRequest) Tag(tag string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Tag(tag string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.tag = &tag
 	return r
 }
 
 // Optional. The dlna device profile id to utilize.
 // Deprecated
-func (r ApiHeadAudioStreamByContainerRequest) DeviceProfileId(deviceProfileId string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) DeviceProfileId(deviceProfileId string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.deviceProfileId = &deviceProfileId
 	return r
 }
 
 // The play session id.
-func (r ApiHeadAudioStreamByContainerRequest) PlaySessionId(playSessionId string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) PlaySessionId(playSessionId string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The segment container.
-func (r ApiHeadAudioStreamByContainerRequest) SegmentContainer(segmentContainer string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) SegmentContainer(segmentContainer string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.segmentContainer = &segmentContainer
 	return r
 }
 
 // The segment length.
-func (r ApiHeadAudioStreamByContainerRequest) SegmentLength(segmentLength int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) SegmentLength(segmentLength int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.segmentLength = &segmentLength
 	return r
 }
 
 // The minimum number of segments.
-func (r ApiHeadAudioStreamByContainerRequest) MinSegments(minSegments int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MinSegments(minSegments int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.minSegments = &minSegments
 	return r
 }
 
 // The media version id, if playing an alternate version.
-func (r ApiHeadAudioStreamByContainerRequest) MediaSourceId(mediaSourceId string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MediaSourceId(mediaSourceId string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The device id of the client requesting. Used to stop encoding processes when needed.
-func (r ApiHeadAudioStreamByContainerRequest) DeviceId(deviceId string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) DeviceId(deviceId string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.deviceId = &deviceId
 	return r
 }
 
 // Optional. Specify an audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadAudioStreamByContainerRequest) AudioCodec(audioCodec string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AudioCodec(audioCodec string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.audioCodec = &audioCodec
 	return r
 }
 
 // Whether or not to allow automatic stream copy if requested values match the original source. Defaults to true.
-func (r ApiHeadAudioStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) EnableAutoStreamCopy(enableAutoStreamCopy bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.enableAutoStreamCopy = &enableAutoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the video stream url.
-func (r ApiHeadAudioStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether or not to allow copying of the audio stream url.
-func (r ApiHeadAudioStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // Optional. Whether to break on non key frames.
-func (r ApiHeadAudioStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) BreakOnNonKeyFrames(breakOnNonKeyFrames bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.breakOnNonKeyFrames = &breakOnNonKeyFrames
 	return r
 }
 
 // Optional. Specify a specific audio sample rate, e.g. 44100.
-func (r ApiHeadAudioStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AudioSampleRate(audioSampleRate int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.audioSampleRate = &audioSampleRate
 	return r
 }
 
 // Optional. The maximum audio bit depth.
-func (r ApiHeadAudioStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MaxAudioBitDepth(maxAudioBitDepth int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.maxAudioBitDepth = &maxAudioBitDepth
 	return r
 }
 
 // Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-func (r ApiHeadAudioStreamByContainerRequest) AudioBitRate(audioBitRate int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AudioBitRate(audioBitRate int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.audioBitRate = &audioBitRate
 	return r
 }
 
 // Optional. Specify a specific number of audio channels to encode to, e.g. 2.
-func (r ApiHeadAudioStreamByContainerRequest) AudioChannels(audioChannels int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AudioChannels(audioChannels int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.audioChannels = &audioChannels
 	return r
 }
 
 // Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
-func (r ApiHeadAudioStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MaxAudioChannels(maxAudioChannels int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
-func (r ApiHeadAudioStreamByContainerRequest) Profile(profile string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Profile(profile string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.profile = &profile
 	return r
 }
 
 // Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
-func (r ApiHeadAudioStreamByContainerRequest) Level(level string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Level(level string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.level = &level
 	return r
 }
 
 // Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadAudioStreamByContainerRequest) Framerate(framerate float32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Framerate(framerate float32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.framerate = &framerate
 	return r
 }
 
 // Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
-func (r ApiHeadAudioStreamByContainerRequest) MaxFramerate(maxFramerate float32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MaxFramerate(maxFramerate float32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.maxFramerate = &maxFramerate
 	return r
 }
 
 // Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-func (r ApiHeadAudioStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) CopyTimestamps(copyTimestamps bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.copyTimestamps = &copyTimestamps
 	return r
 }
 
 // Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms.
-func (r ApiHeadAudioStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) StartTimeTicks(startTimeTicks int64) AudioAPIHeadAudioStreamByContainerRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // Optional. The fixed horizontal resolution of the encoded video.
-func (r ApiHeadAudioStreamByContainerRequest) Width(width int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Width(width int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.width = &width
 	return r
 }
 
 // Optional. The fixed vertical resolution of the encoded video.
-func (r ApiHeadAudioStreamByContainerRequest) Height(height int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Height(height int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.height = &height
 	return r
 }
 
 // Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
-func (r ApiHeadAudioStreamByContainerRequest) VideoBitRate(videoBitRate int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) VideoBitRate(videoBitRate int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.videoBitRate = &videoBitRate
 	return r
 }
 
 // Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
-func (r ApiHeadAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamIndex int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) AudioAPIHeadAudioStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
 
 // Optional.
-func (r ApiHeadAudioStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MaxRefFrames(maxRefFrames int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.maxRefFrames = &maxRefFrames
 	return r
 }
 
 // Optional. The maximum video bit depth.
-func (r ApiHeadAudioStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) MaxVideoBitDepth(maxVideoBitDepth int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.maxVideoBitDepth = &maxVideoBitDepth
 	return r
 }
 
 // Optional. Whether to require avc.
-func (r ApiHeadAudioStreamByContainerRequest) RequireAvc(requireAvc bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) RequireAvc(requireAvc bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.requireAvc = &requireAvc
 	return r
 }
 
 // Optional. Whether to deinterlace the video.
-func (r ApiHeadAudioStreamByContainerRequest) DeInterlace(deInterlace bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) DeInterlace(deInterlace bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.deInterlace = &deInterlace
 	return r
 }
 
 // Optional. Whether to require a non anamporphic stream.
-func (r ApiHeadAudioStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) RequireNonAnamorphic(requireNonAnamorphic bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.requireNonAnamorphic = &requireNonAnamorphic
 	return r
 }
 
 // Optional. The maximum number of audio channels to transcode.
-func (r ApiHeadAudioStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) TranscodingMaxAudioChannels(transcodingMaxAudioChannels int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.transcodingMaxAudioChannels = &transcodingMaxAudioChannels
 	return r
 }
 
 // Optional. The limit of how many cpu cores to use.
-func (r ApiHeadAudioStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) CpuCoreLimit(cpuCoreLimit int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.cpuCoreLimit = &cpuCoreLimit
 	return r
 }
 
 // The live stream id.
-func (r ApiHeadAudioStreamByContainerRequest) LiveStreamId(liveStreamId string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) LiveStreamId(liveStreamId string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Optional. Whether to enable the MpegtsM2Ts mode.
-func (r ApiHeadAudioStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) EnableMpegtsM2TsMode(enableMpegtsM2TsMode bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.enableMpegtsM2TsMode = &enableMpegtsM2TsMode
 	return r
 }
 
 // Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url&#39;s extension.
-func (r ApiHeadAudioStreamByContainerRequest) VideoCodec(videoCodec string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) VideoCodec(videoCodec string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.videoCodec = &videoCodec
 	return r
 }
 
 // Optional. Specify a subtitle codec to encode to.
-func (r ApiHeadAudioStreamByContainerRequest) SubtitleCodec(subtitleCodec string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) SubtitleCodec(subtitleCodec string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.subtitleCodec = &subtitleCodec
 	return r
 }
 
 // Optional. The transcoding reason.
-func (r ApiHeadAudioStreamByContainerRequest) TranscodeReasons(transcodeReasons string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) TranscodeReasons(transcodeReasons string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.transcodeReasons = &transcodeReasons
 	return r
 }
 
 // Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
-func (r ApiHeadAudioStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) AudioStreamIndex(audioStreamIndex int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // Optional. The index of the video stream to use. If omitted the first video stream will be used.
-func (r ApiHeadAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex int32) AudioAPIHeadAudioStreamByContainerRequest {
 	r.videoStreamIndex = &videoStreamIndex
 	return r
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) AudioAPIHeadAudioStreamByContainerRequest {
 	r.context = &context
 	return r
 }
 
 // Optional. The streaming options.
-func (r ApiHeadAudioStreamByContainerRequest) StreamOptions(streamOptions map[string]string) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) StreamOptions(streamOptions map[string]string) AudioAPIHeadAudioStreamByContainerRequest {
 	r.streamOptions = &streamOptions
 	return r
 }
 
 // Optional. Whether to enable Audio Encoding.
-func (r ApiHeadAudioStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) ApiHeadAudioStreamByContainerRequest {
+func (r AudioAPIHeadAudioStreamByContainerRequest) EnableAudioVbrEncoding(enableAudioVbrEncoding bool) AudioAPIHeadAudioStreamByContainerRequest {
 	r.enableAudioVbrEncoding = &enableAudioVbrEncoding
 	return r
 }
 
-func (r ApiHeadAudioStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
+func (r AudioAPIHeadAudioStreamByContainerRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.HeadAudioStreamByContainerExecute(r)
 }
 
@@ -2157,10 +2157,10 @@ HeadAudioStreamByContainer Gets an audio stream.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
  @param container The audio container.
- @return ApiHeadAudioStreamByContainerRequest
+ @return AudioAPIHeadAudioStreamByContainerRequest
 */
-func (a *AudioAPIService) HeadAudioStreamByContainer(ctx context.Context, itemId string, container string) ApiHeadAudioStreamByContainerRequest {
-	return ApiHeadAudioStreamByContainerRequest{
+func (a *AudioAPIService) HeadAudioStreamByContainer(ctx context.Context, itemId string, container string) AudioAPIHeadAudioStreamByContainerRequest {
+	return AudioAPIHeadAudioStreamByContainerRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -2170,7 +2170,7 @@ func (a *AudioAPIService) HeadAudioStreamByContainer(ctx context.Context, itemId
 
 // Execute executes the request
 //  @return *os.File
-func (a *AudioAPIService) HeadAudioStreamByContainerExecute(r ApiHeadAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
+func (a *AudioAPIService) HeadAudioStreamByContainerExecute(r AudioAPIHeadAudioStreamByContainerRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodHead
 		localVarPostBody     interface{}

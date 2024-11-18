@@ -20,13 +20,13 @@ type JellyfinDayOfWeek string
 
 // List of DayOfWeek
 const (
-	SUNDAY JellyfinDayOfWeek = "Sunday"
-	MONDAY JellyfinDayOfWeek = "Monday"
-	TUESDAY JellyfinDayOfWeek = "Tuesday"
-	WEDNESDAY JellyfinDayOfWeek = "Wednesday"
-	THURSDAY JellyfinDayOfWeek = "Thursday"
-	FRIDAY JellyfinDayOfWeek = "Friday"
-	SATURDAY JellyfinDayOfWeek = "Saturday"
+	JELLYFINDAYOFWEEK_SUNDAY JellyfinDayOfWeek = "Sunday"
+	JELLYFINDAYOFWEEK_MONDAY JellyfinDayOfWeek = "Monday"
+	JELLYFINDAYOFWEEK_TUESDAY JellyfinDayOfWeek = "Tuesday"
+	JELLYFINDAYOFWEEK_WEDNESDAY JellyfinDayOfWeek = "Wednesday"
+	JELLYFINDAYOFWEEK_THURSDAY JellyfinDayOfWeek = "Thursday"
+	JELLYFINDAYOFWEEK_FRIDAY JellyfinDayOfWeek = "Friday"
+	JELLYFINDAYOFWEEK_SATURDAY JellyfinDayOfWeek = "Saturday"
 )
 
 // All allowed values of JellyfinDayOfWeek enum

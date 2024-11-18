@@ -20,19 +20,19 @@ type JellyfinExternalIdMediaType string
 
 // List of ExternalIdMediaType
 const (
-	ALBUM JellyfinExternalIdMediaType = "Album"
-	ALBUM_ARTIST JellyfinExternalIdMediaType = "AlbumArtist"
-	ARTIST JellyfinExternalIdMediaType = "Artist"
-	BOX_SET JellyfinExternalIdMediaType = "BoxSet"
-	EPISODE JellyfinExternalIdMediaType = "Episode"
-	MOVIE JellyfinExternalIdMediaType = "Movie"
-	OTHER_ARTIST JellyfinExternalIdMediaType = "OtherArtist"
-	PERSON JellyfinExternalIdMediaType = "Person"
-	RELEASE_GROUP JellyfinExternalIdMediaType = "ReleaseGroup"
-	SEASON JellyfinExternalIdMediaType = "Season"
-	SERIES JellyfinExternalIdMediaType = "Series"
-	TRACK JellyfinExternalIdMediaType = "Track"
-	BOOK JellyfinExternalIdMediaType = "Book"
+	JELLYFINEXTERNALIDMEDIATYPE_ALBUM JellyfinExternalIdMediaType = "Album"
+	JELLYFINEXTERNALIDMEDIATYPE_ALBUM_ARTIST JellyfinExternalIdMediaType = "AlbumArtist"
+	JELLYFINEXTERNALIDMEDIATYPE_ARTIST JellyfinExternalIdMediaType = "Artist"
+	JELLYFINEXTERNALIDMEDIATYPE_BOX_SET JellyfinExternalIdMediaType = "BoxSet"
+	JELLYFINEXTERNALIDMEDIATYPE_EPISODE JellyfinExternalIdMediaType = "Episode"
+	JELLYFINEXTERNALIDMEDIATYPE_MOVIE JellyfinExternalIdMediaType = "Movie"
+	JELLYFINEXTERNALIDMEDIATYPE_OTHER_ARTIST JellyfinExternalIdMediaType = "OtherArtist"
+	JELLYFINEXTERNALIDMEDIATYPE_PERSON JellyfinExternalIdMediaType = "Person"
+	JELLYFINEXTERNALIDMEDIATYPE_RELEASE_GROUP JellyfinExternalIdMediaType = "ReleaseGroup"
+	JELLYFINEXTERNALIDMEDIATYPE_SEASON JellyfinExternalIdMediaType = "Season"
+	JELLYFINEXTERNALIDMEDIATYPE_SERIES JellyfinExternalIdMediaType = "Series"
+	JELLYFINEXTERNALIDMEDIATYPE_TRACK JellyfinExternalIdMediaType = "Track"
+	JELLYFINEXTERNALIDMEDIATYPE_BOOK JellyfinExternalIdMediaType = "Book"
 )
 
 // All allowed values of JellyfinExternalIdMediaType enum

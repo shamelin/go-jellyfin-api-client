@@ -25,7 +25,7 @@ import (
 // TvShowsAPIService TvShowsAPI service
 type TvShowsAPIService service
 
-type ApiGetEpisodesRequest struct {
+type TvShowsAPIGetEpisodesRequest struct {
 	ctx context.Context
 	ApiService *TvShowsAPIService
 	seriesId string
@@ -46,90 +46,90 @@ type ApiGetEpisodesRequest struct {
 }
 
 // The user id.
-func (r ApiGetEpisodesRequest) UserId(userId string) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) UserId(userId string) TvShowsAPIGetEpisodesRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetEpisodesRequest) Fields(fields []JellyfinItemFields) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) Fields(fields []JellyfinItemFields) TvShowsAPIGetEpisodesRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional filter by season number.
-func (r ApiGetEpisodesRequest) Season(season int32) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) Season(season int32) TvShowsAPIGetEpisodesRequest {
 	r.season = &season
 	return r
 }
 
 // Optional. Filter by season id.
-func (r ApiGetEpisodesRequest) SeasonId(seasonId string) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) SeasonId(seasonId string) TvShowsAPIGetEpisodesRequest {
 	r.seasonId = &seasonId
 	return r
 }
 
 // Optional. Filter by items that are missing episodes or not.
-func (r ApiGetEpisodesRequest) IsMissing(isMissing bool) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) IsMissing(isMissing bool) TvShowsAPIGetEpisodesRequest {
 	r.isMissing = &isMissing
 	return r
 }
 
 // Optional. Return items that are siblings of a supplied item.
-func (r ApiGetEpisodesRequest) AdjacentTo(adjacentTo string) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) AdjacentTo(adjacentTo string) TvShowsAPIGetEpisodesRequest {
 	r.adjacentTo = &adjacentTo
 	return r
 }
 
 // Optional. Skip through the list until a given item is found.
-func (r ApiGetEpisodesRequest) StartItemId(startItemId string) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) StartItemId(startItemId string) TvShowsAPIGetEpisodesRequest {
 	r.startItemId = &startItemId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetEpisodesRequest) StartIndex(startIndex int32) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) StartIndex(startIndex int32) TvShowsAPIGetEpisodesRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetEpisodesRequest) Limit(limit int32) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) Limit(limit int32) TvShowsAPIGetEpisodesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetEpisodesRequest) EnableImages(enableImages bool) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) EnableImages(enableImages bool) TvShowsAPIGetEpisodesRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) TvShowsAPIGetEpisodesRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) TvShowsAPIGetEpisodesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetEpisodesRequest) EnableUserData(enableUserData bool) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) EnableUserData(enableUserData bool) TvShowsAPIGetEpisodesRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetEpisodesRequest) SortBy(sortBy JellyfinItemSortBy) ApiGetEpisodesRequest {
+func (r TvShowsAPIGetEpisodesRequest) SortBy(sortBy JellyfinItemSortBy) TvShowsAPIGetEpisodesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-func (r ApiGetEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r TvShowsAPIGetEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetEpisodesExecute(r)
 }
 
@@ -138,10 +138,10 @@ GetEpisodes Gets episodes for a tv season.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param seriesId The series id.
- @return ApiGetEpisodesRequest
+ @return TvShowsAPIGetEpisodesRequest
 */
-func (a *TvShowsAPIService) GetEpisodes(ctx context.Context, seriesId string) ApiGetEpisodesRequest {
-	return ApiGetEpisodesRequest{
+func (a *TvShowsAPIService) GetEpisodes(ctx context.Context, seriesId string) TvShowsAPIGetEpisodesRequest {
+	return TvShowsAPIGetEpisodesRequest{
 		ApiService: a,
 		ctx: ctx,
 		seriesId: seriesId,
@@ -150,7 +150,7 @@ func (a *TvShowsAPIService) GetEpisodes(ctx context.Context, seriesId string) Ap
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *TvShowsAPIService) GetEpisodesExecute(r TvShowsAPIGetEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -307,7 +307,7 @@ func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*Jellyf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetNextUpRequest struct {
+type TvShowsAPIGetNextUpRequest struct {
 	ctx context.Context
 	ApiService *TvShowsAPIService
 	userId *string
@@ -328,96 +328,96 @@ type ApiGetNextUpRequest struct {
 }
 
 // The user id of the user to get the next up episodes for.
-func (r ApiGetNextUpRequest) UserId(userId string) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) UserId(userId string) TvShowsAPIGetNextUpRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetNextUpRequest) StartIndex(startIndex int32) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) StartIndex(startIndex int32) TvShowsAPIGetNextUpRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetNextUpRequest) Limit(limit int32) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) Limit(limit int32) TvShowsAPIGetNextUpRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetNextUpRequest) Fields(fields []JellyfinItemFields) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) Fields(fields []JellyfinItemFields) TvShowsAPIGetNextUpRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Filter by series id.
-func (r ApiGetNextUpRequest) SeriesId(seriesId string) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) SeriesId(seriesId string) TvShowsAPIGetNextUpRequest {
 	r.seriesId = &seriesId
 	return r
 }
 
 // Optional. Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetNextUpRequest) ParentId(parentId string) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) ParentId(parentId string) TvShowsAPIGetNextUpRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetNextUpRequest) EnableImages(enableImages bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableImages(enableImages bool) TvShowsAPIGetNextUpRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetNextUpRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) ImageTypeLimit(imageTypeLimit int32) TvShowsAPIGetNextUpRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetNextUpRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) TvShowsAPIGetNextUpRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetNextUpRequest) EnableUserData(enableUserData bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableUserData(enableUserData bool) TvShowsAPIGetNextUpRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional. Starting date of shows to show in Next Up section.
-func (r ApiGetNextUpRequest) NextUpDateCutoff(nextUpDateCutoff time.Time) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) NextUpDateCutoff(nextUpDateCutoff time.Time) TvShowsAPIGetNextUpRequest {
 	r.nextUpDateCutoff = &nextUpDateCutoff
 	return r
 }
 
 // Whether to enable the total records count. Defaults to true.
-func (r ApiGetNextUpRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableTotalRecordCount(enableTotalRecordCount bool) TvShowsAPIGetNextUpRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
 // Whether to disable sending the first episode in a series as next up.
-func (r ApiGetNextUpRequest) DisableFirstEpisode(disableFirstEpisode bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) DisableFirstEpisode(disableFirstEpisode bool) TvShowsAPIGetNextUpRequest {
 	r.disableFirstEpisode = &disableFirstEpisode
 	return r
 }
 
 // Whether to include resumable episodes in next up results.
-func (r ApiGetNextUpRequest) EnableResumable(enableResumable bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableResumable(enableResumable bool) TvShowsAPIGetNextUpRequest {
 	r.enableResumable = &enableResumable
 	return r
 }
 
 // Whether to include watched episodes in next up results.
-func (r ApiGetNextUpRequest) EnableRewatching(enableRewatching bool) ApiGetNextUpRequest {
+func (r TvShowsAPIGetNextUpRequest) EnableRewatching(enableRewatching bool) TvShowsAPIGetNextUpRequest {
 	r.enableRewatching = &enableRewatching
 	return r
 }
 
-func (r ApiGetNextUpRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r TvShowsAPIGetNextUpRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetNextUpExecute(r)
 }
 
@@ -425,10 +425,10 @@ func (r ApiGetNextUpRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.R
 GetNextUp Gets a list of next up episodes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNextUpRequest
+ @return TvShowsAPIGetNextUpRequest
 */
-func (a *TvShowsAPIService) GetNextUp(ctx context.Context) ApiGetNextUpRequest {
-	return ApiGetNextUpRequest{
+func (a *TvShowsAPIService) GetNextUp(ctx context.Context) TvShowsAPIGetNextUpRequest {
+	return TvShowsAPIGetNextUpRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -436,7 +436,7 @@ func (a *TvShowsAPIService) GetNextUp(ctx context.Context) ApiGetNextUpRequest {
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *TvShowsAPIService) GetNextUpExecute(r TvShowsAPIGetNextUpRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -596,7 +596,7 @@ func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*JellyfinBa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetSeasonsRequest struct {
+type TvShowsAPIGetSeasonsRequest struct {
 	ctx context.Context
 	ApiService *TvShowsAPIService
 	seriesId string
@@ -612,60 +612,60 @@ type ApiGetSeasonsRequest struct {
 }
 
 // The user id.
-func (r ApiGetSeasonsRequest) UserId(userId string) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) UserId(userId string) TvShowsAPIGetSeasonsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSeasonsRequest) Fields(fields []JellyfinItemFields) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) Fields(fields []JellyfinItemFields) TvShowsAPIGetSeasonsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Filter by special season.
-func (r ApiGetSeasonsRequest) IsSpecialSeason(isSpecialSeason bool) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) IsSpecialSeason(isSpecialSeason bool) TvShowsAPIGetSeasonsRequest {
 	r.isSpecialSeason = &isSpecialSeason
 	return r
 }
 
 // Optional. Filter by items that are missing episodes or not.
-func (r ApiGetSeasonsRequest) IsMissing(isMissing bool) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) IsMissing(isMissing bool) TvShowsAPIGetSeasonsRequest {
 	r.isMissing = &isMissing
 	return r
 }
 
 // Optional. Return items that are siblings of a supplied item.
-func (r ApiGetSeasonsRequest) AdjacentTo(adjacentTo string) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) AdjacentTo(adjacentTo string) TvShowsAPIGetSeasonsRequest {
 	r.adjacentTo = &adjacentTo
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetSeasonsRequest) EnableImages(enableImages bool) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) EnableImages(enableImages bool) TvShowsAPIGetSeasonsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetSeasonsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) ImageTypeLimit(imageTypeLimit int32) TvShowsAPIGetSeasonsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetSeasonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) TvShowsAPIGetSeasonsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetSeasonsRequest) EnableUserData(enableUserData bool) ApiGetSeasonsRequest {
+func (r TvShowsAPIGetSeasonsRequest) EnableUserData(enableUserData bool) TvShowsAPIGetSeasonsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
-func (r ApiGetSeasonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r TvShowsAPIGetSeasonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSeasonsExecute(r)
 }
 
@@ -674,10 +674,10 @@ GetSeasons Gets seasons for a tv series.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param seriesId The series id.
- @return ApiGetSeasonsRequest
+ @return TvShowsAPIGetSeasonsRequest
 */
-func (a *TvShowsAPIService) GetSeasons(ctx context.Context, seriesId string) ApiGetSeasonsRequest {
-	return ApiGetSeasonsRequest{
+func (a *TvShowsAPIService) GetSeasons(ctx context.Context, seriesId string) TvShowsAPIGetSeasonsRequest {
+	return TvShowsAPIGetSeasonsRequest{
 		ApiService: a,
 		ctx: ctx,
 		seriesId: seriesId,
@@ -686,7 +686,7 @@ func (a *TvShowsAPIService) GetSeasons(ctx context.Context, seriesId string) Api
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *TvShowsAPIService) GetSeasonsExecute(r TvShowsAPIGetSeasonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -828,7 +828,7 @@ func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*Jellyfin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetUpcomingEpisodesRequest struct {
+type TvShowsAPIGetUpcomingEpisodesRequest struct {
 	ctx context.Context
 	ApiService *TvShowsAPIService
 	userId *string
@@ -843,60 +843,60 @@ type ApiGetUpcomingEpisodesRequest struct {
 }
 
 // The user id of the user to get the upcoming episodes for.
-func (r ApiGetUpcomingEpisodesRequest) UserId(userId string) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) UserId(userId string) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetUpcomingEpisodesRequest) StartIndex(startIndex int32) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) StartIndex(startIndex int32) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetUpcomingEpisodesRequest) Limit(limit int32) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) Limit(limit int32) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetUpcomingEpisodesRequest) Fields(fields []JellyfinItemFields) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) Fields(fields []JellyfinItemFields) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetUpcomingEpisodesRequest) ParentId(parentId string) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) ParentId(parentId string) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Include image information in output.
-func (r ApiGetUpcomingEpisodesRequest) EnableImages(enableImages bool) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) EnableImages(enableImages bool) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. The max number of images to return, per image type.
-func (r ApiGetUpcomingEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetUpcomingEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Include user data.
-func (r ApiGetUpcomingEpisodesRequest) EnableUserData(enableUserData bool) ApiGetUpcomingEpisodesRequest {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) EnableUserData(enableUserData bool) TvShowsAPIGetUpcomingEpisodesRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
-func (r ApiGetUpcomingEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r TvShowsAPIGetUpcomingEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetUpcomingEpisodesExecute(r)
 }
 
@@ -904,10 +904,10 @@ func (r ApiGetUpcomingEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResul
 GetUpcomingEpisodes Gets a list of upcoming episodes.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUpcomingEpisodesRequest
+ @return TvShowsAPIGetUpcomingEpisodesRequest
 */
-func (a *TvShowsAPIService) GetUpcomingEpisodes(ctx context.Context) ApiGetUpcomingEpisodesRequest {
-	return ApiGetUpcomingEpisodesRequest{
+func (a *TvShowsAPIService) GetUpcomingEpisodes(ctx context.Context) TvShowsAPIGetUpcomingEpisodesRequest {
+	return TvShowsAPIGetUpcomingEpisodesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -915,7 +915,7 @@ func (a *TvShowsAPIService) GetUpcomingEpisodes(ctx context.Context) ApiGetUpcom
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetUpcomingEpisodesExecute(r ApiGetUpcomingEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *TvShowsAPIService) GetUpcomingEpisodesExecute(r TvShowsAPIGetUpcomingEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

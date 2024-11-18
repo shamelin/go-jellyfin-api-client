@@ -23,19 +23,19 @@ import (
 // ApiKeyAPIService ApiKeyAPI service
 type ApiKeyAPIService service
 
-type ApiCreateKeyRequest struct {
+type ApiKeyAPICreateKeyRequest struct {
 	ctx context.Context
 	ApiService *ApiKeyAPIService
 	app *string
 }
 
 // Name of the app using the authentication key.
-func (r ApiCreateKeyRequest) App(app string) ApiCreateKeyRequest {
+func (r ApiKeyAPICreateKeyRequest) App(app string) ApiKeyAPICreateKeyRequest {
 	r.app = &app
 	return r
 }
 
-func (r ApiCreateKeyRequest) Execute() (*http.Response, error) {
+func (r ApiKeyAPICreateKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CreateKeyExecute(r)
 }
 
@@ -43,17 +43,17 @@ func (r ApiCreateKeyRequest) Execute() (*http.Response, error) {
 CreateKey Create a new api key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateKeyRequest
+ @return ApiKeyAPICreateKeyRequest
 */
-func (a *ApiKeyAPIService) CreateKey(ctx context.Context) ApiCreateKeyRequest {
-	return ApiCreateKeyRequest{
+func (a *ApiKeyAPIService) CreateKey(ctx context.Context) ApiKeyAPICreateKeyRequest {
+	return ApiKeyAPICreateKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ApiKeyAPIService) CreateKeyExecute(r ApiCreateKeyRequest) (*http.Response, error) {
+func (a *ApiKeyAPIService) CreateKeyExecute(r ApiKeyAPICreateKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -134,12 +134,12 @@ func (a *ApiKeyAPIService) CreateKeyExecute(r ApiCreateKeyRequest) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetKeysRequest struct {
+type ApiKeyAPIGetKeysRequest struct {
 	ctx context.Context
 	ApiService *ApiKeyAPIService
 }
 
-func (r ApiGetKeysRequest) Execute() (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
+func (r ApiKeyAPIGetKeysRequest) Execute() (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
 	return r.ApiService.GetKeysExecute(r)
 }
 
@@ -147,10 +147,10 @@ func (r ApiGetKeysRequest) Execute() (*JellyfinAuthenticationInfoQueryResult, *h
 GetKeys Get all keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetKeysRequest
+ @return ApiKeyAPIGetKeysRequest
 */
-func (a *ApiKeyAPIService) GetKeys(ctx context.Context) ApiGetKeysRequest {
-	return ApiGetKeysRequest{
+func (a *ApiKeyAPIService) GetKeys(ctx context.Context) ApiKeyAPIGetKeysRequest {
+	return ApiKeyAPIGetKeysRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -158,7 +158,7 @@ func (a *ApiKeyAPIService) GetKeys(ctx context.Context) ApiGetKeysRequest {
 
 // Execute executes the request
 //  @return JellyfinAuthenticationInfoQueryResult
-func (a *ApiKeyAPIService) GetKeysExecute(r ApiGetKeysRequest) (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
+func (a *ApiKeyAPIService) GetKeysExecute(r ApiKeyAPIGetKeysRequest) (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -245,13 +245,13 @@ func (a *ApiKeyAPIService) GetKeysExecute(r ApiGetKeysRequest) (*JellyfinAuthent
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRevokeKeyRequest struct {
+type ApiKeyAPIRevokeKeyRequest struct {
 	ctx context.Context
 	ApiService *ApiKeyAPIService
 	key string
 }
 
-func (r ApiRevokeKeyRequest) Execute() (*http.Response, error) {
+func (r ApiKeyAPIRevokeKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RevokeKeyExecute(r)
 }
 
@@ -260,10 +260,10 @@ RevokeKey Remove an api key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param key The access token to delete.
- @return ApiRevokeKeyRequest
+ @return ApiKeyAPIRevokeKeyRequest
 */
-func (a *ApiKeyAPIService) RevokeKey(ctx context.Context, key string) ApiRevokeKeyRequest {
-	return ApiRevokeKeyRequest{
+func (a *ApiKeyAPIService) RevokeKey(ctx context.Context, key string) ApiKeyAPIRevokeKeyRequest {
+	return ApiKeyAPIRevokeKeyRequest{
 		ApiService: a,
 		ctx: ctx,
 		key: key,
@@ -271,7 +271,7 @@ func (a *ApiKeyAPIService) RevokeKey(ctx context.Context, key string) ApiRevokeK
 }
 
 // Execute executes the request
-func (a *ApiKeyAPIService) RevokeKeyExecute(r ApiRevokeKeyRequest) (*http.Response, error) {
+func (a *ApiKeyAPIService) RevokeKeyExecute(r ApiKeyAPIRevokeKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}

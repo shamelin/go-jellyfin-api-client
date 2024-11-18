@@ -24,7 +24,7 @@ import (
 // PersonsAPIService PersonsAPI service
 type PersonsAPIService service
 
-type ApiGetPersonRequest struct {
+type PersonsAPIGetPersonRequest struct {
 	ctx context.Context
 	ApiService *PersonsAPIService
 	name string
@@ -32,12 +32,12 @@ type ApiGetPersonRequest struct {
 }
 
 // Optional. Filter by user id, and attach user data.
-func (r ApiGetPersonRequest) UserId(userId string) ApiGetPersonRequest {
+func (r PersonsAPIGetPersonRequest) UserId(userId string) PersonsAPIGetPersonRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetPersonRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r PersonsAPIGetPersonRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetPersonExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetPerson Get person by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param name Person name.
- @return ApiGetPersonRequest
+ @return PersonsAPIGetPersonRequest
 */
-func (a *PersonsAPIService) GetPerson(ctx context.Context, name string) ApiGetPersonRequest {
-	return ApiGetPersonRequest{
+func (a *PersonsAPIService) GetPerson(ctx context.Context, name string) PersonsAPIGetPersonRequest {
+	return PersonsAPIGetPersonRequest{
 		ApiService: a,
 		ctx: ctx,
 		name: name,
@@ -58,7 +58,7 @@ func (a *PersonsAPIService) GetPerson(ctx context.Context, name string) ApiGetPe
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *PersonsAPIService) GetPersonExecute(r PersonsAPIGetPersonRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -160,7 +160,7 @@ func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*JellyfinBa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPersonsRequest struct {
+type PersonsAPIGetPersonsRequest struct {
 	ctx context.Context
 	ApiService *PersonsAPIService
 	limit *int32
@@ -179,84 +179,84 @@ type ApiGetPersonsRequest struct {
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetPersonsRequest) Limit(limit int32) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) Limit(limit int32) PersonsAPIGetPersonsRequest {
 	r.limit = &limit
 	return r
 }
 
 // The search term.
-func (r ApiGetPersonsRequest) SearchTerm(searchTerm string) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) SearchTerm(searchTerm string) PersonsAPIGetPersonsRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetPersonsRequest) Fields(fields []JellyfinItemFields) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) Fields(fields []JellyfinItemFields) PersonsAPIGetPersonsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetPersonsRequest) Filters(filters []JellyfinItemFilter) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) Filters(filters []JellyfinItemFilter) PersonsAPIGetPersonsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not. userId is required.
-func (r ApiGetPersonsRequest) IsFavorite(isFavorite bool) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) IsFavorite(isFavorite bool) PersonsAPIGetPersonsRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional, include user data.
-func (r ApiGetPersonsRequest) EnableUserData(enableUserData bool) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) EnableUserData(enableUserData bool) PersonsAPIGetPersonsRequest {
 	r.enableUserData = &enableUserData
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetPersonsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) ImageTypeLimit(imageTypeLimit int32) PersonsAPIGetPersonsRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetPersonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) PersonsAPIGetPersonsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified results will be filtered to exclude those containing the specified PersonType. Allows multiple, comma-delimited.
-func (r ApiGetPersonsRequest) ExcludePersonTypes(excludePersonTypes []string) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) ExcludePersonTypes(excludePersonTypes []string) PersonsAPIGetPersonsRequest {
 	r.excludePersonTypes = &excludePersonTypes
 	return r
 }
 
 // Optional. If specified results will be filtered to include only those containing the specified PersonType. Allows multiple, comma-delimited.
-func (r ApiGetPersonsRequest) PersonTypes(personTypes []string) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) PersonTypes(personTypes []string) PersonsAPIGetPersonsRequest {
 	r.personTypes = &personTypes
 	return r
 }
 
 // Optional. If specified, person results will be filtered on items related to said persons.
-func (r ApiGetPersonsRequest) AppearsInItemId(appearsInItemId string) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) AppearsInItemId(appearsInItemId string) PersonsAPIGetPersonsRequest {
 	r.appearsInItemId = &appearsInItemId
 	return r
 }
 
 // User id.
-func (r ApiGetPersonsRequest) UserId(userId string) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) UserId(userId string) PersonsAPIGetPersonsRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetPersonsRequest) EnableImages(enableImages bool) ApiGetPersonsRequest {
+func (r PersonsAPIGetPersonsRequest) EnableImages(enableImages bool) PersonsAPIGetPersonsRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
-func (r ApiGetPersonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r PersonsAPIGetPersonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetPersonsExecute(r)
 }
 
@@ -264,10 +264,10 @@ func (r ApiGetPersonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.
 GetPersons Gets all persons.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPersonsRequest
+ @return PersonsAPIGetPersonsRequest
 */
-func (a *PersonsAPIService) GetPersons(ctx context.Context) ApiGetPersonsRequest {
-	return ApiGetPersonsRequest{
+func (a *PersonsAPIService) GetPersons(ctx context.Context) PersonsAPIGetPersonsRequest {
+	return PersonsAPIGetPersonsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -275,7 +275,7 @@ func (a *PersonsAPIService) GetPersons(ctx context.Context) ApiGetPersonsRequest
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *PersonsAPIService) GetPersonsExecute(r ApiGetPersonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *PersonsAPIService) GetPersonsExecute(r PersonsAPIGetPersonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

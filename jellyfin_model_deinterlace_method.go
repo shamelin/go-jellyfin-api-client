@@ -20,8 +20,8 @@ type JellyfinDeinterlaceMethod string
 
 // List of DeinterlaceMethod
 const (
-	YADIF JellyfinDeinterlaceMethod = "yadif"
-	BWDIF JellyfinDeinterlaceMethod = "bwdif"
+	JELLYFINDEINTERLACEMETHOD_YADIF JellyfinDeinterlaceMethod = "yadif"
+	JELLYFINDEINTERLACEMETHOD_BWDIF JellyfinDeinterlaceMethod = "bwdif"
 )
 
 // All allowed values of JellyfinDeinterlaceMethod enum

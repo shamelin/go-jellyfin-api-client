@@ -20,9 +20,9 @@ type JellyfinSeriesStatus string
 
 // List of SeriesStatus
 const (
-	CONTINUING JellyfinSeriesStatus = "Continuing"
-	ENDED JellyfinSeriesStatus = "Ended"
-	UNRELEASED JellyfinSeriesStatus = "Unreleased"
+	JELLYFINSERIESSTATUS_CONTINUING JellyfinSeriesStatus = "Continuing"
+	JELLYFINSERIESSTATUS_ENDED JellyfinSeriesStatus = "Ended"
+	JELLYFINSERIESSTATUS_UNRELEASED JellyfinSeriesStatus = "Unreleased"
 )
 
 // All allowed values of JellyfinSeriesStatus enum

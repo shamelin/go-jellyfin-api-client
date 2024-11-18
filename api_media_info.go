@@ -24,19 +24,19 @@ import (
 // MediaInfoAPIService MediaInfoAPI service
 type MediaInfoAPIService service
 
-type ApiCloseLiveStreamRequest struct {
+type MediaInfoAPICloseLiveStreamRequest struct {
 	ctx context.Context
 	ApiService *MediaInfoAPIService
 	liveStreamId *string
 }
 
 // The livestream id.
-func (r ApiCloseLiveStreamRequest) LiveStreamId(liveStreamId string) ApiCloseLiveStreamRequest {
+func (r MediaInfoAPICloseLiveStreamRequest) LiveStreamId(liveStreamId string) MediaInfoAPICloseLiveStreamRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
-func (r ApiCloseLiveStreamRequest) Execute() (*http.Response, error) {
+func (r MediaInfoAPICloseLiveStreamRequest) Execute() (*http.Response, error) {
 	return r.ApiService.CloseLiveStreamExecute(r)
 }
 
@@ -44,17 +44,17 @@ func (r ApiCloseLiveStreamRequest) Execute() (*http.Response, error) {
 CloseLiveStream Closes a media source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCloseLiveStreamRequest
+ @return MediaInfoAPICloseLiveStreamRequest
 */
-func (a *MediaInfoAPIService) CloseLiveStream(ctx context.Context) ApiCloseLiveStreamRequest {
-	return ApiCloseLiveStreamRequest{
+func (a *MediaInfoAPIService) CloseLiveStream(ctx context.Context) MediaInfoAPICloseLiveStreamRequest {
+	return MediaInfoAPICloseLiveStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MediaInfoAPIService) CloseLiveStreamExecute(r ApiCloseLiveStreamRequest) (*http.Response, error) {
+func (a *MediaInfoAPIService) CloseLiveStreamExecute(r MediaInfoAPICloseLiveStreamRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -135,19 +135,19 @@ func (a *MediaInfoAPIService) CloseLiveStreamExecute(r ApiCloseLiveStreamRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetBitrateTestBytesRequest struct {
+type MediaInfoAPIGetBitrateTestBytesRequest struct {
 	ctx context.Context
 	ApiService *MediaInfoAPIService
 	size *int32
 }
 
 // The bitrate. Defaults to 102400.
-func (r ApiGetBitrateTestBytesRequest) Size(size int32) ApiGetBitrateTestBytesRequest {
+func (r MediaInfoAPIGetBitrateTestBytesRequest) Size(size int32) MediaInfoAPIGetBitrateTestBytesRequest {
 	r.size = &size
 	return r
 }
 
-func (r ApiGetBitrateTestBytesRequest) Execute() (*os.File, *http.Response, error) {
+func (r MediaInfoAPIGetBitrateTestBytesRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetBitrateTestBytesExecute(r)
 }
 
@@ -155,10 +155,10 @@ func (r ApiGetBitrateTestBytesRequest) Execute() (*os.File, *http.Response, erro
 GetBitrateTestBytes Tests the network with a request with the size of the bitrate.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetBitrateTestBytesRequest
+ @return MediaInfoAPIGetBitrateTestBytesRequest
 */
-func (a *MediaInfoAPIService) GetBitrateTestBytes(ctx context.Context) ApiGetBitrateTestBytesRequest {
-	return ApiGetBitrateTestBytesRequest{
+func (a *MediaInfoAPIService) GetBitrateTestBytes(ctx context.Context) MediaInfoAPIGetBitrateTestBytesRequest {
+	return MediaInfoAPIGetBitrateTestBytesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -166,7 +166,7 @@ func (a *MediaInfoAPIService) GetBitrateTestBytes(ctx context.Context) ApiGetBit
 
 // Execute executes the request
 //  @return *os.File
-func (a *MediaInfoAPIService) GetBitrateTestBytesExecute(r ApiGetBitrateTestBytesRequest) (*os.File, *http.Response, error) {
+func (a *MediaInfoAPIService) GetBitrateTestBytesExecute(r MediaInfoAPIGetBitrateTestBytesRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -259,7 +259,7 @@ func (a *MediaInfoAPIService) GetBitrateTestBytesExecute(r ApiGetBitrateTestByte
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPlaybackInfoRequest struct {
+type MediaInfoAPIGetPlaybackInfoRequest struct {
 	ctx context.Context
 	ApiService *MediaInfoAPIService
 	itemId string
@@ -267,12 +267,12 @@ type ApiGetPlaybackInfoRequest struct {
 }
 
 // The user id.
-func (r ApiGetPlaybackInfoRequest) UserId(userId string) ApiGetPlaybackInfoRequest {
+func (r MediaInfoAPIGetPlaybackInfoRequest) UserId(userId string) MediaInfoAPIGetPlaybackInfoRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
+func (r MediaInfoAPIGetPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	return r.ApiService.GetPlaybackInfoExecute(r)
 }
 
@@ -281,10 +281,10 @@ GetPlaybackInfo Gets live playback media info for an item.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetPlaybackInfoRequest
+ @return MediaInfoAPIGetPlaybackInfoRequest
 */
-func (a *MediaInfoAPIService) GetPlaybackInfo(ctx context.Context, itemId string) ApiGetPlaybackInfoRequest {
-	return ApiGetPlaybackInfoRequest{
+func (a *MediaInfoAPIService) GetPlaybackInfo(ctx context.Context, itemId string) MediaInfoAPIGetPlaybackInfoRequest {
+	return MediaInfoAPIGetPlaybackInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -293,7 +293,7 @@ func (a *MediaInfoAPIService) GetPlaybackInfo(ctx context.Context, itemId string
 
 // Execute executes the request
 //  @return JellyfinPlaybackInfoResponse
-func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
+func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r MediaInfoAPIGetPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -395,7 +395,7 @@ func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPostedPlaybackInfoRequest struct {
+type MediaInfoAPIGetPostedPlaybackInfoRequest struct {
 	ctx context.Context
 	ApiService *MediaInfoAPIService
 	itemId string
@@ -418,109 +418,109 @@ type ApiGetPostedPlaybackInfoRequest struct {
 
 // The user id.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) UserId(userId string) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) UserId(userId string) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.userId = &userId
 	return r
 }
 
 // The maximum streaming bitrate.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) MaxStreamingBitrate(maxStreamingBitrate int32) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // The start time in ticks.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) StartTimeTicks(startTimeTicks int64) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) StartTimeTicks(startTimeTicks int64) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // The audio stream index.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) AudioStreamIndex(audioStreamIndex int32) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) AudioStreamIndex(audioStreamIndex int32) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // The subtitle stream index.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) SubtitleStreamIndex(subtitleStreamIndex int32) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // The maximum number of audio channels.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) MaxAudioChannels(maxAudioChannels int32) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) MaxAudioChannels(maxAudioChannels int32) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // The media source id.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) MediaSourceId(mediaSourceId string) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) MediaSourceId(mediaSourceId string) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.mediaSourceId = &mediaSourceId
 	return r
 }
 
 // The livestream id.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) LiveStreamId(liveStreamId string) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) LiveStreamId(liveStreamId string) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.liveStreamId = &liveStreamId
 	return r
 }
 
 // Whether to auto open the livestream.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) AutoOpenLiveStream(autoOpenLiveStream bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) AutoOpenLiveStream(autoOpenLiveStream bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.autoOpenLiveStream = &autoOpenLiveStream
 	return r
 }
 
 // Whether to enable direct play. Default: true.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) EnableDirectPlay(enableDirectPlay bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) EnableDirectPlay(enableDirectPlay bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.enableDirectPlay = &enableDirectPlay
 	return r
 }
 
 // Whether to enable direct stream. Default: true.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) EnableDirectStream(enableDirectStream bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) EnableDirectStream(enableDirectStream bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.enableDirectStream = &enableDirectStream
 	return r
 }
 
 // Whether to enable transcoding. Default: true.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) EnableTranscoding(enableTranscoding bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) EnableTranscoding(enableTranscoding bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.enableTranscoding = &enableTranscoding
 	return r
 }
 
 // Whether to allow to copy the video stream. Default: true.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) AllowVideoStreamCopy(allowVideoStreamCopy bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.allowVideoStreamCopy = &allowVideoStreamCopy
 	return r
 }
 
 // Whether to allow to copy the audio stream. Default: true.
 // Deprecated
-func (r ApiGetPostedPlaybackInfoRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) AllowAudioStreamCopy(allowAudioStreamCopy bool) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.allowAudioStreamCopy = &allowAudioStreamCopy
 	return r
 }
 
 // The playback info.
-func (r ApiGetPostedPlaybackInfoRequest) JellyfinPlaybackInfoDto(jellyfinPlaybackInfoDto JellyfinPlaybackInfoDto) ApiGetPostedPlaybackInfoRequest {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) JellyfinPlaybackInfoDto(jellyfinPlaybackInfoDto JellyfinPlaybackInfoDto) MediaInfoAPIGetPostedPlaybackInfoRequest {
 	r.jellyfinPlaybackInfoDto = &jellyfinPlaybackInfoDto
 	return r
 }
 
-func (r ApiGetPostedPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
+func (r MediaInfoAPIGetPostedPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	return r.ApiService.GetPostedPlaybackInfoExecute(r)
 }
 
@@ -532,10 +532,10 @@ Query parameters are obsolete.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The item id.
- @return ApiGetPostedPlaybackInfoRequest
+ @return MediaInfoAPIGetPostedPlaybackInfoRequest
 */
-func (a *MediaInfoAPIService) GetPostedPlaybackInfo(ctx context.Context, itemId string) ApiGetPostedPlaybackInfoRequest {
-	return ApiGetPostedPlaybackInfoRequest{
+func (a *MediaInfoAPIService) GetPostedPlaybackInfo(ctx context.Context, itemId string) MediaInfoAPIGetPostedPlaybackInfoRequest {
+	return MediaInfoAPIGetPostedPlaybackInfoRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -544,7 +544,7 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfo(ctx context.Context, itemId 
 
 // Execute executes the request
 //  @return JellyfinPlaybackInfoResponse
-func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
+func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r MediaInfoAPIGetPostedPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -687,7 +687,7 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybac
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiOpenLiveStreamRequest struct {
+type MediaInfoAPIOpenLiveStreamRequest struct {
 	ctx context.Context
 	ApiService *MediaInfoAPIService
 	openToken *string
@@ -706,84 +706,84 @@ type ApiOpenLiveStreamRequest struct {
 }
 
 // The open token.
-func (r ApiOpenLiveStreamRequest) OpenToken(openToken string) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) OpenToken(openToken string) MediaInfoAPIOpenLiveStreamRequest {
 	r.openToken = &openToken
 	return r
 }
 
 // The user id.
-func (r ApiOpenLiveStreamRequest) UserId(userId string) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) UserId(userId string) MediaInfoAPIOpenLiveStreamRequest {
 	r.userId = &userId
 	return r
 }
 
 // The play session id.
-func (r ApiOpenLiveStreamRequest) PlaySessionId(playSessionId string) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) PlaySessionId(playSessionId string) MediaInfoAPIOpenLiveStreamRequest {
 	r.playSessionId = &playSessionId
 	return r
 }
 
 // The maximum streaming bitrate.
-func (r ApiOpenLiveStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) MaxStreamingBitrate(maxStreamingBitrate int32) MediaInfoAPIOpenLiveStreamRequest {
 	r.maxStreamingBitrate = &maxStreamingBitrate
 	return r
 }
 
 // The start time in ticks.
-func (r ApiOpenLiveStreamRequest) StartTimeTicks(startTimeTicks int64) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) StartTimeTicks(startTimeTicks int64) MediaInfoAPIOpenLiveStreamRequest {
 	r.startTimeTicks = &startTimeTicks
 	return r
 }
 
 // The audio stream index.
-func (r ApiOpenLiveStreamRequest) AudioStreamIndex(audioStreamIndex int32) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) AudioStreamIndex(audioStreamIndex int32) MediaInfoAPIOpenLiveStreamRequest {
 	r.audioStreamIndex = &audioStreamIndex
 	return r
 }
 
 // The subtitle stream index.
-func (r ApiOpenLiveStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32) MediaInfoAPIOpenLiveStreamRequest {
 	r.subtitleStreamIndex = &subtitleStreamIndex
 	return r
 }
 
 // The maximum number of audio channels.
-func (r ApiOpenLiveStreamRequest) MaxAudioChannels(maxAudioChannels int32) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) MaxAudioChannels(maxAudioChannels int32) MediaInfoAPIOpenLiveStreamRequest {
 	r.maxAudioChannels = &maxAudioChannels
 	return r
 }
 
 // The item id.
-func (r ApiOpenLiveStreamRequest) ItemId(itemId string) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) ItemId(itemId string) MediaInfoAPIOpenLiveStreamRequest {
 	r.itemId = &itemId
 	return r
 }
 
 // Whether to enable direct play. Default: true.
-func (r ApiOpenLiveStreamRequest) EnableDirectPlay(enableDirectPlay bool) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) EnableDirectPlay(enableDirectPlay bool) MediaInfoAPIOpenLiveStreamRequest {
 	r.enableDirectPlay = &enableDirectPlay
 	return r
 }
 
 // Whether to enable direct stream. Default: true.
-func (r ApiOpenLiveStreamRequest) EnableDirectStream(enableDirectStream bool) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) EnableDirectStream(enableDirectStream bool) MediaInfoAPIOpenLiveStreamRequest {
 	r.enableDirectStream = &enableDirectStream
 	return r
 }
 
 // Always burn-in subtitle when transcoding.
-func (r ApiOpenLiveStreamRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding bool) MediaInfoAPIOpenLiveStreamRequest {
 	r.alwaysBurnInSubtitleWhenTranscoding = &alwaysBurnInSubtitleWhenTranscoding
 	return r
 }
 
 // The open live stream dto.
-func (r ApiOpenLiveStreamRequest) JellyfinOpenLiveStreamDto(jellyfinOpenLiveStreamDto JellyfinOpenLiveStreamDto) ApiOpenLiveStreamRequest {
+func (r MediaInfoAPIOpenLiveStreamRequest) JellyfinOpenLiveStreamDto(jellyfinOpenLiveStreamDto JellyfinOpenLiveStreamDto) MediaInfoAPIOpenLiveStreamRequest {
 	r.jellyfinOpenLiveStreamDto = &jellyfinOpenLiveStreamDto
 	return r
 }
 
-func (r ApiOpenLiveStreamRequest) Execute() (*JellyfinLiveStreamResponse, *http.Response, error) {
+func (r MediaInfoAPIOpenLiveStreamRequest) Execute() (*JellyfinLiveStreamResponse, *http.Response, error) {
 	return r.ApiService.OpenLiveStreamExecute(r)
 }
 
@@ -791,10 +791,10 @@ func (r ApiOpenLiveStreamRequest) Execute() (*JellyfinLiveStreamResponse, *http.
 OpenLiveStream Opens a media source.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOpenLiveStreamRequest
+ @return MediaInfoAPIOpenLiveStreamRequest
 */
-func (a *MediaInfoAPIService) OpenLiveStream(ctx context.Context) ApiOpenLiveStreamRequest {
-	return ApiOpenLiveStreamRequest{
+func (a *MediaInfoAPIService) OpenLiveStream(ctx context.Context) MediaInfoAPIOpenLiveStreamRequest {
+	return MediaInfoAPIOpenLiveStreamRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -802,7 +802,7 @@ func (a *MediaInfoAPIService) OpenLiveStream(ctx context.Context) ApiOpenLiveStr
 
 // Execute executes the request
 //  @return JellyfinLiveStreamResponse
-func (a *MediaInfoAPIService) OpenLiveStreamExecute(r ApiOpenLiveStreamRequest) (*JellyfinLiveStreamResponse, *http.Response, error) {
+func (a *MediaInfoAPIService) OpenLiveStreamExecute(r MediaInfoAPIOpenLiveStreamRequest) (*JellyfinLiveStreamResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

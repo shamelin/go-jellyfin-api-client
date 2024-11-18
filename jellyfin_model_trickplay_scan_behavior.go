@@ -20,8 +20,8 @@ type JellyfinTrickplayScanBehavior string
 
 // List of TrickplayScanBehavior
 const (
-	BLOCKING JellyfinTrickplayScanBehavior = "Blocking"
-	NON_BLOCKING JellyfinTrickplayScanBehavior = "NonBlocking"
+	JELLYFINTRICKPLAYSCANBEHAVIOR_BLOCKING JellyfinTrickplayScanBehavior = "Blocking"
+	JELLYFINTRICKPLAYSCANBEHAVIOR_NON_BLOCKING JellyfinTrickplayScanBehavior = "NonBlocking"
 )
 
 // All allowed values of JellyfinTrickplayScanBehavior enum

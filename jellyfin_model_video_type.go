@@ -20,10 +20,10 @@ type JellyfinVideoType string
 
 // List of VideoType
 const (
-	VIDEO_FILE JellyfinVideoType = "VideoFile"
-	ISO JellyfinVideoType = "Iso"
-	DVD JellyfinVideoType = "Dvd"
-	BLU_RAY JellyfinVideoType = "BluRay"
+	JELLYFINVIDEOTYPE_VIDEO_FILE JellyfinVideoType = "VideoFile"
+	JELLYFINVIDEOTYPE_ISO JellyfinVideoType = "Iso"
+	JELLYFINVIDEOTYPE_DVD JellyfinVideoType = "Dvd"
+	JELLYFINVIDEOTYPE_BLU_RAY JellyfinVideoType = "BluRay"
 )
 
 // All allowed values of JellyfinVideoType enum

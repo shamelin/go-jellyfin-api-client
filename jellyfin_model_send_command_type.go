@@ -20,10 +20,10 @@ type JellyfinSendCommandType string
 
 // List of SendCommandType
 const (
-	UNPAUSE JellyfinSendCommandType = "Unpause"
-	PAUSE JellyfinSendCommandType = "Pause"
-	STOP JellyfinSendCommandType = "Stop"
-	SEEK JellyfinSendCommandType = "Seek"
+	JELLYFINSENDCOMMANDTYPE_UNPAUSE JellyfinSendCommandType = "Unpause"
+	JELLYFINSENDCOMMANDTYPE_PAUSE JellyfinSendCommandType = "Pause"
+	JELLYFINSENDCOMMANDTYPE_STOP JellyfinSendCommandType = "Stop"
+	JELLYFINSENDCOMMANDTYPE_SEEK JellyfinSendCommandType = "Seek"
 )
 
 // All allowed values of JellyfinSendCommandType enum

@@ -20,19 +20,19 @@ type JellyfinCollectionType string
 
 // List of CollectionType
 const (
-	UNKNOWN JellyfinCollectionType = "unknown"
-	MOVIES JellyfinCollectionType = "movies"
-	TVSHOWS JellyfinCollectionType = "tvshows"
-	MUSIC JellyfinCollectionType = "music"
-	MUSICVIDEOS JellyfinCollectionType = "musicvideos"
-	TRAILERS JellyfinCollectionType = "trailers"
-	HOMEVIDEOS JellyfinCollectionType = "homevideos"
-	BOXSETS JellyfinCollectionType = "boxsets"
-	BOOKS JellyfinCollectionType = "books"
-	PHOTOS JellyfinCollectionType = "photos"
-	LIVETV JellyfinCollectionType = "livetv"
-	PLAYLISTS JellyfinCollectionType = "playlists"
-	FOLDERS JellyfinCollectionType = "folders"
+	JELLYFINCOLLECTIONTYPE_UNKNOWN JellyfinCollectionType = "unknown"
+	JELLYFINCOLLECTIONTYPE_MOVIES JellyfinCollectionType = "movies"
+	JELLYFINCOLLECTIONTYPE_TVSHOWS JellyfinCollectionType = "tvshows"
+	JELLYFINCOLLECTIONTYPE_MUSIC JellyfinCollectionType = "music"
+	JELLYFINCOLLECTIONTYPE_MUSICVIDEOS JellyfinCollectionType = "musicvideos"
+	JELLYFINCOLLECTIONTYPE_TRAILERS JellyfinCollectionType = "trailers"
+	JELLYFINCOLLECTIONTYPE_HOMEVIDEOS JellyfinCollectionType = "homevideos"
+	JELLYFINCOLLECTIONTYPE_BOXSETS JellyfinCollectionType = "boxsets"
+	JELLYFINCOLLECTIONTYPE_BOOKS JellyfinCollectionType = "books"
+	JELLYFINCOLLECTIONTYPE_PHOTOS JellyfinCollectionType = "photos"
+	JELLYFINCOLLECTIONTYPE_LIVETV JellyfinCollectionType = "livetv"
+	JELLYFINCOLLECTIONTYPE_PLAYLISTS JellyfinCollectionType = "playlists"
+	JELLYFINCOLLECTIONTYPE_FOLDERS JellyfinCollectionType = "folders"
 )
 
 // All allowed values of JellyfinCollectionType enum

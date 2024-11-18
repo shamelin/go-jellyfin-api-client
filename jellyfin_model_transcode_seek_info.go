@@ -20,8 +20,8 @@ type JellyfinTranscodeSeekInfo string
 
 // List of TranscodeSeekInfo
 const (
-	AUTO JellyfinTranscodeSeekInfo = "Auto"
-	BYTES JellyfinTranscodeSeekInfo = "Bytes"
+	JELLYFINTRANSCODESEEKINFO_AUTO JellyfinTranscodeSeekInfo = "Auto"
+	JELLYFINTRANSCODESEEKINFO_BYTES JellyfinTranscodeSeekInfo = "Bytes"
 )
 
 // All allowed values of JellyfinTranscodeSeekInfo enum

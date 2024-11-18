@@ -20,12 +20,12 @@ type JellyfinRecommendationType string
 
 // List of RecommendationType
 const (
-	SIMILAR_TO_RECENTLY_PLAYED JellyfinRecommendationType = "SimilarToRecentlyPlayed"
-	SIMILAR_TO_LIKED_ITEM JellyfinRecommendationType = "SimilarToLikedItem"
-	HAS_DIRECTOR_FROM_RECENTLY_PLAYED JellyfinRecommendationType = "HasDirectorFromRecentlyPlayed"
-	HAS_ACTOR_FROM_RECENTLY_PLAYED JellyfinRecommendationType = "HasActorFromRecentlyPlayed"
-	HAS_LIKED_DIRECTOR JellyfinRecommendationType = "HasLikedDirector"
-	HAS_LIKED_ACTOR JellyfinRecommendationType = "HasLikedActor"
+	JELLYFINRECOMMENDATIONTYPE_SIMILAR_TO_RECENTLY_PLAYED JellyfinRecommendationType = "SimilarToRecentlyPlayed"
+	JELLYFINRECOMMENDATIONTYPE_SIMILAR_TO_LIKED_ITEM JellyfinRecommendationType = "SimilarToLikedItem"
+	JELLYFINRECOMMENDATIONTYPE_HAS_DIRECTOR_FROM_RECENTLY_PLAYED JellyfinRecommendationType = "HasDirectorFromRecentlyPlayed"
+	JELLYFINRECOMMENDATIONTYPE_HAS_ACTOR_FROM_RECENTLY_PLAYED JellyfinRecommendationType = "HasActorFromRecentlyPlayed"
+	JELLYFINRECOMMENDATIONTYPE_HAS_LIKED_DIRECTOR JellyfinRecommendationType = "HasLikedDirector"
+	JELLYFINRECOMMENDATIONTYPE_HAS_LIKED_ACTOR JellyfinRecommendationType = "HasLikedActor"
 )
 
 // All allowed values of JellyfinRecommendationType enum

@@ -23,18 +23,18 @@ import (
 // ClientLogAPIService ClientLogAPI service
 type ClientLogAPIService service
 
-type ApiLogFileRequest struct {
+type ClientLogAPILogFileRequest struct {
 	ctx context.Context
 	ApiService *ClientLogAPIService
 	body *os.File
 }
 
-func (r ApiLogFileRequest) Body(body *os.File) ApiLogFileRequest {
+func (r ClientLogAPILogFileRequest) Body(body *os.File) ClientLogAPILogFileRequest {
 	r.body = body
 	return r
 }
 
-func (r ApiLogFileRequest) Execute() (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
+func (r ClientLogAPILogFileRequest) Execute() (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
 	return r.ApiService.LogFileExecute(r)
 }
 
@@ -42,10 +42,10 @@ func (r ApiLogFileRequest) Execute() (*JellyfinClientLogDocumentResponseDto, *ht
 LogFile Upload a document.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiLogFileRequest
+ @return ClientLogAPILogFileRequest
 */
-func (a *ClientLogAPIService) LogFile(ctx context.Context) ApiLogFileRequest {
-	return ApiLogFileRequest{
+func (a *ClientLogAPIService) LogFile(ctx context.Context) ClientLogAPILogFileRequest {
+	return ClientLogAPILogFileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -53,7 +53,7 @@ func (a *ClientLogAPIService) LogFile(ctx context.Context) ApiLogFileRequest {
 
 // Execute executes the request
 //  @return JellyfinClientLogDocumentResponseDto
-func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
+func (a *ClientLogAPIService) LogFileExecute(r ClientLogAPILogFileRequest) (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

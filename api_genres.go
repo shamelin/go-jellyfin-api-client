@@ -24,7 +24,7 @@ import (
 // GenresAPIService GenresAPI service
 type GenresAPIService service
 
-type ApiGetGenreRequest struct {
+type GenresAPIGetGenreRequest struct {
 	ctx context.Context
 	ApiService *GenresAPIService
 	genreName string
@@ -32,12 +32,12 @@ type ApiGetGenreRequest struct {
 }
 
 // The user id.
-func (r ApiGetGenreRequest) UserId(userId string) ApiGetGenreRequest {
+func (r GenresAPIGetGenreRequest) UserId(userId string) GenresAPIGetGenreRequest {
 	r.userId = &userId
 	return r
 }
 
-func (r ApiGetGenreRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
+func (r GenresAPIGetGenreRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetGenreExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetGenre Gets a genre, by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param genreName The genre name.
- @return ApiGetGenreRequest
+ @return GenresAPIGetGenreRequest
 */
-func (a *GenresAPIService) GetGenre(ctx context.Context, genreName string) ApiGetGenreRequest {
-	return ApiGetGenreRequest{
+func (a *GenresAPIService) GetGenre(ctx context.Context, genreName string) GenresAPIGetGenreRequest {
+	return GenresAPIGetGenreRequest{
 		ApiService: a,
 		ctx: ctx,
 		genreName: genreName,
@@ -58,7 +58,7 @@ func (a *GenresAPIService) GetGenre(ctx context.Context, genreName string) ApiGe
 
 // Execute executes the request
 //  @return JellyfinBaseItemDto
-func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*JellyfinBaseItemDto, *http.Response, error) {
+func (a *GenresAPIService) GetGenreExecute(r GenresAPIGetGenreRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -149,7 +149,7 @@ func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*JellyfinBaseI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetGenresRequest struct {
+type GenresAPIGetGenresRequest struct {
 	ctx context.Context
 	ApiService *GenresAPIService
 	startIndex *int32
@@ -173,114 +173,114 @@ type ApiGetGenresRequest struct {
 }
 
 // Optional. The record index to start at. All items with a lower index will be dropped from the results.
-func (r ApiGetGenresRequest) StartIndex(startIndex int32) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) StartIndex(startIndex int32) GenresAPIGetGenresRequest {
 	r.startIndex = &startIndex
 	return r
 }
 
 // Optional. The maximum number of records to return.
-func (r ApiGetGenresRequest) Limit(limit int32) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) Limit(limit int32) GenresAPIGetGenresRequest {
 	r.limit = &limit
 	return r
 }
 
 // The search term.
-func (r ApiGetGenresRequest) SearchTerm(searchTerm string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) SearchTerm(searchTerm string) GenresAPIGetGenresRequest {
 	r.searchTerm = &searchTerm
 	return r
 }
 
 // Specify this to localize the search to a specific item or folder. Omit to use the root.
-func (r ApiGetGenresRequest) ParentId(parentId string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) ParentId(parentId string) GenresAPIGetGenresRequest {
 	r.parentId = &parentId
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetGenresRequest) Fields(fields []JellyfinItemFields) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) Fields(fields []JellyfinItemFields) GenresAPIGetGenresRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetGenresRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) GenresAPIGetGenresRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered in based on item type. This allows multiple, comma delimited.
-func (r ApiGetGenresRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) GenresAPIGetGenresRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional filter by items that are marked as favorite, or not.
-func (r ApiGetGenresRequest) IsFavorite(isFavorite bool) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) IsFavorite(isFavorite bool) GenresAPIGetGenresRequest {
 	r.isFavorite = &isFavorite
 	return r
 }
 
 // Optional, the max number of images to return, per image type.
-func (r ApiGetGenresRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) ImageTypeLimit(imageTypeLimit int32) GenresAPIGetGenresRequest {
 	r.imageTypeLimit = &imageTypeLimit
 	return r
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetGenresRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) GenresAPIGetGenresRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // User id.
-func (r ApiGetGenresRequest) UserId(userId string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) UserId(userId string) GenresAPIGetGenresRequest {
 	r.userId = &userId
 	return r
 }
 
 // Optional filter by items whose name is sorted equally or greater than a given input string.
-func (r ApiGetGenresRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) NameStartsWithOrGreater(nameStartsWithOrGreater string) GenresAPIGetGenresRequest {
 	r.nameStartsWithOrGreater = &nameStartsWithOrGreater
 	return r
 }
 
 // Optional filter by items whose name is sorted equally than a given input string.
-func (r ApiGetGenresRequest) NameStartsWith(nameStartsWith string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) NameStartsWith(nameStartsWith string) GenresAPIGetGenresRequest {
 	r.nameStartsWith = &nameStartsWith
 	return r
 }
 
 // Optional filter by items whose name is equally or lesser than a given input string.
-func (r ApiGetGenresRequest) NameLessThan(nameLessThan string) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) NameLessThan(nameLessThan string) GenresAPIGetGenresRequest {
 	r.nameLessThan = &nameLessThan
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetGenresRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) SortBy(sortBy []JellyfinItemSortBy) GenresAPIGetGenresRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetGenresRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) SortOrder(sortOrder []JellyfinSortOrder) GenresAPIGetGenresRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional, include image information in output.
-func (r ApiGetGenresRequest) EnableImages(enableImages bool) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) EnableImages(enableImages bool) GenresAPIGetGenresRequest {
 	r.enableImages = &enableImages
 	return r
 }
 
 // Optional. Include total record count.
-func (r ApiGetGenresRequest) EnableTotalRecordCount(enableTotalRecordCount bool) ApiGetGenresRequest {
+func (r GenresAPIGetGenresRequest) EnableTotalRecordCount(enableTotalRecordCount bool) GenresAPIGetGenresRequest {
 	r.enableTotalRecordCount = &enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (r GenresAPIGetGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetGenresExecute(r)
 }
 
@@ -288,10 +288,10 @@ func (r ApiGetGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.R
 GetGenres Gets all genres from a given item, folder, or the entire library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGenresRequest
+ @return GenresAPIGetGenresRequest
 */
-func (a *GenresAPIService) GetGenres(ctx context.Context) ApiGetGenresRequest {
-	return ApiGetGenresRequest{
+func (a *GenresAPIService) GetGenres(ctx context.Context) GenresAPIGetGenresRequest {
+	return GenresAPIGetGenresRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -299,7 +299,7 @@ func (a *GenresAPIService) GetGenres(ctx context.Context) ApiGetGenresRequest {
 
 // Execute executes the request
 //  @return JellyfinBaseItemDtoQueryResult
-func (a *GenresAPIService) GetGenresExecute(r ApiGetGenresRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
+func (a *GenresAPIService) GetGenresExecute(r GenresAPIGetGenresRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

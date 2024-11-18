@@ -22,12 +22,12 @@ import (
 // LocalizationAPIService LocalizationAPI service
 type LocalizationAPIService service
 
-type ApiGetCountriesRequest struct {
+type LocalizationAPIGetCountriesRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetCountriesRequest) Execute() ([]JellyfinCountryInfo, *http.Response, error) {
+func (r LocalizationAPIGetCountriesRequest) Execute() ([]JellyfinCountryInfo, *http.Response, error) {
 	return r.ApiService.GetCountriesExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r ApiGetCountriesRequest) Execute() ([]JellyfinCountryInfo, *http.Response
 GetCountries Gets known countries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCountriesRequest
+ @return LocalizationAPIGetCountriesRequest
 */
-func (a *LocalizationAPIService) GetCountries(ctx context.Context) ApiGetCountriesRequest {
-	return ApiGetCountriesRequest{
+func (a *LocalizationAPIService) GetCountries(ctx context.Context) LocalizationAPIGetCountriesRequest {
+	return LocalizationAPIGetCountriesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *LocalizationAPIService) GetCountries(ctx context.Context) ApiGetCountri
 
 // Execute executes the request
 //  @return []JellyfinCountryInfo
-func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) ([]JellyfinCountryInfo, *http.Response, error) {
+func (a *LocalizationAPIService) GetCountriesExecute(r LocalizationAPIGetCountriesRequest) ([]JellyfinCountryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -133,12 +133,12 @@ func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetCulturesRequest struct {
+type LocalizationAPIGetCulturesRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetCulturesRequest) Execute() ([]JellyfinCultureDto, *http.Response, error) {
+func (r LocalizationAPIGetCulturesRequest) Execute() ([]JellyfinCultureDto, *http.Response, error) {
 	return r.ApiService.GetCulturesExecute(r)
 }
 
@@ -146,10 +146,10 @@ func (r ApiGetCulturesRequest) Execute() ([]JellyfinCultureDto, *http.Response, 
 GetCultures Gets known cultures.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetCulturesRequest
+ @return LocalizationAPIGetCulturesRequest
 */
-func (a *LocalizationAPIService) GetCultures(ctx context.Context) ApiGetCulturesRequest {
-	return ApiGetCulturesRequest{
+func (a *LocalizationAPIService) GetCultures(ctx context.Context) LocalizationAPIGetCulturesRequest {
+	return LocalizationAPIGetCulturesRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -157,7 +157,7 @@ func (a *LocalizationAPIService) GetCultures(ctx context.Context) ApiGetCultures
 
 // Execute executes the request
 //  @return []JellyfinCultureDto
-func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]JellyfinCultureDto, *http.Response, error) {
+func (a *LocalizationAPIService) GetCulturesExecute(r LocalizationAPIGetCulturesRequest) ([]JellyfinCultureDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -244,12 +244,12 @@ func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetLocalizationOptionsRequest struct {
+type LocalizationAPIGetLocalizationOptionsRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetLocalizationOptionsRequest) Execute() ([]JellyfinLocalizationOption, *http.Response, error) {
+func (r LocalizationAPIGetLocalizationOptionsRequest) Execute() ([]JellyfinLocalizationOption, *http.Response, error) {
 	return r.ApiService.GetLocalizationOptionsExecute(r)
 }
 
@@ -257,10 +257,10 @@ func (r ApiGetLocalizationOptionsRequest) Execute() ([]JellyfinLocalizationOptio
 GetLocalizationOptions Gets localization options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetLocalizationOptionsRequest
+ @return LocalizationAPIGetLocalizationOptionsRequest
 */
-func (a *LocalizationAPIService) GetLocalizationOptions(ctx context.Context) ApiGetLocalizationOptionsRequest {
-	return ApiGetLocalizationOptionsRequest{
+func (a *LocalizationAPIService) GetLocalizationOptions(ctx context.Context) LocalizationAPIGetLocalizationOptionsRequest {
+	return LocalizationAPIGetLocalizationOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -268,7 +268,7 @@ func (a *LocalizationAPIService) GetLocalizationOptions(ctx context.Context) Api
 
 // Execute executes the request
 //  @return []JellyfinLocalizationOption
-func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizationOptionsRequest) ([]JellyfinLocalizationOption, *http.Response, error) {
+func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r LocalizationAPIGetLocalizationOptionsRequest) ([]JellyfinLocalizationOption, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -355,12 +355,12 @@ func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetParentalRatingsRequest struct {
+type LocalizationAPIGetParentalRatingsRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetParentalRatingsRequest) Execute() ([]JellyfinParentalRating, *http.Response, error) {
+func (r LocalizationAPIGetParentalRatingsRequest) Execute() ([]JellyfinParentalRating, *http.Response, error) {
 	return r.ApiService.GetParentalRatingsExecute(r)
 }
 
@@ -368,10 +368,10 @@ func (r ApiGetParentalRatingsRequest) Execute() ([]JellyfinParentalRating, *http
 GetParentalRatings Gets known parental ratings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetParentalRatingsRequest
+ @return LocalizationAPIGetParentalRatingsRequest
 */
-func (a *LocalizationAPIService) GetParentalRatings(ctx context.Context) ApiGetParentalRatingsRequest {
-	return ApiGetParentalRatingsRequest{
+func (a *LocalizationAPIService) GetParentalRatings(ctx context.Context) LocalizationAPIGetParentalRatingsRequest {
+	return LocalizationAPIGetParentalRatingsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -379,7 +379,7 @@ func (a *LocalizationAPIService) GetParentalRatings(ctx context.Context) ApiGetP
 
 // Execute executes the request
 //  @return []JellyfinParentalRating
-func (a *LocalizationAPIService) GetParentalRatingsExecute(r ApiGetParentalRatingsRequest) ([]JellyfinParentalRating, *http.Response, error) {
+func (a *LocalizationAPIService) GetParentalRatingsExecute(r LocalizationAPIGetParentalRatingsRequest) ([]JellyfinParentalRating, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

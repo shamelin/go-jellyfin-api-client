@@ -20,13 +20,13 @@ type JellyfinPluginStatus string
 
 // List of PluginStatus
 const (
-	ACTIVE JellyfinPluginStatus = "Active"
-	RESTART JellyfinPluginStatus = "Restart"
-	DELETED JellyfinPluginStatus = "Deleted"
-	SUPERCEDED JellyfinPluginStatus = "Superceded"
-	MALFUNCTIONED JellyfinPluginStatus = "Malfunctioned"
-	NOT_SUPPORTED JellyfinPluginStatus = "NotSupported"
-	DISABLED JellyfinPluginStatus = "Disabled"
+	JELLYFINPLUGINSTATUS_ACTIVE JellyfinPluginStatus = "Active"
+	JELLYFINPLUGINSTATUS_RESTART JellyfinPluginStatus = "Restart"
+	JELLYFINPLUGINSTATUS_DELETED JellyfinPluginStatus = "Deleted"
+	JELLYFINPLUGINSTATUS_SUPERCEDED JellyfinPluginStatus = "Superceded"
+	JELLYFINPLUGINSTATUS_MALFUNCTIONED JellyfinPluginStatus = "Malfunctioned"
+	JELLYFINPLUGINSTATUS_NOT_SUPPORTED JellyfinPluginStatus = "NotSupported"
+	JELLYFINPLUGINSTATUS_DISABLED JellyfinPluginStatus = "Disabled"
 )
 
 // All allowed values of JellyfinPluginStatus enum

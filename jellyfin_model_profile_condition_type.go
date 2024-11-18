@@ -20,11 +20,11 @@ type JellyfinProfileConditionType string
 
 // List of ProfileConditionType
 const (
-	EQUALS JellyfinProfileConditionType = "Equals"
-	NOT_EQUALS JellyfinProfileConditionType = "NotEquals"
-	LESS_THAN_EQUAL JellyfinProfileConditionType = "LessThanEqual"
-	GREATER_THAN_EQUAL JellyfinProfileConditionType = "GreaterThanEqual"
-	EQUALS_ANY JellyfinProfileConditionType = "EqualsAny"
+	JELLYFINPROFILECONDITIONTYPE_EQUALS JellyfinProfileConditionType = "Equals"
+	JELLYFINPROFILECONDITIONTYPE_NOT_EQUALS JellyfinProfileConditionType = "NotEquals"
+	JELLYFINPROFILECONDITIONTYPE_LESS_THAN_EQUAL JellyfinProfileConditionType = "LessThanEqual"
+	JELLYFINPROFILECONDITIONTYPE_GREATER_THAN_EQUAL JellyfinProfileConditionType = "GreaterThanEqual"
+	JELLYFINPROFILECONDITIONTYPE_EQUALS_ANY JellyfinProfileConditionType = "EqualsAny"
 )
 
 // All allowed values of JellyfinProfileConditionType enum

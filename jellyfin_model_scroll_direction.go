@@ -20,8 +20,8 @@ type JellyfinScrollDirection string
 
 // List of ScrollDirection
 const (
-	HORIZONTAL JellyfinScrollDirection = "Horizontal"
-	VERTICAL JellyfinScrollDirection = "Vertical"
+	JELLYFINSCROLLDIRECTION_HORIZONTAL JellyfinScrollDirection = "Horizontal"
+	JELLYFINSCROLLDIRECTION_VERTICAL JellyfinScrollDirection = "Vertical"
 )
 
 // All allowed values of JellyfinScrollDirection enum

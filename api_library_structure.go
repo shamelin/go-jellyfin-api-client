@@ -23,7 +23,7 @@ import (
 // LibraryStructureAPIService LibraryStructureAPI service
 type LibraryStructureAPIService service
 
-type ApiAddMediaPathRequest struct {
+type LibraryStructureAPIAddMediaPathRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	jellyfinMediaPathDto *JellyfinMediaPathDto
@@ -31,18 +31,18 @@ type ApiAddMediaPathRequest struct {
 }
 
 // The media path dto.
-func (r ApiAddMediaPathRequest) JellyfinMediaPathDto(jellyfinMediaPathDto JellyfinMediaPathDto) ApiAddMediaPathRequest {
+func (r LibraryStructureAPIAddMediaPathRequest) JellyfinMediaPathDto(jellyfinMediaPathDto JellyfinMediaPathDto) LibraryStructureAPIAddMediaPathRequest {
 	r.jellyfinMediaPathDto = &jellyfinMediaPathDto
 	return r
 }
 
 // Whether to refresh the library.
-func (r ApiAddMediaPathRequest) RefreshLibrary(refreshLibrary bool) ApiAddMediaPathRequest {
+func (r LibraryStructureAPIAddMediaPathRequest) RefreshLibrary(refreshLibrary bool) LibraryStructureAPIAddMediaPathRequest {
 	r.refreshLibrary = &refreshLibrary
 	return r
 }
 
-func (r ApiAddMediaPathRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIAddMediaPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AddMediaPathExecute(r)
 }
 
@@ -50,17 +50,17 @@ func (r ApiAddMediaPathRequest) Execute() (*http.Response, error) {
 AddMediaPath Add a media path to a library.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddMediaPathRequest
+ @return LibraryStructureAPIAddMediaPathRequest
 */
-func (a *LibraryStructureAPIService) AddMediaPath(ctx context.Context) ApiAddMediaPathRequest {
-	return ApiAddMediaPathRequest{
+func (a *LibraryStructureAPIService) AddMediaPath(ctx context.Context) LibraryStructureAPIAddMediaPathRequest {
+	return LibraryStructureAPIAddMediaPathRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) AddMediaPathExecute(r ApiAddMediaPathRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) AddMediaPathExecute(r LibraryStructureAPIAddMediaPathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -148,7 +148,7 @@ func (a *LibraryStructureAPIService) AddMediaPathExecute(r ApiAddMediaPathReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiAddVirtualFolderRequest struct {
+type LibraryStructureAPIAddVirtualFolderRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	name *string
@@ -159,36 +159,36 @@ type ApiAddVirtualFolderRequest struct {
 }
 
 // The name of the virtual folder.
-func (r ApiAddVirtualFolderRequest) Name(name string) ApiAddVirtualFolderRequest {
+func (r LibraryStructureAPIAddVirtualFolderRequest) Name(name string) LibraryStructureAPIAddVirtualFolderRequest {
 	r.name = &name
 	return r
 }
 
 // The type of the collection.
-func (r ApiAddVirtualFolderRequest) CollectionType(collectionType JellyfinCollectionTypeOptions) ApiAddVirtualFolderRequest {
+func (r LibraryStructureAPIAddVirtualFolderRequest) CollectionType(collectionType JellyfinCollectionTypeOptions) LibraryStructureAPIAddVirtualFolderRequest {
 	r.collectionType = &collectionType
 	return r
 }
 
 // The paths of the virtual folder.
-func (r ApiAddVirtualFolderRequest) Paths(paths []string) ApiAddVirtualFolderRequest {
+func (r LibraryStructureAPIAddVirtualFolderRequest) Paths(paths []string) LibraryStructureAPIAddVirtualFolderRequest {
 	r.paths = &paths
 	return r
 }
 
 // Whether to refresh the library.
-func (r ApiAddVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) ApiAddVirtualFolderRequest {
+func (r LibraryStructureAPIAddVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) LibraryStructureAPIAddVirtualFolderRequest {
 	r.refreshLibrary = &refreshLibrary
 	return r
 }
 
 // The library options.
-func (r ApiAddVirtualFolderRequest) JellyfinAddVirtualFolderDto(jellyfinAddVirtualFolderDto JellyfinAddVirtualFolderDto) ApiAddVirtualFolderRequest {
+func (r LibraryStructureAPIAddVirtualFolderRequest) JellyfinAddVirtualFolderDto(jellyfinAddVirtualFolderDto JellyfinAddVirtualFolderDto) LibraryStructureAPIAddVirtualFolderRequest {
 	r.jellyfinAddVirtualFolderDto = &jellyfinAddVirtualFolderDto
 	return r
 }
 
-func (r ApiAddVirtualFolderRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIAddVirtualFolderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AddVirtualFolderExecute(r)
 }
 
@@ -196,17 +196,17 @@ func (r ApiAddVirtualFolderRequest) Execute() (*http.Response, error) {
 AddVirtualFolder Adds a virtual folder.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiAddVirtualFolderRequest
+ @return LibraryStructureAPIAddVirtualFolderRequest
 */
-func (a *LibraryStructureAPIService) AddVirtualFolder(ctx context.Context) ApiAddVirtualFolderRequest {
-	return ApiAddVirtualFolderRequest{
+func (a *LibraryStructureAPIService) AddVirtualFolder(ctx context.Context) LibraryStructureAPIAddVirtualFolderRequest {
+	return LibraryStructureAPIAddVirtualFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) AddVirtualFolderExecute(r ApiAddVirtualFolderRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) AddVirtualFolderExecute(r LibraryStructureAPIAddVirtualFolderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -308,12 +308,12 @@ func (a *LibraryStructureAPIService) AddVirtualFolderExecute(r ApiAddVirtualFold
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetVirtualFoldersRequest struct {
+type LibraryStructureAPIGetVirtualFoldersRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 }
 
-func (r ApiGetVirtualFoldersRequest) Execute() ([]JellyfinVirtualFolderInfo, *http.Response, error) {
+func (r LibraryStructureAPIGetVirtualFoldersRequest) Execute() ([]JellyfinVirtualFolderInfo, *http.Response, error) {
 	return r.ApiService.GetVirtualFoldersExecute(r)
 }
 
@@ -321,10 +321,10 @@ func (r ApiGetVirtualFoldersRequest) Execute() ([]JellyfinVirtualFolderInfo, *ht
 GetVirtualFolders Gets all virtual folders.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetVirtualFoldersRequest
+ @return LibraryStructureAPIGetVirtualFoldersRequest
 */
-func (a *LibraryStructureAPIService) GetVirtualFolders(ctx context.Context) ApiGetVirtualFoldersRequest {
-	return ApiGetVirtualFoldersRequest{
+func (a *LibraryStructureAPIService) GetVirtualFolders(ctx context.Context) LibraryStructureAPIGetVirtualFoldersRequest {
+	return LibraryStructureAPIGetVirtualFoldersRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -332,7 +332,7 @@ func (a *LibraryStructureAPIService) GetVirtualFolders(ctx context.Context) ApiG
 
 // Execute executes the request
 //  @return []JellyfinVirtualFolderInfo
-func (a *LibraryStructureAPIService) GetVirtualFoldersExecute(r ApiGetVirtualFoldersRequest) ([]JellyfinVirtualFolderInfo, *http.Response, error) {
+func (a *LibraryStructureAPIService) GetVirtualFoldersExecute(r LibraryStructureAPIGetVirtualFoldersRequest) ([]JellyfinVirtualFolderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -419,7 +419,7 @@ func (a *LibraryStructureAPIService) GetVirtualFoldersExecute(r ApiGetVirtualFol
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiRemoveMediaPathRequest struct {
+type LibraryStructureAPIRemoveMediaPathRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	name *string
@@ -428,24 +428,24 @@ type ApiRemoveMediaPathRequest struct {
 }
 
 // The name of the library.
-func (r ApiRemoveMediaPathRequest) Name(name string) ApiRemoveMediaPathRequest {
+func (r LibraryStructureAPIRemoveMediaPathRequest) Name(name string) LibraryStructureAPIRemoveMediaPathRequest {
 	r.name = &name
 	return r
 }
 
 // The path to remove.
-func (r ApiRemoveMediaPathRequest) Path(path string) ApiRemoveMediaPathRequest {
+func (r LibraryStructureAPIRemoveMediaPathRequest) Path(path string) LibraryStructureAPIRemoveMediaPathRequest {
 	r.path = &path
 	return r
 }
 
 // Whether to refresh the library.
-func (r ApiRemoveMediaPathRequest) RefreshLibrary(refreshLibrary bool) ApiRemoveMediaPathRequest {
+func (r LibraryStructureAPIRemoveMediaPathRequest) RefreshLibrary(refreshLibrary bool) LibraryStructureAPIRemoveMediaPathRequest {
 	r.refreshLibrary = &refreshLibrary
 	return r
 }
 
-func (r ApiRemoveMediaPathRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIRemoveMediaPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveMediaPathExecute(r)
 }
 
@@ -453,17 +453,17 @@ func (r ApiRemoveMediaPathRequest) Execute() (*http.Response, error) {
 RemoveMediaPath Remove a media path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveMediaPathRequest
+ @return LibraryStructureAPIRemoveMediaPathRequest
 */
-func (a *LibraryStructureAPIService) RemoveMediaPath(ctx context.Context) ApiRemoveMediaPathRequest {
-	return ApiRemoveMediaPathRequest{
+func (a *LibraryStructureAPIService) RemoveMediaPath(ctx context.Context) LibraryStructureAPIRemoveMediaPathRequest {
+	return LibraryStructureAPIRemoveMediaPathRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) RemoveMediaPathExecute(r ApiRemoveMediaPathRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) RemoveMediaPathExecute(r LibraryStructureAPIRemoveMediaPathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -552,7 +552,7 @@ func (a *LibraryStructureAPIService) RemoveMediaPathExecute(r ApiRemoveMediaPath
 	return localVarHTTPResponse, nil
 }
 
-type ApiRemoveVirtualFolderRequest struct {
+type LibraryStructureAPIRemoveVirtualFolderRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	name *string
@@ -560,18 +560,18 @@ type ApiRemoveVirtualFolderRequest struct {
 }
 
 // The name of the folder.
-func (r ApiRemoveVirtualFolderRequest) Name(name string) ApiRemoveVirtualFolderRequest {
+func (r LibraryStructureAPIRemoveVirtualFolderRequest) Name(name string) LibraryStructureAPIRemoveVirtualFolderRequest {
 	r.name = &name
 	return r
 }
 
 // Whether to refresh the library.
-func (r ApiRemoveVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) ApiRemoveVirtualFolderRequest {
+func (r LibraryStructureAPIRemoveVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) LibraryStructureAPIRemoveVirtualFolderRequest {
 	r.refreshLibrary = &refreshLibrary
 	return r
 }
 
-func (r ApiRemoveVirtualFolderRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIRemoveVirtualFolderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RemoveVirtualFolderExecute(r)
 }
 
@@ -579,17 +579,17 @@ func (r ApiRemoveVirtualFolderRequest) Execute() (*http.Response, error) {
 RemoveVirtualFolder Removes a virtual folder.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRemoveVirtualFolderRequest
+ @return LibraryStructureAPIRemoveVirtualFolderRequest
 */
-func (a *LibraryStructureAPIService) RemoveVirtualFolder(ctx context.Context) ApiRemoveVirtualFolderRequest {
-	return ApiRemoveVirtualFolderRequest{
+func (a *LibraryStructureAPIService) RemoveVirtualFolder(ctx context.Context) LibraryStructureAPIRemoveVirtualFolderRequest {
+	return LibraryStructureAPIRemoveVirtualFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) RemoveVirtualFolderExecute(r ApiRemoveVirtualFolderRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) RemoveVirtualFolderExecute(r LibraryStructureAPIRemoveVirtualFolderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
@@ -675,7 +675,7 @@ func (a *LibraryStructureAPIService) RemoveVirtualFolderExecute(r ApiRemoveVirtu
 	return localVarHTTPResponse, nil
 }
 
-type ApiRenameVirtualFolderRequest struct {
+type LibraryStructureAPIRenameVirtualFolderRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	name *string
@@ -684,24 +684,24 @@ type ApiRenameVirtualFolderRequest struct {
 }
 
 // The name of the virtual folder.
-func (r ApiRenameVirtualFolderRequest) Name(name string) ApiRenameVirtualFolderRequest {
+func (r LibraryStructureAPIRenameVirtualFolderRequest) Name(name string) LibraryStructureAPIRenameVirtualFolderRequest {
 	r.name = &name
 	return r
 }
 
 // The new name.
-func (r ApiRenameVirtualFolderRequest) NewName(newName string) ApiRenameVirtualFolderRequest {
+func (r LibraryStructureAPIRenameVirtualFolderRequest) NewName(newName string) LibraryStructureAPIRenameVirtualFolderRequest {
 	r.newName = &newName
 	return r
 }
 
 // Whether to refresh the library.
-func (r ApiRenameVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) ApiRenameVirtualFolderRequest {
+func (r LibraryStructureAPIRenameVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) LibraryStructureAPIRenameVirtualFolderRequest {
 	r.refreshLibrary = &refreshLibrary
 	return r
 }
 
-func (r ApiRenameVirtualFolderRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIRenameVirtualFolderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.RenameVirtualFolderExecute(r)
 }
 
@@ -709,17 +709,17 @@ func (r ApiRenameVirtualFolderRequest) Execute() (*http.Response, error) {
 RenameVirtualFolder Renames a virtual folder.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiRenameVirtualFolderRequest
+ @return LibraryStructureAPIRenameVirtualFolderRequest
 */
-func (a *LibraryStructureAPIService) RenameVirtualFolder(ctx context.Context) ApiRenameVirtualFolderRequest {
-	return ApiRenameVirtualFolderRequest{
+func (a *LibraryStructureAPIService) RenameVirtualFolder(ctx context.Context) LibraryStructureAPIRenameVirtualFolderRequest {
+	return LibraryStructureAPIRenameVirtualFolderRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r ApiRenameVirtualFolderRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r LibraryStructureAPIRenameVirtualFolderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -830,19 +830,19 @@ func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r ApiRenameVirtu
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateLibraryOptionsRequest struct {
+type LibraryStructureAPIUpdateLibraryOptionsRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	jellyfinUpdateLibraryOptionsDto *JellyfinUpdateLibraryOptionsDto
 }
 
 // The library name and options.
-func (r ApiUpdateLibraryOptionsRequest) JellyfinUpdateLibraryOptionsDto(jellyfinUpdateLibraryOptionsDto JellyfinUpdateLibraryOptionsDto) ApiUpdateLibraryOptionsRequest {
+func (r LibraryStructureAPIUpdateLibraryOptionsRequest) JellyfinUpdateLibraryOptionsDto(jellyfinUpdateLibraryOptionsDto JellyfinUpdateLibraryOptionsDto) LibraryStructureAPIUpdateLibraryOptionsRequest {
 	r.jellyfinUpdateLibraryOptionsDto = &jellyfinUpdateLibraryOptionsDto
 	return r
 }
 
-func (r ApiUpdateLibraryOptionsRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIUpdateLibraryOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateLibraryOptionsExecute(r)
 }
 
@@ -850,17 +850,17 @@ func (r ApiUpdateLibraryOptionsRequest) Execute() (*http.Response, error) {
 UpdateLibraryOptions Update library options.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateLibraryOptionsRequest
+ @return LibraryStructureAPIUpdateLibraryOptionsRequest
 */
-func (a *LibraryStructureAPIService) UpdateLibraryOptions(ctx context.Context) ApiUpdateLibraryOptionsRequest {
-	return ApiUpdateLibraryOptionsRequest{
+func (a *LibraryStructureAPIService) UpdateLibraryOptions(ctx context.Context) LibraryStructureAPIUpdateLibraryOptionsRequest {
+	return LibraryStructureAPIUpdateLibraryOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r ApiUpdateLibraryOptionsRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r LibraryStructureAPIUpdateLibraryOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -950,19 +950,19 @@ func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r ApiUpdateLibr
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateMediaPathRequest struct {
+type LibraryStructureAPIUpdateMediaPathRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	jellyfinUpdateMediaPathRequestDto *JellyfinUpdateMediaPathRequestDto
 }
 
 // The name of the library and path infos.
-func (r ApiUpdateMediaPathRequest) JellyfinUpdateMediaPathRequestDto(jellyfinUpdateMediaPathRequestDto JellyfinUpdateMediaPathRequestDto) ApiUpdateMediaPathRequest {
+func (r LibraryStructureAPIUpdateMediaPathRequest) JellyfinUpdateMediaPathRequestDto(jellyfinUpdateMediaPathRequestDto JellyfinUpdateMediaPathRequestDto) LibraryStructureAPIUpdateMediaPathRequest {
 	r.jellyfinUpdateMediaPathRequestDto = &jellyfinUpdateMediaPathRequestDto
 	return r
 }
 
-func (r ApiUpdateMediaPathRequest) Execute() (*http.Response, error) {
+func (r LibraryStructureAPIUpdateMediaPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateMediaPathExecute(r)
 }
 
@@ -970,17 +970,17 @@ func (r ApiUpdateMediaPathRequest) Execute() (*http.Response, error) {
 UpdateMediaPath Updates a media path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateMediaPathRequest
+ @return LibraryStructureAPIUpdateMediaPathRequest
 */
-func (a *LibraryStructureAPIService) UpdateMediaPath(ctx context.Context) ApiUpdateMediaPathRequest {
-	return ApiUpdateMediaPathRequest{
+func (a *LibraryStructureAPIService) UpdateMediaPath(ctx context.Context) LibraryStructureAPIUpdateMediaPathRequest {
+	return LibraryStructureAPIUpdateMediaPathRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LibraryStructureAPIService) UpdateMediaPathExecute(r ApiUpdateMediaPathRequest) (*http.Response, error) {
+func (a *LibraryStructureAPIService) UpdateMediaPathExecute(r LibraryStructureAPIUpdateMediaPathRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

@@ -20,19 +20,19 @@ type JellyfinImageType string
 
 // List of ImageType
 const (
-	PRIMARY JellyfinImageType = "Primary"
-	ART JellyfinImageType = "Art"
-	BACKDROP JellyfinImageType = "Backdrop"
-	BANNER JellyfinImageType = "Banner"
-	LOGO JellyfinImageType = "Logo"
-	THUMB JellyfinImageType = "Thumb"
-	DISC JellyfinImageType = "Disc"
-	BOX JellyfinImageType = "Box"
-	SCREENSHOT JellyfinImageType = "Screenshot"
-	MENU JellyfinImageType = "Menu"
-	CHAPTER JellyfinImageType = "Chapter"
-	BOX_REAR JellyfinImageType = "BoxRear"
-	PROFILE JellyfinImageType = "Profile"
+	JELLYFINIMAGETYPE_PRIMARY JellyfinImageType = "Primary"
+	JELLYFINIMAGETYPE_ART JellyfinImageType = "Art"
+	JELLYFINIMAGETYPE_BACKDROP JellyfinImageType = "Backdrop"
+	JELLYFINIMAGETYPE_BANNER JellyfinImageType = "Banner"
+	JELLYFINIMAGETYPE_LOGO JellyfinImageType = "Logo"
+	JELLYFINIMAGETYPE_THUMB JellyfinImageType = "Thumb"
+	JELLYFINIMAGETYPE_DISC JellyfinImageType = "Disc"
+	JELLYFINIMAGETYPE_BOX JellyfinImageType = "Box"
+	JELLYFINIMAGETYPE_SCREENSHOT JellyfinImageType = "Screenshot"
+	JELLYFINIMAGETYPE_MENU JellyfinImageType = "Menu"
+	JELLYFINIMAGETYPE_CHAPTER JellyfinImageType = "Chapter"
+	JELLYFINIMAGETYPE_BOX_REAR JellyfinImageType = "BoxRear"
+	JELLYFINIMAGETYPE_PROFILE JellyfinImageType = "Profile"
 )
 
 // All allowed values of JellyfinImageType enum

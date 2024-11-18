@@ -20,11 +20,11 @@ type JellyfinPlayCommand string
 
 // List of PlayCommand
 const (
-	PLAY_NOW JellyfinPlayCommand = "PlayNow"
-	PLAY_NEXT JellyfinPlayCommand = "PlayNext"
-	PLAY_LAST JellyfinPlayCommand = "PlayLast"
-	PLAY_INSTANT_MIX JellyfinPlayCommand = "PlayInstantMix"
-	PLAY_SHUFFLE JellyfinPlayCommand = "PlayShuffle"
+	JELLYFINPLAYCOMMAND_PLAY_NOW JellyfinPlayCommand = "PlayNow"
+	JELLYFINPLAYCOMMAND_PLAY_NEXT JellyfinPlayCommand = "PlayNext"
+	JELLYFINPLAYCOMMAND_PLAY_LAST JellyfinPlayCommand = "PlayLast"
+	JELLYFINPLAYCOMMAND_PLAY_INSTANT_MIX JellyfinPlayCommand = "PlayInstantMix"
+	JELLYFINPLAYCOMMAND_PLAY_SHUFFLE JellyfinPlayCommand = "PlayShuffle"
 )
 
 // All allowed values of JellyfinPlayCommand enum

@@ -20,12 +20,12 @@ type JellyfinMediaSegmentType string
 
 // List of MediaSegmentType
 const (
-	UNKNOWN JellyfinMediaSegmentType = "Unknown"
-	COMMERCIAL JellyfinMediaSegmentType = "Commercial"
-	PREVIEW JellyfinMediaSegmentType = "Preview"
-	RECAP JellyfinMediaSegmentType = "Recap"
-	OUTRO JellyfinMediaSegmentType = "Outro"
-	INTRO JellyfinMediaSegmentType = "Intro"
+	JELLYFINMEDIASEGMENTTYPE_UNKNOWN JellyfinMediaSegmentType = "Unknown"
+	JELLYFINMEDIASEGMENTTYPE_COMMERCIAL JellyfinMediaSegmentType = "Commercial"
+	JELLYFINMEDIASEGMENTTYPE_PREVIEW JellyfinMediaSegmentType = "Preview"
+	JELLYFINMEDIASEGMENTTYPE_RECAP JellyfinMediaSegmentType = "Recap"
+	JELLYFINMEDIASEGMENTTYPE_OUTRO JellyfinMediaSegmentType = "Outro"
+	JELLYFINMEDIASEGMENTTYPE_INTRO JellyfinMediaSegmentType = "Intro"
 )
 
 // All allowed values of JellyfinMediaSegmentType enum

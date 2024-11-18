@@ -22,12 +22,12 @@ import (
 // TimeSyncAPIService TimeSyncAPI service
 type TimeSyncAPIService service
 
-type ApiGetUtcTimeRequest struct {
+type TimeSyncAPIGetUtcTimeRequest struct {
 	ctx context.Context
 	ApiService *TimeSyncAPIService
 }
 
-func (r ApiGetUtcTimeRequest) Execute() (*JellyfinUtcTimeResponse, *http.Response, error) {
+func (r TimeSyncAPIGetUtcTimeRequest) Execute() (*JellyfinUtcTimeResponse, *http.Response, error) {
 	return r.ApiService.GetUtcTimeExecute(r)
 }
 
@@ -35,10 +35,10 @@ func (r ApiGetUtcTimeRequest) Execute() (*JellyfinUtcTimeResponse, *http.Respons
 GetUtcTime Gets the current UTC time.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetUtcTimeRequest
+ @return TimeSyncAPIGetUtcTimeRequest
 */
-func (a *TimeSyncAPIService) GetUtcTime(ctx context.Context) ApiGetUtcTimeRequest {
-	return ApiGetUtcTimeRequest{
+func (a *TimeSyncAPIService) GetUtcTime(ctx context.Context) TimeSyncAPIGetUtcTimeRequest {
+	return TimeSyncAPIGetUtcTimeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *TimeSyncAPIService) GetUtcTime(ctx context.Context) ApiGetUtcTimeReques
 
 // Execute executes the request
 //  @return JellyfinUtcTimeResponse
-func (a *TimeSyncAPIService) GetUtcTimeExecute(r ApiGetUtcTimeRequest) (*JellyfinUtcTimeResponse, *http.Response, error) {
+func (a *TimeSyncAPIService) GetUtcTimeExecute(r TimeSyncAPIGetUtcTimeRequest) (*JellyfinUtcTimeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

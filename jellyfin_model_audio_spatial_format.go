@@ -20,9 +20,9 @@ type JellyfinAudioSpatialFormat string
 
 // List of AudioSpatialFormat
 const (
-	NONE JellyfinAudioSpatialFormat = "None"
-	DOLBY_ATMOS JellyfinAudioSpatialFormat = "DolbyAtmos"
-	DTSX JellyfinAudioSpatialFormat = "DTSX"
+	JELLYFINAUDIOSPATIALFORMAT_NONE JellyfinAudioSpatialFormat = "None"
+	JELLYFINAUDIOSPATIALFORMAT_DOLBY_ATMOS JellyfinAudioSpatialFormat = "DolbyAtmos"
+	JELLYFINAUDIOSPATIALFORMAT_DTSX JellyfinAudioSpatialFormat = "DTSX"
 )
 
 // All allowed values of JellyfinAudioSpatialFormat enum

@@ -20,8 +20,8 @@ type JellyfinRatingType string
 
 // List of RatingType
 const (
-	SCORE JellyfinRatingType = "Score"
-	LIKES JellyfinRatingType = "Likes"
+	JELLYFINRATINGTYPE_SCORE JellyfinRatingType = "Score"
+	JELLYFINRATINGTYPE_LIKES JellyfinRatingType = "Likes"
 )
 
 // All allowed values of JellyfinRatingType enum

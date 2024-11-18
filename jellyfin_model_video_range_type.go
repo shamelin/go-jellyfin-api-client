@@ -20,15 +20,15 @@ type JellyfinVideoRangeType string
 
 // List of VideoRangeType
 const (
-	UNKNOWN JellyfinVideoRangeType = "Unknown"
-	SDR JellyfinVideoRangeType = "SDR"
-	HDR10 JellyfinVideoRangeType = "HDR10"
-	HLG JellyfinVideoRangeType = "HLG"
-	DOVI JellyfinVideoRangeType = "DOVI"
-	DOVI_WITH_HDR10 JellyfinVideoRangeType = "DOVIWithHDR10"
-	DOVI_WITH_HLG JellyfinVideoRangeType = "DOVIWithHLG"
-	DOVI_WITH_SDR JellyfinVideoRangeType = "DOVIWithSDR"
-	HDR10_PLUS JellyfinVideoRangeType = "HDR10Plus"
+	JELLYFINVIDEORANGETYPE_UNKNOWN JellyfinVideoRangeType = "Unknown"
+	JELLYFINVIDEORANGETYPE_SDR JellyfinVideoRangeType = "SDR"
+	JELLYFINVIDEORANGETYPE_HDR10 JellyfinVideoRangeType = "HDR10"
+	JELLYFINVIDEORANGETYPE_HLG JellyfinVideoRangeType = "HLG"
+	JELLYFINVIDEORANGETYPE_DOVI JellyfinVideoRangeType = "DOVI"
+	JELLYFINVIDEORANGETYPE_DOVI_WITH_HDR10 JellyfinVideoRangeType = "DOVIWithHDR10"
+	JELLYFINVIDEORANGETYPE_DOVI_WITH_HLG JellyfinVideoRangeType = "DOVIWithHLG"
+	JELLYFINVIDEORANGETYPE_DOVI_WITH_SDR JellyfinVideoRangeType = "DOVIWithSDR"
+	JELLYFINVIDEORANGETYPE_HDR10_PLUS JellyfinVideoRangeType = "HDR10Plus"
 )
 
 // All allowed values of JellyfinVideoRangeType enum

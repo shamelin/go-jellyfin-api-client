@@ -24,12 +24,12 @@ import (
 // ConfigurationAPIService ConfigurationAPI service
 type ConfigurationAPIService service
 
-type ApiGetConfigurationRequest struct {
+type ConfigurationAPIGetConfigurationRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
 }
 
-func (r ApiGetConfigurationRequest) Execute() (*JellyfinServerConfiguration, *http.Response, error) {
+func (r ConfigurationAPIGetConfigurationRequest) Execute() (*JellyfinServerConfiguration, *http.Response, error) {
 	return r.ApiService.GetConfigurationExecute(r)
 }
 
@@ -37,10 +37,10 @@ func (r ApiGetConfigurationRequest) Execute() (*JellyfinServerConfiguration, *ht
 GetConfiguration Gets application configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigurationRequest
+ @return ConfigurationAPIGetConfigurationRequest
 */
-func (a *ConfigurationAPIService) GetConfiguration(ctx context.Context) ApiGetConfigurationRequest {
-	return ApiGetConfigurationRequest{
+func (a *ConfigurationAPIService) GetConfiguration(ctx context.Context) ConfigurationAPIGetConfigurationRequest {
+	return ConfigurationAPIGetConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -48,7 +48,7 @@ func (a *ConfigurationAPIService) GetConfiguration(ctx context.Context) ApiGetCo
 
 // Execute executes the request
 //  @return JellyfinServerConfiguration
-func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*JellyfinServerConfiguration, *http.Response, error) {
+func (a *ConfigurationAPIService) GetConfigurationExecute(r ConfigurationAPIGetConfigurationRequest) (*JellyfinServerConfiguration, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -135,12 +135,12 @@ func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetDefaultMetadataOptionsRequest struct {
+type ConfigurationAPIGetDefaultMetadataOptionsRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
 }
 
-func (r ApiGetDefaultMetadataOptionsRequest) Execute() (*JellyfinMetadataOptions, *http.Response, error) {
+func (r ConfigurationAPIGetDefaultMetadataOptionsRequest) Execute() (*JellyfinMetadataOptions, *http.Response, error) {
 	return r.ApiService.GetDefaultMetadataOptionsExecute(r)
 }
 
@@ -148,10 +148,10 @@ func (r ApiGetDefaultMetadataOptionsRequest) Execute() (*JellyfinMetadataOptions
 GetDefaultMetadataOptions Gets a default MetadataOptions object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetDefaultMetadataOptionsRequest
+ @return ConfigurationAPIGetDefaultMetadataOptionsRequest
 */
-func (a *ConfigurationAPIService) GetDefaultMetadataOptions(ctx context.Context) ApiGetDefaultMetadataOptionsRequest {
-	return ApiGetDefaultMetadataOptionsRequest{
+func (a *ConfigurationAPIService) GetDefaultMetadataOptions(ctx context.Context) ConfigurationAPIGetDefaultMetadataOptionsRequest {
+	return ConfigurationAPIGetDefaultMetadataOptionsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -159,7 +159,7 @@ func (a *ConfigurationAPIService) GetDefaultMetadataOptions(ctx context.Context)
 
 // Execute executes the request
 //  @return JellyfinMetadataOptions
-func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefaultMetadataOptionsRequest) (*JellyfinMetadataOptions, *http.Response, error) {
+func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ConfigurationAPIGetDefaultMetadataOptionsRequest) (*JellyfinMetadataOptions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -246,13 +246,13 @@ func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefau
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetNamedConfigurationRequest struct {
+type ConfigurationAPIGetNamedConfigurationRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
 	key string
 }
 
-func (r ApiGetNamedConfigurationRequest) Execute() (*os.File, *http.Response, error) {
+func (r ConfigurationAPIGetNamedConfigurationRequest) Execute() (*os.File, *http.Response, error) {
 	return r.ApiService.GetNamedConfigurationExecute(r)
 }
 
@@ -261,10 +261,10 @@ GetNamedConfiguration Gets a named configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param key Configuration key.
- @return ApiGetNamedConfigurationRequest
+ @return ConfigurationAPIGetNamedConfigurationRequest
 */
-func (a *ConfigurationAPIService) GetNamedConfiguration(ctx context.Context, key string) ApiGetNamedConfigurationRequest {
-	return ApiGetNamedConfigurationRequest{
+func (a *ConfigurationAPIService) GetNamedConfiguration(ctx context.Context, key string) ConfigurationAPIGetNamedConfigurationRequest {
+	return ConfigurationAPIGetNamedConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 		key: key,
@@ -273,7 +273,7 @@ func (a *ConfigurationAPIService) GetNamedConfiguration(ctx context.Context, key
 
 // Execute executes the request
 //  @return *os.File
-func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ApiGetNamedConfigurationRequest) (*os.File, *http.Response, error) {
+func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ConfigurationAPIGetNamedConfigurationRequest) (*os.File, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -361,19 +361,19 @@ func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ApiGetNamedConf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdateConfigurationRequest struct {
+type ConfigurationAPIUpdateConfigurationRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
 	jellyfinServerConfiguration *JellyfinServerConfiguration
 }
 
 // Configuration.
-func (r ApiUpdateConfigurationRequest) JellyfinServerConfiguration(jellyfinServerConfiguration JellyfinServerConfiguration) ApiUpdateConfigurationRequest {
+func (r ConfigurationAPIUpdateConfigurationRequest) JellyfinServerConfiguration(jellyfinServerConfiguration JellyfinServerConfiguration) ConfigurationAPIUpdateConfigurationRequest {
 	r.jellyfinServerConfiguration = &jellyfinServerConfiguration
 	return r
 }
 
-func (r ApiUpdateConfigurationRequest) Execute() (*http.Response, error) {
+func (r ConfigurationAPIUpdateConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateConfigurationExecute(r)
 }
 
@@ -381,17 +381,17 @@ func (r ApiUpdateConfigurationRequest) Execute() (*http.Response, error) {
 UpdateConfiguration Updates application configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiUpdateConfigurationRequest
+ @return ConfigurationAPIUpdateConfigurationRequest
 */
-func (a *ConfigurationAPIService) UpdateConfiguration(ctx context.Context) ApiUpdateConfigurationRequest {
-	return ApiUpdateConfigurationRequest{
+func (a *ConfigurationAPIService) UpdateConfiguration(ctx context.Context) ConfigurationAPIUpdateConfigurationRequest {
+	return ConfigurationAPIUpdateConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigurationRequest) (*http.Response, error) {
+func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ConfigurationAPIUpdateConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -473,7 +473,7 @@ func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigur
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdateNamedConfigurationRequest struct {
+type ConfigurationAPIUpdateNamedConfigurationRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
 	key string
@@ -481,12 +481,12 @@ type ApiUpdateNamedConfigurationRequest struct {
 }
 
 // Configuration.
-func (r ApiUpdateNamedConfigurationRequest) Body(body interface{}) ApiUpdateNamedConfigurationRequest {
+func (r ConfigurationAPIUpdateNamedConfigurationRequest) Body(body interface{}) ConfigurationAPIUpdateNamedConfigurationRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdateNamedConfigurationRequest) Execute() (*http.Response, error) {
+func (r ConfigurationAPIUpdateNamedConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.UpdateNamedConfigurationExecute(r)
 }
 
@@ -495,10 +495,10 @@ UpdateNamedConfiguration Updates named configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param key Configuration key.
- @return ApiUpdateNamedConfigurationRequest
+ @return ConfigurationAPIUpdateNamedConfigurationRequest
 */
-func (a *ConfigurationAPIService) UpdateNamedConfiguration(ctx context.Context, key string) ApiUpdateNamedConfigurationRequest {
-	return ApiUpdateNamedConfigurationRequest{
+func (a *ConfigurationAPIService) UpdateNamedConfiguration(ctx context.Context, key string) ConfigurationAPIUpdateNamedConfigurationRequest {
+	return ConfigurationAPIUpdateNamedConfigurationRequest{
 		ApiService: a,
 		ctx: ctx,
 		key: key,
@@ -506,7 +506,7 @@ func (a *ConfigurationAPIService) UpdateNamedConfiguration(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *ConfigurationAPIService) UpdateNamedConfigurationExecute(r ApiUpdateNamedConfigurationRequest) (*http.Response, error) {
+func (a *ConfigurationAPIService) UpdateNamedConfigurationExecute(r ConfigurationAPIUpdateNamedConfigurationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}

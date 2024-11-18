@@ -24,7 +24,7 @@ import (
 // MediaSegmentsAPIService MediaSegmentsAPI service
 type MediaSegmentsAPIService service
 
-type ApiGetItemSegmentsRequest struct {
+type MediaSegmentsAPIGetItemSegmentsRequest struct {
 	ctx context.Context
 	ApiService *MediaSegmentsAPIService
 	itemId string
@@ -32,12 +32,12 @@ type ApiGetItemSegmentsRequest struct {
 }
 
 // Optional filter of requested segment types.
-func (r ApiGetItemSegmentsRequest) IncludeSegmentTypes(includeSegmentTypes []JellyfinMediaSegmentType) ApiGetItemSegmentsRequest {
+func (r MediaSegmentsAPIGetItemSegmentsRequest) IncludeSegmentTypes(includeSegmentTypes []JellyfinMediaSegmentType) MediaSegmentsAPIGetItemSegmentsRequest {
 	r.includeSegmentTypes = &includeSegmentTypes
 	return r
 }
 
-func (r ApiGetItemSegmentsRequest) Execute() (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
+func (r MediaSegmentsAPIGetItemSegmentsRequest) Execute() (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetItemSegmentsExecute(r)
 }
 
@@ -46,10 +46,10 @@ GetItemSegments Gets all media segments based on an itemId.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param itemId The ItemId.
- @return ApiGetItemSegmentsRequest
+ @return MediaSegmentsAPIGetItemSegmentsRequest
 */
-func (a *MediaSegmentsAPIService) GetItemSegments(ctx context.Context, itemId string) ApiGetItemSegmentsRequest {
-	return ApiGetItemSegmentsRequest{
+func (a *MediaSegmentsAPIService) GetItemSegments(ctx context.Context, itemId string) MediaSegmentsAPIGetItemSegmentsRequest {
+	return MediaSegmentsAPIGetItemSegmentsRequest{
 		ApiService: a,
 		ctx: ctx,
 		itemId: itemId,
@@ -58,7 +58,7 @@ func (a *MediaSegmentsAPIService) GetItemSegments(ctx context.Context, itemId st
 
 // Execute executes the request
 //  @return JellyfinMediaSegmentDtoQueryResult
-func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsRequest) (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
+func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r MediaSegmentsAPIGetItemSegmentsRequest) (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}

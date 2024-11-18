@@ -20,9 +20,9 @@ type JellyfinGroupRepeatMode string
 
 // List of GroupRepeatMode
 const (
-	REPEAT_ONE JellyfinGroupRepeatMode = "RepeatOne"
-	REPEAT_ALL JellyfinGroupRepeatMode = "RepeatAll"
-	REPEAT_NONE JellyfinGroupRepeatMode = "RepeatNone"
+	JELLYFINGROUPREPEATMODE_REPEAT_ONE JellyfinGroupRepeatMode = "RepeatOne"
+	JELLYFINGROUPREPEATMODE_REPEAT_ALL JellyfinGroupRepeatMode = "RepeatAll"
+	JELLYFINGROUPREPEATMODE_REPEAT_NONE JellyfinGroupRepeatMode = "RepeatNone"
 )
 
 // All allowed values of JellyfinGroupRepeatMode enum

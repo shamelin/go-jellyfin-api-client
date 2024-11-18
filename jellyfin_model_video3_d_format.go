@@ -20,11 +20,11 @@ type JellyfinVideo3DFormat string
 
 // List of Video3DFormat
 const (
-	HALF_SIDE_BY_SIDE JellyfinVideo3DFormat = "HalfSideBySide"
-	FULL_SIDE_BY_SIDE JellyfinVideo3DFormat = "FullSideBySide"
-	FULL_TOP_AND_BOTTOM JellyfinVideo3DFormat = "FullTopAndBottom"
-	HALF_TOP_AND_BOTTOM JellyfinVideo3DFormat = "HalfTopAndBottom"
-	MVC JellyfinVideo3DFormat = "MVC"
+	JELLYFINVIDEO3DFORMAT_HALF_SIDE_BY_SIDE JellyfinVideo3DFormat = "HalfSideBySide"
+	JELLYFINVIDEO3DFORMAT_FULL_SIDE_BY_SIDE JellyfinVideo3DFormat = "FullSideBySide"
+	JELLYFINVIDEO3DFORMAT_FULL_TOP_AND_BOTTOM JellyfinVideo3DFormat = "FullTopAndBottom"
+	JELLYFINVIDEO3DFORMAT_HALF_TOP_AND_BOTTOM JellyfinVideo3DFormat = "HalfTopAndBottom"
+	JELLYFINVIDEO3DFORMAT_MVC JellyfinVideo3DFormat = "MVC"
 )
 
 // All allowed values of JellyfinVideo3DFormat enum

@@ -20,13 +20,13 @@ type JellyfinRecordingStatus string
 
 // List of RecordingStatus
 const (
-	NEW JellyfinRecordingStatus = "New"
-	IN_PROGRESS JellyfinRecordingStatus = "InProgress"
-	COMPLETED JellyfinRecordingStatus = "Completed"
-	CANCELLED JellyfinRecordingStatus = "Cancelled"
-	CONFLICTED_OK JellyfinRecordingStatus = "ConflictedOk"
-	CONFLICTED_NOT_OK JellyfinRecordingStatus = "ConflictedNotOk"
-	ERROR JellyfinRecordingStatus = "Error"
+	JELLYFINRECORDINGSTATUS_NEW JellyfinRecordingStatus = "New"
+	JELLYFINRECORDINGSTATUS_IN_PROGRESS JellyfinRecordingStatus = "InProgress"
+	JELLYFINRECORDINGSTATUS_COMPLETED JellyfinRecordingStatus = "Completed"
+	JELLYFINRECORDINGSTATUS_CANCELLED JellyfinRecordingStatus = "Cancelled"
+	JELLYFINRECORDINGSTATUS_CONFLICTED_OK JellyfinRecordingStatus = "ConflictedOk"
+	JELLYFINRECORDINGSTATUS_CONFLICTED_NOT_OK JellyfinRecordingStatus = "ConflictedNotOk"
+	JELLYFINRECORDINGSTATUS_ERROR JellyfinRecordingStatus = "Error"
 )
 
 // All allowed values of JellyfinRecordingStatus enum
