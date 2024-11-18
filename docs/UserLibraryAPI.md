@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## DeleteUserItemRating
 
-> UserItemDataDto DeleteUserItemRating(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinUserItemDataDto DeleteUserItemRating(ctx, itemId).UserId(userId).Execute()
 
 Deletes a user's saved personal rating for an item.
 
@@ -46,7 +46,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.DeleteUserItemRating``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteUserItemRating`: UserItemDataDto
+	// response from `DeleteUserItemRating`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.DeleteUserItemRating`: %v\n", resp)
 }
 ```
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## GetIntros
 
-> BaseItemDtoQueryResult GetIntros(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetIntros(ctx, itemId).UserId(userId).Execute()
 
 Gets intros to play before the main media item plays.
 
@@ -116,7 +116,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetIntros``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetIntros`: BaseItemDtoQueryResult
+	// response from `GetIntros`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetIntros`: %v\n", resp)
 }
 ```
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetItem
 
-> BaseItemDto GetItem(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetItem(ctx, itemId).UserId(userId).Execute()
 
 Gets an item from a user's library.
 
@@ -186,7 +186,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetItem`: BaseItemDto
+	// response from `GetItem`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetItem`: %v\n", resp)
 }
 ```
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetLatestMedia
 
-> []BaseItemDto GetLatestMedia(ctx).UserId(userId).ParentId(parentId).Fields(fields).IncludeItemTypes(includeItemTypes).IsPlayed(isPlayed).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).EnableUserData(enableUserData).Limit(limit).GroupItems(groupItems).Execute()
+> []JellyfinJellyfinBaseItemDto GetLatestMedia(ctx).UserId(userId).ParentId(parentId).Fields(fields).IncludeItemTypes(includeItemTypes).IsPlayed(isPlayed).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).EnableUserData(enableUserData).Limit(limit).GroupItems(groupItems).Execute()
 
 Gets latest media.
 
@@ -248,12 +248,12 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User id. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
 	isPlayed := true // bool | Filter by items that are played, or not. (optional)
 	enableImages := true // bool | Optional. include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. the max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	enableUserData := true // bool | Optional. include user data. (optional)
 	limit := int32(56) // int32 | Return item limit. (optional) (default to 20)
 	groupItems := true // bool | Whether or not to group items into a parent container. (optional) (default to true)
@@ -265,7 +265,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetLatestMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLatestMedia`: []BaseItemDto
+	// response from `GetLatestMedia`: []JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetLatestMedia`: %v\n", resp)
 }
 ```
@@ -283,19 +283,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | User id. | 
  **parentId** | **string** | Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
  **isPlayed** | **bool** | Filter by items that are played, or not. | 
  **enableImages** | **bool** | Optional. include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. the max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **enableUserData** | **bool** | Optional. include user data. | 
  **limit** | **int32** | Return item limit. | [default to 20]
  **groupItems** | **bool** | Whether or not to group items into a parent container. | [default to true]
 
 ### Return type
 
-[**[]BaseItemDto**](BaseItemDto.md)
+[**[]JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ## GetLocalTrailers
 
-> []BaseItemDto GetLocalTrailers(ctx, itemId).UserId(userId).Execute()
+> []JellyfinJellyfinBaseItemDto GetLocalTrailers(ctx, itemId).UserId(userId).Execute()
 
 Gets local trailers for an item.
 
@@ -340,7 +340,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetLocalTrailers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLocalTrailers`: []BaseItemDto
+	// response from `GetLocalTrailers`: []JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetLocalTrailers`: %v\n", resp)
 }
 ```
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]BaseItemDto**](BaseItemDto.md)
+[**[]JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ## GetRootFolder
 
-> BaseItemDto GetRootFolder(ctx).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetRootFolder(ctx).UserId(userId).Execute()
 
 Gets the root folder from a user's library.
 
@@ -409,7 +409,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetRootFolder``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRootFolder`: BaseItemDto
+	// response from `GetRootFolder`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetRootFolder`: %v\n", resp)
 }
 ```
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ## GetSpecialFeatures
 
-> []BaseItemDto GetSpecialFeatures(ctx, itemId).UserId(userId).Execute()
+> []JellyfinJellyfinBaseItemDto GetSpecialFeatures(ctx, itemId).UserId(userId).Execute()
 
 Gets special features for an item.
 
@@ -474,7 +474,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.GetSpecialFeatures``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSpecialFeatures`: []BaseItemDto
+	// response from `GetSpecialFeatures`: []JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.GetSpecialFeatures`: %v\n", resp)
 }
 ```
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]BaseItemDto**](BaseItemDto.md)
+[**[]JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ## MarkFavoriteItem
 
-> UserItemDataDto MarkFavoriteItem(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinUserItemDataDto MarkFavoriteItem(ctx, itemId).UserId(userId).Execute()
 
 Marks an item as a favorite.
 
@@ -544,7 +544,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.MarkFavoriteItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MarkFavoriteItem`: UserItemDataDto
+	// response from `MarkFavoriteItem`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.MarkFavoriteItem`: %v\n", resp)
 }
 ```
@@ -569,7 +569,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 
@@ -587,7 +587,7 @@ Name | Type | Description  | Notes
 
 ## UnmarkFavoriteItem
 
-> UserItemDataDto UnmarkFavoriteItem(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinUserItemDataDto UnmarkFavoriteItem(ctx, itemId).UserId(userId).Execute()
 
 Unmarks item as a favorite.
 
@@ -614,7 +614,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.UnmarkFavoriteItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UnmarkFavoriteItem`: UserItemDataDto
+	// response from `UnmarkFavoriteItem`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.UnmarkFavoriteItem`: %v\n", resp)
 }
 ```
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ## UpdateUserItemRating
 
-> UserItemDataDto UpdateUserItemRating(ctx, itemId).UserId(userId).Likes(likes).Execute()
+> JellyfinJellyfinUserItemDataDto UpdateUserItemRating(ctx, itemId).UserId(userId).Likes(likes).Execute()
 
 Updates a user's rating for an item.
 
@@ -685,7 +685,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserLibraryAPI.UpdateUserItemRating``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateUserItemRating`: UserItemDataDto
+	// response from `UpdateUserItemRating`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `UserLibraryAPI.UpdateUserItemRating`: %v\n", resp)
 }
 ```
@@ -711,7 +711,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 

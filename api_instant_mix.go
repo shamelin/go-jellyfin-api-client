@@ -30,11 +30,11 @@ type ApiGetInstantMixFromAlbumRequest struct {
 	itemId string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -50,7 +50,7 @@ func (r ApiGetInstantMixFromAlbumRequest) Limit(limit int32) ApiGetInstantMixFro
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromAlbumRequest) Fields(fields []ItemFields) ApiGetInstantMixFromAlbumRequest {
+func (r ApiGetInstantMixFromAlbumRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromAlbumRequest {
 	r.fields = &fields
 	return r
 }
@@ -74,12 +74,12 @@ func (r ApiGetInstantMixFromAlbumRequest) ImageTypeLimit(imageTypeLimit int32) A
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromAlbumRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromAlbumRequest {
+func (r ApiGetInstantMixFromAlbumRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromAlbumRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromAlbumRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromAlbumRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromAlbumExecute(r)
 }
 
@@ -99,13 +99,13 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbum(ctx context.Context, itemI
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixFromAlbumRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixFromAlbumRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromAlbum")
@@ -211,7 +211,7 @@ func (a *InstantMixAPIService) GetInstantMixFromAlbumExecute(r ApiGetInstantMixF
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -242,11 +242,11 @@ type ApiGetInstantMixFromArtistsRequest struct {
 	itemId string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -262,7 +262,7 @@ func (r ApiGetInstantMixFromArtistsRequest) Limit(limit int32) ApiGetInstantMixF
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromArtistsRequest) Fields(fields []ItemFields) ApiGetInstantMixFromArtistsRequest {
+func (r ApiGetInstantMixFromArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromArtistsRequest {
 	r.fields = &fields
 	return r
 }
@@ -286,12 +286,12 @@ func (r ApiGetInstantMixFromArtistsRequest) ImageTypeLimit(imageTypeLimit int32)
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromArtistsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromArtistsRequest {
+func (r ApiGetInstantMixFromArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromArtistsExecute(r)
 }
 
@@ -311,13 +311,13 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists(ctx context.Context, ite
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMixFromArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMixFromArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromArtists")
@@ -423,7 +423,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtistsExecute(r ApiGetInstantMi
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -454,11 +454,11 @@ type ApiGetInstantMixFromArtists2Request struct {
 	id *string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // The item id.
@@ -480,7 +480,7 @@ func (r ApiGetInstantMixFromArtists2Request) Limit(limit int32) ApiGetInstantMix
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromArtists2Request) Fields(fields []ItemFields) ApiGetInstantMixFromArtists2Request {
+func (r ApiGetInstantMixFromArtists2Request) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromArtists2Request {
 	r.fields = &fields
 	return r
 }
@@ -504,12 +504,12 @@ func (r ApiGetInstantMixFromArtists2Request) ImageTypeLimit(imageTypeLimit int32
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromArtists2Request) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromArtists2Request {
+func (r ApiGetInstantMixFromArtists2Request) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromArtists2Request {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromArtists2Request) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromArtists2Request) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromArtists2Execute(r)
 }
 
@@ -529,14 +529,14 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2(ctx context.Context) Ap
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantMixFromArtists2Request) (*BaseItemDtoQueryResult, *http.Response, error) {
+func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantMixFromArtists2Request) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromArtists2")
@@ -645,7 +645,7 @@ func (a *InstantMixAPIService) GetInstantMixFromArtists2Execute(r ApiGetInstantM
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -676,11 +676,11 @@ type ApiGetInstantMixFromItemRequest struct {
 	itemId string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -696,7 +696,7 @@ func (r ApiGetInstantMixFromItemRequest) Limit(limit int32) ApiGetInstantMixFrom
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromItemRequest) Fields(fields []ItemFields) ApiGetInstantMixFromItemRequest {
+func (r ApiGetInstantMixFromItemRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromItemRequest {
 	r.fields = &fields
 	return r
 }
@@ -720,12 +720,12 @@ func (r ApiGetInstantMixFromItemRequest) ImageTypeLimit(imageTypeLimit int32) Ap
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromItemRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromItemRequest {
+func (r ApiGetInstantMixFromItemRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromItemRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromItemRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromItemRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromItemExecute(r)
 }
 
@@ -745,13 +745,13 @@ func (a *InstantMixAPIService) GetInstantMixFromItem(ctx context.Context, itemId
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFromItemRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFromItemRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromItem")
@@ -857,7 +857,7 @@ func (a *InstantMixAPIService) GetInstantMixFromItemExecute(r ApiGetInstantMixFr
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -888,11 +888,11 @@ type ApiGetInstantMixFromMusicGenreByIdRequest struct {
 	id *string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // The item id.
@@ -914,7 +914,7 @@ func (r ApiGetInstantMixFromMusicGenreByIdRequest) Limit(limit int32) ApiGetInst
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Fields(fields []ItemFields) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r ApiGetInstantMixFromMusicGenreByIdRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromMusicGenreByIdRequest {
 	r.fields = &fields
 	return r
 }
@@ -938,12 +938,12 @@ func (r ApiGetInstantMixFromMusicGenreByIdRequest) ImageTypeLimit(imageTypeLimit
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromMusicGenreByIdRequest {
+func (r ApiGetInstantMixFromMusicGenreByIdRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromMusicGenreByIdRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromMusicGenreByIdRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromMusicGenreByIdRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromMusicGenreByIdExecute(r)
 }
 
@@ -961,13 +961,13 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreById(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetInstantMixFromMusicGenreByIdRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetInstantMixFromMusicGenreByIdRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromMusicGenreById")
@@ -1076,7 +1076,7 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByIdExecute(r ApiGetIn
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1107,11 +1107,11 @@ type ApiGetInstantMixFromMusicGenreByNameRequest struct {
 	name string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -1127,7 +1127,7 @@ func (r ApiGetInstantMixFromMusicGenreByNameRequest) Limit(limit int32) ApiGetIn
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) Fields(fields []ItemFields) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r ApiGetInstantMixFromMusicGenreByNameRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromMusicGenreByNameRequest {
 	r.fields = &fields
 	return r
 }
@@ -1151,12 +1151,12 @@ func (r ApiGetInstantMixFromMusicGenreByNameRequest) ImageTypeLimit(imageTypeLim
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromMusicGenreByNameRequest {
+func (r ApiGetInstantMixFromMusicGenreByNameRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromMusicGenreByNameRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromMusicGenreByNameRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromMusicGenreByNameRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromMusicGenreByNameExecute(r)
 }
 
@@ -1176,13 +1176,13 @@ func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByName(ctx context.Con
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGetInstantMixFromMusicGenreByNameRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromMusicGenreByNameExecute(r ApiGetInstantMixFromMusicGenreByNameRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromMusicGenreByName")
@@ -1308,11 +1308,11 @@ type ApiGetInstantMixFromPlaylistRequest struct {
 	itemId string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -1328,7 +1328,7 @@ func (r ApiGetInstantMixFromPlaylistRequest) Limit(limit int32) ApiGetInstantMix
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromPlaylistRequest) Fields(fields []ItemFields) ApiGetInstantMixFromPlaylistRequest {
+func (r ApiGetInstantMixFromPlaylistRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromPlaylistRequest {
 	r.fields = &fields
 	return r
 }
@@ -1352,12 +1352,12 @@ func (r ApiGetInstantMixFromPlaylistRequest) ImageTypeLimit(imageTypeLimit int32
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromPlaylistRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromPlaylistRequest {
+func (r ApiGetInstantMixFromPlaylistRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromPlaylistRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromPlaylistRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromPlaylistRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromPlaylistExecute(r)
 }
 
@@ -1377,13 +1377,13 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylist(ctx context.Context, it
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantMixFromPlaylistRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantMixFromPlaylistRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromPlaylist")
@@ -1489,7 +1489,7 @@ func (a *InstantMixAPIService) GetInstantMixFromPlaylistExecute(r ApiGetInstantM
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1520,11 +1520,11 @@ type ApiGetInstantMixFromSongRequest struct {
 	itemId string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -1540,7 +1540,7 @@ func (r ApiGetInstantMixFromSongRequest) Limit(limit int32) ApiGetInstantMixFrom
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetInstantMixFromSongRequest) Fields(fields []ItemFields) ApiGetInstantMixFromSongRequest {
+func (r ApiGetInstantMixFromSongRequest) Fields(fields []JellyfinItemFields) ApiGetInstantMixFromSongRequest {
 	r.fields = &fields
 	return r
 }
@@ -1564,12 +1564,12 @@ func (r ApiGetInstantMixFromSongRequest) ImageTypeLimit(imageTypeLimit int32) Ap
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetInstantMixFromSongRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetInstantMixFromSongRequest {
+func (r ApiGetInstantMixFromSongRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetInstantMixFromSongRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetInstantMixFromSongRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetInstantMixFromSongRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetInstantMixFromSongExecute(r)
 }
 
@@ -1589,13 +1589,13 @@ func (a *InstantMixAPIService) GetInstantMixFromSong(ctx context.Context, itemId
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFromSongRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFromSongRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstantMixAPIService.GetInstantMixFromSong")
@@ -1701,7 +1701,7 @@ func (a *InstantMixAPIService) GetInstantMixFromSongExecute(r ApiGetInstantMixFr
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

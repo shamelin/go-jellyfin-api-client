@@ -128,7 +128,7 @@ type ApiDeleteItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex *int32
 }
 
@@ -150,7 +150,7 @@ DeleteItemImage Delete an item's image.
  @param imageType Image type.
  @return ApiDeleteItemImageRequest
 */
-func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, imageType ImageType) ApiDeleteItemImageRequest {
+func (a *ImageAPIService) DeleteItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiDeleteItemImageRequest {
 	return ApiDeleteItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -237,7 +237,7 @@ func (a *ImageAPIService) DeleteItemImageExecute(r ApiDeleteItemImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -257,7 +257,7 @@ type ApiDeleteItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 }
 
@@ -274,7 +274,7 @@ DeleteItemImageByIndex Delete an item's image.
  @param imageIndex The image index.
  @return ApiDeleteItemImageByIndexRequest
 */
-func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiDeleteItemImageByIndexRequest {
+func (a *ImageAPIService) DeleteItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiDeleteItemImageByIndexRequest {
 	return ApiDeleteItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -360,7 +360,7 @@ func (a *ImageAPIService) DeleteItemImageByIndexExecute(r ApiDeleteItemImageByIn
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -481,7 +481,7 @@ func (a *ImageAPIService) DeleteUserImageExecute(r ApiDeleteUserImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -501,10 +501,10 @@ type ApiGetArtistImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -526,7 +526,7 @@ func (r ApiGetArtistImageRequest) Tag(tag string) ApiGetArtistImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetArtistImageRequest) Format(format ImageFormat) ApiGetArtistImageRequest {
+func (r ApiGetArtistImageRequest) Format(format JellyfinImageFormat) ApiGetArtistImageRequest {
 	r.format = &format
 	return r
 }
@@ -616,7 +616,7 @@ GetArtistImage Get artist image by name.
  @param imageIndex Image index.
  @return ApiGetArtistImageRequest
 */
-func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetArtistImageRequest {
+func (a *ImageAPIService) GetArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetArtistImageRequest {
 	return ApiGetArtistImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -732,7 +732,7 @@ func (a *ImageAPIService) GetArtistImageExecute(r ApiGetArtistImageRequest) (*os
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -760,9 +760,9 @@ type ApiGetGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -785,7 +785,7 @@ func (r ApiGetGenreImageRequest) Tag(tag string) ApiGetGenreImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetGenreImageRequest) Format(format ImageFormat) ApiGetGenreImageRequest {
+func (r ApiGetGenreImageRequest) Format(format JellyfinImageFormat) ApiGetGenreImageRequest {
 	r.format = &format
 	return r
 }
@@ -880,7 +880,7 @@ GetGenreImage Get genre image by name.
  @param imageType Image type.
  @return ApiGetGenreImageRequest
 */
-func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetGenreImageRequest {
+func (a *ImageAPIService) GetGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetGenreImageRequest {
 	return ApiGetGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -997,7 +997,7 @@ func (a *ImageAPIService) GetGenreImageExecute(r ApiGetGenreImageRequest) (*os.F
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1025,10 +1025,10 @@ type ApiGetGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -1050,7 +1050,7 @@ func (r ApiGetGenreImageByIndexRequest) Tag(tag string) ApiGetGenreImageByIndexR
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetGenreImageByIndexRequest) Format(format ImageFormat) ApiGetGenreImageByIndexRequest {
+func (r ApiGetGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -1140,7 +1140,7 @@ GetGenreImageByIndex Get genre image by name.
  @param imageIndex Image index.
  @return ApiGetGenreImageByIndexRequest
 */
-func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetGenreImageByIndexRequest {
+func (a *ImageAPIService) GetGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetGenreImageByIndexRequest {
 	return ApiGetGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1256,7 +1256,7 @@ func (a *ImageAPIService) GetGenreImageByIndexExecute(r ApiGetGenreImageByIndexR
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1284,7 +1284,7 @@ type ApiGetItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	maxWidth *int32
 	maxHeight *int32
 	width *int32
@@ -1293,7 +1293,7 @@ type ApiGetItemImageRequest struct {
 	fillWidth *int32
 	fillHeight *int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	percentPlayed *float64
 	unplayedCount *int32
 	blur *int32
@@ -1351,7 +1351,7 @@ func (r ApiGetItemImageRequest) Tag(tag string) ApiGetItemImageRequest {
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiGetItemImageRequest) Format(format ImageFormat) ApiGetItemImageRequest {
+func (r ApiGetItemImageRequest) Format(format JellyfinImageFormat) ApiGetItemImageRequest {
 	r.format = &format
 	return r
 }
@@ -1404,7 +1404,7 @@ GetItemImage Gets the item's image.
  @param imageType Image type.
  @return ApiGetItemImageRequest
 */
-func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiGetItemImageRequest {
+func (a *ImageAPIService) GetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiGetItemImageRequest {
 	return ApiGetItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1521,7 +1521,7 @@ func (a *ImageAPIService) GetItemImageExecute(r ApiGetItemImageRequest) (*os.Fil
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1549,11 +1549,11 @@ type ApiGetItemImage2Request struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	maxWidth int32
 	maxHeight int32
 	tag string
-	format ImageFormat
+	format JellyfinImageFormat
 	percentPlayed float64
 	unplayedCount int32
 	imageIndex int32
@@ -1634,7 +1634,7 @@ GetItemImage2 Gets the item's image.
  @param imageIndex Image index.
  @return ApiGetItemImage2Request
 */
-func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiGetItemImage2Request {
+func (a *ImageAPIService) GetItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiGetItemImage2Request {
 	return ApiGetItemImage2Request{
 		ApiService: a,
 		ctx: ctx,
@@ -1744,7 +1744,7 @@ func (a *ImageAPIService) GetItemImage2Execute(r ApiGetItemImage2Request) (*os.F
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1772,7 +1772,7 @@ type ApiGetItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	maxWidth *int32
 	maxHeight *int32
@@ -1782,7 +1782,7 @@ type ApiGetItemImageByIndexRequest struct {
 	fillWidth *int32
 	fillHeight *int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	percentPlayed *float64
 	unplayedCount *int32
 	blur *int32
@@ -1839,7 +1839,7 @@ func (r ApiGetItemImageByIndexRequest) Tag(tag string) ApiGetItemImageByIndexReq
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiGetItemImageByIndexRequest) Format(format ImageFormat) ApiGetItemImageByIndexRequest {
+func (r ApiGetItemImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetItemImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -1887,7 +1887,7 @@ GetItemImageByIndex Gets the item's image.
  @param imageIndex Image index.
  @return ApiGetItemImageByIndexRequest
 */
-func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiGetItemImageByIndexRequest {
+func (a *ImageAPIService) GetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiGetItemImageByIndexRequest {
 	return ApiGetItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2003,7 +2003,7 @@ func (a *ImageAPIService) GetItemImageByIndexExecute(r ApiGetItemImageByIndexReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2033,7 +2033,7 @@ type ApiGetItemImageInfosRequest struct {
 	itemId string
 }
 
-func (r ApiGetItemImageInfosRequest) Execute() ([]ImageInfo, *http.Response, error) {
+func (r ApiGetItemImageInfosRequest) Execute() ([]JellyfinImageInfo, *http.Response, error) {
 	return r.ApiService.GetItemImageInfosExecute(r)
 }
 
@@ -2053,13 +2053,13 @@ func (a *ImageAPIService) GetItemImageInfos(ctx context.Context, itemId string) 
 }
 
 // Execute executes the request
-//  @return []ImageInfo
-func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest) ([]ImageInfo, *http.Response, error) {
+//  @return []JellyfinImageInfo
+func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest) ([]JellyfinImageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ImageInfo
+		localVarReturnValue  []JellyfinImageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageAPIService.GetItemImageInfos")
@@ -2128,7 +2128,7 @@ func (a *ImageAPIService) GetItemImageInfosExecute(r ApiGetItemImageInfosRequest
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2157,9 +2157,9 @@ type ApiGetMusicGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -2182,7 +2182,7 @@ func (r ApiGetMusicGenreImageRequest) Tag(tag string) ApiGetMusicGenreImageReque
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetMusicGenreImageRequest) Format(format ImageFormat) ApiGetMusicGenreImageRequest {
+func (r ApiGetMusicGenreImageRequest) Format(format JellyfinImageFormat) ApiGetMusicGenreImageRequest {
 	r.format = &format
 	return r
 }
@@ -2277,7 +2277,7 @@ GetMusicGenreImage Get music genre image by name.
  @param imageType Image type.
  @return ApiGetMusicGenreImageRequest
 */
-func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiGetMusicGenreImageRequest {
+func (a *ImageAPIService) GetMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetMusicGenreImageRequest {
 	return ApiGetMusicGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2394,7 +2394,7 @@ func (a *ImageAPIService) GetMusicGenreImageExecute(r ApiGetMusicGenreImageReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2422,10 +2422,10 @@ type ApiGetMusicGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -2447,7 +2447,7 @@ func (r ApiGetMusicGenreImageByIndexRequest) Tag(tag string) ApiGetMusicGenreIma
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetMusicGenreImageByIndexRequest) Format(format ImageFormat) ApiGetMusicGenreImageByIndexRequest {
+func (r ApiGetMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetMusicGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -2537,7 +2537,7 @@ GetMusicGenreImageByIndex Get music genre image by name.
  @param imageIndex Image index.
  @return ApiGetMusicGenreImageByIndexRequest
 */
-func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetMusicGenreImageByIndexRequest {
+func (a *ImageAPIService) GetMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetMusicGenreImageByIndexRequest {
 	return ApiGetMusicGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2653,7 +2653,7 @@ func (a *ImageAPIService) GetMusicGenreImageByIndexExecute(r ApiGetMusicGenreIma
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2681,9 +2681,9 @@ type ApiGetPersonImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -2706,7 +2706,7 @@ func (r ApiGetPersonImageRequest) Tag(tag string) ApiGetPersonImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetPersonImageRequest) Format(format ImageFormat) ApiGetPersonImageRequest {
+func (r ApiGetPersonImageRequest) Format(format JellyfinImageFormat) ApiGetPersonImageRequest {
 	r.format = &format
 	return r
 }
@@ -2801,7 +2801,7 @@ GetPersonImage Get person image by name.
  @param imageType Image type.
  @return ApiGetPersonImageRequest
 */
-func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, imageType ImageType) ApiGetPersonImageRequest {
+func (a *ImageAPIService) GetPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetPersonImageRequest {
 	return ApiGetPersonImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -2918,7 +2918,7 @@ func (a *ImageAPIService) GetPersonImageExecute(r ApiGetPersonImageRequest) (*os
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2946,10 +2946,10 @@ type ApiGetPersonImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -2971,7 +2971,7 @@ func (r ApiGetPersonImageByIndexRequest) Tag(tag string) ApiGetPersonImageByInde
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetPersonImageByIndexRequest) Format(format ImageFormat) ApiGetPersonImageByIndexRequest {
+func (r ApiGetPersonImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetPersonImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -3061,7 +3061,7 @@ GetPersonImageByIndex Get person image by name.
  @param imageIndex Image index.
  @return ApiGetPersonImageByIndexRequest
 */
-func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetPersonImageByIndexRequest {
+func (a *ImageAPIService) GetPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetPersonImageByIndexRequest {
 	return ApiGetPersonImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3177,7 +3177,7 @@ func (a *ImageAPIService) GetPersonImageByIndexExecute(r ApiGetPersonImageByInde
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3205,7 +3205,7 @@ type ApiGetSplashscreenRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	width *int32
@@ -3225,7 +3225,7 @@ func (r ApiGetSplashscreenRequest) Tag(tag string) ApiGetSplashscreenRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetSplashscreenRequest) Format(format ImageFormat) ApiGetSplashscreenRequest {
+func (r ApiGetSplashscreenRequest) Format(format JellyfinImageFormat) ApiGetSplashscreenRequest {
 	r.format = &format
 	return r
 }
@@ -3425,9 +3425,9 @@ type ApiGetStudioImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -3450,7 +3450,7 @@ func (r ApiGetStudioImageRequest) Tag(tag string) ApiGetStudioImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetStudioImageRequest) Format(format ImageFormat) ApiGetStudioImageRequest {
+func (r ApiGetStudioImageRequest) Format(format JellyfinImageFormat) ApiGetStudioImageRequest {
 	r.format = &format
 	return r
 }
@@ -3545,7 +3545,7 @@ GetStudioImage Get studio image by name.
  @param imageType Image type.
  @return ApiGetStudioImageRequest
 */
-func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, imageType ImageType) ApiGetStudioImageRequest {
+func (a *ImageAPIService) GetStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ApiGetStudioImageRequest {
 	return ApiGetStudioImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3662,7 +3662,7 @@ func (a *ImageAPIService) GetStudioImageExecute(r ApiGetStudioImageRequest) (*os
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3690,10 +3690,10 @@ type ApiGetStudioImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -3715,7 +3715,7 @@ func (r ApiGetStudioImageByIndexRequest) Tag(tag string) ApiGetStudioImageByInde
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetStudioImageByIndexRequest) Format(format ImageFormat) ApiGetStudioImageByIndexRequest {
+func (r ApiGetStudioImageByIndexRequest) Format(format JellyfinImageFormat) ApiGetStudioImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -3805,7 +3805,7 @@ GetStudioImageByIndex Get studio image by name.
  @param imageIndex Image index.
  @return ApiGetStudioImageByIndexRequest
 */
-func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiGetStudioImageByIndexRequest {
+func (a *ImageAPIService) GetStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiGetStudioImageByIndexRequest {
 	return ApiGetStudioImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -3921,7 +3921,7 @@ func (a *ImageAPIService) GetStudioImageByIndexExecute(r ApiGetStudioImageByInde
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3950,7 +3950,7 @@ type ApiGetUserImageRequest struct {
 	ApiService *ImageAPIService
 	userId *string
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -3979,7 +3979,7 @@ func (r ApiGetUserImageRequest) Tag(tag string) ApiGetUserImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiGetUserImageRequest) Format(format ImageFormat) ApiGetUserImageRequest {
+func (r ApiGetUserImageRequest) Format(format JellyfinImageFormat) ApiGetUserImageRequest {
 	r.format = &format
 	return r
 }
@@ -4188,7 +4188,7 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4199,7 +4199,7 @@ func (a *ImageAPIService) GetUserImageExecute(r ApiGetUserImageRequest) (*os.Fil
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4227,10 +4227,10 @@ type ApiHeadArtistImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -4252,7 +4252,7 @@ func (r ApiHeadArtistImageRequest) Tag(tag string) ApiHeadArtistImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadArtistImageRequest) Format(format ImageFormat) ApiHeadArtistImageRequest {
+func (r ApiHeadArtistImageRequest) Format(format JellyfinImageFormat) ApiHeadArtistImageRequest {
 	r.format = &format
 	return r
 }
@@ -4342,7 +4342,7 @@ HeadArtistImage Get artist image by name.
  @param imageIndex Image index.
  @return ApiHeadArtistImageRequest
 */
-func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadArtistImageRequest {
+func (a *ImageAPIService) HeadArtistImage(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadArtistImageRequest {
 	return ApiHeadArtistImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4458,7 +4458,7 @@ func (a *ImageAPIService) HeadArtistImageExecute(r ApiHeadArtistImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4486,9 +4486,9 @@ type ApiHeadGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -4511,7 +4511,7 @@ func (r ApiHeadGenreImageRequest) Tag(tag string) ApiHeadGenreImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadGenreImageRequest) Format(format ImageFormat) ApiHeadGenreImageRequest {
+func (r ApiHeadGenreImageRequest) Format(format JellyfinImageFormat) ApiHeadGenreImageRequest {
 	r.format = &format
 	return r
 }
@@ -4606,7 +4606,7 @@ HeadGenreImage Get genre image by name.
  @param imageType Image type.
  @return ApiHeadGenreImageRequest
 */
-func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadGenreImageRequest {
+func (a *ImageAPIService) HeadGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadGenreImageRequest {
 	return ApiHeadGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4723,7 +4723,7 @@ func (a *ImageAPIService) HeadGenreImageExecute(r ApiHeadGenreImageRequest) (*os
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4751,10 +4751,10 @@ type ApiHeadGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -4776,7 +4776,7 @@ func (r ApiHeadGenreImageByIndexRequest) Tag(tag string) ApiHeadGenreImageByInde
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadGenreImageByIndexRequest) Format(format ImageFormat) ApiHeadGenreImageByIndexRequest {
+func (r ApiHeadGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -4866,7 +4866,7 @@ HeadGenreImageByIndex Get genre image by name.
  @param imageIndex Image index.
  @return ApiHeadGenreImageByIndexRequest
 */
-func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadGenreImageByIndexRequest {
+func (a *ImageAPIService) HeadGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadGenreImageByIndexRequest {
 	return ApiHeadGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -4982,7 +4982,7 @@ func (a *ImageAPIService) HeadGenreImageByIndexExecute(r ApiHeadGenreImageByInde
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5010,7 +5010,7 @@ type ApiHeadItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	maxWidth *int32
 	maxHeight *int32
 	width *int32
@@ -5019,7 +5019,7 @@ type ApiHeadItemImageRequest struct {
 	fillWidth *int32
 	fillHeight *int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	percentPlayed *float64
 	unplayedCount *int32
 	blur *int32
@@ -5077,7 +5077,7 @@ func (r ApiHeadItemImageRequest) Tag(tag string) ApiHeadItemImageRequest {
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiHeadItemImageRequest) Format(format ImageFormat) ApiHeadItemImageRequest {
+func (r ApiHeadItemImageRequest) Format(format JellyfinImageFormat) ApiHeadItemImageRequest {
 	r.format = &format
 	return r
 }
@@ -5130,7 +5130,7 @@ HeadItemImage Gets the item's image.
  @param imageType Image type.
  @return ApiHeadItemImageRequest
 */
-func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imageType ImageType) ApiHeadItemImageRequest {
+func (a *ImageAPIService) HeadItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiHeadItemImageRequest {
 	return ApiHeadItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5247,7 +5247,7 @@ func (a *ImageAPIService) HeadItemImageExecute(r ApiHeadItemImageRequest) (*os.F
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5275,11 +5275,11 @@ type ApiHeadItemImage2Request struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	maxWidth int32
 	maxHeight int32
 	tag string
-	format ImageFormat
+	format JellyfinImageFormat
 	percentPlayed float64
 	unplayedCount int32
 	imageIndex int32
@@ -5360,7 +5360,7 @@ HeadItemImage2 Gets the item's image.
  @param imageIndex Image index.
  @return ApiHeadItemImage2Request
 */
-func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, imageType ImageType, maxWidth int32, maxHeight int32, tag string, format ImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiHeadItemImage2Request {
+func (a *ImageAPIService) HeadItemImage2(ctx context.Context, itemId string, imageType JellyfinImageType, maxWidth int32, maxHeight int32, tag string, format JellyfinImageFormat, percentPlayed float64, unplayedCount int32, imageIndex int32) ApiHeadItemImage2Request {
 	return ApiHeadItemImage2Request{
 		ApiService: a,
 		ctx: ctx,
@@ -5470,7 +5470,7 @@ func (a *ImageAPIService) HeadItemImage2Execute(r ApiHeadItemImage2Request) (*os
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5498,7 +5498,7 @@ type ApiHeadItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	maxWidth *int32
 	maxHeight *int32
@@ -5508,7 +5508,7 @@ type ApiHeadItemImageByIndexRequest struct {
 	fillWidth *int32
 	fillHeight *int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	percentPlayed *float64
 	unplayedCount *int32
 	blur *int32
@@ -5565,7 +5565,7 @@ func (r ApiHeadItemImageByIndexRequest) Tag(tag string) ApiHeadItemImageByIndexR
 }
 
 // Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
-func (r ApiHeadItemImageByIndexRequest) Format(format ImageFormat) ApiHeadItemImageByIndexRequest {
+func (r ApiHeadItemImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadItemImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -5613,7 +5613,7 @@ HeadItemImageByIndex Gets the item's image.
  @param imageIndex Image index.
  @return ApiHeadItemImageByIndexRequest
 */
-func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiHeadItemImageByIndexRequest {
+func (a *ImageAPIService) HeadItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiHeadItemImageByIndexRequest {
 	return ApiHeadItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5729,7 +5729,7 @@ func (a *ImageAPIService) HeadItemImageByIndexExecute(r ApiHeadItemImageByIndexR
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5757,9 +5757,9 @@ type ApiHeadMusicGenreImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -5782,7 +5782,7 @@ func (r ApiHeadMusicGenreImageRequest) Tag(tag string) ApiHeadMusicGenreImageReq
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadMusicGenreImageRequest) Format(format ImageFormat) ApiHeadMusicGenreImageRequest {
+func (r ApiHeadMusicGenreImageRequest) Format(format JellyfinImageFormat) ApiHeadMusicGenreImageRequest {
 	r.format = &format
 	return r
 }
@@ -5877,7 +5877,7 @@ HeadMusicGenreImage Get music genre image by name.
  @param imageType Image type.
  @return ApiHeadMusicGenreImageRequest
 */
-func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, imageType ImageType) ApiHeadMusicGenreImageRequest {
+func (a *ImageAPIService) HeadMusicGenreImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadMusicGenreImageRequest {
 	return ApiHeadMusicGenreImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -5994,7 +5994,7 @@ func (a *ImageAPIService) HeadMusicGenreImageExecute(r ApiHeadMusicGenreImageReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6022,10 +6022,10 @@ type ApiHeadMusicGenreImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -6047,7 +6047,7 @@ func (r ApiHeadMusicGenreImageByIndexRequest) Tag(tag string) ApiHeadMusicGenreI
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadMusicGenreImageByIndexRequest) Format(format ImageFormat) ApiHeadMusicGenreImageByIndexRequest {
+func (r ApiHeadMusicGenreImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadMusicGenreImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -6137,7 +6137,7 @@ HeadMusicGenreImageByIndex Get music genre image by name.
  @param imageIndex Image index.
  @return ApiHeadMusicGenreImageByIndexRequest
 */
-func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadMusicGenreImageByIndexRequest {
+func (a *ImageAPIService) HeadMusicGenreImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadMusicGenreImageByIndexRequest {
 	return ApiHeadMusicGenreImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6253,7 +6253,7 @@ func (a *ImageAPIService) HeadMusicGenreImageByIndexExecute(r ApiHeadMusicGenreI
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6281,9 +6281,9 @@ type ApiHeadPersonImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -6306,7 +6306,7 @@ func (r ApiHeadPersonImageRequest) Tag(tag string) ApiHeadPersonImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadPersonImageRequest) Format(format ImageFormat) ApiHeadPersonImageRequest {
+func (r ApiHeadPersonImageRequest) Format(format JellyfinImageFormat) ApiHeadPersonImageRequest {
 	r.format = &format
 	return r
 }
@@ -6401,7 +6401,7 @@ HeadPersonImage Get person image by name.
  @param imageType Image type.
  @return ApiHeadPersonImageRequest
 */
-func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imageType ImageType) ApiHeadPersonImageRequest {
+func (a *ImageAPIService) HeadPersonImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadPersonImageRequest {
 	return ApiHeadPersonImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6518,7 +6518,7 @@ func (a *ImageAPIService) HeadPersonImageExecute(r ApiHeadPersonImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6546,10 +6546,10 @@ type ApiHeadPersonImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -6571,7 +6571,7 @@ func (r ApiHeadPersonImageByIndexRequest) Tag(tag string) ApiHeadPersonImageByIn
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadPersonImageByIndexRequest) Format(format ImageFormat) ApiHeadPersonImageByIndexRequest {
+func (r ApiHeadPersonImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadPersonImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -6661,7 +6661,7 @@ HeadPersonImageByIndex Get person image by name.
  @param imageIndex Image index.
  @return ApiHeadPersonImageByIndexRequest
 */
-func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadPersonImageByIndexRequest {
+func (a *ImageAPIService) HeadPersonImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadPersonImageByIndexRequest {
 	return ApiHeadPersonImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -6777,7 +6777,7 @@ func (a *ImageAPIService) HeadPersonImageByIndexExecute(r ApiHeadPersonImageByIn
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -6805,9 +6805,9 @@ type ApiHeadStudioImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -6830,7 +6830,7 @@ func (r ApiHeadStudioImageRequest) Tag(tag string) ApiHeadStudioImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadStudioImageRequest) Format(format ImageFormat) ApiHeadStudioImageRequest {
+func (r ApiHeadStudioImageRequest) Format(format JellyfinImageFormat) ApiHeadStudioImageRequest {
 	r.format = &format
 	return r
 }
@@ -6925,7 +6925,7 @@ HeadStudioImage Get studio image by name.
  @param imageType Image type.
  @return ApiHeadStudioImageRequest
 */
-func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imageType ImageType) ApiHeadStudioImageRequest {
+func (a *ImageAPIService) HeadStudioImage(ctx context.Context, name string, imageType JellyfinImageType) ApiHeadStudioImageRequest {
 	return ApiHeadStudioImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7042,7 +7042,7 @@ func (a *ImageAPIService) HeadStudioImageExecute(r ApiHeadStudioImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7070,10 +7070,10 @@ type ApiHeadStudioImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	name string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -7095,7 +7095,7 @@ func (r ApiHeadStudioImageByIndexRequest) Tag(tag string) ApiHeadStudioImageByIn
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadStudioImageByIndexRequest) Format(format ImageFormat) ApiHeadStudioImageByIndexRequest {
+func (r ApiHeadStudioImageByIndexRequest) Format(format JellyfinImageFormat) ApiHeadStudioImageByIndexRequest {
 	r.format = &format
 	return r
 }
@@ -7185,7 +7185,7 @@ HeadStudioImageByIndex Get studio image by name.
  @param imageIndex Image index.
  @return ApiHeadStudioImageByIndexRequest
 */
-func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name string, imageType ImageType, imageIndex int32) ApiHeadStudioImageByIndexRequest {
+func (a *ImageAPIService) HeadStudioImageByIndex(ctx context.Context, name string, imageType JellyfinImageType, imageIndex int32) ApiHeadStudioImageByIndexRequest {
 	return ApiHeadStudioImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7301,7 +7301,7 @@ func (a *ImageAPIService) HeadStudioImageByIndexExecute(r ApiHeadStudioImageByIn
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7330,7 +7330,7 @@ type ApiHeadUserImageRequest struct {
 	ApiService *ImageAPIService
 	userId *string
 	tag *string
-	format *ImageFormat
+	format *JellyfinImageFormat
 	maxWidth *int32
 	maxHeight *int32
 	percentPlayed *float64
@@ -7359,7 +7359,7 @@ func (r ApiHeadUserImageRequest) Tag(tag string) ApiHeadUserImageRequest {
 }
 
 // Determines the output format of the image - original,gif,jpg,png.
-func (r ApiHeadUserImageRequest) Format(format ImageFormat) ApiHeadUserImageRequest {
+func (r ApiHeadUserImageRequest) Format(format JellyfinImageFormat) ApiHeadUserImageRequest {
 	r.format = &format
 	return r
 }
@@ -7568,7 +7568,7 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7579,7 +7579,7 @@ func (a *ImageAPIService) HeadUserImageExecute(r ApiHeadUserImageRequest) (*os.F
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7716,7 +7716,7 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7727,7 +7727,7 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7738,7 +7738,7 @@ func (a *ImageAPIService) PostUserImageExecute(r ApiPostUserImageRequest) (*http
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7758,7 +7758,7 @@ type ApiSetItemImageRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	body *os.File
 }
 
@@ -7779,7 +7779,7 @@ SetItemImage Set item image.
  @param imageType Image type.
  @return ApiSetItemImageRequest
 */
-func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, imageType ImageType) ApiSetItemImageRequest {
+func (a *ImageAPIService) SetItemImage(ctx context.Context, itemId string, imageType JellyfinImageType) ApiSetItemImageRequest {
 	return ApiSetItemImageRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -7865,7 +7865,7 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7876,7 +7876,7 @@ func (a *ImageAPIService) SetItemImageExecute(r ApiSetItemImageRequest) (*http.R
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -7896,7 +7896,7 @@ type ApiSetItemImageByIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	body *os.File
 }
@@ -7919,7 +7919,7 @@ SetItemImageByIndex Set item image.
  @param imageIndex (Unused) Image index.
  @return ApiSetItemImageByIndexRequest
 */
-func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiSetItemImageByIndexRequest {
+func (a *ImageAPIService) SetItemImageByIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiSetItemImageByIndexRequest {
 	return ApiSetItemImageByIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8007,7 +8007,7 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8018,7 +8018,7 @@ func (a *ImageAPIService) SetItemImageByIndexExecute(r ApiSetItemImageByIndexReq
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8038,7 +8038,7 @@ type ApiUpdateItemImageIndexRequest struct {
 	ctx context.Context
 	ApiService *ImageAPIService
 	itemId string
-	imageType ImageType
+	imageType JellyfinImageType
 	imageIndex int32
 	newIndex *int32
 }
@@ -8062,7 +8062,7 @@ UpdateItemImageIndex Updates the index for an item image.
  @param imageIndex Old image index.
  @return ApiUpdateItemImageIndexRequest
 */
-func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId string, imageType ImageType, imageIndex int32) ApiUpdateItemImageIndexRequest {
+func (a *ImageAPIService) UpdateItemImageIndex(ctx context.Context, itemId string, imageType JellyfinImageType, imageIndex int32) ApiUpdateItemImageIndexRequest {
 	return ApiUpdateItemImageIndexRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -8152,7 +8152,7 @@ func (a *ImageAPIService) UpdateItemImageIndexExecute(r ApiUpdateItemImageIndexR
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8271,7 +8271,7 @@ func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplas
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -8282,7 +8282,7 @@ func (a *ImageAPIService) UploadCustomSplashscreenExecute(r ApiUploadCustomSplas
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -27,12 +27,12 @@ type ApiDownloadRemoteImageRequest struct {
 	ctx context.Context
 	ApiService *RemoteImageAPIService
 	itemId string
-	type_ *ImageType
+	type_ *JellyfinImageType
 	imageUrl *string
 }
 
 // The image type.
-func (r ApiDownloadRemoteImageRequest) Type_(type_ ImageType) ApiDownloadRemoteImageRequest {
+func (r ApiDownloadRemoteImageRequest) Type_(type_ JellyfinImageType) ApiDownloadRemoteImageRequest {
 	r.type_ = &type_
 	return r
 }
@@ -143,7 +143,7 @@ func (a *RemoteImageAPIService) DownloadRemoteImageExecute(r ApiDownloadRemoteIm
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -165,7 +165,7 @@ type ApiGetRemoteImageProvidersRequest struct {
 	itemId string
 }
 
-func (r ApiGetRemoteImageProvidersRequest) Execute() ([]ImageProviderInfo, *http.Response, error) {
+func (r ApiGetRemoteImageProvidersRequest) Execute() ([]JellyfinImageProviderInfo, *http.Response, error) {
 	return r.ApiService.GetRemoteImageProvidersExecute(r)
 }
 
@@ -185,13 +185,13 @@ func (a *RemoteImageAPIService) GetRemoteImageProviders(ctx context.Context, ite
 }
 
 // Execute executes the request
-//  @return []ImageProviderInfo
-func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r ApiGetRemoteImageProvidersRequest) ([]ImageProviderInfo, *http.Response, error) {
+//  @return []JellyfinImageProviderInfo
+func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r ApiGetRemoteImageProvidersRequest) ([]JellyfinImageProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ImageProviderInfo
+		localVarReturnValue  []JellyfinImageProviderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemoteImageAPIService.GetRemoteImageProviders")
@@ -260,7 +260,7 @@ func (a *RemoteImageAPIService) GetRemoteImageProvidersExecute(r ApiGetRemoteIma
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -289,7 +289,7 @@ type ApiGetRemoteImagesRequest struct {
 	ctx context.Context
 	ApiService *RemoteImageAPIService
 	itemId string
-	type_ *ImageType
+	type_ *JellyfinImageType
 	startIndex *int32
 	limit *int32
 	providerName *string
@@ -297,7 +297,7 @@ type ApiGetRemoteImagesRequest struct {
 }
 
 // The image type.
-func (r ApiGetRemoteImagesRequest) Type_(type_ ImageType) ApiGetRemoteImagesRequest {
+func (r ApiGetRemoteImagesRequest) Type_(type_ JellyfinImageType) ApiGetRemoteImagesRequest {
 	r.type_ = &type_
 	return r
 }
@@ -326,7 +326,7 @@ func (r ApiGetRemoteImagesRequest) IncludeAllLanguages(includeAllLanguages bool)
 	return r
 }
 
-func (r ApiGetRemoteImagesRequest) Execute() (*RemoteImageResult, *http.Response, error) {
+func (r ApiGetRemoteImagesRequest) Execute() (*JellyfinRemoteImageResult, *http.Response, error) {
 	return r.ApiService.GetRemoteImagesExecute(r)
 }
 
@@ -346,13 +346,13 @@ func (a *RemoteImageAPIService) GetRemoteImages(ctx context.Context, itemId stri
 }
 
 // Execute executes the request
-//  @return RemoteImageResult
-func (a *RemoteImageAPIService) GetRemoteImagesExecute(r ApiGetRemoteImagesRequest) (*RemoteImageResult, *http.Response, error) {
+//  @return JellyfinRemoteImageResult
+func (a *RemoteImageAPIService) GetRemoteImagesExecute(r ApiGetRemoteImagesRequest) (*JellyfinRemoteImageResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RemoteImageResult
+		localVarReturnValue  *JellyfinRemoteImageResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RemoteImageAPIService.GetRemoteImages")
@@ -439,7 +439,7 @@ func (a *RemoteImageAPIService) GetRemoteImagesExecute(r ApiGetRemoteImagesReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

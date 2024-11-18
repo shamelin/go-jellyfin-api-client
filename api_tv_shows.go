@@ -30,7 +30,7 @@ type ApiGetEpisodesRequest struct {
 	ApiService *TvShowsAPIService
 	seriesId string
 	userId *string
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	season *int32
 	seasonId *string
 	isMissing *bool
@@ -40,9 +40,9 @@ type ApiGetEpisodesRequest struct {
 	limit *int32
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
-	sortBy *ItemSortBy
+	sortBy *JellyfinItemSortBy
 }
 
 // The user id.
@@ -52,7 +52,7 @@ func (r ApiGetEpisodesRequest) UserId(userId string) ApiGetEpisodesRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetEpisodesRequest) Fields(fields []ItemFields) ApiGetEpisodesRequest {
+func (r ApiGetEpisodesRequest) Fields(fields []JellyfinItemFields) ApiGetEpisodesRequest {
 	r.fields = &fields
 	return r
 }
@@ -112,7 +112,7 @@ func (r ApiGetEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetEpisod
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetEpisodesRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetEpisodesRequest {
+func (r ApiGetEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetEpisodesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -124,12 +124,12 @@ func (r ApiGetEpisodesRequest) EnableUserData(enableUserData bool) ApiGetEpisode
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetEpisodesRequest) SortBy(sortBy ItemSortBy) ApiGetEpisodesRequest {
+func (r ApiGetEpisodesRequest) SortBy(sortBy JellyfinItemSortBy) ApiGetEpisodesRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
-func (r ApiGetEpisodesRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetEpisodesExecute(r)
 }
 
@@ -149,13 +149,13 @@ func (a *TvShowsAPIService) GetEpisodes(ctx context.Context, seriesId string) Ap
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetEpisodes")
@@ -282,7 +282,7 @@ func (a *TvShowsAPIService) GetEpisodesExecute(r ApiGetEpisodesRequest) (*BaseIt
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -313,12 +313,12 @@ type ApiGetNextUpRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	seriesId *string
 	parentId *string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
 	nextUpDateCutoff *time.Time
 	enableTotalRecordCount *bool
@@ -346,7 +346,7 @@ func (r ApiGetNextUpRequest) Limit(limit int32) ApiGetNextUpRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetNextUpRequest) Fields(fields []ItemFields) ApiGetNextUpRequest {
+func (r ApiGetNextUpRequest) Fields(fields []JellyfinItemFields) ApiGetNextUpRequest {
 	r.fields = &fields
 	return r
 }
@@ -376,7 +376,7 @@ func (r ApiGetNextUpRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetNextUpRe
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetNextUpRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetNextUpRequest {
+func (r ApiGetNextUpRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetNextUpRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -417,7 +417,7 @@ func (r ApiGetNextUpRequest) EnableRewatching(enableRewatching bool) ApiGetNextU
 	return r
 }
 
-func (r ApiGetNextUpRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetNextUpRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetNextUpExecute(r)
 }
 
@@ -435,13 +435,13 @@ func (a *TvShowsAPIService) GetNextUp(ctx context.Context) ApiGetNextUpRequest {
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *TvShowsAPIService) GetNextUpExecute(r ApiGetNextUpRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetNextUp")
@@ -601,13 +601,13 @@ type ApiGetSeasonsRequest struct {
 	ApiService *TvShowsAPIService
 	seriesId string
 	userId *string
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	isSpecialSeason *bool
 	isMissing *bool
 	adjacentTo *string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
 }
 
@@ -618,7 +618,7 @@ func (r ApiGetSeasonsRequest) UserId(userId string) ApiGetSeasonsRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSeasonsRequest) Fields(fields []ItemFields) ApiGetSeasonsRequest {
+func (r ApiGetSeasonsRequest) Fields(fields []JellyfinItemFields) ApiGetSeasonsRequest {
 	r.fields = &fields
 	return r
 }
@@ -654,7 +654,7 @@ func (r ApiGetSeasonsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetSeasons
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetSeasonsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetSeasonsRequest {
+func (r ApiGetSeasonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetSeasonsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -665,7 +665,7 @@ func (r ApiGetSeasonsRequest) EnableUserData(enableUserData bool) ApiGetSeasonsR
 	return r
 }
 
-func (r ApiGetSeasonsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSeasonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSeasonsExecute(r)
 }
 
@@ -685,13 +685,13 @@ func (a *TvShowsAPIService) GetSeasons(ctx context.Context, seriesId string) Api
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetSeasons")
@@ -803,7 +803,7 @@ func (a *TvShowsAPIService) GetSeasonsExecute(r ApiGetSeasonsRequest) (*BaseItem
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -834,11 +834,11 @@ type ApiGetUpcomingEpisodesRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	parentId *string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
 }
 
@@ -861,7 +861,7 @@ func (r ApiGetUpcomingEpisodesRequest) Limit(limit int32) ApiGetUpcomingEpisodes
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetUpcomingEpisodesRequest) Fields(fields []ItemFields) ApiGetUpcomingEpisodesRequest {
+func (r ApiGetUpcomingEpisodesRequest) Fields(fields []JellyfinItemFields) ApiGetUpcomingEpisodesRequest {
 	r.fields = &fields
 	return r
 }
@@ -885,7 +885,7 @@ func (r ApiGetUpcomingEpisodesRequest) ImageTypeLimit(imageTypeLimit int32) ApiG
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetUpcomingEpisodesRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetUpcomingEpisodesRequest {
+func (r ApiGetUpcomingEpisodesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetUpcomingEpisodesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -896,7 +896,7 @@ func (r ApiGetUpcomingEpisodesRequest) EnableUserData(enableUserData bool) ApiGe
 	return r
 }
 
-func (r ApiGetUpcomingEpisodesRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetUpcomingEpisodesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetUpcomingEpisodesExecute(r)
 }
 
@@ -914,13 +914,13 @@ func (a *TvShowsAPIService) GetUpcomingEpisodes(ctx context.Context) ApiGetUpcom
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *TvShowsAPIService) GetUpcomingEpisodesExecute(r ApiGetUpcomingEpisodesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *TvShowsAPIService) GetUpcomingEpisodesExecute(r ApiGetUpcomingEpisodesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TvShowsAPIService.GetUpcomingEpisodes")

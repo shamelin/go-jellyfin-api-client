@@ -1,4 +1,9 @@
+generatorName: go
+
 additionalProperties:
   artifactId: jellyfin
   packageName: jellyfin
-enumClassPrefix: true
+
+modelNamePrefix: Jellyfin
+#structPrefix: true
+#enumClassPrefix: true

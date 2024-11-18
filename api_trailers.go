@@ -39,8 +39,8 @@ type ApiGetTrailersRequest struct {
 	hasParentalRating *bool
 	isHd *bool
 	is4K *bool
-	locationTypes *[]LocationType
-	excludeLocationTypes *[]LocationType
+	locationTypes *[]JellyfinLocationType
+	excludeLocationTypes *[]JellyfinLocationType
 	isMissing *bool
 	isUnaired *bool
 	minCommunityRating *float64
@@ -63,15 +63,15 @@ type ApiGetTrailersRequest struct {
 	limit *int32
 	recursive *bool
 	searchTerm *string
-	sortOrder *[]SortOrder
+	sortOrder *[]JellyfinSortOrder
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	filters *[]JellyfinItemFilter
 	isFavorite *bool
-	mediaTypes *[]MediaType
-	imageTypes *[]ImageType
-	sortBy *[]ItemSortBy
+	mediaTypes *[]JellyfinMediaType
+	imageTypes *[]JellyfinImageType
+	sortBy *[]JellyfinItemSortBy
 	isPlayed *bool
 	genres *[]string
 	officialRatings *[]string
@@ -79,7 +79,7 @@ type ApiGetTrailersRequest struct {
 	years *[]int32
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	person *string
 	personIds *[]string
 	personTypes *[]string
@@ -92,7 +92,7 @@ type ApiGetTrailersRequest struct {
 	albums *[]string
 	albumIds *[]string
 	ids *[]string
-	videoTypes *[]VideoType
+	videoTypes *[]JellyfinVideoType
 	minOfficialRating *string
 	isLocked *bool
 	isPlaceHolder *bool
@@ -103,7 +103,7 @@ type ApiGetTrailersRequest struct {
 	maxWidth *int32
 	maxHeight *int32
 	is3D *bool
-	seriesStatus *[]SeriesStatus
+	seriesStatus *[]JellyfinSeriesStatus
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
 	nameLessThan *string
@@ -186,13 +186,13 @@ func (r ApiGetTrailersRequest) Is4K(is4K bool) ApiGetTrailersRequest {
 }
 
 // Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) LocationTypes(locationTypes []LocationType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) LocationTypes(locationTypes []JellyfinLocationType) ApiGetTrailersRequest {
 	r.locationTypes = &locationTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ExcludeLocationTypes(excludeLocationTypes []LocationType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) ApiGetTrailersRequest {
 	r.excludeLocationTypes = &excludeLocationTypes
 	return r
 }
@@ -330,7 +330,7 @@ func (r ApiGetTrailersRequest) SearchTerm(searchTerm string) ApiGetTrailersReque
 }
 
 // Sort Order - Ascending, Descending.
-func (r ApiGetTrailersRequest) SortOrder(sortOrder []SortOrder) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetTrailersRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -342,19 +342,19 @@ func (r ApiGetTrailersRequest) ParentId(parentId string) ApiGetTrailersRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetTrailersRequest) Fields(fields []ItemFields) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) Fields(fields []JellyfinItemFields) ApiGetTrailersRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetTrailersRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes.
-func (r ApiGetTrailersRequest) Filters(filters []ItemFilter) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) Filters(filters []JellyfinItemFilter) ApiGetTrailersRequest {
 	r.filters = &filters
 	return r
 }
@@ -366,19 +366,19 @@ func (r ApiGetTrailersRequest) IsFavorite(isFavorite bool) ApiGetTrailersRequest
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) MediaTypes(mediaTypes []MediaType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetTrailersRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) ImageTypes(imageTypes []ImageType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) ImageTypes(imageTypes []JellyfinImageType) ApiGetTrailersRequest {
 	r.imageTypes = &imageTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetTrailersRequest) SortBy(sortBy []ItemSortBy) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetTrailersRequest {
 	r.sortBy = &sortBy
 	return r
 }
@@ -426,7 +426,7 @@ func (r ApiGetTrailersRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetTraile
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetTrailersRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetTrailersRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -504,7 +504,7 @@ func (r ApiGetTrailersRequest) Ids(ids []string) ApiGetTrailersRequest {
 }
 
 // Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) VideoTypes(videoTypes []VideoType) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) VideoTypes(videoTypes []JellyfinVideoType) ApiGetTrailersRequest {
 	r.videoTypes = &videoTypes
 	return r
 }
@@ -570,7 +570,7 @@ func (r ApiGetTrailersRequest) Is3D(is3D bool) ApiGetTrailersRequest {
 }
 
 // Optional filter by Series Status. Allows multiple, comma delimited.
-func (r ApiGetTrailersRequest) SeriesStatus(seriesStatus []SeriesStatus) ApiGetTrailersRequest {
+func (r ApiGetTrailersRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) ApiGetTrailersRequest {
 	r.seriesStatus = &seriesStatus
 	return r
 }
@@ -617,7 +617,7 @@ func (r ApiGetTrailersRequest) EnableImages(enableImages bool) ApiGetTrailersReq
 	return r
 }
 
-func (r ApiGetTrailersRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetTrailersExecute(r)
 }
 
@@ -635,13 +635,13 @@ func (a *TrailersAPIService) GetTrailers(ctx context.Context) ApiGetTrailersRequ
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *TrailersAPIService) GetTrailersExecute(r ApiGetTrailersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *TrailersAPIService) GetTrailersExecute(r ApiGetTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TrailersAPIService.GetTrailers")

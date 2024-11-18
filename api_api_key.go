@@ -139,7 +139,7 @@ type ApiGetKeysRequest struct {
 	ApiService *ApiKeyAPIService
 }
 
-func (r ApiGetKeysRequest) Execute() (*AuthenticationInfoQueryResult, *http.Response, error) {
+func (r ApiGetKeysRequest) Execute() (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
 	return r.ApiService.GetKeysExecute(r)
 }
 
@@ -157,13 +157,13 @@ func (a *ApiKeyAPIService) GetKeys(ctx context.Context) ApiGetKeysRequest {
 }
 
 // Execute executes the request
-//  @return AuthenticationInfoQueryResult
-func (a *ApiKeyAPIService) GetKeysExecute(r ApiGetKeysRequest) (*AuthenticationInfoQueryResult, *http.Response, error) {
+//  @return JellyfinAuthenticationInfoQueryResult
+func (a *ApiKeyAPIService) GetKeysExecute(r ApiGetKeysRequest) (*JellyfinAuthenticationInfoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AuthenticationInfoQueryResult
+		localVarReturnValue  *JellyfinAuthenticationInfoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiKeyAPIService.GetKeys")

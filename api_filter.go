@@ -28,7 +28,7 @@ type ApiGetQueryFiltersRequest struct {
 	ApiService *FilterAPIService
 	userId *string
 	parentId *string
-	includeItemTypes *[]BaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
 	isAiring *bool
 	isMovie *bool
 	isSports *bool
@@ -51,7 +51,7 @@ func (r ApiGetQueryFiltersRequest) ParentId(parentId string) ApiGetQueryFiltersR
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetQueryFiltersRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetQueryFiltersRequest {
+func (r ApiGetQueryFiltersRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetQueryFiltersRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
@@ -98,7 +98,7 @@ func (r ApiGetQueryFiltersRequest) Recursive(recursive bool) ApiGetQueryFiltersR
 	return r
 }
 
-func (r ApiGetQueryFiltersRequest) Execute() (*QueryFilters, *http.Response, error) {
+func (r ApiGetQueryFiltersRequest) Execute() (*JellyfinQueryFilters, *http.Response, error) {
 	return r.ApiService.GetQueryFiltersExecute(r)
 }
 
@@ -116,13 +116,13 @@ func (a *FilterAPIService) GetQueryFilters(ctx context.Context) ApiGetQueryFilte
 }
 
 // Execute executes the request
-//  @return QueryFilters
-func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (*QueryFilters, *http.Response, error) {
+//  @return JellyfinQueryFilters
+func (a *FilterAPIService) GetQueryFiltersExecute(r ApiGetQueryFiltersRequest) (*JellyfinQueryFilters, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *QueryFilters
+		localVarReturnValue  *JellyfinQueryFilters
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FilterAPIService.GetQueryFilters")
@@ -247,8 +247,8 @@ type ApiGetQueryFiltersLegacyRequest struct {
 	ApiService *FilterAPIService
 	userId *string
 	parentId *string
-	includeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
+	includeItemTypes *[]JellyfinBaseItemKind
+	mediaTypes *[]JellyfinMediaType
 }
 
 // Optional. User id.
@@ -264,18 +264,18 @@ func (r ApiGetQueryFiltersLegacyRequest) ParentId(parentId string) ApiGetQueryFi
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetQueryFiltersLegacyRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetQueryFiltersLegacyRequest {
+func (r ApiGetQueryFiltersLegacyRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetQueryFiltersLegacyRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetQueryFiltersLegacyRequest) MediaTypes(mediaTypes []MediaType) ApiGetQueryFiltersLegacyRequest {
+func (r ApiGetQueryFiltersLegacyRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetQueryFiltersLegacyRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
-func (r ApiGetQueryFiltersLegacyRequest) Execute() (*QueryFiltersLegacy, *http.Response, error) {
+func (r ApiGetQueryFiltersLegacyRequest) Execute() (*JellyfinQueryFiltersLegacy, *http.Response, error) {
 	return r.ApiService.GetQueryFiltersLegacyExecute(r)
 }
 
@@ -293,13 +293,13 @@ func (a *FilterAPIService) GetQueryFiltersLegacy(ctx context.Context) ApiGetQuer
 }
 
 // Execute executes the request
-//  @return QueryFiltersLegacy
-func (a *FilterAPIService) GetQueryFiltersLegacyExecute(r ApiGetQueryFiltersLegacyRequest) (*QueryFiltersLegacy, *http.Response, error) {
+//  @return JellyfinQueryFiltersLegacy
+func (a *FilterAPIService) GetQueryFiltersLegacyExecute(r ApiGetQueryFiltersLegacyRequest) (*JellyfinQueryFiltersLegacy, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *QueryFiltersLegacy
+		localVarReturnValue  *JellyfinQueryFiltersLegacy
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FilterAPIService.GetQueryFiltersLegacy")

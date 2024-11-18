@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetPerson
 
-> BaseItemDto GetPerson(ctx, name).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetPerson(ctx, name).UserId(userId).Execute()
 
 Get person by name.
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PersonsAPI.GetPerson``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPerson`: BaseItemDto
+	// response from `GetPerson`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `PersonsAPI.GetPerson`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GetPersons
 
-> BaseItemDtoQueryResult GetPersons(ctx).Limit(limit).SearchTerm(searchTerm).Fields(fields).Filters(filters).IsFavorite(isFavorite).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).ExcludePersonTypes(excludePersonTypes).PersonTypes(personTypes).AppearsInItemId(appearsInItemId).UserId(userId).EnableImages(enableImages).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetPersons(ctx).Limit(limit).SearchTerm(searchTerm).Fields(fields).Filters(filters).IsFavorite(isFavorite).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).ExcludePersonTypes(excludePersonTypes).PersonTypes(personTypes).AppearsInItemId(appearsInItemId).UserId(userId).EnableImages(enableImages).Execute()
 
 Gets all persons.
 
@@ -100,12 +100,12 @@ import (
 func main() {
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
 	searchTerm := "searchTerm_example" // string | The search term. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. (optional)
 	isFavorite := true // bool | Optional filter by items that are marked as favorite, or not. userId is required. (optional)
 	enableUserData := true // bool | Optional, include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional, the max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	excludePersonTypes := []string{"Inner_example"} // []string | Optional. If specified results will be filtered to exclude those containing the specified PersonType. Allows multiple, comma-delimited. (optional)
 	personTypes := []string{"Inner_example"} // []string | Optional. If specified results will be filtered to include only those containing the specified PersonType. Allows multiple, comma-delimited. (optional)
 	appearsInItemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. If specified, person results will be filtered on items related to said persons. (optional)
@@ -119,7 +119,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PersonsAPI.GetPersons``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPersons`: BaseItemDtoQueryResult
+	// response from `GetPersons`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `PersonsAPI.GetPersons`: %v\n", resp)
 }
 ```
@@ -137,12 +137,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **int32** | Optional. The maximum number of records to return. | 
  **searchTerm** | **string** | The search term. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. | 
  **isFavorite** | **bool** | Optional filter by items that are marked as favorite, or not. userId is required. | 
  **enableUserData** | **bool** | Optional, include user data. | 
  **imageTypeLimit** | **int32** | Optional, the max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **excludePersonTypes** | **[]string** | Optional. If specified results will be filtered to exclude those containing the specified PersonType. Allows multiple, comma-delimited. | 
  **personTypes** | **[]string** | Optional. If specified results will be filtered to include only those containing the specified PersonType. Allows multiple, comma-delimited. | 
  **appearsInItemId** | **string** | Optional. If specified, person results will be filtered on items related to said persons. | 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

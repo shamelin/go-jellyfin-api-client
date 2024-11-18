@@ -136,13 +136,13 @@ type ApiDisplayContentRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	itemType *BaseItemKind
+	itemType *JellyfinBaseItemKind
 	itemId *string
 	itemName *string
 }
 
 // The type of item to browse to.
-func (r ApiDisplayContentRequest) ItemType(itemType BaseItemKind) ApiDisplayContentRequest {
+func (r ApiDisplayContentRequest) ItemType(itemType JellyfinBaseItemKind) ApiDisplayContentRequest {
 	r.itemType = &itemType
 	return r
 }
@@ -274,7 +274,7 @@ type ApiGetAuthProvidersRequest struct {
 	ApiService *SessionAPIService
 }
 
-func (r ApiGetAuthProvidersRequest) Execute() ([]NameIdPair, *http.Response, error) {
+func (r ApiGetAuthProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetAuthProvidersExecute(r)
 }
 
@@ -292,13 +292,13 @@ func (a *SessionAPIService) GetAuthProviders(ctx context.Context) ApiGetAuthProv
 }
 
 // Execute executes the request
-//  @return []NameIdPair
-func (a *SessionAPIService) GetAuthProvidersExecute(r ApiGetAuthProvidersRequest) ([]NameIdPair, *http.Response, error) {
+//  @return []JellyfinNameIdPair
+func (a *SessionAPIService) GetAuthProvidersExecute(r ApiGetAuthProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarReturnValue  []JellyfinNameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetAuthProviders")
@@ -385,7 +385,7 @@ type ApiGetPasswordResetProvidersRequest struct {
 	ApiService *SessionAPIService
 }
 
-func (r ApiGetPasswordResetProvidersRequest) Execute() ([]NameIdPair, *http.Response, error) {
+func (r ApiGetPasswordResetProvidersRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetPasswordResetProvidersExecute(r)
 }
 
@@ -403,13 +403,13 @@ func (a *SessionAPIService) GetPasswordResetProviders(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-//  @return []NameIdPair
-func (a *SessionAPIService) GetPasswordResetProvidersExecute(r ApiGetPasswordResetProvidersRequest) ([]NameIdPair, *http.Response, error) {
+//  @return []JellyfinNameIdPair
+func (a *SessionAPIService) GetPasswordResetProvidersExecute(r ApiGetPasswordResetProvidersRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarReturnValue  []JellyfinNameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetPasswordResetProviders")
@@ -517,7 +517,7 @@ func (r ApiGetSessionsRequest) ActiveWithinSeconds(activeWithinSeconds int32) Ap
 	return r
 }
 
-func (r ApiGetSessionsRequest) Execute() ([]SessionInfoDto, *http.Response, error) {
+func (r ApiGetSessionsRequest) Execute() ([]JellyfinSessionInfoDto, *http.Response, error) {
 	return r.ApiService.GetSessionsExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *SessionAPIService) GetSessions(ctx context.Context) ApiGetSessionsReque
 }
 
 // Execute executes the request
-//  @return []SessionInfoDto
-func (a *SessionAPIService) GetSessionsExecute(r ApiGetSessionsRequest) ([]SessionInfoDto, *http.Response, error) {
+//  @return []JellyfinSessionInfoDto
+func (a *SessionAPIService) GetSessionsExecute(r ApiGetSessionsRequest) ([]JellyfinSessionInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []SessionInfoDto
+		localVarReturnValue  []JellyfinSessionInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SessionAPIService.GetSessions")
@@ -636,7 +636,7 @@ type ApiPlayRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	playCommand *PlayCommand
+	playCommand *JellyfinPlayCommand
 	itemIds *[]string
 	startPositionTicks *int64
 	mediaSourceId *string
@@ -646,7 +646,7 @@ type ApiPlayRequest struct {
 }
 
 // The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
-func (r ApiPlayRequest) PlayCommand(playCommand PlayCommand) ApiPlayRequest {
+func (r ApiPlayRequest) PlayCommand(playCommand JellyfinPlayCommand) ApiPlayRequest {
 	r.playCommand = &playCommand
 	return r
 }
@@ -822,8 +822,8 @@ type ApiPostCapabilitiesRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	id *string
-	playableMediaTypes *[]MediaType
-	supportedCommands *[]GeneralCommandType
+	playableMediaTypes *[]JellyfinMediaType
+	supportedCommands *[]JellyfinGeneralCommandType
 	supportsMediaControl *bool
 	supportsPersistentIdentifier *bool
 }
@@ -835,13 +835,13 @@ func (r ApiPostCapabilitiesRequest) Id(id string) ApiPostCapabilitiesRequest {
 }
 
 // A list of playable media types, comma delimited. Audio, Video, Book, Photo.
-func (r ApiPostCapabilitiesRequest) PlayableMediaTypes(playableMediaTypes []MediaType) ApiPostCapabilitiesRequest {
+func (r ApiPostCapabilitiesRequest) PlayableMediaTypes(playableMediaTypes []JellyfinMediaType) ApiPostCapabilitiesRequest {
 	r.playableMediaTypes = &playableMediaTypes
 	return r
 }
 
 // A list of supported remote control commands, comma delimited.
-func (r ApiPostCapabilitiesRequest) SupportedCommands(supportedCommands []GeneralCommandType) ApiPostCapabilitiesRequest {
+func (r ApiPostCapabilitiesRequest) SupportedCommands(supportedCommands []JellyfinGeneralCommandType) ApiPostCapabilitiesRequest {
 	r.supportedCommands = &supportedCommands
 	return r
 }
@@ -993,13 +993,13 @@ func (a *SessionAPIService) PostCapabilitiesExecute(r ApiPostCapabilitiesRequest
 type ApiPostFullCapabilitiesRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
-	clientCapabilitiesDto *ClientCapabilitiesDto
+	jellyfinClientCapabilitiesDto *JellyfinClientCapabilitiesDto
 	id *string
 }
 
 // The MediaBrowser.Model.Session.ClientCapabilities.
-func (r ApiPostFullCapabilitiesRequest) ClientCapabilitiesDto(clientCapabilitiesDto ClientCapabilitiesDto) ApiPostFullCapabilitiesRequest {
-	r.clientCapabilitiesDto = &clientCapabilitiesDto
+func (r ApiPostFullCapabilitiesRequest) JellyfinClientCapabilitiesDto(jellyfinClientCapabilitiesDto JellyfinClientCapabilitiesDto) ApiPostFullCapabilitiesRequest {
+	r.jellyfinClientCapabilitiesDto = &jellyfinClientCapabilitiesDto
 	return r
 }
 
@@ -1044,8 +1044,8 @@ func (a *SessionAPIService) PostFullCapabilitiesExecute(r ApiPostFullCapabilitie
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.clientCapabilitiesDto == nil {
-		return nil, reportError("clientCapabilitiesDto is required and must be specified")
+	if r.jellyfinClientCapabilitiesDto == nil {
+		return nil, reportError("jellyfinClientCapabilitiesDto is required and must be specified")
 	}
 
 	if r.id != nil {
@@ -1069,7 +1069,7 @@ func (a *SessionAPIService) PostFullCapabilitiesExecute(r ApiPostFullCapabilitie
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.clientCapabilitiesDto
+	localVarPostBody = r.jellyfinClientCapabilitiesDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1445,12 +1445,12 @@ type ApiSendFullGeneralCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	generalCommand *GeneralCommand
+	jellyfinGeneralCommand *JellyfinGeneralCommand
 }
 
 // The MediaBrowser.Model.Session.GeneralCommand.
-func (r ApiSendFullGeneralCommandRequest) GeneralCommand(generalCommand GeneralCommand) ApiSendFullGeneralCommandRequest {
-	r.generalCommand = &generalCommand
+func (r ApiSendFullGeneralCommandRequest) JellyfinGeneralCommand(jellyfinGeneralCommand JellyfinGeneralCommand) ApiSendFullGeneralCommandRequest {
+	r.jellyfinGeneralCommand = &jellyfinGeneralCommand
 	return r
 }
 
@@ -1492,8 +1492,8 @@ func (a *SessionAPIService) SendFullGeneralCommandExecute(r ApiSendFullGeneralCo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.generalCommand == nil {
-		return nil, reportError("generalCommand is required and must be specified")
+	if r.jellyfinGeneralCommand == nil {
+		return nil, reportError("jellyfinGeneralCommand is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1514,7 +1514,7 @@ func (a *SessionAPIService) SendFullGeneralCommandExecute(r ApiSendFullGeneralCo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.generalCommand
+	localVarPostBody = r.jellyfinGeneralCommand
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1561,7 +1561,7 @@ type ApiSendGeneralCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	command GeneralCommandType
+	command JellyfinGeneralCommandType
 }
 
 func (r ApiSendGeneralCommandRequest) Execute() (*http.Response, error) {
@@ -1576,7 +1576,7 @@ SendGeneralCommand Issues a general command to a client.
  @param command The command to send.
  @return ApiSendGeneralCommandRequest
 */
-func (a *SessionAPIService) SendGeneralCommand(ctx context.Context, sessionId string, command GeneralCommandType) ApiSendGeneralCommandRequest {
+func (a *SessionAPIService) SendGeneralCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) ApiSendGeneralCommandRequest {
 	return ApiSendGeneralCommandRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1669,12 +1669,12 @@ type ApiSendMessageCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	messageCommand *MessageCommand
+	jellyfinMessageCommand *JellyfinMessageCommand
 }
 
 // The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs.
-func (r ApiSendMessageCommandRequest) MessageCommand(messageCommand MessageCommand) ApiSendMessageCommandRequest {
-	r.messageCommand = &messageCommand
+func (r ApiSendMessageCommandRequest) JellyfinMessageCommand(jellyfinMessageCommand JellyfinMessageCommand) ApiSendMessageCommandRequest {
+	r.jellyfinMessageCommand = &jellyfinMessageCommand
 	return r
 }
 
@@ -1716,8 +1716,8 @@ func (a *SessionAPIService) SendMessageCommandExecute(r ApiSendMessageCommandReq
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.messageCommand == nil {
-		return nil, reportError("messageCommand is required and must be specified")
+	if r.jellyfinMessageCommand == nil {
+		return nil, reportError("jellyfinMessageCommand is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1738,7 +1738,7 @@ func (a *SessionAPIService) SendMessageCommandExecute(r ApiSendMessageCommandReq
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.messageCommand
+	localVarPostBody = r.jellyfinMessageCommand
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1785,7 +1785,7 @@ type ApiSendPlaystateCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	command PlaystateCommand
+	command JellyfinPlaystateCommand
 	seekPositionTicks *int64
 	controllingUserId *string
 }
@@ -1814,7 +1814,7 @@ SendPlaystateCommand Issues a playstate command to a client.
  @param command The MediaBrowser.Model.Session.PlaystateCommand.
  @return ApiSendPlaystateCommandRequest
 */
-func (a *SessionAPIService) SendPlaystateCommand(ctx context.Context, sessionId string, command PlaystateCommand) ApiSendPlaystateCommandRequest {
+func (a *SessionAPIService) SendPlaystateCommand(ctx context.Context, sessionId string, command JellyfinPlaystateCommand) ApiSendPlaystateCommandRequest {
 	return ApiSendPlaystateCommandRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -1913,7 +1913,7 @@ type ApiSendSystemCommandRequest struct {
 	ctx context.Context
 	ApiService *SessionAPIService
 	sessionId string
-	command GeneralCommandType
+	command JellyfinGeneralCommandType
 }
 
 func (r ApiSendSystemCommandRequest) Execute() (*http.Response, error) {
@@ -1928,7 +1928,7 @@ SendSystemCommand Issues a system command to a client.
  @param command The command to send.
  @return ApiSendSystemCommandRequest
 */
-func (a *SessionAPIService) SendSystemCommand(ctx context.Context, sessionId string, command GeneralCommandType) ApiSendSystemCommandRequest {
+func (a *SessionAPIService) SendSystemCommand(ctx context.Context, sessionId string, command JellyfinGeneralCommandType) ApiSendSystemCommandRequest {
 	return ApiSendSystemCommandRequest{
 		ApiService: a,
 		ctx: ctx,

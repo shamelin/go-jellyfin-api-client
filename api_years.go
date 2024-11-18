@@ -37,7 +37,7 @@ func (r ApiGetYearRequest) UserId(userId string) ApiGetYearRequest {
 	return r
 }
 
-func (r ApiGetYearRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetYearRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetYearExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *YearsAPIService) GetYear(ctx context.Context, year int32) ApiGetYearReq
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "YearsAPIService.GetYear")
@@ -135,7 +135,7 @@ func (a *YearsAPIService) GetYearExecute(r ApiGetYearRequest) (*BaseItemDto, *ht
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -165,16 +165,16 @@ type ApiGetYearsRequest struct {
 	ApiService *YearsAPIService
 	startIndex *int32
 	limit *int32
-	sortOrder *[]SortOrder
+	sortOrder *[]JellyfinSortOrder
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
-	sortBy *[]ItemSortBy
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
+	mediaTypes *[]JellyfinMediaType
+	sortBy *[]JellyfinItemSortBy
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	userId *string
 	recursive *bool
 	enableImages *bool
@@ -193,7 +193,7 @@ func (r ApiGetYearsRequest) Limit(limit int32) ApiGetYearsRequest {
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetYearsRequest) SortOrder(sortOrder []SortOrder) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetYearsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -205,31 +205,31 @@ func (r ApiGetYearsRequest) ParentId(parentId string) ApiGetYearsRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetYearsRequest) Fields(fields []ItemFields) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) Fields(fields []JellyfinItemFields) ApiGetYearsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited.
-func (r ApiGetYearsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetYearsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be included based on item type. This allows multiple, comma delimited.
-func (r ApiGetYearsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetYearsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetYearsRequest) MediaTypes(mediaTypes []MediaType) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetYearsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetYearsRequest) SortBy(sortBy []ItemSortBy) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetYearsRequest {
 	r.sortBy = &sortBy
 	return r
 }
@@ -247,7 +247,7 @@ func (r ApiGetYearsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetYearsRequ
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetYearsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetYearsRequest {
+func (r ApiGetYearsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetYearsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -270,7 +270,7 @@ func (r ApiGetYearsRequest) EnableImages(enableImages bool) ApiGetYearsRequest {
 	return r
 }
 
-func (r ApiGetYearsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetYearsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetYearsExecute(r)
 }
 
@@ -288,13 +288,13 @@ func (a *YearsAPIService) GetYears(ctx context.Context) ApiGetYearsRequest {
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *YearsAPIService) GetYearsExecute(r ApiGetYearsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *YearsAPIService) GetYearsExecute(r ApiGetYearsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "YearsAPIService.GetYears")

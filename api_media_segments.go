@@ -28,16 +28,16 @@ type ApiGetItemSegmentsRequest struct {
 	ctx context.Context
 	ApiService *MediaSegmentsAPIService
 	itemId string
-	includeSegmentTypes *[]MediaSegmentType
+	includeSegmentTypes *[]JellyfinMediaSegmentType
 }
 
 // Optional filter of requested segment types.
-func (r ApiGetItemSegmentsRequest) IncludeSegmentTypes(includeSegmentTypes []MediaSegmentType) ApiGetItemSegmentsRequest {
+func (r ApiGetItemSegmentsRequest) IncludeSegmentTypes(includeSegmentTypes []JellyfinMediaSegmentType) ApiGetItemSegmentsRequest {
 	r.includeSegmentTypes = &includeSegmentTypes
 	return r
 }
 
-func (r ApiGetItemSegmentsRequest) Execute() (*MediaSegmentDtoQueryResult, *http.Response, error) {
+func (r ApiGetItemSegmentsRequest) Execute() (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetItemSegmentsExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *MediaSegmentsAPIService) GetItemSegments(ctx context.Context, itemId st
 }
 
 // Execute executes the request
-//  @return MediaSegmentDtoQueryResult
-func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsRequest) (*MediaSegmentDtoQueryResult, *http.Response, error) {
+//  @return JellyfinMediaSegmentDtoQueryResult
+func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsRequest) (*JellyfinMediaSegmentDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MediaSegmentDtoQueryResult
+		localVarReturnValue  *JellyfinMediaSegmentDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaSegmentsAPIService.GetItemSegments")
@@ -143,7 +143,7 @@ func (a *MediaSegmentsAPIService) GetItemSegmentsExecute(r ApiGetItemSegmentsReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

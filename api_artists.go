@@ -32,12 +32,12 @@ type ApiGetAlbumArtistsRequest struct {
 	limit *int32
 	searchTerm *string
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
+	filters *[]JellyfinItemFilter
 	isFavorite *bool
-	mediaTypes *[]MediaType
+	mediaTypes *[]JellyfinMediaType
 	genres *[]string
 	genreIds *[]string
 	officialRatings *[]string
@@ -45,7 +45,7 @@ type ApiGetAlbumArtistsRequest struct {
 	years *[]int32
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	person *string
 	personIds *[]string
 	personTypes *[]string
@@ -55,8 +55,8 @@ type ApiGetAlbumArtistsRequest struct {
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
 	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 	enableImages *bool
 	enableTotalRecordCount *bool
 }
@@ -92,25 +92,25 @@ func (r ApiGetAlbumArtistsRequest) ParentId(parentId string) ApiGetAlbumArtistsR
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetAlbumArtistsRequest) Fields(fields []ItemFields) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetAlbumArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetAlbumArtistsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetAlbumArtistsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetAlbumArtistsRequest) Filters(filters []ItemFilter) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) Filters(filters []JellyfinItemFilter) ApiGetAlbumArtistsRequest {
 	r.filters = &filters
 	return r
 }
@@ -122,7 +122,7 @@ func (r ApiGetAlbumArtistsRequest) IsFavorite(isFavorite bool) ApiGetAlbumArtist
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetAlbumArtistsRequest) MediaTypes(mediaTypes []MediaType) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetAlbumArtistsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
@@ -170,7 +170,7 @@ func (r ApiGetAlbumArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetAl
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetAlbumArtistsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetAlbumArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -230,13 +230,13 @@ func (r ApiGetAlbumArtistsRequest) NameLessThan(nameLessThan string) ApiGetAlbum
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetAlbumArtistsRequest) SortBy(sortBy []ItemSortBy) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetAlbumArtistsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetAlbumArtistsRequest) SortOrder(sortOrder []SortOrder) ApiGetAlbumArtistsRequest {
+func (r ApiGetAlbumArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetAlbumArtistsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -253,7 +253,7 @@ func (r ApiGetAlbumArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount
 	return r
 }
 
-func (r ApiGetAlbumArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetAlbumArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetAlbumArtistsExecute(r)
 }
 
@@ -271,13 +271,13 @@ func (a *ArtistsAPIService) GetAlbumArtists(ctx context.Context) ApiGetAlbumArti
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ArtistsAPIService) GetAlbumArtistsExecute(r ApiGetAlbumArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetAlbumArtists")
@@ -610,7 +610,7 @@ func (r ApiGetArtistByNameRequest) UserId(userId string) ApiGetArtistByNameReque
 	return r
 }
 
-func (r ApiGetArtistByNameRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetArtistByNameRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetArtistByNameExecute(r)
 }
 
@@ -630,13 +630,13 @@ func (a *ArtistsAPIService) GetArtistByName(ctx context.Context, name string) Ap
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *ArtistsAPIService) GetArtistByNameExecute(r ApiGetArtistByNameRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetArtistByName")
@@ -730,12 +730,12 @@ type ApiGetArtistsRequest struct {
 	limit *int32
 	searchTerm *string
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
+	filters *[]JellyfinItemFilter
 	isFavorite *bool
-	mediaTypes *[]MediaType
+	mediaTypes *[]JellyfinMediaType
 	genres *[]string
 	genreIds *[]string
 	officialRatings *[]string
@@ -743,7 +743,7 @@ type ApiGetArtistsRequest struct {
 	years *[]int32
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	person *string
 	personIds *[]string
 	personTypes *[]string
@@ -753,8 +753,8 @@ type ApiGetArtistsRequest struct {
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
 	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 	enableImages *bool
 	enableTotalRecordCount *bool
 }
@@ -790,25 +790,25 @@ func (r ApiGetArtistsRequest) ParentId(parentId string) ApiGetArtistsRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetArtistsRequest) Fields(fields []ItemFields) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetArtistsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetArtistsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetArtistsRequest) Filters(filters []ItemFilter) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) Filters(filters []JellyfinItemFilter) ApiGetArtistsRequest {
 	r.filters = &filters
 	return r
 }
@@ -820,7 +820,7 @@ func (r ApiGetArtistsRequest) IsFavorite(isFavorite bool) ApiGetArtistsRequest {
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetArtistsRequest) MediaTypes(mediaTypes []MediaType) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetArtistsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
@@ -868,7 +868,7 @@ func (r ApiGetArtistsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetArtists
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetArtistsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetArtistsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -928,13 +928,13 @@ func (r ApiGetArtistsRequest) NameLessThan(nameLessThan string) ApiGetArtistsReq
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetArtistsRequest) SortBy(sortBy []ItemSortBy) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetArtistsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetArtistsRequest) SortOrder(sortOrder []SortOrder) ApiGetArtistsRequest {
+func (r ApiGetArtistsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetArtistsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -951,7 +951,7 @@ func (r ApiGetArtistsRequest) EnableTotalRecordCount(enableTotalRecordCount bool
 	return r
 }
 
-func (r ApiGetArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetArtistsExecute(r)
 }
 
@@ -969,13 +969,13 @@ func (a *ArtistsAPIService) GetArtists(ctx context.Context) ApiGetArtistsRequest
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ArtistsAPIService) GetArtistsExecute(r ApiGetArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ArtistsAPIService) GetArtistsExecute(r ApiGetArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ArtistsAPIService.GetArtists")

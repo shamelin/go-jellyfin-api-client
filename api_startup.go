@@ -127,7 +127,7 @@ type ApiGetFirstUserRequest struct {
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetFirstUserRequest) Execute() (*StartupUserDto, *http.Response, error) {
+func (r ApiGetFirstUserRequest) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
 	return r.ApiService.GetFirstUserExecute(r)
 }
 
@@ -145,13 +145,13 @@ func (a *StartupAPIService) GetFirstUser(ctx context.Context) ApiGetFirstUserReq
 }
 
 // Execute executes the request
-//  @return StartupUserDto
-func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*StartupUserDto, *http.Response, error) {
+//  @return JellyfinStartupUserDto
+func (a *StartupAPIService) GetFirstUserExecute(r ApiGetFirstUserRequest) (*JellyfinStartupUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StartupUserDto
+		localVarReturnValue  *JellyfinStartupUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetFirstUser")
@@ -238,7 +238,7 @@ type ApiGetFirstUser2Request struct {
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetFirstUser2Request) Execute() (*StartupUserDto, *http.Response, error) {
+func (r ApiGetFirstUser2Request) Execute() (*JellyfinStartupUserDto, *http.Response, error) {
 	return r.ApiService.GetFirstUser2Execute(r)
 }
 
@@ -256,13 +256,13 @@ func (a *StartupAPIService) GetFirstUser2(ctx context.Context) ApiGetFirstUser2R
 }
 
 // Execute executes the request
-//  @return StartupUserDto
-func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*StartupUserDto, *http.Response, error) {
+//  @return JellyfinStartupUserDto
+func (a *StartupAPIService) GetFirstUser2Execute(r ApiGetFirstUser2Request) (*JellyfinStartupUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StartupUserDto
+		localVarReturnValue  *JellyfinStartupUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetFirstUser2")
@@ -349,7 +349,7 @@ type ApiGetStartupConfigurationRequest struct {
 	ApiService *StartupAPIService
 }
 
-func (r ApiGetStartupConfigurationRequest) Execute() (*StartupConfigurationDto, *http.Response, error) {
+func (r ApiGetStartupConfigurationRequest) Execute() (*JellyfinStartupConfigurationDto, *http.Response, error) {
 	return r.ApiService.GetStartupConfigurationExecute(r)
 }
 
@@ -367,13 +367,13 @@ func (a *StartupAPIService) GetStartupConfiguration(ctx context.Context) ApiGetS
 }
 
 // Execute executes the request
-//  @return StartupConfigurationDto
-func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfigurationRequest) (*StartupConfigurationDto, *http.Response, error) {
+//  @return JellyfinStartupConfigurationDto
+func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfigurationRequest) (*JellyfinStartupConfigurationDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *StartupConfigurationDto
+		localVarReturnValue  *JellyfinStartupConfigurationDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StartupAPIService.GetStartupConfiguration")
@@ -458,12 +458,12 @@ func (a *StartupAPIService) GetStartupConfigurationExecute(r ApiGetStartupConfig
 type ApiSetRemoteAccessRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
-	startupRemoteAccessDto *StartupRemoteAccessDto
+	jellyfinStartupRemoteAccessDto *JellyfinStartupRemoteAccessDto
 }
 
 // The startup remote access dto.
-func (r ApiSetRemoteAccessRequest) StartupRemoteAccessDto(startupRemoteAccessDto StartupRemoteAccessDto) ApiSetRemoteAccessRequest {
-	r.startupRemoteAccessDto = &startupRemoteAccessDto
+func (r ApiSetRemoteAccessRequest) JellyfinStartupRemoteAccessDto(jellyfinStartupRemoteAccessDto JellyfinStartupRemoteAccessDto) ApiSetRemoteAccessRequest {
+	r.jellyfinStartupRemoteAccessDto = &jellyfinStartupRemoteAccessDto
 	return r
 }
 
@@ -502,8 +502,8 @@ func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.startupRemoteAccessDto == nil {
-		return nil, reportError("startupRemoteAccessDto is required and must be specified")
+	if r.jellyfinStartupRemoteAccessDto == nil {
+		return nil, reportError("jellyfinStartupRemoteAccessDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -524,7 +524,7 @@ func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.startupRemoteAccessDto
+	localVarPostBody = r.jellyfinStartupRemoteAccessDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -570,12 +570,12 @@ func (a *StartupAPIService) SetRemoteAccessExecute(r ApiSetRemoteAccessRequest) 
 type ApiUpdateInitialConfigurationRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
-	startupConfigurationDto *StartupConfigurationDto
+	jellyfinStartupConfigurationDto *JellyfinStartupConfigurationDto
 }
 
 // The updated startup configuration.
-func (r ApiUpdateInitialConfigurationRequest) StartupConfigurationDto(startupConfigurationDto StartupConfigurationDto) ApiUpdateInitialConfigurationRequest {
-	r.startupConfigurationDto = &startupConfigurationDto
+func (r ApiUpdateInitialConfigurationRequest) JellyfinStartupConfigurationDto(jellyfinStartupConfigurationDto JellyfinStartupConfigurationDto) ApiUpdateInitialConfigurationRequest {
+	r.jellyfinStartupConfigurationDto = &jellyfinStartupConfigurationDto
 	return r
 }
 
@@ -614,8 +614,8 @@ func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitial
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.startupConfigurationDto == nil {
-		return nil, reportError("startupConfigurationDto is required and must be specified")
+	if r.jellyfinStartupConfigurationDto == nil {
+		return nil, reportError("jellyfinStartupConfigurationDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -636,7 +636,7 @@ func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitial
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.startupConfigurationDto
+	localVarPostBody = r.jellyfinStartupConfigurationDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -682,12 +682,12 @@ func (a *StartupAPIService) UpdateInitialConfigurationExecute(r ApiUpdateInitial
 type ApiUpdateStartupUserRequest struct {
 	ctx context.Context
 	ApiService *StartupAPIService
-	startupUserDto *StartupUserDto
+	jellyfinStartupUserDto *JellyfinStartupUserDto
 }
 
 // The DTO containing username and password.
-func (r ApiUpdateStartupUserRequest) StartupUserDto(startupUserDto StartupUserDto) ApiUpdateStartupUserRequest {
-	r.startupUserDto = &startupUserDto
+func (r ApiUpdateStartupUserRequest) JellyfinStartupUserDto(jellyfinStartupUserDto JellyfinStartupUserDto) ApiUpdateStartupUserRequest {
+	r.jellyfinStartupUserDto = &jellyfinStartupUserDto
 	return r
 }
 
@@ -745,7 +745,7 @@ func (a *StartupAPIService) UpdateStartupUserExecute(r ApiUpdateStartupUserReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.startupUserDto
+	localVarPostBody = r.jellyfinStartupUserDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

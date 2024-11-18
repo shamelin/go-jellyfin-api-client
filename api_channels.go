@@ -29,7 +29,7 @@ type ApiGetAllChannelFeaturesRequest struct {
 	ApiService *ChannelsAPIService
 }
 
-func (r ApiGetAllChannelFeaturesRequest) Execute() ([]ChannelFeatures, *http.Response, error) {
+func (r ApiGetAllChannelFeaturesRequest) Execute() ([]JellyfinChannelFeatures, *http.Response, error) {
 	return r.ApiService.GetAllChannelFeaturesExecute(r)
 }
 
@@ -47,13 +47,13 @@ func (a *ChannelsAPIService) GetAllChannelFeatures(ctx context.Context) ApiGetAl
 }
 
 // Execute executes the request
-//  @return []ChannelFeatures
-func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeaturesRequest) ([]ChannelFeatures, *http.Response, error) {
+//  @return []JellyfinChannelFeatures
+func (a *ChannelsAPIService) GetAllChannelFeaturesExecute(r ApiGetAllChannelFeaturesRequest) ([]JellyfinChannelFeatures, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ChannelFeatures
+		localVarReturnValue  []JellyfinChannelFeatures
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetAllChannelFeatures")
@@ -141,7 +141,7 @@ type ApiGetChannelFeaturesRequest struct {
 	channelId string
 }
 
-func (r ApiGetChannelFeaturesRequest) Execute() (*ChannelFeatures, *http.Response, error) {
+func (r ApiGetChannelFeaturesRequest) Execute() (*JellyfinChannelFeatures, *http.Response, error) {
 	return r.ApiService.GetChannelFeaturesExecute(r)
 }
 
@@ -161,13 +161,13 @@ func (a *ChannelsAPIService) GetChannelFeatures(ctx context.Context, channelId s
 }
 
 // Execute executes the request
-//  @return ChannelFeatures
-func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRequest) (*ChannelFeatures, *http.Response, error) {
+//  @return JellyfinChannelFeatures
+func (a *ChannelsAPIService) GetChannelFeaturesExecute(r ApiGetChannelFeaturesRequest) (*JellyfinChannelFeatures, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ChannelFeatures
+		localVarReturnValue  *JellyfinChannelFeatures
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannelFeatures")
@@ -258,10 +258,10 @@ type ApiGetChannelItemsRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	sortOrder *[]SortOrder
-	filters *[]ItemFilter
-	sortBy *[]ItemSortBy
-	fields *[]ItemFields
+	sortOrder *[]JellyfinSortOrder
+	filters *[]JellyfinItemFilter
+	sortBy *[]JellyfinItemSortBy
+	fields *[]JellyfinItemFields
 }
 
 // Optional. Folder Id.
@@ -289,30 +289,30 @@ func (r ApiGetChannelItemsRequest) Limit(limit int32) ApiGetChannelItemsRequest 
 }
 
 // Optional. Sort Order - Ascending,Descending.
-func (r ApiGetChannelItemsRequest) SortOrder(sortOrder []SortOrder) ApiGetChannelItemsRequest {
+func (r ApiGetChannelItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetChannelItemsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetChannelItemsRequest) Filters(filters []ItemFilter) ApiGetChannelItemsRequest {
+func (r ApiGetChannelItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetChannelItemsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetChannelItemsRequest) SortBy(sortBy []ItemSortBy) ApiGetChannelItemsRequest {
+func (r ApiGetChannelItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetChannelItemsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetChannelItemsRequest) Fields(fields []ItemFields) ApiGetChannelItemsRequest {
+func (r ApiGetChannelItemsRequest) Fields(fields []JellyfinItemFields) ApiGetChannelItemsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetChannelItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetChannelItemsExecute(r)
 }
 
@@ -332,13 +332,13 @@ func (a *ChannelsAPIService) GetChannelItems(ctx context.Context, channelId stri
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ChannelsAPIService) GetChannelItemsExecute(r ApiGetChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannelItems")
@@ -524,7 +524,7 @@ func (r ApiGetChannelsRequest) IsFavorite(isFavorite bool) ApiGetChannelsRequest
 	return r
 }
 
-func (r ApiGetChannelsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetChannelsExecute(r)
 }
 
@@ -542,13 +542,13 @@ func (a *ChannelsAPIService) GetChannels(ctx context.Context) ApiGetChannelsRequ
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ChannelsAPIService) GetChannelsExecute(r ApiGetChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetChannels")
@@ -654,8 +654,8 @@ type ApiGetLatestChannelItemsRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	filters *[]ItemFilter
-	fields *[]ItemFields
+	filters *[]JellyfinItemFilter
+	fields *[]JellyfinItemFields
 	channelIds *[]string
 }
 
@@ -678,13 +678,13 @@ func (r ApiGetLatestChannelItemsRequest) Limit(limit int32) ApiGetLatestChannelI
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetLatestChannelItemsRequest) Filters(filters []ItemFilter) ApiGetLatestChannelItemsRequest {
+func (r ApiGetLatestChannelItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetLatestChannelItemsRequest {
 	r.filters = &filters
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLatestChannelItemsRequest) Fields(fields []ItemFields) ApiGetLatestChannelItemsRequest {
+func (r ApiGetLatestChannelItemsRequest) Fields(fields []JellyfinItemFields) ApiGetLatestChannelItemsRequest {
 	r.fields = &fields
 	return r
 }
@@ -695,7 +695,7 @@ func (r ApiGetLatestChannelItemsRequest) ChannelIds(channelIds []string) ApiGetL
 	return r
 }
 
-func (r ApiGetLatestChannelItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetLatestChannelItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLatestChannelItemsExecute(r)
 }
 
@@ -713,13 +713,13 @@ func (a *ChannelsAPIService) GetLatestChannelItems(ctx context.Context) ApiGetLa
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ChannelsAPIService) GetLatestChannelItemsExecute(r ApiGetLatestChannelItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ChannelsAPIService) GetLatestChannelItemsExecute(r ApiGetLatestChannelItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ChannelsAPIService.GetLatestChannelItems")

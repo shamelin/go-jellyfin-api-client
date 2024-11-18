@@ -28,7 +28,7 @@ type ApiGetEndpointInfoRequest struct {
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetEndpointInfoRequest) Execute() (*EndPointInfo, *http.Response, error) {
+func (r ApiGetEndpointInfoRequest) Execute() (*JellyfinEndPointInfo, *http.Response, error) {
 	return r.ApiService.GetEndpointInfoExecute(r)
 }
 
@@ -46,13 +46,13 @@ func (a *SystemAPIService) GetEndpointInfo(ctx context.Context) ApiGetEndpointIn
 }
 
 // Execute executes the request
-//  @return EndPointInfo
-func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (*EndPointInfo, *http.Response, error) {
+//  @return JellyfinEndPointInfo
+func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (*JellyfinEndPointInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *EndPointInfo
+		localVarReturnValue  *JellyfinEndPointInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetEndpointInfo")
@@ -120,7 +120,7 @@ func (a *SystemAPIService) GetEndpointInfoExecute(r ApiGetEndpointInfoRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -253,7 +253,7 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -264,7 +264,7 @@ func (a *SystemAPIService) GetLogFileExecute(r ApiGetLogFileRequest) (*os.File, 
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -391,7 +391,7 @@ type ApiGetPublicSystemInfoRequest struct {
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetPublicSystemInfoRequest) Execute() (*PublicSystemInfo, *http.Response, error) {
+func (r ApiGetPublicSystemInfoRequest) Execute() (*JellyfinPublicSystemInfo, *http.Response, error) {
 	return r.ApiService.GetPublicSystemInfoExecute(r)
 }
 
@@ -409,13 +409,13 @@ func (a *SystemAPIService) GetPublicSystemInfo(ctx context.Context) ApiGetPublic
 }
 
 // Execute executes the request
-//  @return PublicSystemInfo
-func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRequest) (*PublicSystemInfo, *http.Response, error) {
+//  @return JellyfinPublicSystemInfo
+func (a *SystemAPIService) GetPublicSystemInfoExecute(r ApiGetPublicSystemInfoRequest) (*JellyfinPublicSystemInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PublicSystemInfo
+		localVarReturnValue  *JellyfinPublicSystemInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetPublicSystemInfo")
@@ -488,7 +488,7 @@ type ApiGetServerLogsRequest struct {
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetServerLogsRequest) Execute() ([]LogFile, *http.Response, error) {
+func (r ApiGetServerLogsRequest) Execute() ([]JellyfinLogFile, *http.Response, error) {
 	return r.ApiService.GetServerLogsExecute(r)
 }
 
@@ -506,13 +506,13 @@ func (a *SystemAPIService) GetServerLogs(ctx context.Context) ApiGetServerLogsRe
 }
 
 // Execute executes the request
-//  @return []LogFile
-func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]LogFile, *http.Response, error) {
+//  @return []JellyfinLogFile
+func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]JellyfinLogFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LogFile
+		localVarReturnValue  []JellyfinLogFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetServerLogs")
@@ -580,7 +580,7 @@ func (a *SystemAPIService) GetServerLogsExecute(r ApiGetServerLogsRequest) ([]Lo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -610,7 +610,7 @@ type ApiGetSystemInfoRequest struct {
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetSystemInfoRequest) Execute() (*SystemInfo, *http.Response, error) {
+func (r ApiGetSystemInfoRequest) Execute() (*JellyfinSystemInfo, *http.Response, error) {
 	return r.ApiService.GetSystemInfoExecute(r)
 }
 
@@ -628,13 +628,13 @@ func (a *SystemAPIService) GetSystemInfo(ctx context.Context) ApiGetSystemInfoRe
 }
 
 // Execute executes the request
-//  @return SystemInfo
-func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*SystemInfo, *http.Response, error) {
+//  @return JellyfinSystemInfo
+func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*JellyfinSystemInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SystemInfo
+		localVarReturnValue  *JellyfinSystemInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetSystemInfo")
@@ -702,7 +702,7 @@ func (a *SystemAPIService) GetSystemInfoExecute(r ApiGetSystemInfoRequest) (*Sys
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -732,7 +732,7 @@ type ApiGetWakeOnLanInfoRequest struct {
 	ApiService *SystemAPIService
 }
 
-func (r ApiGetWakeOnLanInfoRequest) Execute() ([]WakeOnLanInfo, *http.Response, error) {
+func (r ApiGetWakeOnLanInfoRequest) Execute() ([]JellyfinWakeOnLanInfo, *http.Response, error) {
 	return r.ApiService.GetWakeOnLanInfoExecute(r)
 }
 
@@ -752,14 +752,14 @@ func (a *SystemAPIService) GetWakeOnLanInfo(ctx context.Context) ApiGetWakeOnLan
 }
 
 // Execute executes the request
-//  @return []WakeOnLanInfo
+//  @return []JellyfinWakeOnLanInfo
 // Deprecated
-func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest) ([]WakeOnLanInfo, *http.Response, error) {
+func (a *SystemAPIService) GetWakeOnLanInfoExecute(r ApiGetWakeOnLanInfoRequest) ([]JellyfinWakeOnLanInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []WakeOnLanInfo
+		localVarReturnValue  []JellyfinWakeOnLanInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemAPIService.GetWakeOnLanInfo")
@@ -1033,7 +1033,7 @@ func (a *SystemAPIService) RestartApplicationExecute(r ApiRestartApplicationRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1144,7 +1144,7 @@ func (a *SystemAPIService) ShutdownApplicationExecute(r ApiShutdownApplicationRe
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

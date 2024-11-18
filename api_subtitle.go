@@ -127,7 +127,7 @@ func (a *SubtitleAPIService) DeleteSubtitleExecute(r ApiDeleteSubtitleRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -246,7 +246,7 @@ func (a *SubtitleAPIService) DownloadRemoteSubtitlesExecute(r ApiDownloadRemoteS
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -382,7 +382,7 @@ type ApiGetFallbackFontListRequest struct {
 	ApiService *SubtitleAPIService
 }
 
-func (r ApiGetFallbackFontListRequest) Execute() ([]FontFile, *http.Response, error) {
+func (r ApiGetFallbackFontListRequest) Execute() ([]JellyfinFontFile, *http.Response, error) {
 	return r.ApiService.GetFallbackFontListExecute(r)
 }
 
@@ -400,13 +400,13 @@ func (a *SubtitleAPIService) GetFallbackFontList(ctx context.Context) ApiGetFall
 }
 
 // Execute executes the request
-//  @return []FontFile
-func (a *SubtitleAPIService) GetFallbackFontListExecute(r ApiGetFallbackFontListRequest) ([]FontFile, *http.Response, error) {
+//  @return []JellyfinFontFile
+func (a *SubtitleAPIService) GetFallbackFontListExecute(r ApiGetFallbackFontListRequest) ([]JellyfinFontFile, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []FontFile
+		localVarReturnValue  []JellyfinFontFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubtitleAPIService.GetFallbackFontList")
@@ -929,7 +929,7 @@ func (a *SubtitleAPIService) GetSubtitlePlaylistExecute(r ApiGetSubtitlePlaylist
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1176,7 +1176,7 @@ func (r ApiSearchRemoteSubtitlesRequest) IsPerfectMatch(isPerfectMatch bool) Api
 	return r
 }
 
-func (r ApiSearchRemoteSubtitlesRequest) Execute() ([]RemoteSubtitleInfo, *http.Response, error) {
+func (r ApiSearchRemoteSubtitlesRequest) Execute() ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
 	return r.ApiService.SearchRemoteSubtitlesExecute(r)
 }
 
@@ -1198,13 +1198,13 @@ func (a *SubtitleAPIService) SearchRemoteSubtitles(ctx context.Context, itemId s
 }
 
 // Execute executes the request
-//  @return []RemoteSubtitleInfo
-func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r ApiSearchRemoteSubtitlesRequest) ([]RemoteSubtitleInfo, *http.Response, error) {
+//  @return []JellyfinRemoteSubtitleInfo
+func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r ApiSearchRemoteSubtitlesRequest) ([]JellyfinRemoteSubtitleInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RemoteSubtitleInfo
+		localVarReturnValue  []JellyfinRemoteSubtitleInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SubtitleAPIService.SearchRemoteSubtitles")
@@ -1277,7 +1277,7 @@ func (a *SubtitleAPIService) SearchRemoteSubtitlesExecute(r ApiSearchRemoteSubti
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1306,12 +1306,12 @@ type ApiUploadSubtitleRequest struct {
 	ctx context.Context
 	ApiService *SubtitleAPIService
 	itemId string
-	uploadSubtitleDto *UploadSubtitleDto
+	jellyfinUploadSubtitleDto *JellyfinUploadSubtitleDto
 }
 
 // The request body.
-func (r ApiUploadSubtitleRequest) UploadSubtitleDto(uploadSubtitleDto UploadSubtitleDto) ApiUploadSubtitleRequest {
-	r.uploadSubtitleDto = &uploadSubtitleDto
+func (r ApiUploadSubtitleRequest) JellyfinUploadSubtitleDto(jellyfinUploadSubtitleDto JellyfinUploadSubtitleDto) ApiUploadSubtitleRequest {
+	r.jellyfinUploadSubtitleDto = &jellyfinUploadSubtitleDto
 	return r
 }
 
@@ -1353,8 +1353,8 @@ func (a *SubtitleAPIService) UploadSubtitleExecute(r ApiUploadSubtitleRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.uploadSubtitleDto == nil {
-		return nil, reportError("uploadSubtitleDto is required and must be specified")
+	if r.jellyfinUploadSubtitleDto == nil {
+		return nil, reportError("jellyfinUploadSubtitleDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1375,7 +1375,7 @@ func (a *SubtitleAPIService) UploadSubtitleExecute(r ApiUploadSubtitleRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.uploadSubtitleDto
+	localVarPostBody = r.jellyfinUploadSubtitleDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1413,7 +1413,7 @@ func (a *SubtitleAPIService) UploadSubtitleExecute(r ApiUploadSubtitleRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

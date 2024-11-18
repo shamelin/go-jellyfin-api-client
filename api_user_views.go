@@ -35,7 +35,7 @@ func (r ApiGetGroupingOptionsRequest) UserId(userId string) ApiGetGroupingOption
 	return r
 }
 
-func (r ApiGetGroupingOptionsRequest) Execute() ([]SpecialViewOptionDto, *http.Response, error) {
+func (r ApiGetGroupingOptionsRequest) Execute() ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
 	return r.ApiService.GetGroupingOptionsExecute(r)
 }
 
@@ -53,13 +53,13 @@ func (a *UserViewsAPIService) GetGroupingOptions(ctx context.Context) ApiGetGrou
 }
 
 // Execute executes the request
-//  @return []SpecialViewOptionDto
-func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsRequest) ([]SpecialViewOptionDto, *http.Response, error) {
+//  @return []JellyfinSpecialViewOptionDto
+func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsRequest) ([]JellyfinSpecialViewOptionDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []SpecialViewOptionDto
+		localVarReturnValue  []JellyfinSpecialViewOptionDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserViewsAPIService.GetGroupingOptions")
@@ -130,7 +130,7 @@ func (a *UserViewsAPIService) GetGroupingOptionsExecute(r ApiGetGroupingOptionsR
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -160,7 +160,7 @@ type ApiGetUserViewsRequest struct {
 	ApiService *UserViewsAPIService
 	userId *string
 	includeExternalContent *bool
-	presetViews *[]CollectionType
+	presetViews *[]JellyfinCollectionType
 	includeHidden *bool
 }
 
@@ -177,7 +177,7 @@ func (r ApiGetUserViewsRequest) IncludeExternalContent(includeExternalContent bo
 }
 
 // Preset views.
-func (r ApiGetUserViewsRequest) PresetViews(presetViews []CollectionType) ApiGetUserViewsRequest {
+func (r ApiGetUserViewsRequest) PresetViews(presetViews []JellyfinCollectionType) ApiGetUserViewsRequest {
 	r.presetViews = &presetViews
 	return r
 }
@@ -188,7 +188,7 @@ func (r ApiGetUserViewsRequest) IncludeHidden(includeHidden bool) ApiGetUserView
 	return r
 }
 
-func (r ApiGetUserViewsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetUserViewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetUserViewsExecute(r)
 }
 
@@ -206,13 +206,13 @@ func (a *UserViewsAPIService) GetUserViews(ctx context.Context) ApiGetUserViewsR
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *UserViewsAPIService) GetUserViewsExecute(r ApiGetUserViewsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *UserViewsAPIService) GetUserViewsExecute(r ApiGetUserViewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserViewsAPIService.GetUserViews")

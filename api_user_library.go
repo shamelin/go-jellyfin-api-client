@@ -37,7 +37,7 @@ func (r ApiDeleteUserItemRatingRequest) UserId(userId string) ApiDeleteUserItemR
 	return r
 }
 
-func (r ApiDeleteUserItemRatingRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiDeleteUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.DeleteUserItemRatingExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *UserLibraryAPIService) DeleteUserItemRating(ctx context.Context, itemId
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemRatingRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *UserLibraryAPIService) DeleteUserItemRatingExecute(r ApiDeleteUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.DeleteUserItemRating")
@@ -162,7 +162,7 @@ func (r ApiGetIntrosRequest) UserId(userId string) ApiGetIntrosRequest {
 	return r
 }
 
-func (r ApiGetIntrosRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetIntrosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetIntrosExecute(r)
 }
 
@@ -182,13 +182,13 @@ func (a *UserLibraryAPIService) GetIntros(ctx context.Context, itemId string) Ap
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *UserLibraryAPIService) GetIntrosExecute(r ApiGetIntrosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetIntros")
@@ -287,7 +287,7 @@ func (r ApiGetItemRequest) UserId(userId string) ApiGetItemRequest {
 	return r
 }
 
-func (r ApiGetItemRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetItemRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetItemExecute(r)
 }
 
@@ -307,13 +307,13 @@ func (a *UserLibraryAPIService) GetItem(ctx context.Context, itemId string) ApiG
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *UserLibraryAPIService) GetItemExecute(r ApiGetItemRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetItem")
@@ -404,12 +404,12 @@ type ApiGetLatestMediaRequest struct {
 	ApiService *UserLibraryAPIService
 	userId *string
 	parentId *string
-	fields *[]ItemFields
-	includeItemTypes *[]BaseItemKind
+	fields *[]JellyfinItemFields
+	includeItemTypes *[]JellyfinBaseItemKind
 	isPlayed *bool
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
 	limit *int32
 	groupItems *bool
@@ -428,13 +428,13 @@ func (r ApiGetLatestMediaRequest) ParentId(parentId string) ApiGetLatestMediaReq
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLatestMediaRequest) Fields(fields []ItemFields) ApiGetLatestMediaRequest {
+func (r ApiGetLatestMediaRequest) Fields(fields []JellyfinItemFields) ApiGetLatestMediaRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetLatestMediaRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetLatestMediaRequest {
+func (r ApiGetLatestMediaRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetLatestMediaRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
@@ -458,7 +458,7 @@ func (r ApiGetLatestMediaRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetLat
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetLatestMediaRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetLatestMediaRequest {
+func (r ApiGetLatestMediaRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLatestMediaRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -481,7 +481,7 @@ func (r ApiGetLatestMediaRequest) GroupItems(groupItems bool) ApiGetLatestMediaR
 	return r
 }
 
-func (r ApiGetLatestMediaRequest) Execute() ([]BaseItemDto, *http.Response, error) {
+func (r ApiGetLatestMediaRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetLatestMediaExecute(r)
 }
 
@@ -499,13 +499,13 @@ func (a *UserLibraryAPIService) GetLatestMedia(ctx context.Context) ApiGetLatest
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
-func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest) ([]BaseItemDto, *http.Response, error) {
+//  @return []JellyfinBaseItemDto
+func (a *UserLibraryAPIService) GetLatestMediaExecute(r ApiGetLatestMediaRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarReturnValue  []JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetLatestMedia")
@@ -663,7 +663,7 @@ func (r ApiGetLocalTrailersRequest) UserId(userId string) ApiGetLocalTrailersReq
 	return r
 }
 
-func (r ApiGetLocalTrailersRequest) Execute() ([]BaseItemDto, *http.Response, error) {
+func (r ApiGetLocalTrailersRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetLocalTrailersExecute(r)
 }
 
@@ -683,13 +683,13 @@ func (a *UserLibraryAPIService) GetLocalTrailers(ctx context.Context, itemId str
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
-func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersRequest) ([]BaseItemDto, *http.Response, error) {
+//  @return []JellyfinBaseItemDto
+func (a *UserLibraryAPIService) GetLocalTrailersExecute(r ApiGetLocalTrailersRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarReturnValue  []JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetLocalTrailers")
@@ -787,7 +787,7 @@ func (r ApiGetRootFolderRequest) UserId(userId string) ApiGetRootFolderRequest {
 	return r
 }
 
-func (r ApiGetRootFolderRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetRootFolderRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetRootFolderExecute(r)
 }
 
@@ -805,13 +805,13 @@ func (a *UserLibraryAPIService) GetRootFolder(ctx context.Context) ApiGetRootFol
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *UserLibraryAPIService) GetRootFolderExecute(r ApiGetRootFolderRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetRootFolder")
@@ -909,7 +909,7 @@ func (r ApiGetSpecialFeaturesRequest) UserId(userId string) ApiGetSpecialFeature
 	return r
 }
 
-func (r ApiGetSpecialFeaturesRequest) Execute() ([]BaseItemDto, *http.Response, error) {
+func (r ApiGetSpecialFeaturesRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetSpecialFeaturesExecute(r)
 }
 
@@ -929,13 +929,13 @@ func (a *UserLibraryAPIService) GetSpecialFeatures(ctx context.Context, itemId s
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
-func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeaturesRequest) ([]BaseItemDto, *http.Response, error) {
+//  @return []JellyfinBaseItemDto
+func (a *UserLibraryAPIService) GetSpecialFeaturesExecute(r ApiGetSpecialFeaturesRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarReturnValue  []JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.GetSpecialFeatures")
@@ -1034,7 +1034,7 @@ func (r ApiMarkFavoriteItemRequest) UserId(userId string) ApiMarkFavoriteItemReq
 	return r
 }
 
-func (r ApiMarkFavoriteItemRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiMarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkFavoriteItemExecute(r)
 }
 
@@ -1054,13 +1054,13 @@ func (a *UserLibraryAPIService) MarkFavoriteItem(ctx context.Context, itemId str
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *UserLibraryAPIService) MarkFavoriteItemExecute(r ApiMarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.MarkFavoriteItem")
@@ -1159,7 +1159,7 @@ func (r ApiUnmarkFavoriteItemRequest) UserId(userId string) ApiUnmarkFavoriteIte
 	return r
 }
 
-func (r ApiUnmarkFavoriteItemRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiUnmarkFavoriteItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UnmarkFavoriteItemExecute(r)
 }
 
@@ -1179,13 +1179,13 @@ func (a *UserLibraryAPIService) UnmarkFavoriteItem(ctx context.Context, itemId s
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteItemRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *UserLibraryAPIService) UnmarkFavoriteItemExecute(r ApiUnmarkFavoriteItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.UnmarkFavoriteItem")
@@ -1291,7 +1291,7 @@ func (r ApiUpdateUserItemRatingRequest) Likes(likes bool) ApiUpdateUserItemRatin
 	return r
 }
 
-func (r ApiUpdateUserItemRatingRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiUpdateUserItemRatingRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UpdateUserItemRatingExecute(r)
 }
 
@@ -1311,13 +1311,13 @@ func (a *UserLibraryAPIService) UpdateUserItemRating(ctx context.Context, itemId
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *UserLibraryAPIService) UpdateUserItemRatingExecute(r ApiUpdateUserItemRatingRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *UserLibraryAPIService) UpdateUserItemRatingExecute(r ApiUpdateUserItemRatingRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserLibraryAPIService.UpdateUserItemRating")

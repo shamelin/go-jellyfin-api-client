@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetDisplayPreferences
 
-> DisplayPreferencesDto GetDisplayPreferences(ctx, displayPreferencesId).Client(client).UserId(userId).Execute()
+> JellyfinJellyfinDisplayPreferencesDto GetDisplayPreferences(ctx, displayPreferencesId).Client(client).UserId(userId).Execute()
 
 Get Display Preferences.
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DisplayPreferencesAPI.GetDisplayPreferences``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDisplayPreferences`: DisplayPreferencesDto
+	// response from `GetDisplayPreferences`: JellyfinJellyfinDisplayPreferencesDto
 	fmt.Fprintf(os.Stdout, "Response from `DisplayPreferencesAPI.GetDisplayPreferences`: %v\n", resp)
 }
 ```
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DisplayPreferencesDto**](DisplayPreferencesDto.md)
+[**JellyfinJellyfinDisplayPreferencesDto**](JellyfinDisplayPreferencesDto.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDisplayPreferences
 
-> UpdateDisplayPreferences(ctx, displayPreferencesId).Client(client).DisplayPreferencesDto(displayPreferencesDto).UserId(userId).Execute()
+> UpdateDisplayPreferences(ctx, displayPreferencesId).Client(client).JellyfinDisplayPreferencesDto(jellyfinDisplayPreferencesDto).UserId(userId).Execute()
 
 Update Display Preferences.
 
@@ -102,12 +102,12 @@ import (
 func main() {
 	displayPreferencesId := "displayPreferencesId_example" // string | Display preferences id.
 	client := "client_example" // string | Client.
-	displayPreferencesDto := *openapiclient.NewDisplayPreferencesDto() // DisplayPreferencesDto | New Display Preferences object.
+	jellyfinDisplayPreferencesDto := *openapiclient.NewJellyfinDisplayPreferencesDto() // JellyfinDisplayPreferencesDto | New Display Preferences object.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User Id. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DisplayPreferencesAPI.UpdateDisplayPreferences(context.Background(), displayPreferencesId).Client(client).DisplayPreferencesDto(displayPreferencesDto).UserId(userId).Execute()
+	r, err := apiClient.DisplayPreferencesAPI.UpdateDisplayPreferences(context.Background(), displayPreferencesId).Client(client).JellyfinDisplayPreferencesDto(jellyfinDisplayPreferencesDto).UserId(userId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DisplayPreferencesAPI.UpdateDisplayPreferences``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **client** | **string** | Client. | 
- **displayPreferencesDto** | [**DisplayPreferencesDto**](DisplayPreferencesDto.md) | New Display Preferences object. | 
+ **jellyfinDisplayPreferencesDto** | [**JellyfinDisplayPreferencesDto**](JellyfinDisplayPreferencesDto.md) | New Display Preferences object. | 
  **userId** | **string** | User Id. | 
 
 ### Return type

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetConfiguration
 
-> ServerConfiguration GetConfiguration(ctx).Execute()
+> JellyfinJellyfinServerConfiguration GetConfiguration(ctx).Execute()
 
 Gets application configuration.
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationAPI.GetConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConfiguration`: ServerConfiguration
+	// response from `GetConfiguration`: JellyfinJellyfinServerConfiguration
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationAPI.GetConfiguration`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 
 ### Return type
 
-[**ServerConfiguration**](ServerConfiguration.md)
+[**JellyfinJellyfinServerConfiguration**](JellyfinServerConfiguration.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 
 ## GetDefaultMetadataOptions
 
-> MetadataOptions GetDefaultMetadataOptions(ctx).Execute()
+> JellyfinJellyfinMetadataOptions GetDefaultMetadataOptions(ctx).Execute()
 
 Gets a default MetadataOptions object.
 
@@ -98,7 +98,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationAPI.GetDefaultMetadataOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDefaultMetadataOptions`: MetadataOptions
+	// response from `GetDefaultMetadataOptions`: JellyfinJellyfinMetadataOptions
 	fmt.Fprintf(os.Stdout, "Response from `ConfigurationAPI.GetDefaultMetadataOptions`: %v\n", resp)
 }
 ```
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiGetDefaultMetadataOptionsR
 
 ### Return type
 
-[**MetadataOptions**](MetadataOptions.md)
+[**JellyfinJellyfinMetadataOptions**](JellyfinMetadataOptions.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## UpdateConfiguration
 
-> UpdateConfiguration(ctx).ServerConfiguration(serverConfiguration).Execute()
+> UpdateConfiguration(ctx).JellyfinServerConfiguration(jellyfinServerConfiguration).Execute()
 
 Updates application configuration.
 
@@ -217,11 +217,11 @@ import (
 )
 
 func main() {
-	serverConfiguration := *openapiclient.NewServerConfiguration() // ServerConfiguration | Configuration.
+	jellyfinServerConfiguration := *openapiclient.NewJellyfinServerConfiguration() // JellyfinServerConfiguration | Configuration.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ConfigurationAPI.UpdateConfiguration(context.Background()).ServerConfiguration(serverConfiguration).Execute()
+	r, err := apiClient.ConfigurationAPI.UpdateConfiguration(context.Background()).JellyfinServerConfiguration(jellyfinServerConfiguration).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ConfigurationAPI.UpdateConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,7 +240,7 @@ Other parameters are passed through a pointer to a apiUpdateConfigurationRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serverConfiguration** | [**ServerConfiguration**](ServerConfiguration.md) | Configuration. | 
+ **jellyfinServerConfiguration** | [**JellyfinServerConfiguration**](JellyfinServerConfiguration.md) | Configuration. | 
 
 ### Return type
 

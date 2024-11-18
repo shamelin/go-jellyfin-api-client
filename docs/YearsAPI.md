@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetYear
 
-> BaseItemDto GetYear(ctx, year).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetYear(ctx, year).UserId(userId).Execute()
 
 Gets a year.
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `YearsAPI.GetYear``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetYear`: BaseItemDto
+	// response from `GetYear`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `YearsAPI.GetYear`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GetYears
 
-> BaseItemDtoQueryResult GetYears(ctx).StartIndex(startIndex).Limit(limit).SortOrder(sortOrder).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).MediaTypes(mediaTypes).SortBy(sortBy).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).UserId(userId).Recursive(recursive).EnableImages(enableImages).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetYears(ctx).StartIndex(startIndex).Limit(limit).SortOrder(sortOrder).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).MediaTypes(mediaTypes).SortBy(sortBy).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).UserId(userId).Recursive(recursive).EnableImages(enableImages).Execute()
 
 Get years.
 
@@ -100,16 +100,16 @@ import (
 func main() {
 	startIndex := int32(56) // int32 | Skips over a given number of items within the results. Use for paging. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Sort Order - Ascending,Descending. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Sort Order - Ascending,Descending. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
-	excludeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be included based on item type. This allows multiple, comma delimited. (optional)
-	mediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | Optional. Filter by MediaType. Allows multiple, comma delimited. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	excludeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be included based on item type. This allows multiple, comma delimited. (optional)
+	mediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | Optional. Filter by MediaType. Allows multiple, comma delimited. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User Id. (optional)
 	recursive := true // bool | Search recursively. (optional) (default to true)
 	enableImages := true // bool | Optional. Include image information in output. (optional) (default to true)
@@ -121,7 +121,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `YearsAPI.GetYears``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetYears`: BaseItemDtoQueryResult
+	// response from `GetYears`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `YearsAPI.GetYears`: %v\n", resp)
 }
 ```
@@ -139,23 +139,23 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startIndex** | **int32** | Skips over a given number of items within the results. Use for paging. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Sort Order - Ascending,Descending. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Sort Order - Ascending,Descending. | 
  **parentId** | **string** | Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
- **excludeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be included based on item type. This allows multiple, comma delimited. | 
- **mediaTypes** | [**[]MediaType**](MediaType.md) | Optional. Filter by MediaType. Allows multiple, comma delimited. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **excludeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be excluded based on item type. This allows multiple, comma delimited. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be included based on item type. This allows multiple, comma delimited. | 
+ **mediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | Optional. Filter by MediaType. Allows multiple, comma delimited. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **userId** | **string** | User Id. | 
  **recursive** | **bool** | Search recursively. | [default to true]
  **enableImages** | **bool** | Optional. Include image information in output. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## GetKeys
 
-> AuthenticationInfoQueryResult GetKeys(ctx).Execute()
+> JellyfinJellyfinAuthenticationInfoQueryResult GetKeys(ctx).Execute()
 
 Get all keys.
 
@@ -99,7 +99,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ApiKeyAPI.GetKeys``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetKeys`: AuthenticationInfoQueryResult
+	// response from `GetKeys`: JellyfinJellyfinAuthenticationInfoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ApiKeyAPI.GetKeys`: %v\n", resp)
 }
 ```
@@ -115,7 +115,7 @@ Other parameters are passed through a pointer to a apiGetKeysRequest struct via 
 
 ### Return type
 
-[**AuthenticationInfoQueryResult**](AuthenticationInfoQueryResult.md)
+[**JellyfinJellyfinAuthenticationInfoQueryResult**](JellyfinAuthenticationInfoQueryResult.md)
 
 ### Authorization
 

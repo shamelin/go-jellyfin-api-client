@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetTask
 
-> TaskInfo GetTask(ctx, taskId).Execute()
+> JellyfinJellyfinTaskInfo GetTask(ctx, taskId).Execute()
 
 Get task by id.
 
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ScheduledTasksAPI.GetTask``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTask`: TaskInfo
+	// response from `GetTask`: JellyfinJellyfinTaskInfo
 	fmt.Fprintf(os.Stdout, "Response from `ScheduledTasksAPI.GetTask`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaskInfo**](TaskInfo.md)
+[**JellyfinJellyfinTaskInfo**](JellyfinTaskInfo.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetTasks
 
-> []TaskInfo GetTasks(ctx).IsHidden(isHidden).IsEnabled(isEnabled).Execute()
+> []JellyfinJellyfinTaskInfo GetTasks(ctx).IsHidden(isHidden).IsEnabled(isEnabled).Execute()
 
 Get tasks.
 
@@ -109,7 +109,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ScheduledTasksAPI.GetTasks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTasks`: []TaskInfo
+	// response from `GetTasks`: []JellyfinJellyfinTaskInfo
 	fmt.Fprintf(os.Stdout, "Response from `ScheduledTasksAPI.GetTasks`: %v\n", resp)
 }
 ```
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]TaskInfo**](TaskInfo.md)
+[**[]JellyfinJellyfinTaskInfo**](JellyfinTaskInfo.md)
 
 ### Authorization
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTask
 
-> UpdateTask(ctx, taskId).TaskTriggerInfo(taskTriggerInfo).Execute()
+> UpdateTask(ctx, taskId).JellyfinTaskTriggerInfo(jellyfinTaskTriggerInfo).Execute()
 
 Update specified task triggers.
 
@@ -298,11 +298,11 @@ import (
 
 func main() {
 	taskId := "taskId_example" // string | Task Id.
-	taskTriggerInfo := []openapiclient.TaskTriggerInfo{*openapiclient.NewTaskTriggerInfo()} // []TaskTriggerInfo | Triggers.
+	jellyfinTaskTriggerInfo := []JellyfinJellyfinTaskTriggerInfo{"TODO"} // []JellyfinJellyfinTaskTriggerInfo | Triggers.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ScheduledTasksAPI.UpdateTask(context.Background(), taskId).TaskTriggerInfo(taskTriggerInfo).Execute()
+	r, err := apiClient.ScheduledTasksAPI.UpdateTask(context.Background(), taskId).JellyfinTaskTriggerInfo(jellyfinTaskTriggerInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ScheduledTasksAPI.UpdateTask``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,7 +326,7 @@ Other parameters are passed through a pointer to a apiUpdateTaskRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **taskTriggerInfo** | [**[]TaskTriggerInfo**](TaskTriggerInfo.md) | Triggers. | 
+ **jellyfinTaskTriggerInfo** | [**[]JellyfinJellyfinTaskTriggerInfo**](JellyfinTaskTriggerInfo.md) | Triggers. | 
 
 ### Return type
 

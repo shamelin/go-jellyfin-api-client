@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetQueryFilters
 
-> QueryFilters GetQueryFilters(ctx).UserId(userId).ParentId(parentId).IncludeItemTypes(includeItemTypes).IsAiring(isAiring).IsMovie(isMovie).IsSports(isSports).IsKids(isKids).IsNews(isNews).IsSeries(isSeries).Recursive(recursive).Execute()
+> JellyfinJellyfinQueryFilters GetQueryFilters(ctx).UserId(userId).ParentId(parentId).IncludeItemTypes(includeItemTypes).IsAiring(isAiring).IsMovie(isMovie).IsSports(isSports).IsKids(isKids).IsNews(isNews).IsSeries(isSeries).Recursive(recursive).Execute()
 
 Gets query filters.
 
@@ -30,7 +30,7 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. User id. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
 	isAiring := true // bool | Optional. Is item airing. (optional)
 	isMovie := true // bool | Optional. Is item movie. (optional)
 	isSports := true // bool | Optional. Is item sports. (optional)
@@ -46,7 +46,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `FilterAPI.GetQueryFilters``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQueryFilters`: QueryFilters
+	// response from `GetQueryFilters`: JellyfinJellyfinQueryFilters
 	fmt.Fprintf(os.Stdout, "Response from `FilterAPI.GetQueryFilters`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | Optional. User id. | 
  **parentId** | **string** | Optional. Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
  **isAiring** | **bool** | Optional. Is item airing. | 
  **isMovie** | **bool** | Optional. Is item movie. | 
  **isSports** | **bool** | Optional. Is item sports. | 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueryFilters**](QueryFilters.md)
+[**JellyfinJellyfinQueryFilters**](JellyfinQueryFilters.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## GetQueryFiltersLegacy
 
-> QueryFiltersLegacy GetQueryFiltersLegacy(ctx).UserId(userId).ParentId(parentId).IncludeItemTypes(includeItemTypes).MediaTypes(mediaTypes).Execute()
+> JellyfinJellyfinQueryFiltersLegacy GetQueryFiltersLegacy(ctx).UserId(userId).ParentId(parentId).IncludeItemTypes(includeItemTypes).MediaTypes(mediaTypes).Execute()
 
 Gets legacy query filters.
 
@@ -112,8 +112,8 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. User id. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Parent id. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
-	mediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | Optional. Filter by MediaType. Allows multiple, comma delimited. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	mediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | Optional. Filter by MediaType. Allows multiple, comma delimited. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `FilterAPI.GetQueryFiltersLegacy``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQueryFiltersLegacy`: QueryFiltersLegacy
+	// response from `GetQueryFiltersLegacy`: JellyfinJellyfinQueryFiltersLegacy
 	fmt.Fprintf(os.Stdout, "Response from `FilterAPI.GetQueryFiltersLegacy`: %v\n", resp)
 }
 ```
@@ -140,12 +140,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | Optional. User id. | 
  **parentId** | **string** | Optional. Parent id. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
- **mediaTypes** | [**[]MediaType**](MediaType.md) | Optional. Filter by MediaType. Allows multiple, comma delimited. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **mediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | Optional. Filter by MediaType. Allows multiple, comma delimited. | 
 
 ### Return type
 
-[**QueryFiltersLegacy**](QueryFiltersLegacy.md)
+[**JellyfinJellyfinQueryFiltersLegacy**](JellyfinQueryFiltersLegacy.md)
 
 ### Authorization
 

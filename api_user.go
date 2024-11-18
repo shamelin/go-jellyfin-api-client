@@ -26,16 +26,16 @@ type UserAPIService service
 type ApiAuthenticateUserByNameRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	authenticateUserByName *AuthenticateUserByName
+	jellyfinAuthenticateUserByName *JellyfinAuthenticateUserByName
 }
 
 // The M:Jellyfin.Api.Controllers.UserController.AuthenticateUserByName(Jellyfin.Api.Models.UserDtos.AuthenticateUserByName) request.
-func (r ApiAuthenticateUserByNameRequest) AuthenticateUserByName(authenticateUserByName AuthenticateUserByName) ApiAuthenticateUserByNameRequest {
-	r.authenticateUserByName = &authenticateUserByName
+func (r ApiAuthenticateUserByNameRequest) JellyfinAuthenticateUserByName(jellyfinAuthenticateUserByName JellyfinAuthenticateUserByName) ApiAuthenticateUserByNameRequest {
+	r.jellyfinAuthenticateUserByName = &jellyfinAuthenticateUserByName
 	return r
 }
 
-func (r ApiAuthenticateUserByNameRequest) Execute() (*AuthenticationResult, *http.Response, error) {
+func (r ApiAuthenticateUserByNameRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
 	return r.ApiService.AuthenticateUserByNameExecute(r)
 }
 
@@ -53,13 +53,13 @@ func (a *UserAPIService) AuthenticateUserByName(ctx context.Context) ApiAuthenti
 }
 
 // Execute executes the request
-//  @return AuthenticationResult
-func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNameRequest) (*AuthenticationResult, *http.Response, error) {
+//  @return JellyfinAuthenticationResult
+func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNameRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AuthenticationResult
+		localVarReturnValue  *JellyfinAuthenticationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.AuthenticateUserByName")
@@ -72,8 +72,8 @@ func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNa
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.authenticateUserByName == nil {
-		return localVarReturnValue, nil, reportError("authenticateUserByName is required and must be specified")
+	if r.jellyfinAuthenticateUserByName == nil {
+		return localVarReturnValue, nil, reportError("jellyfinAuthenticateUserByName is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -94,7 +94,7 @@ func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.authenticateUserByName
+	localVarPostBody = r.jellyfinAuthenticateUserByName
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -135,16 +135,16 @@ func (a *UserAPIService) AuthenticateUserByNameExecute(r ApiAuthenticateUserByNa
 type ApiAuthenticateWithQuickConnectRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	quickConnectDto *QuickConnectDto
+	jellyfinQuickConnectDto *JellyfinQuickConnectDto
 }
 
 // The Jellyfin.Api.Models.UserDtos.QuickConnectDto request.
-func (r ApiAuthenticateWithQuickConnectRequest) QuickConnectDto(quickConnectDto QuickConnectDto) ApiAuthenticateWithQuickConnectRequest {
-	r.quickConnectDto = &quickConnectDto
+func (r ApiAuthenticateWithQuickConnectRequest) JellyfinQuickConnectDto(jellyfinQuickConnectDto JellyfinQuickConnectDto) ApiAuthenticateWithQuickConnectRequest {
+	r.jellyfinQuickConnectDto = &jellyfinQuickConnectDto
 	return r
 }
 
-func (r ApiAuthenticateWithQuickConnectRequest) Execute() (*AuthenticationResult, *http.Response, error) {
+func (r ApiAuthenticateWithQuickConnectRequest) Execute() (*JellyfinAuthenticationResult, *http.Response, error) {
 	return r.ApiService.AuthenticateWithQuickConnectExecute(r)
 }
 
@@ -162,13 +162,13 @@ func (a *UserAPIService) AuthenticateWithQuickConnect(ctx context.Context) ApiAu
 }
 
 // Execute executes the request
-//  @return AuthenticationResult
-func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWithQuickConnectRequest) (*AuthenticationResult, *http.Response, error) {
+//  @return JellyfinAuthenticationResult
+func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWithQuickConnectRequest) (*JellyfinAuthenticationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AuthenticationResult
+		localVarReturnValue  *JellyfinAuthenticationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.AuthenticateWithQuickConnect")
@@ -181,8 +181,8 @@ func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.quickConnectDto == nil {
-		return localVarReturnValue, nil, reportError("quickConnectDto is required and must be specified")
+	if r.jellyfinQuickConnectDto == nil {
+		return localVarReturnValue, nil, reportError("jellyfinQuickConnectDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -203,7 +203,7 @@ func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.quickConnectDto
+	localVarPostBody = r.jellyfinQuickConnectDto
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -244,16 +244,16 @@ func (a *UserAPIService) AuthenticateWithQuickConnectExecute(r ApiAuthenticateWi
 type ApiCreateUserByNameRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	createUserByName *CreateUserByName
+	jellyfinCreateUserByName *JellyfinCreateUserByName
 }
 
 // The create user by name request body.
-func (r ApiCreateUserByNameRequest) CreateUserByName(createUserByName CreateUserByName) ApiCreateUserByNameRequest {
-	r.createUserByName = &createUserByName
+func (r ApiCreateUserByNameRequest) JellyfinCreateUserByName(jellyfinCreateUserByName JellyfinCreateUserByName) ApiCreateUserByNameRequest {
+	r.jellyfinCreateUserByName = &jellyfinCreateUserByName
 	return r
 }
 
-func (r ApiCreateUserByNameRequest) Execute() (*UserDto, *http.Response, error) {
+func (r ApiCreateUserByNameRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.CreateUserByNameExecute(r)
 }
 
@@ -271,13 +271,13 @@ func (a *UserAPIService) CreateUserByName(ctx context.Context) ApiCreateUserByNa
 }
 
 // Execute executes the request
-//  @return UserDto
-func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (*UserDto, *http.Response, error) {
+//  @return JellyfinUserDto
+func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserDto
+		localVarReturnValue  *JellyfinUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.CreateUserByName")
@@ -290,8 +290,8 @@ func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.createUserByName == nil {
-		return localVarReturnValue, nil, reportError("createUserByName is required and must be specified")
+	if r.jellyfinCreateUserByName == nil {
+		return localVarReturnValue, nil, reportError("jellyfinCreateUserByName is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -312,7 +312,7 @@ func (a *UserAPIService) CreateUserByNameExecute(r ApiCreateUserByNameRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createUserByName
+	localVarPostBody = r.jellyfinCreateUserByName
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -463,7 +463,7 @@ func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -482,16 +482,16 @@ func (a *UserAPIService) DeleteUserExecute(r ApiDeleteUserRequest) (*http.Respon
 type ApiForgotPasswordRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	forgotPasswordDto *ForgotPasswordDto
+	jellyfinForgotPasswordDto *JellyfinForgotPasswordDto
 }
 
 // The forgot password request containing the entered username.
-func (r ApiForgotPasswordRequest) ForgotPasswordDto(forgotPasswordDto ForgotPasswordDto) ApiForgotPasswordRequest {
-	r.forgotPasswordDto = &forgotPasswordDto
+func (r ApiForgotPasswordRequest) JellyfinForgotPasswordDto(jellyfinForgotPasswordDto JellyfinForgotPasswordDto) ApiForgotPasswordRequest {
+	r.jellyfinForgotPasswordDto = &jellyfinForgotPasswordDto
 	return r
 }
 
-func (r ApiForgotPasswordRequest) Execute() (*ForgotPasswordResult, *http.Response, error) {
+func (r ApiForgotPasswordRequest) Execute() (*JellyfinForgotPasswordResult, *http.Response, error) {
 	return r.ApiService.ForgotPasswordExecute(r)
 }
 
@@ -509,13 +509,13 @@ func (a *UserAPIService) ForgotPassword(ctx context.Context) ApiForgotPasswordRe
 }
 
 // Execute executes the request
-//  @return ForgotPasswordResult
-func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*ForgotPasswordResult, *http.Response, error) {
+//  @return JellyfinForgotPasswordResult
+func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*JellyfinForgotPasswordResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ForgotPasswordResult
+		localVarReturnValue  *JellyfinForgotPasswordResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.ForgotPassword")
@@ -528,8 +528,8 @@ func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*For
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.forgotPasswordDto == nil {
-		return localVarReturnValue, nil, reportError("forgotPasswordDto is required and must be specified")
+	if r.jellyfinForgotPasswordDto == nil {
+		return localVarReturnValue, nil, reportError("jellyfinForgotPasswordDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -550,7 +550,7 @@ func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*For
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.forgotPasswordDto
+	localVarPostBody = r.jellyfinForgotPasswordDto
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,16 +591,16 @@ func (a *UserAPIService) ForgotPasswordExecute(r ApiForgotPasswordRequest) (*For
 type ApiForgotPasswordPinRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	forgotPasswordPinDto *ForgotPasswordPinDto
+	jellyfinForgotPasswordPinDto *JellyfinForgotPasswordPinDto
 }
 
 // The forgot password pin request containing the entered pin.
-func (r ApiForgotPasswordPinRequest) ForgotPasswordPinDto(forgotPasswordPinDto ForgotPasswordPinDto) ApiForgotPasswordPinRequest {
-	r.forgotPasswordPinDto = &forgotPasswordPinDto
+func (r ApiForgotPasswordPinRequest) JellyfinForgotPasswordPinDto(jellyfinForgotPasswordPinDto JellyfinForgotPasswordPinDto) ApiForgotPasswordPinRequest {
+	r.jellyfinForgotPasswordPinDto = &jellyfinForgotPasswordPinDto
 	return r
 }
 
-func (r ApiForgotPasswordPinRequest) Execute() (*PinRedeemResult, *http.Response, error) {
+func (r ApiForgotPasswordPinRequest) Execute() (*JellyfinPinRedeemResult, *http.Response, error) {
 	return r.ApiService.ForgotPasswordPinExecute(r)
 }
 
@@ -618,13 +618,13 @@ func (a *UserAPIService) ForgotPasswordPin(ctx context.Context) ApiForgotPasswor
 }
 
 // Execute executes the request
-//  @return PinRedeemResult
-func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest) (*PinRedeemResult, *http.Response, error) {
+//  @return JellyfinPinRedeemResult
+func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest) (*JellyfinPinRedeemResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PinRedeemResult
+		localVarReturnValue  *JellyfinPinRedeemResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.ForgotPasswordPin")
@@ -637,8 +637,8 @@ func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest)
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.forgotPasswordPinDto == nil {
-		return localVarReturnValue, nil, reportError("forgotPasswordPinDto is required and must be specified")
+	if r.jellyfinForgotPasswordPinDto == nil {
+		return localVarReturnValue, nil, reportError("jellyfinForgotPasswordPinDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -659,7 +659,7 @@ func (a *UserAPIService) ForgotPasswordPinExecute(r ApiForgotPasswordPinRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.forgotPasswordPinDto
+	localVarPostBody = r.jellyfinForgotPasswordPinDto
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,7 +702,7 @@ type ApiGetCurrentUserRequest struct {
 	ApiService *UserAPIService
 }
 
-func (r ApiGetCurrentUserRequest) Execute() (*UserDto, *http.Response, error) {
+func (r ApiGetCurrentUserRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetCurrentUserExecute(r)
 }
 
@@ -720,13 +720,13 @@ func (a *UserAPIService) GetCurrentUser(ctx context.Context) ApiGetCurrentUserRe
 }
 
 // Execute executes the request
-//  @return UserDto
-func (a *UserAPIService) GetCurrentUserExecute(r ApiGetCurrentUserRequest) (*UserDto, *http.Response, error) {
+//  @return JellyfinUserDto
+func (a *UserAPIService) GetCurrentUserExecute(r ApiGetCurrentUserRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserDto
+		localVarReturnValue  *JellyfinUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetCurrentUser")
@@ -794,7 +794,7 @@ func (a *UserAPIService) GetCurrentUserExecute(r ApiGetCurrentUserRequest) (*Use
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -824,7 +824,7 @@ type ApiGetPublicUsersRequest struct {
 	ApiService *UserAPIService
 }
 
-func (r ApiGetPublicUsersRequest) Execute() ([]UserDto, *http.Response, error) {
+func (r ApiGetPublicUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetPublicUsersExecute(r)
 }
 
@@ -842,13 +842,13 @@ func (a *UserAPIService) GetPublicUsers(ctx context.Context) ApiGetPublicUsersRe
 }
 
 // Execute executes the request
-//  @return []UserDto
-func (a *UserAPIService) GetPublicUsersExecute(r ApiGetPublicUsersRequest) ([]UserDto, *http.Response, error) {
+//  @return []JellyfinUserDto
+func (a *UserAPIService) GetPublicUsersExecute(r ApiGetPublicUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []UserDto
+		localVarReturnValue  []JellyfinUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetPublicUsers")
@@ -922,7 +922,7 @@ type ApiGetUserByIdRequest struct {
 	userId string
 }
 
-func (r ApiGetUserByIdRequest) Execute() (*UserDto, *http.Response, error) {
+func (r ApiGetUserByIdRequest) Execute() (*JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetUserByIdExecute(r)
 }
 
@@ -942,13 +942,13 @@ func (a *UserAPIService) GetUserById(ctx context.Context, userId string) ApiGetU
 }
 
 // Execute executes the request
-//  @return UserDto
-func (a *UserAPIService) GetUserByIdExecute(r ApiGetUserByIdRequest) (*UserDto, *http.Response, error) {
+//  @return JellyfinUserDto
+func (a *UserAPIService) GetUserByIdExecute(r ApiGetUserByIdRequest) (*JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserDto
+		localVarReturnValue  *JellyfinUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserById")
@@ -1017,7 +1017,7 @@ func (a *UserAPIService) GetUserByIdExecute(r ApiGetUserByIdRequest) (*UserDto, 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1061,7 +1061,7 @@ func (r ApiGetUsersRequest) IsDisabled(isDisabled bool) ApiGetUsersRequest {
 	return r
 }
 
-func (r ApiGetUsersRequest) Execute() ([]UserDto, *http.Response, error) {
+func (r ApiGetUsersRequest) Execute() ([]JellyfinUserDto, *http.Response, error) {
 	return r.ApiService.GetUsersExecute(r)
 }
 
@@ -1079,13 +1079,13 @@ func (a *UserAPIService) GetUsers(ctx context.Context) ApiGetUsersRequest {
 }
 
 // Execute executes the request
-//  @return []UserDto
-func (a *UserAPIService) GetUsersExecute(r ApiGetUsersRequest) ([]UserDto, *http.Response, error) {
+//  @return []JellyfinUserDto
+func (a *UserAPIService) GetUsersExecute(r ApiGetUsersRequest) ([]JellyfinUserDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []UserDto
+		localVarReturnValue  []JellyfinUserDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUsers")
@@ -1176,13 +1176,13 @@ func (a *UserAPIService) GetUsersExecute(r ApiGetUsersRequest) ([]UserDto, *http
 type ApiUpdateUserRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	userDto *UserDto
+	jellyfinUserDto *JellyfinUserDto
 	userId *string
 }
 
 // The updated user model.
-func (r ApiUpdateUserRequest) UserDto(userDto UserDto) ApiUpdateUserRequest {
-	r.userDto = &userDto
+func (r ApiUpdateUserRequest) JellyfinUserDto(jellyfinUserDto JellyfinUserDto) ApiUpdateUserRequest {
+	r.jellyfinUserDto = &jellyfinUserDto
 	return r
 }
 
@@ -1227,8 +1227,8 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.userDto == nil {
-		return nil, reportError("userDto is required and must be specified")
+	if r.jellyfinUserDto == nil {
+		return nil, reportError("jellyfinUserDto is required and must be specified")
 	}
 
 	if r.userId != nil {
@@ -1252,7 +1252,7 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userDto
+	localVarPostBody = r.jellyfinUserDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1290,7 +1290,7 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1301,7 +1301,7 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1320,13 +1320,13 @@ func (a *UserAPIService) UpdateUserExecute(r ApiUpdateUserRequest) (*http.Respon
 type ApiUpdateUserConfigurationRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	userConfiguration *UserConfiguration
+	jellyfinUserConfiguration *JellyfinUserConfiguration
 	userId *string
 }
 
 // The new user configuration.
-func (r ApiUpdateUserConfigurationRequest) UserConfiguration(userConfiguration UserConfiguration) ApiUpdateUserConfigurationRequest {
-	r.userConfiguration = &userConfiguration
+func (r ApiUpdateUserConfigurationRequest) JellyfinUserConfiguration(jellyfinUserConfiguration JellyfinUserConfiguration) ApiUpdateUserConfigurationRequest {
+	r.jellyfinUserConfiguration = &jellyfinUserConfiguration
 	return r
 }
 
@@ -1371,8 +1371,8 @@ func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigura
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.userConfiguration == nil {
-		return nil, reportError("userConfiguration is required and must be specified")
+	if r.jellyfinUserConfiguration == nil {
+		return nil, reportError("jellyfinUserConfiguration is required and must be specified")
 	}
 
 	if r.userId != nil {
@@ -1396,7 +1396,7 @@ func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigura
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userConfiguration
+	localVarPostBody = r.jellyfinUserConfiguration
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1434,7 +1434,7 @@ func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigura
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1453,13 +1453,13 @@ func (a *UserAPIService) UpdateUserConfigurationExecute(r ApiUpdateUserConfigura
 type ApiUpdateUserPasswordRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
-	updateUserPassword *UpdateUserPassword
+	jellyfinUpdateUserPassword *JellyfinUpdateUserPassword
 	userId *string
 }
 
 // The M:Jellyfin.Api.Controllers.UserController.UpdateUserPassword(System.Nullable{System.Guid},Jellyfin.Api.Models.UserDtos.UpdateUserPassword) request.
-func (r ApiUpdateUserPasswordRequest) UpdateUserPassword(updateUserPassword UpdateUserPassword) ApiUpdateUserPasswordRequest {
-	r.updateUserPassword = &updateUserPassword
+func (r ApiUpdateUserPasswordRequest) JellyfinUpdateUserPassword(jellyfinUpdateUserPassword JellyfinUpdateUserPassword) ApiUpdateUserPasswordRequest {
+	r.jellyfinUpdateUserPassword = &jellyfinUpdateUserPassword
 	return r
 }
 
@@ -1504,8 +1504,8 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateUserPassword == nil {
-		return nil, reportError("updateUserPassword is required and must be specified")
+	if r.jellyfinUpdateUserPassword == nil {
+		return nil, reportError("jellyfinUpdateUserPassword is required and must be specified")
 	}
 
 	if r.userId != nil {
@@ -1529,7 +1529,7 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateUserPassword
+	localVarPostBody = r.jellyfinUpdateUserPassword
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1567,7 +1567,7 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordReques
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1578,7 +1578,7 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r ApiUpdateUserPasswordReques
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1598,12 +1598,12 @@ type ApiUpdateUserPolicyRequest struct {
 	ctx context.Context
 	ApiService *UserAPIService
 	userId string
-	userPolicy *UserPolicy
+	jellyfinUserPolicy *JellyfinUserPolicy
 }
 
 // The new user policy.
-func (r ApiUpdateUserPolicyRequest) UserPolicy(userPolicy UserPolicy) ApiUpdateUserPolicyRequest {
-	r.userPolicy = &userPolicy
+func (r ApiUpdateUserPolicyRequest) JellyfinUserPolicy(jellyfinUserPolicy JellyfinUserPolicy) ApiUpdateUserPolicyRequest {
+	r.jellyfinUserPolicy = &jellyfinUserPolicy
 	return r
 }
 
@@ -1645,8 +1645,8 @@ func (a *UserAPIService) UpdateUserPolicyExecute(r ApiUpdateUserPolicyRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.userPolicy == nil {
-		return nil, reportError("userPolicy is required and must be specified")
+	if r.jellyfinUserPolicy == nil {
+		return nil, reportError("jellyfinUserPolicy is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1667,7 +1667,7 @@ func (a *UserAPIService) UpdateUserPolicyExecute(r ApiUpdateUserPolicyRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userPolicy
+	localVarPostBody = r.jellyfinUserPolicy
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1705,7 +1705,7 @@ func (a *UserAPIService) UpdateUserPolicyExecute(r ApiUpdateUserPolicyRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1716,7 +1716,7 @@ func (a *UserAPIService) UpdateUserPolicyExecute(r ApiUpdateUserPolicyRequest) (
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

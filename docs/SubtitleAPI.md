@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## GetFallbackFontList
 
-> []FontFile GetFallbackFontList(ctx).Execute()
+> []JellyfinJellyfinFontFile GetFallbackFontList(ctx).Execute()
 
 Gets a list of available fallback font files.
 
@@ -250,7 +250,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubtitleAPI.GetFallbackFontList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFallbackFontList`: []FontFile
+	// response from `GetFallbackFontList`: []JellyfinJellyfinFontFile
 	fmt.Fprintf(os.Stdout, "Response from `SubtitleAPI.GetFallbackFontList`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Other parameters are passed through a pointer to a apiGetFallbackFontListRequest
 
 ### Return type
 
-[**[]FontFile**](FontFile.md)
+[**[]JellyfinJellyfinFontFile**](JellyfinFontFile.md)
 
 ### Authorization
 
@@ -617,7 +617,7 @@ No authorization required
 
 ## SearchRemoteSubtitles
 
-> []RemoteSubtitleInfo SearchRemoteSubtitles(ctx, itemId, language).IsPerfectMatch(isPerfectMatch).Execute()
+> []JellyfinJellyfinRemoteSubtitleInfo SearchRemoteSubtitles(ctx, itemId, language).IsPerfectMatch(isPerfectMatch).Execute()
 
 Search remote subtitles.
 
@@ -645,7 +645,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubtitleAPI.SearchRemoteSubtitles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchRemoteSubtitles`: []RemoteSubtitleInfo
+	// response from `SearchRemoteSubtitles`: []JellyfinJellyfinRemoteSubtitleInfo
 	fmt.Fprintf(os.Stdout, "Response from `SubtitleAPI.SearchRemoteSubtitles`: %v\n", resp)
 }
 ```
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RemoteSubtitleInfo**](RemoteSubtitleInfo.md)
+[**[]JellyfinJellyfinRemoteSubtitleInfo**](JellyfinRemoteSubtitleInfo.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 
 ## UploadSubtitle
 
-> UploadSubtitle(ctx, itemId).UploadSubtitleDto(uploadSubtitleDto).Execute()
+> UploadSubtitle(ctx, itemId).JellyfinUploadSubtitleDto(jellyfinUploadSubtitleDto).Execute()
 
 Upload an external subtitle file.
 
@@ -708,11 +708,11 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item the subtitle belongs to.
-	uploadSubtitleDto := *openapiclient.NewUploadSubtitleDto("Language_example", "Format_example", false, false, "Data_example") // UploadSubtitleDto | The request body.
+	jellyfinUploadSubtitleDto := *openapiclient.NewJellyfinUploadSubtitleDto("Language_example", "Format_example", false, false, "Data_example") // JellyfinUploadSubtitleDto | The request body.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SubtitleAPI.UploadSubtitle(context.Background(), itemId).UploadSubtitleDto(uploadSubtitleDto).Execute()
+	r, err := apiClient.SubtitleAPI.UploadSubtitle(context.Background(), itemId).JellyfinUploadSubtitleDto(jellyfinUploadSubtitleDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SubtitleAPI.UploadSubtitle``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -736,7 +736,7 @@ Other parameters are passed through a pointer to a apiUploadSubtitleRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **uploadSubtitleDto** | [**UploadSubtitleDto**](UploadSubtitleDto.md) | The request body. | 
+ **jellyfinUploadSubtitleDto** | [**JellyfinUploadSubtitleDto**](JellyfinUploadSubtitleDto.md) | The request body. | 
 
 ### Return type
 

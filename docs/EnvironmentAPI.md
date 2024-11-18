@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## GetDefaultDirectoryBrowser
 
-> DefaultDirectoryBrowserInfoDto GetDefaultDirectoryBrowser(ctx).Execute()
+> JellyfinJellyfinDefaultDirectoryBrowserInfoDto GetDefaultDirectoryBrowser(ctx).Execute()
 
 Get Default directory browser.
 
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentAPI.GetDefaultDirectoryBrowser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDefaultDirectoryBrowser`: DefaultDirectoryBrowserInfoDto
+	// response from `GetDefaultDirectoryBrowser`: JellyfinJellyfinDefaultDirectoryBrowserInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `EnvironmentAPI.GetDefaultDirectoryBrowser`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Other parameters are passed through a pointer to a apiGetDefaultDirectoryBrowser
 
 ### Return type
 
-[**DefaultDirectoryBrowserInfoDto**](DefaultDirectoryBrowserInfoDto.md)
+[**JellyfinJellyfinDefaultDirectoryBrowserInfoDto**](JellyfinDefaultDirectoryBrowserInfoDto.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiGetDefaultDirectoryBrowser
 
 ## GetDirectoryContents
 
-> []FileSystemEntryInfo GetDirectoryContents(ctx).Path(path).IncludeFiles(includeFiles).IncludeDirectories(includeDirectories).Execute()
+> []JellyfinJellyfinFileSystemEntryInfo GetDirectoryContents(ctx).Path(path).IncludeFiles(includeFiles).IncludeDirectories(includeDirectories).Execute()
 
 Gets the contents of a given directory in the file system.
 
@@ -102,7 +102,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentAPI.GetDirectoryContents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDirectoryContents`: []FileSystemEntryInfo
+	// response from `GetDirectoryContents`: []JellyfinJellyfinFileSystemEntryInfo
 	fmt.Fprintf(os.Stdout, "Response from `EnvironmentAPI.GetDirectoryContents`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]FileSystemEntryInfo**](FileSystemEntryInfo.md)
+[**[]JellyfinJellyfinFileSystemEntryInfo**](JellyfinFileSystemEntryInfo.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## GetDrives
 
-> []FileSystemEntryInfo GetDrives(ctx).Execute()
+> []JellyfinJellyfinFileSystemEntryInfo GetDrives(ctx).Execute()
 
 Gets available drives from the server's file system.
 
@@ -167,7 +167,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentAPI.GetDrives``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDrives`: []FileSystemEntryInfo
+	// response from `GetDrives`: []JellyfinJellyfinFileSystemEntryInfo
 	fmt.Fprintf(os.Stdout, "Response from `EnvironmentAPI.GetDrives`: %v\n", resp)
 }
 ```
@@ -183,7 +183,7 @@ Other parameters are passed through a pointer to a apiGetDrivesRequest struct vi
 
 ### Return type
 
-[**[]FileSystemEntryInfo**](FileSystemEntryInfo.md)
+[**[]JellyfinJellyfinFileSystemEntryInfo**](JellyfinFileSystemEntryInfo.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Other parameters are passed through a pointer to a apiGetDrivesRequest struct vi
 
 ## GetNetworkShares
 
-> []FileSystemEntryInfo GetNetworkShares(ctx).Execute()
+> []JellyfinJellyfinFileSystemEntryInfo GetNetworkShares(ctx).Execute()
 
 Gets network paths.
 
@@ -226,7 +226,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentAPI.GetNetworkShares``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNetworkShares`: []FileSystemEntryInfo
+	// response from `GetNetworkShares`: []JellyfinJellyfinFileSystemEntryInfo
 	fmt.Fprintf(os.Stdout, "Response from `EnvironmentAPI.GetNetworkShares`: %v\n", resp)
 }
 ```
@@ -242,7 +242,7 @@ Other parameters are passed through a pointer to a apiGetNetworkSharesRequest st
 
 ### Return type
 
-[**[]FileSystemEntryInfo**](FileSystemEntryInfo.md)
+[**[]JellyfinJellyfinFileSystemEntryInfo**](JellyfinFileSystemEntryInfo.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ## ValidatePath
 
-> ValidatePath(ctx).ValidatePathDto(validatePathDto).Execute()
+> ValidatePath(ctx).JellyfinValidatePathDto(jellyfinValidatePathDto).Execute()
 
 Validates path.
 
@@ -341,11 +341,11 @@ import (
 )
 
 func main() {
-	validatePathDto := *openapiclient.NewValidatePathDto() // ValidatePathDto | Validate request object.
+	jellyfinValidatePathDto := *openapiclient.NewJellyfinValidatePathDto() // JellyfinValidatePathDto | Validate request object.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.EnvironmentAPI.ValidatePath(context.Background()).ValidatePathDto(validatePathDto).Execute()
+	r, err := apiClient.EnvironmentAPI.ValidatePath(context.Background()).JellyfinValidatePathDto(jellyfinValidatePathDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnvironmentAPI.ValidatePath``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -364,7 +364,7 @@ Other parameters are passed through a pointer to a apiValidatePathRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **validatePathDto** | [**ValidatePathDto**](ValidatePathDto.md) | Validate request object. | 
+ **jellyfinValidatePathDto** | [**JellyfinValidatePathDto**](JellyfinValidatePathDto.md) | Validate request object. | 
 
 ### Return type
 

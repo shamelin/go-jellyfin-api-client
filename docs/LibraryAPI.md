@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## GetAncestors
 
-> []BaseItemDto GetAncestors(ctx, itemId).UserId(userId).Execute()
+> []JellyfinJellyfinBaseItemDto GetAncestors(ctx, itemId).UserId(userId).Execute()
 
 Gets all parents of an item.
 
@@ -189,7 +189,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetAncestors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAncestors`: []BaseItemDto
+	// response from `GetAncestors`: []JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetAncestors`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]BaseItemDto**](BaseItemDto.md)
+[**[]JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## GetCriticReviews
 
-> BaseItemDtoQueryResult GetCriticReviews(ctx, itemId).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetCriticReviews(ctx, itemId).Execute()
 
 Gets critic review for an item.
 
@@ -258,7 +258,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetCriticReviews``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCriticReviews`: BaseItemDtoQueryResult
+	// response from `GetCriticReviews`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetCriticReviews`: %v\n", resp)
 }
 ```
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 ## GetItemCounts
 
-> ItemCounts GetItemCounts(ctx).UserId(userId).IsFavorite(isFavorite).Execute()
+> JellyfinJellyfinItemCounts GetItemCounts(ctx).UserId(userId).IsFavorite(isFavorite).Execute()
 
 Get item counts.
 
@@ -463,7 +463,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetItemCounts``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetItemCounts`: ItemCounts
+	// response from `GetItemCounts`: JellyfinJellyfinItemCounts
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetItemCounts`: %v\n", resp)
 }
 ```
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ItemCounts**](ItemCounts.md)
+[**JellyfinJellyfinItemCounts**](JellyfinItemCounts.md)
 
 ### Authorization
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## GetLibraryOptionsInfo
 
-> LibraryOptionsResultDto GetLibraryOptionsInfo(ctx).LibraryContentType(libraryContentType).IsNewLibrary(isNewLibrary).Execute()
+> JellyfinJellyfinLibraryOptionsResultDto GetLibraryOptionsInfo(ctx).LibraryContentType(libraryContentType).IsNewLibrary(isNewLibrary).Execute()
 
 Gets the library options info.
 
@@ -519,7 +519,7 @@ import (
 )
 
 func main() {
-	libraryContentType := "libraryContentType_example" // CollectionType | Library content type. (optional)
+	libraryContentType := "libraryContentType_example" // JellyfinJellyfinCollectionType | Library content type. (optional)
 	isNewLibrary := true // bool | Whether this is a new library. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
@@ -529,7 +529,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetLibraryOptionsInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLibraryOptionsInfo`: LibraryOptionsResultDto
+	// response from `GetLibraryOptionsInfo`: JellyfinJellyfinLibraryOptionsResultDto
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetLibraryOptionsInfo`: %v\n", resp)
 }
 ```
@@ -545,12 +545,12 @@ Other parameters are passed through a pointer to a apiGetLibraryOptionsInfoReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **libraryContentType** | **CollectionType** | Library content type. | 
+ **libraryContentType** | **JellyfinJellyfinCollectionType** | Library content type. | 
  **isNewLibrary** | **bool** | Whether this is a new library. | [default to false]
 
 ### Return type
 
-[**LibraryOptionsResultDto**](LibraryOptionsResultDto.md)
+[**JellyfinJellyfinLibraryOptionsResultDto**](JellyfinLibraryOptionsResultDto.md)
 
 ### Authorization
 
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 ## GetMediaFolders
 
-> BaseItemDtoQueryResult GetMediaFolders(ctx).IsHidden(isHidden).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetMediaFolders(ctx).IsHidden(isHidden).Execute()
 
 Gets all user media folders.
 
@@ -594,7 +594,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetMediaFolders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMediaFolders`: BaseItemDtoQueryResult
+	// response from `GetMediaFolders`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetMediaFolders`: %v\n", resp)
 }
 ```
@@ -614,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ Other parameters are passed through a pointer to a apiGetPhysicalPathsRequest st
 
 ## GetSimilarAlbums
 
-> BaseItemDtoQueryResult GetSimilarAlbums(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarAlbums(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -712,7 +712,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -721,7 +721,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarAlbums``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarAlbums`: BaseItemDtoQueryResult
+	// response from `GetSimilarAlbums`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarAlbums`: %v\n", resp)
 }
 ```
@@ -745,11 +745,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ## GetSimilarArtists
 
-> BaseItemDtoQueryResult GetSimilarArtists(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarArtists(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -788,7 +788,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -797,7 +797,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarArtists``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarArtists`: BaseItemDtoQueryResult
+	// response from `GetSimilarArtists`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarArtists`: %v\n", resp)
 }
 ```
@@ -821,11 +821,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 
 ## GetSimilarItems
 
-> BaseItemDtoQueryResult GetSimilarItems(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarItems(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -864,7 +864,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -873,7 +873,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarItems`: BaseItemDtoQueryResult
+	// response from `GetSimilarItems`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarItems`: %v\n", resp)
 }
 ```
@@ -897,11 +897,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -919,7 +919,7 @@ Name | Type | Description  | Notes
 
 ## GetSimilarMovies
 
-> BaseItemDtoQueryResult GetSimilarMovies(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarMovies(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -940,7 +940,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -949,7 +949,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarMovies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarMovies`: BaseItemDtoQueryResult
+	// response from `GetSimilarMovies`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarMovies`: %v\n", resp)
 }
 ```
@@ -973,11 +973,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -995,7 +995,7 @@ Name | Type | Description  | Notes
 
 ## GetSimilarShows
 
-> BaseItemDtoQueryResult GetSimilarShows(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarShows(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -1016,7 +1016,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1025,7 +1025,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarShows``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarShows`: BaseItemDtoQueryResult
+	// response from `GetSimilarShows`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarShows`: %v\n", resp)
 }
 ```
@@ -1049,11 +1049,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 
 ## GetSimilarTrailers
 
-> BaseItemDtoQueryResult GetSimilarTrailers(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSimilarTrailers(ctx, itemId).ExcludeArtistIds(excludeArtistIds).UserId(userId).Limit(limit).Fields(fields).Execute()
 
 Gets similar items.
 
@@ -1092,7 +1092,7 @@ func main() {
 	excludeArtistIds := []string{"Inner_example"} // []string | Exclude artist ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1101,7 +1101,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetSimilarTrailers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSimilarTrailers`: BaseItemDtoQueryResult
+	// response from `GetSimilarTrailers`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetSimilarTrailers`: %v\n", resp)
 }
 ```
@@ -1125,11 +1125,11 @@ Name | Type | Description  | Notes
  **excludeArtistIds** | **[]string** | Exclude artist ids. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1147,7 +1147,7 @@ Name | Type | Description  | Notes
 
 ## GetThemeMedia
 
-> AllThemeMediaResult GetThemeMedia(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> JellyfinJellyfinAllThemeMediaResult GetThemeMedia(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
 
 Get theme songs and videos for an item.
 
@@ -1167,8 +1167,8 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	inheritFromParent := true // bool | Optional. Determines whether or not parent items should be searched for theme media. (optional) (default to false)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Optional. Sort Order - Ascending, Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Optional. Sort Order - Ascending, Descending. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1177,7 +1177,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetThemeMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetThemeMedia`: AllThemeMediaResult
+	// response from `GetThemeMedia`: JellyfinJellyfinAllThemeMediaResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetThemeMedia`: %v\n", resp)
 }
 ```
@@ -1200,12 +1200,12 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **inheritFromParent** | **bool** | Optional. Determines whether or not parent items should be searched for theme media. | [default to false]
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
 
 ### Return type
 
-[**AllThemeMediaResult**](AllThemeMediaResult.md)
+[**JellyfinJellyfinAllThemeMediaResult**](JellyfinAllThemeMediaResult.md)
 
 ### Authorization
 
@@ -1223,7 +1223,7 @@ Name | Type | Description  | Notes
 
 ## GetThemeSongs
 
-> ThemeMediaResult GetThemeSongs(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> JellyfinJellyfinThemeMediaResult GetThemeSongs(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
 
 Get theme songs for an item.
 
@@ -1243,8 +1243,8 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	inheritFromParent := true // bool | Optional. Determines whether or not parent items should be searched for theme media. (optional) (default to false)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Optional. Sort Order - Ascending, Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Optional. Sort Order - Ascending, Descending. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1253,7 +1253,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetThemeSongs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetThemeSongs`: ThemeMediaResult
+	// response from `GetThemeSongs`: JellyfinJellyfinThemeMediaResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetThemeSongs`: %v\n", resp)
 }
 ```
@@ -1276,12 +1276,12 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **inheritFromParent** | **bool** | Optional. Determines whether or not parent items should be searched for theme media. | [default to false]
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
 
 ### Return type
 
-[**ThemeMediaResult**](ThemeMediaResult.md)
+[**JellyfinJellyfinThemeMediaResult**](JellyfinThemeMediaResult.md)
 
 ### Authorization
 
@@ -1299,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ## GetThemeVideos
 
-> ThemeMediaResult GetThemeVideos(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> JellyfinJellyfinThemeMediaResult GetThemeVideos(ctx, itemId).UserId(userId).InheritFromParent(inheritFromParent).SortBy(sortBy).SortOrder(sortOrder).Execute()
 
 Get theme videos for an item.
 
@@ -1319,8 +1319,8 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	inheritFromParent := true // bool | Optional. Determines whether or not parent items should be searched for theme media. (optional) (default to false)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Optional. Sort Order - Ascending, Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Optional. Sort Order - Ascending, Descending. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1329,7 +1329,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.GetThemeVideos``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetThemeVideos`: ThemeMediaResult
+	// response from `GetThemeVideos`: JellyfinJellyfinThemeMediaResult
 	fmt.Fprintf(os.Stdout, "Response from `LibraryAPI.GetThemeVideos`: %v\n", resp)
 }
 ```
@@ -1352,12 +1352,12 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **inheritFromParent** | **bool** | Optional. Determines whether or not parent items should be searched for theme media. | [default to false]
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Optional. Sort Order - Ascending, Descending. | 
 
 ### Return type
 
-[**ThemeMediaResult**](ThemeMediaResult.md)
+[**JellyfinJellyfinThemeMediaResult**](JellyfinThemeMediaResult.md)
 
 ### Authorization
 
@@ -1501,7 +1501,7 @@ Name | Type | Description  | Notes
 
 ## PostUpdatedMedia
 
-> PostUpdatedMedia(ctx).MediaUpdateInfoDto(mediaUpdateInfoDto).Execute()
+> PostUpdatedMedia(ctx).JellyfinMediaUpdateInfoDto(jellyfinMediaUpdateInfoDto).Execute()
 
 Reports that new movies have been added by an external source.
 
@@ -1518,11 +1518,11 @@ import (
 )
 
 func main() {
-	mediaUpdateInfoDto := *openapiclient.NewMediaUpdateInfoDto() // MediaUpdateInfoDto | The update paths.
+	jellyfinMediaUpdateInfoDto := *openapiclient.NewJellyfinMediaUpdateInfoDto() // JellyfinMediaUpdateInfoDto | The update paths.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LibraryAPI.PostUpdatedMedia(context.Background()).MediaUpdateInfoDto(mediaUpdateInfoDto).Execute()
+	r, err := apiClient.LibraryAPI.PostUpdatedMedia(context.Background()).JellyfinMediaUpdateInfoDto(jellyfinMediaUpdateInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryAPI.PostUpdatedMedia``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1541,7 +1541,7 @@ Other parameters are passed through a pointer to a apiPostUpdatedMediaRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mediaUpdateInfoDto** | [**MediaUpdateInfoDto**](MediaUpdateInfoDto.md) | The update paths. | 
+ **jellyfinMediaUpdateInfoDto** | [**JellyfinMediaUpdateInfoDto**](JellyfinMediaUpdateInfoDto.md) | The update paths. | 
 
 ### Return type
 

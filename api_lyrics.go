@@ -123,7 +123,7 @@ func (a *LyricsAPIService) DeleteLyricsExecute(r ApiDeleteLyricsRequest) (*http.
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -146,7 +146,7 @@ type ApiDownloadRemoteLyricsRequest struct {
 	lyricId string
 }
 
-func (r ApiDownloadRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
+func (r ApiDownloadRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.DownloadRemoteLyricsExecute(r)
 }
 
@@ -168,13 +168,13 @@ func (a *LyricsAPIService) DownloadRemoteLyrics(ctx context.Context, itemId stri
 }
 
 // Execute executes the request
-//  @return LyricDto
-func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyricsRequest) (*LyricDto, *http.Response, error) {
+//  @return JellyfinLyricDto
+func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarReturnValue  *JellyfinLyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.DownloadRemoteLyrics")
@@ -244,7 +244,7 @@ func (a *LyricsAPIService) DownloadRemoteLyricsExecute(r ApiDownloadRemoteLyrics
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -275,7 +275,7 @@ type ApiGetLyricsRequest struct {
 	itemId string
 }
 
-func (r ApiGetLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
+func (r ApiGetLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.GetLyricsExecute(r)
 }
 
@@ -295,13 +295,13 @@ func (a *LyricsAPIService) GetLyrics(ctx context.Context, itemId string) ApiGetL
 }
 
 // Execute executes the request
-//  @return LyricDto
-func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *http.Response, error) {
+//  @return JellyfinLyricDto
+func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarReturnValue  *JellyfinLyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.GetLyrics")
@@ -370,7 +370,7 @@ func (a *LyricsAPIService) GetLyricsExecute(r ApiGetLyricsRequest) (*LyricDto, *
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -401,7 +401,7 @@ type ApiGetRemoteLyricsRequest struct {
 	lyricId string
 }
 
-func (r ApiGetRemoteLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
+func (r ApiGetRemoteLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.GetRemoteLyricsExecute(r)
 }
 
@@ -421,13 +421,13 @@ func (a *LyricsAPIService) GetRemoteLyrics(ctx context.Context, lyricId string) 
 }
 
 // Execute executes the request
-//  @return LyricDto
-func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (*LyricDto, *http.Response, error) {
+//  @return JellyfinLyricDto
+func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarReturnValue  *JellyfinLyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.GetRemoteLyrics")
@@ -496,7 +496,7 @@ func (a *LyricsAPIService) GetRemoteLyricsExecute(r ApiGetRemoteLyricsRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -527,7 +527,7 @@ type ApiSearchRemoteLyricsRequest struct {
 	itemId string
 }
 
-func (r ApiSearchRemoteLyricsRequest) Execute() ([]RemoteLyricInfoDto, *http.Response, error) {
+func (r ApiSearchRemoteLyricsRequest) Execute() ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
 	return r.ApiService.SearchRemoteLyricsExecute(r)
 }
 
@@ -547,13 +547,13 @@ func (a *LyricsAPIService) SearchRemoteLyrics(ctx context.Context, itemId string
 }
 
 // Execute executes the request
-//  @return []RemoteLyricInfoDto
-func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequest) ([]RemoteLyricInfoDto, *http.Response, error) {
+//  @return []JellyfinRemoteLyricInfoDto
+func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequest) ([]JellyfinRemoteLyricInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RemoteLyricInfoDto
+		localVarReturnValue  []JellyfinRemoteLyricInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.SearchRemoteLyrics")
@@ -622,7 +622,7 @@ func (a *LyricsAPIService) SearchRemoteLyricsExecute(r ApiSearchRemoteLyricsRequ
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -666,7 +666,7 @@ func (r ApiUploadLyricsRequest) Body(body *os.File) ApiUploadLyricsRequest {
 	return r
 }
 
-func (r ApiUploadLyricsRequest) Execute() (*LyricDto, *http.Response, error) {
+func (r ApiUploadLyricsRequest) Execute() (*JellyfinLyricDto, *http.Response, error) {
 	return r.ApiService.UploadLyricsExecute(r)
 }
 
@@ -686,13 +686,13 @@ func (a *LyricsAPIService) UploadLyrics(ctx context.Context, itemId string) ApiU
 }
 
 // Execute executes the request
-//  @return LyricDto
-func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*LyricDto, *http.Response, error) {
+//  @return JellyfinLyricDto
+func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*JellyfinLyricDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LyricDto
+		localVarReturnValue  *JellyfinLyricDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LyricsAPIService.UploadLyrics")
@@ -767,7 +767,7 @@ func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*Lyric
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -778,7 +778,7 @@ func (a *LyricsAPIService) UploadLyricsExecute(r ApiUploadLyricsRequest) (*Lyric
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

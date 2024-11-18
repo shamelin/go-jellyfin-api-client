@@ -272,7 +272,7 @@ func (r ApiGetPlaybackInfoRequest) UserId(userId string) ApiGetPlaybackInfoReque
 	return r
 }
 
-func (r ApiGetPlaybackInfoRequest) Execute() (*PlaybackInfoResponse, *http.Response, error) {
+func (r ApiGetPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	return r.ApiService.GetPlaybackInfoExecute(r)
 }
 
@@ -292,13 +292,13 @@ func (a *MediaInfoAPIService) GetPlaybackInfo(ctx context.Context, itemId string
 }
 
 // Execute executes the request
-//  @return PlaybackInfoResponse
-func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error) {
+//  @return JellyfinPlaybackInfoResponse
+func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PlaybackInfoResponse
+		localVarReturnValue  *JellyfinPlaybackInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.GetPlaybackInfo")
@@ -370,7 +370,7 @@ func (a *MediaInfoAPIService) GetPlaybackInfoExecute(r ApiGetPlaybackInfoRequest
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -413,7 +413,7 @@ type ApiGetPostedPlaybackInfoRequest struct {
 	enableTranscoding *bool
 	allowVideoStreamCopy *bool
 	allowAudioStreamCopy *bool
-	playbackInfoDto *PlaybackInfoDto
+	jellyfinPlaybackInfoDto *JellyfinPlaybackInfoDto
 }
 
 // The user id.
@@ -515,12 +515,12 @@ func (r ApiGetPostedPlaybackInfoRequest) AllowAudioStreamCopy(allowAudioStreamCo
 }
 
 // The playback info.
-func (r ApiGetPostedPlaybackInfoRequest) PlaybackInfoDto(playbackInfoDto PlaybackInfoDto) ApiGetPostedPlaybackInfoRequest {
-	r.playbackInfoDto = &playbackInfoDto
+func (r ApiGetPostedPlaybackInfoRequest) JellyfinPlaybackInfoDto(jellyfinPlaybackInfoDto JellyfinPlaybackInfoDto) ApiGetPostedPlaybackInfoRequest {
+	r.jellyfinPlaybackInfoDto = &jellyfinPlaybackInfoDto
 	return r
 }
 
-func (r ApiGetPostedPlaybackInfoRequest) Execute() (*PlaybackInfoResponse, *http.Response, error) {
+func (r ApiGetPostedPlaybackInfoRequest) Execute() (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	return r.ApiService.GetPostedPlaybackInfoExecute(r)
 }
 
@@ -543,13 +543,13 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfo(ctx context.Context, itemId 
 }
 
 // Execute executes the request
-//  @return PlaybackInfoResponse
-func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybackInfoRequest) (*PlaybackInfoResponse, *http.Response, error) {
+//  @return JellyfinPlaybackInfoResponse
+func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybackInfoRequest) (*JellyfinPlaybackInfoResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PlaybackInfoResponse
+		localVarReturnValue  *JellyfinPlaybackInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.GetPostedPlaybackInfo")
@@ -624,7 +624,7 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybac
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.playbackInfoDto
+	localVarPostBody = r.jellyfinPlaybackInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -662,7 +662,7 @@ func (a *MediaInfoAPIService) GetPostedPlaybackInfoExecute(r ApiGetPostedPlaybac
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -702,7 +702,7 @@ type ApiOpenLiveStreamRequest struct {
 	enableDirectPlay *bool
 	enableDirectStream *bool
 	alwaysBurnInSubtitleWhenTranscoding *bool
-	openLiveStreamDto *OpenLiveStreamDto
+	jellyfinOpenLiveStreamDto *JellyfinOpenLiveStreamDto
 }
 
 // The open token.
@@ -778,12 +778,12 @@ func (r ApiOpenLiveStreamRequest) AlwaysBurnInSubtitleWhenTranscoding(alwaysBurn
 }
 
 // The open live stream dto.
-func (r ApiOpenLiveStreamRequest) OpenLiveStreamDto(openLiveStreamDto OpenLiveStreamDto) ApiOpenLiveStreamRequest {
-	r.openLiveStreamDto = &openLiveStreamDto
+func (r ApiOpenLiveStreamRequest) JellyfinOpenLiveStreamDto(jellyfinOpenLiveStreamDto JellyfinOpenLiveStreamDto) ApiOpenLiveStreamRequest {
+	r.jellyfinOpenLiveStreamDto = &jellyfinOpenLiveStreamDto
 	return r
 }
 
-func (r ApiOpenLiveStreamRequest) Execute() (*LiveStreamResponse, *http.Response, error) {
+func (r ApiOpenLiveStreamRequest) Execute() (*JellyfinLiveStreamResponse, *http.Response, error) {
 	return r.ApiService.OpenLiveStreamExecute(r)
 }
 
@@ -801,13 +801,13 @@ func (a *MediaInfoAPIService) OpenLiveStream(ctx context.Context) ApiOpenLiveStr
 }
 
 // Execute executes the request
-//  @return LiveStreamResponse
-func (a *MediaInfoAPIService) OpenLiveStreamExecute(r ApiOpenLiveStreamRequest) (*LiveStreamResponse, *http.Response, error) {
+//  @return JellyfinLiveStreamResponse
+func (a *MediaInfoAPIService) OpenLiveStreamExecute(r ApiOpenLiveStreamRequest) (*JellyfinLiveStreamResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LiveStreamResponse
+		localVarReturnValue  *JellyfinLiveStreamResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MediaInfoAPIService.OpenLiveStream")
@@ -875,7 +875,7 @@ func (a *MediaInfoAPIService) OpenLiveStreamExecute(r ApiOpenLiveStreamRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.openLiveStreamDto
+	localVarPostBody = r.jellyfinOpenLiveStreamDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

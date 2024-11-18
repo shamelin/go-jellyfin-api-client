@@ -56,7 +56,7 @@ func (r ApiGetLogEntriesRequest) HasUserId(hasUserId bool) ApiGetLogEntriesReque
 	return r
 }
 
-func (r ApiGetLogEntriesRequest) Execute() (*ActivityLogEntryQueryResult, *http.Response, error) {
+func (r ApiGetLogEntriesRequest) Execute() (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
 	return r.ApiService.GetLogEntriesExecute(r)
 }
 
@@ -74,13 +74,13 @@ func (a *ActivityLogAPIService) GetLogEntries(ctx context.Context) ApiGetLogEntr
 }
 
 // Execute executes the request
-//  @return ActivityLogEntryQueryResult
-func (a *ActivityLogAPIService) GetLogEntriesExecute(r ApiGetLogEntriesRequest) (*ActivityLogEntryQueryResult, *http.Response, error) {
+//  @return JellyfinActivityLogEntryQueryResult
+func (a *ActivityLogAPIService) GetLogEntriesExecute(r ApiGetLogEntriesRequest) (*JellyfinActivityLogEntryQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ActivityLogEntryQueryResult
+		localVarReturnValue  *JellyfinActivityLogEntryQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ActivityLogAPIService.GetLogEntries")

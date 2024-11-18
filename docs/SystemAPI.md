@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## GetEndpointInfo
 
-> EndPointInfo GetEndpointInfo(ctx).Execute()
+> JellyfinJellyfinEndPointInfo GetEndpointInfo(ctx).Execute()
 
 Gets information about the request endpoint.
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetEndpointInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetEndpointInfo`: EndPointInfo
+	// response from `GetEndpointInfo`: JellyfinJellyfinEndPointInfo
 	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetEndpointInfo`: %v\n", resp)
 }
 ```
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetEndpointInfoRequest str
 
 ### Return type
 
-[**EndPointInfo**](EndPointInfo.md)
+[**JellyfinJellyfinEndPointInfo**](JellyfinEndPointInfo.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ No authorization required
 
 ## GetPublicSystemInfo
 
-> PublicSystemInfo GetPublicSystemInfo(ctx).Execute()
+> JellyfinJellyfinPublicSystemInfo GetPublicSystemInfo(ctx).Execute()
 
 Gets public information about the server.
 
@@ -226,7 +226,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetPublicSystemInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPublicSystemInfo`: PublicSystemInfo
+	// response from `GetPublicSystemInfo`: JellyfinJellyfinPublicSystemInfo
 	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetPublicSystemInfo`: %v\n", resp)
 }
 ```
@@ -242,7 +242,7 @@ Other parameters are passed through a pointer to a apiGetPublicSystemInfoRequest
 
 ### Return type
 
-[**PublicSystemInfo**](PublicSystemInfo.md)
+[**JellyfinJellyfinPublicSystemInfo**](JellyfinPublicSystemInfo.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ No authorization required
 
 ## GetServerLogs
 
-> []LogFile GetServerLogs(ctx).Execute()
+> []JellyfinJellyfinLogFile GetServerLogs(ctx).Execute()
 
 Gets a list of available server log files.
 
@@ -285,7 +285,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetServerLogs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetServerLogs`: []LogFile
+	// response from `GetServerLogs`: []JellyfinJellyfinLogFile
 	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetServerLogs`: %v\n", resp)
 }
 ```
@@ -301,7 +301,7 @@ Other parameters are passed through a pointer to a apiGetServerLogsRequest struc
 
 ### Return type
 
-[**[]LogFile**](LogFile.md)
+[**[]JellyfinJellyfinLogFile**](JellyfinLogFile.md)
 
 ### Authorization
 
@@ -319,7 +319,7 @@ Other parameters are passed through a pointer to a apiGetServerLogsRequest struc
 
 ## GetSystemInfo
 
-> SystemInfo GetSystemInfo(ctx).Execute()
+> JellyfinJellyfinSystemInfo GetSystemInfo(ctx).Execute()
 
 Gets information about the server.
 
@@ -344,7 +344,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetSystemInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSystemInfo`: SystemInfo
+	// response from `GetSystemInfo`: JellyfinJellyfinSystemInfo
 	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetSystemInfo`: %v\n", resp)
 }
 ```
@@ -360,7 +360,7 @@ Other parameters are passed through a pointer to a apiGetSystemInfoRequest struc
 
 ### Return type
 
-[**SystemInfo**](SystemInfo.md)
+[**JellyfinJellyfinSystemInfo**](JellyfinSystemInfo.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Other parameters are passed through a pointer to a apiGetSystemInfoRequest struc
 
 ## GetWakeOnLanInfo
 
-> []WakeOnLanInfo GetWakeOnLanInfo(ctx).Execute()
+> []JellyfinJellyfinWakeOnLanInfo GetWakeOnLanInfo(ctx).Execute()
 
 Gets wake on lan information.
 
@@ -403,7 +403,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetWakeOnLanInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetWakeOnLanInfo`: []WakeOnLanInfo
+	// response from `GetWakeOnLanInfo`: []JellyfinJellyfinWakeOnLanInfo
 	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetWakeOnLanInfo`: %v\n", resp)
 }
 ```
@@ -419,7 +419,7 @@ Other parameters are passed through a pointer to a apiGetWakeOnLanInfoRequest st
 
 ### Return type
 
-[**[]WakeOnLanInfo**](WakeOnLanInfo.md)
+[**[]JellyfinJellyfinWakeOnLanInfo**](JellyfinWakeOnLanInfo.md)
 
 ### Authorization
 

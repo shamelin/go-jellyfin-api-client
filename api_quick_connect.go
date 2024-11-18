@@ -140,7 +140,7 @@ func (a *QuickConnectAPIService) AuthorizeQuickConnectExecute(r ApiAuthorizeQuic
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -274,7 +274,7 @@ func (r ApiGetQuickConnectStateRequest) Secret(secret string) ApiGetQuickConnect
 	return r
 }
 
-func (r ApiGetQuickConnectStateRequest) Execute() (*QuickConnectResult, *http.Response, error) {
+func (r ApiGetQuickConnectStateRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
 	return r.ApiService.GetQuickConnectStateExecute(r)
 }
 
@@ -292,13 +292,13 @@ func (a *QuickConnectAPIService) GetQuickConnectState(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-//  @return QuickConnectResult
-func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r ApiGetQuickConnectStateRequest) (*QuickConnectResult, *http.Response, error) {
+//  @return JellyfinQuickConnectResult
+func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r ApiGetQuickConnectStateRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *QuickConnectResult
+		localVarReturnValue  *JellyfinQuickConnectResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuickConnectAPIService.GetQuickConnectState")
@@ -356,7 +356,7 @@ func (a *QuickConnectAPIService) GetQuickConnectStateExecute(r ApiGetQuickConnec
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -385,7 +385,7 @@ type ApiInitiateQuickConnectRequest struct {
 	ApiService *QuickConnectAPIService
 }
 
-func (r ApiInitiateQuickConnectRequest) Execute() (*QuickConnectResult, *http.Response, error) {
+func (r ApiInitiateQuickConnectRequest) Execute() (*JellyfinQuickConnectResult, *http.Response, error) {
 	return r.ApiService.InitiateQuickConnectExecute(r)
 }
 
@@ -403,13 +403,13 @@ func (a *QuickConnectAPIService) InitiateQuickConnect(ctx context.Context) ApiIn
 }
 
 // Execute executes the request
-//  @return QuickConnectResult
-func (a *QuickConnectAPIService) InitiateQuickConnectExecute(r ApiInitiateQuickConnectRequest) (*QuickConnectResult, *http.Response, error) {
+//  @return JellyfinQuickConnectResult
+func (a *QuickConnectAPIService) InitiateQuickConnectExecute(r ApiInitiateQuickConnectRequest) (*JellyfinQuickConnectResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *QuickConnectResult
+		localVarReturnValue  *JellyfinQuickConnectResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QuickConnectAPIService.InitiateQuickConnect")

@@ -40,7 +40,7 @@ type ApiGetUniversalAudioStreamRequest struct {
 	audioBitRate *int32
 	startTimeTicks *int64
 	transcodingContainer *string
-	transcodingProtocol *MediaStreamProtocol
+	transcodingProtocol *JellyfinMediaStreamProtocol
 	maxAudioSampleRate *int32
 	maxAudioBitDepth *int32
 	enableRemoteMedia *bool
@@ -116,7 +116,7 @@ func (r ApiGetUniversalAudioStreamRequest) TranscodingContainer(transcodingConta
 }
 
 // Optional. The transcoding protocol.
-func (r ApiGetUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol MediaStreamProtocol) ApiGetUniversalAudioStreamRequest {
+func (r ApiGetUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) ApiGetUniversalAudioStreamRequest {
 	r.transcodingProtocol = &transcodingProtocol
 	return r
 }
@@ -323,7 +323,7 @@ func (a *UniversalAudioAPIService) GetUniversalAudioStreamExecute(r ApiGetUniver
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -363,7 +363,7 @@ type ApiHeadUniversalAudioStreamRequest struct {
 	audioBitRate *int32
 	startTimeTicks *int64
 	transcodingContainer *string
-	transcodingProtocol *MediaStreamProtocol
+	transcodingProtocol *JellyfinMediaStreamProtocol
 	maxAudioSampleRate *int32
 	maxAudioBitDepth *int32
 	enableRemoteMedia *bool
@@ -439,7 +439,7 @@ func (r ApiHeadUniversalAudioStreamRequest) TranscodingContainer(transcodingCont
 }
 
 // Optional. The transcoding protocol.
-func (r ApiHeadUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol MediaStreamProtocol) ApiHeadUniversalAudioStreamRequest {
+func (r ApiHeadUniversalAudioStreamRequest) TranscodingProtocol(transcodingProtocol JellyfinMediaStreamProtocol) ApiHeadUniversalAudioStreamRequest {
 	r.transcodingProtocol = &transcodingProtocol
 	return r
 }
@@ -646,7 +646,7 @@ func (a *UniversalAudioAPIService) HeadUniversalAudioStreamExecute(r ApiHeadUniv
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -37,7 +37,7 @@ func (r ApiGetGenreRequest) UserId(userId string) ApiGetGenreRequest {
 	return r
 }
 
-func (r ApiGetGenreRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetGenreRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetGenreExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *GenresAPIService) GetGenre(ctx context.Context, genreName string) ApiGe
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *GenresAPIService) GetGenreExecute(r ApiGetGenreRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GenresAPIService.GetGenre")
@@ -156,18 +156,18 @@ type ApiGetGenresRequest struct {
 	limit *int32
 	searchTerm *string
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
 	isFavorite *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	userId *string
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
 	nameLessThan *string
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 	enableImages *bool
 	enableTotalRecordCount *bool
 }
@@ -197,19 +197,19 @@ func (r ApiGetGenresRequest) ParentId(parentId string) ApiGetGenresRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetGenresRequest) Fields(fields []ItemFields) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) Fields(fields []JellyfinItemFields) ApiGetGenresRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetGenresRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetGenresRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered in based on item type. This allows multiple, comma delimited.
-func (r ApiGetGenresRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetGenresRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
@@ -227,7 +227,7 @@ func (r ApiGetGenresRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetGenresRe
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetGenresRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetGenresRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -257,13 +257,13 @@ func (r ApiGetGenresRequest) NameLessThan(nameLessThan string) ApiGetGenresReque
 }
 
 // Optional. Specify one or more sort orders, comma delimited.
-func (r ApiGetGenresRequest) SortBy(sortBy []ItemSortBy) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetGenresRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetGenresRequest) SortOrder(sortOrder []SortOrder) ApiGetGenresRequest {
+func (r ApiGetGenresRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetGenresRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -280,7 +280,7 @@ func (r ApiGetGenresRequest) EnableTotalRecordCount(enableTotalRecordCount bool)
 	return r
 }
 
-func (r ApiGetGenresRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetGenresRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetGenresExecute(r)
 }
 
@@ -298,13 +298,13 @@ func (a *GenresAPIService) GetGenres(ctx context.Context) ApiGetGenresRequest {
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *GenresAPIService) GetGenresExecute(r ApiGetGenresRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *GenresAPIService) GetGenresExecute(r ApiGetGenresRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GenresAPIService.GetGenres")

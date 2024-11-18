@@ -221,7 +221,7 @@ type ApiGetBrandingOptionsRequest struct {
 	ApiService *BrandingAPIService
 }
 
-func (r ApiGetBrandingOptionsRequest) Execute() (*BrandingOptions, *http.Response, error) {
+func (r ApiGetBrandingOptionsRequest) Execute() (*JellyfinBrandingOptions, *http.Response, error) {
 	return r.ApiService.GetBrandingOptionsExecute(r)
 }
 
@@ -239,13 +239,13 @@ func (a *BrandingAPIService) GetBrandingOptions(ctx context.Context) ApiGetBrand
 }
 
 // Execute executes the request
-//  @return BrandingOptions
-func (a *BrandingAPIService) GetBrandingOptionsExecute(r ApiGetBrandingOptionsRequest) (*BrandingOptions, *http.Response, error) {
+//  @return JellyfinBrandingOptions
+func (a *BrandingAPIService) GetBrandingOptionsExecute(r ApiGetBrandingOptionsRequest) (*JellyfinBrandingOptions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BrandingOptions
+		localVarReturnValue  *JellyfinBrandingOptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BrandingAPIService.GetBrandingOptions")

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetAlbumArtists
 
-> BaseItemDtoQueryResult GetAlbumArtists(ctx).MinCommunityRating(minCommunityRating).StartIndex(startIndex).Limit(limit).SearchTerm(searchTerm).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).Genres(genres).GenreIds(genreIds).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).StudioIds(studioIds).UserId(userId).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).SortBy(sortBy).SortOrder(sortOrder).EnableImages(enableImages).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetAlbumArtists(ctx).MinCommunityRating(minCommunityRating).StartIndex(startIndex).Limit(limit).SearchTerm(searchTerm).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).Genres(genres).GenreIds(genreIds).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).StudioIds(studioIds).UserId(userId).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).SortBy(sortBy).SortOrder(sortOrder).EnableImages(enableImages).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets all album artists from a given item, folder, or the entire library.
 
@@ -34,12 +34,12 @@ func main() {
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
 	searchTerm := "searchTerm_example" // string | Optional. Search term. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
-	excludeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	excludeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. (optional)
 	isFavorite := true // bool | Optional filter by items that are marked as favorite, or not. (optional)
-	mediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+	mediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
 	genres := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. (optional)
 	genreIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited. (optional)
 	officialRatings := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. (optional)
@@ -47,7 +47,7 @@ func main() {
 	years := []int32{int32(123)} // []int32 | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. (optional)
 	enableUserData := true // bool | Optional, include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional, the max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	person := "person_example" // string | Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
 	personIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered to include only those containing the specified person ids. (optional)
 	personTypes := []string{"Inner_example"} // []string | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. (optional)
@@ -57,8 +57,8 @@ func main() {
 	nameStartsWithOrGreater := "nameStartsWithOrGreater_example" // string | Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
 	nameStartsWith := "nameStartsWith_example" // string | Optional filter by items whose name is sorted equally than a given input string. (optional)
 	nameLessThan := "nameLessThan_example" // string | Optional filter by items whose name is equally or lesser than a given input string. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Sort Order - Ascending,Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Sort Order - Ascending,Descending. (optional)
 	enableImages := true // bool | Optional, include image information in output. (optional) (default to true)
 	enableTotalRecordCount := true // bool | Total record count. (optional) (default to true)
 
@@ -69,7 +69,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ArtistsAPI.GetAlbumArtists``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlbumArtists`: BaseItemDtoQueryResult
+	// response from `GetAlbumArtists`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ArtistsAPI.GetAlbumArtists`: %v\n", resp)
 }
 ```
@@ -90,12 +90,12 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Optional. The maximum number of records to return. | 
  **searchTerm** | **string** | Optional. Search term. | 
  **parentId** | **string** | Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
- **excludeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **excludeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. | 
  **isFavorite** | **bool** | Optional filter by items that are marked as favorite, or not. | 
- **mediaTypes** | [**[]MediaType**](MediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
+ **mediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
  **genres** | **[]string** | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. | 
  **genreIds** | **[]string** | Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited. | 
  **officialRatings** | **[]string** | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. | 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
  **years** | **[]int32** | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. | 
  **enableUserData** | **bool** | Optional, include user data. | 
  **imageTypeLimit** | **int32** | Optional, the max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **person** | **string** | Optional. If specified, results will be filtered to include only those containing the specified person. | 
  **personIds** | **[]string** | Optional. If specified, results will be filtered to include only those containing the specified person ids. | 
  **personTypes** | **[]string** | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. | 
@@ -113,14 +113,14 @@ Name | Type | Description  | Notes
  **nameStartsWithOrGreater** | **string** | Optional filter by items whose name is sorted equally or greater than a given input string. | 
  **nameStartsWith** | **string** | Optional filter by items whose name is sorted equally than a given input string. | 
  **nameLessThan** | **string** | Optional filter by items whose name is equally or lesser than a given input string. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Sort Order - Ascending,Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Sort Order - Ascending,Descending. | 
  **enableImages** | **bool** | Optional, include image information in output. | [default to true]
  **enableTotalRecordCount** | **bool** | Total record count. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## GetArtistByName
 
-> BaseItemDto GetArtistByName(ctx, name).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetArtistByName(ctx, name).UserId(userId).Execute()
 
 Gets an artist by name.
 
@@ -165,7 +165,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ArtistsAPI.GetArtistByName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetArtistByName`: BaseItemDto
+	// response from `GetArtistByName`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `ArtistsAPI.GetArtistByName`: %v\n", resp)
 }
 ```
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ## GetArtists
 
-> BaseItemDtoQueryResult GetArtists(ctx).MinCommunityRating(minCommunityRating).StartIndex(startIndex).Limit(limit).SearchTerm(searchTerm).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).Genres(genres).GenreIds(genreIds).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).StudioIds(studioIds).UserId(userId).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).SortBy(sortBy).SortOrder(sortOrder).EnableImages(enableImages).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetArtists(ctx).MinCommunityRating(minCommunityRating).StartIndex(startIndex).Limit(limit).SearchTerm(searchTerm).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).IncludeItemTypes(includeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).Genres(genres).GenreIds(genreIds).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).StudioIds(studioIds).UserId(userId).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).SortBy(sortBy).SortOrder(sortOrder).EnableImages(enableImages).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets all artists from a given item, folder, or the entire library.
 
@@ -230,12 +230,12 @@ func main() {
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
 	searchTerm := "searchTerm_example" // string | Optional. Search term. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
-	excludeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. (optional)
-	includeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	excludeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. (optional)
+	includeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. (optional)
 	isFavorite := true // bool | Optional filter by items that are marked as favorite, or not. (optional)
-	mediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+	mediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
 	genres := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. (optional)
 	genreIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited. (optional)
 	officialRatings := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. (optional)
@@ -243,7 +243,7 @@ func main() {
 	years := []int32{int32(123)} // []int32 | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. (optional)
 	enableUserData := true // bool | Optional, include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional, the max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	person := "person_example" // string | Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
 	personIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered to include only those containing the specified person ids. (optional)
 	personTypes := []string{"Inner_example"} // []string | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. (optional)
@@ -253,8 +253,8 @@ func main() {
 	nameStartsWithOrGreater := "nameStartsWithOrGreater_example" // string | Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
 	nameStartsWith := "nameStartsWith_example" // string | Optional filter by items whose name is sorted equally than a given input string. (optional)
 	nameLessThan := "nameLessThan_example" // string | Optional filter by items whose name is equally or lesser than a given input string. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Sort Order - Ascending,Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Sort Order - Ascending,Descending. (optional)
 	enableImages := true // bool | Optional, include image information in output. (optional) (default to true)
 	enableTotalRecordCount := true // bool | Total record count. (optional) (default to true)
 
@@ -265,7 +265,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ArtistsAPI.GetArtists``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetArtists`: BaseItemDtoQueryResult
+	// response from `GetArtists`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ArtistsAPI.GetArtists`: %v\n", resp)
 }
 ```
@@ -286,12 +286,12 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Optional. The maximum number of records to return. | 
  **searchTerm** | **string** | Optional. Search term. | 
  **parentId** | **string** | Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
- **excludeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. | 
- **includeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **excludeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited. | 
+ **includeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. | 
  **isFavorite** | **bool** | Optional filter by items that are marked as favorite, or not. | 
- **mediaTypes** | [**[]MediaType**](MediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
+ **mediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
  **genres** | **[]string** | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. | 
  **genreIds** | **[]string** | Optional. If specified, results will be filtered based on genre id. This allows multiple, pipe delimited. | 
  **officialRatings** | **[]string** | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. | 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
  **years** | **[]int32** | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. | 
  **enableUserData** | **bool** | Optional, include user data. | 
  **imageTypeLimit** | **int32** | Optional, the max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **person** | **string** | Optional. If specified, results will be filtered to include only those containing the specified person. | 
  **personIds** | **[]string** | Optional. If specified, results will be filtered to include only those containing the specified person ids. | 
  **personTypes** | **[]string** | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. | 
@@ -309,14 +309,14 @@ Name | Type | Description  | Notes
  **nameStartsWithOrGreater** | **string** | Optional filter by items whose name is sorted equally or greater than a given input string. | 
  **nameStartsWith** | **string** | Optional filter by items whose name is sorted equally than a given input string. | 
  **nameLessThan** | **string** | Optional filter by items whose name is equally or lesser than a given input string. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Sort Order - Ascending,Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Sort Order - Ascending,Descending. | 
  **enableImages** | **bool** | Optional, include image information in output. | [default to true]
  **enableTotalRecordCount** | **bool** | Total record count. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

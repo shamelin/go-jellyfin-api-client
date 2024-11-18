@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## MarkPlayedItem
 
-> UserItemDataDto MarkPlayedItem(ctx, itemId).UserId(userId).DatePlayed(datePlayed).Execute()
+> JellyfinJellyfinUserItemDataDto MarkPlayedItem(ctx, itemId).UserId(userId).DatePlayed(datePlayed).Execute()
 
 Marks an item as played for user.
 
@@ -47,7 +47,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaystateAPI.MarkPlayedItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MarkPlayedItem`: UserItemDataDto
+	// response from `MarkPlayedItem`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `PlaystateAPI.MarkPlayedItem`: %v\n", resp)
 }
 ```
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## MarkUnplayedItem
 
-> UserItemDataDto MarkUnplayedItem(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinUserItemDataDto MarkUnplayedItem(ctx, itemId).UserId(userId).Execute()
 
 Marks an item as unplayed for user.
 
@@ -118,7 +118,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaystateAPI.MarkUnplayedItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `MarkUnplayedItem`: UserItemDataDto
+	// response from `MarkUnplayedItem`: JellyfinJellyfinUserItemDataDto
 	fmt.Fprintf(os.Stdout, "Response from `PlaystateAPI.MarkUnplayedItem`: %v\n", resp)
 }
 ```
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserItemDataDto**](UserItemDataDto.md)
+[**JellyfinJellyfinUserItemDataDto**](JellyfinUserItemDataDto.md)
 
 ### Authorization
 
@@ -184,10 +184,10 @@ func main() {
 	audioStreamIndex := int32(56) // int32 | The audio stream index. (optional)
 	subtitleStreamIndex := int32(56) // int32 | The subtitle stream index. (optional)
 	volumeLevel := int32(56) // int32 | Scale of 0-100. (optional)
-	playMethod := "playMethod_example" // PlayMethod | The play method. (optional)
+	playMethod := "playMethod_example" // JellyfinJellyfinPlayMethod | The play method. (optional)
 	liveStreamId := "liveStreamId_example" // string | The live stream id. (optional)
 	playSessionId := "playSessionId_example" // string | The play session id. (optional)
-	repeatMode := "repeatMode_example" // RepeatMode | The repeat mode. (optional)
+	repeatMode := "repeatMode_example" // JellyfinJellyfinRepeatMode | The repeat mode. (optional)
 	isPaused := true // bool | Indicates if the player is paused. (optional) (default to false)
 	isMuted := true // bool | Indicates if the player is muted. (optional) (default to false)
 
@@ -222,10 +222,10 @@ Name | Type | Description  | Notes
  **audioStreamIndex** | **int32** | The audio stream index. | 
  **subtitleStreamIndex** | **int32** | The subtitle stream index. | 
  **volumeLevel** | **int32** | Scale of 0-100. | 
- **playMethod** | **PlayMethod** | The play method. | 
+ **playMethod** | **JellyfinJellyfinPlayMethod** | The play method. | 
  **liveStreamId** | **string** | The live stream id. | 
  **playSessionId** | **string** | The play session id. | 
- **repeatMode** | **RepeatMode** | The repeat mode. | 
+ **repeatMode** | **JellyfinJellyfinRepeatMode** | The repeat mode. | 
  **isPaused** | **bool** | Indicates if the player is paused. | [default to false]
  **isMuted** | **bool** | Indicates if the player is muted. | [default to false]
 
@@ -270,7 +270,7 @@ func main() {
 	mediaSourceId := "mediaSourceId_example" // string | The id of the MediaSource. (optional)
 	audioStreamIndex := int32(56) // int32 | The audio stream index. (optional)
 	subtitleStreamIndex := int32(56) // int32 | The subtitle stream index. (optional)
-	playMethod := "playMethod_example" // PlayMethod | The play method. (optional)
+	playMethod := "playMethod_example" // JellyfinJellyfinPlayMethod | The play method. (optional)
 	liveStreamId := "liveStreamId_example" // string | The live stream id. (optional)
 	playSessionId := "playSessionId_example" // string | The play session id. (optional)
 	canSeek := true // bool | Indicates if the client can seek. (optional) (default to false)
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
  **mediaSourceId** | **string** | The id of the MediaSource. | 
  **audioStreamIndex** | **int32** | The audio stream index. | 
  **subtitleStreamIndex** | **int32** | The subtitle stream index. | 
- **playMethod** | **PlayMethod** | The play method. | 
+ **playMethod** | **JellyfinJellyfinPlayMethod** | The play method. | 
  **liveStreamId** | **string** | The live stream id. | 
  **playSessionId** | **string** | The play session id. | 
  **canSeek** | **bool** | Indicates if the client can seek. | [default to false]
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ## ReportPlaybackProgress
 
-> ReportPlaybackProgress(ctx).PlaybackProgressInfo(playbackProgressInfo).Execute()
+> ReportPlaybackProgress(ctx).JellyfinPlaybackProgressInfo(jellyfinPlaybackProgressInfo).Execute()
 
 Reports playback progress within a session.
 
@@ -484,11 +484,11 @@ import (
 )
 
 func main() {
-	playbackProgressInfo := *openapiclient.NewPlaybackProgressInfo() // PlaybackProgressInfo | The playback progress info. (optional)
+	jellyfinPlaybackProgressInfo := *openapiclient.NewJellyfinPlaybackProgressInfo() // JellyfinPlaybackProgressInfo | The playback progress info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PlaystateAPI.ReportPlaybackProgress(context.Background()).PlaybackProgressInfo(playbackProgressInfo).Execute()
+	r, err := apiClient.PlaystateAPI.ReportPlaybackProgress(context.Background()).JellyfinPlaybackProgressInfo(jellyfinPlaybackProgressInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaystateAPI.ReportPlaybackProgress``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -507,7 +507,7 @@ Other parameters are passed through a pointer to a apiReportPlaybackProgressRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playbackProgressInfo** | [**PlaybackProgressInfo**](PlaybackProgressInfo.md) | The playback progress info. | 
+ **jellyfinPlaybackProgressInfo** | [**JellyfinPlaybackProgressInfo**](JellyfinPlaybackProgressInfo.md) | The playback progress info. | 
 
 ### Return type
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ## ReportPlaybackStart
 
-> ReportPlaybackStart(ctx).PlaybackStartInfo(playbackStartInfo).Execute()
+> ReportPlaybackStart(ctx).JellyfinPlaybackStartInfo(jellyfinPlaybackStartInfo).Execute()
 
 Reports playback has started within a session.
 
@@ -546,11 +546,11 @@ import (
 )
 
 func main() {
-	playbackStartInfo := *openapiclient.NewPlaybackStartInfo() // PlaybackStartInfo | The playback start info. (optional)
+	jellyfinPlaybackStartInfo := *openapiclient.NewJellyfinPlaybackStartInfo() // JellyfinPlaybackStartInfo | The playback start info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PlaystateAPI.ReportPlaybackStart(context.Background()).PlaybackStartInfo(playbackStartInfo).Execute()
+	r, err := apiClient.PlaystateAPI.ReportPlaybackStart(context.Background()).JellyfinPlaybackStartInfo(jellyfinPlaybackStartInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaystateAPI.ReportPlaybackStart``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -569,7 +569,7 @@ Other parameters are passed through a pointer to a apiReportPlaybackStartRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playbackStartInfo** | [**PlaybackStartInfo**](PlaybackStartInfo.md) | The playback start info. | 
+ **jellyfinPlaybackStartInfo** | [**JellyfinPlaybackStartInfo**](JellyfinPlaybackStartInfo.md) | The playback start info. | 
 
 ### Return type
 
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ## ReportPlaybackStopped
 
-> ReportPlaybackStopped(ctx).PlaybackStopInfo(playbackStopInfo).Execute()
+> ReportPlaybackStopped(ctx).JellyfinPlaybackStopInfo(jellyfinPlaybackStopInfo).Execute()
 
 Reports playback has stopped within a session.
 
@@ -608,11 +608,11 @@ import (
 )
 
 func main() {
-	playbackStopInfo := *openapiclient.NewPlaybackStopInfo() // PlaybackStopInfo | The playback stop info. (optional)
+	jellyfinPlaybackStopInfo := *openapiclient.NewJellyfinPlaybackStopInfo() // JellyfinPlaybackStopInfo | The playback stop info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PlaystateAPI.ReportPlaybackStopped(context.Background()).PlaybackStopInfo(playbackStopInfo).Execute()
+	r, err := apiClient.PlaystateAPI.ReportPlaybackStopped(context.Background()).JellyfinPlaybackStopInfo(jellyfinPlaybackStopInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaystateAPI.ReportPlaybackStopped``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -631,7 +631,7 @@ Other parameters are passed through a pointer to a apiReportPlaybackStoppedReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playbackStopInfo** | [**PlaybackStopInfo**](PlaybackStopInfo.md) | The playback stop info. | 
+ **jellyfinPlaybackStopInfo** | [**JellyfinPlaybackStopInfo**](JellyfinPlaybackStopInfo.md) | The playback stop info. | 
 
 ### Return type
 

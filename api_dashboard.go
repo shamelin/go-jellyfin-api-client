@@ -35,7 +35,7 @@ func (r ApiGetConfigurationPagesRequest) EnableInMainMenu(enableInMainMenu bool)
 	return r
 }
 
-func (r ApiGetConfigurationPagesRequest) Execute() ([]ConfigurationPageInfo, *http.Response, error) {
+func (r ApiGetConfigurationPagesRequest) Execute() ([]JellyfinConfigurationPageInfo, *http.Response, error) {
 	return r.ApiService.GetConfigurationPagesExecute(r)
 }
 
@@ -53,13 +53,13 @@ func (a *DashboardAPIService) GetConfigurationPages(ctx context.Context) ApiGetC
 }
 
 // Execute executes the request
-//  @return []ConfigurationPageInfo
-func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfigurationPagesRequest) ([]ConfigurationPageInfo, *http.Response, error) {
+//  @return []JellyfinConfigurationPageInfo
+func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfigurationPagesRequest) ([]JellyfinConfigurationPageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ConfigurationPageInfo
+		localVarReturnValue  []JellyfinConfigurationPageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DashboardAPIService.GetConfigurationPages")
@@ -130,7 +130,7 @@ func (a *DashboardAPIService) GetConfigurationPagesExecute(r ApiGetConfiguration
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -248,7 +248,7 @@ func (a *DashboardAPIService) GetDashboardConfigurationPageExecute(r ApiGetDashb
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

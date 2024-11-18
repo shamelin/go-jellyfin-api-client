@@ -32,7 +32,7 @@ type ApiAddListingProviderRequest struct {
 	pw *string
 	validateListings *bool
 	validateLogin *bool
-	listingsProviderInfo *ListingsProviderInfo
+	jellyfinListingsProviderInfo *JellyfinListingsProviderInfo
 }
 
 // Password.
@@ -54,12 +54,12 @@ func (r ApiAddListingProviderRequest) ValidateLogin(validateLogin bool) ApiAddLi
 }
 
 // New listings info.
-func (r ApiAddListingProviderRequest) ListingsProviderInfo(listingsProviderInfo ListingsProviderInfo) ApiAddListingProviderRequest {
-	r.listingsProviderInfo = &listingsProviderInfo
+func (r ApiAddListingProviderRequest) JellyfinListingsProviderInfo(jellyfinListingsProviderInfo JellyfinListingsProviderInfo) ApiAddListingProviderRequest {
+	r.jellyfinListingsProviderInfo = &jellyfinListingsProviderInfo
 	return r
 }
 
-func (r ApiAddListingProviderRequest) Execute() (*ListingsProviderInfo, *http.Response, error) {
+func (r ApiAddListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
 	return r.ApiService.AddListingProviderExecute(r)
 }
 
@@ -77,13 +77,13 @@ func (a *LiveTvAPIService) AddListingProvider(ctx context.Context) ApiAddListing
 }
 
 // Execute executes the request
-//  @return ListingsProviderInfo
-func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequest) (*ListingsProviderInfo, *http.Response, error) {
+//  @return JellyfinListingsProviderInfo
+func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListingsProviderInfo
+		localVarReturnValue  *JellyfinListingsProviderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.AddListingProvider")
@@ -130,7 +130,7 @@ func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.listingsProviderInfo
+	localVarPostBody = r.jellyfinListingsProviderInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -185,16 +185,16 @@ func (a *LiveTvAPIService) AddListingProviderExecute(r ApiAddListingProviderRequ
 type ApiAddTunerHostRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	tunerHostInfo *TunerHostInfo
+	jellyfinTunerHostInfo *JellyfinTunerHostInfo
 }
 
 // New tuner host.
-func (r ApiAddTunerHostRequest) TunerHostInfo(tunerHostInfo TunerHostInfo) ApiAddTunerHostRequest {
-	r.tunerHostInfo = &tunerHostInfo
+func (r ApiAddTunerHostRequest) JellyfinTunerHostInfo(jellyfinTunerHostInfo JellyfinTunerHostInfo) ApiAddTunerHostRequest {
+	r.jellyfinTunerHostInfo = &jellyfinTunerHostInfo
 	return r
 }
 
-func (r ApiAddTunerHostRequest) Execute() (*TunerHostInfo, *http.Response, error) {
+func (r ApiAddTunerHostRequest) Execute() (*JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.AddTunerHostExecute(r)
 }
 
@@ -212,13 +212,13 @@ func (a *LiveTvAPIService) AddTunerHost(ctx context.Context) ApiAddTunerHostRequ
 }
 
 // Execute executes the request
-//  @return TunerHostInfo
-func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*TunerHostInfo, *http.Response, error) {
+//  @return JellyfinTunerHostInfo
+func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TunerHostInfo
+		localVarReturnValue  *JellyfinTunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.AddTunerHost")
@@ -250,7 +250,7 @@ func (a *LiveTvAPIService) AddTunerHostExecute(r ApiAddTunerHostRequest) (*Tuner
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tunerHostInfo
+	localVarPostBody = r.jellyfinTunerHostInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -513,12 +513,12 @@ func (a *LiveTvAPIService) CancelTimerExecute(r ApiCancelTimerRequest) (*http.Re
 type ApiCreateSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	seriesTimerInfoDto *SeriesTimerInfoDto
+	jellyfinSeriesTimerInfoDto *JellyfinSeriesTimerInfoDto
 }
 
 // New series timer info.
-func (r ApiCreateSeriesTimerRequest) SeriesTimerInfoDto(seriesTimerInfoDto SeriesTimerInfoDto) ApiCreateSeriesTimerRequest {
-	r.seriesTimerInfoDto = &seriesTimerInfoDto
+func (r ApiCreateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) ApiCreateSeriesTimerRequest {
+	r.jellyfinSeriesTimerInfoDto = &jellyfinSeriesTimerInfoDto
 	return r
 }
 
@@ -576,7 +576,7 @@ func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.seriesTimerInfoDto
+	localVarPostBody = r.jellyfinSeriesTimerInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -622,12 +622,12 @@ func (a *LiveTvAPIService) CreateSeriesTimerExecute(r ApiCreateSeriesTimerReques
 type ApiCreateTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	timerInfoDto *TimerInfoDto
+	jellyfinTimerInfoDto *JellyfinTimerInfoDto
 }
 
 // New timer info.
-func (r ApiCreateTimerRequest) TimerInfoDto(timerInfoDto TimerInfoDto) ApiCreateTimerRequest {
-	r.timerInfoDto = &timerInfoDto
+func (r ApiCreateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) ApiCreateTimerRequest {
+	r.jellyfinTimerInfoDto = &jellyfinTimerInfoDto
 	return r
 }
 
@@ -685,7 +685,7 @@ func (a *LiveTvAPIService) CreateTimerExecute(r ApiCreateTimerRequest) (*http.Re
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.timerInfoDto
+	localVarPostBody = r.jellyfinTimerInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -937,7 +937,7 @@ func (a *LiveTvAPIService) DeleteRecordingExecute(r ApiDeleteRecordingRequest) (
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1075,7 +1075,7 @@ func (r ApiDiscoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) ApiDiscove
 	return r
 }
 
-func (r ApiDiscoverTunersRequest) Execute() ([]TunerHostInfo, *http.Response, error) {
+func (r ApiDiscoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.DiscoverTunersExecute(r)
 }
 
@@ -1093,13 +1093,13 @@ func (a *LiveTvAPIService) DiscoverTuners(ctx context.Context) ApiDiscoverTuners
 }
 
 // Execute executes the request
-//  @return []TunerHostInfo
-func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]TunerHostInfo, *http.Response, error) {
+//  @return []JellyfinTunerHostInfo
+func (a *LiveTvAPIService) DiscoverTunersExecute(r ApiDiscoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TunerHostInfo
+		localVarReturnValue  []JellyfinTunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DiscoverTuners")
@@ -1199,7 +1199,7 @@ func (r ApiDiscvoverTunersRequest) NewDevicesOnly(newDevicesOnly bool) ApiDiscvo
 	return r
 }
 
-func (r ApiDiscvoverTunersRequest) Execute() ([]TunerHostInfo, *http.Response, error) {
+func (r ApiDiscvoverTunersRequest) Execute() ([]JellyfinTunerHostInfo, *http.Response, error) {
 	return r.ApiService.DiscvoverTunersExecute(r)
 }
 
@@ -1217,13 +1217,13 @@ func (a *LiveTvAPIService) DiscvoverTuners(ctx context.Context) ApiDiscvoverTune
 }
 
 // Execute executes the request
-//  @return []TunerHostInfo
-func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) ([]TunerHostInfo, *http.Response, error) {
+//  @return []JellyfinTunerHostInfo
+func (a *LiveTvAPIService) DiscvoverTunersExecute(r ApiDiscvoverTunersRequest) ([]JellyfinTunerHostInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TunerHostInfo
+		localVarReturnValue  []JellyfinTunerHostInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.DiscvoverTuners")
@@ -1324,7 +1324,7 @@ func (r ApiGetChannelRequest) UserId(userId string) ApiGetChannelRequest {
 	return r
 }
 
-func (r ApiGetChannelRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetChannelRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetChannelExecute(r)
 }
 
@@ -1344,13 +1344,13 @@ func (a *LiveTvAPIService) GetChannel(ctx context.Context, channelId string) Api
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetChannel")
@@ -1422,7 +1422,7 @@ func (a *LiveTvAPIService) GetChannelExecute(r ApiGetChannelRequest) (*BaseItemD
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1459,7 +1459,7 @@ func (r ApiGetChannelMappingOptionsRequest) ProviderId(providerId string) ApiGet
 	return r
 }
 
-func (r ApiGetChannelMappingOptionsRequest) Execute() (*ChannelMappingOptionsDto, *http.Response, error) {
+func (r ApiGetChannelMappingOptionsRequest) Execute() (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
 	return r.ApiService.GetChannelMappingOptionsExecute(r)
 }
 
@@ -1477,13 +1477,13 @@ func (a *LiveTvAPIService) GetChannelMappingOptions(ctx context.Context) ApiGetC
 }
 
 // Execute executes the request
-//  @return ChannelMappingOptionsDto
-func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappingOptionsRequest) (*ChannelMappingOptionsDto, *http.Response, error) {
+//  @return JellyfinChannelMappingOptionsDto
+func (a *LiveTvAPIService) GetChannelMappingOptionsExecute(r ApiGetChannelMappingOptionsRequest) (*JellyfinChannelMappingOptionsDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ChannelMappingOptionsDto
+		localVarReturnValue  *JellyfinChannelMappingOptionsDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetChannelMappingOptions")
@@ -1573,7 +1573,7 @@ type ApiGetDefaultListingProviderRequest struct {
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetDefaultListingProviderRequest) Execute() (*ListingsProviderInfo, *http.Response, error) {
+func (r ApiGetDefaultListingProviderRequest) Execute() (*JellyfinListingsProviderInfo, *http.Response, error) {
 	return r.ApiService.GetDefaultListingProviderExecute(r)
 }
 
@@ -1591,13 +1591,13 @@ func (a *LiveTvAPIService) GetDefaultListingProvider(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-//  @return ListingsProviderInfo
-func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListingProviderRequest) (*ListingsProviderInfo, *http.Response, error) {
+//  @return JellyfinListingsProviderInfo
+func (a *LiveTvAPIService) GetDefaultListingProviderExecute(r ApiGetDefaultListingProviderRequest) (*JellyfinListingsProviderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ListingsProviderInfo
+		localVarReturnValue  *JellyfinListingsProviderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetDefaultListingProvider")
@@ -1691,7 +1691,7 @@ func (r ApiGetDefaultTimerRequest) ProgramId(programId string) ApiGetDefaultTime
 	return r
 }
 
-func (r ApiGetDefaultTimerRequest) Execute() (*SeriesTimerInfoDto, *http.Response, error) {
+func (r ApiGetDefaultTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetDefaultTimerExecute(r)
 }
 
@@ -1709,13 +1709,13 @@ func (a *LiveTvAPIService) GetDefaultTimer(ctx context.Context) ApiGetDefaultTim
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDto
-func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (*SeriesTimerInfoDto, *http.Response, error) {
+//  @return JellyfinSeriesTimerInfoDto
+func (a *LiveTvAPIService) GetDefaultTimerExecute(r ApiGetDefaultTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDto
+		localVarReturnValue  *JellyfinSeriesTimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetDefaultTimer")
@@ -1805,7 +1805,7 @@ type ApiGetGuideInfoRequest struct {
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetGuideInfoRequest) Execute() (*GuideInfo, *http.Response, error) {
+func (r ApiGetGuideInfoRequest) Execute() (*JellyfinGuideInfo, *http.Response, error) {
 	return r.ApiService.GetGuideInfoExecute(r)
 }
 
@@ -1823,13 +1823,13 @@ func (a *LiveTvAPIService) GetGuideInfo(ctx context.Context) ApiGetGuideInfoRequ
 }
 
 // Execute executes the request
-//  @return GuideInfo
-func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*GuideInfo, *http.Response, error) {
+//  @return JellyfinGuideInfo
+func (a *LiveTvAPIService) GetGuideInfoExecute(r ApiGetGuideInfoRequest) (*JellyfinGuideInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GuideInfo
+		localVarReturnValue  *JellyfinGuideInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetGuideInfo")
@@ -1944,7 +1944,7 @@ func (r ApiGetLineupsRequest) Country(country string) ApiGetLineupsRequest {
 	return r
 }
 
-func (r ApiGetLineupsRequest) Execute() ([]NameIdPair, *http.Response, error) {
+func (r ApiGetLineupsRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetLineupsExecute(r)
 }
 
@@ -1962,13 +1962,13 @@ func (a *LiveTvAPIService) GetLineups(ctx context.Context) ApiGetLineupsRequest 
 }
 
 // Execute executes the request
-//  @return []NameIdPair
-func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]NameIdPair, *http.Response, error) {
+//  @return []JellyfinNameIdPair
+func (a *LiveTvAPIService) GetLineupsExecute(r ApiGetLineupsRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarReturnValue  []JellyfinNameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLineups")
@@ -2149,7 +2149,7 @@ func (a *LiveTvAPIService) GetLiveRecordingFileExecute(r ApiGetLiveRecordingFile
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2264,7 +2264,7 @@ func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileReques
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2291,7 +2291,7 @@ func (a *LiveTvAPIService) GetLiveStreamFileExecute(r ApiGetLiveStreamFileReques
 type ApiGetLiveTvChannelsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	type_ *ChannelType
+	type_ *JellyfinChannelType
 	userId *string
 	startIndex *int32
 	isMovie *bool
@@ -2305,17 +2305,17 @@ type ApiGetLiveTvChannelsRequest struct {
 	isDisliked *bool
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
+	enableImageTypes *[]JellyfinImageType
+	fields *[]JellyfinItemFields
 	enableUserData *bool
-	sortBy *[]ItemSortBy
-	sortOrder *SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *JellyfinSortOrder
 	enableFavoriteSorting *bool
 	addCurrentProgram *bool
 }
 
 // Optional. Filter by channel type.
-func (r ApiGetLiveTvChannelsRequest) Type_(type_ ChannelType) ApiGetLiveTvChannelsRequest {
+func (r ApiGetLiveTvChannelsRequest) Type_(type_ JellyfinChannelType) ApiGetLiveTvChannelsRequest {
 	r.type_ = &type_
 	return r
 }
@@ -2399,13 +2399,13 @@ func (r ApiGetLiveTvChannelsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGet
 }
 
 // \&quot;Optional. The image types to include in the output.
-func (r ApiGetLiveTvChannelsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetLiveTvChannelsRequest {
+func (r ApiGetLiveTvChannelsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLiveTvChannelsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLiveTvChannelsRequest) Fields(fields []ItemFields) ApiGetLiveTvChannelsRequest {
+func (r ApiGetLiveTvChannelsRequest) Fields(fields []JellyfinItemFields) ApiGetLiveTvChannelsRequest {
 	r.fields = &fields
 	return r
 }
@@ -2417,13 +2417,13 @@ func (r ApiGetLiveTvChannelsRequest) EnableUserData(enableUserData bool) ApiGetL
 }
 
 // Optional. Key to sort by.
-func (r ApiGetLiveTvChannelsRequest) SortBy(sortBy []ItemSortBy) ApiGetLiveTvChannelsRequest {
+func (r ApiGetLiveTvChannelsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetLiveTvChannelsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort order.
-func (r ApiGetLiveTvChannelsRequest) SortOrder(sortOrder SortOrder) ApiGetLiveTvChannelsRequest {
+func (r ApiGetLiveTvChannelsRequest) SortOrder(sortOrder JellyfinSortOrder) ApiGetLiveTvChannelsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -2440,7 +2440,7 @@ func (r ApiGetLiveTvChannelsRequest) AddCurrentProgram(addCurrentProgram bool) A
 	return r
 }
 
-func (r ApiGetLiveTvChannelsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetLiveTvChannelsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLiveTvChannelsExecute(r)
 }
 
@@ -2458,13 +2458,13 @@ func (a *LiveTvAPIService) GetLiveTvChannels(ctx context.Context) ApiGetLiveTvCh
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetLiveTvChannelsExecute(r ApiGetLiveTvChannelsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvChannels")
@@ -2644,7 +2644,7 @@ type ApiGetLiveTvInfoRequest struct {
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetLiveTvInfoRequest) Execute() (*LiveTvInfo, *http.Response, error) {
+func (r ApiGetLiveTvInfoRequest) Execute() (*JellyfinLiveTvInfo, *http.Response, error) {
 	return r.ApiService.GetLiveTvInfoExecute(r)
 }
 
@@ -2662,13 +2662,13 @@ func (a *LiveTvAPIService) GetLiveTvInfo(ctx context.Context) ApiGetLiveTvInfoRe
 }
 
 // Execute executes the request
-//  @return LiveTvInfo
-func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*LiveTvInfo, *http.Response, error) {
+//  @return JellyfinLiveTvInfo
+func (a *LiveTvAPIService) GetLiveTvInfoExecute(r ApiGetLiveTvInfoRequest) (*JellyfinLiveTvInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LiveTvInfo
+		localVarReturnValue  *JellyfinLiveTvInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvInfo")
@@ -2768,17 +2768,17 @@ type ApiGetLiveTvProgramsRequest struct {
 	isSports *bool
 	startIndex *int32
 	limit *int32
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 	genres *[]string
 	genreIds *[]string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	enableUserData *bool
 	seriesTimerId *string
 	librarySeriesId *string
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableTotalRecordCount *bool
 }
 
@@ -2873,13 +2873,13 @@ func (r ApiGetLiveTvProgramsRequest) Limit(limit int32) ApiGetLiveTvProgramsRequ
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate.
-func (r ApiGetLiveTvProgramsRequest) SortBy(sortBy []ItemSortBy) ApiGetLiveTvProgramsRequest {
+func (r ApiGetLiveTvProgramsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetLiveTvProgramsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Sort Order - Ascending,Descending.
-func (r ApiGetLiveTvProgramsRequest) SortOrder(sortOrder []SortOrder) ApiGetLiveTvProgramsRequest {
+func (r ApiGetLiveTvProgramsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetLiveTvProgramsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -2909,7 +2909,7 @@ func (r ApiGetLiveTvProgramsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGet
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetLiveTvProgramsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetLiveTvProgramsRequest {
+func (r ApiGetLiveTvProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetLiveTvProgramsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -2933,7 +2933,7 @@ func (r ApiGetLiveTvProgramsRequest) LibrarySeriesId(librarySeriesId string) Api
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetLiveTvProgramsRequest) Fields(fields []ItemFields) ApiGetLiveTvProgramsRequest {
+func (r ApiGetLiveTvProgramsRequest) Fields(fields []JellyfinItemFields) ApiGetLiveTvProgramsRequest {
 	r.fields = &fields
 	return r
 }
@@ -2944,7 +2944,7 @@ func (r ApiGetLiveTvProgramsRequest) EnableTotalRecordCount(enableTotalRecordCou
 	return r
 }
 
-func (r ApiGetLiveTvProgramsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetLiveTvProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetLiveTvProgramsExecute(r)
 }
 
@@ -2962,13 +2962,13 @@ func (a *LiveTvAPIService) GetLiveTvPrograms(ctx context.Context) ApiGetLiveTvPr
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetLiveTvProgramsExecute(r ApiGetLiveTvProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetLiveTvPrograms")
@@ -3203,7 +3203,7 @@ func (r ApiGetProgramRequest) UserId(userId string) ApiGetProgramRequest {
 	return r
 }
 
-func (r ApiGetProgramRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetProgramRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetProgramExecute(r)
 }
 
@@ -3223,13 +3223,13 @@ func (a *LiveTvAPIService) GetProgram(ctx context.Context, programId string) Api
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetProgram")
@@ -3318,16 +3318,16 @@ func (a *LiveTvAPIService) GetProgramExecute(r ApiGetProgramRequest) (*BaseItemD
 type ApiGetProgramsRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	getProgramsDto *GetProgramsDto
+	jellyfinGetProgramsDto *JellyfinGetProgramsDto
 }
 
 // Request body.
-func (r ApiGetProgramsRequest) GetProgramsDto(getProgramsDto GetProgramsDto) ApiGetProgramsRequest {
-	r.getProgramsDto = &getProgramsDto
+func (r ApiGetProgramsRequest) JellyfinGetProgramsDto(jellyfinGetProgramsDto JellyfinGetProgramsDto) ApiGetProgramsRequest {
+	r.jellyfinGetProgramsDto = &jellyfinGetProgramsDto
 	return r
 }
 
-func (r ApiGetProgramsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetProgramsExecute(r)
 }
 
@@ -3345,13 +3345,13 @@ func (a *LiveTvAPIService) GetPrograms(ctx context.Context) ApiGetProgramsReques
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetPrograms")
@@ -3383,7 +3383,7 @@ func (a *LiveTvAPIService) GetProgramsExecute(r ApiGetProgramsRequest) (*BaseIte
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.getProgramsDto
+	localVarPostBody = r.jellyfinGetProgramsDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -3449,9 +3449,9 @@ type ApiGetRecommendedProgramsRequest struct {
 	isSports *bool
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	genreIds *[]string
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableUserData *bool
 	enableTotalRecordCount *bool
 }
@@ -3523,7 +3523,7 @@ func (r ApiGetRecommendedProgramsRequest) ImageTypeLimit(imageTypeLimit int32) A
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecommendedProgramsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetRecommendedProgramsRequest {
+func (r ApiGetRecommendedProgramsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecommendedProgramsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -3535,7 +3535,7 @@ func (r ApiGetRecommendedProgramsRequest) GenreIds(genreIds []string) ApiGetReco
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecommendedProgramsRequest) Fields(fields []ItemFields) ApiGetRecommendedProgramsRequest {
+func (r ApiGetRecommendedProgramsRequest) Fields(fields []JellyfinItemFields) ApiGetRecommendedProgramsRequest {
 	r.fields = &fields
 	return r
 }
@@ -3552,7 +3552,7 @@ func (r ApiGetRecommendedProgramsRequest) EnableTotalRecordCount(enableTotalReco
 	return r
 }
 
-func (r ApiGetRecommendedProgramsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetRecommendedProgramsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecommendedProgramsExecute(r)
 }
 
@@ -3570,13 +3570,13 @@ func (a *LiveTvAPIService) GetRecommendedPrograms(ctx context.Context) ApiGetRec
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProgramsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetRecommendedProgramsExecute(r ApiGetRecommendedProgramsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecommendedPrograms")
@@ -3746,7 +3746,7 @@ func (r ApiGetRecordingRequest) UserId(userId string) ApiGetRecordingRequest {
 	return r
 }
 
-func (r ApiGetRecordingRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetRecordingRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetRecordingExecute(r)
 }
 
@@ -3766,13 +3766,13 @@ func (a *LiveTvAPIService) GetRecording(ctx context.Context, recordingId string)
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecording")
@@ -3844,7 +3844,7 @@ func (a *LiveTvAPIService) GetRecordingExecute(r ApiGetRecordingRequest) (*BaseI
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3881,7 +3881,7 @@ func (r ApiGetRecordingFoldersRequest) UserId(userId string) ApiGetRecordingFold
 	return r
 }
 
-func (r ApiGetRecordingFoldersRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetRecordingFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingFoldersExecute(r)
 }
 
@@ -3899,13 +3899,13 @@ func (a *LiveTvAPIService) GetRecordingFolders(ctx context.Context) ApiGetRecord
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetRecordingFoldersExecute(r ApiGetRecordingFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingFolders")
@@ -4092,7 +4092,7 @@ func (a *LiveTvAPIService) GetRecordingGroupExecute(r ApiGetRecordingGroupReques
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -4120,7 +4120,7 @@ func (r ApiGetRecordingGroupsRequest) UserId(userId string) ApiGetRecordingGroup
 	return r
 }
 
-func (r ApiGetRecordingGroupsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetRecordingGroupsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingGroupsExecute(r)
 }
 
@@ -4140,14 +4140,14 @@ func (a *LiveTvAPIService) GetRecordingGroups(ctx context.Context) ApiGetRecordi
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingGroupsExecute(r ApiGetRecordingGroupsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingGroups")
@@ -4239,13 +4239,13 @@ type ApiGetRecordingsRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	status *RecordingStatus
+	status *JellyfinRecordingStatus
 	isInProgress *bool
 	seriesTimerId *string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
+	enableImageTypes *[]JellyfinImageType
+	fields *[]JellyfinItemFields
 	enableUserData *bool
 	isMovie *bool
 	isSeries *bool
@@ -4281,7 +4281,7 @@ func (r ApiGetRecordingsRequest) Limit(limit int32) ApiGetRecordingsRequest {
 }
 
 // Optional. Filter by recording status.
-func (r ApiGetRecordingsRequest) Status(status RecordingStatus) ApiGetRecordingsRequest {
+func (r ApiGetRecordingsRequest) Status(status JellyfinRecordingStatus) ApiGetRecordingsRequest {
 	r.status = &status
 	return r
 }
@@ -4311,13 +4311,13 @@ func (r ApiGetRecordingsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetReco
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecordingsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetRecordingsRequest {
+func (r ApiGetRecordingsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecordingsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecordingsRequest) Fields(fields []ItemFields) ApiGetRecordingsRequest {
+func (r ApiGetRecordingsRequest) Fields(fields []JellyfinItemFields) ApiGetRecordingsRequest {
 	r.fields = &fields
 	return r
 }
@@ -4370,7 +4370,7 @@ func (r ApiGetRecordingsRequest) EnableTotalRecordCount(enableTotalRecordCount b
 	return r
 }
 
-func (r ApiGetRecordingsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetRecordingsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingsExecute(r)
 }
 
@@ -4388,13 +4388,13 @@ func (a *LiveTvAPIService) GetRecordings(ctx context.Context) ApiGetRecordingsRe
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LiveTvAPIService) GetRecordingsExecute(r ApiGetRecordingsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordings")
@@ -4560,13 +4560,13 @@ type ApiGetRecordingsSeriesRequest struct {
 	groupId *string
 	startIndex *int32
 	limit *int32
-	status *RecordingStatus
+	status *JellyfinRecordingStatus
 	isInProgress *bool
 	seriesTimerId *string
 	enableImages *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	fields *[]ItemFields
+	enableImageTypes *[]JellyfinImageType
+	fields *[]JellyfinItemFields
 	enableUserData *bool
 	enableTotalRecordCount *bool
 }
@@ -4602,7 +4602,7 @@ func (r ApiGetRecordingsSeriesRequest) Limit(limit int32) ApiGetRecordingsSeries
 }
 
 // Optional. Filter by recording status.
-func (r ApiGetRecordingsSeriesRequest) Status(status RecordingStatus) ApiGetRecordingsSeriesRequest {
+func (r ApiGetRecordingsSeriesRequest) Status(status JellyfinRecordingStatus) ApiGetRecordingsSeriesRequest {
 	r.status = &status
 	return r
 }
@@ -4632,13 +4632,13 @@ func (r ApiGetRecordingsSeriesRequest) ImageTypeLimit(imageTypeLimit int32) ApiG
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetRecordingsSeriesRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetRecordingsSeriesRequest {
+func (r ApiGetRecordingsSeriesRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetRecordingsSeriesRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetRecordingsSeriesRequest) Fields(fields []ItemFields) ApiGetRecordingsSeriesRequest {
+func (r ApiGetRecordingsSeriesRequest) Fields(fields []JellyfinItemFields) ApiGetRecordingsSeriesRequest {
 	r.fields = &fields
 	return r
 }
@@ -4655,7 +4655,7 @@ func (r ApiGetRecordingsSeriesRequest) EnableTotalRecordCount(enableTotalRecordC
 	return r
 }
 
-func (r ApiGetRecordingsSeriesRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetRecordingsSeriesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetRecordingsSeriesExecute(r)
 }
 
@@ -4675,14 +4675,14 @@ func (a *LiveTvAPIService) GetRecordingsSeries(ctx context.Context) ApiGetRecord
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+func (a *LiveTvAPIService) GetRecordingsSeriesExecute(r ApiGetRecordingsSeriesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetRecordingsSeries")
@@ -4942,7 +4942,7 @@ type ApiGetSeriesTimerRequest struct {
 	timerId string
 }
 
-func (r ApiGetSeriesTimerRequest) Execute() (*SeriesTimerInfoDto, *http.Response, error) {
+func (r ApiGetSeriesTimerRequest) Execute() (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetSeriesTimerExecute(r)
 }
 
@@ -4962,13 +4962,13 @@ func (a *LiveTvAPIService) GetSeriesTimer(ctx context.Context, timerId string) A
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDto
-func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*SeriesTimerInfoDto, *http.Response, error) {
+//  @return JellyfinSeriesTimerInfoDto
+func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*JellyfinSeriesTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDto
+		localVarReturnValue  *JellyfinSeriesTimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetSeriesTimer")
@@ -5037,7 +5037,7 @@ func (a *LiveTvAPIService) GetSeriesTimerExecute(r ApiGetSeriesTimerRequest) (*S
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -5066,7 +5066,7 @@ type ApiGetSeriesTimersRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	sortBy *string
-	sortOrder *SortOrder
+	sortOrder *JellyfinSortOrder
 }
 
 // Optional. Sort by SortName or Priority.
@@ -5076,12 +5076,12 @@ func (r ApiGetSeriesTimersRequest) SortBy(sortBy string) ApiGetSeriesTimersReque
 }
 
 // Optional. Sort in Ascending or Descending order.
-func (r ApiGetSeriesTimersRequest) SortOrder(sortOrder SortOrder) ApiGetSeriesTimersRequest {
+func (r ApiGetSeriesTimersRequest) SortOrder(sortOrder JellyfinSortOrder) ApiGetSeriesTimersRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetSeriesTimersRequest) Execute() (*SeriesTimerInfoDtoQueryResult, *http.Response, error) {
+func (r ApiGetSeriesTimersRequest) Execute() (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSeriesTimersExecute(r)
 }
 
@@ -5099,13 +5099,13 @@ func (a *LiveTvAPIService) GetSeriesTimers(ctx context.Context) ApiGetSeriesTime
 }
 
 // Execute executes the request
-//  @return SeriesTimerInfoDtoQueryResult
-func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (*SeriesTimerInfoDtoQueryResult, *http.Response, error) {
+//  @return JellyfinSeriesTimerInfoDtoQueryResult
+func (a *LiveTvAPIService) GetSeriesTimersExecute(r ApiGetSeriesTimersRequest) (*JellyfinSeriesTimerInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SeriesTimerInfoDtoQueryResult
+		localVarReturnValue  *JellyfinSeriesTimerInfoDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetSeriesTimers")
@@ -5199,7 +5199,7 @@ type ApiGetTimerRequest struct {
 	timerId string
 }
 
-func (r ApiGetTimerRequest) Execute() (*TimerInfoDto, *http.Response, error) {
+func (r ApiGetTimerRequest) Execute() (*JellyfinTimerInfoDto, *http.Response, error) {
 	return r.ApiService.GetTimerExecute(r)
 }
 
@@ -5219,13 +5219,13 @@ func (a *LiveTvAPIService) GetTimer(ctx context.Context, timerId string) ApiGetT
 }
 
 // Execute executes the request
-//  @return TimerInfoDto
-func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*TimerInfoDto, *http.Response, error) {
+//  @return JellyfinTimerInfoDto
+func (a *LiveTvAPIService) GetTimerExecute(r ApiGetTimerRequest) (*JellyfinTimerInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TimerInfoDto
+		localVarReturnValue  *JellyfinTimerInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTimer")
@@ -5341,7 +5341,7 @@ func (r ApiGetTimersRequest) IsScheduled(isScheduled bool) ApiGetTimersRequest {
 	return r
 }
 
-func (r ApiGetTimersRequest) Execute() (*TimerInfoDtoQueryResult, *http.Response, error) {
+func (r ApiGetTimersRequest) Execute() (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetTimersExecute(r)
 }
 
@@ -5359,13 +5359,13 @@ func (a *LiveTvAPIService) GetTimers(ctx context.Context) ApiGetTimersRequest {
 }
 
 // Execute executes the request
-//  @return TimerInfoDtoQueryResult
-func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*TimerInfoDtoQueryResult, *http.Response, error) {
+//  @return JellyfinTimerInfoDtoQueryResult
+func (a *LiveTvAPIService) GetTimersExecute(r ApiGetTimersRequest) (*JellyfinTimerInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TimerInfoDtoQueryResult
+		localVarReturnValue  *JellyfinTimerInfoDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTimers")
@@ -5464,7 +5464,7 @@ type ApiGetTunerHostTypesRequest struct {
 	ApiService *LiveTvAPIService
 }
 
-func (r ApiGetTunerHostTypesRequest) Execute() ([]NameIdPair, *http.Response, error) {
+func (r ApiGetTunerHostTypesRequest) Execute() ([]JellyfinNameIdPair, *http.Response, error) {
 	return r.ApiService.GetTunerHostTypesExecute(r)
 }
 
@@ -5482,13 +5482,13 @@ func (a *LiveTvAPIService) GetTunerHostTypes(ctx context.Context) ApiGetTunerHos
 }
 
 // Execute executes the request
-//  @return []NameIdPair
-func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesRequest) ([]NameIdPair, *http.Response, error) {
+//  @return []JellyfinNameIdPair
+func (a *LiveTvAPIService) GetTunerHostTypesExecute(r ApiGetTunerHostTypesRequest) ([]JellyfinNameIdPair, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []NameIdPair
+		localVarReturnValue  []JellyfinNameIdPair
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.GetTunerHostTypes")
@@ -5677,16 +5677,16 @@ func (a *LiveTvAPIService) ResetTunerExecute(r ApiResetTunerRequest) (*http.Resp
 type ApiSetChannelMappingRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
-	setChannelMappingDto *SetChannelMappingDto
+	jellyfinSetChannelMappingDto *JellyfinSetChannelMappingDto
 }
 
 // The set channel mapping dto.
-func (r ApiSetChannelMappingRequest) SetChannelMappingDto(setChannelMappingDto SetChannelMappingDto) ApiSetChannelMappingRequest {
-	r.setChannelMappingDto = &setChannelMappingDto
+func (r ApiSetChannelMappingRequest) JellyfinSetChannelMappingDto(jellyfinSetChannelMappingDto JellyfinSetChannelMappingDto) ApiSetChannelMappingRequest {
+	r.jellyfinSetChannelMappingDto = &jellyfinSetChannelMappingDto
 	return r
 }
 
-func (r ApiSetChannelMappingRequest) Execute() (*TunerChannelMapping, *http.Response, error) {
+func (r ApiSetChannelMappingRequest) Execute() (*JellyfinTunerChannelMapping, *http.Response, error) {
 	return r.ApiService.SetChannelMappingExecute(r)
 }
 
@@ -5704,13 +5704,13 @@ func (a *LiveTvAPIService) SetChannelMapping(ctx context.Context) ApiSetChannelM
 }
 
 // Execute executes the request
-//  @return TunerChannelMapping
-func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingRequest) (*TunerChannelMapping, *http.Response, error) {
+//  @return JellyfinTunerChannelMapping
+func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingRequest) (*JellyfinTunerChannelMapping, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TunerChannelMapping
+		localVarReturnValue  *JellyfinTunerChannelMapping
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LiveTvAPIService.SetChannelMapping")
@@ -5723,8 +5723,8 @@ func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.setChannelMappingDto == nil {
-		return localVarReturnValue, nil, reportError("setChannelMappingDto is required and must be specified")
+	if r.jellyfinSetChannelMappingDto == nil {
+		return localVarReturnValue, nil, reportError("jellyfinSetChannelMappingDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -5745,7 +5745,7 @@ func (a *LiveTvAPIService) SetChannelMappingExecute(r ApiSetChannelMappingReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.setChannelMappingDto
+	localVarPostBody = r.jellyfinSetChannelMappingDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5801,12 +5801,12 @@ type ApiUpdateSeriesTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
-	seriesTimerInfoDto *SeriesTimerInfoDto
+	jellyfinSeriesTimerInfoDto *JellyfinSeriesTimerInfoDto
 }
 
 // New series timer info.
-func (r ApiUpdateSeriesTimerRequest) SeriesTimerInfoDto(seriesTimerInfoDto SeriesTimerInfoDto) ApiUpdateSeriesTimerRequest {
-	r.seriesTimerInfoDto = &seriesTimerInfoDto
+func (r ApiUpdateSeriesTimerRequest) JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto JellyfinSeriesTimerInfoDto) ApiUpdateSeriesTimerRequest {
+	r.jellyfinSeriesTimerInfoDto = &jellyfinSeriesTimerInfoDto
 	return r
 }
 
@@ -5867,7 +5867,7 @@ func (a *LiveTvAPIService) UpdateSeriesTimerExecute(r ApiUpdateSeriesTimerReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.seriesTimerInfoDto
+	localVarPostBody = r.jellyfinSeriesTimerInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -5914,12 +5914,12 @@ type ApiUpdateTimerRequest struct {
 	ctx context.Context
 	ApiService *LiveTvAPIService
 	timerId string
-	timerInfoDto *TimerInfoDto
+	jellyfinTimerInfoDto *JellyfinTimerInfoDto
 }
 
 // New timer info.
-func (r ApiUpdateTimerRequest) TimerInfoDto(timerInfoDto TimerInfoDto) ApiUpdateTimerRequest {
-	r.timerInfoDto = &timerInfoDto
+func (r ApiUpdateTimerRequest) JellyfinTimerInfoDto(jellyfinTimerInfoDto JellyfinTimerInfoDto) ApiUpdateTimerRequest {
+	r.jellyfinTimerInfoDto = &jellyfinTimerInfoDto
 	return r
 }
 
@@ -5980,7 +5980,7 @@ func (a *LiveTvAPIService) UpdateTimerExecute(r ApiUpdateTimerRequest) (*http.Re
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.timerInfoDto
+	localVarPostBody = r.jellyfinTimerInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

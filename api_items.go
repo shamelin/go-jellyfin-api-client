@@ -38,7 +38,7 @@ func (r ApiGetItemUserDataRequest) UserId(userId string) ApiGetItemUserDataReque
 	return r
 }
 
-func (r ApiGetItemUserDataRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiGetItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.GetItemUserDataExecute(r)
 }
 
@@ -58,13 +58,13 @@ func (a *ItemsAPIService) GetItemUserData(ctx context.Context, itemId string) Ap
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetItemUserData")
@@ -136,7 +136,7 @@ func (a *ItemsAPIService) GetItemUserDataExecute(r ApiGetItemUserDataRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -177,8 +177,8 @@ type ApiGetItemsRequest struct {
 	hasParentalRating *bool
 	isHd *bool
 	is4K *bool
-	locationTypes *[]LocationType
-	excludeLocationTypes *[]LocationType
+	locationTypes *[]JellyfinLocationType
+	excludeLocationTypes *[]JellyfinLocationType
 	isMissing *bool
 	isUnaired *bool
 	minCommunityRating *float64
@@ -201,16 +201,16 @@ type ApiGetItemsRequest struct {
 	limit *int32
 	recursive *bool
 	searchTerm *string
-	sortOrder *[]SortOrder
+	sortOrder *[]JellyfinSortOrder
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
-	filters *[]ItemFilter
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
+	filters *[]JellyfinItemFilter
 	isFavorite *bool
-	mediaTypes *[]MediaType
-	imageTypes *[]ImageType
-	sortBy *[]ItemSortBy
+	mediaTypes *[]JellyfinMediaType
+	imageTypes *[]JellyfinImageType
+	sortBy *[]JellyfinItemSortBy
 	isPlayed *bool
 	genres *[]string
 	officialRatings *[]string
@@ -218,7 +218,7 @@ type ApiGetItemsRequest struct {
 	years *[]int32
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	person *string
 	personIds *[]string
 	personTypes *[]string
@@ -231,7 +231,7 @@ type ApiGetItemsRequest struct {
 	albums *[]string
 	albumIds *[]string
 	ids *[]string
-	videoTypes *[]VideoType
+	videoTypes *[]JellyfinVideoType
 	minOfficialRating *string
 	isLocked *bool
 	isPlaceHolder *bool
@@ -242,7 +242,7 @@ type ApiGetItemsRequest struct {
 	maxWidth *int32
 	maxHeight *int32
 	is3D *bool
-	seriesStatus *[]SeriesStatus
+	seriesStatus *[]JellyfinSeriesStatus
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
 	nameLessThan *string
@@ -331,13 +331,13 @@ func (r ApiGetItemsRequest) Is4K(is4K bool) ApiGetItemsRequest {
 }
 
 // Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) LocationTypes(locationTypes []LocationType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) LocationTypes(locationTypes []JellyfinLocationType) ApiGetItemsRequest {
 	r.locationTypes = &locationTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ExcludeLocationTypes(excludeLocationTypes []LocationType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) ExcludeLocationTypes(excludeLocationTypes []JellyfinLocationType) ApiGetItemsRequest {
 	r.excludeLocationTypes = &excludeLocationTypes
 	return r
 }
@@ -475,7 +475,7 @@ func (r ApiGetItemsRequest) SearchTerm(searchTerm string) ApiGetItemsRequest {
 }
 
 // Sort Order - Ascending, Descending.
-func (r ApiGetItemsRequest) SortOrder(sortOrder []SortOrder) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetItemsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
@@ -487,25 +487,25 @@ func (r ApiGetItemsRequest) ParentId(parentId string) ApiGetItemsRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetItemsRequest) Fields(fields []ItemFields) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) Fields(fields []JellyfinItemFields) ApiGetItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetItemsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetItemsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes.
-func (r ApiGetItemsRequest) Filters(filters []ItemFilter) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) Filters(filters []JellyfinItemFilter) ApiGetItemsRequest {
 	r.filters = &filters
 	return r
 }
@@ -517,19 +517,19 @@ func (r ApiGetItemsRequest) IsFavorite(isFavorite bool) ApiGetItemsRequest {
 }
 
 // Optional filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) MediaTypes(mediaTypes []MediaType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetItemsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited.
-func (r ApiGetItemsRequest) ImageTypes(imageTypes []ImageType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) ImageTypes(imageTypes []JellyfinImageType) ApiGetItemsRequest {
 	r.imageTypes = &imageTypes
 	return r
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetItemsRequest) SortBy(sortBy []ItemSortBy) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetItemsRequest {
 	r.sortBy = &sortBy
 	return r
 }
@@ -577,7 +577,7 @@ func (r ApiGetItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetItemsRequ
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetItemsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -655,7 +655,7 @@ func (r ApiGetItemsRequest) Ids(ids []string) ApiGetItemsRequest {
 }
 
 // Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) VideoTypes(videoTypes []VideoType) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) VideoTypes(videoTypes []JellyfinVideoType) ApiGetItemsRequest {
 	r.videoTypes = &videoTypes
 	return r
 }
@@ -721,7 +721,7 @@ func (r ApiGetItemsRequest) Is3D(is3D bool) ApiGetItemsRequest {
 }
 
 // Optional filter by Series Status. Allows multiple, comma delimited.
-func (r ApiGetItemsRequest) SeriesStatus(seriesStatus []SeriesStatus) ApiGetItemsRequest {
+func (r ApiGetItemsRequest) SeriesStatus(seriesStatus []JellyfinSeriesStatus) ApiGetItemsRequest {
 	r.seriesStatus = &seriesStatus
 	return r
 }
@@ -768,7 +768,7 @@ func (r ApiGetItemsRequest) EnableImages(enableImages bool) ApiGetItemsRequest {
 	return r
 }
 
-func (r ApiGetItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetItemsExecute(r)
 }
 
@@ -786,13 +786,13 @@ func (a *ItemsAPIService) GetItems(ctx context.Context) ApiGetItemsRequest {
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ItemsAPIService) GetItemsExecute(r ApiGetItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetItems")
@@ -1394,13 +1394,13 @@ type ApiGetResumeItemsRequest struct {
 	limit *int32
 	searchTerm *string
 	parentId *string
-	fields *[]ItemFields
-	mediaTypes *[]MediaType
+	fields *[]JellyfinItemFields
+	mediaTypes *[]JellyfinMediaType
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
+	enableImageTypes *[]JellyfinImageType
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
 	enableTotalRecordCount *bool
 	enableImages *bool
 	excludeActiveSessions *bool
@@ -1437,13 +1437,13 @@ func (r ApiGetResumeItemsRequest) ParentId(parentId string) ApiGetResumeItemsReq
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
-func (r ApiGetResumeItemsRequest) Fields(fields []ItemFields) ApiGetResumeItemsRequest {
+func (r ApiGetResumeItemsRequest) Fields(fields []JellyfinItemFields) ApiGetResumeItemsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Filter by MediaType. Allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) MediaTypes(mediaTypes []MediaType) ApiGetResumeItemsRequest {
+func (r ApiGetResumeItemsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetResumeItemsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
@@ -1461,19 +1461,19 @@ func (r ApiGetResumeItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetRes
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetResumeItemsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetResumeItemsRequest {
+func (r ApiGetResumeItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetResumeItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetResumeItemsRequest {
+func (r ApiGetResumeItemsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetResumeItemsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.
-func (r ApiGetResumeItemsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetResumeItemsRequest {
+func (r ApiGetResumeItemsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetResumeItemsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
@@ -1496,7 +1496,7 @@ func (r ApiGetResumeItemsRequest) ExcludeActiveSessions(excludeActiveSessions bo
 	return r
 }
 
-func (r ApiGetResumeItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetResumeItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetResumeItemsExecute(r)
 }
 
@@ -1514,13 +1514,13 @@ func (a *ItemsAPIService) GetResumeItems(ctx context.Context) ApiGetResumeItemsR
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *ItemsAPIService) GetResumeItemsExecute(r ApiGetResumeItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.GetResumeItems")
@@ -1700,13 +1700,13 @@ type ApiUpdateItemUserDataRequest struct {
 	ctx context.Context
 	ApiService *ItemsAPIService
 	itemId string
-	updateUserItemDataDto *UpdateUserItemDataDto
+	jellyfinUpdateUserItemDataDto *JellyfinUpdateUserItemDataDto
 	userId *string
 }
 
 // New user data object.
-func (r ApiUpdateItemUserDataRequest) UpdateUserItemDataDto(updateUserItemDataDto UpdateUserItemDataDto) ApiUpdateItemUserDataRequest {
-	r.updateUserItemDataDto = &updateUserItemDataDto
+func (r ApiUpdateItemUserDataRequest) JellyfinUpdateUserItemDataDto(jellyfinUpdateUserItemDataDto JellyfinUpdateUserItemDataDto) ApiUpdateItemUserDataRequest {
+	r.jellyfinUpdateUserItemDataDto = &jellyfinUpdateUserItemDataDto
 	return r
 }
 
@@ -1716,7 +1716,7 @@ func (r ApiUpdateItemUserDataRequest) UserId(userId string) ApiUpdateItemUserDat
 	return r
 }
 
-func (r ApiUpdateItemUserDataRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiUpdateItemUserDataRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.UpdateItemUserDataExecute(r)
 }
 
@@ -1736,13 +1736,13 @@ func (a *ItemsAPIService) UpdateItemUserData(ctx context.Context, itemId string)
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemsAPIService.UpdateItemUserData")
@@ -1756,8 +1756,8 @@ func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataReque
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateUserItemDataDto == nil {
-		return localVarReturnValue, nil, reportError("updateUserItemDataDto is required and must be specified")
+	if r.jellyfinUpdateUserItemDataDto == nil {
+		return localVarReturnValue, nil, reportError("jellyfinUpdateUserItemDataDto is required and must be specified")
 	}
 
 	if r.userId != nil {
@@ -1781,7 +1781,7 @@ func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateUserItemDataDto
+	localVarPostBody = r.jellyfinUpdateUserItemDataDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1819,7 +1819,7 @@ func (a *ItemsAPIService) UpdateItemUserDataExecute(r ApiUpdateItemUserDataReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

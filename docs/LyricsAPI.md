@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## DownloadRemoteLyrics
 
-> LyricDto DownloadRemoteLyrics(ctx, itemId, lyricId).Execute()
+> JellyfinJellyfinLyricDto DownloadRemoteLyrics(ctx, itemId, lyricId).Execute()
 
 Downloads a remote lyric.
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LyricsAPI.DownloadRemoteLyrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DownloadRemoteLyrics`: LyricDto
+	// response from `DownloadRemoteLyrics`: JellyfinJellyfinLyricDto
 	fmt.Fprintf(os.Stdout, "Response from `LyricsAPI.DownloadRemoteLyrics`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LyricDto**](LyricDto.md)
+[**JellyfinJellyfinLyricDto**](JellyfinLyricDto.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GetLyrics
 
-> LyricDto GetLyrics(ctx, itemId).Execute()
+> JellyfinJellyfinLyricDto GetLyrics(ctx, itemId).Execute()
 
 Gets an item's lyrics.
 
@@ -178,7 +178,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LyricsAPI.GetLyrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLyrics`: LyricDto
+	// response from `GetLyrics`: JellyfinJellyfinLyricDto
 	fmt.Fprintf(os.Stdout, "Response from `LyricsAPI.GetLyrics`: %v\n", resp)
 }
 ```
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LyricDto**](LyricDto.md)
+[**JellyfinJellyfinLyricDto**](JellyfinLyricDto.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GetRemoteLyrics
 
-> LyricDto GetRemoteLyrics(ctx, lyricId).Execute()
+> JellyfinJellyfinLyricDto GetRemoteLyrics(ctx, lyricId).Execute()
 
 Gets the remote lyrics.
 
@@ -246,7 +246,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LyricsAPI.GetRemoteLyrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRemoteLyrics`: LyricDto
+	// response from `GetRemoteLyrics`: JellyfinJellyfinLyricDto
 	fmt.Fprintf(os.Stdout, "Response from `LyricsAPI.GetRemoteLyrics`: %v\n", resp)
 }
 ```
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LyricDto**](LyricDto.md)
+[**JellyfinJellyfinLyricDto**](JellyfinLyricDto.md)
 
 ### Authorization
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ## SearchRemoteLyrics
 
-> []RemoteLyricInfoDto SearchRemoteLyrics(ctx, itemId).Execute()
+> []JellyfinJellyfinRemoteLyricInfoDto SearchRemoteLyrics(ctx, itemId).Execute()
 
 Search remote lyrics.
 
@@ -314,7 +314,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LyricsAPI.SearchRemoteLyrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SearchRemoteLyrics`: []RemoteLyricInfoDto
+	// response from `SearchRemoteLyrics`: []JellyfinJellyfinRemoteLyricInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `LyricsAPI.SearchRemoteLyrics`: %v\n", resp)
 }
 ```
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RemoteLyricInfoDto**](RemoteLyricInfoDto.md)
+[**[]JellyfinJellyfinRemoteLyricInfoDto**](JellyfinRemoteLyricInfoDto.md)
 
 ### Authorization
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ## UploadLyrics
 
-> LyricDto UploadLyrics(ctx, itemId).FileName(fileName).Body(body).Execute()
+> JellyfinJellyfinLyricDto UploadLyrics(ctx, itemId).FileName(fileName).Body(body).Execute()
 
 Upload an external lyric file.
 
@@ -384,7 +384,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LyricsAPI.UploadLyrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UploadLyrics`: LyricDto
+	// response from `UploadLyrics`: JellyfinJellyfinLyricDto
 	fmt.Fprintf(os.Stdout, "Response from `LyricsAPI.UploadLyrics`: %v\n", resp)
 }
 ```
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LyricDto**](LyricDto.md)
+[**JellyfinJellyfinLyricDto**](JellyfinLyricDto.md)
 
 ### Authorization
 

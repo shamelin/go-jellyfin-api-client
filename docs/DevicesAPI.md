@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceInfo
 
-> DeviceInfoDto GetDeviceInfo(ctx).Id(id).Execute()
+> JellyfinJellyfinDeviceInfoDto GetDeviceInfo(ctx).Id(id).Execute()
 
 Get info for a device.
 
@@ -102,7 +102,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DevicesAPI.GetDeviceInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceInfo`: DeviceInfoDto
+	// response from `GetDeviceInfo`: JellyfinJellyfinDeviceInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `DevicesAPI.GetDeviceInfo`: %v\n", resp)
 }
 ```
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInfoDto**](DeviceInfoDto.md)
+[**JellyfinJellyfinDeviceInfoDto**](JellyfinDeviceInfoDto.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetDeviceOptions
 
-> DeviceOptionsDto GetDeviceOptions(ctx).Id(id).Execute()
+> JellyfinJellyfinDeviceOptionsDto GetDeviceOptions(ctx).Id(id).Execute()
 
 Get options for a device.
 
@@ -166,7 +166,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DevicesAPI.GetDeviceOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDeviceOptions`: DeviceOptionsDto
+	// response from `GetDeviceOptions`: JellyfinJellyfinDeviceOptionsDto
 	fmt.Fprintf(os.Stdout, "Response from `DevicesAPI.GetDeviceOptions`: %v\n", resp)
 }
 ```
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceOptionsDto**](DeviceOptionsDto.md)
+[**JellyfinJellyfinDeviceOptionsDto**](JellyfinDeviceOptionsDto.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ## GetDevices
 
-> DeviceInfoDtoQueryResult GetDevices(ctx).UserId(userId).Execute()
+> JellyfinJellyfinDeviceInfoDtoQueryResult GetDevices(ctx).UserId(userId).Execute()
 
 Get Devices.
 
@@ -230,7 +230,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DevicesAPI.GetDevices``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDevices`: DeviceInfoDtoQueryResult
+	// response from `GetDevices`: JellyfinJellyfinDeviceInfoDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `DevicesAPI.GetDevices`: %v\n", resp)
 }
 ```
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeviceInfoDtoQueryResult**](DeviceInfoDtoQueryResult.md)
+[**JellyfinJellyfinDeviceInfoDtoQueryResult**](JellyfinDeviceInfoDtoQueryResult.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDeviceOptions
 
-> UpdateDeviceOptions(ctx).Id(id).DeviceOptionsDto(deviceOptionsDto).Execute()
+> UpdateDeviceOptions(ctx).Id(id).JellyfinDeviceOptionsDto(jellyfinDeviceOptionsDto).Execute()
 
 Update device options.
 
@@ -286,11 +286,11 @@ import (
 
 func main() {
 	id := "id_example" // string | Device Id.
-	deviceOptionsDto := *openapiclient.NewDeviceOptionsDto() // DeviceOptionsDto | Device Options.
+	jellyfinDeviceOptionsDto := *openapiclient.NewJellyfinDeviceOptionsDto() // JellyfinDeviceOptionsDto | Device Options.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.DevicesAPI.UpdateDeviceOptions(context.Background()).Id(id).DeviceOptionsDto(deviceOptionsDto).Execute()
+	r, err := apiClient.DevicesAPI.UpdateDeviceOptions(context.Background()).Id(id).JellyfinDeviceOptionsDto(jellyfinDeviceOptionsDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DevicesAPI.UpdateDeviceOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -310,7 +310,7 @@ Other parameters are passed through a pointer to a apiUpdateDeviceOptionsRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | Device Id. | 
- **deviceOptionsDto** | [**DeviceOptionsDto**](DeviceOptionsDto.md) | Device Options. | 
+ **jellyfinDeviceOptionsDto** | [**JellyfinDeviceOptionsDto**](JellyfinDeviceOptionsDto.md) | Device Options. | 
 
 ### Return type
 

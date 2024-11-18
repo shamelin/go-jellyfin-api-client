@@ -30,9 +30,9 @@ type ApiGetSearchHintsRequest struct {
 	startIndex *int32
 	limit *int32
 	userId *string
-	includeItemTypes *[]BaseItemKind
-	excludeItemTypes *[]BaseItemKind
-	mediaTypes *[]MediaType
+	includeItemTypes *[]JellyfinBaseItemKind
+	excludeItemTypes *[]JellyfinBaseItemKind
+	mediaTypes *[]JellyfinMediaType
 	parentId *string
 	isMovie *bool
 	isSeries *bool
@@ -71,19 +71,19 @@ func (r ApiGetSearchHintsRequest) UserId(userId string) ApiGetSearchHintsRequest
 }
 
 // If specified, only results with the specified item types are returned. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetSearchHintsRequest {
+func (r ApiGetSearchHintsRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetSearchHintsRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
 
 // If specified, results with these item types are filtered out. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetSearchHintsRequest {
+func (r ApiGetSearchHintsRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetSearchHintsRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // If specified, only results with the specified media types are returned. This allows multiple, comma delimited.
-func (r ApiGetSearchHintsRequest) MediaTypes(mediaTypes []MediaType) ApiGetSearchHintsRequest {
+func (r ApiGetSearchHintsRequest) MediaTypes(mediaTypes []JellyfinMediaType) ApiGetSearchHintsRequest {
 	r.mediaTypes = &mediaTypes
 	return r
 }
@@ -154,7 +154,7 @@ func (r ApiGetSearchHintsRequest) IncludeArtists(includeArtists bool) ApiGetSear
 	return r
 }
 
-func (r ApiGetSearchHintsRequest) Execute() (*SearchHintResult, *http.Response, error) {
+func (r ApiGetSearchHintsRequest) Execute() (*JellyfinSearchHintResult, *http.Response, error) {
 	return r.ApiService.GetSearchHintsExecute(r)
 }
 
@@ -172,13 +172,13 @@ func (a *SearchAPIService) GetSearchHints(ctx context.Context) ApiGetSearchHints
 }
 
 // Execute executes the request
-//  @return SearchHintResult
-func (a *SearchAPIService) GetSearchHintsExecute(r ApiGetSearchHintsRequest) (*SearchHintResult, *http.Response, error) {
+//  @return JellyfinSearchHintResult
+func (a *SearchAPIService) GetSearchHintsExecute(r ApiGetSearchHintsRequest) (*JellyfinSearchHintResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SearchHintResult
+		localVarReturnValue  *JellyfinSearchHintResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SearchAPIService.GetSearchHints")

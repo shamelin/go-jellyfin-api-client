@@ -140,7 +140,7 @@ func (r ApiGetPackageInfoRequest) AssemblyGuid(assemblyGuid string) ApiGetPackag
 	return r
 }
 
-func (r ApiGetPackageInfoRequest) Execute() (*PackageInfo, *http.Response, error) {
+func (r ApiGetPackageInfoRequest) Execute() (*JellyfinPackageInfo, *http.Response, error) {
 	return r.ApiService.GetPackageInfoExecute(r)
 }
 
@@ -160,13 +160,13 @@ func (a *PackageAPIService) GetPackageInfo(ctx context.Context, name string) Api
 }
 
 // Execute executes the request
-//  @return PackageInfo
-func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*PackageInfo, *http.Response, error) {
+//  @return JellyfinPackageInfo
+func (a *PackageAPIService) GetPackageInfoExecute(r ApiGetPackageInfoRequest) (*JellyfinPackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PackageInfo
+		localVarReturnValue  *JellyfinPackageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetPackageInfo")
@@ -257,7 +257,7 @@ type ApiGetPackagesRequest struct {
 	ApiService *PackageAPIService
 }
 
-func (r ApiGetPackagesRequest) Execute() ([]PackageInfo, *http.Response, error) {
+func (r ApiGetPackagesRequest) Execute() ([]JellyfinPackageInfo, *http.Response, error) {
 	return r.ApiService.GetPackagesExecute(r)
 }
 
@@ -275,13 +275,13 @@ func (a *PackageAPIService) GetPackages(ctx context.Context) ApiGetPackagesReque
 }
 
 // Execute executes the request
-//  @return []PackageInfo
-func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]PackageInfo, *http.Response, error) {
+//  @return []JellyfinPackageInfo
+func (a *PackageAPIService) GetPackagesExecute(r ApiGetPackagesRequest) ([]JellyfinPackageInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []PackageInfo
+		localVarReturnValue  []JellyfinPackageInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetPackages")
@@ -368,7 +368,7 @@ type ApiGetRepositoriesRequest struct {
 	ApiService *PackageAPIService
 }
 
-func (r ApiGetRepositoriesRequest) Execute() ([]RepositoryInfo, *http.Response, error) {
+func (r ApiGetRepositoriesRequest) Execute() ([]JellyfinRepositoryInfo, *http.Response, error) {
 	return r.ApiService.GetRepositoriesExecute(r)
 }
 
@@ -386,13 +386,13 @@ func (a *PackageAPIService) GetRepositories(ctx context.Context) ApiGetRepositor
 }
 
 // Execute executes the request
-//  @return []RepositoryInfo
-func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) ([]RepositoryInfo, *http.Response, error) {
+//  @return []JellyfinRepositoryInfo
+func (a *PackageAPIService) GetRepositoriesExecute(r ApiGetRepositoriesRequest) ([]JellyfinRepositoryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RepositoryInfo
+		localVarReturnValue  []JellyfinRepositoryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetRepositories")
@@ -603,7 +603,7 @@ func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -622,12 +622,12 @@ func (a *PackageAPIService) InstallPackageExecute(r ApiInstallPackageRequest) (*
 type ApiSetRepositoriesRequest struct {
 	ctx context.Context
 	ApiService *PackageAPIService
-	repositoryInfo *[]RepositoryInfo
+	jellyfinRepositoryInfo *[]JellyfinRepositoryInfo
 }
 
 // The list of package repositories.
-func (r ApiSetRepositoriesRequest) RepositoryInfo(repositoryInfo []RepositoryInfo) ApiSetRepositoriesRequest {
-	r.repositoryInfo = &repositoryInfo
+func (r ApiSetRepositoriesRequest) JellyfinRepositoryInfo(jellyfinRepositoryInfo []JellyfinRepositoryInfo) ApiSetRepositoriesRequest {
+	r.jellyfinRepositoryInfo = &jellyfinRepositoryInfo
 	return r
 }
 
@@ -666,8 +666,8 @@ func (a *PackageAPIService) SetRepositoriesExecute(r ApiSetRepositoriesRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.repositoryInfo == nil {
-		return nil, reportError("repositoryInfo is required and must be specified")
+	if r.jellyfinRepositoryInfo == nil {
+		return nil, reportError("jellyfinRepositoryInfo is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -688,7 +688,7 @@ func (a *PackageAPIService) SetRepositoriesExecute(r ApiSetRepositoriesRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.repositoryInfo
+	localVarPostBody = r.jellyfinRepositoryInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

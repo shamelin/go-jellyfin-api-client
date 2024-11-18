@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ## GetPlugins
 
-> []PluginInfo GetPlugins(ctx).Execute()
+> []JellyfinJellyfinPluginInfo GetPlugins(ctx).Execute()
 
 Gets a list of currently installed plugins.
 
@@ -386,7 +386,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.GetPlugins``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlugins`: []PluginInfo
+	// response from `GetPlugins`: []JellyfinJellyfinPluginInfo
 	fmt.Fprintf(os.Stdout, "Response from `PluginsAPI.GetPlugins`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Other parameters are passed through a pointer to a apiGetPluginsRequest struct v
 
 ### Return type
 
-[**[]PluginInfo**](PluginInfo.md)
+[**[]JellyfinJellyfinPluginInfo**](JellyfinPluginInfo.md)
 
 ### Authorization
 

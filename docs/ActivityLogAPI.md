@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetLogEntries
 
-> ActivityLogEntryQueryResult GetLogEntries(ctx).StartIndex(startIndex).Limit(limit).MinDate(minDate).HasUserId(hasUserId).Execute()
+> JellyfinJellyfinActivityLogEntryQueryResult GetLogEntries(ctx).StartIndex(startIndex).Limit(limit).MinDate(minDate).HasUserId(hasUserId).Execute()
 
 Gets activity log entries.
 
@@ -40,7 +40,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ActivityLogAPI.GetLogEntries``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLogEntries`: ActivityLogEntryQueryResult
+	// response from `GetLogEntries`: JellyfinJellyfinActivityLogEntryQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ActivityLogAPI.GetLogEntries`: %v\n", resp)
 }
 ```
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ActivityLogEntryQueryResult**](ActivityLogEntryQueryResult.md)
+[**JellyfinJellyfinActivityLogEntryQueryResult**](JellyfinActivityLogEntryQueryResult.md)
 
 ### Authorization
 

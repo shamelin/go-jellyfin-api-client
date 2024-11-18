@@ -27,7 +27,7 @@ type ApiGetUtcTimeRequest struct {
 	ApiService *TimeSyncAPIService
 }
 
-func (r ApiGetUtcTimeRequest) Execute() (*UtcTimeResponse, *http.Response, error) {
+func (r ApiGetUtcTimeRequest) Execute() (*JellyfinUtcTimeResponse, *http.Response, error) {
 	return r.ApiService.GetUtcTimeExecute(r)
 }
 
@@ -45,13 +45,13 @@ func (a *TimeSyncAPIService) GetUtcTime(ctx context.Context) ApiGetUtcTimeReques
 }
 
 // Execute executes the request
-//  @return UtcTimeResponse
-func (a *TimeSyncAPIService) GetUtcTimeExecute(r ApiGetUtcTimeRequest) (*UtcTimeResponse, *http.Response, error) {
+//  @return JellyfinUtcTimeResponse
+func (a *TimeSyncAPIService) GetUtcTimeExecute(r ApiGetUtcTimeRequest) (*JellyfinUtcTimeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UtcTimeResponse
+		localVarReturnValue  *JellyfinUtcTimeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TimeSyncAPIService.GetUtcTime")

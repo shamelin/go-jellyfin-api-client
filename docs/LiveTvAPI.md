@@ -50,7 +50,7 @@ Method | HTTP request | Description
 
 ## AddListingProvider
 
-> ListingsProviderInfo AddListingProvider(ctx).Pw(pw).ValidateListings(validateListings).ValidateLogin(validateLogin).ListingsProviderInfo(listingsProviderInfo).Execute()
+> JellyfinJellyfinListingsProviderInfo AddListingProvider(ctx).Pw(pw).ValidateListings(validateListings).ValidateLogin(validateLogin).JellyfinListingsProviderInfo(jellyfinListingsProviderInfo).Execute()
 
 Adds a listings provider.
 
@@ -70,16 +70,16 @@ func main() {
 	pw := "pw_example" // string | Password. (optional)
 	validateListings := true // bool | Validate listings. (optional) (default to false)
 	validateLogin := true // bool | Validate login. (optional) (default to false)
-	listingsProviderInfo := *openapiclient.NewListingsProviderInfo() // ListingsProviderInfo | New listings info. (optional)
+	jellyfinListingsProviderInfo := *openapiclient.NewJellyfinListingsProviderInfo() // JellyfinListingsProviderInfo | New listings info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LiveTvAPI.AddListingProvider(context.Background()).Pw(pw).ValidateListings(validateListings).ValidateLogin(validateLogin).ListingsProviderInfo(listingsProviderInfo).Execute()
+	resp, r, err := apiClient.LiveTvAPI.AddListingProvider(context.Background()).Pw(pw).ValidateListings(validateListings).ValidateLogin(validateLogin).JellyfinListingsProviderInfo(jellyfinListingsProviderInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.AddListingProvider``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddListingProvider`: ListingsProviderInfo
+	// response from `AddListingProvider`: JellyfinJellyfinListingsProviderInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.AddListingProvider`: %v\n", resp)
 }
 ```
@@ -98,11 +98,11 @@ Name | Type | Description  | Notes
  **pw** | **string** | Password. | 
  **validateListings** | **bool** | Validate listings. | [default to false]
  **validateLogin** | **bool** | Validate login. | [default to false]
- **listingsProviderInfo** | [**ListingsProviderInfo**](ListingsProviderInfo.md) | New listings info. | 
+ **jellyfinListingsProviderInfo** | [**JellyfinListingsProviderInfo**](JellyfinListingsProviderInfo.md) | New listings info. | 
 
 ### Return type
 
-[**ListingsProviderInfo**](ListingsProviderInfo.md)
+[**JellyfinJellyfinListingsProviderInfo**](JellyfinListingsProviderInfo.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## AddTunerHost
 
-> TunerHostInfo AddTunerHost(ctx).TunerHostInfo(tunerHostInfo).Execute()
+> JellyfinJellyfinTunerHostInfo AddTunerHost(ctx).JellyfinTunerHostInfo(jellyfinTunerHostInfo).Execute()
 
 Adds a tuner host.
 
@@ -137,16 +137,16 @@ import (
 )
 
 func main() {
-	tunerHostInfo := *openapiclient.NewTunerHostInfo() // TunerHostInfo | New tuner host. (optional)
+	jellyfinTunerHostInfo := *openapiclient.NewJellyfinTunerHostInfo() // JellyfinTunerHostInfo | New tuner host. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LiveTvAPI.AddTunerHost(context.Background()).TunerHostInfo(tunerHostInfo).Execute()
+	resp, r, err := apiClient.LiveTvAPI.AddTunerHost(context.Background()).JellyfinTunerHostInfo(jellyfinTunerHostInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.AddTunerHost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddTunerHost`: TunerHostInfo
+	// response from `AddTunerHost`: JellyfinJellyfinTunerHostInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.AddTunerHost`: %v\n", resp)
 }
 ```
@@ -162,11 +162,11 @@ Other parameters are passed through a pointer to a apiAddTunerHostRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tunerHostInfo** | [**TunerHostInfo**](TunerHostInfo.md) | New tuner host. | 
+ **jellyfinTunerHostInfo** | [**JellyfinTunerHostInfo**](JellyfinTunerHostInfo.md) | New tuner host. | 
 
 ### Return type
 
-[**TunerHostInfo**](TunerHostInfo.md)
+[**JellyfinJellyfinTunerHostInfo**](JellyfinTunerHostInfo.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ## CreateSeriesTimer
 
-> CreateSeriesTimer(ctx).SeriesTimerInfoDto(seriesTimerInfoDto).Execute()
+> CreateSeriesTimer(ctx).JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto).Execute()
 
 Creates a live tv series timer.
 
@@ -333,11 +333,11 @@ import (
 )
 
 func main() {
-	seriesTimerInfoDto := *openapiclient.NewSeriesTimerInfoDto() // SeriesTimerInfoDto | New series timer info. (optional)
+	jellyfinSeriesTimerInfoDto := *openapiclient.NewJellyfinSeriesTimerInfoDto() // JellyfinSeriesTimerInfoDto | New series timer info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LiveTvAPI.CreateSeriesTimer(context.Background()).SeriesTimerInfoDto(seriesTimerInfoDto).Execute()
+	r, err := apiClient.LiveTvAPI.CreateSeriesTimer(context.Background()).JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.CreateSeriesTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -356,7 +356,7 @@ Other parameters are passed through a pointer to a apiCreateSeriesTimerRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seriesTimerInfoDto** | [**SeriesTimerInfoDto**](SeriesTimerInfoDto.md) | New series timer info. | 
+ **jellyfinSeriesTimerInfoDto** | [**JellyfinSeriesTimerInfoDto**](JellyfinSeriesTimerInfoDto.md) | New series timer info. | 
 
 ### Return type
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 
 ## CreateTimer
 
-> CreateTimer(ctx).TimerInfoDto(timerInfoDto).Execute()
+> CreateTimer(ctx).JellyfinTimerInfoDto(jellyfinTimerInfoDto).Execute()
 
 Creates a live tv timer.
 
@@ -395,11 +395,11 @@ import (
 )
 
 func main() {
-	timerInfoDto := *openapiclient.NewTimerInfoDto() // TimerInfoDto | New timer info. (optional)
+	jellyfinTimerInfoDto := *openapiclient.NewJellyfinTimerInfoDto() // JellyfinTimerInfoDto | New timer info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LiveTvAPI.CreateTimer(context.Background()).TimerInfoDto(timerInfoDto).Execute()
+	r, err := apiClient.LiveTvAPI.CreateTimer(context.Background()).JellyfinTimerInfoDto(jellyfinTimerInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.CreateTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -418,7 +418,7 @@ Other parameters are passed through a pointer to a apiCreateTimerRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **timerInfoDto** | [**TimerInfoDto**](TimerInfoDto.md) | New timer info. | 
+ **jellyfinTimerInfoDto** | [**JellyfinTimerInfoDto**](JellyfinTimerInfoDto.md) | New timer info. | 
 
 ### Return type
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## DiscoverTuners
 
-> []TunerHostInfo DiscoverTuners(ctx).NewDevicesOnly(newDevicesOnly).Execute()
+> []JellyfinJellyfinTunerHostInfo DiscoverTuners(ctx).NewDevicesOnly(newDevicesOnly).Execute()
 
 Discover tuners.
 
@@ -656,7 +656,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.DiscoverTuners``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscoverTuners`: []TunerHostInfo
+	// response from `DiscoverTuners`: []JellyfinJellyfinTunerHostInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.DiscoverTuners`: %v\n", resp)
 }
 ```
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]TunerHostInfo**](TunerHostInfo.md)
+[**[]JellyfinJellyfinTunerHostInfo**](JellyfinTunerHostInfo.md)
 
 ### Authorization
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ## DiscvoverTuners
 
-> []TunerHostInfo DiscvoverTuners(ctx).NewDevicesOnly(newDevicesOnly).Execute()
+> []JellyfinJellyfinTunerHostInfo DiscvoverTuners(ctx).NewDevicesOnly(newDevicesOnly).Execute()
 
 Discover tuners.
 
@@ -720,7 +720,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.DiscvoverTuners``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DiscvoverTuners`: []TunerHostInfo
+	// response from `DiscvoverTuners`: []JellyfinJellyfinTunerHostInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.DiscvoverTuners`: %v\n", resp)
 }
 ```
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]TunerHostInfo**](TunerHostInfo.md)
+[**[]JellyfinJellyfinTunerHostInfo**](JellyfinTunerHostInfo.md)
 
 ### Authorization
 
@@ -758,7 +758,7 @@ Name | Type | Description  | Notes
 
 ## GetChannel
 
-> BaseItemDto GetChannel(ctx, channelId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetChannel(ctx, channelId).UserId(userId).Execute()
 
 Gets a live tv channel.
 
@@ -785,7 +785,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetChannel``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetChannel`: BaseItemDto
+	// response from `GetChannel`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetChannel`: %v\n", resp)
 }
 ```
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -828,7 +828,7 @@ Name | Type | Description  | Notes
 
 ## GetChannelMappingOptions
 
-> ChannelMappingOptionsDto GetChannelMappingOptions(ctx).ProviderId(providerId).Execute()
+> JellyfinJellyfinChannelMappingOptionsDto GetChannelMappingOptions(ctx).ProviderId(providerId).Execute()
 
 Get channel mapping options.
 
@@ -854,7 +854,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetChannelMappingOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetChannelMappingOptions`: ChannelMappingOptionsDto
+	// response from `GetChannelMappingOptions`: JellyfinJellyfinChannelMappingOptionsDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetChannelMappingOptions`: %v\n", resp)
 }
 ```
@@ -874,7 +874,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChannelMappingOptionsDto**](ChannelMappingOptionsDto.md)
+[**JellyfinJellyfinChannelMappingOptionsDto**](JellyfinChannelMappingOptionsDto.md)
 
 ### Authorization
 
@@ -892,7 +892,7 @@ Name | Type | Description  | Notes
 
 ## GetDefaultListingProvider
 
-> ListingsProviderInfo GetDefaultListingProvider(ctx).Execute()
+> JellyfinJellyfinListingsProviderInfo GetDefaultListingProvider(ctx).Execute()
 
 Gets default listings provider info.
 
@@ -917,7 +917,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetDefaultListingProvider``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDefaultListingProvider`: ListingsProviderInfo
+	// response from `GetDefaultListingProvider`: JellyfinJellyfinListingsProviderInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetDefaultListingProvider`: %v\n", resp)
 }
 ```
@@ -933,7 +933,7 @@ Other parameters are passed through a pointer to a apiGetDefaultListingProviderR
 
 ### Return type
 
-[**ListingsProviderInfo**](ListingsProviderInfo.md)
+[**JellyfinJellyfinListingsProviderInfo**](JellyfinListingsProviderInfo.md)
 
 ### Authorization
 
@@ -951,7 +951,7 @@ Other parameters are passed through a pointer to a apiGetDefaultListingProviderR
 
 ## GetDefaultTimer
 
-> SeriesTimerInfoDto GetDefaultTimer(ctx).ProgramId(programId).Execute()
+> JellyfinJellyfinSeriesTimerInfoDto GetDefaultTimer(ctx).ProgramId(programId).Execute()
 
 Gets the default values for a new timer.
 
@@ -977,7 +977,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetDefaultTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetDefaultTimer`: SeriesTimerInfoDto
+	// response from `GetDefaultTimer`: JellyfinJellyfinSeriesTimerInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetDefaultTimer`: %v\n", resp)
 }
 ```
@@ -997,7 +997,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SeriesTimerInfoDto**](SeriesTimerInfoDto.md)
+[**JellyfinJellyfinSeriesTimerInfoDto**](JellyfinSeriesTimerInfoDto.md)
 
 ### Authorization
 
@@ -1015,7 +1015,7 @@ Name | Type | Description  | Notes
 
 ## GetGuideInfo
 
-> GuideInfo GetGuideInfo(ctx).Execute()
+> JellyfinJellyfinGuideInfo GetGuideInfo(ctx).Execute()
 
 Get guid info.
 
@@ -1040,7 +1040,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetGuideInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGuideInfo`: GuideInfo
+	// response from `GetGuideInfo`: JellyfinJellyfinGuideInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetGuideInfo`: %v\n", resp)
 }
 ```
@@ -1056,7 +1056,7 @@ Other parameters are passed through a pointer to a apiGetGuideInfoRequest struct
 
 ### Return type
 
-[**GuideInfo**](GuideInfo.md)
+[**JellyfinJellyfinGuideInfo**](JellyfinGuideInfo.md)
 
 ### Authorization
 
@@ -1074,7 +1074,7 @@ Other parameters are passed through a pointer to a apiGetGuideInfoRequest struct
 
 ## GetLineups
 
-> []NameIdPair GetLineups(ctx).Id(id).Type_(type_).Location(location).Country(country).Execute()
+> []JellyfinJellyfinNameIdPair GetLineups(ctx).Id(id).Type_(type_).Location(location).Country(country).Execute()
 
 Gets available lineups.
 
@@ -1103,7 +1103,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetLineups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLineups`: []NameIdPair
+	// response from `GetLineups`: []JellyfinJellyfinNameIdPair
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetLineups`: %v\n", resp)
 }
 ```
@@ -1126,7 +1126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]NameIdPair**](NameIdPair.md)
+[**[]JellyfinJellyfinNameIdPair**](JellyfinNameIdPair.md)
 
 ### Authorization
 
@@ -1283,7 +1283,7 @@ No authorization required
 
 ## GetLiveTvChannels
 
-> BaseItemDtoQueryResult GetLiveTvChannels(ctx).Type_(type_).UserId(userId).StartIndex(startIndex).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).Limit(limit).IsFavorite(isFavorite).IsLiked(isLiked).IsDisliked(isDisliked).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).SortBy(sortBy).SortOrder(sortOrder).EnableFavoriteSorting(enableFavoriteSorting).AddCurrentProgram(addCurrentProgram).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetLiveTvChannels(ctx).Type_(type_).UserId(userId).StartIndex(startIndex).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).Limit(limit).IsFavorite(isFavorite).IsLiked(isLiked).IsDisliked(isDisliked).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).SortBy(sortBy).SortOrder(sortOrder).EnableFavoriteSorting(enableFavoriteSorting).AddCurrentProgram(addCurrentProgram).Execute()
 
 Gets available live tv channels.
 
@@ -1300,7 +1300,7 @@ import (
 )
 
 func main() {
-	type_ := "type__example" // ChannelType | Optional. Filter by channel type. (optional)
+	type_ := "type__example" // JellyfinJellyfinChannelType | Optional. Filter by channel type. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user and attach user data. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	isMovie := true // bool | Optional. Filter for movies. (optional)
@@ -1314,11 +1314,11 @@ func main() {
 	isDisliked := true // bool | Optional. Filter by channels that are disliked, or not. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | \"Optional. The image types to include in the output. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | \"Optional. The image types to include in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Key to sort by. (optional)
-	sortOrder := "sortOrder_example" // SortOrder | Optional. Sort order. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Key to sort by. (optional)
+	sortOrder := "sortOrder_example" // JellyfinJellyfinSortOrder | Optional. Sort order. (optional)
 	enableFavoriteSorting := true // bool | Optional. Incorporate favorite and like status into channel sorting. (optional) (default to false)
 	addCurrentProgram := true // bool | Optional. Adds current program info to each channel. (optional) (default to true)
 
@@ -1329,7 +1329,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetLiveTvChannels``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLiveTvChannels`: BaseItemDtoQueryResult
+	// response from `GetLiveTvChannels`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetLiveTvChannels`: %v\n", resp)
 }
 ```
@@ -1345,7 +1345,7 @@ Other parameters are passed through a pointer to a apiGetLiveTvChannelsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_** | **ChannelType** | Optional. Filter by channel type. | 
+ **type_** | **JellyfinJellyfinChannelType** | Optional. Filter by channel type. | 
  **userId** | **string** | Optional. Filter by user and attach user data. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **isMovie** | **bool** | Optional. Filter for movies. | 
@@ -1359,17 +1359,17 @@ Name | Type | Description  | Notes
  **isDisliked** | **bool** | Optional. Filter by channels that are disliked, or not. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | \&quot;Optional. The image types to include in the output. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | \&quot;Optional. The image types to include in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Key to sort by. | 
- **sortOrder** | **SortOrder** | Optional. Sort order. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Key to sort by. | 
+ **sortOrder** | **JellyfinJellyfinSortOrder** | Optional. Sort order. | 
  **enableFavoriteSorting** | **bool** | Optional. Incorporate favorite and like status into channel sorting. | [default to false]
  **addCurrentProgram** | **bool** | Optional. Adds current program info to each channel. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1387,7 +1387,7 @@ Name | Type | Description  | Notes
 
 ## GetLiveTvInfo
 
-> LiveTvInfo GetLiveTvInfo(ctx).Execute()
+> JellyfinJellyfinLiveTvInfo GetLiveTvInfo(ctx).Execute()
 
 Gets available live tv services.
 
@@ -1412,7 +1412,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetLiveTvInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLiveTvInfo`: LiveTvInfo
+	// response from `GetLiveTvInfo`: JellyfinJellyfinLiveTvInfo
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetLiveTvInfo`: %v\n", resp)
 }
 ```
@@ -1428,7 +1428,7 @@ Other parameters are passed through a pointer to a apiGetLiveTvInfoRequest struc
 
 ### Return type
 
-[**LiveTvInfo**](LiveTvInfo.md)
+[**JellyfinJellyfinLiveTvInfo**](JellyfinLiveTvInfo.md)
 
 ### Authorization
 
@@ -1446,7 +1446,7 @@ Other parameters are passed through a pointer to a apiGetLiveTvInfoRequest struc
 
 ## GetLiveTvPrograms
 
-> BaseItemDtoQueryResult GetLiveTvPrograms(ctx).ChannelIds(channelIds).UserId(userId).MinStartDate(minStartDate).HasAired(hasAired).IsAiring(isAiring).MaxStartDate(maxStartDate).MinEndDate(minEndDate).MaxEndDate(maxEndDate).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).StartIndex(startIndex).Limit(limit).SortBy(sortBy).SortOrder(sortOrder).Genres(genres).GenreIds(genreIds).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).EnableUserData(enableUserData).SeriesTimerId(seriesTimerId).LibrarySeriesId(librarySeriesId).Fields(fields).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetLiveTvPrograms(ctx).ChannelIds(channelIds).UserId(userId).MinStartDate(minStartDate).HasAired(hasAired).IsAiring(isAiring).MaxStartDate(maxStartDate).MinEndDate(minEndDate).MaxEndDate(maxEndDate).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).StartIndex(startIndex).Limit(limit).SortBy(sortBy).SortOrder(sortOrder).Genres(genres).GenreIds(genreIds).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).EnableUserData(enableUserData).SeriesTimerId(seriesTimerId).LibrarySeriesId(librarySeriesId).Fields(fields).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets available live tv epgs.
 
@@ -1479,17 +1479,17 @@ func main() {
 	isSports := true // bool | Optional. Filter for sports. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Sort Order - Ascending,Descending. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Sort Order - Ascending,Descending. (optional)
 	genres := []string{"Inner_example"} // []string | The genres to return guide information for. (optional)
 	genreIds := []string{"Inner_example"} // []string | The genre ids to return guide information for. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	seriesTimerId := "seriesTimerId_example" // string | Optional. Filter by series timer id. (optional)
 	librarySeriesId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by library series id. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableTotalRecordCount := true // bool | Retrieve total record count. (optional) (default to true)
 
 	configuration := openapiclient.NewConfiguration()
@@ -1499,7 +1499,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetLiveTvPrograms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLiveTvPrograms`: BaseItemDtoQueryResult
+	// response from `GetLiveTvPrograms`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetLiveTvPrograms`: %v\n", resp)
 }
 ```
@@ -1530,22 +1530,22 @@ Name | Type | Description  | Notes
  **isSports** | **bool** | Optional. Filter for sports. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Sort Order - Ascending,Descending. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Sort Order - Ascending,Descending. | 
  **genres** | **[]string** | The genres to return guide information for. | 
  **genreIds** | **[]string** | The genre ids to return guide information for. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **seriesTimerId** | **string** | Optional. Filter by series timer id. | 
  **librarySeriesId** | **string** | Optional. Filter by library series id. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableTotalRecordCount** | **bool** | Retrieve total record count. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1563,7 +1563,7 @@ Name | Type | Description  | Notes
 
 ## GetProgram
 
-> BaseItemDto GetProgram(ctx, programId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetProgram(ctx, programId).UserId(userId).Execute()
 
 Gets a live tv program.
 
@@ -1590,7 +1590,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetProgram``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetProgram`: BaseItemDto
+	// response from `GetProgram`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetProgram`: %v\n", resp)
 }
 ```
@@ -1615,7 +1615,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -1633,7 +1633,7 @@ Name | Type | Description  | Notes
 
 ## GetPrograms
 
-> BaseItemDtoQueryResult GetPrograms(ctx).GetProgramsDto(getProgramsDto).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetPrograms(ctx).JellyfinGetProgramsDto(jellyfinGetProgramsDto).Execute()
 
 Gets available live tv epgs.
 
@@ -1650,16 +1650,16 @@ import (
 )
 
 func main() {
-	getProgramsDto := *openapiclient.NewGetProgramsDto() // GetProgramsDto | Request body. (optional)
+	jellyfinGetProgramsDto := *openapiclient.NewJellyfinGetProgramsDto() // JellyfinGetProgramsDto | Request body. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LiveTvAPI.GetPrograms(context.Background()).GetProgramsDto(getProgramsDto).Execute()
+	resp, r, err := apiClient.LiveTvAPI.GetPrograms(context.Background()).JellyfinGetProgramsDto(jellyfinGetProgramsDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetPrograms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPrograms`: BaseItemDtoQueryResult
+	// response from `GetPrograms`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetPrograms`: %v\n", resp)
 }
 ```
@@ -1675,11 +1675,11 @@ Other parameters are passed through a pointer to a apiGetProgramsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **getProgramsDto** | [**GetProgramsDto**](GetProgramsDto.md) | Request body. | 
+ **jellyfinGetProgramsDto** | [**JellyfinGetProgramsDto**](JellyfinGetProgramsDto.md) | Request body. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1697,7 +1697,7 @@ Name | Type | Description  | Notes
 
 ## GetRecommendedPrograms
 
-> BaseItemDtoQueryResult GetRecommendedPrograms(ctx).UserId(userId).Limit(limit).IsAiring(isAiring).HasAired(hasAired).IsSeries(isSeries).IsMovie(isMovie).IsNews(isNews).IsKids(isKids).IsSports(isSports).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).GenreIds(genreIds).Fields(fields).EnableUserData(enableUserData).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetRecommendedPrograms(ctx).UserId(userId).Limit(limit).IsAiring(isAiring).HasAired(hasAired).IsSeries(isSeries).IsMovie(isMovie).IsNews(isNews).IsKids(isKids).IsSports(isSports).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).GenreIds(genreIds).Fields(fields).EnableUserData(enableUserData).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets recommended live tv epgs.
 
@@ -1725,9 +1725,9 @@ func main() {
 	isSports := true // bool | Optional. Filter for sports. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	genreIds := []string{"Inner_example"} // []string | The genres to return guide information for. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableUserData := true // bool | Optional. include user data. (optional)
 	enableTotalRecordCount := true // bool | Retrieve total record count. (optional) (default to true)
 
@@ -1738,7 +1738,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecommendedPrograms``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecommendedPrograms`: BaseItemDtoQueryResult
+	// response from `GetRecommendedPrograms`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecommendedPrograms`: %v\n", resp)
 }
 ```
@@ -1765,15 +1765,15 @@ Name | Type | Description  | Notes
  **isSports** | **bool** | Optional. Filter for sports. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **genreIds** | **[]string** | The genres to return guide information for. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableUserData** | **bool** | Optional. include user data. | 
  **enableTotalRecordCount** | **bool** | Retrieve total record count. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1791,7 +1791,7 @@ Name | Type | Description  | Notes
 
 ## GetRecording
 
-> BaseItemDto GetRecording(ctx, recordingId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDto GetRecording(ctx, recordingId).UserId(userId).Execute()
 
 Gets a live tv recording.
 
@@ -1818,7 +1818,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecording``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecording`: BaseItemDto
+	// response from `GetRecording`: JellyfinJellyfinBaseItemDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecording`: %v\n", resp)
 }
 ```
@@ -1843,7 +1843,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDto**](BaseItemDto.md)
+[**JellyfinJellyfinBaseItemDto**](JellyfinBaseItemDto.md)
 
 ### Authorization
 
@@ -1861,7 +1861,7 @@ Name | Type | Description  | Notes
 
 ## GetRecordingFolders
 
-> BaseItemDtoQueryResult GetRecordingFolders(ctx).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetRecordingFolders(ctx).UserId(userId).Execute()
 
 Gets recording folders.
 
@@ -1887,7 +1887,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecordingFolders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecordingFolders`: BaseItemDtoQueryResult
+	// response from `GetRecordingFolders`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecordingFolders`: %v\n", resp)
 }
 ```
@@ -1907,7 +1907,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -1991,7 +1991,7 @@ Name | Type | Description  | Notes
 
 ## GetRecordingGroups
 
-> BaseItemDtoQueryResult GetRecordingGroups(ctx).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetRecordingGroups(ctx).UserId(userId).Execute()
 
 Gets live tv recording groups.
 
@@ -2017,7 +2017,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecordingGroups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecordingGroups`: BaseItemDtoQueryResult
+	// response from `GetRecordingGroups`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecordingGroups`: %v\n", resp)
 }
 ```
@@ -2037,7 +2037,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -2055,7 +2055,7 @@ Name | Type | Description  | Notes
 
 ## GetRecordings
 
-> BaseItemDtoQueryResult GetRecordings(ctx).ChannelId(channelId).UserId(userId).StartIndex(startIndex).Limit(limit).Status(status).IsInProgress(isInProgress).SeriesTimerId(seriesTimerId).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).IsMovie(isMovie).IsSeries(isSeries).IsKids(isKids).IsSports(isSports).IsNews(isNews).IsLibraryItem(isLibraryItem).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetRecordings(ctx).ChannelId(channelId).UserId(userId).StartIndex(startIndex).Limit(limit).Status(status).IsInProgress(isInProgress).SeriesTimerId(seriesTimerId).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).IsMovie(isMovie).IsSeries(isSeries).IsKids(isKids).IsSports(isSports).IsNews(isNews).IsLibraryItem(isLibraryItem).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets live tv recordings.
 
@@ -2076,13 +2076,13 @@ func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user and attach user data. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	status := "status_example" // RecordingStatus | Optional. Filter by recording status. (optional)
+	status := "status_example" // JellyfinJellyfinRecordingStatus | Optional. Filter by recording status. (optional)
 	isInProgress := true // bool | Optional. Filter by recordings that are in progress, or not. (optional)
 	seriesTimerId := "seriesTimerId_example" // string | Optional. Filter by recordings belonging to a series timer. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	isMovie := true // bool | Optional. Filter for movies. (optional)
 	isSeries := true // bool | Optional. Filter for series. (optional)
@@ -2099,7 +2099,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecordings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecordings`: BaseItemDtoQueryResult
+	// response from `GetRecordings`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecordings`: %v\n", resp)
 }
 ```
@@ -2119,13 +2119,13 @@ Name | Type | Description  | Notes
  **userId** | **string** | Optional. Filter by user and attach user data. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **status** | **RecordingStatus** | Optional. Filter by recording status. | 
+ **status** | **JellyfinJellyfinRecordingStatus** | Optional. Filter by recording status. | 
  **isInProgress** | **bool** | Optional. Filter by recordings that are in progress, or not. | 
  **seriesTimerId** | **string** | Optional. Filter by recordings belonging to a series timer. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **isMovie** | **bool** | Optional. Filter for movies. | 
  **isSeries** | **bool** | Optional. Filter for series. | 
@@ -2137,7 +2137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -2155,7 +2155,7 @@ Name | Type | Description  | Notes
 
 ## GetRecordingsSeries
 
-> BaseItemDtoQueryResult GetRecordingsSeries(ctx).ChannelId(channelId).UserId(userId).GroupId(groupId).StartIndex(startIndex).Limit(limit).Status(status).IsInProgress(isInProgress).SeriesTimerId(seriesTimerId).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetRecordingsSeries(ctx).ChannelId(channelId).UserId(userId).GroupId(groupId).StartIndex(startIndex).Limit(limit).Status(status).IsInProgress(isInProgress).SeriesTimerId(seriesTimerId).EnableImages(enableImages).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Fields(fields).EnableUserData(enableUserData).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets live tv recording series.
 
@@ -2177,13 +2177,13 @@ func main() {
 	groupId := "groupId_example" // string | Optional. Filter by recording group. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	status := "status_example" // RecordingStatus | Optional. Filter by recording status. (optional)
+	status := "status_example" // JellyfinJellyfinRecordingStatus | Optional. Filter by recording status. (optional)
 	isInProgress := true // bool | Optional. Filter by recordings that are in progress, or not. (optional)
 	seriesTimerId := "seriesTimerId_example" // string | Optional. Filter by recordings belonging to a series timer. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	enableTotalRecordCount := true // bool | Optional. Return total record count. (optional) (default to true)
 
@@ -2194,7 +2194,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetRecordingsSeries``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRecordingsSeries`: BaseItemDtoQueryResult
+	// response from `GetRecordingsSeries`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetRecordingsSeries`: %v\n", resp)
 }
 ```
@@ -2215,19 +2215,19 @@ Name | Type | Description  | Notes
  **groupId** | **string** | Optional. Filter by recording group. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **status** | **RecordingStatus** | Optional. Filter by recording status. | 
+ **status** | **JellyfinJellyfinRecordingStatus** | Optional. Filter by recording status. | 
  **isInProgress** | **bool** | Optional. Filter by recordings that are in progress, or not. | 
  **seriesTimerId** | **string** | Optional. Filter by recordings belonging to a series timer. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **enableTotalRecordCount** | **bool** | Optional. Return total record count. | [default to true]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -2304,7 +2304,7 @@ Other parameters are passed through a pointer to a apiGetSchedulesDirectCountrie
 
 ## GetSeriesTimer
 
-> SeriesTimerInfoDto GetSeriesTimer(ctx, timerId).Execute()
+> JellyfinJellyfinSeriesTimerInfoDto GetSeriesTimer(ctx, timerId).Execute()
 
 Gets a live tv series timer.
 
@@ -2330,7 +2330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetSeriesTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSeriesTimer`: SeriesTimerInfoDto
+	// response from `GetSeriesTimer`: JellyfinJellyfinSeriesTimerInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetSeriesTimer`: %v\n", resp)
 }
 ```
@@ -2354,7 +2354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SeriesTimerInfoDto**](SeriesTimerInfoDto.md)
+[**JellyfinJellyfinSeriesTimerInfoDto**](JellyfinSeriesTimerInfoDto.md)
 
 ### Authorization
 
@@ -2372,7 +2372,7 @@ Name | Type | Description  | Notes
 
 ## GetSeriesTimers
 
-> SeriesTimerInfoDtoQueryResult GetSeriesTimers(ctx).SortBy(sortBy).SortOrder(sortOrder).Execute()
+> JellyfinJellyfinSeriesTimerInfoDtoQueryResult GetSeriesTimers(ctx).SortBy(sortBy).SortOrder(sortOrder).Execute()
 
 Gets live tv series timers.
 
@@ -2390,7 +2390,7 @@ import (
 
 func main() {
 	sortBy := "sortBy_example" // string | Optional. Sort by SortName or Priority. (optional)
-	sortOrder := "sortOrder_example" // SortOrder | Optional. Sort in Ascending or Descending order. (optional)
+	sortOrder := "sortOrder_example" // JellyfinJellyfinSortOrder | Optional. Sort in Ascending or Descending order. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2399,7 +2399,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetSeriesTimers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSeriesTimers`: SeriesTimerInfoDtoQueryResult
+	// response from `GetSeriesTimers`: JellyfinJellyfinSeriesTimerInfoDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetSeriesTimers`: %v\n", resp)
 }
 ```
@@ -2416,11 +2416,11 @@ Other parameters are passed through a pointer to a apiGetSeriesTimersRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sortBy** | **string** | Optional. Sort by SortName or Priority. | 
- **sortOrder** | **SortOrder** | Optional. Sort in Ascending or Descending order. | 
+ **sortOrder** | **JellyfinJellyfinSortOrder** | Optional. Sort in Ascending or Descending order. | 
 
 ### Return type
 
-[**SeriesTimerInfoDtoQueryResult**](SeriesTimerInfoDtoQueryResult.md)
+[**JellyfinJellyfinSeriesTimerInfoDtoQueryResult**](JellyfinSeriesTimerInfoDtoQueryResult.md)
 
 ### Authorization
 
@@ -2438,7 +2438,7 @@ Name | Type | Description  | Notes
 
 ## GetTimer
 
-> TimerInfoDto GetTimer(ctx, timerId).Execute()
+> JellyfinJellyfinTimerInfoDto GetTimer(ctx, timerId).Execute()
 
 Gets a timer.
 
@@ -2464,7 +2464,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTimer`: TimerInfoDto
+	// response from `GetTimer`: JellyfinJellyfinTimerInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetTimer`: %v\n", resp)
 }
 ```
@@ -2488,7 +2488,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TimerInfoDto**](TimerInfoDto.md)
+[**JellyfinJellyfinTimerInfoDto**](JellyfinTimerInfoDto.md)
 
 ### Authorization
 
@@ -2506,7 +2506,7 @@ Name | Type | Description  | Notes
 
 ## GetTimers
 
-> TimerInfoDtoQueryResult GetTimers(ctx).ChannelId(channelId).SeriesTimerId(seriesTimerId).IsActive(isActive).IsScheduled(isScheduled).Execute()
+> JellyfinJellyfinTimerInfoDtoQueryResult GetTimers(ctx).ChannelId(channelId).SeriesTimerId(seriesTimerId).IsActive(isActive).IsScheduled(isScheduled).Execute()
 
 Gets the live tv timers.
 
@@ -2535,7 +2535,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetTimers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTimers`: TimerInfoDtoQueryResult
+	// response from `GetTimers`: JellyfinJellyfinTimerInfoDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetTimers`: %v\n", resp)
 }
 ```
@@ -2558,7 +2558,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TimerInfoDtoQueryResult**](TimerInfoDtoQueryResult.md)
+[**JellyfinJellyfinTimerInfoDtoQueryResult**](JellyfinTimerInfoDtoQueryResult.md)
 
 ### Authorization
 
@@ -2576,7 +2576,7 @@ Name | Type | Description  | Notes
 
 ## GetTunerHostTypes
 
-> []NameIdPair GetTunerHostTypes(ctx).Execute()
+> []JellyfinJellyfinNameIdPair GetTunerHostTypes(ctx).Execute()
 
 Get tuner host types.
 
@@ -2601,7 +2601,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.GetTunerHostTypes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTunerHostTypes`: []NameIdPair
+	// response from `GetTunerHostTypes`: []JellyfinJellyfinNameIdPair
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.GetTunerHostTypes`: %v\n", resp)
 }
 ```
@@ -2617,7 +2617,7 @@ Other parameters are passed through a pointer to a apiGetTunerHostTypesRequest s
 
 ### Return type
 
-[**[]NameIdPair**](NameIdPair.md)
+[**[]JellyfinJellyfinNameIdPair**](JellyfinNameIdPair.md)
 
 ### Authorization
 
@@ -2701,7 +2701,7 @@ Name | Type | Description  | Notes
 
 ## SetChannelMapping
 
-> TunerChannelMapping SetChannelMapping(ctx).SetChannelMappingDto(setChannelMappingDto).Execute()
+> JellyfinJellyfinTunerChannelMapping SetChannelMapping(ctx).JellyfinSetChannelMappingDto(jellyfinSetChannelMappingDto).Execute()
 
 Set channel mappings.
 
@@ -2718,16 +2718,16 @@ import (
 )
 
 func main() {
-	setChannelMappingDto := *openapiclient.NewSetChannelMappingDto("ProviderId_example", "TunerChannelId_example", "ProviderChannelId_example") // SetChannelMappingDto | The set channel mapping dto.
+	jellyfinSetChannelMappingDto := *openapiclient.NewJellyfinSetChannelMappingDto("ProviderId_example", "TunerChannelId_example", "ProviderChannelId_example") // JellyfinSetChannelMappingDto | The set channel mapping dto.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LiveTvAPI.SetChannelMapping(context.Background()).SetChannelMappingDto(setChannelMappingDto).Execute()
+	resp, r, err := apiClient.LiveTvAPI.SetChannelMapping(context.Background()).JellyfinSetChannelMappingDto(jellyfinSetChannelMappingDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.SetChannelMapping``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SetChannelMapping`: TunerChannelMapping
+	// response from `SetChannelMapping`: JellyfinJellyfinTunerChannelMapping
 	fmt.Fprintf(os.Stdout, "Response from `LiveTvAPI.SetChannelMapping`: %v\n", resp)
 }
 ```
@@ -2743,11 +2743,11 @@ Other parameters are passed through a pointer to a apiSetChannelMappingRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **setChannelMappingDto** | [**SetChannelMappingDto**](SetChannelMappingDto.md) | The set channel mapping dto. | 
+ **jellyfinSetChannelMappingDto** | [**JellyfinSetChannelMappingDto**](JellyfinSetChannelMappingDto.md) | The set channel mapping dto. | 
 
 ### Return type
 
-[**TunerChannelMapping**](TunerChannelMapping.md)
+[**JellyfinJellyfinTunerChannelMapping**](JellyfinTunerChannelMapping.md)
 
 ### Authorization
 
@@ -2765,7 +2765,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSeriesTimer
 
-> UpdateSeriesTimer(ctx, timerId).SeriesTimerInfoDto(seriesTimerInfoDto).Execute()
+> UpdateSeriesTimer(ctx, timerId).JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto).Execute()
 
 Updates a live tv series timer.
 
@@ -2783,11 +2783,11 @@ import (
 
 func main() {
 	timerId := "timerId_example" // string | Timer id.
-	seriesTimerInfoDto := *openapiclient.NewSeriesTimerInfoDto() // SeriesTimerInfoDto | New series timer info. (optional)
+	jellyfinSeriesTimerInfoDto := *openapiclient.NewJellyfinSeriesTimerInfoDto() // JellyfinSeriesTimerInfoDto | New series timer info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LiveTvAPI.UpdateSeriesTimer(context.Background(), timerId).SeriesTimerInfoDto(seriesTimerInfoDto).Execute()
+	r, err := apiClient.LiveTvAPI.UpdateSeriesTimer(context.Background(), timerId).JellyfinSeriesTimerInfoDto(jellyfinSeriesTimerInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.UpdateSeriesTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2811,7 +2811,7 @@ Other parameters are passed through a pointer to a apiUpdateSeriesTimerRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **seriesTimerInfoDto** | [**SeriesTimerInfoDto**](SeriesTimerInfoDto.md) | New series timer info. | 
+ **jellyfinSeriesTimerInfoDto** | [**JellyfinSeriesTimerInfoDto**](JellyfinSeriesTimerInfoDto.md) | New series timer info. | 
 
 ### Return type
 
@@ -2833,7 +2833,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTimer
 
-> UpdateTimer(ctx, timerId).TimerInfoDto(timerInfoDto).Execute()
+> UpdateTimer(ctx, timerId).JellyfinTimerInfoDto(jellyfinTimerInfoDto).Execute()
 
 Updates a live tv timer.
 
@@ -2851,11 +2851,11 @@ import (
 
 func main() {
 	timerId := "timerId_example" // string | Timer id.
-	timerInfoDto := *openapiclient.NewTimerInfoDto() // TimerInfoDto | New timer info. (optional)
+	jellyfinTimerInfoDto := *openapiclient.NewJellyfinTimerInfoDto() // JellyfinTimerInfoDto | New timer info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LiveTvAPI.UpdateTimer(context.Background(), timerId).TimerInfoDto(timerInfoDto).Execute()
+	r, err := apiClient.LiveTvAPI.UpdateTimer(context.Background(), timerId).JellyfinTimerInfoDto(jellyfinTimerInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LiveTvAPI.UpdateTimer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2879,7 +2879,7 @@ Other parameters are passed through a pointer to a apiUpdateTimerRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **timerInfoDto** | [**TimerInfoDto**](TimerInfoDto.md) | New timer info. | 
+ **jellyfinTimerInfoDto** | [**JellyfinTimerInfoDto**](JellyfinTimerInfoDto.md) | New timer info. | 
 
 ### Return type
 

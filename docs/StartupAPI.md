@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiCompleteWizardRequest stru
 
 ## GetFirstUser
 
-> StartupUserDto GetFirstUser(ctx).Execute()
+> JellyfinJellyfinStartupUserDto GetFirstUser(ctx).Execute()
 
 Gets the first user.
 
@@ -98,7 +98,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.GetFirstUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFirstUser`: StartupUserDto
+	// response from `GetFirstUser`: JellyfinJellyfinStartupUserDto
 	fmt.Fprintf(os.Stdout, "Response from `StartupAPI.GetFirstUser`: %v\n", resp)
 }
 ```
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiGetFirstUserRequest struct
 
 ### Return type
 
-[**StartupUserDto**](StartupUserDto.md)
+[**JellyfinJellyfinStartupUserDto**](JellyfinStartupUserDto.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to a apiGetFirstUserRequest struct
 
 ## GetFirstUser2
 
-> StartupUserDto GetFirstUser2(ctx).Execute()
+> JellyfinJellyfinStartupUserDto GetFirstUser2(ctx).Execute()
 
 Gets the first user.
 
@@ -157,7 +157,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.GetFirstUser2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetFirstUser2`: StartupUserDto
+	// response from `GetFirstUser2`: JellyfinJellyfinStartupUserDto
 	fmt.Fprintf(os.Stdout, "Response from `StartupAPI.GetFirstUser2`: %v\n", resp)
 }
 ```
@@ -173,7 +173,7 @@ Other parameters are passed through a pointer to a apiGetFirstUser2Request struc
 
 ### Return type
 
-[**StartupUserDto**](StartupUserDto.md)
+[**JellyfinJellyfinStartupUserDto**](JellyfinStartupUserDto.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ Other parameters are passed through a pointer to a apiGetFirstUser2Request struc
 
 ## GetStartupConfiguration
 
-> StartupConfigurationDto GetStartupConfiguration(ctx).Execute()
+> JellyfinJellyfinStartupConfigurationDto GetStartupConfiguration(ctx).Execute()
 
 Gets the initial startup wizard configuration.
 
@@ -216,7 +216,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.GetStartupConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetStartupConfiguration`: StartupConfigurationDto
+	// response from `GetStartupConfiguration`: JellyfinJellyfinStartupConfigurationDto
 	fmt.Fprintf(os.Stdout, "Response from `StartupAPI.GetStartupConfiguration`: %v\n", resp)
 }
 ```
@@ -232,7 +232,7 @@ Other parameters are passed through a pointer to a apiGetStartupConfigurationReq
 
 ### Return type
 
-[**StartupConfigurationDto**](StartupConfigurationDto.md)
+[**JellyfinJellyfinStartupConfigurationDto**](JellyfinStartupConfigurationDto.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Other parameters are passed through a pointer to a apiGetStartupConfigurationReq
 
 ## SetRemoteAccess
 
-> SetRemoteAccess(ctx).StartupRemoteAccessDto(startupRemoteAccessDto).Execute()
+> SetRemoteAccess(ctx).JellyfinStartupRemoteAccessDto(jellyfinStartupRemoteAccessDto).Execute()
 
 Sets remote access and UPnP.
 
@@ -267,11 +267,11 @@ import (
 )
 
 func main() {
-	startupRemoteAccessDto := *openapiclient.NewStartupRemoteAccessDto(false, false) // StartupRemoteAccessDto | The startup remote access dto.
+	jellyfinStartupRemoteAccessDto := *openapiclient.NewJellyfinStartupRemoteAccessDto(false, false) // JellyfinStartupRemoteAccessDto | The startup remote access dto.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.StartupAPI.SetRemoteAccess(context.Background()).StartupRemoteAccessDto(startupRemoteAccessDto).Execute()
+	r, err := apiClient.StartupAPI.SetRemoteAccess(context.Background()).JellyfinStartupRemoteAccessDto(jellyfinStartupRemoteAccessDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.SetRemoteAccess``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -290,7 +290,7 @@ Other parameters are passed through a pointer to a apiSetRemoteAccessRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startupRemoteAccessDto** | [**StartupRemoteAccessDto**](StartupRemoteAccessDto.md) | The startup remote access dto. | 
+ **jellyfinStartupRemoteAccessDto** | [**JellyfinStartupRemoteAccessDto**](JellyfinStartupRemoteAccessDto.md) | The startup remote access dto. | 
 
 ### Return type
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ## UpdateInitialConfiguration
 
-> UpdateInitialConfiguration(ctx).StartupConfigurationDto(startupConfigurationDto).Execute()
+> UpdateInitialConfiguration(ctx).JellyfinStartupConfigurationDto(jellyfinStartupConfigurationDto).Execute()
 
 Sets the initial startup wizard configuration.
 
@@ -329,11 +329,11 @@ import (
 )
 
 func main() {
-	startupConfigurationDto := *openapiclient.NewStartupConfigurationDto() // StartupConfigurationDto | The updated startup configuration.
+	jellyfinStartupConfigurationDto := *openapiclient.NewJellyfinStartupConfigurationDto() // JellyfinStartupConfigurationDto | The updated startup configuration.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.StartupAPI.UpdateInitialConfiguration(context.Background()).StartupConfigurationDto(startupConfigurationDto).Execute()
+	r, err := apiClient.StartupAPI.UpdateInitialConfiguration(context.Background()).JellyfinStartupConfigurationDto(jellyfinStartupConfigurationDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.UpdateInitialConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -352,7 +352,7 @@ Other parameters are passed through a pointer to a apiUpdateInitialConfiguration
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startupConfigurationDto** | [**StartupConfigurationDto**](StartupConfigurationDto.md) | The updated startup configuration. | 
+ **jellyfinStartupConfigurationDto** | [**JellyfinStartupConfigurationDto**](JellyfinStartupConfigurationDto.md) | The updated startup configuration. | 
 
 ### Return type
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 ## UpdateStartupUser
 
-> UpdateStartupUser(ctx).StartupUserDto(startupUserDto).Execute()
+> UpdateStartupUser(ctx).JellyfinStartupUserDto(jellyfinStartupUserDto).Execute()
 
 Sets the user name and password.
 
@@ -391,11 +391,11 @@ import (
 )
 
 func main() {
-	startupUserDto := *openapiclient.NewStartupUserDto() // StartupUserDto | The DTO containing username and password. (optional)
+	jellyfinStartupUserDto := *openapiclient.NewJellyfinStartupUserDto() // JellyfinStartupUserDto | The DTO containing username and password. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.StartupAPI.UpdateStartupUser(context.Background()).StartupUserDto(startupUserDto).Execute()
+	r, err := apiClient.StartupAPI.UpdateStartupUser(context.Background()).JellyfinStartupUserDto(jellyfinStartupUserDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StartupAPI.UpdateStartupUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -414,7 +414,7 @@ Other parameters are passed through a pointer to a apiUpdateStartupUserRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **startupUserDto** | [**StartupUserDto**](StartupUserDto.md) | The DTO containing username and password. | 
+ **jellyfinStartupUserDto** | [**JellyfinStartupUserDto**](JellyfinStartupUserDto.md) | The DTO containing username and password. | 
 
 ### Return type
 

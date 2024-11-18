@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetSuggestions
 
-> BaseItemDtoQueryResult GetSuggestions(ctx).UserId(userId).MediaType(mediaType).Type_(type_).StartIndex(startIndex).Limit(limit).EnableTotalRecordCount(enableTotalRecordCount).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetSuggestions(ctx).UserId(userId).MediaType(mediaType).Type_(type_).StartIndex(startIndex).Limit(limit).EnableTotalRecordCount(enableTotalRecordCount).Execute()
 
 Gets suggestions.
 
@@ -28,8 +28,8 @@ import (
 
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The user id. (optional)
-	mediaType := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | The media types. (optional)
-	type_ := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | The type. (optional)
+	mediaType := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | The media types. (optional)
+	type_ := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | The type. (optional)
 	startIndex := int32(56) // int32 | Optional. The start index. (optional)
 	limit := int32(56) // int32 | Optional. The limit. (optional)
 	enableTotalRecordCount := true // bool | Whether to enable the total record count. (optional) (default to false)
@@ -41,7 +41,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SuggestionsAPI.GetSuggestions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSuggestions`: BaseItemDtoQueryResult
+	// response from `GetSuggestions`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `SuggestionsAPI.GetSuggestions`: %v\n", resp)
 }
 ```
@@ -58,15 +58,15 @@ Other parameters are passed through a pointer to a apiGetSuggestionsRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | The user id. | 
- **mediaType** | [**[]MediaType**](MediaType.md) | The media types. | 
- **type_** | [**[]BaseItemKind**](BaseItemKind.md) | The type. | 
+ **mediaType** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | The media types. | 
+ **type_** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | The type. | 
  **startIndex** | **int32** | Optional. The start index. | 
  **limit** | **int32** | Optional. The limit. | 
  **enableTotalRecordCount** | **bool** | Whether to enable the total record count. | [default to false]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

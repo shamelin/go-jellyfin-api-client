@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## GetInstantMixFromAlbum
 
-> BaseItemDtoQueryResult GetInstantMixFromAlbum(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromAlbum(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given album.
 
@@ -37,11 +37,11 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -50,7 +50,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromAlbum``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromAlbum`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromAlbum`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromAlbum`: %v\n", resp)
 }
 ```
@@ -73,15 +73,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromArtists
 
-> BaseItemDtoQueryResult GetInstantMixFromArtists(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromArtists(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given artist.
 
@@ -119,11 +119,11 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -132,7 +132,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromArtists``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromArtists`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromArtists`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromArtists`: %v\n", resp)
 }
 ```
@@ -155,15 +155,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromArtists2
 
-> BaseItemDtoQueryResult GetInstantMixFromArtists2(ctx).Id(id).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromArtists2(ctx).Id(id).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given artist.
 
@@ -201,11 +201,11 @@ func main() {
 	id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -214,7 +214,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromArtists2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromArtists2`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromArtists2`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromArtists2`: %v\n", resp)
 }
 ```
@@ -233,15 +233,15 @@ Name | Type | Description  | Notes
  **id** | **string** | The item id. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromItem
 
-> BaseItemDtoQueryResult GetInstantMixFromItem(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromItem(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given item.
 
@@ -279,11 +279,11 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -292,7 +292,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromItem`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromItem`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromItem`: %v\n", resp)
 }
 ```
@@ -315,15 +315,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromMusicGenreById
 
-> BaseItemDtoQueryResult GetInstantMixFromMusicGenreById(ctx).Id(id).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromMusicGenreById(ctx).Id(id).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given genre.
 
@@ -361,11 +361,11 @@ func main() {
 	id := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -374,7 +374,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromMusicGenreById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromMusicGenreById`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromMusicGenreById`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromMusicGenreById`: %v\n", resp)
 }
 ```
@@ -393,15 +393,15 @@ Name | Type | Description  | Notes
  **id** | **string** | The item id. | 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromMusicGenreByName
 
-> BaseItemDtoQueryResult GetInstantMixFromMusicGenreByName(ctx, name).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromMusicGenreByName(ctx, name).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given genre.
 
@@ -439,11 +439,11 @@ func main() {
 	name := "name_example" // string | The genre name.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -452,7 +452,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromMusicGenreByName``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromMusicGenreByName`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromMusicGenreByName`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromMusicGenreByName`: %v\n", resp)
 }
 ```
@@ -475,15 +475,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromPlaylist
 
-> BaseItemDtoQueryResult GetInstantMixFromPlaylist(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromPlaylist(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given playlist.
 
@@ -521,11 +521,11 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -534,7 +534,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromPlaylist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromPlaylist`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromPlaylist`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromPlaylist`: %v\n", resp)
 }
 ```
@@ -557,15 +557,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 ## GetInstantMixFromSong
 
-> BaseItemDtoQueryResult GetInstantMixFromSong(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetInstantMixFromSong(ctx, itemId).UserId(userId).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Creates an instant playlist based on a given song.
 
@@ -603,11 +603,11 @@ func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. Filter by user id, and attach user data. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -616,7 +616,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstantMixAPI.GetInstantMixFromSong``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInstantMixFromSong`: BaseItemDtoQueryResult
+	// response from `GetInstantMixFromSong`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `InstantMixAPI.GetInstantMixFromSong`: %v\n", resp)
 }
 ```
@@ -639,15 +639,15 @@ Name | Type | Description  | Notes
 
  **userId** | **string** | Optional. Filter by user id, and attach user data. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

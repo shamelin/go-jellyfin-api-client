@@ -128,7 +128,7 @@ func (a *DevicesAPIService) DeleteDeviceExecute(r ApiDeleteDeviceRequest) (*http
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -156,7 +156,7 @@ func (r ApiGetDeviceInfoRequest) Id(id string) ApiGetDeviceInfoRequest {
 	return r
 }
 
-func (r ApiGetDeviceInfoRequest) Execute() (*DeviceInfoDto, *http.Response, error) {
+func (r ApiGetDeviceInfoRequest) Execute() (*JellyfinDeviceInfoDto, *http.Response, error) {
 	return r.ApiService.GetDeviceInfoExecute(r)
 }
 
@@ -174,13 +174,13 @@ func (a *DevicesAPIService) GetDeviceInfo(ctx context.Context) ApiGetDeviceInfoR
 }
 
 // Execute executes the request
-//  @return DeviceInfoDto
-func (a *DevicesAPIService) GetDeviceInfoExecute(r ApiGetDeviceInfoRequest) (*DeviceInfoDto, *http.Response, error) {
+//  @return JellyfinDeviceInfoDto
+func (a *DevicesAPIService) GetDeviceInfoExecute(r ApiGetDeviceInfoRequest) (*JellyfinDeviceInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceInfoDto
+		localVarReturnValue  *JellyfinDeviceInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceInfo")
@@ -252,7 +252,7 @@ func (a *DevicesAPIService) GetDeviceInfoExecute(r ApiGetDeviceInfoRequest) (*De
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -289,7 +289,7 @@ func (r ApiGetDeviceOptionsRequest) Id(id string) ApiGetDeviceOptionsRequest {
 	return r
 }
 
-func (r ApiGetDeviceOptionsRequest) Execute() (*DeviceOptionsDto, *http.Response, error) {
+func (r ApiGetDeviceOptionsRequest) Execute() (*JellyfinDeviceOptionsDto, *http.Response, error) {
 	return r.ApiService.GetDeviceOptionsExecute(r)
 }
 
@@ -307,13 +307,13 @@ func (a *DevicesAPIService) GetDeviceOptions(ctx context.Context) ApiGetDeviceOp
 }
 
 // Execute executes the request
-//  @return DeviceOptionsDto
-func (a *DevicesAPIService) GetDeviceOptionsExecute(r ApiGetDeviceOptionsRequest) (*DeviceOptionsDto, *http.Response, error) {
+//  @return JellyfinDeviceOptionsDto
+func (a *DevicesAPIService) GetDeviceOptionsExecute(r ApiGetDeviceOptionsRequest) (*JellyfinDeviceOptionsDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceOptionsDto
+		localVarReturnValue  *JellyfinDeviceOptionsDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDeviceOptions")
@@ -385,7 +385,7 @@ func (a *DevicesAPIService) GetDeviceOptionsExecute(r ApiGetDeviceOptionsRequest
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -422,7 +422,7 @@ func (r ApiGetDevicesRequest) UserId(userId string) ApiGetDevicesRequest {
 	return r
 }
 
-func (r ApiGetDevicesRequest) Execute() (*DeviceInfoDtoQueryResult, *http.Response, error) {
+func (r ApiGetDevicesRequest) Execute() (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetDevicesExecute(r)
 }
 
@@ -440,13 +440,13 @@ func (a *DevicesAPIService) GetDevices(ctx context.Context) ApiGetDevicesRequest
 }
 
 // Execute executes the request
-//  @return DeviceInfoDtoQueryResult
-func (a *DevicesAPIService) GetDevicesExecute(r ApiGetDevicesRequest) (*DeviceInfoDtoQueryResult, *http.Response, error) {
+//  @return JellyfinDeviceInfoDtoQueryResult
+func (a *DevicesAPIService) GetDevicesExecute(r ApiGetDevicesRequest) (*JellyfinDeviceInfoDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DeviceInfoDtoQueryResult
+		localVarReturnValue  *JellyfinDeviceInfoDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DevicesAPIService.GetDevices")
@@ -535,7 +535,7 @@ type ApiUpdateDeviceOptionsRequest struct {
 	ctx context.Context
 	ApiService *DevicesAPIService
 	id *string
-	deviceOptionsDto *DeviceOptionsDto
+	jellyfinDeviceOptionsDto *JellyfinDeviceOptionsDto
 }
 
 // Device Id.
@@ -545,8 +545,8 @@ func (r ApiUpdateDeviceOptionsRequest) Id(id string) ApiUpdateDeviceOptionsReque
 }
 
 // Device Options.
-func (r ApiUpdateDeviceOptionsRequest) DeviceOptionsDto(deviceOptionsDto DeviceOptionsDto) ApiUpdateDeviceOptionsRequest {
-	r.deviceOptionsDto = &deviceOptionsDto
+func (r ApiUpdateDeviceOptionsRequest) JellyfinDeviceOptionsDto(jellyfinDeviceOptionsDto JellyfinDeviceOptionsDto) ApiUpdateDeviceOptionsRequest {
+	r.jellyfinDeviceOptionsDto = &jellyfinDeviceOptionsDto
 	return r
 }
 
@@ -588,8 +588,8 @@ func (a *DevicesAPIService) UpdateDeviceOptionsExecute(r ApiUpdateDeviceOptionsR
 	if r.id == nil {
 		return nil, reportError("id is required and must be specified")
 	}
-	if r.deviceOptionsDto == nil {
-		return nil, reportError("deviceOptionsDto is required and must be specified")
+	if r.jellyfinDeviceOptionsDto == nil {
+		return nil, reportError("jellyfinDeviceOptionsDto is required and must be specified")
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
@@ -611,7 +611,7 @@ func (a *DevicesAPIService) UpdateDeviceOptionsExecute(r ApiUpdateDeviceOptionsR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.deviceOptionsDto
+	localVarPostBody = r.jellyfinDeviceOptionsDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -130,7 +130,7 @@ No authorization required
 
 ## GetBrandingOptions
 
-> BrandingOptions GetBrandingOptions(ctx).Execute()
+> JellyfinJellyfinBrandingOptions GetBrandingOptions(ctx).Execute()
 
 Gets branding configuration.
 
@@ -155,7 +155,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `BrandingAPI.GetBrandingOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBrandingOptions`: BrandingOptions
+	// response from `GetBrandingOptions`: JellyfinJellyfinBrandingOptions
 	fmt.Fprintf(os.Stdout, "Response from `BrandingAPI.GetBrandingOptions`: %v\n", resp)
 }
 ```
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiGetBrandingOptionsRequest 
 
 ### Return type
 
-[**BrandingOptions**](BrandingOptions.md)
+[**JellyfinJellyfinBrandingOptions**](JellyfinBrandingOptions.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GetCountries
 
-> []CountryInfo GetCountries(ctx).Execute()
+> []JellyfinJellyfinCountryInfo GetCountries(ctx).Execute()
 
 Gets known countries.
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocalizationAPI.GetCountries``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCountries`: []CountryInfo
+	// response from `GetCountries`: []JellyfinJellyfinCountryInfo
 	fmt.Fprintf(os.Stdout, "Response from `LocalizationAPI.GetCountries`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGetCountriesRequest struct
 
 ### Return type
 
-[**[]CountryInfo**](CountryInfo.md)
+[**[]JellyfinJellyfinCountryInfo**](JellyfinCountryInfo.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGetCountriesRequest struct
 
 ## GetCultures
 
-> []CultureDto GetCultures(ctx).Execute()
+> []JellyfinJellyfinCultureDto GetCultures(ctx).Execute()
 
 Gets known cultures.
 
@@ -97,7 +97,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocalizationAPI.GetCultures``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCultures`: []CultureDto
+	// response from `GetCultures`: []JellyfinJellyfinCultureDto
 	fmt.Fprintf(os.Stdout, "Response from `LocalizationAPI.GetCultures`: %v\n", resp)
 }
 ```
@@ -113,7 +113,7 @@ Other parameters are passed through a pointer to a apiGetCulturesRequest struct 
 
 ### Return type
 
-[**[]CultureDto**](CultureDto.md)
+[**[]JellyfinJellyfinCultureDto**](JellyfinCultureDto.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ Other parameters are passed through a pointer to a apiGetCulturesRequest struct 
 
 ## GetLocalizationOptions
 
-> []LocalizationOption GetLocalizationOptions(ctx).Execute()
+> []JellyfinJellyfinLocalizationOption GetLocalizationOptions(ctx).Execute()
 
 Gets localization options.
 
@@ -156,7 +156,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocalizationAPI.GetLocalizationOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLocalizationOptions`: []LocalizationOption
+	// response from `GetLocalizationOptions`: []JellyfinJellyfinLocalizationOption
 	fmt.Fprintf(os.Stdout, "Response from `LocalizationAPI.GetLocalizationOptions`: %v\n", resp)
 }
 ```
@@ -172,7 +172,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationOptionsRequ
 
 ### Return type
 
-[**[]LocalizationOption**](LocalizationOption.md)
+[**[]JellyfinJellyfinLocalizationOption**](JellyfinLocalizationOption.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationOptionsRequ
 
 ## GetParentalRatings
 
-> []ParentalRating GetParentalRatings(ctx).Execute()
+> []JellyfinJellyfinParentalRating GetParentalRatings(ctx).Execute()
 
 Gets known parental ratings.
 
@@ -215,7 +215,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocalizationAPI.GetParentalRatings``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetParentalRatings`: []ParentalRating
+	// response from `GetParentalRatings`: []JellyfinJellyfinParentalRating
 	fmt.Fprintf(os.Stdout, "Response from `LocalizationAPI.GetParentalRatings`: %v\n", resp)
 }
 ```
@@ -231,7 +231,7 @@ Other parameters are passed through a pointer to a apiGetParentalRatingsRequest 
 
 ### Return type
 
-[**[]ParentalRating**](ParentalRating.md)
+[**[]JellyfinJellyfinParentalRating**](JellyfinParentalRating.md)
 
 ### Authorization
 

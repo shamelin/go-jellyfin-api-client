@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GetMetadataEditorInfo
 
-> MetadataEditorInfo GetMetadataEditorInfo(ctx, itemId).Execute()
+> JellyfinJellyfinMetadataEditorInfo GetMetadataEditorInfo(ctx, itemId).Execute()
 
 Gets metadata editor info for an item.
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemUpdateAPI.GetMetadataEditorInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMetadataEditorInfo`: MetadataEditorInfo
+	// response from `GetMetadataEditorInfo`: JellyfinJellyfinMetadataEditorInfo
 	fmt.Fprintf(os.Stdout, "Response from `ItemUpdateAPI.GetMetadataEditorInfo`: %v\n", resp)
 }
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MetadataEditorInfo**](MetadataEditorInfo.md)
+[**JellyfinJellyfinMetadataEditorInfo**](JellyfinMetadataEditorInfo.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## UpdateItem
 
-> UpdateItem(ctx, itemId).BaseItemDto(baseItemDto).Execute()
+> UpdateItem(ctx, itemId).JellyfinBaseItemDto(jellyfinBaseItemDto).Execute()
 
 Updates an item.
 
@@ -98,11 +98,11 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The item id.
-	baseItemDto := *openapiclient.NewBaseItemDto() // BaseItemDto | The new item properties.
+	jellyfinBaseItemDto := *openapiclient.NewJellyfinBaseItemDto() // JellyfinBaseItemDto | The new item properties.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ItemUpdateAPI.UpdateItem(context.Background(), itemId).BaseItemDto(baseItemDto).Execute()
+	r, err := apiClient.ItemUpdateAPI.UpdateItem(context.Background(), itemId).JellyfinBaseItemDto(jellyfinBaseItemDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemUpdateAPI.UpdateItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiUpdateItemRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **baseItemDto** | [**BaseItemDto**](BaseItemDto.md) | The new item properties. | 
+ **jellyfinBaseItemDto** | [**JellyfinBaseItemDto**](JellyfinBaseItemDto.md) | The new item properties. | 
 
 ### Return type
 

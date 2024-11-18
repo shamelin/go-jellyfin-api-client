@@ -27,7 +27,7 @@ type ApiGetCountriesRequest struct {
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetCountriesRequest) Execute() ([]CountryInfo, *http.Response, error) {
+func (r ApiGetCountriesRequest) Execute() ([]JellyfinCountryInfo, *http.Response, error) {
 	return r.ApiService.GetCountriesExecute(r)
 }
 
@@ -45,13 +45,13 @@ func (a *LocalizationAPIService) GetCountries(ctx context.Context) ApiGetCountri
 }
 
 // Execute executes the request
-//  @return []CountryInfo
-func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) ([]CountryInfo, *http.Response, error) {
+//  @return []JellyfinCountryInfo
+func (a *LocalizationAPIService) GetCountriesExecute(r ApiGetCountriesRequest) ([]JellyfinCountryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CountryInfo
+		localVarReturnValue  []JellyfinCountryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetCountries")
@@ -138,7 +138,7 @@ type ApiGetCulturesRequest struct {
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetCulturesRequest) Execute() ([]CultureDto, *http.Response, error) {
+func (r ApiGetCulturesRequest) Execute() ([]JellyfinCultureDto, *http.Response, error) {
 	return r.ApiService.GetCulturesExecute(r)
 }
 
@@ -156,13 +156,13 @@ func (a *LocalizationAPIService) GetCultures(ctx context.Context) ApiGetCultures
 }
 
 // Execute executes the request
-//  @return []CultureDto
-func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]CultureDto, *http.Response, error) {
+//  @return []JellyfinCultureDto
+func (a *LocalizationAPIService) GetCulturesExecute(r ApiGetCulturesRequest) ([]JellyfinCultureDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []CultureDto
+		localVarReturnValue  []JellyfinCultureDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetCultures")
@@ -249,7 +249,7 @@ type ApiGetLocalizationOptionsRequest struct {
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetLocalizationOptionsRequest) Execute() ([]LocalizationOption, *http.Response, error) {
+func (r ApiGetLocalizationOptionsRequest) Execute() ([]JellyfinLocalizationOption, *http.Response, error) {
 	return r.ApiService.GetLocalizationOptionsExecute(r)
 }
 
@@ -267,13 +267,13 @@ func (a *LocalizationAPIService) GetLocalizationOptions(ctx context.Context) Api
 }
 
 // Execute executes the request
-//  @return []LocalizationOption
-func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizationOptionsRequest) ([]LocalizationOption, *http.Response, error) {
+//  @return []JellyfinLocalizationOption
+func (a *LocalizationAPIService) GetLocalizationOptionsExecute(r ApiGetLocalizationOptionsRequest) ([]JellyfinLocalizationOption, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []LocalizationOption
+		localVarReturnValue  []JellyfinLocalizationOption
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetLocalizationOptions")
@@ -360,7 +360,7 @@ type ApiGetParentalRatingsRequest struct {
 	ApiService *LocalizationAPIService
 }
 
-func (r ApiGetParentalRatingsRequest) Execute() ([]ParentalRating, *http.Response, error) {
+func (r ApiGetParentalRatingsRequest) Execute() ([]JellyfinParentalRating, *http.Response, error) {
 	return r.ApiService.GetParentalRatingsExecute(r)
 }
 
@@ -378,13 +378,13 @@ func (a *LocalizationAPIService) GetParentalRatings(ctx context.Context) ApiGetP
 }
 
 // Execute executes the request
-//  @return []ParentalRating
-func (a *LocalizationAPIService) GetParentalRatingsExecute(r ApiGetParentalRatingsRequest) ([]ParentalRating, *http.Response, error) {
+//  @return []JellyfinParentalRating
+func (a *LocalizationAPIService) GetParentalRatingsExecute(r ApiGetParentalRatingsRequest) ([]JellyfinParentalRating, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ParentalRating
+		localVarReturnValue  []JellyfinParentalRating
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetParentalRatings")

@@ -29,7 +29,7 @@ type ApiGetMetadataEditorInfoRequest struct {
 	itemId string
 }
 
-func (r ApiGetMetadataEditorInfoRequest) Execute() (*MetadataEditorInfo, *http.Response, error) {
+func (r ApiGetMetadataEditorInfoRequest) Execute() (*JellyfinMetadataEditorInfo, *http.Response, error) {
 	return r.ApiService.GetMetadataEditorInfoExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfo(ctx context.Context, itemId
 }
 
 // Execute executes the request
-//  @return MetadataEditorInfo
-func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEditorInfoRequest) (*MetadataEditorInfo, *http.Response, error) {
+//  @return JellyfinMetadataEditorInfo
+func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEditorInfoRequest) (*JellyfinMetadataEditorInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MetadataEditorInfo
+		localVarReturnValue  *JellyfinMetadataEditorInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ItemUpdateAPIService.GetMetadataEditorInfo")
@@ -124,7 +124,7 @@ func (a *ItemUpdateAPIService) GetMetadataEditorInfoExecute(r ApiGetMetadataEdit
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -153,12 +153,12 @@ type ApiUpdateItemRequest struct {
 	ctx context.Context
 	ApiService *ItemUpdateAPIService
 	itemId string
-	baseItemDto *BaseItemDto
+	jellyfinBaseItemDto *JellyfinBaseItemDto
 }
 
 // The new item properties.
-func (r ApiUpdateItemRequest) BaseItemDto(baseItemDto BaseItemDto) ApiUpdateItemRequest {
-	r.baseItemDto = &baseItemDto
+func (r ApiUpdateItemRequest) JellyfinBaseItemDto(jellyfinBaseItemDto JellyfinBaseItemDto) ApiUpdateItemRequest {
+	r.jellyfinBaseItemDto = &jellyfinBaseItemDto
 	return r
 }
 
@@ -200,8 +200,8 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.baseItemDto == nil {
-		return nil, reportError("baseItemDto is required and must be specified")
+	if r.jellyfinBaseItemDto == nil {
+		return nil, reportError("jellyfinBaseItemDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -222,7 +222,7 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.baseItemDto
+	localVarPostBody = r.jellyfinBaseItemDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -260,7 +260,7 @@ func (a *ItemUpdateAPIService) UpdateItemExecute(r ApiUpdateItemRequest) (*http.
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -385,7 +385,7 @@ func (a *ItemUpdateAPIService) UpdateItemContentTypeExecute(r ApiUpdateItemConte
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

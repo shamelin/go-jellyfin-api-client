@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetAdditionalPart
 
-> BaseItemDtoQueryResult GetAdditionalPart(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetAdditionalPart(ctx, itemId).UserId(userId).Execute()
 
 Gets additional parts for a video.
 
@@ -109,7 +109,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `VideosAPI.GetAdditionalPart``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAdditionalPart`: BaseItemDtoQueryResult
+	// response from `GetAdditionalPart`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `VideosAPI.GetAdditionalPart`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ func main() {
 	maxHeight := int32(56) // int32 | Optional. The maximum vertical resolution of the encoded video. (optional)
 	videoBitRate := int32(56) // int32 | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 	subtitleStreamIndex := int32(56) // int32 | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-	subtitleMethod := "subtitleMethod_example" // SubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
+	subtitleMethod := "subtitleMethod_example" // JellyfinJellyfinSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 	maxRefFrames := int32(56) // int32 | Optional. (optional)
 	maxVideoBitDepth := int32(56) // int32 | Optional. The maximum video bit depth. (optional)
 	requireAvc := true // bool | Optional. Whether to require avc. (optional)
@@ -218,7 +218,7 @@ func main() {
 	transcodeReasons := "transcodeReasons_example" // string | Optional. The transcoding reason. (optional)
 	audioStreamIndex := int32(56) // int32 | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. (optional)
 	videoStreamIndex := int32(56) // int32 | Optional. The index of the video stream to use. If omitted the first video stream will be used. (optional)
-	context := "context_example" // EncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
+	context := "context_example" // JellyfinJellyfinEncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
 	streamOptions := map[string]string{"key": "Inner_example"} // map[string]string | Optional. The streaming options. (optional)
 	enableAudioVbrEncoding := true // bool | Optional. Whether to enable Audio Encoding. (optional) (default to true)
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
  **maxHeight** | **int32** | Optional. The maximum vertical resolution of the encoded video. | 
  **videoBitRate** | **int32** | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | 
  **subtitleStreamIndex** | **int32** | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | 
- **subtitleMethod** | **SubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
+ **subtitleMethod** | **JellyfinJellyfinSubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
  **maxRefFrames** | **int32** | Optional. | 
  **maxVideoBitDepth** | **int32** | Optional. The maximum video bit depth. | 
  **requireAvc** | **bool** | Optional. Whether to require avc. | 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
  **transcodeReasons** | **string** | Optional. The transcoding reason. | 
  **audioStreamIndex** | **int32** | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. | 
  **videoStreamIndex** | **int32** | Optional. The index of the video stream to use. If omitted the first video stream will be used. | 
- **context** | **EncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
+ **context** | **JellyfinJellyfinEncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
  **streamOptions** | **map[string]string** | Optional. The streaming options. | 
  **enableAudioVbrEncoding** | **bool** | Optional. Whether to enable Audio Encoding. | [default to true]
 
@@ -373,7 +373,7 @@ func main() {
 	maxHeight := int32(56) // int32 | Optional. The maximum vertical resolution of the encoded video. (optional)
 	videoBitRate := int32(56) // int32 | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 	subtitleStreamIndex := int32(56) // int32 | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-	subtitleMethod := "subtitleMethod_example" // SubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
+	subtitleMethod := "subtitleMethod_example" // JellyfinJellyfinSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 	maxRefFrames := int32(56) // int32 | Optional. (optional)
 	maxVideoBitDepth := int32(56) // int32 | Optional. The maximum video bit depth. (optional)
 	requireAvc := true // bool | Optional. Whether to require avc. (optional)
@@ -388,7 +388,7 @@ func main() {
 	transcodeReasons := "transcodeReasons_example" // string | Optional. The transcoding reason. (optional)
 	audioStreamIndex := int32(56) // int32 | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. (optional)
 	videoStreamIndex := int32(56) // int32 | Optional. The index of the video stream to use. If omitted the first video stream will be used. (optional)
-	context := "context_example" // EncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
+	context := "context_example" // JellyfinJellyfinEncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
 	streamOptions := map[string]string{"key": "Inner_example"} // map[string]string | Optional. The streaming options. (optional)
 	enableAudioVbrEncoding := true // bool | Optional. Whether to enable Audio Encoding. (optional) (default to true)
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
  **maxHeight** | **int32** | Optional. The maximum vertical resolution of the encoded video. | 
  **videoBitRate** | **int32** | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | 
  **subtitleStreamIndex** | **int32** | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | 
- **subtitleMethod** | **SubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
+ **subtitleMethod** | **JellyfinJellyfinSubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
  **maxRefFrames** | **int32** | Optional. | 
  **maxVideoBitDepth** | **int32** | Optional. The maximum video bit depth. | 
  **requireAvc** | **bool** | Optional. Whether to require avc. | 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
  **transcodeReasons** | **string** | Optional. The transcoding reason. | 
  **audioStreamIndex** | **int32** | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. | 
  **videoStreamIndex** | **int32** | Optional. The index of the video stream to use. If omitted the first video stream will be used. | 
- **context** | **EncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
+ **context** | **JellyfinJellyfinEncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
  **streamOptions** | **map[string]string** | Optional. The streaming options. | 
  **enableAudioVbrEncoding** | **bool** | Optional. Whether to enable Audio Encoding. | [default to true]
 
@@ -544,7 +544,7 @@ func main() {
 	maxHeight := int32(56) // int32 | Optional. The maximum vertical resolution of the encoded video. (optional)
 	videoBitRate := int32(56) // int32 | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 	subtitleStreamIndex := int32(56) // int32 | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-	subtitleMethod := "subtitleMethod_example" // SubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
+	subtitleMethod := "subtitleMethod_example" // JellyfinJellyfinSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 	maxRefFrames := int32(56) // int32 | Optional. (optional)
 	maxVideoBitDepth := int32(56) // int32 | Optional. The maximum video bit depth. (optional)
 	requireAvc := true // bool | Optional. Whether to require avc. (optional)
@@ -559,7 +559,7 @@ func main() {
 	transcodeReasons := "transcodeReasons_example" // string | Optional. The transcoding reason. (optional)
 	audioStreamIndex := int32(56) // int32 | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. (optional)
 	videoStreamIndex := int32(56) // int32 | Optional. The index of the video stream to use. If omitted the first video stream will be used. (optional)
-	context := "context_example" // EncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
+	context := "context_example" // JellyfinJellyfinEncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
 	streamOptions := map[string]string{"key": "Inner_example"} // map[string]string | Optional. The streaming options. (optional)
 	enableAudioVbrEncoding := true // bool | Optional. Whether to enable Audio Encoding. (optional) (default to true)
 
@@ -624,7 +624,7 @@ Name | Type | Description  | Notes
  **maxHeight** | **int32** | Optional. The maximum vertical resolution of the encoded video. | 
  **videoBitRate** | **int32** | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | 
  **subtitleStreamIndex** | **int32** | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | 
- **subtitleMethod** | **SubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
+ **subtitleMethod** | **JellyfinJellyfinSubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
  **maxRefFrames** | **int32** | Optional. | 
  **maxVideoBitDepth** | **int32** | Optional. The maximum video bit depth. | 
  **requireAvc** | **bool** | Optional. Whether to require avc. | 
@@ -639,7 +639,7 @@ Name | Type | Description  | Notes
  **transcodeReasons** | **string** | Optional. The transcoding reason. | 
  **audioStreamIndex** | **int32** | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. | 
  **videoStreamIndex** | **int32** | Optional. The index of the video stream to use. If omitted the first video stream will be used. | 
- **context** | **EncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
+ **context** | **JellyfinJellyfinEncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
  **streamOptions** | **map[string]string** | Optional. The streaming options. | 
  **enableAudioVbrEncoding** | **bool** | Optional. Whether to enable Audio Encoding. | [default to true]
 
@@ -714,7 +714,7 @@ func main() {
 	maxHeight := int32(56) // int32 | Optional. The maximum vertical resolution of the encoded video. (optional)
 	videoBitRate := int32(56) // int32 | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. (optional)
 	subtitleStreamIndex := int32(56) // int32 | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. (optional)
-	subtitleMethod := "subtitleMethod_example" // SubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
+	subtitleMethod := "subtitleMethod_example" // JellyfinJellyfinSubtitleDeliveryMethod | Optional. Specify the subtitle delivery method. (optional)
 	maxRefFrames := int32(56) // int32 | Optional. (optional)
 	maxVideoBitDepth := int32(56) // int32 | Optional. The maximum video bit depth. (optional)
 	requireAvc := true // bool | Optional. Whether to require avc. (optional)
@@ -729,7 +729,7 @@ func main() {
 	transcodeReasons := "transcodeReasons_example" // string | Optional. The transcoding reason. (optional)
 	audioStreamIndex := int32(56) // int32 | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. (optional)
 	videoStreamIndex := int32(56) // int32 | Optional. The index of the video stream to use. If omitted the first video stream will be used. (optional)
-	context := "context_example" // EncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
+	context := "context_example" // JellyfinJellyfinEncodingContext | Optional. The MediaBrowser.Model.Dlna.EncodingContext. (optional)
 	streamOptions := map[string]string{"key": "Inner_example"} // map[string]string | Optional. The streaming options. (optional)
 	enableAudioVbrEncoding := true // bool | Optional. Whether to enable Audio Encoding. (optional) (default to true)
 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
  **maxHeight** | **int32** | Optional. The maximum vertical resolution of the encoded video. | 
  **videoBitRate** | **int32** | Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults. | 
  **subtitleStreamIndex** | **int32** | Optional. The index of the subtitle stream to use. If omitted no subtitles will be used. | 
- **subtitleMethod** | **SubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
+ **subtitleMethod** | **JellyfinJellyfinSubtitleDeliveryMethod** | Optional. Specify the subtitle delivery method. | 
  **maxRefFrames** | **int32** | Optional. | 
  **maxVideoBitDepth** | **int32** | Optional. The maximum video bit depth. | 
  **requireAvc** | **bool** | Optional. Whether to require avc. | 
@@ -810,7 +810,7 @@ Name | Type | Description  | Notes
  **transcodeReasons** | **string** | Optional. The transcoding reason. | 
  **audioStreamIndex** | **int32** | Optional. The index of the audio stream to use. If omitted the first audio stream will be used. | 
  **videoStreamIndex** | **int32** | Optional. The index of the video stream to use. If omitted the first video stream will be used. | 
- **context** | **EncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
+ **context** | **JellyfinJellyfinEncodingContext** | Optional. The MediaBrowser.Model.Dlna.EncodingContext. | 
  **streamOptions** | **map[string]string** | Optional. The streaming options. | 
  **enableAudioVbrEncoding** | **bool** | Optional. Whether to enable Audio Encoding. | [default to true]
 

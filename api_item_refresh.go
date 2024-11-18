@@ -27,21 +27,21 @@ type ApiRefreshItemRequest struct {
 	ctx context.Context
 	ApiService *ItemRefreshAPIService
 	itemId string
-	metadataRefreshMode *MetadataRefreshMode
-	imageRefreshMode *MetadataRefreshMode
+	metadataRefreshMode *JellyfinMetadataRefreshMode
+	imageRefreshMode *JellyfinMetadataRefreshMode
 	replaceAllMetadata *bool
 	replaceAllImages *bool
 	regenerateTrickplay *bool
 }
 
 // (Optional) Specifies the metadata refresh mode.
-func (r ApiRefreshItemRequest) MetadataRefreshMode(metadataRefreshMode MetadataRefreshMode) ApiRefreshItemRequest {
+func (r ApiRefreshItemRequest) MetadataRefreshMode(metadataRefreshMode JellyfinMetadataRefreshMode) ApiRefreshItemRequest {
 	r.metadataRefreshMode = &metadataRefreshMode
 	return r
 }
 
 // (Optional) Specifies the image refresh mode.
-func (r ApiRefreshItemRequest) ImageRefreshMode(imageRefreshMode MetadataRefreshMode) ApiRefreshItemRequest {
+func (r ApiRefreshItemRequest) ImageRefreshMode(imageRefreshMode JellyfinMetadataRefreshMode) ApiRefreshItemRequest {
 	r.imageRefreshMode = &imageRefreshMode
 	return r
 }
@@ -106,13 +106,13 @@ func (a *ItemRefreshAPIService) RefreshItemExecute(r ApiRefreshItemRequest) (*ht
 	if r.metadataRefreshMode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "metadataRefreshMode", r.metadataRefreshMode, "form", "")
 	} else {
-		var defaultValue MetadataRefreshMode = "None"
+		var defaultValue JellyfinMetadataRefreshMode = "None"
 		r.metadataRefreshMode = &defaultValue
 	}
 	if r.imageRefreshMode != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "imageRefreshMode", r.imageRefreshMode, "form", "")
 	} else {
-		var defaultValue MetadataRefreshMode = "None"
+		var defaultValue JellyfinMetadataRefreshMode = "None"
 		r.imageRefreshMode = &defaultValue
 	}
 	if r.replaceAllMetadata != nil {
@@ -187,7 +187,7 @@ func (a *ItemRefreshAPIService) RefreshItemExecute(r ApiRefreshItemRequest) (*ht
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

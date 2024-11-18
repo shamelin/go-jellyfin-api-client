@@ -29,7 +29,7 @@ type ApiGetTaskRequest struct {
 	taskId string
 }
 
-func (r ApiGetTaskRequest) Execute() (*TaskInfo, *http.Response, error) {
+func (r ApiGetTaskRequest) Execute() (*JellyfinTaskInfo, *http.Response, error) {
 	return r.ApiService.GetTaskExecute(r)
 }
 
@@ -49,13 +49,13 @@ func (a *ScheduledTasksAPIService) GetTask(ctx context.Context, taskId string) A
 }
 
 // Execute executes the request
-//  @return TaskInfo
-func (a *ScheduledTasksAPIService) GetTaskExecute(r ApiGetTaskRequest) (*TaskInfo, *http.Response, error) {
+//  @return JellyfinTaskInfo
+func (a *ScheduledTasksAPIService) GetTaskExecute(r ApiGetTaskRequest) (*JellyfinTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *TaskInfo
+		localVarReturnValue  *JellyfinTaskInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduledTasksAPIService.GetTask")
@@ -124,7 +124,7 @@ func (a *ScheduledTasksAPIService) GetTaskExecute(r ApiGetTaskRequest) (*TaskInf
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -168,7 +168,7 @@ func (r ApiGetTasksRequest) IsEnabled(isEnabled bool) ApiGetTasksRequest {
 	return r
 }
 
-func (r ApiGetTasksRequest) Execute() ([]TaskInfo, *http.Response, error) {
+func (r ApiGetTasksRequest) Execute() ([]JellyfinTaskInfo, *http.Response, error) {
 	return r.ApiService.GetTasksExecute(r)
 }
 
@@ -186,13 +186,13 @@ func (a *ScheduledTasksAPIService) GetTasks(ctx context.Context) ApiGetTasksRequ
 }
 
 // Execute executes the request
-//  @return []TaskInfo
-func (a *ScheduledTasksAPIService) GetTasksExecute(r ApiGetTasksRequest) ([]TaskInfo, *http.Response, error) {
+//  @return []JellyfinTaskInfo
+func (a *ScheduledTasksAPIService) GetTasksExecute(r ApiGetTasksRequest) ([]JellyfinTaskInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TaskInfo
+		localVarReturnValue  []JellyfinTaskInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScheduledTasksAPIService.GetTasks")
@@ -379,7 +379,7 @@ func (a *ScheduledTasksAPIService) StartTaskExecute(r ApiStartTaskRequest) (*htt
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -494,7 +494,7 @@ func (a *ScheduledTasksAPIService) StopTaskExecute(r ApiStopTaskRequest) (*http.
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -514,12 +514,12 @@ type ApiUpdateTaskRequest struct {
 	ctx context.Context
 	ApiService *ScheduledTasksAPIService
 	taskId string
-	taskTriggerInfo *[]TaskTriggerInfo
+	jellyfinTaskTriggerInfo *[]JellyfinTaskTriggerInfo
 }
 
 // Triggers.
-func (r ApiUpdateTaskRequest) TaskTriggerInfo(taskTriggerInfo []TaskTriggerInfo) ApiUpdateTaskRequest {
-	r.taskTriggerInfo = &taskTriggerInfo
+func (r ApiUpdateTaskRequest) JellyfinTaskTriggerInfo(jellyfinTaskTriggerInfo []JellyfinTaskTriggerInfo) ApiUpdateTaskRequest {
+	r.jellyfinTaskTriggerInfo = &jellyfinTaskTriggerInfo
 	return r
 }
 
@@ -561,8 +561,8 @@ func (a *ScheduledTasksAPIService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.taskTriggerInfo == nil {
-		return nil, reportError("taskTriggerInfo is required and must be specified")
+	if r.jellyfinTaskTriggerInfo == nil {
+		return nil, reportError("jellyfinTaskTriggerInfo is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -583,7 +583,7 @@ func (a *ScheduledTasksAPIService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.taskTriggerInfo
+	localVarPostBody = r.jellyfinTaskTriggerInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -621,7 +621,7 @@ func (a *ScheduledTasksAPIService) UpdateTaskExecute(r ApiUpdateTaskRequest) (*h
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

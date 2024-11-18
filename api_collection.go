@@ -182,7 +182,7 @@ func (r ApiCreateCollectionRequest) IsLocked(isLocked bool) ApiCreateCollectionR
 	return r
 }
 
-func (r ApiCreateCollectionRequest) Execute() (*CollectionCreationResult, *http.Response, error) {
+func (r ApiCreateCollectionRequest) Execute() (*JellyfinCollectionCreationResult, *http.Response, error) {
 	return r.ApiService.CreateCollectionExecute(r)
 }
 
@@ -200,13 +200,13 @@ func (a *CollectionAPIService) CreateCollection(ctx context.Context) ApiCreateCo
 }
 
 // Execute executes the request
-//  @return CollectionCreationResult
-func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequest) (*CollectionCreationResult, *http.Response, error) {
+//  @return JellyfinCollectionCreationResult
+func (a *CollectionAPIService) CreateCollectionExecute(r ApiCreateCollectionRequest) (*JellyfinCollectionCreationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *CollectionCreationResult
+		localVarReturnValue  *JellyfinCollectionCreationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.CreateCollection")

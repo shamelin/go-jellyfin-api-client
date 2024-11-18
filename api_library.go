@@ -124,7 +124,7 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -135,7 +135,7 @@ func (a *LibraryAPIService) DeleteItemExecute(r ApiDeleteItemRequest) (*http.Res
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -264,7 +264,7 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -275,7 +275,7 @@ func (a *LibraryAPIService) DeleteItemsExecute(r ApiDeleteItemsRequest) (*http.R
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -304,7 +304,7 @@ func (r ApiGetAncestorsRequest) UserId(userId string) ApiGetAncestorsRequest {
 	return r
 }
 
-func (r ApiGetAncestorsRequest) Execute() ([]BaseItemDto, *http.Response, error) {
+func (r ApiGetAncestorsRequest) Execute() ([]JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetAncestorsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *LibraryAPIService) GetAncestors(ctx context.Context, itemId string) Api
 }
 
 // Execute executes the request
-//  @return []BaseItemDto
-func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]BaseItemDto, *http.Response, error) {
+//  @return []JellyfinBaseItemDto
+func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []BaseItemDto
+		localVarReturnValue  []JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetAncestors")
@@ -402,7 +402,7 @@ func (a *LibraryAPIService) GetAncestorsExecute(r ApiGetAncestorsRequest) ([]Bas
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -433,7 +433,7 @@ type ApiGetCriticReviewsRequest struct {
 	itemId string
 }
 
-func (r ApiGetCriticReviewsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetCriticReviewsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetCriticReviewsExecute(r)
 }
 
@@ -455,14 +455,14 @@ func (a *LibraryAPIService) GetCriticReviews(ctx context.Context, itemId string)
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
+//  @return JellyfinBaseItemDtoQueryResult
 // Deprecated
-func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+func (a *LibraryAPIService) GetCriticReviewsExecute(r ApiGetCriticReviewsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetCriticReviews")
@@ -646,7 +646,7 @@ func (a *LibraryAPIService) GetDownloadExecute(r ApiGetDownloadRequest) (*os.Fil
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -772,7 +772,7 @@ func (a *LibraryAPIService) GetFileExecute(r ApiGetFileRequest) (*os.File, *http
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -816,7 +816,7 @@ func (r ApiGetItemCountsRequest) IsFavorite(isFavorite bool) ApiGetItemCountsReq
 	return r
 }
 
-func (r ApiGetItemCountsRequest) Execute() (*ItemCounts, *http.Response, error) {
+func (r ApiGetItemCountsRequest) Execute() (*JellyfinItemCounts, *http.Response, error) {
 	return r.ApiService.GetItemCountsExecute(r)
 }
 
@@ -834,13 +834,13 @@ func (a *LibraryAPIService) GetItemCounts(ctx context.Context) ApiGetItemCountsR
 }
 
 // Execute executes the request
-//  @return ItemCounts
-func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*ItemCounts, *http.Response, error) {
+//  @return JellyfinItemCounts
+func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*JellyfinItemCounts, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ItemCounts
+		localVarReturnValue  *JellyfinItemCounts
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetItemCounts")
@@ -931,12 +931,12 @@ func (a *LibraryAPIService) GetItemCountsExecute(r ApiGetItemCountsRequest) (*It
 type ApiGetLibraryOptionsInfoRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	libraryContentType *CollectionType
+	libraryContentType *JellyfinCollectionType
 	isNewLibrary *bool
 }
 
 // Library content type.
-func (r ApiGetLibraryOptionsInfoRequest) LibraryContentType(libraryContentType CollectionType) ApiGetLibraryOptionsInfoRequest {
+func (r ApiGetLibraryOptionsInfoRequest) LibraryContentType(libraryContentType JellyfinCollectionType) ApiGetLibraryOptionsInfoRequest {
 	r.libraryContentType = &libraryContentType
 	return r
 }
@@ -947,7 +947,7 @@ func (r ApiGetLibraryOptionsInfoRequest) IsNewLibrary(isNewLibrary bool) ApiGetL
 	return r
 }
 
-func (r ApiGetLibraryOptionsInfoRequest) Execute() (*LibraryOptionsResultDto, *http.Response, error) {
+func (r ApiGetLibraryOptionsInfoRequest) Execute() (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
 	return r.ApiService.GetLibraryOptionsInfoExecute(r)
 }
 
@@ -965,13 +965,13 @@ func (a *LibraryAPIService) GetLibraryOptionsInfo(ctx context.Context) ApiGetLib
 }
 
 // Execute executes the request
-//  @return LibraryOptionsResultDto
-func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsInfoRequest) (*LibraryOptionsResultDto, *http.Response, error) {
+//  @return JellyfinLibraryOptionsResultDto
+func (a *LibraryAPIService) GetLibraryOptionsInfoExecute(r ApiGetLibraryOptionsInfoRequest) (*JellyfinLibraryOptionsResultDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *LibraryOptionsResultDto
+		localVarReturnValue  *JellyfinLibraryOptionsResultDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetLibraryOptionsInfo")
@@ -1074,7 +1074,7 @@ func (r ApiGetMediaFoldersRequest) IsHidden(isHidden bool) ApiGetMediaFoldersReq
 	return r
 }
 
-func (r ApiGetMediaFoldersRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetMediaFoldersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetMediaFoldersExecute(r)
 }
 
@@ -1092,13 +1092,13 @@ func (a *LibraryAPIService) GetMediaFolders(ctx context.Context) ApiGetMediaFold
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetMediaFoldersExecute(r ApiGetMediaFoldersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetMediaFolders")
@@ -1301,7 +1301,7 @@ type ApiGetSimilarAlbumsRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -1323,12 +1323,12 @@ func (r ApiGetSimilarAlbumsRequest) Limit(limit int32) ApiGetSimilarAlbumsReques
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarAlbumsRequest) Fields(fields []ItemFields) ApiGetSimilarAlbumsRequest {
+func (r ApiGetSimilarAlbumsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarAlbumsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarAlbumsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarAlbumsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarAlbumsExecute(r)
 }
 
@@ -1348,13 +1348,13 @@ func (a *LibraryAPIService) GetSimilarAlbums(ctx context.Context, itemId string)
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarAlbumsExecute(r ApiGetSimilarAlbumsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarAlbums")
@@ -1472,7 +1472,7 @@ type ApiGetSimilarArtistsRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -1494,12 +1494,12 @@ func (r ApiGetSimilarArtistsRequest) Limit(limit int32) ApiGetSimilarArtistsRequ
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarArtistsRequest) Fields(fields []ItemFields) ApiGetSimilarArtistsRequest {
+func (r ApiGetSimilarArtistsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarArtistsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarArtistsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarArtistsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarArtistsExecute(r)
 }
 
@@ -1519,13 +1519,13 @@ func (a *LibraryAPIService) GetSimilarArtists(ctx context.Context, itemId string
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarArtistsExecute(r ApiGetSimilarArtistsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarArtists")
@@ -1643,7 +1643,7 @@ type ApiGetSimilarItemsRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -1665,12 +1665,12 @@ func (r ApiGetSimilarItemsRequest) Limit(limit int32) ApiGetSimilarItemsRequest 
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarItemsRequest) Fields(fields []ItemFields) ApiGetSimilarItemsRequest {
+func (r ApiGetSimilarItemsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarItemsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarItemsExecute(r)
 }
 
@@ -1690,13 +1690,13 @@ func (a *LibraryAPIService) GetSimilarItems(ctx context.Context, itemId string) 
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarItemsExecute(r ApiGetSimilarItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarItems")
@@ -1814,7 +1814,7 @@ type ApiGetSimilarMoviesRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -1836,12 +1836,12 @@ func (r ApiGetSimilarMoviesRequest) Limit(limit int32) ApiGetSimilarMoviesReques
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarMoviesRequest) Fields(fields []ItemFields) ApiGetSimilarMoviesRequest {
+func (r ApiGetSimilarMoviesRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarMoviesRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarMoviesRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarMoviesRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarMoviesExecute(r)
 }
 
@@ -1861,13 +1861,13 @@ func (a *LibraryAPIService) GetSimilarMovies(ctx context.Context, itemId string)
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarMoviesExecute(r ApiGetSimilarMoviesRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarMovies")
@@ -1985,7 +1985,7 @@ type ApiGetSimilarShowsRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -2007,12 +2007,12 @@ func (r ApiGetSimilarShowsRequest) Limit(limit int32) ApiGetSimilarShowsRequest 
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarShowsRequest) Fields(fields []ItemFields) ApiGetSimilarShowsRequest {
+func (r ApiGetSimilarShowsRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarShowsRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarShowsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarShowsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarShowsExecute(r)
 }
 
@@ -2032,13 +2032,13 @@ func (a *LibraryAPIService) GetSimilarShows(ctx context.Context, itemId string) 
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarShowsExecute(r ApiGetSimilarShowsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarShows")
@@ -2156,7 +2156,7 @@ type ApiGetSimilarTrailersRequest struct {
 	excludeArtistIds *[]string
 	userId *string
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 }
 
 // Exclude artist ids.
@@ -2178,12 +2178,12 @@ func (r ApiGetSimilarTrailersRequest) Limit(limit int32) ApiGetSimilarTrailersRe
 }
 
 // Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
-func (r ApiGetSimilarTrailersRequest) Fields(fields []ItemFields) ApiGetSimilarTrailersRequest {
+func (r ApiGetSimilarTrailersRequest) Fields(fields []JellyfinItemFields) ApiGetSimilarTrailersRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiGetSimilarTrailersRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSimilarTrailersRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSimilarTrailersExecute(r)
 }
 
@@ -2203,13 +2203,13 @@ func (a *LibraryAPIService) GetSimilarTrailers(ctx context.Context, itemId strin
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *LibraryAPIService) GetSimilarTrailersExecute(r ApiGetSimilarTrailersRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetSimilarTrailers")
@@ -2326,8 +2326,8 @@ type ApiGetThemeMediaRequest struct {
 	itemId string
 	userId *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -2343,18 +2343,18 @@ func (r ApiGetThemeMediaRequest) InheritFromParent(inheritFromParent bool) ApiGe
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeMediaRequest) SortBy(sortBy []ItemSortBy) ApiGetThemeMediaRequest {
+func (r ApiGetThemeMediaRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeMediaRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeMediaRequest) SortOrder(sortOrder []SortOrder) ApiGetThemeMediaRequest {
+func (r ApiGetThemeMediaRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeMediaRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeMediaRequest) Execute() (*AllThemeMediaResult, *http.Response, error) {
+func (r ApiGetThemeMediaRequest) Execute() (*JellyfinAllThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeMediaExecute(r)
 }
 
@@ -2374,13 +2374,13 @@ func (a *LibraryAPIService) GetThemeMedia(ctx context.Context, itemId string) Ap
 }
 
 // Execute executes the request
-//  @return AllThemeMediaResult
-func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*AllThemeMediaResult, *http.Response, error) {
+//  @return JellyfinAllThemeMediaResult
+func (a *LibraryAPIService) GetThemeMediaExecute(r ApiGetThemeMediaRequest) (*JellyfinAllThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *AllThemeMediaResult
+		localVarReturnValue  *JellyfinAllThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeMedia")
@@ -2500,8 +2500,8 @@ type ApiGetThemeSongsRequest struct {
 	itemId string
 	userId *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -2517,18 +2517,18 @@ func (r ApiGetThemeSongsRequest) InheritFromParent(inheritFromParent bool) ApiGe
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeSongsRequest) SortBy(sortBy []ItemSortBy) ApiGetThemeSongsRequest {
+func (r ApiGetThemeSongsRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeSongsRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeSongsRequest) SortOrder(sortOrder []SortOrder) ApiGetThemeSongsRequest {
+func (r ApiGetThemeSongsRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeSongsRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeSongsRequest) Execute() (*ThemeMediaResult, *http.Response, error) {
+func (r ApiGetThemeSongsRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeSongsExecute(r)
 }
 
@@ -2548,13 +2548,13 @@ func (a *LibraryAPIService) GetThemeSongs(ctx context.Context, itemId string) Ap
 }
 
 // Execute executes the request
-//  @return ThemeMediaResult
-func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*ThemeMediaResult, *http.Response, error) {
+//  @return JellyfinThemeMediaResult
+func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ThemeMediaResult
+		localVarReturnValue  *JellyfinThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeSongs")
@@ -2654,7 +2654,7 @@ func (a *LibraryAPIService) GetThemeSongsExecute(r ApiGetThemeSongsRequest) (*Th
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -2685,8 +2685,8 @@ type ApiGetThemeVideosRequest struct {
 	itemId string
 	userId *string
 	inheritFromParent *bool
-	sortBy *[]ItemSortBy
-	sortOrder *[]SortOrder
+	sortBy *[]JellyfinItemSortBy
+	sortOrder *[]JellyfinSortOrder
 }
 
 // Optional. Filter by user id, and attach user data.
@@ -2702,18 +2702,18 @@ func (r ApiGetThemeVideosRequest) InheritFromParent(inheritFromParent bool) ApiG
 }
 
 // Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
-func (r ApiGetThemeVideosRequest) SortBy(sortBy []ItemSortBy) ApiGetThemeVideosRequest {
+func (r ApiGetThemeVideosRequest) SortBy(sortBy []JellyfinItemSortBy) ApiGetThemeVideosRequest {
 	r.sortBy = &sortBy
 	return r
 }
 
 // Optional. Sort Order - Ascending, Descending.
-func (r ApiGetThemeVideosRequest) SortOrder(sortOrder []SortOrder) ApiGetThemeVideosRequest {
+func (r ApiGetThemeVideosRequest) SortOrder(sortOrder []JellyfinSortOrder) ApiGetThemeVideosRequest {
 	r.sortOrder = &sortOrder
 	return r
 }
 
-func (r ApiGetThemeVideosRequest) Execute() (*ThemeMediaResult, *http.Response, error) {
+func (r ApiGetThemeVideosRequest) Execute() (*JellyfinThemeMediaResult, *http.Response, error) {
 	return r.ApiService.GetThemeVideosExecute(r)
 }
 
@@ -2733,13 +2733,13 @@ func (a *LibraryAPIService) GetThemeVideos(ctx context.Context, itemId string) A
 }
 
 // Execute executes the request
-//  @return ThemeMediaResult
-func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*ThemeMediaResult, *http.Response, error) {
+//  @return JellyfinThemeMediaResult
+func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*JellyfinThemeMediaResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ThemeMediaResult
+		localVarReturnValue  *JellyfinThemeMediaResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryAPIService.GetThemeVideos")
@@ -2839,7 +2839,7 @@ func (a *LibraryAPIService) GetThemeVideosExecute(r ApiGetThemeVideosRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -3097,12 +3097,12 @@ func (a *LibraryAPIService) PostAddedSeriesExecute(r ApiPostAddedSeriesRequest) 
 type ApiPostUpdatedMediaRequest struct {
 	ctx context.Context
 	ApiService *LibraryAPIService
-	mediaUpdateInfoDto *MediaUpdateInfoDto
+	jellyfinMediaUpdateInfoDto *JellyfinMediaUpdateInfoDto
 }
 
 // The update paths.
-func (r ApiPostUpdatedMediaRequest) MediaUpdateInfoDto(mediaUpdateInfoDto MediaUpdateInfoDto) ApiPostUpdatedMediaRequest {
-	r.mediaUpdateInfoDto = &mediaUpdateInfoDto
+func (r ApiPostUpdatedMediaRequest) JellyfinMediaUpdateInfoDto(jellyfinMediaUpdateInfoDto JellyfinMediaUpdateInfoDto) ApiPostUpdatedMediaRequest {
+	r.jellyfinMediaUpdateInfoDto = &jellyfinMediaUpdateInfoDto
 	return r
 }
 
@@ -3141,8 +3141,8 @@ func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.mediaUpdateInfoDto == nil {
-		return nil, reportError("mediaUpdateInfoDto is required and must be specified")
+	if r.jellyfinMediaUpdateInfoDto == nil {
+		return nil, reportError("jellyfinMediaUpdateInfoDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -3163,7 +3163,7 @@ func (a *LibraryAPIService) PostUpdatedMediaExecute(r ApiPostUpdatedMediaRequest
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.mediaUpdateInfoDto
+	localVarPostBody = r.jellyfinMediaUpdateInfoDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

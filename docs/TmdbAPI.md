@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## TmdbClientConfiguration
 
-> ConfigImageTypes TmdbClientConfiguration(ctx).Execute()
+> JellyfinJellyfinConfigImageTypes TmdbClientConfiguration(ctx).Execute()
 
 Gets the TMDb image configuration options.
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TmdbAPI.TmdbClientConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TmdbClientConfiguration`: ConfigImageTypes
+	// response from `TmdbClientConfiguration`: JellyfinJellyfinConfigImageTypes
 	fmt.Fprintf(os.Stdout, "Response from `TmdbAPI.TmdbClientConfiguration`: %v\n", resp)
 }
 ```
@@ -51,7 +51,7 @@ Other parameters are passed through a pointer to a apiTmdbClientConfigurationReq
 
 ### Return type
 
-[**ConfigImageTypes**](ConfigImageTypes.md)
+[**JellyfinJellyfinConfigImageTypes**](JellyfinConfigImageTypes.md)
 
 ### Authorization
 

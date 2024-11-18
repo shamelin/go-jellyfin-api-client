@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetItemSegments
 
-> MediaSegmentDtoQueryResult GetItemSegments(ctx, itemId).IncludeSegmentTypes(includeSegmentTypes).Execute()
+> JellyfinJellyfinMediaSegmentDtoQueryResult GetItemSegments(ctx, itemId).IncludeSegmentTypes(includeSegmentTypes).Execute()
 
 Gets all media segments based on an itemId.
 
@@ -28,7 +28,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The ItemId.
-	includeSegmentTypes := []openapiclient.MediaSegmentType{openapiclient.MediaSegmentType("Unknown")} // []MediaSegmentType | Optional filter of requested segment types. (optional)
+	includeSegmentTypes := []JellyfinJellyfinMediaSegmentType{"TODO"} // []JellyfinJellyfinMediaSegmentType | Optional filter of requested segment types. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MediaSegmentsAPI.GetItemSegments``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetItemSegments`: MediaSegmentDtoQueryResult
+	// response from `GetItemSegments`: JellyfinJellyfinMediaSegmentDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `MediaSegmentsAPI.GetItemSegments`: %v\n", resp)
 }
 ```
@@ -58,11 +58,11 @@ Other parameters are passed through a pointer to a apiGetItemSegmentsRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **includeSegmentTypes** | [**[]MediaSegmentType**](MediaSegmentType.md) | Optional filter of requested segment types. | 
+ **includeSegmentTypes** | [**[]JellyfinJellyfinMediaSegmentType**](JellyfinMediaSegmentType.md) | Optional filter of requested segment types. | 
 
 ### Return type
 
-[**MediaSegmentDtoQueryResult**](MediaSegmentDtoQueryResult.md)
+[**JellyfinJellyfinMediaSegmentDtoQueryResult**](JellyfinMediaSegmentDtoQueryResult.md)
 
 ### Authorization
 

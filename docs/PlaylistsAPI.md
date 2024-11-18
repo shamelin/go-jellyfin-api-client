@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## CreatePlaylist
 
-> PlaylistCreationResult CreatePlaylist(ctx).Name(name).Ids(ids).UserId(userId).MediaType(mediaType).CreatePlaylistDto(createPlaylistDto).Execute()
+> JellyfinJellyfinPlaylistCreationResult CreatePlaylist(ctx).Name(name).Ids(ids).UserId(userId).MediaType(mediaType).JellyfinCreatePlaylistDto(jellyfinCreatePlaylistDto).Execute()
 
 Creates a new playlist.
 
@@ -112,17 +112,17 @@ func main() {
 	name := "name_example" // string | The playlist name. (optional)
 	ids := []string{"Inner_example"} // []string | The item ids. (optional)
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The user id. (optional)
-	mediaType := "mediaType_example" // MediaType | The media type. (optional)
-	createPlaylistDto := *openapiclient.NewCreatePlaylistDto() // CreatePlaylistDto | The create playlist payload. (optional)
+	mediaType := "mediaType_example" // JellyfinJellyfinMediaType | The media type. (optional)
+	jellyfinCreatePlaylistDto := *openapiclient.NewJellyfinCreatePlaylistDto() // JellyfinCreatePlaylistDto | The create playlist payload. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PlaylistsAPI.CreatePlaylist(context.Background()).Name(name).Ids(ids).UserId(userId).MediaType(mediaType).CreatePlaylistDto(createPlaylistDto).Execute()
+	resp, r, err := apiClient.PlaylistsAPI.CreatePlaylist(context.Background()).Name(name).Ids(ids).UserId(userId).MediaType(mediaType).JellyfinCreatePlaylistDto(jellyfinCreatePlaylistDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.CreatePlaylist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreatePlaylist`: PlaylistCreationResult
+	// response from `CreatePlaylist`: JellyfinJellyfinPlaylistCreationResult
 	fmt.Fprintf(os.Stdout, "Response from `PlaylistsAPI.CreatePlaylist`: %v\n", resp)
 }
 ```
@@ -141,12 +141,12 @@ Name | Type | Description  | Notes
  **name** | **string** | The playlist name. | 
  **ids** | **[]string** | The item ids. | 
  **userId** | **string** | The user id. | 
- **mediaType** | **MediaType** | The media type. | 
- **createPlaylistDto** | [**CreatePlaylistDto**](CreatePlaylistDto.md) | The create playlist payload. | 
+ **mediaType** | **JellyfinJellyfinMediaType** | The media type. | 
+ **jellyfinCreatePlaylistDto** | [**JellyfinCreatePlaylistDto**](JellyfinCreatePlaylistDto.md) | The create playlist payload. | 
 
 ### Return type
 
-[**PlaylistCreationResult**](PlaylistCreationResult.md)
+[**JellyfinJellyfinPlaylistCreationResult**](JellyfinPlaylistCreationResult.md)
 
 ### Authorization
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## GetPlaylist
 
-> PlaylistDto GetPlaylist(ctx, playlistId).Execute()
+> JellyfinJellyfinPlaylistDto GetPlaylist(ctx, playlistId).Execute()
 
 Get a playlist.
 
@@ -190,7 +190,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.GetPlaylist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlaylist`: PlaylistDto
+	// response from `GetPlaylist`: JellyfinJellyfinPlaylistDto
 	fmt.Fprintf(os.Stdout, "Response from `PlaylistsAPI.GetPlaylist`: %v\n", resp)
 }
 ```
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistDto**](PlaylistDto.md)
+[**JellyfinJellyfinPlaylistDto**](JellyfinPlaylistDto.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ## GetPlaylistItems
 
-> BaseItemDtoQueryResult GetPlaylistItems(ctx, playlistId).UserId(userId).StartIndex(startIndex).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetPlaylistItems(ctx, playlistId).UserId(userId).StartIndex(startIndex).Limit(limit).Fields(fields).EnableImages(enableImages).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Execute()
 
 Gets the original items of a playlist.
 
@@ -253,11 +253,11 @@ func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User id. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	enableImages := true // bool | Optional. Include image information in output. (optional)
 	enableUserData := true // bool | Optional. Include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional. The max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -266,7 +266,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.GetPlaylistItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlaylistItems`: BaseItemDtoQueryResult
+	// response from `GetPlaylistItems`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `PlaylistsAPI.GetPlaylistItems`: %v\n", resp)
 }
 ```
@@ -290,15 +290,15 @@ Name | Type | Description  | Notes
  **userId** | **string** | User id. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **enableImages** | **bool** | Optional. Include image information in output. | 
  **enableUserData** | **bool** | Optional. Include user data. | 
  **imageTypeLimit** | **int32** | Optional. The max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ## GetPlaylistUser
 
-> PlaylistUserPermissions GetPlaylistUser(ctx, playlistId, userId).Execute()
+> JellyfinJellyfinPlaylistUserPermissions GetPlaylistUser(ctx, playlistId, userId).Execute()
 
 Get a playlist user.
 
@@ -343,7 +343,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.GetPlaylistUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlaylistUser`: PlaylistUserPermissions
+	// response from `GetPlaylistUser`: JellyfinJellyfinPlaylistUserPermissions
 	fmt.Fprintf(os.Stdout, "Response from `PlaylistsAPI.GetPlaylistUser`: %v\n", resp)
 }
 ```
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaylistUserPermissions**](PlaylistUserPermissions.md)
+[**JellyfinJellyfinPlaylistUserPermissions**](JellyfinPlaylistUserPermissions.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ## GetPlaylistUsers
 
-> []PlaylistUserPermissions GetPlaylistUsers(ctx, playlistId).Execute()
+> []JellyfinJellyfinPlaylistUserPermissions GetPlaylistUsers(ctx, playlistId).Execute()
 
 Get a playlist's users.
 
@@ -413,7 +413,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.GetPlaylistUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlaylistUsers`: []PlaylistUserPermissions
+	// response from `GetPlaylistUsers`: []JellyfinJellyfinPlaylistUserPermissions
 	fmt.Fprintf(os.Stdout, "Response from `PlaylistsAPI.GetPlaylistUsers`: %v\n", resp)
 }
 ```
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]PlaylistUserPermissions**](PlaylistUserPermissions.md)
+[**[]JellyfinJellyfinPlaylistUserPermissions**](JellyfinPlaylistUserPermissions.md)
 
 ### Authorization
 
@@ -664,7 +664,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePlaylist
 
-> UpdatePlaylist(ctx, playlistId).UpdatePlaylistDto(updatePlaylistDto).Execute()
+> UpdatePlaylist(ctx, playlistId).JellyfinUpdatePlaylistDto(jellyfinUpdatePlaylistDto).Execute()
 
 Updates a playlist.
 
@@ -682,11 +682,11 @@ import (
 
 func main() {
 	playlistId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The playlist id.
-	updatePlaylistDto := *openapiclient.NewUpdatePlaylistDto() // UpdatePlaylistDto | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id.
+	jellyfinUpdatePlaylistDto := *openapiclient.NewJellyfinUpdatePlaylistDto() // JellyfinUpdatePlaylistDto | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PlaylistsAPI.UpdatePlaylist(context.Background(), playlistId).UpdatePlaylistDto(updatePlaylistDto).Execute()
+	r, err := apiClient.PlaylistsAPI.UpdatePlaylist(context.Background(), playlistId).JellyfinUpdatePlaylistDto(jellyfinUpdatePlaylistDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.UpdatePlaylist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -710,7 +710,7 @@ Other parameters are passed through a pointer to a apiUpdatePlaylistRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **updatePlaylistDto** | [**UpdatePlaylistDto**](UpdatePlaylistDto.md) | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id. | 
+ **jellyfinUpdatePlaylistDto** | [**JellyfinUpdatePlaylistDto**](JellyfinUpdatePlaylistDto.md) | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id. | 
 
 ### Return type
 
@@ -732,7 +732,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePlaylistUser
 
-> UpdatePlaylistUser(ctx, playlistId, userId).UpdatePlaylistUserDto(updatePlaylistUserDto).Execute()
+> UpdatePlaylistUser(ctx, playlistId, userId).JellyfinUpdatePlaylistUserDto(jellyfinUpdatePlaylistUserDto).Execute()
 
 Modify a user of a playlist's users.
 
@@ -751,11 +751,11 @@ import (
 func main() {
 	playlistId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The playlist id.
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The user id.
-	updatePlaylistUserDto := *openapiclient.NewUpdatePlaylistUserDto() // UpdatePlaylistUserDto | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto.
+	jellyfinUpdatePlaylistUserDto := *openapiclient.NewJellyfinUpdatePlaylistUserDto() // JellyfinUpdatePlaylistUserDto | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PlaylistsAPI.UpdatePlaylistUser(context.Background(), playlistId, userId).UpdatePlaylistUserDto(updatePlaylistUserDto).Execute()
+	r, err := apiClient.PlaylistsAPI.UpdatePlaylistUser(context.Background(), playlistId, userId).JellyfinUpdatePlaylistUserDto(jellyfinUpdatePlaylistUserDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PlaylistsAPI.UpdatePlaylistUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -781,7 +781,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **updatePlaylistUserDto** | [**UpdatePlaylistUserDto**](UpdatePlaylistUserDto.md) | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto. | 
+ **jellyfinUpdatePlaylistUserDto** | [**JellyfinUpdatePlaylistUserDto**](JellyfinUpdatePlaylistUserDto.md) | The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto. | 
 
 ### Return type
 

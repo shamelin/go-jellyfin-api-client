@@ -35460,12 +35460,6 @@ components:
     AccessSchedule:
       additionalProperties: false
       description: An entity representing a user's access schedule.
-      example:
-        DayOfWeek: Sunday
-        StartHour: 1.4658129805029452
-        UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        EndHour: 5.962133916683182
-        Id: 6
       properties:
         Id:
           description: Gets the id of this instance.
@@ -35769,8 +35763,6 @@ components:
     AddVirtualFolderDto:
       additionalProperties: false
       description: Add virtual folder dto.
-      example:
-        LibraryOptions: ""
       properties:
         LibraryOptions:
           allOf:
@@ -35845,11 +35837,6 @@ components:
       type: object
     AlbumInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -35946,11 +35933,6 @@ components:
       type: object
     ArtistInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -35978,9 +35960,6 @@ components:
     AuthenticateUserByName:
       additionalProperties: false
       description: The authenticate user by name request body.
-      example:
-        Username: Username
-        Pw: Pw
       properties:
         Username:
           description: Gets or sets the username.
@@ -39593,11 +39572,6 @@ components:
       type: object
     BookInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -39667,11 +39641,6 @@ components:
       type: object
     BoxSetInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -39712,11 +39681,6 @@ components:
     BufferRequestDto:
       additionalProperties: false
       description: Class BufferRequestDto.
-      example:
-        When: 2000-01-23T04:56:07.000+00:00
-        PositionTicks: 0
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsPlaying: true
       properties:
         When:
           description: Gets or sets when the request has been made by the client.
@@ -39932,18 +39896,6 @@ components:
     ClientCapabilitiesDto:
       additionalProperties: false
       description: Client capabilities dto.
-      example:
-        IconUrl: IconUrl
-        DeviceProfile: ""
-        PlayableMediaTypes:
-        - Unknown
-        - Unknown
-        SupportedCommands:
-        - MoveUp
-        - MoveUp
-        SupportsMediaControl: true
-        SupportsPersistentIdentifier: true
-        AppStoreUrl: AppStoreUrl
       properties:
         PlayableMediaTypes:
           description: Gets or sets the list of playable media types.
@@ -40222,19 +40174,6 @@ components:
     CreatePlaylistDto:
       additionalProperties: false
       description: Create new playlist dto.
-      example:
-        UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsPublic: true
-        Ids:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        MediaType: Unknown
-        Users:
-        - UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          CanEdit: true
-        - UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          CanEdit: true
-        Name: Name
       properties:
         Name:
           description: Gets or sets the name of the new playlist.
@@ -40274,9 +40213,6 @@ components:
     CreateUserByName:
       additionalProperties: false
       description: The create user by name request body.
-      example:
-        Name: Name
-        Password: Password
       properties:
         Name:
           description: Gets or sets the username.
@@ -41206,8 +41142,6 @@ components:
     ForgotPasswordDto:
       additionalProperties: false
       description: Forgot Password request body DTO.
-      example:
-        EnteredUsername: EnteredUsername
       properties:
         EnteredUsername:
           description: Gets or sets the entered username to have its password reset.
@@ -41218,8 +41152,6 @@ components:
     ForgotPasswordPinDto:
       additionalProperties: false
       description: Forgot Password Pin enter request body DTO.
-      example:
-        Pin: Pin
       properties:
         Pin:
           description: Gets or sets the entered pin to have the password reset.
@@ -41255,11 +41187,6 @@ components:
       type: object
     GeneralCommand:
       additionalProperties: false
-      example:
-        Arguments:
-          key: Arguments
-        Name: MoveUp
-        ControllingUserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         Name:
           allOf:
@@ -41426,48 +41353,6 @@ components:
     GetProgramsDto:
       additionalProperties: false
       description: Get programs dto.
-      example:
-        EnableUserData: true
-        SortBy:
-        - Default
-        - Default
-        EnableTotalRecordCount: true
-        LibrarySeriesId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsAiring: true
-        IsSports: true
-        ImageTypeLimit: 1
-        MaxStartDate: 2000-01-23T04:56:07.000+00:00
-        EnableImageTypes:
-        - Primary
-        - Primary
-        IsMovie: true
-        MinStartDate: 2000-01-23T04:56:07.000+00:00
-        MinEndDate: 2000-01-23T04:56:07.000+00:00
-        Genres:
-        - Genres
-        - Genres
-        HasAired: true
-        IsKids: true
-        StartIndex: 0
-        GenreIds:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsSeries: true
-        SortOrder:
-        - Ascending
-        - Ascending
-        ChannelIds:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        MaxEndDate: 2000-01-23T04:56:07.000+00:00
-        Fields:
-        - AirTime
-        - AirTime
-        UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsNews: true
-        Limit: 6
-        EnableImages: true
-        SeriesTimerId: SeriesTimerId
       properties:
         ChannelIds:
           description: Gets or sets the channels to return guide information for.
@@ -41865,8 +41750,6 @@ components:
     IgnoreWaitRequestDto:
       additionalProperties: false
       description: Class IgnoreWaitRequestDto.
-      example:
-        IgnoreWait: true
       properties:
         IgnoreWait:
           description: Gets or sets a value indicating whether the client should be
@@ -42385,8 +42268,6 @@ components:
     JoinGroupRequestDto:
       additionalProperties: false
       description: Class JoinGroupRequestDto.
-      example:
-        GroupId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         GroupId:
           description: Gets or sets the group identifier.
@@ -43237,10 +43118,6 @@ components:
     MediaPathDto:
       additionalProperties: false
       description: Media Path dto.
-      example:
-        Path: Path
-        PathInfo: ""
-        Name: Name
       properties:
         Name:
           description: Gets or sets the name of the library.
@@ -44154,12 +44031,6 @@ components:
     MediaUpdateInfoDto:
       additionalProperties: false
       description: Media Update Info Dto.
-      example:
-        Updates:
-        - Path: Path
-          UpdateType: UpdateType
-        - Path: Path
-          UpdateType: UpdateType
       properties:
         Updates:
           description: Gets or sets the list of updates.
@@ -44170,9 +44041,6 @@ components:
     MediaUpdateInfoPathDto:
       additionalProperties: false
       description: The media update info path.
-      example:
-        Path: Path
-        UpdateType: UpdateType
       properties:
         Path:
           description: Gets or sets media path.
@@ -44198,10 +44066,6 @@ components:
       type: object
     MessageCommand:
       additionalProperties: false
-      example:
-        Header: Header
-        TimeoutMs: 0
-        Text: Text
       properties:
         Header:
           nullable: true
@@ -44390,9 +44254,6 @@ components:
     MovePlaylistItemRequestDto:
       additionalProperties: false
       description: Class MovePlaylistItemRequestDto.
-      example:
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        NewIndex: 0
       properties:
         PlaylistItemId:
           description: Gets or sets the playlist identifier of the item.
@@ -44455,11 +44316,6 @@ components:
       type: object
     MovieInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -44534,11 +44390,6 @@ components:
       type: object
     MusicVideoInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -44709,8 +44560,6 @@ components:
     NewGroupRequestDto:
       additionalProperties: false
       description: Class NewGroupRequestDto.
-      example:
-        GroupName: GroupName
       properties:
         GroupName:
           description: Gets or sets the group name.
@@ -44719,8 +44568,6 @@ components:
     NextItemRequestDto:
       additionalProperties: false
       description: Class NextItemRequestDto.
-      example:
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         PlaylistItemId:
           description: Gets or sets the playing item identifier.
@@ -44730,23 +44577,6 @@ components:
     OpenLiveStreamDto:
       additionalProperties: false
       description: Open live stream dto.
-      example:
-        DirectPlayProtocols:
-        - File
-        - File
-        EnableDirectStream: true
-        AlwaysBurnInSubtitleWhenTranscoding: true
-        SubtitleStreamIndex: 5
-        MaxAudioChannels: 5
-        MaxStreamingBitrate: 0
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        OpenToken: OpenToken
-        StartTimeTicks: 6
-        DeviceProfile: ""
-        PlaySessionId: PlaySessionId
-        UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        AudioStreamIndex: 1
-        EnableDirectPlay: true
       properties:
         OpenToken:
           description: Gets or sets the open token.
@@ -45104,11 +44934,6 @@ components:
       type: object
     PersonLookupInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -45129,8 +44954,6 @@ components:
     PingRequestDto:
       additionalProperties: false
       description: Class PingRequestDto.
-      example:
-        Ping: 0
       properties:
         Ping:
           description: Gets or sets the ping time.
@@ -45169,23 +44992,6 @@ components:
     PlaybackInfoDto:
       additionalProperties: false
       description: Plabyback info dto.
-      example:
-        EnableDirectStream: true
-        AutoOpenLiveStream: true
-        MediaSourceId: MediaSourceId
-        AlwaysBurnInSubtitleWhenTranscoding: true
-        SubtitleStreamIndex: 5
-        MaxAudioChannels: 5
-        MaxStreamingBitrate: 0
-        AllowVideoStreamCopy: true
-        StartTimeTicks: 6
-        DeviceProfile: ""
-        UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        AudioStreamIndex: 1
-        AllowAudioStreamCopy: true
-        LiveStreamId: LiveStreamId
-        EnableTranscoding: true
-        EnableDirectPlay: true
       properties:
         UserId:
           description: Gets or sets the playback userId.
@@ -45676,32 +45482,6 @@ components:
     PlaybackProgressInfo:
       additionalProperties: false
       description: Class PlaybackProgressInfo.
-      example:
-        Brightness: 2
-        PositionTicks: 1
-        PlaybackOrder: Default
-        MediaSourceId: MediaSourceId
-        NowPlayingQueue:
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        PlaylistItemId: PlaylistItemId
-        IsPaused: true
-        SubtitleStreamIndex: 6
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        Item: ""
-        AspectRatio: AspectRatio
-        RepeatMode: RepeatNone
-        PlaySessionId: PlaySessionId
-        CanSeek: true
-        PlaybackStartTimeTicks: 5
-        PlayMethod: Transcode
-        AudioStreamIndex: 0
-        IsMuted: true
-        VolumeLevel: 5
-        LiveStreamId: LiveStreamId
-        SessionId: SessionId
       properties:
         CanSeek:
           description: Gets or sets a value indicating whether this instance can seek.
@@ -45827,32 +45607,6 @@ components:
     PlaybackStartInfo:
       additionalProperties: false
       description: Class PlaybackStartInfo.
-      example:
-        Brightness: 2
-        PositionTicks: 1
-        PlaybackOrder: Default
-        MediaSourceId: MediaSourceId
-        NowPlayingQueue:
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        PlaylistItemId: PlaylistItemId
-        IsPaused: true
-        SubtitleStreamIndex: 6
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        Item: ""
-        AspectRatio: AspectRatio
-        RepeatMode: RepeatNone
-        PlaySessionId: PlaySessionId
-        CanSeek: true
-        PlaybackStartTimeTicks: 5
-        PlayMethod: Transcode
-        AudioStreamIndex: 0
-        IsMuted: true
-        VolumeLevel: 5
-        LiveStreamId: LiveStreamId
-        SessionId: SessionId
       properties:
         CanSeek:
           description: Gets or sets a value indicating whether this instance can seek.
@@ -45957,22 +45711,6 @@ components:
     PlaybackStopInfo:
       additionalProperties: false
       description: Class PlaybackStopInfo.
-      example:
-        Item: ""
-        PlaySessionId: PlaySessionId
-        PositionTicks: 0
-        Failed: true
-        MediaSourceId: MediaSourceId
-        LiveStreamId: LiveStreamId
-        PlaylistItemId: PlaylistItemId
-        NowPlayingQueue:
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - PlaylistItemId: PlaylistItemId
-          Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        SessionId: SessionId
-        NextMediaType: NextMediaType
       properties:
         Item:
           allOf:
@@ -46367,12 +46105,6 @@ components:
     PlayRequestDto:
       additionalProperties: false
       description: Class PlayRequestDto.
-      example:
-        PlayingQueue:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        StartPositionTicks: 6
-        PlayingItemPosition: 0
       properties:
         PlayingQueue:
           description: Gets or sets the playing queue.
@@ -46838,8 +46570,6 @@ components:
     PreviousItemRequestDto:
       additionalProperties: false
       description: Class PreviousItemRequestDto.
-      example:
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         PlaylistItemId:
           description: Gets or sets the playing item identifier.
@@ -47093,11 +46823,6 @@ components:
     QueueRequestDto:
       additionalProperties: false
       description: Class QueueRequestDto.
-      example:
-        Mode: Queue
-        ItemIds:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         ItemIds:
           description: Gets or sets the items to enqueue.
@@ -47117,8 +46842,6 @@ components:
     QuickConnectDto:
       additionalProperties: false
       description: The quick connect request body.
-      example:
-        Secret: Secret
       properties:
         Secret:
           description: Gets or sets the quick connect secret.
@@ -47175,11 +46898,6 @@ components:
     ReadyRequestDto:
       additionalProperties: false
       description: Class ReadyRequest.
-      example:
-        When: 2000-01-23T04:56:07.000+00:00
-        PositionTicks: 0
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        IsPlaying: true
       properties:
         When:
           description: Gets or sets when the request has been made by the client.
@@ -49218,12 +48936,6 @@ components:
     RemoveFromPlaylistRequestDto:
       additionalProperties: false
       description: Class RemoveFromPlaylistRequestDto.
-      example:
-        ClearPlayingItem: true
-        PlaylistItemIds:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        ClearPlaylist: true
       properties:
         PlaylistItemIds:
           description: Gets or sets the playlist identifiers of the items. Ignored
@@ -49834,8 +49546,6 @@ components:
     SeekRequestDto:
       additionalProperties: false
       description: Class SeekRequestDto.
-      example:
-        PositionTicks: 0
       properties:
         PositionTicks:
           description: Gets or sets the position ticks.
@@ -49938,11 +49648,6 @@ components:
       type: object
     SeriesInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -52873,10 +52578,6 @@ components:
     SetChannelMappingDto:
       additionalProperties: false
       description: Set channel mapping dto.
-      example:
-        ProviderId: ProviderId
-        ProviderChannelId: ProviderChannelId
-        TunerChannelId: TunerChannelId
       properties:
         ProviderId:
           description: Gets or sets the provider id.
@@ -52895,8 +52596,6 @@ components:
     SetPlaylistItemRequestDto:
       additionalProperties: false
       description: Class SetPlaylistItemRequestDto.
-      example:
-        PlaylistItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         PlaylistItemId:
           description: Gets or sets the playlist identifier of the playing item.
@@ -52906,8 +52605,6 @@ components:
     SetRepeatModeRequestDto:
       additionalProperties: false
       description: Class SetRepeatModeRequestDto.
-      example:
-        Mode: RepeatOne
       properties:
         Mode:
           allOf:
@@ -52922,8 +52619,6 @@ components:
     SetShuffleModeRequestDto:
       additionalProperties: false
       description: Class SetShuffleModeRequestDto.
-      example:
-        Mode: Sorted
       properties:
         Mode:
           allOf:
@@ -53043,9 +52738,6 @@ components:
     StartupRemoteAccessDto:
       additionalProperties: false
       description: Startup remote access dto.
-      example:
-        EnableAutomaticPortMapping: true
-        EnableRemoteAccess: true
       properties:
         EnableRemoteAccess:
           description: Gets or sets a value indicating whether enable remote access.
@@ -55760,11 +55452,6 @@ components:
       type: object
     TrailerInfoRemoteSearchQuery:
       additionalProperties: false
-      example:
-        SearchInfo: ""
-        IncludeDisabledProviders: true
-        SearchProviderName: SearchProviderName
-        ItemId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         SearchInfo:
           allOf:
@@ -56269,9 +55956,6 @@ components:
     UpdateLibraryOptionsDto:
       additionalProperties: false
       description: Update library options dto.
-      example:
-        LibraryOptions: ""
-        Id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         Id:
           description: Gets or sets the library item id.
@@ -56286,9 +55970,6 @@ components:
     UpdateMediaPathRequestDto:
       additionalProperties: false
       description: Update library options dto.
-      example:
-        PathInfo: ""
-        Name: Name
       properties:
         Name:
           description: Gets or sets the library name.
@@ -56305,17 +55986,6 @@ components:
       additionalProperties: false
       description: Update existing playlist dto. Fields set to `null` will not be
         updated and keep their current values.
-      example:
-        IsPublic: true
-        Ids:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        Users:
-        - UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          CanEdit: true
-        - UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          CanEdit: true
-        Name: Name
       properties:
         Name:
           description: Gets or sets the name of the new playlist.
@@ -56343,8 +56013,6 @@ components:
       additionalProperties: false
       description: Update existing playlist user dto. Fields set to `null` will not
         be updated and keep their current values.
-      example:
-        CanEdit: true
       properties:
         CanEdit:
           description: Gets or sets a value indicating whether the user can edit the
@@ -56355,18 +56023,6 @@ components:
     UpdateUserItemDataDto:
       additionalProperties: false
       description: This is used by the api to get information about a item user data.
-      example:
-        UnplayedItemCount: 1
-        Played: true
-        PlayedPercentage: 6.027456183070403
-        Rating: 0.8008281904610115
-        PlayCount: 5
-        PlaybackPositionTicks: 5
-        LastPlayedDate: 2000-01-23T04:56:07.000+00:00
-        Likes: true
-        IsFavorite: true
-        ItemId: ItemId
-        Key: Key
       properties:
         Rating:
           description: Gets or sets the rating.
@@ -56424,11 +56080,6 @@ components:
     UpdateUserPassword:
       additionalProperties: false
       description: The update user password request body.
-      example:
-        ResetPassword: true
-        CurrentPw: CurrentPw
-        CurrentPassword: CurrentPassword
-        NewPw: NewPw
       properties:
         CurrentPassword:
           description: Gets or sets the current sha1-hashed password.
@@ -56449,12 +56100,6 @@ components:
     UploadSubtitleDto:
       additionalProperties: false
       description: Upload subtitles dto.
-      example:
-        IsHearingImpaired: true
-        Format: Format
-        Language: Language
-        IsForced: true
-        Data: Data
       properties:
         Language:
           description: Gets or sets the subtitle language.
@@ -56482,31 +56127,6 @@ components:
     UserConfiguration:
       additionalProperties: false
       description: Class UserConfiguration.
-      example:
-        EnableNextEpisodeAutoPlay: true
-        SubtitleLanguagePreference: SubtitleLanguagePreference
-        DisplayMissingEpisodes: true
-        CastReceiverId: CastReceiverId
-        OrderedViews:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        LatestItemsExcludes:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        SubtitleMode: Default
-        HidePlayedInLatest: true
-        EnableLocalPassword: true
-        RememberSubtitleSelections: true
-        AudioLanguagePreference: AudioLanguagePreference
-        DisplayCollectionsView: true
-        PlayDefaultAudioTrack: true
-        GroupedFolders:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        MyMediaExcludes:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        RememberAudioSelections: true
       properties:
         AudioLanguagePreference:
           description: Gets or sets the audio language preference.
@@ -56845,78 +56465,6 @@ components:
       type: object
     UserPolicy:
       additionalProperties: false
-      example:
-        EnableContentDeletion: true
-        EnableContentDeletionFromFolders:
-        - EnableContentDeletionFromFolders
-        - EnableContentDeletionFromFolders
-        EnablePlaybackRemuxing: true
-        EnabledFolders:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        BlockedMediaFolders:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        LoginAttemptsBeforeLockout: 2
-        IsDisabled: true
-        MaxParentalRating: 0
-        EnablePublicSharing: true
-        AccessSchedules:
-        - DayOfWeek: Sunday
-          StartHour: 1.4658129805029452
-          UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          EndHour: 5.962133916683182
-          Id: 6
-        - DayOfWeek: Sunday
-          StartHour: 1.4658129805029452
-          UserId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          EndHour: 5.962133916683182
-          Id: 6
-        ForceRemoteSourceTranscoding: true
-        EnableContentDownloading: true
-        SyncPlayAccess: CreateAndJoinGroups
-        EnableSubtitleManagement: false
-        IsAdministrator: true
-        BlockedChannels:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        EnableAllDevices: true
-        EnabledChannels:
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        MaxActiveSessions: 7
-        EnableLyricManagement: false
-        EnableCollectionManagement: false
-        AllowedTags:
-        - AllowedTags
-        - AllowedTags
-        EnableMediaConversion: true
-        InvalidLoginAttemptCount: 5
-        EnableLiveTvAccess: true
-        EnableAllFolders: true
-        EnableSharedDeviceControl: true
-        EnableRemoteAccess: true
-        IsHidden: true
-        EnableLiveTvManagement: true
-        BlockUnratedItems:
-        - Movie
-        - Movie
-        EnableMediaPlayback: true
-        EnableVideoPlaybackTranscoding: true
-        EnableAllChannels: true
-        EnableUserPreferenceAccess: true
-        AuthenticationProviderId: AuthenticationProviderId
-        BlockedTags:
-        - BlockedTags
-        - BlockedTags
-        EnabledDevices:
-        - EnabledDevices
-        - EnabledDevices
-        EnableRemoteControlOfOtherUsers: true
-        PasswordResetProviderId: PasswordResetProviderId
-        EnableAudioPlaybackTranscoding: true
-        EnableSyncTranscoding: true
-        RemoteClientBitrateLimit: 9
       properties:
         IsAdministrator:
           description: Gets or sets a value indicating whether this instance is administrator.
@@ -57145,10 +56693,6 @@ components:
     ValidatePathDto:
       additionalProperties: false
       description: Validate path object.
-      example:
-        Path: Path
-        IsFile: true
-        ValidateWritable: true
       properties:
         ValidateWritable:
           description: Gets or sets a value indicating whether validate if path is

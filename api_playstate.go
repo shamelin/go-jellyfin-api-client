@@ -44,7 +44,7 @@ func (r ApiMarkPlayedItemRequest) DatePlayed(datePlayed time.Time) ApiMarkPlayed
 	return r
 }
 
-func (r ApiMarkPlayedItemRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiMarkPlayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkPlayedItemExecute(r)
 }
 
@@ -64,13 +64,13 @@ func (a *PlaystateAPIService) MarkPlayedItem(ctx context.Context, itemId string)
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *PlaystateAPIService) MarkPlayedItemExecute(r ApiMarkPlayedItemRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *PlaystateAPIService) MarkPlayedItemExecute(r ApiMarkPlayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaystateAPIService.MarkPlayedItem")
@@ -145,7 +145,7 @@ func (a *PlaystateAPIService) MarkPlayedItemExecute(r ApiMarkPlayedItemRequest) 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -183,7 +183,7 @@ func (r ApiMarkUnplayedItemRequest) UserId(userId string) ApiMarkUnplayedItemReq
 	return r
 }
 
-func (r ApiMarkUnplayedItemRequest) Execute() (*UserItemDataDto, *http.Response, error) {
+func (r ApiMarkUnplayedItemRequest) Execute() (*JellyfinUserItemDataDto, *http.Response, error) {
 	return r.ApiService.MarkUnplayedItemExecute(r)
 }
 
@@ -203,13 +203,13 @@ func (a *PlaystateAPIService) MarkUnplayedItem(ctx context.Context, itemId strin
 }
 
 // Execute executes the request
-//  @return UserItemDataDto
-func (a *PlaystateAPIService) MarkUnplayedItemExecute(r ApiMarkUnplayedItemRequest) (*UserItemDataDto, *http.Response, error) {
+//  @return JellyfinUserItemDataDto
+func (a *PlaystateAPIService) MarkUnplayedItemExecute(r ApiMarkUnplayedItemRequest) (*JellyfinUserItemDataDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *UserItemDataDto
+		localVarReturnValue  *JellyfinUserItemDataDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaystateAPIService.MarkUnplayedItem")
@@ -281,7 +281,7 @@ func (a *PlaystateAPIService) MarkUnplayedItemExecute(r ApiMarkUnplayedItemReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -315,10 +315,10 @@ type ApiOnPlaybackProgressRequest struct {
 	audioStreamIndex *int32
 	subtitleStreamIndex *int32
 	volumeLevel *int32
-	playMethod *PlayMethod
+	playMethod *JellyfinPlayMethod
 	liveStreamId *string
 	playSessionId *string
-	repeatMode *RepeatMode
+	repeatMode *JellyfinRepeatMode
 	isPaused *bool
 	isMuted *bool
 }
@@ -354,7 +354,7 @@ func (r ApiOnPlaybackProgressRequest) VolumeLevel(volumeLevel int32) ApiOnPlayba
 }
 
 // The play method.
-func (r ApiOnPlaybackProgressRequest) PlayMethod(playMethod PlayMethod) ApiOnPlaybackProgressRequest {
+func (r ApiOnPlaybackProgressRequest) PlayMethod(playMethod JellyfinPlayMethod) ApiOnPlaybackProgressRequest {
 	r.playMethod = &playMethod
 	return r
 }
@@ -372,7 +372,7 @@ func (r ApiOnPlaybackProgressRequest) PlaySessionId(playSessionId string) ApiOnP
 }
 
 // The repeat mode.
-func (r ApiOnPlaybackProgressRequest) RepeatMode(repeatMode RepeatMode) ApiOnPlaybackProgressRequest {
+func (r ApiOnPlaybackProgressRequest) RepeatMode(repeatMode JellyfinRepeatMode) ApiOnPlaybackProgressRequest {
 	r.repeatMode = &repeatMode
 	return r
 }
@@ -533,7 +533,7 @@ type ApiOnPlaybackStartRequest struct {
 	mediaSourceId *string
 	audioStreamIndex *int32
 	subtitleStreamIndex *int32
-	playMethod *PlayMethod
+	playMethod *JellyfinPlayMethod
 	liveStreamId *string
 	playSessionId *string
 	canSeek *bool
@@ -558,7 +558,7 @@ func (r ApiOnPlaybackStartRequest) SubtitleStreamIndex(subtitleStreamIndex int32
 }
 
 // The play method.
-func (r ApiOnPlaybackStartRequest) PlayMethod(playMethod PlayMethod) ApiOnPlaybackStartRequest {
+func (r ApiOnPlaybackStartRequest) PlayMethod(playMethod JellyfinPlayMethod) ApiOnPlaybackStartRequest {
 	r.playMethod = &playMethod
 	return r
 }
@@ -971,12 +971,12 @@ func (a *PlaystateAPIService) PingPlaybackSessionExecute(r ApiPingPlaybackSessio
 type ApiReportPlaybackProgressRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
-	playbackProgressInfo *PlaybackProgressInfo
+	jellyfinPlaybackProgressInfo *JellyfinPlaybackProgressInfo
 }
 
 // The playback progress info.
-func (r ApiReportPlaybackProgressRequest) PlaybackProgressInfo(playbackProgressInfo PlaybackProgressInfo) ApiReportPlaybackProgressRequest {
-	r.playbackProgressInfo = &playbackProgressInfo
+func (r ApiReportPlaybackProgressRequest) JellyfinPlaybackProgressInfo(jellyfinPlaybackProgressInfo JellyfinPlaybackProgressInfo) ApiReportPlaybackProgressRequest {
+	r.jellyfinPlaybackProgressInfo = &jellyfinPlaybackProgressInfo
 	return r
 }
 
@@ -1034,7 +1034,7 @@ func (a *PlaystateAPIService) ReportPlaybackProgressExecute(r ApiReportPlaybackP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.playbackProgressInfo
+	localVarPostBody = r.jellyfinPlaybackProgressInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1080,12 +1080,12 @@ func (a *PlaystateAPIService) ReportPlaybackProgressExecute(r ApiReportPlaybackP
 type ApiReportPlaybackStartRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
-	playbackStartInfo *PlaybackStartInfo
+	jellyfinPlaybackStartInfo *JellyfinPlaybackStartInfo
 }
 
 // The playback start info.
-func (r ApiReportPlaybackStartRequest) PlaybackStartInfo(playbackStartInfo PlaybackStartInfo) ApiReportPlaybackStartRequest {
-	r.playbackStartInfo = &playbackStartInfo
+func (r ApiReportPlaybackStartRequest) JellyfinPlaybackStartInfo(jellyfinPlaybackStartInfo JellyfinPlaybackStartInfo) ApiReportPlaybackStartRequest {
+	r.jellyfinPlaybackStartInfo = &jellyfinPlaybackStartInfo
 	return r
 }
 
@@ -1143,7 +1143,7 @@ func (a *PlaystateAPIService) ReportPlaybackStartExecute(r ApiReportPlaybackStar
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.playbackStartInfo
+	localVarPostBody = r.jellyfinPlaybackStartInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1189,12 +1189,12 @@ func (a *PlaystateAPIService) ReportPlaybackStartExecute(r ApiReportPlaybackStar
 type ApiReportPlaybackStoppedRequest struct {
 	ctx context.Context
 	ApiService *PlaystateAPIService
-	playbackStopInfo *PlaybackStopInfo
+	jellyfinPlaybackStopInfo *JellyfinPlaybackStopInfo
 }
 
 // The playback stop info.
-func (r ApiReportPlaybackStoppedRequest) PlaybackStopInfo(playbackStopInfo PlaybackStopInfo) ApiReportPlaybackStoppedRequest {
-	r.playbackStopInfo = &playbackStopInfo
+func (r ApiReportPlaybackStoppedRequest) JellyfinPlaybackStopInfo(jellyfinPlaybackStopInfo JellyfinPlaybackStopInfo) ApiReportPlaybackStoppedRequest {
+	r.jellyfinPlaybackStopInfo = &jellyfinPlaybackStopInfo
 	return r
 }
 
@@ -1252,7 +1252,7 @@ func (a *PlaystateAPIService) ReportPlaybackStoppedExecute(r ApiReportPlaybackSt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.playbackStopInfo
+	localVarPostBody = r.jellyfinPlaybackStopInfo
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -27,8 +27,8 @@ type ApiGetSuggestionsRequest struct {
 	ctx context.Context
 	ApiService *SuggestionsAPIService
 	userId *string
-	mediaType *[]MediaType
-	type_ *[]BaseItemKind
+	mediaType *[]JellyfinMediaType
+	type_ *[]JellyfinBaseItemKind
 	startIndex *int32
 	limit *int32
 	enableTotalRecordCount *bool
@@ -41,13 +41,13 @@ func (r ApiGetSuggestionsRequest) UserId(userId string) ApiGetSuggestionsRequest
 }
 
 // The media types.
-func (r ApiGetSuggestionsRequest) MediaType(mediaType []MediaType) ApiGetSuggestionsRequest {
+func (r ApiGetSuggestionsRequest) MediaType(mediaType []JellyfinMediaType) ApiGetSuggestionsRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The type.
-func (r ApiGetSuggestionsRequest) Type_(type_ []BaseItemKind) ApiGetSuggestionsRequest {
+func (r ApiGetSuggestionsRequest) Type_(type_ []JellyfinBaseItemKind) ApiGetSuggestionsRequest {
 	r.type_ = &type_
 	return r
 }
@@ -70,7 +70,7 @@ func (r ApiGetSuggestionsRequest) EnableTotalRecordCount(enableTotalRecordCount 
 	return r
 }
 
-func (r ApiGetSuggestionsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetSuggestionsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetSuggestionsExecute(r)
 }
 
@@ -88,13 +88,13 @@ func (a *SuggestionsAPIService) GetSuggestions(ctx context.Context) ApiGetSugges
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *SuggestionsAPIService) GetSuggestionsExecute(r ApiGetSuggestionsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *SuggestionsAPIService) GetSuggestionsExecute(r ApiGetSuggestionsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SuggestionsAPIService.GetSuggestions")

@@ -27,7 +27,7 @@ type ApiTmdbClientConfigurationRequest struct {
 	ApiService *TmdbAPIService
 }
 
-func (r ApiTmdbClientConfigurationRequest) Execute() (*ConfigImageTypes, *http.Response, error) {
+func (r ApiTmdbClientConfigurationRequest) Execute() (*JellyfinConfigImageTypes, *http.Response, error) {
 	return r.ApiService.TmdbClientConfigurationExecute(r)
 }
 
@@ -45,13 +45,13 @@ func (a *TmdbAPIService) TmdbClientConfiguration(ctx context.Context) ApiTmdbCli
 }
 
 // Execute executes the request
-//  @return ConfigImageTypes
-func (a *TmdbAPIService) TmdbClientConfigurationExecute(r ApiTmdbClientConfigurationRequest) (*ConfigImageTypes, *http.Response, error) {
+//  @return JellyfinConfigImageTypes
+func (a *TmdbAPIService) TmdbClientConfigurationExecute(r ApiTmdbClientConfigurationRequest) (*JellyfinConfigImageTypes, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ConfigImageTypes
+		localVarReturnValue  *JellyfinConfigImageTypes
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TmdbAPIService.TmdbClientConfiguration")

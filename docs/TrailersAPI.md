@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetTrailers
 
-> BaseItemDtoQueryResult GetTrailers(ctx).UserId(userId).MaxOfficialRating(maxOfficialRating).HasThemeSong(hasThemeSong).HasThemeVideo(hasThemeVideo).HasSubtitles(hasSubtitles).HasSpecialFeature(hasSpecialFeature).HasTrailer(hasTrailer).AdjacentTo(adjacentTo).ParentIndexNumber(parentIndexNumber).HasParentalRating(hasParentalRating).IsHd(isHd).Is4K(is4K).LocationTypes(locationTypes).ExcludeLocationTypes(excludeLocationTypes).IsMissing(isMissing).IsUnaired(isUnaired).MinCommunityRating(minCommunityRating).MinCriticRating(minCriticRating).MinPremiereDate(minPremiereDate).MinDateLastSaved(minDateLastSaved).MinDateLastSavedForUser(minDateLastSavedForUser).MaxPremiereDate(maxPremiereDate).HasOverview(hasOverview).HasImdbId(hasImdbId).HasTmdbId(hasTmdbId).HasTvdbId(hasTvdbId).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).ExcludeItemIds(excludeItemIds).StartIndex(startIndex).Limit(limit).Recursive(recursive).SearchTerm(searchTerm).SortOrder(sortOrder).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).ImageTypes(imageTypes).SortBy(sortBy).IsPlayed(isPlayed).Genres(genres).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).Artists(artists).ExcludeArtistIds(excludeArtistIds).ArtistIds(artistIds).AlbumArtistIds(albumArtistIds).ContributingArtistIds(contributingArtistIds).Albums(albums).AlbumIds(albumIds).Ids(ids).VideoTypes(videoTypes).MinOfficialRating(minOfficialRating).IsLocked(isLocked).IsPlaceHolder(isPlaceHolder).HasOfficialRating(hasOfficialRating).CollapseBoxSetItems(collapseBoxSetItems).MinWidth(minWidth).MinHeight(minHeight).MaxWidth(maxWidth).MaxHeight(maxHeight).Is3D(is3D).SeriesStatus(seriesStatus).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).StudioIds(studioIds).GenreIds(genreIds).EnableTotalRecordCount(enableTotalRecordCount).EnableImages(enableImages).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetTrailers(ctx).UserId(userId).MaxOfficialRating(maxOfficialRating).HasThemeSong(hasThemeSong).HasThemeVideo(hasThemeVideo).HasSubtitles(hasSubtitles).HasSpecialFeature(hasSpecialFeature).HasTrailer(hasTrailer).AdjacentTo(adjacentTo).ParentIndexNumber(parentIndexNumber).HasParentalRating(hasParentalRating).IsHd(isHd).Is4K(is4K).LocationTypes(locationTypes).ExcludeLocationTypes(excludeLocationTypes).IsMissing(isMissing).IsUnaired(isUnaired).MinCommunityRating(minCommunityRating).MinCriticRating(minCriticRating).MinPremiereDate(minPremiereDate).MinDateLastSaved(minDateLastSaved).MinDateLastSavedForUser(minDateLastSavedForUser).MaxPremiereDate(maxPremiereDate).HasOverview(hasOverview).HasImdbId(hasImdbId).HasTmdbId(hasTmdbId).HasTvdbId(hasTvdbId).IsMovie(isMovie).IsSeries(isSeries).IsNews(isNews).IsKids(isKids).IsSports(isSports).ExcludeItemIds(excludeItemIds).StartIndex(startIndex).Limit(limit).Recursive(recursive).SearchTerm(searchTerm).SortOrder(sortOrder).ParentId(parentId).Fields(fields).ExcludeItemTypes(excludeItemTypes).Filters(filters).IsFavorite(isFavorite).MediaTypes(mediaTypes).ImageTypes(imageTypes).SortBy(sortBy).IsPlayed(isPlayed).Genres(genres).OfficialRatings(officialRatings).Tags(tags).Years(years).EnableUserData(enableUserData).ImageTypeLimit(imageTypeLimit).EnableImageTypes(enableImageTypes).Person(person).PersonIds(personIds).PersonTypes(personTypes).Studios(studios).Artists(artists).ExcludeArtistIds(excludeArtistIds).ArtistIds(artistIds).AlbumArtistIds(albumArtistIds).ContributingArtistIds(contributingArtistIds).Albums(albums).AlbumIds(albumIds).Ids(ids).VideoTypes(videoTypes).MinOfficialRating(minOfficialRating).IsLocked(isLocked).IsPlaceHolder(isPlaceHolder).HasOfficialRating(hasOfficialRating).CollapseBoxSetItems(collapseBoxSetItems).MinWidth(minWidth).MinHeight(minHeight).MaxWidth(maxWidth).MaxHeight(maxHeight).Is3D(is3D).SeriesStatus(seriesStatus).NameStartsWithOrGreater(nameStartsWithOrGreater).NameStartsWith(nameStartsWith).NameLessThan(nameLessThan).StudioIds(studioIds).GenreIds(genreIds).EnableTotalRecordCount(enableTotalRecordCount).EnableImages(enableImages).Execute()
 
 Finds movies and trailers similar to a given trailer.
 
@@ -40,8 +40,8 @@ func main() {
 	hasParentalRating := true // bool | Optional filter by items that have or do not have a parental rating. (optional)
 	isHd := true // bool | Optional filter by items that are HD or not. (optional)
 	is4K := true // bool | Optional filter by items that are 4K or not. (optional)
-	locationTypes := []openapiclient.LocationType{openapiclient.LocationType("FileSystem")} // []LocationType | Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited. (optional)
-	excludeLocationTypes := []openapiclient.LocationType{openapiclient.LocationType("FileSystem")} // []LocationType | Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited. (optional)
+	locationTypes := []JellyfinJellyfinLocationType{"TODO"} // []JellyfinJellyfinLocationType | Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited. (optional)
+	excludeLocationTypes := []JellyfinJellyfinLocationType{"TODO"} // []JellyfinJellyfinLocationType | Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited. (optional)
 	isMissing := true // bool | Optional filter by items that are missing episodes or not. (optional)
 	isUnaired := true // bool | Optional filter by items that are unaired episodes or not. (optional)
 	minCommunityRating := float64(1.2) // float64 | Optional filter by minimum community rating. (optional)
@@ -64,15 +64,15 @@ func main() {
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
 	recursive := true // bool | When searching within folders, this determines whether or not the search will be recursive. true/false. (optional)
 	searchTerm := "searchTerm_example" // string | Optional. Filter based on a search term. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Sort Order - Ascending, Descending. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Sort Order - Ascending, Descending. (optional)
 	parentId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Specify this to localize the search to a specific item or folder. Omit to use the root. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines. (optional)
-	excludeItemTypes := []openapiclient.BaseItemKind{openapiclient.BaseItemKind("AggregateFolder")} // []BaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines. (optional)
+	excludeItemTypes := []JellyfinJellyfinBaseItemKind{"TODO"} // []JellyfinJellyfinBaseItemKind | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes. (optional)
 	isFavorite := true // bool | Optional filter by items that are marked as favorite, or not. (optional)
-	mediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
-	imageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	mediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | Optional filter by MediaType. Allows multiple, comma delimited. (optional)
+	imageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
 	isPlayed := true // bool | Optional filter by items that are played, or not. (optional)
 	genres := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. (optional)
 	officialRatings := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. (optional)
@@ -80,7 +80,7 @@ func main() {
 	years := []int32{int32(123)} // []int32 | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. (optional)
 	enableUserData := true // bool | Optional, include user data. (optional)
 	imageTypeLimit := int32(56) // int32 | Optional, the max number of images to return, per image type. (optional)
-	enableImageTypes := []openapiclient.ImageType{openapiclient.ImageType("Primary")} // []ImageType | Optional. The image types to include in the output. (optional)
+	enableImageTypes := []JellyfinJellyfinImageType{"TODO"} // []JellyfinJellyfinImageType | Optional. The image types to include in the output. (optional)
 	person := "person_example" // string | Optional. If specified, results will be filtered to include only those containing the specified person. (optional)
 	personIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered to include only those containing the specified person id. (optional)
 	personTypes := []string{"Inner_example"} // []string | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. (optional)
@@ -93,7 +93,7 @@ func main() {
 	albums := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimited. (optional)
 	albumIds := []string{"Inner_example"} // []string | Optional. If specified, results will be filtered based on album id. This allows multiple, pipe delimited. (optional)
 	ids := []string{"Inner_example"} // []string | Optional. If specific items are needed, specify a list of item id's to retrieve. This allows multiple, comma delimited. (optional)
-	videoTypes := []openapiclient.VideoType{openapiclient.VideoType("VideoFile")} // []VideoType | Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited. (optional)
+	videoTypes := []JellyfinJellyfinVideoType{"TODO"} // []JellyfinJellyfinVideoType | Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited. (optional)
 	minOfficialRating := "minOfficialRating_example" // string | Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). (optional)
 	isLocked := true // bool | Optional filter by items that are locked. (optional)
 	isPlaceHolder := true // bool | Optional filter by items that are placeholders. (optional)
@@ -104,7 +104,7 @@ func main() {
 	maxWidth := int32(56) // int32 | Optional. Filter by the maximum width of the item. (optional)
 	maxHeight := int32(56) // int32 | Optional. Filter by the maximum height of the item. (optional)
 	is3D := true // bool | Optional filter by items that are 3D, or not. (optional)
-	seriesStatus := []openapiclient.SeriesStatus{openapiclient.SeriesStatus("Continuing")} // []SeriesStatus | Optional filter by Series Status. Allows multiple, comma delimited. (optional)
+	seriesStatus := []JellyfinJellyfinSeriesStatus{"TODO"} // []JellyfinJellyfinSeriesStatus | Optional filter by Series Status. Allows multiple, comma delimited. (optional)
 	nameStartsWithOrGreater := "nameStartsWithOrGreater_example" // string | Optional filter by items whose name is sorted equally or greater than a given input string. (optional)
 	nameStartsWith := "nameStartsWith_example" // string | Optional filter by items whose name is sorted equally than a given input string. (optional)
 	nameLessThan := "nameLessThan_example" // string | Optional filter by items whose name is equally or lesser than a given input string. (optional)
@@ -120,7 +120,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TrailersAPI.GetTrailers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTrailers`: BaseItemDtoQueryResult
+	// response from `GetTrailers`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `TrailersAPI.GetTrailers`: %v\n", resp)
 }
 ```
@@ -148,8 +148,8 @@ Name | Type | Description  | Notes
  **hasParentalRating** | **bool** | Optional filter by items that have or do not have a parental rating. | 
  **isHd** | **bool** | Optional filter by items that are HD or not. | 
  **is4K** | **bool** | Optional filter by items that are 4K or not. | 
- **locationTypes** | [**[]LocationType**](LocationType.md) | Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited. | 
- **excludeLocationTypes** | [**[]LocationType**](LocationType.md) | Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited. | 
+ **locationTypes** | [**[]JellyfinJellyfinLocationType**](JellyfinLocationType.md) | Optional. If specified, results will be filtered based on LocationType. This allows multiple, comma delimited. | 
+ **excludeLocationTypes** | [**[]JellyfinJellyfinLocationType**](JellyfinLocationType.md) | Optional. If specified, results will be filtered based on the LocationType. This allows multiple, comma delimited. | 
  **isMissing** | **bool** | Optional filter by items that are missing episodes or not. | 
  **isUnaired** | **bool** | Optional filter by items that are unaired episodes or not. | 
  **minCommunityRating** | **float64** | Optional filter by minimum community rating. | 
@@ -172,15 +172,15 @@ Name | Type | Description  | Notes
  **limit** | **int32** | Optional. The maximum number of records to return. | 
  **recursive** | **bool** | When searching within folders, this determines whether or not the search will be recursive. true/false. | 
  **searchTerm** | **string** | Optional. Filter based on a search term. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Sort Order - Ascending, Descending. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Sort Order - Ascending, Descending. | 
  **parentId** | **string** | Specify this to localize the search to a specific item or folder. Omit to use the root. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines. | 
- **excludeItemTypes** | [**[]BaseItemKind**](BaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines. | 
+ **excludeItemTypes** | [**[]JellyfinJellyfinBaseItemKind**](JellyfinBaseItemKind.md) | Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. This allows multiple, comma delimited. Options: IsFolder, IsNotFolder, IsUnplayed, IsPlayed, IsFavorite, IsResumable, Likes, Dislikes. | 
  **isFavorite** | **bool** | Optional filter by items that are marked as favorite, or not. | 
- **mediaTypes** | [**[]MediaType**](MediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
- **imageTypes** | [**[]ImageType**](ImageType.md) | Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **mediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | Optional filter by MediaType. Allows multiple, comma delimited. | 
+ **imageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. If specified, results will be filtered based on those containing image types. This allows multiple, comma delimited. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
  **isPlayed** | **bool** | Optional filter by items that are played, or not. | 
  **genres** | **[]string** | Optional. If specified, results will be filtered based on genre. This allows multiple, pipe delimited. | 
  **officialRatings** | **[]string** | Optional. If specified, results will be filtered based on OfficialRating. This allows multiple, pipe delimited. | 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
  **years** | **[]int32** | Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited. | 
  **enableUserData** | **bool** | Optional, include user data. | 
  **imageTypeLimit** | **int32** | Optional, the max number of images to return, per image type. | 
- **enableImageTypes** | [**[]ImageType**](ImageType.md) | Optional. The image types to include in the output. | 
+ **enableImageTypes** | [**[]JellyfinJellyfinImageType**](JellyfinImageType.md) | Optional. The image types to include in the output. | 
  **person** | **string** | Optional. If specified, results will be filtered to include only those containing the specified person. | 
  **personIds** | **[]string** | Optional. If specified, results will be filtered to include only those containing the specified person id. | 
  **personTypes** | **[]string** | Optional. If specified, along with Person, results will be filtered to include only those containing the specified person and PersonType. Allows multiple, comma-delimited. | 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
  **albums** | **[]string** | Optional. If specified, results will be filtered based on album. This allows multiple, pipe delimited. | 
  **albumIds** | **[]string** | Optional. If specified, results will be filtered based on album id. This allows multiple, pipe delimited. | 
  **ids** | **[]string** | Optional. If specific items are needed, specify a list of item id&#39;s to retrieve. This allows multiple, comma delimited. | 
- **videoTypes** | [**[]VideoType**](VideoType.md) | Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited. | 
+ **videoTypes** | [**[]JellyfinJellyfinVideoType**](JellyfinVideoType.md) | Optional filter by VideoType (videofile, dvd, bluray, iso). Allows multiple, comma delimited. | 
  **minOfficialRating** | **string** | Optional filter by minimum official rating (PG, PG-13, TV-MA, etc). | 
  **isLocked** | **bool** | Optional filter by items that are locked. | 
  **isPlaceHolder** | **bool** | Optional filter by items that are placeholders. | 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
  **maxWidth** | **int32** | Optional. Filter by the maximum width of the item. | 
  **maxHeight** | **int32** | Optional. Filter by the maximum height of the item. | 
  **is3D** | **bool** | Optional filter by items that are 3D, or not. | 
- **seriesStatus** | [**[]SeriesStatus**](SeriesStatus.md) | Optional filter by Series Status. Allows multiple, comma delimited. | 
+ **seriesStatus** | [**[]JellyfinJellyfinSeriesStatus**](JellyfinSeriesStatus.md) | Optional filter by Series Status. Allows multiple, comma delimited. | 
  **nameStartsWithOrGreater** | **string** | Optional filter by items whose name is sorted equally or greater than a given input string. | 
  **nameStartsWith** | **string** | Optional filter by items whose name is sorted equally than a given input string. | 
  **nameLessThan** | **string** | Optional filter by items whose name is equally or lesser than a given input string. | 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

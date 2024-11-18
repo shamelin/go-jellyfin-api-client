@@ -25,12 +25,12 @@ type SyncPlayAPIService service
 type ApiSyncPlayBufferingRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	bufferRequestDto *BufferRequestDto
+	jellyfinBufferRequestDto *JellyfinBufferRequestDto
 }
 
 // The player status.
-func (r ApiSyncPlayBufferingRequest) BufferRequestDto(bufferRequestDto BufferRequestDto) ApiSyncPlayBufferingRequest {
-	r.bufferRequestDto = &bufferRequestDto
+func (r ApiSyncPlayBufferingRequest) JellyfinBufferRequestDto(jellyfinBufferRequestDto JellyfinBufferRequestDto) ApiSyncPlayBufferingRequest {
+	r.jellyfinBufferRequestDto = &jellyfinBufferRequestDto
 	return r
 }
 
@@ -69,8 +69,8 @@ func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.bufferRequestDto == nil {
-		return nil, reportError("bufferRequestDto is required and must be specified")
+	if r.jellyfinBufferRequestDto == nil {
+		return nil, reportError("jellyfinBufferRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -91,7 +91,7 @@ func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bufferRequestDto
+	localVarPostBody = r.jellyfinBufferRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -137,12 +137,12 @@ func (a *SyncPlayAPIService) SyncPlayBufferingExecute(r ApiSyncPlayBufferingRequ
 type ApiSyncPlayCreateGroupRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	newGroupRequestDto *NewGroupRequestDto
+	jellyfinNewGroupRequestDto *JellyfinNewGroupRequestDto
 }
 
 // The settings of the new group.
-func (r ApiSyncPlayCreateGroupRequest) NewGroupRequestDto(newGroupRequestDto NewGroupRequestDto) ApiSyncPlayCreateGroupRequest {
-	r.newGroupRequestDto = &newGroupRequestDto
+func (r ApiSyncPlayCreateGroupRequest) JellyfinNewGroupRequestDto(jellyfinNewGroupRequestDto JellyfinNewGroupRequestDto) ApiSyncPlayCreateGroupRequest {
+	r.jellyfinNewGroupRequestDto = &jellyfinNewGroupRequestDto
 	return r
 }
 
@@ -181,8 +181,8 @@ func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroup
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.newGroupRequestDto == nil {
-		return nil, reportError("newGroupRequestDto is required and must be specified")
+	if r.jellyfinNewGroupRequestDto == nil {
+		return nil, reportError("jellyfinNewGroupRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -203,7 +203,7 @@ func (a *SyncPlayAPIService) SyncPlayCreateGroupExecute(r ApiSyncPlayCreateGroup
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.newGroupRequestDto
+	localVarPostBody = r.jellyfinNewGroupRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -251,7 +251,7 @@ type ApiSyncPlayGetGroupsRequest struct {
 	ApiService *SyncPlayAPIService
 }
 
-func (r ApiSyncPlayGetGroupsRequest) Execute() ([]GroupInfoDto, *http.Response, error) {
+func (r ApiSyncPlayGetGroupsRequest) Execute() ([]JellyfinGroupInfoDto, *http.Response, error) {
 	return r.ApiService.SyncPlayGetGroupsExecute(r)
 }
 
@@ -269,13 +269,13 @@ func (a *SyncPlayAPIService) SyncPlayGetGroups(ctx context.Context) ApiSyncPlayG
 }
 
 // Execute executes the request
-//  @return []GroupInfoDto
-func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequest) ([]GroupInfoDto, *http.Response, error) {
+//  @return []JellyfinGroupInfoDto
+func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequest) ([]JellyfinGroupInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []GroupInfoDto
+		localVarReturnValue  []JellyfinGroupInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SyncPlayAPIService.SyncPlayGetGroups")
@@ -360,12 +360,12 @@ func (a *SyncPlayAPIService) SyncPlayGetGroupsExecute(r ApiSyncPlayGetGroupsRequ
 type ApiSyncPlayJoinGroupRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	joinGroupRequestDto *JoinGroupRequestDto
+	jellyfinJoinGroupRequestDto *JellyfinJoinGroupRequestDto
 }
 
 // The group to join.
-func (r ApiSyncPlayJoinGroupRequest) JoinGroupRequestDto(joinGroupRequestDto JoinGroupRequestDto) ApiSyncPlayJoinGroupRequest {
-	r.joinGroupRequestDto = &joinGroupRequestDto
+func (r ApiSyncPlayJoinGroupRequest) JellyfinJoinGroupRequestDto(jellyfinJoinGroupRequestDto JellyfinJoinGroupRequestDto) ApiSyncPlayJoinGroupRequest {
+	r.jellyfinJoinGroupRequestDto = &jellyfinJoinGroupRequestDto
 	return r
 }
 
@@ -404,8 +404,8 @@ func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.joinGroupRequestDto == nil {
-		return nil, reportError("joinGroupRequestDto is required and must be specified")
+	if r.jellyfinJoinGroupRequestDto == nil {
+		return nil, reportError("jellyfinJoinGroupRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -426,7 +426,7 @@ func (a *SyncPlayAPIService) SyncPlayJoinGroupExecute(r ApiSyncPlayJoinGroupRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.joinGroupRequestDto
+	localVarPostBody = r.jellyfinJoinGroupRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -572,12 +572,12 @@ func (a *SyncPlayAPIService) SyncPlayLeaveGroupExecute(r ApiSyncPlayLeaveGroupRe
 type ApiSyncPlayMovePlaylistItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	movePlaylistItemRequestDto *MovePlaylistItemRequestDto
+	jellyfinMovePlaylistItemRequestDto *JellyfinMovePlaylistItemRequestDto
 }
 
 // The new position for the item.
-func (r ApiSyncPlayMovePlaylistItemRequest) MovePlaylistItemRequestDto(movePlaylistItemRequestDto MovePlaylistItemRequestDto) ApiSyncPlayMovePlaylistItemRequest {
-	r.movePlaylistItemRequestDto = &movePlaylistItemRequestDto
+func (r ApiSyncPlayMovePlaylistItemRequest) JellyfinMovePlaylistItemRequestDto(jellyfinMovePlaylistItemRequestDto JellyfinMovePlaylistItemRequestDto) ApiSyncPlayMovePlaylistItemRequest {
+	r.jellyfinMovePlaylistItemRequestDto = &jellyfinMovePlaylistItemRequestDto
 	return r
 }
 
@@ -616,8 +616,8 @@ func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.movePlaylistItemRequestDto == nil {
-		return nil, reportError("movePlaylistItemRequestDto is required and must be specified")
+	if r.jellyfinMovePlaylistItemRequestDto == nil {
+		return nil, reportError("jellyfinMovePlaylistItemRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -638,7 +638,7 @@ func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePl
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.movePlaylistItemRequestDto
+	localVarPostBody = r.jellyfinMovePlaylistItemRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -684,12 +684,12 @@ func (a *SyncPlayAPIService) SyncPlayMovePlaylistItemExecute(r ApiSyncPlayMovePl
 type ApiSyncPlayNextItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	nextItemRequestDto *NextItemRequestDto
+	jellyfinNextItemRequestDto *JellyfinNextItemRequestDto
 }
 
 // The current item information.
-func (r ApiSyncPlayNextItemRequest) NextItemRequestDto(nextItemRequestDto NextItemRequestDto) ApiSyncPlayNextItemRequest {
-	r.nextItemRequestDto = &nextItemRequestDto
+func (r ApiSyncPlayNextItemRequest) JellyfinNextItemRequestDto(jellyfinNextItemRequestDto JellyfinNextItemRequestDto) ApiSyncPlayNextItemRequest {
+	r.jellyfinNextItemRequestDto = &jellyfinNextItemRequestDto
 	return r
 }
 
@@ -728,8 +728,8 @@ func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.nextItemRequestDto == nil {
-		return nil, reportError("nextItemRequestDto is required and must be specified")
+	if r.jellyfinNextItemRequestDto == nil {
+		return nil, reportError("jellyfinNextItemRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -750,7 +750,7 @@ func (a *SyncPlayAPIService) SyncPlayNextItemExecute(r ApiSyncPlayNextItemReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.nextItemRequestDto
+	localVarPostBody = r.jellyfinNextItemRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -896,12 +896,12 @@ func (a *SyncPlayAPIService) SyncPlayPauseExecute(r ApiSyncPlayPauseRequest) (*h
 type ApiSyncPlayPingRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	pingRequestDto *PingRequestDto
+	jellyfinPingRequestDto *JellyfinPingRequestDto
 }
 
 // The new ping.
-func (r ApiSyncPlayPingRequest) PingRequestDto(pingRequestDto PingRequestDto) ApiSyncPlayPingRequest {
-	r.pingRequestDto = &pingRequestDto
+func (r ApiSyncPlayPingRequest) JellyfinPingRequestDto(jellyfinPingRequestDto JellyfinPingRequestDto) ApiSyncPlayPingRequest {
+	r.jellyfinPingRequestDto = &jellyfinPingRequestDto
 	return r
 }
 
@@ -940,8 +940,8 @@ func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pingRequestDto == nil {
-		return nil, reportError("pingRequestDto is required and must be specified")
+	if r.jellyfinPingRequestDto == nil {
+		return nil, reportError("jellyfinPingRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -962,7 +962,7 @@ func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pingRequestDto
+	localVarPostBody = r.jellyfinPingRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1008,12 +1008,12 @@ func (a *SyncPlayAPIService) SyncPlayPingExecute(r ApiSyncPlayPingRequest) (*htt
 type ApiSyncPlayPreviousItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	previousItemRequestDto *PreviousItemRequestDto
+	jellyfinPreviousItemRequestDto *JellyfinPreviousItemRequestDto
 }
 
 // The current item information.
-func (r ApiSyncPlayPreviousItemRequest) PreviousItemRequestDto(previousItemRequestDto PreviousItemRequestDto) ApiSyncPlayPreviousItemRequest {
-	r.previousItemRequestDto = &previousItemRequestDto
+func (r ApiSyncPlayPreviousItemRequest) JellyfinPreviousItemRequestDto(jellyfinPreviousItemRequestDto JellyfinPreviousItemRequestDto) ApiSyncPlayPreviousItemRequest {
+	r.jellyfinPreviousItemRequestDto = &jellyfinPreviousItemRequestDto
 	return r
 }
 
@@ -1052,8 +1052,8 @@ func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousIt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.previousItemRequestDto == nil {
-		return nil, reportError("previousItemRequestDto is required and must be specified")
+	if r.jellyfinPreviousItemRequestDto == nil {
+		return nil, reportError("jellyfinPreviousItemRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1074,7 +1074,7 @@ func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousIt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.previousItemRequestDto
+	localVarPostBody = r.jellyfinPreviousItemRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1120,12 +1120,12 @@ func (a *SyncPlayAPIService) SyncPlayPreviousItemExecute(r ApiSyncPlayPreviousIt
 type ApiSyncPlayQueueRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	queueRequestDto *QueueRequestDto
+	jellyfinQueueRequestDto *JellyfinQueueRequestDto
 }
 
 // The items to add.
-func (r ApiSyncPlayQueueRequest) QueueRequestDto(queueRequestDto QueueRequestDto) ApiSyncPlayQueueRequest {
-	r.queueRequestDto = &queueRequestDto
+func (r ApiSyncPlayQueueRequest) JellyfinQueueRequestDto(jellyfinQueueRequestDto JellyfinQueueRequestDto) ApiSyncPlayQueueRequest {
+	r.jellyfinQueueRequestDto = &jellyfinQueueRequestDto
 	return r
 }
 
@@ -1164,8 +1164,8 @@ func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.queueRequestDto == nil {
-		return nil, reportError("queueRequestDto is required and must be specified")
+	if r.jellyfinQueueRequestDto == nil {
+		return nil, reportError("jellyfinQueueRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1186,7 +1186,7 @@ func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.queueRequestDto
+	localVarPostBody = r.jellyfinQueueRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1232,12 +1232,12 @@ func (a *SyncPlayAPIService) SyncPlayQueueExecute(r ApiSyncPlayQueueRequest) (*h
 type ApiSyncPlayReadyRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	readyRequestDto *ReadyRequestDto
+	jellyfinReadyRequestDto *JellyfinReadyRequestDto
 }
 
 // The player status.
-func (r ApiSyncPlayReadyRequest) ReadyRequestDto(readyRequestDto ReadyRequestDto) ApiSyncPlayReadyRequest {
-	r.readyRequestDto = &readyRequestDto
+func (r ApiSyncPlayReadyRequest) JellyfinReadyRequestDto(jellyfinReadyRequestDto JellyfinReadyRequestDto) ApiSyncPlayReadyRequest {
+	r.jellyfinReadyRequestDto = &jellyfinReadyRequestDto
 	return r
 }
 
@@ -1276,8 +1276,8 @@ func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.readyRequestDto == nil {
-		return nil, reportError("readyRequestDto is required and must be specified")
+	if r.jellyfinReadyRequestDto == nil {
+		return nil, reportError("jellyfinReadyRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1298,7 +1298,7 @@ func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.readyRequestDto
+	localVarPostBody = r.jellyfinReadyRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1344,12 +1344,12 @@ func (a *SyncPlayAPIService) SyncPlayReadyExecute(r ApiSyncPlayReadyRequest) (*h
 type ApiSyncPlayRemoveFromPlaylistRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	removeFromPlaylistRequestDto *RemoveFromPlaylistRequestDto
+	jellyfinRemoveFromPlaylistRequestDto *JellyfinRemoveFromPlaylistRequestDto
 }
 
 // The items to remove.
-func (r ApiSyncPlayRemoveFromPlaylistRequest) RemoveFromPlaylistRequestDto(removeFromPlaylistRequestDto RemoveFromPlaylistRequestDto) ApiSyncPlayRemoveFromPlaylistRequest {
-	r.removeFromPlaylistRequestDto = &removeFromPlaylistRequestDto
+func (r ApiSyncPlayRemoveFromPlaylistRequest) JellyfinRemoveFromPlaylistRequestDto(jellyfinRemoveFromPlaylistRequestDto JellyfinRemoveFromPlaylistRequestDto) ApiSyncPlayRemoveFromPlaylistRequest {
+	r.jellyfinRemoveFromPlaylistRequestDto = &jellyfinRemoveFromPlaylistRequestDto
 	return r
 }
 
@@ -1388,8 +1388,8 @@ func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemo
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.removeFromPlaylistRequestDto == nil {
-		return nil, reportError("removeFromPlaylistRequestDto is required and must be specified")
+	if r.jellyfinRemoveFromPlaylistRequestDto == nil {
+		return nil, reportError("jellyfinRemoveFromPlaylistRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1410,7 +1410,7 @@ func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.removeFromPlaylistRequestDto
+	localVarPostBody = r.jellyfinRemoveFromPlaylistRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1456,12 +1456,12 @@ func (a *SyncPlayAPIService) SyncPlayRemoveFromPlaylistExecute(r ApiSyncPlayRemo
 type ApiSyncPlaySeekRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	seekRequestDto *SeekRequestDto
+	jellyfinSeekRequestDto *JellyfinSeekRequestDto
 }
 
 // The new playback position.
-func (r ApiSyncPlaySeekRequest) SeekRequestDto(seekRequestDto SeekRequestDto) ApiSyncPlaySeekRequest {
-	r.seekRequestDto = &seekRequestDto
+func (r ApiSyncPlaySeekRequest) JellyfinSeekRequestDto(jellyfinSeekRequestDto JellyfinSeekRequestDto) ApiSyncPlaySeekRequest {
+	r.jellyfinSeekRequestDto = &jellyfinSeekRequestDto
 	return r
 }
 
@@ -1500,8 +1500,8 @@ func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.seekRequestDto == nil {
-		return nil, reportError("seekRequestDto is required and must be specified")
+	if r.jellyfinSeekRequestDto == nil {
+		return nil, reportError("jellyfinSeekRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1522,7 +1522,7 @@ func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.seekRequestDto
+	localVarPostBody = r.jellyfinSeekRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1568,12 +1568,12 @@ func (a *SyncPlayAPIService) SyncPlaySeekExecute(r ApiSyncPlaySeekRequest) (*htt
 type ApiSyncPlaySetIgnoreWaitRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	ignoreWaitRequestDto *IgnoreWaitRequestDto
+	jellyfinIgnoreWaitRequestDto *JellyfinIgnoreWaitRequestDto
 }
 
 // The settings to set.
-func (r ApiSyncPlaySetIgnoreWaitRequest) IgnoreWaitRequestDto(ignoreWaitRequestDto IgnoreWaitRequestDto) ApiSyncPlaySetIgnoreWaitRequest {
-	r.ignoreWaitRequestDto = &ignoreWaitRequestDto
+func (r ApiSyncPlaySetIgnoreWaitRequest) JellyfinIgnoreWaitRequestDto(jellyfinIgnoreWaitRequestDto JellyfinIgnoreWaitRequestDto) ApiSyncPlaySetIgnoreWaitRequest {
+	r.jellyfinIgnoreWaitRequestDto = &jellyfinIgnoreWaitRequestDto
 	return r
 }
 
@@ -1612,8 +1612,8 @@ func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnore
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.ignoreWaitRequestDto == nil {
-		return nil, reportError("ignoreWaitRequestDto is required and must be specified")
+	if r.jellyfinIgnoreWaitRequestDto == nil {
+		return nil, reportError("jellyfinIgnoreWaitRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1634,7 +1634,7 @@ func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnore
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ignoreWaitRequestDto
+	localVarPostBody = r.jellyfinIgnoreWaitRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1680,12 +1680,12 @@ func (a *SyncPlayAPIService) SyncPlaySetIgnoreWaitExecute(r ApiSyncPlaySetIgnore
 type ApiSyncPlaySetNewQueueRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	playRequestDto *PlayRequestDto
+	jellyfinPlayRequestDto *JellyfinPlayRequestDto
 }
 
 // The new playlist to play in the group.
-func (r ApiSyncPlaySetNewQueueRequest) PlayRequestDto(playRequestDto PlayRequestDto) ApiSyncPlaySetNewQueueRequest {
-	r.playRequestDto = &playRequestDto
+func (r ApiSyncPlaySetNewQueueRequest) JellyfinPlayRequestDto(jellyfinPlayRequestDto JellyfinPlayRequestDto) ApiSyncPlaySetNewQueueRequest {
+	r.jellyfinPlayRequestDto = &jellyfinPlayRequestDto
 	return r
 }
 
@@ -1724,8 +1724,8 @@ func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueue
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.playRequestDto == nil {
-		return nil, reportError("playRequestDto is required and must be specified")
+	if r.jellyfinPlayRequestDto == nil {
+		return nil, reportError("jellyfinPlayRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1746,7 +1746,7 @@ func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueue
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.playRequestDto
+	localVarPostBody = r.jellyfinPlayRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1792,12 +1792,12 @@ func (a *SyncPlayAPIService) SyncPlaySetNewQueueExecute(r ApiSyncPlaySetNewQueue
 type ApiSyncPlaySetPlaylistItemRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	setPlaylistItemRequestDto *SetPlaylistItemRequestDto
+	jellyfinSetPlaylistItemRequestDto *JellyfinSetPlaylistItemRequestDto
 }
 
 // The new item to play.
-func (r ApiSyncPlaySetPlaylistItemRequest) SetPlaylistItemRequestDto(setPlaylistItemRequestDto SetPlaylistItemRequestDto) ApiSyncPlaySetPlaylistItemRequest {
-	r.setPlaylistItemRequestDto = &setPlaylistItemRequestDto
+func (r ApiSyncPlaySetPlaylistItemRequest) JellyfinSetPlaylistItemRequestDto(jellyfinSetPlaylistItemRequestDto JellyfinSetPlaylistItemRequestDto) ApiSyncPlaySetPlaylistItemRequest {
+	r.jellyfinSetPlaylistItemRequestDto = &jellyfinSetPlaylistItemRequestDto
 	return r
 }
 
@@ -1836,8 +1836,8 @@ func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlay
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.setPlaylistItemRequestDto == nil {
-		return nil, reportError("setPlaylistItemRequestDto is required and must be specified")
+	if r.jellyfinSetPlaylistItemRequestDto == nil {
+		return nil, reportError("jellyfinSetPlaylistItemRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1858,7 +1858,7 @@ func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlay
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.setPlaylistItemRequestDto
+	localVarPostBody = r.jellyfinSetPlaylistItemRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1904,12 +1904,12 @@ func (a *SyncPlayAPIService) SyncPlaySetPlaylistItemExecute(r ApiSyncPlaySetPlay
 type ApiSyncPlaySetRepeatModeRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	setRepeatModeRequestDto *SetRepeatModeRequestDto
+	jellyfinSetRepeatModeRequestDto *JellyfinSetRepeatModeRequestDto
 }
 
 // The new repeat mode.
-func (r ApiSyncPlaySetRepeatModeRequest) SetRepeatModeRequestDto(setRepeatModeRequestDto SetRepeatModeRequestDto) ApiSyncPlaySetRepeatModeRequest {
-	r.setRepeatModeRequestDto = &setRepeatModeRequestDto
+func (r ApiSyncPlaySetRepeatModeRequest) JellyfinSetRepeatModeRequestDto(jellyfinSetRepeatModeRequestDto JellyfinSetRepeatModeRequestDto) ApiSyncPlaySetRepeatModeRequest {
+	r.jellyfinSetRepeatModeRequestDto = &jellyfinSetRepeatModeRequestDto
 	return r
 }
 
@@ -1948,8 +1948,8 @@ func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.setRepeatModeRequestDto == nil {
-		return nil, reportError("setRepeatModeRequestDto is required and must be specified")
+	if r.jellyfinSetRepeatModeRequestDto == nil {
+		return nil, reportError("jellyfinSetRepeatModeRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1970,7 +1970,7 @@ func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.setRepeatModeRequestDto
+	localVarPostBody = r.jellyfinSetRepeatModeRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2016,12 +2016,12 @@ func (a *SyncPlayAPIService) SyncPlaySetRepeatModeExecute(r ApiSyncPlaySetRepeat
 type ApiSyncPlaySetShuffleModeRequest struct {
 	ctx context.Context
 	ApiService *SyncPlayAPIService
-	setShuffleModeRequestDto *SetShuffleModeRequestDto
+	jellyfinSetShuffleModeRequestDto *JellyfinSetShuffleModeRequestDto
 }
 
 // The new shuffle mode.
-func (r ApiSyncPlaySetShuffleModeRequest) SetShuffleModeRequestDto(setShuffleModeRequestDto SetShuffleModeRequestDto) ApiSyncPlaySetShuffleModeRequest {
-	r.setShuffleModeRequestDto = &setShuffleModeRequestDto
+func (r ApiSyncPlaySetShuffleModeRequest) JellyfinSetShuffleModeRequestDto(jellyfinSetShuffleModeRequestDto JellyfinSetShuffleModeRequestDto) ApiSyncPlaySetShuffleModeRequest {
+	r.jellyfinSetShuffleModeRequestDto = &jellyfinSetShuffleModeRequestDto
 	return r
 }
 
@@ -2060,8 +2060,8 @@ func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuff
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.setShuffleModeRequestDto == nil {
-		return nil, reportError("setShuffleModeRequestDto is required and must be specified")
+	if r.jellyfinSetShuffleModeRequestDto == nil {
+		return nil, reportError("jellyfinSetShuffleModeRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2082,7 +2082,7 @@ func (a *SyncPlayAPIService) SyncPlaySetShuffleModeExecute(r ApiSyncPlaySetShuff
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.setShuffleModeRequestDto
+	localVarPostBody = r.jellyfinSetShuffleModeRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

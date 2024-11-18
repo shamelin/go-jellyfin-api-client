@@ -27,7 +27,7 @@ type ApiGetDefaultDirectoryBrowserRequest struct {
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetDefaultDirectoryBrowserRequest) Execute() (*DefaultDirectoryBrowserInfoDto, *http.Response, error) {
+func (r ApiGetDefaultDirectoryBrowserRequest) Execute() (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
 	return r.ApiService.GetDefaultDirectoryBrowserExecute(r)
 }
 
@@ -45,13 +45,13 @@ func (a *EnvironmentAPIService) GetDefaultDirectoryBrowser(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return DefaultDirectoryBrowserInfoDto
-func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaultDirectoryBrowserRequest) (*DefaultDirectoryBrowserInfoDto, *http.Response, error) {
+//  @return JellyfinDefaultDirectoryBrowserInfoDto
+func (a *EnvironmentAPIService) GetDefaultDirectoryBrowserExecute(r ApiGetDefaultDirectoryBrowserRequest) (*JellyfinDefaultDirectoryBrowserInfoDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DefaultDirectoryBrowserInfoDto
+		localVarReturnValue  *JellyfinDefaultDirectoryBrowserInfoDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDefaultDirectoryBrowser")
@@ -159,7 +159,7 @@ func (r ApiGetDirectoryContentsRequest) IncludeDirectories(includeDirectories bo
 	return r
 }
 
-func (r ApiGetDirectoryContentsRequest) Execute() ([]FileSystemEntryInfo, *http.Response, error) {
+func (r ApiGetDirectoryContentsRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetDirectoryContentsExecute(r)
 }
 
@@ -177,13 +177,13 @@ func (a *EnvironmentAPIService) GetDirectoryContents(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
-func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryContentsRequest) ([]FileSystemEntryInfo, *http.Response, error) {
+//  @return []JellyfinFileSystemEntryInfo
+func (a *EnvironmentAPIService) GetDirectoryContentsExecute(r ApiGetDirectoryContentsRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarReturnValue  []JellyfinFileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDirectoryContents")
@@ -286,7 +286,7 @@ type ApiGetDrivesRequest struct {
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetDrivesRequest) Execute() ([]FileSystemEntryInfo, *http.Response, error) {
+func (r ApiGetDrivesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetDrivesExecute(r)
 }
 
@@ -304,13 +304,13 @@ func (a *EnvironmentAPIService) GetDrives(ctx context.Context) ApiGetDrivesReque
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
-func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]FileSystemEntryInfo, *http.Response, error) {
+//  @return []JellyfinFileSystemEntryInfo
+func (a *EnvironmentAPIService) GetDrivesExecute(r ApiGetDrivesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarReturnValue  []JellyfinFileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetDrives")
@@ -397,7 +397,7 @@ type ApiGetNetworkSharesRequest struct {
 	ApiService *EnvironmentAPIService
 }
 
-func (r ApiGetNetworkSharesRequest) Execute() ([]FileSystemEntryInfo, *http.Response, error) {
+func (r ApiGetNetworkSharesRequest) Execute() ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	return r.ApiService.GetNetworkSharesExecute(r)
 }
 
@@ -417,14 +417,14 @@ func (a *EnvironmentAPIService) GetNetworkShares(ctx context.Context) ApiGetNetw
 }
 
 // Execute executes the request
-//  @return []FileSystemEntryInfo
+//  @return []JellyfinFileSystemEntryInfo
 // Deprecated
-func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesRequest) ([]FileSystemEntryInfo, *http.Response, error) {
+func (a *EnvironmentAPIService) GetNetworkSharesExecute(r ApiGetNetworkSharesRequest) ([]JellyfinFileSystemEntryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []FileSystemEntryInfo
+		localVarReturnValue  []JellyfinFileSystemEntryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnvironmentAPIService.GetNetworkShares")
@@ -631,12 +631,12 @@ func (a *EnvironmentAPIService) GetParentPathExecute(r ApiGetParentPathRequest) 
 type ApiValidatePathRequest struct {
 	ctx context.Context
 	ApiService *EnvironmentAPIService
-	validatePathDto *ValidatePathDto
+	jellyfinValidatePathDto *JellyfinValidatePathDto
 }
 
 // Validate request object.
-func (r ApiValidatePathRequest) ValidatePathDto(validatePathDto ValidatePathDto) ApiValidatePathRequest {
-	r.validatePathDto = &validatePathDto
+func (r ApiValidatePathRequest) JellyfinValidatePathDto(jellyfinValidatePathDto JellyfinValidatePathDto) ApiValidatePathRequest {
+	r.jellyfinValidatePathDto = &jellyfinValidatePathDto
 	return r
 }
 
@@ -675,8 +675,8 @@ func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.validatePathDto == nil {
-		return nil, reportError("validatePathDto is required and must be specified")
+	if r.jellyfinValidatePathDto == nil {
+		return nil, reportError("jellyfinValidatePathDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -697,7 +697,7 @@ func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.validatePathDto
+	localVarPostBody = r.jellyfinValidatePathDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -735,7 +735,7 @@ func (a *EnvironmentAPIService) ValidatePathExecute(r ApiValidatePathRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

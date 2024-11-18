@@ -43,7 +43,7 @@ func (r ApiGetDisplayPreferencesRequest) UserId(userId string) ApiGetDisplayPref
 	return r
 }
 
-func (r ApiGetDisplayPreferencesRequest) Execute() (*DisplayPreferencesDto, *http.Response, error) {
+func (r ApiGetDisplayPreferencesRequest) Execute() (*JellyfinDisplayPreferencesDto, *http.Response, error) {
 	return r.ApiService.GetDisplayPreferencesExecute(r)
 }
 
@@ -63,13 +63,13 @@ func (a *DisplayPreferencesAPIService) GetDisplayPreferences(ctx context.Context
 }
 
 // Execute executes the request
-//  @return DisplayPreferencesDto
-func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisplayPreferencesRequest) (*DisplayPreferencesDto, *http.Response, error) {
+//  @return JellyfinDisplayPreferencesDto
+func (a *DisplayPreferencesAPIService) GetDisplayPreferencesExecute(r ApiGetDisplayPreferencesRequest) (*JellyfinDisplayPreferencesDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *DisplayPreferencesDto
+		localVarReturnValue  *JellyfinDisplayPreferencesDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DisplayPreferencesAPIService.GetDisplayPreferences")
@@ -164,7 +164,7 @@ type ApiUpdateDisplayPreferencesRequest struct {
 	ApiService *DisplayPreferencesAPIService
 	displayPreferencesId string
 	client *string
-	displayPreferencesDto *DisplayPreferencesDto
+	jellyfinDisplayPreferencesDto *JellyfinDisplayPreferencesDto
 	userId *string
 }
 
@@ -175,8 +175,8 @@ func (r ApiUpdateDisplayPreferencesRequest) Client(client string) ApiUpdateDispl
 }
 
 // New Display Preferences object.
-func (r ApiUpdateDisplayPreferencesRequest) DisplayPreferencesDto(displayPreferencesDto DisplayPreferencesDto) ApiUpdateDisplayPreferencesRequest {
-	r.displayPreferencesDto = &displayPreferencesDto
+func (r ApiUpdateDisplayPreferencesRequest) JellyfinDisplayPreferencesDto(jellyfinDisplayPreferencesDto JellyfinDisplayPreferencesDto) ApiUpdateDisplayPreferencesRequest {
+	r.jellyfinDisplayPreferencesDto = &jellyfinDisplayPreferencesDto
 	return r
 }
 
@@ -227,8 +227,8 @@ func (a *DisplayPreferencesAPIService) UpdateDisplayPreferencesExecute(r ApiUpda
 	if r.client == nil {
 		return nil, reportError("client is required and must be specified")
 	}
-	if r.displayPreferencesDto == nil {
-		return nil, reportError("displayPreferencesDto is required and must be specified")
+	if r.jellyfinDisplayPreferencesDto == nil {
+		return nil, reportError("jellyfinDisplayPreferencesDto is required and must be specified")
 	}
 
 	if r.userId != nil {
@@ -253,7 +253,7 @@ func (a *DisplayPreferencesAPIService) UpdateDisplayPreferencesExecute(r ApiUpda
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.displayPreferencesDto
+	localVarPostBody = r.jellyfinDisplayPreferencesDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

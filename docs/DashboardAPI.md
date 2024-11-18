@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetConfigurationPages
 
-> []ConfigurationPageInfo GetConfigurationPages(ctx).EnableInMainMenu(enableInMainMenu).Execute()
+> []JellyfinJellyfinConfigurationPageInfo GetConfigurationPages(ctx).EnableInMainMenu(enableInMainMenu).Execute()
 
 Gets the configuration pages.
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DashboardAPI.GetConfigurationPages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConfigurationPages`: []ConfigurationPageInfo
+	// response from `GetConfigurationPages`: []JellyfinJellyfinConfigurationPageInfo
 	fmt.Fprintf(os.Stdout, "Response from `DashboardAPI.GetConfigurationPages`: %v\n", resp)
 }
 ```
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ConfigurationPageInfo**](ConfigurationPageInfo.md)
+[**[]JellyfinJellyfinConfigurationPageInfo**](JellyfinConfigurationPageInfo.md)
 
 ### Authorization
 

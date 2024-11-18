@@ -127,7 +127,7 @@ func (a *PluginsAPIService) DisablePluginExecute(r ApiDisablePluginRequest) (*ht
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -246,7 +246,7 @@ func (a *PluginsAPIService) EnablePluginExecute(r ApiEnablePluginRequest) (*http
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -363,7 +363,7 @@ func (a *PluginsAPIService) GetPluginConfigurationExecute(r ApiGetPluginConfigur
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -493,7 +493,7 @@ func (a *PluginsAPIService) GetPluginImageExecute(r ApiGetPluginImageRequest) (*
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -617,7 +617,7 @@ func (a *PluginsAPIService) GetPluginManifestExecute(r ApiGetPluginManifestReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -638,7 +638,7 @@ type ApiGetPluginsRequest struct {
 	ApiService *PluginsAPIService
 }
 
-func (r ApiGetPluginsRequest) Execute() ([]PluginInfo, *http.Response, error) {
+func (r ApiGetPluginsRequest) Execute() ([]JellyfinPluginInfo, *http.Response, error) {
 	return r.ApiService.GetPluginsExecute(r)
 }
 
@@ -656,13 +656,13 @@ func (a *PluginsAPIService) GetPlugins(ctx context.Context) ApiGetPluginsRequest
 }
 
 // Execute executes the request
-//  @return []PluginInfo
-func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]PluginInfo, *http.Response, error) {
+//  @return []JellyfinPluginInfo
+func (a *PluginsAPIService) GetPluginsExecute(r ApiGetPluginsRequest) ([]JellyfinPluginInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []PluginInfo
+		localVarReturnValue  []JellyfinPluginInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PluginsAPIService.GetPlugins")
@@ -846,7 +846,7 @@ func (a *PluginsAPIService) UninstallPluginExecute(r ApiUninstallPluginRequest) 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -965,7 +965,7 @@ func (a *PluginsAPIService) UninstallPluginByVersionExecute(r ApiUninstallPlugin
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1082,7 +1082,7 @@ func (a *PluginsAPIService) UpdatePluginConfigurationExecute(r ApiUpdatePluginCo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

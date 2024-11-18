@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetAllChannelFeatures
 
-> []ChannelFeatures GetAllChannelFeatures(ctx).Execute()
+> []JellyfinJellyfinChannelFeatures GetAllChannelFeatures(ctx).Execute()
 
 Get all channel features.
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelsAPI.GetAllChannelFeatures``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllChannelFeatures`: []ChannelFeatures
+	// response from `GetAllChannelFeatures`: []JellyfinJellyfinChannelFeatures
 	fmt.Fprintf(os.Stdout, "Response from `ChannelsAPI.GetAllChannelFeatures`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetAllChannelFeaturesReque
 
 ### Return type
 
-[**[]ChannelFeatures**](ChannelFeatures.md)
+[**[]JellyfinJellyfinChannelFeatures**](JellyfinChannelFeatures.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiGetAllChannelFeaturesReque
 
 ## GetChannelFeatures
 
-> ChannelFeatures GetChannelFeatures(ctx, channelId).Execute()
+> JellyfinJellyfinChannelFeatures GetChannelFeatures(ctx, channelId).Execute()
 
 Get channel features.
 
@@ -99,7 +99,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelsAPI.GetChannelFeatures``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetChannelFeatures`: ChannelFeatures
+	// response from `GetChannelFeatures`: JellyfinJellyfinChannelFeatures
 	fmt.Fprintf(os.Stdout, "Response from `ChannelsAPI.GetChannelFeatures`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ChannelFeatures**](ChannelFeatures.md)
+[**JellyfinJellyfinChannelFeatures**](JellyfinChannelFeatures.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ## GetChannelItems
 
-> BaseItemDtoQueryResult GetChannelItems(ctx, channelId).FolderId(folderId).UserId(userId).StartIndex(startIndex).Limit(limit).SortOrder(sortOrder).Filters(filters).SortBy(sortBy).Fields(fields).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetChannelItems(ctx, channelId).FolderId(folderId).UserId(userId).StartIndex(startIndex).Limit(limit).SortOrder(sortOrder).Filters(filters).SortBy(sortBy).Fields(fields).Execute()
 
 Get channel items.
 
@@ -163,10 +163,10 @@ func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. User Id. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	sortOrder := []openapiclient.SortOrder{openapiclient.SortOrder("Ascending")} // []SortOrder | Optional. Sort Order - Ascending,Descending. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. (optional)
-	sortBy := []openapiclient.ItemSortBy{openapiclient.ItemSortBy("Default")} // []ItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	sortOrder := []JellyfinJellyfinSortOrder{"TODO"} // []JellyfinJellyfinSortOrder | Optional. Sort Order - Ascending,Descending. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. (optional)
+	sortBy := []JellyfinJellyfinItemSortBy{"TODO"} // []JellyfinJellyfinItemSortBy | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -175,7 +175,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelsAPI.GetChannelItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetChannelItems`: BaseItemDtoQueryResult
+	// response from `GetChannelItems`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ChannelsAPI.GetChannelItems`: %v\n", resp)
 }
 ```
@@ -200,14 +200,14 @@ Name | Type | Description  | Notes
  **userId** | **string** | Optional. User Id. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **sortOrder** | [**[]SortOrder**](SortOrder.md) | Optional. Sort Order - Ascending,Descending. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. | 
- **sortBy** | [**[]ItemSortBy**](ItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **sortOrder** | [**[]JellyfinJellyfinSortOrder**](JellyfinSortOrder.md) | Optional. Sort Order - Ascending,Descending. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. | 
+ **sortBy** | [**[]JellyfinJellyfinItemSortBy**](JellyfinItemSortBy.md) | Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ## GetChannels
 
-> BaseItemDtoQueryResult GetChannels(ctx).UserId(userId).StartIndex(startIndex).Limit(limit).SupportsLatestItems(supportsLatestItems).SupportsMediaDeletion(supportsMediaDeletion).IsFavorite(isFavorite).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetChannels(ctx).UserId(userId).StartIndex(startIndex).Limit(limit).SupportsLatestItems(supportsLatestItems).SupportsMediaDeletion(supportsMediaDeletion).IsFavorite(isFavorite).Execute()
 
 Gets available channels.
 
@@ -256,7 +256,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelsAPI.GetChannels``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetChannels`: BaseItemDtoQueryResult
+	// response from `GetChannels`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ChannelsAPI.GetChannels`: %v\n", resp)
 }
 ```
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GetLatestChannelItems
 
-> BaseItemDtoQueryResult GetLatestChannelItems(ctx).UserId(userId).StartIndex(startIndex).Limit(limit).Filters(filters).Fields(fields).ChannelIds(channelIds).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetLatestChannelItems(ctx).UserId(userId).StartIndex(startIndex).Limit(limit).Filters(filters).Fields(fields).ChannelIds(channelIds).Execute()
 
 Gets latest channel items.
 
@@ -319,8 +319,8 @@ func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Optional. User Id. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
-	filters := []openapiclient.ItemFilter{openapiclient.ItemFilter("IsFolder")} // []ItemFilter | Optional. Specify additional filters to apply. (optional)
-	fields := []openapiclient.ItemFields{openapiclient.ItemFields("AirTime")} // []ItemFields | Optional. Specify additional fields of information to return in the output. (optional)
+	filters := []JellyfinJellyfinItemFilter{"TODO"} // []JellyfinJellyfinItemFilter | Optional. Specify additional filters to apply. (optional)
+	fields := []JellyfinJellyfinItemFields{"TODO"} // []JellyfinJellyfinItemFields | Optional. Specify additional fields of information to return in the output. (optional)
 	channelIds := []string{"Inner_example"} // []string | Optional. Specify one or more channel id's, comma delimited. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -330,7 +330,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ChannelsAPI.GetLatestChannelItems``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLatestChannelItems`: BaseItemDtoQueryResult
+	// response from `GetLatestChannelItems`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `ChannelsAPI.GetLatestChannelItems`: %v\n", resp)
 }
 ```
@@ -349,13 +349,13 @@ Name | Type | Description  | Notes
  **userId** | **string** | Optional. User Id. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
- **filters** | [**[]ItemFilter**](ItemFilter.md) | Optional. Specify additional filters to apply. | 
- **fields** | [**[]ItemFields**](ItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
+ **filters** | [**[]JellyfinJellyfinItemFilter**](JellyfinItemFilter.md) | Optional. Specify additional filters to apply. | 
+ **fields** | [**[]JellyfinJellyfinItemFields**](JellyfinItemFields.md) | Optional. Specify additional fields of information to return in the output. | 
  **channelIds** | **[]string** | Optional. Specify one or more channel id&#39;s, comma delimited. | 
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## LogFile
 
-> ClientLogDocumentResponseDto LogFile(ctx).Body(body).Execute()
+> JellyfinJellyfinClientLogDocumentResponseDto LogFile(ctx).Body(body).Execute()
 
 Upload a document.
 
@@ -36,7 +36,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ClientLogAPI.LogFile``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LogFile`: ClientLogDocumentResponseDto
+	// response from `LogFile`: JellyfinJellyfinClientLogDocumentResponseDto
 	fmt.Fprintf(os.Stdout, "Response from `ClientLogAPI.LogFile`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientLogDocumentResponseDto**](ClientLogDocumentResponseDto.md)
+[**JellyfinJellyfinClientLogDocumentResponseDto**](JellyfinClientLogDocumentResponseDto.md)
 
 ### Authorization
 

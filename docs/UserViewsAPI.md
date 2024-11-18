@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetGroupingOptions
 
-> []SpecialViewOptionDto GetGroupingOptions(ctx).UserId(userId).Execute()
+> []JellyfinJellyfinSpecialViewOptionDto GetGroupingOptions(ctx).UserId(userId).Execute()
 
 Get user view grouping options.
 
@@ -37,7 +37,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserViewsAPI.GetGroupingOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGroupingOptions`: []SpecialViewOptionDto
+	// response from `GetGroupingOptions`: []JellyfinJellyfinSpecialViewOptionDto
 	fmt.Fprintf(os.Stdout, "Response from `UserViewsAPI.GetGroupingOptions`: %v\n", resp)
 }
 ```
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]SpecialViewOptionDto**](SpecialViewOptionDto.md)
+[**[]JellyfinJellyfinSpecialViewOptionDto**](JellyfinSpecialViewOptionDto.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## GetUserViews
 
-> BaseItemDtoQueryResult GetUserViews(ctx).UserId(userId).IncludeExternalContent(includeExternalContent).PresetViews(presetViews).IncludeHidden(includeHidden).Execute()
+> JellyfinJellyfinBaseItemDtoQueryResult GetUserViews(ctx).UserId(userId).IncludeExternalContent(includeExternalContent).PresetViews(presetViews).IncludeHidden(includeHidden).Execute()
 
 Get user views.
 
@@ -94,7 +94,7 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User id. (optional)
 	includeExternalContent := true // bool | Whether or not to include external views such as channels or live tv. (optional)
-	presetViews := []openapiclient.CollectionType{openapiclient.CollectionType("unknown")} // []CollectionType | Preset views. (optional)
+	presetViews := []JellyfinJellyfinCollectionType{"TODO"} // []JellyfinJellyfinCollectionType | Preset views. (optional)
 	includeHidden := true // bool | Whether or not to include hidden content. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
@@ -104,7 +104,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `UserViewsAPI.GetUserViews``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserViews`: BaseItemDtoQueryResult
+	// response from `GetUserViews`: JellyfinJellyfinBaseItemDtoQueryResult
 	fmt.Fprintf(os.Stdout, "Response from `UserViewsAPI.GetUserViews`: %v\n", resp)
 }
 ```
@@ -122,12 +122,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | User id. | 
  **includeExternalContent** | **bool** | Whether or not to include external views such as channels or live tv. | 
- **presetViews** | [**[]CollectionType**](CollectionType.md) | Preset views. | 
+ **presetViews** | [**[]JellyfinJellyfinCollectionType**](JellyfinCollectionType.md) | Preset views. | 
  **includeHidden** | **bool** | Whether or not to include hidden content. | [default to false]
 
 ### Return type
 
-[**BaseItemDtoQueryResult**](BaseItemDtoQueryResult.md)
+[**JellyfinJellyfinBaseItemDtoQueryResult**](JellyfinBaseItemDtoQueryResult.md)
 
 ### Authorization
 

@@ -138,7 +138,7 @@ No authorization required
 
 ## GetQuickConnectState
 
-> QuickConnectResult GetQuickConnectState(ctx).Secret(secret).Execute()
+> JellyfinJellyfinQuickConnectResult GetQuickConnectState(ctx).Secret(secret).Execute()
 
 Attempts to retrieve authentication information.
 
@@ -164,7 +164,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuickConnectAPI.GetQuickConnectState``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetQuickConnectState`: QuickConnectResult
+	// response from `GetQuickConnectState`: JellyfinJellyfinQuickConnectResult
 	fmt.Fprintf(os.Stdout, "Response from `QuickConnectAPI.GetQuickConnectState`: %v\n", resp)
 }
 ```
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QuickConnectResult**](QuickConnectResult.md)
+[**JellyfinJellyfinQuickConnectResult**](JellyfinQuickConnectResult.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 
 ## InitiateQuickConnect
 
-> QuickConnectResult InitiateQuickConnect(ctx).Execute()
+> JellyfinJellyfinQuickConnectResult InitiateQuickConnect(ctx).Execute()
 
 Initiate a new quick connect request.
 
@@ -227,7 +227,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `QuickConnectAPI.InitiateQuickConnect``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `InitiateQuickConnect`: QuickConnectResult
+	// response from `InitiateQuickConnect`: JellyfinJellyfinQuickConnectResult
 	fmt.Fprintf(os.Stdout, "Response from `QuickConnectAPI.InitiateQuickConnect`: %v\n", resp)
 }
 ```
@@ -243,7 +243,7 @@ Other parameters are passed through a pointer to a apiInitiateQuickConnectReques
 
 ### Return type
 
-[**QuickConnectResult**](QuickConnectResult.md)
+[**JellyfinJellyfinQuickConnectResult**](JellyfinQuickConnectResult.md)
 
 ### Authorization
 

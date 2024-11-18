@@ -121,7 +121,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | The image index. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -192,7 +192,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | The image index.
 
 	configuration := openapiclient.NewConfiguration()
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | The image index. | 
 
 ### Other Parameters
@@ -326,10 +326,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Artist name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Artist name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -376,7 +376,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -428,9 +428,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -529,10 +529,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -631,7 +631,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	width := int32(56) // int32 | The fixed image width to return. (optional)
@@ -640,7 +640,7 @@ func main() {
 	fillWidth := int32(56) // int32 | Width of box to fill. (optional)
 	fillHeight := int32(56) // int32 | Height of box to fill. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render. (optional)
 	blur := int32(56) // int32 | Optional. Blur image. (optional)
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -686,7 +686,7 @@ Name | Type | Description  | Notes
  **fillWidth** | **int32** | Width of box to fill. | 
  **fillHeight** | **int32** | Height of box to fill. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
+ **format** | **JellyfinJellyfinImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
  **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
  **blur** | **int32** | Optional. Blur image. | 
@@ -732,11 +732,11 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	maxWidth := int32(56) // int32 | The maximum image width to return.
 	maxHeight := int32(56) // int32 | The maximum image height to return.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers.
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png.
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png.
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay.
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render.
 	imageIndex := int32(56) // int32 | Image index.
@@ -768,11 +768,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **maxWidth** | **int32** | The maximum image width to return. | 
 **maxHeight** | **int32** | The maximum image height to return. | 
 **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
-**format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+**format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
 **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
 **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
 **imageIndex** | **int32** | Image index. | 
@@ -840,7 +840,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
@@ -850,7 +850,7 @@ func main() {
 	fillWidth := int32(56) // int32 | Width of box to fill. (optional)
 	fillHeight := int32(56) // int32 | Height of box to fill. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render. (optional)
 	blur := int32(56) // int32 | Optional. Blur image. (optional)
@@ -876,7 +876,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -897,7 +897,7 @@ Name | Type | Description  | Notes
  **fillWidth** | **int32** | Width of box to fill. | 
  **fillHeight** | **int32** | Height of box to fill. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
+ **format** | **JellyfinJellyfinImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
  **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
  **blur** | **int32** | Optional. Blur image. | 
@@ -924,7 +924,7 @@ No authorization required
 
 ## GetItemImageInfos
 
-> []ImageInfo GetItemImageInfos(ctx, itemId).Execute()
+> []JellyfinJellyfinImageInfo GetItemImageInfos(ctx, itemId).Execute()
 
 Get item image infos.
 
@@ -950,7 +950,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImageAPI.GetItemImageInfos``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetItemImageInfos`: []ImageInfo
+	// response from `GetItemImageInfos`: []JellyfinJellyfinImageInfo
 	fmt.Fprintf(os.Stdout, "Response from `ImageAPI.GetItemImageInfos`: %v\n", resp)
 }
 ```
@@ -974,7 +974,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ImageInfo**](ImageInfo.md)
+[**[]JellyfinJellyfinImageInfo**](JellyfinImageInfo.md)
 
 ### Authorization
 
@@ -1010,9 +1010,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Music genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1046,7 +1046,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Music genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1111,10 +1111,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Music genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1147,7 +1147,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Music genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -1161,7 +1161,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1213,9 +1213,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Person name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1249,7 +1249,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Person name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -1261,7 +1261,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1314,10 +1314,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Person name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1350,7 +1350,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Person name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -1364,7 +1364,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1416,7 +1416,7 @@ import (
 
 func main() {
 	tag := "tag_example" // string | Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	width := int32(56) // int32 | The fixed image width to return. (optional)
@@ -1452,7 +1452,7 @@ Other parameters are passed through a pointer to a apiGetSplashscreenRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **string** | Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **width** | **int32** | The fixed image width to return. | 
@@ -1502,9 +1502,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Studio name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1538,7 +1538,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Studio name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -1550,7 +1550,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1603,10 +1603,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Studio name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1639,7 +1639,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Studio name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -1653,7 +1653,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1706,7 +1706,7 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User id. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1746,7 +1746,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | User id. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1799,10 +1799,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Artist name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1835,7 +1835,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Artist name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -1849,7 +1849,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -1901,9 +1901,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -1937,7 +1937,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -1949,7 +1949,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2002,10 +2002,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2038,7 +2038,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -2052,7 +2052,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2104,7 +2104,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	width := int32(56) // int32 | The fixed image width to return. (optional)
@@ -2113,7 +2113,7 @@ func main() {
 	fillWidth := int32(56) // int32 | Width of box to fill. (optional)
 	fillHeight := int32(56) // int32 | Height of box to fill. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render. (optional)
 	blur := int32(56) // int32 | Optional. Blur image. (optional)
@@ -2140,7 +2140,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -2159,7 +2159,7 @@ Name | Type | Description  | Notes
  **fillWidth** | **int32** | Width of box to fill. | 
  **fillHeight** | **int32** | Height of box to fill. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
+ **format** | **JellyfinJellyfinImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
  **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
  **blur** | **int32** | Optional. Blur image. | 
@@ -2205,11 +2205,11 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	maxWidth := int32(56) // int32 | The maximum image width to return.
 	maxHeight := int32(56) // int32 | The maximum image height to return.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers.
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png.
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png.
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay.
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render.
 	imageIndex := int32(56) // int32 | Image index.
@@ -2241,11 +2241,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **maxWidth** | **int32** | The maximum image width to return. | 
 **maxHeight** | **int32** | The maximum image height to return. | 
 **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
-**format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+**format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
 **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
 **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
 **imageIndex** | **int32** | Image index. | 
@@ -2313,7 +2313,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
@@ -2323,7 +2323,7 @@ func main() {
 	fillWidth := int32(56) // int32 | Width of box to fill. (optional)
 	fillHeight := int32(56) // int32 | Height of box to fill. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
 	unplayedCount := int32(56) // int32 | Optional. Unplayed count overlay to render. (optional)
 	blur := int32(56) // int32 | Optional. Blur image. (optional)
@@ -2349,7 +2349,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -2370,7 +2370,7 @@ Name | Type | Description  | Notes
  **fillWidth** | **int32** | Width of box to fill. | 
  **fillHeight** | **int32** | Height of box to fill. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
+ **format** | **JellyfinJellyfinImageFormat** | Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
  **unplayedCount** | **int32** | Optional. Unplayed count overlay to render. | 
  **blur** | **int32** | Optional. Blur image. | 
@@ -2415,9 +2415,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Music genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2451,7 +2451,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Music genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -2463,7 +2463,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2516,10 +2516,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Music genre name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2552,7 +2552,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Music genre name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -2566,7 +2566,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2618,9 +2618,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Person name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2654,7 +2654,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Person name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -2666,7 +2666,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2719,10 +2719,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Person name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2755,7 +2755,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Person name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -2769,7 +2769,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2821,9 +2821,9 @@ import (
 
 func main() {
 	name := "name_example" // string | Studio name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2857,7 +2857,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Studio name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -2869,7 +2869,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -2922,10 +2922,10 @@ import (
 
 func main() {
 	name := "name_example" // string | Studio name.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Image index.
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -2958,7 +2958,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **name** | **string** | Studio name. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Image index. | 
 
 ### Other Parameters
@@ -2972,7 +2972,7 @@ Name | Type | Description  | Notes
 
 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -3025,7 +3025,7 @@ import (
 func main() {
 	userId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | User id. (optional)
 	tag := "tag_example" // string | Optional. Supply the cache tag from the item object to receive strong caching headers. (optional)
-	format := "format_example" // ImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
+	format := "format_example" // JellyfinJellyfinImageFormat | Determines the output format of the image - original,gif,jpg,png. (optional)
 	maxWidth := int32(56) // int32 | The maximum image width to return. (optional)
 	maxHeight := int32(56) // int32 | The maximum image height to return. (optional)
 	percentPlayed := float64(1.2) // float64 | Optional. Percent to render for the percent played overlay. (optional)
@@ -3065,7 +3065,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** | User id. | 
  **tag** | **string** | Optional. Supply the cache tag from the item object to receive strong caching headers. | 
- **format** | **ImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
+ **format** | **JellyfinJellyfinImageFormat** | Determines the output format of the image - original,gif,jpg,png. | 
  **maxWidth** | **int32** | The maximum image width to return. | 
  **maxHeight** | **int32** | The maximum image height to return. | 
  **percentPlayed** | **float64** | Optional. Percent to render for the percent played overlay. | 
@@ -3182,7 +3182,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	body := os.NewFile(1234, "some_file") // *os.File |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -3202,7 +3202,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 
 ### Other Parameters
 
@@ -3253,7 +3253,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | (Unused) Image index.
 	body := os.NewFile(1234, "some_file") // *os.File |  (optional)
 
@@ -3274,7 +3274,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | (Unused) Image index. | 
 
 ### Other Parameters
@@ -3327,7 +3327,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	imageType := "imageType_example" // ImageType | Image type.
+	imageType := "imageType_example" // JellyfinJellyfinImageType | Image type.
 	imageIndex := int32(56) // int32 | Old image index.
 	newIndex := int32(56) // int32 | New image index.
 
@@ -3348,7 +3348,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **itemId** | **string** | Item id. | 
-**imageType** | **ImageType** | Image type. | 
+**imageType** | **JellyfinJellyfinImageType** | Image type. | 
 **imageIndex** | **int32** | Old image index. | 
 
 ### Other Parameters

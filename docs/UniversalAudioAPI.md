@@ -40,7 +40,7 @@ func main() {
 	audioBitRate := int32(56) // int32 | Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults. (optional)
 	startTimeTicks := int64(789) // int64 | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms. (optional)
 	transcodingContainer := "transcodingContainer_example" // string | Optional. The container to transcode to. (optional)
-	transcodingProtocol := "transcodingProtocol_example" // MediaStreamProtocol | Optional. The transcoding protocol. (optional)
+	transcodingProtocol := "transcodingProtocol_example" // JellyfinJellyfinMediaStreamProtocol | Optional. The transcoding protocol. (optional)
 	maxAudioSampleRate := int32(56) // int32 | Optional. The maximum audio sample rate. (optional)
 	maxAudioBitDepth := int32(56) // int32 | Optional. The maximum audio bit depth. (optional)
 	enableRemoteMedia := true // bool | Optional. Whether to enable remote media. (optional)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
  **audioBitRate** | **int32** | Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults. | 
  **startTimeTicks** | **int64** | Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms. | 
  **transcodingContainer** | **string** | Optional. The container to transcode to. | 
- **transcodingProtocol** | **MediaStreamProtocol** | Optional. The transcoding protocol. | 
+ **transcodingProtocol** | **JellyfinJellyfinMediaStreamProtocol** | Optional. The transcoding protocol. | 
  **maxAudioSampleRate** | **int32** | Optional. The maximum audio sample rate. | 
  **maxAudioBitDepth** | **int32** | Optional. The maximum audio bit depth. | 
  **enableRemoteMedia** | **bool** | Optional. Whether to enable remote media. | 
@@ -144,7 +144,7 @@ func main() {
 	audioBitRate := int32(56) // int32 | Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults. (optional)
 	startTimeTicks := int64(789) // int64 | Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms. (optional)
 	transcodingContainer := "transcodingContainer_example" // string | Optional. The container to transcode to. (optional)
-	transcodingProtocol := "transcodingProtocol_example" // MediaStreamProtocol | Optional. The transcoding protocol. (optional)
+	transcodingProtocol := "transcodingProtocol_example" // JellyfinJellyfinMediaStreamProtocol | Optional. The transcoding protocol. (optional)
 	maxAudioSampleRate := int32(56) // int32 | Optional. The maximum audio sample rate. (optional)
 	maxAudioBitDepth := int32(56) // int32 | Optional. The maximum audio bit depth. (optional)
 	enableRemoteMedia := true // bool | Optional. Whether to enable remote media. (optional)
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
  **audioBitRate** | **int32** | Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults. | 
  **startTimeTicks** | **int64** | Optional. Specify a starting offset, in ticks. 1 tick &#x3D; 10000 ms. | 
  **transcodingContainer** | **string** | Optional. The container to transcode to. | 
- **transcodingProtocol** | **MediaStreamProtocol** | Optional. The transcoding protocol. | 
+ **transcodingProtocol** | **JellyfinJellyfinMediaStreamProtocol** | Optional. The transcoding protocol. | 
  **maxAudioSampleRate** | **int32** | Optional. The maximum audio sample rate. | 
  **maxAudioBitDepth** | **int32** | Optional. The maximum audio bit depth. | 
  **enableRemoteMedia** | **bool** | Optional. Whether to enable remote media. | 

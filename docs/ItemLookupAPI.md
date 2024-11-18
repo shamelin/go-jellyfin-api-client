@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ## ApplySearchCriteria
 
-> ApplySearchCriteria(ctx, itemId).RemoteSearchResult(remoteSearchResult).ReplaceAllImages(replaceAllImages).Execute()
+> ApplySearchCriteria(ctx, itemId).JellyfinRemoteSearchResult(jellyfinRemoteSearchResult).ReplaceAllImages(replaceAllImages).Execute()
 
 Applies search criteria to an item and refreshes metadata.
 
@@ -38,12 +38,12 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item id.
-	remoteSearchResult := *openapiclient.NewRemoteSearchResult() // RemoteSearchResult | The remote search result.
+	jellyfinRemoteSearchResult := *openapiclient.NewJellyfinRemoteSearchResult() // JellyfinRemoteSearchResult | The remote search result.
 	replaceAllImages := true // bool | Optional. Whether or not to replace all images. Default: True. (optional) (default to true)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.ItemLookupAPI.ApplySearchCriteria(context.Background(), itemId).RemoteSearchResult(remoteSearchResult).ReplaceAllImages(replaceAllImages).Execute()
+	r, err := apiClient.ItemLookupAPI.ApplySearchCriteria(context.Background(), itemId).JellyfinRemoteSearchResult(jellyfinRemoteSearchResult).ReplaceAllImages(replaceAllImages).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.ApplySearchCriteria``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +67,7 @@ Other parameters are passed through a pointer to a apiApplySearchCriteriaRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **remoteSearchResult** | [**RemoteSearchResult**](RemoteSearchResult.md) | The remote search result. | 
+ **jellyfinRemoteSearchResult** | [**JellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md) | The remote search result. | 
  **replaceAllImages** | **bool** | Optional. Whether or not to replace all images. Default: True. | [default to true]
 
 ### Return type
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## GetBookRemoteSearchResults
 
-> []RemoteSearchResult GetBookRemoteSearchResults(ctx).BookInfoRemoteSearchQuery(bookInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetBookRemoteSearchResults(ctx).JellyfinBookInfoRemoteSearchQuery(jellyfinBookInfoRemoteSearchQuery).Execute()
 
 Get book remote search.
 
@@ -107,16 +107,16 @@ import (
 )
 
 func main() {
-	bookInfoRemoteSearchQuery := *openapiclient.NewBookInfoRemoteSearchQuery() // BookInfoRemoteSearchQuery | Remote search query.
+	jellyfinBookInfoRemoteSearchQuery := *openapiclient.NewJellyfinBookInfoRemoteSearchQuery() // JellyfinBookInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetBookRemoteSearchResults(context.Background()).BookInfoRemoteSearchQuery(bookInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetBookRemoteSearchResults(context.Background()).JellyfinBookInfoRemoteSearchQuery(jellyfinBookInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetBookRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBookRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetBookRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetBookRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -132,11 +132,11 @@ Other parameters are passed through a pointer to a apiGetBookRemoteSearchResults
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bookInfoRemoteSearchQuery** | [**BookInfoRemoteSearchQuery**](BookInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinBookInfoRemoteSearchQuery** | [**JellyfinBookInfoRemoteSearchQuery**](JellyfinBookInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## GetBoxSetRemoteSearchResults
 
-> []RemoteSearchResult GetBoxSetRemoteSearchResults(ctx).BoxSetInfoRemoteSearchQuery(boxSetInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetBoxSetRemoteSearchResults(ctx).JellyfinBoxSetInfoRemoteSearchQuery(jellyfinBoxSetInfoRemoteSearchQuery).Execute()
 
 Get box set remote search.
 
@@ -171,16 +171,16 @@ import (
 )
 
 func main() {
-	boxSetInfoRemoteSearchQuery := *openapiclient.NewBoxSetInfoRemoteSearchQuery() // BoxSetInfoRemoteSearchQuery | Remote search query.
+	jellyfinBoxSetInfoRemoteSearchQuery := *openapiclient.NewJellyfinBoxSetInfoRemoteSearchQuery() // JellyfinBoxSetInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetBoxSetRemoteSearchResults(context.Background()).BoxSetInfoRemoteSearchQuery(boxSetInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetBoxSetRemoteSearchResults(context.Background()).JellyfinBoxSetInfoRemoteSearchQuery(jellyfinBoxSetInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetBoxSetRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBoxSetRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetBoxSetRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetBoxSetRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -196,11 +196,11 @@ Other parameters are passed through a pointer to a apiGetBoxSetRemoteSearchResul
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **boxSetInfoRemoteSearchQuery** | [**BoxSetInfoRemoteSearchQuery**](BoxSetInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinBoxSetInfoRemoteSearchQuery** | [**JellyfinBoxSetInfoRemoteSearchQuery**](JellyfinBoxSetInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## GetExternalIdInfos
 
-> []ExternalIdInfo GetExternalIdInfos(ctx, itemId).Execute()
+> []JellyfinJellyfinExternalIdInfo GetExternalIdInfos(ctx, itemId).Execute()
 
 Get the item's external id info.
 
@@ -244,7 +244,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetExternalIdInfos``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetExternalIdInfos`: []ExternalIdInfo
+	// response from `GetExternalIdInfos`: []JellyfinJellyfinExternalIdInfo
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetExternalIdInfos`: %v\n", resp)
 }
 ```
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ExternalIdInfo**](ExternalIdInfo.md)
+[**[]JellyfinJellyfinExternalIdInfo**](JellyfinExternalIdInfo.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ## GetMovieRemoteSearchResults
 
-> []RemoteSearchResult GetMovieRemoteSearchResults(ctx).MovieInfoRemoteSearchQuery(movieInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetMovieRemoteSearchResults(ctx).JellyfinMovieInfoRemoteSearchQuery(jellyfinMovieInfoRemoteSearchQuery).Execute()
 
 Get movie remote search.
 
@@ -303,16 +303,16 @@ import (
 )
 
 func main() {
-	movieInfoRemoteSearchQuery := *openapiclient.NewMovieInfoRemoteSearchQuery() // MovieInfoRemoteSearchQuery | Remote search query.
+	jellyfinMovieInfoRemoteSearchQuery := *openapiclient.NewJellyfinMovieInfoRemoteSearchQuery() // JellyfinMovieInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetMovieRemoteSearchResults(context.Background()).MovieInfoRemoteSearchQuery(movieInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetMovieRemoteSearchResults(context.Background()).JellyfinMovieInfoRemoteSearchQuery(jellyfinMovieInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetMovieRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMovieRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetMovieRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetMovieRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -328,11 +328,11 @@ Other parameters are passed through a pointer to a apiGetMovieRemoteSearchResult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **movieInfoRemoteSearchQuery** | [**MovieInfoRemoteSearchQuery**](MovieInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinMovieInfoRemoteSearchQuery** | [**JellyfinMovieInfoRemoteSearchQuery**](JellyfinMovieInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## GetMusicAlbumRemoteSearchResults
 
-> []RemoteSearchResult GetMusicAlbumRemoteSearchResults(ctx).AlbumInfoRemoteSearchQuery(albumInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetMusicAlbumRemoteSearchResults(ctx).JellyfinAlbumInfoRemoteSearchQuery(jellyfinAlbumInfoRemoteSearchQuery).Execute()
 
 Get music album remote search.
 
@@ -367,16 +367,16 @@ import (
 )
 
 func main() {
-	albumInfoRemoteSearchQuery := *openapiclient.NewAlbumInfoRemoteSearchQuery() // AlbumInfoRemoteSearchQuery | Remote search query.
+	jellyfinAlbumInfoRemoteSearchQuery := *openapiclient.NewJellyfinAlbumInfoRemoteSearchQuery() // JellyfinAlbumInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetMusicAlbumRemoteSearchResults(context.Background()).AlbumInfoRemoteSearchQuery(albumInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetMusicAlbumRemoteSearchResults(context.Background()).JellyfinAlbumInfoRemoteSearchQuery(jellyfinAlbumInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetMusicAlbumRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMusicAlbumRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetMusicAlbumRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetMusicAlbumRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -392,11 +392,11 @@ Other parameters are passed through a pointer to a apiGetMusicAlbumRemoteSearchR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **albumInfoRemoteSearchQuery** | [**AlbumInfoRemoteSearchQuery**](AlbumInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinAlbumInfoRemoteSearchQuery** | [**JellyfinAlbumInfoRemoteSearchQuery**](JellyfinAlbumInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ## GetMusicArtistRemoteSearchResults
 
-> []RemoteSearchResult GetMusicArtistRemoteSearchResults(ctx).ArtistInfoRemoteSearchQuery(artistInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetMusicArtistRemoteSearchResults(ctx).JellyfinArtistInfoRemoteSearchQuery(jellyfinArtistInfoRemoteSearchQuery).Execute()
 
 Get music artist remote search.
 
@@ -431,16 +431,16 @@ import (
 )
 
 func main() {
-	artistInfoRemoteSearchQuery := *openapiclient.NewArtistInfoRemoteSearchQuery() // ArtistInfoRemoteSearchQuery | Remote search query.
+	jellyfinArtistInfoRemoteSearchQuery := *openapiclient.NewJellyfinArtistInfoRemoteSearchQuery() // JellyfinArtistInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetMusicArtistRemoteSearchResults(context.Background()).ArtistInfoRemoteSearchQuery(artistInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetMusicArtistRemoteSearchResults(context.Background()).JellyfinArtistInfoRemoteSearchQuery(jellyfinArtistInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetMusicArtistRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMusicArtistRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetMusicArtistRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetMusicArtistRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -456,11 +456,11 @@ Other parameters are passed through a pointer to a apiGetMusicArtistRemoteSearch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **artistInfoRemoteSearchQuery** | [**ArtistInfoRemoteSearchQuery**](ArtistInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinArtistInfoRemoteSearchQuery** | [**JellyfinArtistInfoRemoteSearchQuery**](JellyfinArtistInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ Name | Type | Description  | Notes
 
 ## GetMusicVideoRemoteSearchResults
 
-> []RemoteSearchResult GetMusicVideoRemoteSearchResults(ctx).MusicVideoInfoRemoteSearchQuery(musicVideoInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetMusicVideoRemoteSearchResults(ctx).JellyfinMusicVideoInfoRemoteSearchQuery(jellyfinMusicVideoInfoRemoteSearchQuery).Execute()
 
 Get music video remote search.
 
@@ -495,16 +495,16 @@ import (
 )
 
 func main() {
-	musicVideoInfoRemoteSearchQuery := *openapiclient.NewMusicVideoInfoRemoteSearchQuery() // MusicVideoInfoRemoteSearchQuery | Remote search query.
+	jellyfinMusicVideoInfoRemoteSearchQuery := *openapiclient.NewJellyfinMusicVideoInfoRemoteSearchQuery() // JellyfinMusicVideoInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetMusicVideoRemoteSearchResults(context.Background()).MusicVideoInfoRemoteSearchQuery(musicVideoInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetMusicVideoRemoteSearchResults(context.Background()).JellyfinMusicVideoInfoRemoteSearchQuery(jellyfinMusicVideoInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetMusicVideoRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMusicVideoRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetMusicVideoRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetMusicVideoRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -520,11 +520,11 @@ Other parameters are passed through a pointer to a apiGetMusicVideoRemoteSearchR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **musicVideoInfoRemoteSearchQuery** | [**MusicVideoInfoRemoteSearchQuery**](MusicVideoInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinMusicVideoInfoRemoteSearchQuery** | [**JellyfinMusicVideoInfoRemoteSearchQuery**](JellyfinMusicVideoInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ## GetPersonRemoteSearchResults
 
-> []RemoteSearchResult GetPersonRemoteSearchResults(ctx).PersonLookupInfoRemoteSearchQuery(personLookupInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetPersonRemoteSearchResults(ctx).JellyfinPersonLookupInfoRemoteSearchQuery(jellyfinPersonLookupInfoRemoteSearchQuery).Execute()
 
 Get person remote search.
 
@@ -559,16 +559,16 @@ import (
 )
 
 func main() {
-	personLookupInfoRemoteSearchQuery := *openapiclient.NewPersonLookupInfoRemoteSearchQuery() // PersonLookupInfoRemoteSearchQuery | Remote search query.
+	jellyfinPersonLookupInfoRemoteSearchQuery := *openapiclient.NewJellyfinPersonLookupInfoRemoteSearchQuery() // JellyfinPersonLookupInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetPersonRemoteSearchResults(context.Background()).PersonLookupInfoRemoteSearchQuery(personLookupInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetPersonRemoteSearchResults(context.Background()).JellyfinPersonLookupInfoRemoteSearchQuery(jellyfinPersonLookupInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetPersonRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPersonRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetPersonRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetPersonRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -584,11 +584,11 @@ Other parameters are passed through a pointer to a apiGetPersonRemoteSearchResul
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **personLookupInfoRemoteSearchQuery** | [**PersonLookupInfoRemoteSearchQuery**](PersonLookupInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinPersonLookupInfoRemoteSearchQuery** | [**JellyfinPersonLookupInfoRemoteSearchQuery**](JellyfinPersonLookupInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ## GetSeriesRemoteSearchResults
 
-> []RemoteSearchResult GetSeriesRemoteSearchResults(ctx).SeriesInfoRemoteSearchQuery(seriesInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetSeriesRemoteSearchResults(ctx).JellyfinSeriesInfoRemoteSearchQuery(jellyfinSeriesInfoRemoteSearchQuery).Execute()
 
 Get series remote search.
 
@@ -623,16 +623,16 @@ import (
 )
 
 func main() {
-	seriesInfoRemoteSearchQuery := *openapiclient.NewSeriesInfoRemoteSearchQuery() // SeriesInfoRemoteSearchQuery | Remote search query.
+	jellyfinSeriesInfoRemoteSearchQuery := *openapiclient.NewJellyfinSeriesInfoRemoteSearchQuery() // JellyfinSeriesInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetSeriesRemoteSearchResults(context.Background()).SeriesInfoRemoteSearchQuery(seriesInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetSeriesRemoteSearchResults(context.Background()).JellyfinSeriesInfoRemoteSearchQuery(jellyfinSeriesInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetSeriesRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSeriesRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetSeriesRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetSeriesRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -648,11 +648,11 @@ Other parameters are passed through a pointer to a apiGetSeriesRemoteSearchResul
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seriesInfoRemoteSearchQuery** | [**SeriesInfoRemoteSearchQuery**](SeriesInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinSeriesInfoRemoteSearchQuery** | [**JellyfinSeriesInfoRemoteSearchQuery**](JellyfinSeriesInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 
@@ -670,7 +670,7 @@ Name | Type | Description  | Notes
 
 ## GetTrailerRemoteSearchResults
 
-> []RemoteSearchResult GetTrailerRemoteSearchResults(ctx).TrailerInfoRemoteSearchQuery(trailerInfoRemoteSearchQuery).Execute()
+> []JellyfinJellyfinRemoteSearchResult GetTrailerRemoteSearchResults(ctx).JellyfinTrailerInfoRemoteSearchQuery(jellyfinTrailerInfoRemoteSearchQuery).Execute()
 
 Get trailer remote search.
 
@@ -687,16 +687,16 @@ import (
 )
 
 func main() {
-	trailerInfoRemoteSearchQuery := *openapiclient.NewTrailerInfoRemoteSearchQuery() // TrailerInfoRemoteSearchQuery | Remote search query.
+	jellyfinTrailerInfoRemoteSearchQuery := *openapiclient.NewJellyfinTrailerInfoRemoteSearchQuery() // JellyfinTrailerInfoRemoteSearchQuery | Remote search query.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ItemLookupAPI.GetTrailerRemoteSearchResults(context.Background()).TrailerInfoRemoteSearchQuery(trailerInfoRemoteSearchQuery).Execute()
+	resp, r, err := apiClient.ItemLookupAPI.GetTrailerRemoteSearchResults(context.Background()).JellyfinTrailerInfoRemoteSearchQuery(jellyfinTrailerInfoRemoteSearchQuery).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ItemLookupAPI.GetTrailerRemoteSearchResults``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTrailerRemoteSearchResults`: []RemoteSearchResult
+	// response from `GetTrailerRemoteSearchResults`: []JellyfinJellyfinRemoteSearchResult
 	fmt.Fprintf(os.Stdout, "Response from `ItemLookupAPI.GetTrailerRemoteSearchResults`: %v\n", resp)
 }
 ```
@@ -712,11 +712,11 @@ Other parameters are passed through a pointer to a apiGetTrailerRemoteSearchResu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **trailerInfoRemoteSearchQuery** | [**TrailerInfoRemoteSearchQuery**](TrailerInfoRemoteSearchQuery.md) | Remote search query. | 
+ **jellyfinTrailerInfoRemoteSearchQuery** | [**JellyfinTrailerInfoRemoteSearchQuery**](JellyfinTrailerInfoRemoteSearchQuery.md) | Remote search query. | 
 
 ### Return type
 
-[**[]RemoteSearchResult**](RemoteSearchResult.md)
+[**[]JellyfinJellyfinRemoteSearchResult**](JellyfinRemoteSearchResult.md)
 
 ### Authorization
 

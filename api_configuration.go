@@ -29,7 +29,7 @@ type ApiGetConfigurationRequest struct {
 	ApiService *ConfigurationAPIService
 }
 
-func (r ApiGetConfigurationRequest) Execute() (*ServerConfiguration, *http.Response, error) {
+func (r ApiGetConfigurationRequest) Execute() (*JellyfinServerConfiguration, *http.Response, error) {
 	return r.ApiService.GetConfigurationExecute(r)
 }
 
@@ -47,13 +47,13 @@ func (a *ConfigurationAPIService) GetConfiguration(ctx context.Context) ApiGetCo
 }
 
 // Execute executes the request
-//  @return ServerConfiguration
-func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*ServerConfiguration, *http.Response, error) {
+//  @return JellyfinServerConfiguration
+func (a *ConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*JellyfinServerConfiguration, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ServerConfiguration
+		localVarReturnValue  *JellyfinServerConfiguration
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.GetConfiguration")
@@ -140,7 +140,7 @@ type ApiGetDefaultMetadataOptionsRequest struct {
 	ApiService *ConfigurationAPIService
 }
 
-func (r ApiGetDefaultMetadataOptionsRequest) Execute() (*MetadataOptions, *http.Response, error) {
+func (r ApiGetDefaultMetadataOptionsRequest) Execute() (*JellyfinMetadataOptions, *http.Response, error) {
 	return r.ApiService.GetDefaultMetadataOptionsExecute(r)
 }
 
@@ -158,13 +158,13 @@ func (a *ConfigurationAPIService) GetDefaultMetadataOptions(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return MetadataOptions
-func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefaultMetadataOptionsRequest) (*MetadataOptions, *http.Response, error) {
+//  @return JellyfinMetadataOptions
+func (a *ConfigurationAPIService) GetDefaultMetadataOptionsExecute(r ApiGetDefaultMetadataOptionsRequest) (*JellyfinMetadataOptions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MetadataOptions
+		localVarReturnValue  *JellyfinMetadataOptions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigurationAPIService.GetDefaultMetadataOptions")
@@ -364,12 +364,12 @@ func (a *ConfigurationAPIService) GetNamedConfigurationExecute(r ApiGetNamedConf
 type ApiUpdateConfigurationRequest struct {
 	ctx context.Context
 	ApiService *ConfigurationAPIService
-	serverConfiguration *ServerConfiguration
+	jellyfinServerConfiguration *JellyfinServerConfiguration
 }
 
 // Configuration.
-func (r ApiUpdateConfigurationRequest) ServerConfiguration(serverConfiguration ServerConfiguration) ApiUpdateConfigurationRequest {
-	r.serverConfiguration = &serverConfiguration
+func (r ApiUpdateConfigurationRequest) JellyfinServerConfiguration(jellyfinServerConfiguration JellyfinServerConfiguration) ApiUpdateConfigurationRequest {
+	r.jellyfinServerConfiguration = &jellyfinServerConfiguration
 	return r
 }
 
@@ -408,8 +408,8 @@ func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigur
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.serverConfiguration == nil {
-		return nil, reportError("serverConfiguration is required and must be specified")
+	if r.jellyfinServerConfiguration == nil {
+		return nil, reportError("jellyfinServerConfiguration is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -430,7 +430,7 @@ func (a *ConfigurationAPIService) UpdateConfigurationExecute(r ApiUpdateConfigur
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.serverConfiguration
+	localVarPostBody = r.jellyfinServerConfiguration
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

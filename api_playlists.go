@@ -151,7 +151,7 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -162,7 +162,7 @@ func (a *PlaylistsAPIService) AddItemToPlaylistExecute(r ApiAddItemToPlaylistReq
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -184,8 +184,8 @@ type ApiCreatePlaylistRequest struct {
 	name *string
 	ids *[]string
 	userId *string
-	mediaType *MediaType
-	createPlaylistDto *CreatePlaylistDto
+	mediaType *JellyfinMediaType
+	jellyfinCreatePlaylistDto *JellyfinCreatePlaylistDto
 }
 
 // The playlist name.
@@ -211,18 +211,18 @@ func (r ApiCreatePlaylistRequest) UserId(userId string) ApiCreatePlaylistRequest
 
 // The media type.
 // Deprecated
-func (r ApiCreatePlaylistRequest) MediaType(mediaType MediaType) ApiCreatePlaylistRequest {
+func (r ApiCreatePlaylistRequest) MediaType(mediaType JellyfinMediaType) ApiCreatePlaylistRequest {
 	r.mediaType = &mediaType
 	return r
 }
 
 // The create playlist payload.
-func (r ApiCreatePlaylistRequest) CreatePlaylistDto(createPlaylistDto CreatePlaylistDto) ApiCreatePlaylistRequest {
-	r.createPlaylistDto = &createPlaylistDto
+func (r ApiCreatePlaylistRequest) JellyfinCreatePlaylistDto(jellyfinCreatePlaylistDto JellyfinCreatePlaylistDto) ApiCreatePlaylistRequest {
+	r.jellyfinCreatePlaylistDto = &jellyfinCreatePlaylistDto
 	return r
 }
 
-func (r ApiCreatePlaylistRequest) Execute() (*PlaylistCreationResult, *http.Response, error) {
+func (r ApiCreatePlaylistRequest) Execute() (*JellyfinPlaylistCreationResult, *http.Response, error) {
 	return r.ApiService.CreatePlaylistExecute(r)
 }
 
@@ -243,13 +243,13 @@ func (a *PlaylistsAPIService) CreatePlaylist(ctx context.Context) ApiCreatePlayl
 }
 
 // Execute executes the request
-//  @return PlaylistCreationResult
-func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) (*PlaylistCreationResult, *http.Response, error) {
+//  @return JellyfinPlaylistCreationResult
+func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) (*JellyfinPlaylistCreationResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PlaylistCreationResult
+		localVarReturnValue  *JellyfinPlaylistCreationResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.CreatePlaylist")
@@ -301,7 +301,7 @@ func (a *PlaylistsAPIService) CreatePlaylistExecute(r ApiCreatePlaylistRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.createPlaylistDto
+	localVarPostBody = r.jellyfinCreatePlaylistDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -359,7 +359,7 @@ type ApiGetPlaylistRequest struct {
 	playlistId string
 }
 
-func (r ApiGetPlaylistRequest) Execute() (*PlaylistDto, *http.Response, error) {
+func (r ApiGetPlaylistRequest) Execute() (*JellyfinPlaylistDto, *http.Response, error) {
 	return r.ApiService.GetPlaylistExecute(r)
 }
 
@@ -379,13 +379,13 @@ func (a *PlaylistsAPIService) GetPlaylist(ctx context.Context, playlistId string
 }
 
 // Execute executes the request
-//  @return PlaylistDto
-func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*PlaylistDto, *http.Response, error) {
+//  @return JellyfinPlaylistDto
+func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*JellyfinPlaylistDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PlaylistDto
+		localVarReturnValue  *JellyfinPlaylistDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylist")
@@ -454,7 +454,7 @@ func (a *PlaylistsAPIService) GetPlaylistExecute(r ApiGetPlaylistRequest) (*Play
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -486,11 +486,11 @@ type ApiGetPlaylistItemsRequest struct {
 	userId *string
 	startIndex *int32
 	limit *int32
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	enableImages *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 }
 
 // User id.
@@ -512,7 +512,7 @@ func (r ApiGetPlaylistItemsRequest) Limit(limit int32) ApiGetPlaylistItemsReques
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetPlaylistItemsRequest) Fields(fields []ItemFields) ApiGetPlaylistItemsRequest {
+func (r ApiGetPlaylistItemsRequest) Fields(fields []JellyfinItemFields) ApiGetPlaylistItemsRequest {
 	r.fields = &fields
 	return r
 }
@@ -536,12 +536,12 @@ func (r ApiGetPlaylistItemsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetP
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetPlaylistItemsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetPlaylistItemsRequest {
+func (r ApiGetPlaylistItemsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetPlaylistItemsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
 
-func (r ApiGetPlaylistItemsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetPlaylistItemsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetPlaylistItemsExecute(r)
 }
 
@@ -561,13 +561,13 @@ func (a *PlaylistsAPIService) GetPlaylistItems(ctx context.Context, playlistId s
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistItems")
@@ -676,7 +676,7 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -687,7 +687,7 @@ func (a *PlaylistsAPIService) GetPlaylistItemsExecute(r ApiGetPlaylistItemsReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -719,7 +719,7 @@ type ApiGetPlaylistUserRequest struct {
 	userId string
 }
 
-func (r ApiGetPlaylistUserRequest) Execute() (*PlaylistUserPermissions, *http.Response, error) {
+func (r ApiGetPlaylistUserRequest) Execute() (*JellyfinPlaylistUserPermissions, *http.Response, error) {
 	return r.ApiService.GetPlaylistUserExecute(r)
 }
 
@@ -741,13 +741,13 @@ func (a *PlaylistsAPIService) GetPlaylistUser(ctx context.Context, playlistId st
 }
 
 // Execute executes the request
-//  @return PlaylistUserPermissions
-func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest) (*PlaylistUserPermissions, *http.Response, error) {
+//  @return JellyfinPlaylistUserPermissions
+func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest) (*JellyfinPlaylistUserPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *PlaylistUserPermissions
+		localVarReturnValue  *JellyfinPlaylistUserPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistUser")
@@ -817,7 +817,7 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -828,7 +828,7 @@ func (a *PlaylistsAPIService) GetPlaylistUserExecute(r ApiGetPlaylistUserRequest
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -859,7 +859,7 @@ type ApiGetPlaylistUsersRequest struct {
 	playlistId string
 }
 
-func (r ApiGetPlaylistUsersRequest) Execute() ([]PlaylistUserPermissions, *http.Response, error) {
+func (r ApiGetPlaylistUsersRequest) Execute() ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
 	return r.ApiService.GetPlaylistUsersExecute(r)
 }
 
@@ -879,13 +879,13 @@ func (a *PlaylistsAPIService) GetPlaylistUsers(ctx context.Context, playlistId s
 }
 
 // Execute executes the request
-//  @return []PlaylistUserPermissions
-func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersRequest) ([]PlaylistUserPermissions, *http.Response, error) {
+//  @return []JellyfinPlaylistUserPermissions
+func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersRequest) ([]JellyfinPlaylistUserPermissions, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []PlaylistUserPermissions
+		localVarReturnValue  []JellyfinPlaylistUserPermissions
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PlaylistsAPIService.GetPlaylistUsers")
@@ -954,7 +954,7 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -965,7 +965,7 @@ func (a *PlaylistsAPIService) GetPlaylistUsersExecute(r ApiGetPlaylistUsersReque
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1097,7 +1097,7 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1108,7 +1108,7 @@ func (a *PlaylistsAPIService) MoveItemExecute(r ApiMoveItemRequest) (*http.Respo
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1241,7 +1241,7 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1252,7 +1252,7 @@ func (a *PlaylistsAPIService) RemoveItemFromPlaylistExecute(r ApiRemoveItemFromP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1371,7 +1371,7 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1382,7 +1382,7 @@ func (a *PlaylistsAPIService) RemoveUserFromPlaylistExecute(r ApiRemoveUserFromP
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1402,12 +1402,12 @@ type ApiUpdatePlaylistRequest struct {
 	ctx context.Context
 	ApiService *PlaylistsAPIService
 	playlistId string
-	updatePlaylistDto *UpdatePlaylistDto
+	jellyfinUpdatePlaylistDto *JellyfinUpdatePlaylistDto
 }
 
 // The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistDto id.
-func (r ApiUpdatePlaylistRequest) UpdatePlaylistDto(updatePlaylistDto UpdatePlaylistDto) ApiUpdatePlaylistRequest {
-	r.updatePlaylistDto = &updatePlaylistDto
+func (r ApiUpdatePlaylistRequest) JellyfinUpdatePlaylistDto(jellyfinUpdatePlaylistDto JellyfinUpdatePlaylistDto) ApiUpdatePlaylistRequest {
+	r.jellyfinUpdatePlaylistDto = &jellyfinUpdatePlaylistDto
 	return r
 }
 
@@ -1449,8 +1449,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updatePlaylistDto == nil {
-		return nil, reportError("updatePlaylistDto is required and must be specified")
+	if r.jellyfinUpdatePlaylistDto == nil {
+		return nil, reportError("jellyfinUpdatePlaylistDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1471,7 +1471,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updatePlaylistDto
+	localVarPostBody = r.jellyfinUpdatePlaylistDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1509,7 +1509,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1520,7 +1520,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistExecute(r ApiUpdatePlaylistRequest) 
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1541,12 +1541,12 @@ type ApiUpdatePlaylistUserRequest struct {
 	ApiService *PlaylistsAPIService
 	playlistId string
 	userId string
-	updatePlaylistUserDto *UpdatePlaylistUserDto
+	jellyfinUpdatePlaylistUserDto *JellyfinUpdatePlaylistUserDto
 }
 
 // The Jellyfin.Api.Models.PlaylistDtos.UpdatePlaylistUserDto.
-func (r ApiUpdatePlaylistUserRequest) UpdatePlaylistUserDto(updatePlaylistUserDto UpdatePlaylistUserDto) ApiUpdatePlaylistUserRequest {
-	r.updatePlaylistUserDto = &updatePlaylistUserDto
+func (r ApiUpdatePlaylistUserRequest) JellyfinUpdatePlaylistUserDto(jellyfinUpdatePlaylistUserDto JellyfinUpdatePlaylistUserDto) ApiUpdatePlaylistUserRequest {
+	r.jellyfinUpdatePlaylistUserDto = &jellyfinUpdatePlaylistUserDto
 	return r
 }
 
@@ -1591,8 +1591,8 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updatePlaylistUserDto == nil {
-		return nil, reportError("updatePlaylistUserDto is required and must be specified")
+	if r.jellyfinUpdatePlaylistUserDto == nil {
+		return nil, reportError("jellyfinUpdatePlaylistUserDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1613,7 +1613,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updatePlaylistUserDto
+	localVarPostBody = r.jellyfinUpdatePlaylistUserDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1651,7 +1651,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1662,7 +1662,7 @@ func (a *PlaylistsAPIService) UpdatePlaylistUserExecute(r ApiUpdatePlaylistUserR
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

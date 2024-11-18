@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GetPackageInfo
 
-> PackageInfo GetPackageInfo(ctx, name).AssemblyGuid(assemblyGuid).Execute()
+> JellyfinJellyfinPackageInfo GetPackageInfo(ctx, name).AssemblyGuid(assemblyGuid).Execute()
 
 Gets a package by name or assembly GUID.
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PackageAPI.GetPackageInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPackageInfo`: PackageInfo
+	// response from `GetPackageInfo`: JellyfinJellyfinPackageInfo
 	fmt.Fprintf(os.Stdout, "Response from `PackageAPI.GetPackageInfo`: %v\n", resp)
 }
 ```
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PackageInfo**](PackageInfo.md)
+[**JellyfinJellyfinPackageInfo**](JellyfinPackageInfo.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GetPackages
 
-> []PackageInfo GetPackages(ctx).Execute()
+> []JellyfinJellyfinPackageInfo GetPackages(ctx).Execute()
 
 Gets available packages.
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PackageAPI.GetPackages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPackages`: []PackageInfo
+	// response from `GetPackages`: []JellyfinJellyfinPackageInfo
 	fmt.Fprintf(os.Stdout, "Response from `PackageAPI.GetPackages`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiGetPackagesRequest struct 
 
 ### Return type
 
-[**[]PackageInfo**](PackageInfo.md)
+[**[]JellyfinJellyfinPackageInfo**](JellyfinPackageInfo.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiGetPackagesRequest struct 
 
 ## GetRepositories
 
-> []RepositoryInfo GetRepositories(ctx).Execute()
+> []JellyfinJellyfinRepositoryInfo GetRepositories(ctx).Execute()
 
 Gets all package repositories.
 
@@ -235,7 +235,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `PackageAPI.GetRepositories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepositories`: []RepositoryInfo
+	// response from `GetRepositories`: []JellyfinJellyfinRepositoryInfo
 	fmt.Fprintf(os.Stdout, "Response from `PackageAPI.GetRepositories`: %v\n", resp)
 }
 ```
@@ -251,7 +251,7 @@ Other parameters are passed through a pointer to a apiGetRepositoriesRequest str
 
 ### Return type
 
-[**[]RepositoryInfo**](RepositoryInfo.md)
+[**[]JellyfinJellyfinRepositoryInfo**](JellyfinRepositoryInfo.md)
 
 ### Authorization
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ## SetRepositories
 
-> SetRepositories(ctx).RepositoryInfo(repositoryInfo).Execute()
+> SetRepositories(ctx).JellyfinRepositoryInfo(jellyfinRepositoryInfo).Execute()
 
 Sets the enabled and existing package repositories.
 
@@ -358,11 +358,11 @@ import (
 )
 
 func main() {
-	repositoryInfo := []openapiclient.RepositoryInfo{*openapiclient.NewRepositoryInfo()} // []RepositoryInfo | The list of package repositories.
+	jellyfinRepositoryInfo := []JellyfinJellyfinRepositoryInfo{"TODO"} // []JellyfinJellyfinRepositoryInfo | The list of package repositories.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.PackageAPI.SetRepositories(context.Background()).RepositoryInfo(repositoryInfo).Execute()
+	r, err := apiClient.PackageAPI.SetRepositories(context.Background()).JellyfinRepositoryInfo(jellyfinRepositoryInfo).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PackageAPI.SetRepositories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -381,7 +381,7 @@ Other parameters are passed through a pointer to a apiSetRepositoriesRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repositoryInfo** | [**[]RepositoryInfo**](RepositoryInfo.md) | The list of package repositories. | 
+ **jellyfinRepositoryInfo** | [**[]JellyfinJellyfinRepositoryInfo**](JellyfinRepositoryInfo.md) | The list of package repositories. | 
 
 ### Return type
 

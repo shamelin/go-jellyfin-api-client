@@ -37,7 +37,7 @@ func (r ApiGetPersonRequest) UserId(userId string) ApiGetPersonRequest {
 	return r
 }
 
-func (r ApiGetPersonRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetPersonRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetPersonExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *PersonsAPIService) GetPerson(ctx context.Context, name string) ApiGetPe
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonsAPIService.GetPerson")
@@ -135,7 +135,7 @@ func (a *PersonsAPIService) GetPersonExecute(r ApiGetPersonRequest) (*BaseItemDt
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -165,12 +165,12 @@ type ApiGetPersonsRequest struct {
 	ApiService *PersonsAPIService
 	limit *int32
 	searchTerm *string
-	fields *[]ItemFields
-	filters *[]ItemFilter
+	fields *[]JellyfinItemFields
+	filters *[]JellyfinItemFilter
 	isFavorite *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	excludePersonTypes *[]string
 	personTypes *[]string
 	appearsInItemId *string
@@ -191,13 +191,13 @@ func (r ApiGetPersonsRequest) SearchTerm(searchTerm string) ApiGetPersonsRequest
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetPersonsRequest) Fields(fields []ItemFields) ApiGetPersonsRequest {
+func (r ApiGetPersonsRequest) Fields(fields []JellyfinItemFields) ApiGetPersonsRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. Specify additional filters to apply.
-func (r ApiGetPersonsRequest) Filters(filters []ItemFilter) ApiGetPersonsRequest {
+func (r ApiGetPersonsRequest) Filters(filters []JellyfinItemFilter) ApiGetPersonsRequest {
 	r.filters = &filters
 	return r
 }
@@ -221,7 +221,7 @@ func (r ApiGetPersonsRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetPersons
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetPersonsRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetPersonsRequest {
+func (r ApiGetPersonsRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetPersonsRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -256,7 +256,7 @@ func (r ApiGetPersonsRequest) EnableImages(enableImages bool) ApiGetPersonsReque
 	return r
 }
 
-func (r ApiGetPersonsRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetPersonsRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetPersonsExecute(r)
 }
 
@@ -274,13 +274,13 @@ func (a *PersonsAPIService) GetPersons(ctx context.Context) ApiGetPersonsRequest
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *PersonsAPIService) GetPersonsExecute(r ApiGetPersonsRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *PersonsAPIService) GetPersonsExecute(r ApiGetPersonsRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PersonsAPIService.GetPersons")

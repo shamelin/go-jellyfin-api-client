@@ -30,7 +30,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item Id.
-	type_ := "type__example" // ImageType | The image type.
+	type_ := "type__example" // JellyfinJellyfinImageType | The image type.
 	imageUrl := "imageUrl_example" // string | The image url. (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -59,7 +59,7 @@ Other parameters are passed through a pointer to a apiDownloadRemoteImageRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **type_** | **ImageType** | The image type. | 
+ **type_** | **JellyfinJellyfinImageType** | The image type. | 
  **imageUrl** | **string** | The image url. | 
 
 ### Return type
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GetRemoteImageProviders
 
-> []ImageProviderInfo GetRemoteImageProviders(ctx, itemId).Execute()
+> []JellyfinJellyfinImageProviderInfo GetRemoteImageProviders(ctx, itemId).Execute()
 
 Gets available remote image providers for an item.
 
@@ -108,7 +108,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RemoteImageAPI.GetRemoteImageProviders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRemoteImageProviders`: []ImageProviderInfo
+	// response from `GetRemoteImageProviders`: []JellyfinJellyfinImageProviderInfo
 	fmt.Fprintf(os.Stdout, "Response from `RemoteImageAPI.GetRemoteImageProviders`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ImageProviderInfo**](ImageProviderInfo.md)
+[**[]JellyfinJellyfinImageProviderInfo**](JellyfinImageProviderInfo.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ## GetRemoteImages
 
-> RemoteImageResult GetRemoteImages(ctx, itemId).Type_(type_).StartIndex(startIndex).Limit(limit).ProviderName(providerName).IncludeAllLanguages(includeAllLanguages).Execute()
+> JellyfinJellyfinRemoteImageResult GetRemoteImages(ctx, itemId).Type_(type_).StartIndex(startIndex).Limit(limit).ProviderName(providerName).IncludeAllLanguages(includeAllLanguages).Execute()
 
 Gets available remote images for an item.
 
@@ -168,7 +168,7 @@ import (
 
 func main() {
 	itemId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | Item Id.
-	type_ := "type__example" // ImageType | The image type. (optional)
+	type_ := "type__example" // JellyfinJellyfinImageType | The image type. (optional)
 	startIndex := int32(56) // int32 | Optional. The record index to start at. All items with a lower index will be dropped from the results. (optional)
 	limit := int32(56) // int32 | Optional. The maximum number of records to return. (optional)
 	providerName := "providerName_example" // string | Optional. The image provider to use. (optional)
@@ -181,7 +181,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RemoteImageAPI.GetRemoteImages``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRemoteImages`: RemoteImageResult
+	// response from `GetRemoteImages`: JellyfinJellyfinRemoteImageResult
 	fmt.Fprintf(os.Stdout, "Response from `RemoteImageAPI.GetRemoteImages`: %v\n", resp)
 }
 ```
@@ -202,7 +202,7 @@ Other parameters are passed through a pointer to a apiGetRemoteImagesRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **type_** | **ImageType** | The image type. | 
+ **type_** | **JellyfinJellyfinImageType** | The image type. | 
  **startIndex** | **int32** | Optional. The record index to start at. All items with a lower index will be dropped from the results. | 
  **limit** | **int32** | Optional. The maximum number of records to return. | 
  **providerName** | **string** | Optional. The image provider to use. | 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RemoteImageResult**](RemoteImageResult.md)
+[**JellyfinJellyfinRemoteImageResult**](JellyfinRemoteImageResult.md)
 
 ### Authorization
 

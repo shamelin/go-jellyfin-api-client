@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## SyncPlayBuffering
 
-> SyncPlayBuffering(ctx).BufferRequestDto(bufferRequestDto).Execute()
+> SyncPlayBuffering(ctx).JellyfinBufferRequestDto(jellyfinBufferRequestDto).Execute()
 
 Notify SyncPlay group that member is buffering.
 
@@ -47,11 +47,11 @@ import (
 )
 
 func main() {
-	bufferRequestDto := *openapiclient.NewBufferRequestDto() // BufferRequestDto | The player status.
+	jellyfinBufferRequestDto := *openapiclient.NewJellyfinBufferRequestDto() // JellyfinBufferRequestDto | The player status.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayBuffering(context.Background()).BufferRequestDto(bufferRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayBuffering(context.Background()).JellyfinBufferRequestDto(jellyfinBufferRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayBuffering``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,7 +70,7 @@ Other parameters are passed through a pointer to a apiSyncPlayBufferingRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bufferRequestDto** | [**BufferRequestDto**](BufferRequestDto.md) | The player status. | 
+ **jellyfinBufferRequestDto** | [**JellyfinBufferRequestDto**](JellyfinBufferRequestDto.md) | The player status. | 
 
 ### Return type
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayCreateGroup
 
-> SyncPlayCreateGroup(ctx).NewGroupRequestDto(newGroupRequestDto).Execute()
+> SyncPlayCreateGroup(ctx).JellyfinNewGroupRequestDto(jellyfinNewGroupRequestDto).Execute()
 
 Create a new SyncPlay group.
 
@@ -109,11 +109,11 @@ import (
 )
 
 func main() {
-	newGroupRequestDto := *openapiclient.NewNewGroupRequestDto() // NewGroupRequestDto | The settings of the new group.
+	jellyfinNewGroupRequestDto := *openapiclient.NewJellyfinNewGroupRequestDto() // JellyfinNewGroupRequestDto | The settings of the new group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayCreateGroup(context.Background()).NewGroupRequestDto(newGroupRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayCreateGroup(context.Background()).JellyfinNewGroupRequestDto(jellyfinNewGroupRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayCreateGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to a apiSyncPlayCreateGroupRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **newGroupRequestDto** | [**NewGroupRequestDto**](NewGroupRequestDto.md) | The settings of the new group. | 
+ **jellyfinNewGroupRequestDto** | [**JellyfinNewGroupRequestDto**](JellyfinNewGroupRequestDto.md) | The settings of the new group. | 
 
 ### Return type
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayGetGroups
 
-> []GroupInfoDto SyncPlayGetGroups(ctx).Execute()
+> []JellyfinJellyfinGroupInfoDto SyncPlayGetGroups(ctx).Execute()
 
 Gets all SyncPlay groups.
 
@@ -179,7 +179,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayGetGroups``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SyncPlayGetGroups`: []GroupInfoDto
+	// response from `SyncPlayGetGroups`: []JellyfinJellyfinGroupInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `SyncPlayAPI.SyncPlayGetGroups`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a apiSyncPlayGetGroupsRequest s
 
 ### Return type
 
-[**[]GroupInfoDto**](GroupInfoDto.md)
+[**[]JellyfinJellyfinGroupInfoDto**](JellyfinGroupInfoDto.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Other parameters are passed through a pointer to a apiSyncPlayGetGroupsRequest s
 
 ## SyncPlayJoinGroup
 
-> SyncPlayJoinGroup(ctx).JoinGroupRequestDto(joinGroupRequestDto).Execute()
+> SyncPlayJoinGroup(ctx).JellyfinJoinGroupRequestDto(jellyfinJoinGroupRequestDto).Execute()
 
 Join an existing SyncPlay group.
 
@@ -230,11 +230,11 @@ import (
 )
 
 func main() {
-	joinGroupRequestDto := *openapiclient.NewJoinGroupRequestDto() // JoinGroupRequestDto | The group to join.
+	jellyfinJoinGroupRequestDto := *openapiclient.NewJellyfinJoinGroupRequestDto() // JellyfinJoinGroupRequestDto | The group to join.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayJoinGroup(context.Background()).JoinGroupRequestDto(joinGroupRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayJoinGroup(context.Background()).JellyfinJoinGroupRequestDto(jellyfinJoinGroupRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayJoinGroup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ Other parameters are passed through a pointer to a apiSyncPlayJoinGroupRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **joinGroupRequestDto** | [**JoinGroupRequestDto**](JoinGroupRequestDto.md) | The group to join. | 
+ **jellyfinJoinGroupRequestDto** | [**JellyfinJoinGroupRequestDto**](JellyfinJoinGroupRequestDto.md) | The group to join. | 
 
 ### Return type
 
@@ -332,7 +332,7 @@ Other parameters are passed through a pointer to a apiSyncPlayLeaveGroupRequest 
 
 ## SyncPlayMovePlaylistItem
 
-> SyncPlayMovePlaylistItem(ctx).MovePlaylistItemRequestDto(movePlaylistItemRequestDto).Execute()
+> SyncPlayMovePlaylistItem(ctx).JellyfinMovePlaylistItemRequestDto(jellyfinMovePlaylistItemRequestDto).Execute()
 
 Request to move an item in the playlist in SyncPlay group.
 
@@ -349,11 +349,11 @@ import (
 )
 
 func main() {
-	movePlaylistItemRequestDto := *openapiclient.NewMovePlaylistItemRequestDto() // MovePlaylistItemRequestDto | The new position for the item.
+	jellyfinMovePlaylistItemRequestDto := *openapiclient.NewJellyfinMovePlaylistItemRequestDto() // JellyfinMovePlaylistItemRequestDto | The new position for the item.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayMovePlaylistItem(context.Background()).MovePlaylistItemRequestDto(movePlaylistItemRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayMovePlaylistItem(context.Background()).JellyfinMovePlaylistItemRequestDto(jellyfinMovePlaylistItemRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayMovePlaylistItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -372,7 +372,7 @@ Other parameters are passed through a pointer to a apiSyncPlayMovePlaylistItemRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **movePlaylistItemRequestDto** | [**MovePlaylistItemRequestDto**](MovePlaylistItemRequestDto.md) | The new position for the item. | 
+ **jellyfinMovePlaylistItemRequestDto** | [**JellyfinMovePlaylistItemRequestDto**](JellyfinMovePlaylistItemRequestDto.md) | The new position for the item. | 
 
 ### Return type
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayNextItem
 
-> SyncPlayNextItem(ctx).NextItemRequestDto(nextItemRequestDto).Execute()
+> SyncPlayNextItem(ctx).JellyfinNextItemRequestDto(jellyfinNextItemRequestDto).Execute()
 
 Request next item in SyncPlay group.
 
@@ -411,11 +411,11 @@ import (
 )
 
 func main() {
-	nextItemRequestDto := *openapiclient.NewNextItemRequestDto() // NextItemRequestDto | The current item information.
+	jellyfinNextItemRequestDto := *openapiclient.NewJellyfinNextItemRequestDto() // JellyfinNextItemRequestDto | The current item information.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayNextItem(context.Background()).NextItemRequestDto(nextItemRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayNextItem(context.Background()).JellyfinNextItemRequestDto(jellyfinNextItemRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayNextItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -434,7 +434,7 @@ Other parameters are passed through a pointer to a apiSyncPlayNextItemRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **nextItemRequestDto** | [**NextItemRequestDto**](NextItemRequestDto.md) | The current item information. | 
+ **jellyfinNextItemRequestDto** | [**JellyfinNextItemRequestDto**](JellyfinNextItemRequestDto.md) | The current item information. | 
 
 ### Return type
 
@@ -513,7 +513,7 @@ Other parameters are passed through a pointer to a apiSyncPlayPauseRequest struc
 
 ## SyncPlayPing
 
-> SyncPlayPing(ctx).PingRequestDto(pingRequestDto).Execute()
+> SyncPlayPing(ctx).JellyfinPingRequestDto(jellyfinPingRequestDto).Execute()
 
 Update session ping.
 
@@ -530,11 +530,11 @@ import (
 )
 
 func main() {
-	pingRequestDto := *openapiclient.NewPingRequestDto() // PingRequestDto | The new ping.
+	jellyfinPingRequestDto := *openapiclient.NewJellyfinPingRequestDto() // JellyfinPingRequestDto | The new ping.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayPing(context.Background()).PingRequestDto(pingRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayPing(context.Background()).JellyfinPingRequestDto(jellyfinPingRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayPing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -553,7 +553,7 @@ Other parameters are passed through a pointer to a apiSyncPlayPingRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pingRequestDto** | [**PingRequestDto**](PingRequestDto.md) | The new ping. | 
+ **jellyfinPingRequestDto** | [**JellyfinPingRequestDto**](JellyfinPingRequestDto.md) | The new ping. | 
 
 ### Return type
 
@@ -575,7 +575,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayPreviousItem
 
-> SyncPlayPreviousItem(ctx).PreviousItemRequestDto(previousItemRequestDto).Execute()
+> SyncPlayPreviousItem(ctx).JellyfinPreviousItemRequestDto(jellyfinPreviousItemRequestDto).Execute()
 
 Request previous item in SyncPlay group.
 
@@ -592,11 +592,11 @@ import (
 )
 
 func main() {
-	previousItemRequestDto := *openapiclient.NewPreviousItemRequestDto() // PreviousItemRequestDto | The current item information.
+	jellyfinPreviousItemRequestDto := *openapiclient.NewJellyfinPreviousItemRequestDto() // JellyfinPreviousItemRequestDto | The current item information.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayPreviousItem(context.Background()).PreviousItemRequestDto(previousItemRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayPreviousItem(context.Background()).JellyfinPreviousItemRequestDto(jellyfinPreviousItemRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayPreviousItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -615,7 +615,7 @@ Other parameters are passed through a pointer to a apiSyncPlayPreviousItemReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **previousItemRequestDto** | [**PreviousItemRequestDto**](PreviousItemRequestDto.md) | The current item information. | 
+ **jellyfinPreviousItemRequestDto** | [**JellyfinPreviousItemRequestDto**](JellyfinPreviousItemRequestDto.md) | The current item information. | 
 
 ### Return type
 
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayQueue
 
-> SyncPlayQueue(ctx).QueueRequestDto(queueRequestDto).Execute()
+> SyncPlayQueue(ctx).JellyfinQueueRequestDto(jellyfinQueueRequestDto).Execute()
 
 Request to queue items to the playlist of a SyncPlay group.
 
@@ -654,11 +654,11 @@ import (
 )
 
 func main() {
-	queueRequestDto := *openapiclient.NewQueueRequestDto() // QueueRequestDto | The items to add.
+	jellyfinQueueRequestDto := *openapiclient.NewJellyfinQueueRequestDto() // JellyfinQueueRequestDto | The items to add.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayQueue(context.Background()).QueueRequestDto(queueRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayQueue(context.Background()).JellyfinQueueRequestDto(jellyfinQueueRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayQueue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -677,7 +677,7 @@ Other parameters are passed through a pointer to a apiSyncPlayQueueRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **queueRequestDto** | [**QueueRequestDto**](QueueRequestDto.md) | The items to add. | 
+ **jellyfinQueueRequestDto** | [**JellyfinQueueRequestDto**](JellyfinQueueRequestDto.md) | The items to add. | 
 
 ### Return type
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayReady
 
-> SyncPlayReady(ctx).ReadyRequestDto(readyRequestDto).Execute()
+> SyncPlayReady(ctx).JellyfinReadyRequestDto(jellyfinReadyRequestDto).Execute()
 
 Notify SyncPlay group that member is ready for playback.
 
@@ -716,11 +716,11 @@ import (
 )
 
 func main() {
-	readyRequestDto := *openapiclient.NewReadyRequestDto() // ReadyRequestDto | The player status.
+	jellyfinReadyRequestDto := *openapiclient.NewJellyfinReadyRequestDto() // JellyfinReadyRequestDto | The player status.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayReady(context.Background()).ReadyRequestDto(readyRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayReady(context.Background()).JellyfinReadyRequestDto(jellyfinReadyRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayReady``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -739,7 +739,7 @@ Other parameters are passed through a pointer to a apiSyncPlayReadyRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **readyRequestDto** | [**ReadyRequestDto**](ReadyRequestDto.md) | The player status. | 
+ **jellyfinReadyRequestDto** | [**JellyfinReadyRequestDto**](JellyfinReadyRequestDto.md) | The player status. | 
 
 ### Return type
 
@@ -761,7 +761,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlayRemoveFromPlaylist
 
-> SyncPlayRemoveFromPlaylist(ctx).RemoveFromPlaylistRequestDto(removeFromPlaylistRequestDto).Execute()
+> SyncPlayRemoveFromPlaylist(ctx).JellyfinRemoveFromPlaylistRequestDto(jellyfinRemoveFromPlaylistRequestDto).Execute()
 
 Request to remove items from the playlist in SyncPlay group.
 
@@ -778,11 +778,11 @@ import (
 )
 
 func main() {
-	removeFromPlaylistRequestDto := *openapiclient.NewRemoveFromPlaylistRequestDto() // RemoveFromPlaylistRequestDto | The items to remove.
+	jellyfinRemoveFromPlaylistRequestDto := *openapiclient.NewJellyfinRemoveFromPlaylistRequestDto() // JellyfinRemoveFromPlaylistRequestDto | The items to remove.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlayRemoveFromPlaylist(context.Background()).RemoveFromPlaylistRequestDto(removeFromPlaylistRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlayRemoveFromPlaylist(context.Background()).JellyfinRemoveFromPlaylistRequestDto(jellyfinRemoveFromPlaylistRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlayRemoveFromPlaylist``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -801,7 +801,7 @@ Other parameters are passed through a pointer to a apiSyncPlayRemoveFromPlaylist
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **removeFromPlaylistRequestDto** | [**RemoveFromPlaylistRequestDto**](RemoveFromPlaylistRequestDto.md) | The items to remove. | 
+ **jellyfinRemoveFromPlaylistRequestDto** | [**JellyfinRemoveFromPlaylistRequestDto**](JellyfinRemoveFromPlaylistRequestDto.md) | The items to remove. | 
 
 ### Return type
 
@@ -823,7 +823,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySeek
 
-> SyncPlaySeek(ctx).SeekRequestDto(seekRequestDto).Execute()
+> SyncPlaySeek(ctx).JellyfinSeekRequestDto(jellyfinSeekRequestDto).Execute()
 
 Request seek in SyncPlay group.
 
@@ -840,11 +840,11 @@ import (
 )
 
 func main() {
-	seekRequestDto := *openapiclient.NewSeekRequestDto() // SeekRequestDto | The new playback position.
+	jellyfinSeekRequestDto := *openapiclient.NewJellyfinSeekRequestDto() // JellyfinSeekRequestDto | The new playback position.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySeek(context.Background()).SeekRequestDto(seekRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySeek(context.Background()).JellyfinSeekRequestDto(jellyfinSeekRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySeek``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -863,7 +863,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySeekRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **seekRequestDto** | [**SeekRequestDto**](SeekRequestDto.md) | The new playback position. | 
+ **jellyfinSeekRequestDto** | [**JellyfinSeekRequestDto**](JellyfinSeekRequestDto.md) | The new playback position. | 
 
 ### Return type
 
@@ -885,7 +885,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySetIgnoreWait
 
-> SyncPlaySetIgnoreWait(ctx).IgnoreWaitRequestDto(ignoreWaitRequestDto).Execute()
+> SyncPlaySetIgnoreWait(ctx).JellyfinIgnoreWaitRequestDto(jellyfinIgnoreWaitRequestDto).Execute()
 
 Request SyncPlay group to ignore member during group-wait.
 
@@ -902,11 +902,11 @@ import (
 )
 
 func main() {
-	ignoreWaitRequestDto := *openapiclient.NewIgnoreWaitRequestDto() // IgnoreWaitRequestDto | The settings to set.
+	jellyfinIgnoreWaitRequestDto := *openapiclient.NewJellyfinIgnoreWaitRequestDto() // JellyfinIgnoreWaitRequestDto | The settings to set.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySetIgnoreWait(context.Background()).IgnoreWaitRequestDto(ignoreWaitRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySetIgnoreWait(context.Background()).JellyfinIgnoreWaitRequestDto(jellyfinIgnoreWaitRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySetIgnoreWait``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -925,7 +925,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySetIgnoreWaitReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ignoreWaitRequestDto** | [**IgnoreWaitRequestDto**](IgnoreWaitRequestDto.md) | The settings to set. | 
+ **jellyfinIgnoreWaitRequestDto** | [**JellyfinIgnoreWaitRequestDto**](JellyfinIgnoreWaitRequestDto.md) | The settings to set. | 
 
 ### Return type
 
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySetNewQueue
 
-> SyncPlaySetNewQueue(ctx).PlayRequestDto(playRequestDto).Execute()
+> SyncPlaySetNewQueue(ctx).JellyfinPlayRequestDto(jellyfinPlayRequestDto).Execute()
 
 Request to set new playlist in SyncPlay group.
 
@@ -964,11 +964,11 @@ import (
 )
 
 func main() {
-	playRequestDto := *openapiclient.NewPlayRequestDto() // PlayRequestDto | The new playlist to play in the group.
+	jellyfinPlayRequestDto := *openapiclient.NewJellyfinPlayRequestDto() // JellyfinPlayRequestDto | The new playlist to play in the group.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySetNewQueue(context.Background()).PlayRequestDto(playRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySetNewQueue(context.Background()).JellyfinPlayRequestDto(jellyfinPlayRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySetNewQueue``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -987,7 +987,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySetNewQueueRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playRequestDto** | [**PlayRequestDto**](PlayRequestDto.md) | The new playlist to play in the group. | 
+ **jellyfinPlayRequestDto** | [**JellyfinPlayRequestDto**](JellyfinPlayRequestDto.md) | The new playlist to play in the group. | 
 
 ### Return type
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySetPlaylistItem
 
-> SyncPlaySetPlaylistItem(ctx).SetPlaylistItemRequestDto(setPlaylistItemRequestDto).Execute()
+> SyncPlaySetPlaylistItem(ctx).JellyfinSetPlaylistItemRequestDto(jellyfinSetPlaylistItemRequestDto).Execute()
 
 Request to change playlist item in SyncPlay group.
 
@@ -1026,11 +1026,11 @@ import (
 )
 
 func main() {
-	setPlaylistItemRequestDto := *openapiclient.NewSetPlaylistItemRequestDto() // SetPlaylistItemRequestDto | The new item to play.
+	jellyfinSetPlaylistItemRequestDto := *openapiclient.NewJellyfinSetPlaylistItemRequestDto() // JellyfinSetPlaylistItemRequestDto | The new item to play.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySetPlaylistItem(context.Background()).SetPlaylistItemRequestDto(setPlaylistItemRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySetPlaylistItem(context.Background()).JellyfinSetPlaylistItemRequestDto(jellyfinSetPlaylistItemRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySetPlaylistItem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1049,7 +1049,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySetPlaylistItemReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **setPlaylistItemRequestDto** | [**SetPlaylistItemRequestDto**](SetPlaylistItemRequestDto.md) | The new item to play. | 
+ **jellyfinSetPlaylistItemRequestDto** | [**JellyfinSetPlaylistItemRequestDto**](JellyfinSetPlaylistItemRequestDto.md) | The new item to play. | 
 
 ### Return type
 
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySetRepeatMode
 
-> SyncPlaySetRepeatMode(ctx).SetRepeatModeRequestDto(setRepeatModeRequestDto).Execute()
+> SyncPlaySetRepeatMode(ctx).JellyfinSetRepeatModeRequestDto(jellyfinSetRepeatModeRequestDto).Execute()
 
 Request to set repeat mode in SyncPlay group.
 
@@ -1088,11 +1088,11 @@ import (
 )
 
 func main() {
-	setRepeatModeRequestDto := *openapiclient.NewSetRepeatModeRequestDto() // SetRepeatModeRequestDto | The new repeat mode.
+	jellyfinSetRepeatModeRequestDto := *openapiclient.NewJellyfinSetRepeatModeRequestDto() // JellyfinSetRepeatModeRequestDto | The new repeat mode.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySetRepeatMode(context.Background()).SetRepeatModeRequestDto(setRepeatModeRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySetRepeatMode(context.Background()).JellyfinSetRepeatModeRequestDto(jellyfinSetRepeatModeRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySetRepeatMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1111,7 +1111,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySetRepeatModeReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **setRepeatModeRequestDto** | [**SetRepeatModeRequestDto**](SetRepeatModeRequestDto.md) | The new repeat mode. | 
+ **jellyfinSetRepeatModeRequestDto** | [**JellyfinSetRepeatModeRequestDto**](JellyfinSetRepeatModeRequestDto.md) | The new repeat mode. | 
 
 ### Return type
 
@@ -1133,7 +1133,7 @@ Name | Type | Description  | Notes
 
 ## SyncPlaySetShuffleMode
 
-> SyncPlaySetShuffleMode(ctx).SetShuffleModeRequestDto(setShuffleModeRequestDto).Execute()
+> SyncPlaySetShuffleMode(ctx).JellyfinSetShuffleModeRequestDto(jellyfinSetShuffleModeRequestDto).Execute()
 
 Request to set shuffle mode in SyncPlay group.
 
@@ -1150,11 +1150,11 @@ import (
 )
 
 func main() {
-	setShuffleModeRequestDto := *openapiclient.NewSetShuffleModeRequestDto() // SetShuffleModeRequestDto | The new shuffle mode.
+	jellyfinSetShuffleModeRequestDto := *openapiclient.NewJellyfinSetShuffleModeRequestDto() // JellyfinSetShuffleModeRequestDto | The new shuffle mode.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SyncPlayAPI.SyncPlaySetShuffleMode(context.Background()).SetShuffleModeRequestDto(setShuffleModeRequestDto).Execute()
+	r, err := apiClient.SyncPlayAPI.SyncPlaySetShuffleMode(context.Background()).JellyfinSetShuffleModeRequestDto(jellyfinSetShuffleModeRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SyncPlayAPI.SyncPlaySetShuffleMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1173,7 +1173,7 @@ Other parameters are passed through a pointer to a apiSyncPlaySetShuffleModeRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **setShuffleModeRequestDto** | [**SetShuffleModeRequestDto**](SetShuffleModeRequestDto.md) | The new shuffle mode. | 
+ **jellyfinSetShuffleModeRequestDto** | [**JellyfinSetShuffleModeRequestDto**](JellyfinSetShuffleModeRequestDto.md) | The new shuffle mode. | 
 
 ### Return type
 

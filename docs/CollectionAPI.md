@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## CreateCollection
 
-> CollectionCreationResult CreateCollection(ctx).Name(name).Ids(ids).ParentId(parentId).IsLocked(isLocked).Execute()
+> JellyfinJellyfinCollectionCreationResult CreateCollection(ctx).Name(name).Ids(ids).ParentId(parentId).IsLocked(isLocked).Execute()
 
 Creates a new collection.
 
@@ -109,7 +109,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CollectionAPI.CreateCollection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateCollection`: CollectionCreationResult
+	// response from `CreateCollection`: JellyfinJellyfinCollectionCreationResult
 	fmt.Fprintf(os.Stdout, "Response from `CollectionAPI.CreateCollection`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CollectionCreationResult**](CollectionCreationResult.md)
+[**JellyfinJellyfinCollectionCreationResult**](JellyfinCollectionCreationResult.md)
 
 ### Authorization
 

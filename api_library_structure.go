@@ -26,13 +26,13 @@ type LibraryStructureAPIService service
 type ApiAddMediaPathRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
-	mediaPathDto *MediaPathDto
+	jellyfinMediaPathDto *JellyfinMediaPathDto
 	refreshLibrary *bool
 }
 
 // The media path dto.
-func (r ApiAddMediaPathRequest) MediaPathDto(mediaPathDto MediaPathDto) ApiAddMediaPathRequest {
-	r.mediaPathDto = &mediaPathDto
+func (r ApiAddMediaPathRequest) JellyfinMediaPathDto(jellyfinMediaPathDto JellyfinMediaPathDto) ApiAddMediaPathRequest {
+	r.jellyfinMediaPathDto = &jellyfinMediaPathDto
 	return r
 }
 
@@ -77,8 +77,8 @@ func (a *LibraryStructureAPIService) AddMediaPathExecute(r ApiAddMediaPathReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.mediaPathDto == nil {
-		return nil, reportError("mediaPathDto is required and must be specified")
+	if r.jellyfinMediaPathDto == nil {
+		return nil, reportError("jellyfinMediaPathDto is required and must be specified")
 	}
 
 	if r.refreshLibrary != nil {
@@ -105,7 +105,7 @@ func (a *LibraryStructureAPIService) AddMediaPathExecute(r ApiAddMediaPathReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.mediaPathDto
+	localVarPostBody = r.jellyfinMediaPathDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -152,10 +152,10 @@ type ApiAddVirtualFolderRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
 	name *string
-	collectionType *CollectionTypeOptions
+	collectionType *JellyfinCollectionTypeOptions
 	paths *[]string
 	refreshLibrary *bool
-	addVirtualFolderDto *AddVirtualFolderDto
+	jellyfinAddVirtualFolderDto *JellyfinAddVirtualFolderDto
 }
 
 // The name of the virtual folder.
@@ -165,7 +165,7 @@ func (r ApiAddVirtualFolderRequest) Name(name string) ApiAddVirtualFolderRequest
 }
 
 // The type of the collection.
-func (r ApiAddVirtualFolderRequest) CollectionType(collectionType CollectionTypeOptions) ApiAddVirtualFolderRequest {
+func (r ApiAddVirtualFolderRequest) CollectionType(collectionType JellyfinCollectionTypeOptions) ApiAddVirtualFolderRequest {
 	r.collectionType = &collectionType
 	return r
 }
@@ -183,8 +183,8 @@ func (r ApiAddVirtualFolderRequest) RefreshLibrary(refreshLibrary bool) ApiAddVi
 }
 
 // The library options.
-func (r ApiAddVirtualFolderRequest) AddVirtualFolderDto(addVirtualFolderDto AddVirtualFolderDto) ApiAddVirtualFolderRequest {
-	r.addVirtualFolderDto = &addVirtualFolderDto
+func (r ApiAddVirtualFolderRequest) JellyfinAddVirtualFolderDto(jellyfinAddVirtualFolderDto JellyfinAddVirtualFolderDto) ApiAddVirtualFolderRequest {
+	r.jellyfinAddVirtualFolderDto = &jellyfinAddVirtualFolderDto
 	return r
 }
 
@@ -265,7 +265,7 @@ func (a *LibraryStructureAPIService) AddVirtualFolderExecute(r ApiAddVirtualFold
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.addVirtualFolderDto
+	localVarPostBody = r.jellyfinAddVirtualFolderDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -313,7 +313,7 @@ type ApiGetVirtualFoldersRequest struct {
 	ApiService *LibraryStructureAPIService
 }
 
-func (r ApiGetVirtualFoldersRequest) Execute() ([]VirtualFolderInfo, *http.Response, error) {
+func (r ApiGetVirtualFoldersRequest) Execute() ([]JellyfinVirtualFolderInfo, *http.Response, error) {
 	return r.ApiService.GetVirtualFoldersExecute(r)
 }
 
@@ -331,13 +331,13 @@ func (a *LibraryStructureAPIService) GetVirtualFolders(ctx context.Context) ApiG
 }
 
 // Execute executes the request
-//  @return []VirtualFolderInfo
-func (a *LibraryStructureAPIService) GetVirtualFoldersExecute(r ApiGetVirtualFoldersRequest) ([]VirtualFolderInfo, *http.Response, error) {
+//  @return []JellyfinVirtualFolderInfo
+func (a *LibraryStructureAPIService) GetVirtualFoldersExecute(r ApiGetVirtualFoldersRequest) ([]JellyfinVirtualFolderInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []VirtualFolderInfo
+		localVarReturnValue  []JellyfinVirtualFolderInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LibraryStructureAPIService.GetVirtualFolders")
@@ -803,7 +803,7 @@ func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r ApiRenameVirtu
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -814,7 +814,7 @@ func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r ApiRenameVirtu
 			return localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 409 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -833,12 +833,12 @@ func (a *LibraryStructureAPIService) RenameVirtualFolderExecute(r ApiRenameVirtu
 type ApiUpdateLibraryOptionsRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
-	updateLibraryOptionsDto *UpdateLibraryOptionsDto
+	jellyfinUpdateLibraryOptionsDto *JellyfinUpdateLibraryOptionsDto
 }
 
 // The library name and options.
-func (r ApiUpdateLibraryOptionsRequest) UpdateLibraryOptionsDto(updateLibraryOptionsDto UpdateLibraryOptionsDto) ApiUpdateLibraryOptionsRequest {
-	r.updateLibraryOptionsDto = &updateLibraryOptionsDto
+func (r ApiUpdateLibraryOptionsRequest) JellyfinUpdateLibraryOptionsDto(jellyfinUpdateLibraryOptionsDto JellyfinUpdateLibraryOptionsDto) ApiUpdateLibraryOptionsRequest {
+	r.jellyfinUpdateLibraryOptionsDto = &jellyfinUpdateLibraryOptionsDto
 	return r
 }
 
@@ -896,7 +896,7 @@ func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r ApiUpdateLibr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateLibraryOptionsDto
+	localVarPostBody = r.jellyfinUpdateLibraryOptionsDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -934,7 +934,7 @@ func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r ApiUpdateLibr
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -953,12 +953,12 @@ func (a *LibraryStructureAPIService) UpdateLibraryOptionsExecute(r ApiUpdateLibr
 type ApiUpdateMediaPathRequest struct {
 	ctx context.Context
 	ApiService *LibraryStructureAPIService
-	updateMediaPathRequestDto *UpdateMediaPathRequestDto
+	jellyfinUpdateMediaPathRequestDto *JellyfinUpdateMediaPathRequestDto
 }
 
 // The name of the library and path infos.
-func (r ApiUpdateMediaPathRequest) UpdateMediaPathRequestDto(updateMediaPathRequestDto UpdateMediaPathRequestDto) ApiUpdateMediaPathRequest {
-	r.updateMediaPathRequestDto = &updateMediaPathRequestDto
+func (r ApiUpdateMediaPathRequest) JellyfinUpdateMediaPathRequestDto(jellyfinUpdateMediaPathRequestDto JellyfinUpdateMediaPathRequestDto) ApiUpdateMediaPathRequest {
+	r.jellyfinUpdateMediaPathRequestDto = &jellyfinUpdateMediaPathRequestDto
 	return r
 }
 
@@ -997,8 +997,8 @@ func (a *LibraryStructureAPIService) UpdateMediaPathExecute(r ApiUpdateMediaPath
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.updateMediaPathRequestDto == nil {
-		return nil, reportError("updateMediaPathRequestDto is required and must be specified")
+	if r.jellyfinUpdateMediaPathRequestDto == nil {
+		return nil, reportError("jellyfinUpdateMediaPathRequestDto is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1019,7 +1019,7 @@ func (a *LibraryStructureAPIService) UpdateMediaPathExecute(r ApiUpdateMediaPath
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.updateMediaPathRequestDto
+	localVarPostBody = r.jellyfinUpdateMediaPathRequestDto
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetPlaybackInfo
 
-> PlaybackInfoResponse GetPlaybackInfo(ctx, itemId).UserId(userId).Execute()
+> JellyfinJellyfinPlaybackInfoResponse GetPlaybackInfo(ctx, itemId).UserId(userId).Execute()
 
 Gets live playback media info for an item.
 
@@ -167,7 +167,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MediaInfoAPI.GetPlaybackInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPlaybackInfo`: PlaybackInfoResponse
+	// response from `GetPlaybackInfo`: JellyfinJellyfinPlaybackInfoResponse
 	fmt.Fprintf(os.Stdout, "Response from `MediaInfoAPI.GetPlaybackInfo`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlaybackInfoResponse**](PlaybackInfoResponse.md)
+[**JellyfinJellyfinPlaybackInfoResponse**](JellyfinPlaybackInfoResponse.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## GetPostedPlaybackInfo
 
-> PlaybackInfoResponse GetPostedPlaybackInfo(ctx, itemId).UserId(userId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).MediaSourceId(mediaSourceId).LiveStreamId(liveStreamId).AutoOpenLiveStream(autoOpenLiveStream).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).EnableTranscoding(enableTranscoding).AllowVideoStreamCopy(allowVideoStreamCopy).AllowAudioStreamCopy(allowAudioStreamCopy).PlaybackInfoDto(playbackInfoDto).Execute()
+> JellyfinJellyfinPlaybackInfoResponse GetPostedPlaybackInfo(ctx, itemId).UserId(userId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).MediaSourceId(mediaSourceId).LiveStreamId(liveStreamId).AutoOpenLiveStream(autoOpenLiveStream).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).EnableTranscoding(enableTranscoding).AllowVideoStreamCopy(allowVideoStreamCopy).AllowAudioStreamCopy(allowAudioStreamCopy).JellyfinPlaybackInfoDto(jellyfinPlaybackInfoDto).Execute()
 
 Gets live playback media info for an item.
 
@@ -244,16 +244,16 @@ func main() {
 	enableTranscoding := true // bool | Whether to enable transcoding. Default: true. (optional)
 	allowVideoStreamCopy := true // bool | Whether to allow to copy the video stream. Default: true. (optional)
 	allowAudioStreamCopy := true // bool | Whether to allow to copy the audio stream. Default: true. (optional)
-	playbackInfoDto := *openapiclient.NewPlaybackInfoDto() // PlaybackInfoDto | The playback info. (optional)
+	jellyfinPlaybackInfoDto := *openapiclient.NewJellyfinPlaybackInfoDto() // JellyfinPlaybackInfoDto | The playback info. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaInfoAPI.GetPostedPlaybackInfo(context.Background(), itemId).UserId(userId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).MediaSourceId(mediaSourceId).LiveStreamId(liveStreamId).AutoOpenLiveStream(autoOpenLiveStream).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).EnableTranscoding(enableTranscoding).AllowVideoStreamCopy(allowVideoStreamCopy).AllowAudioStreamCopy(allowAudioStreamCopy).PlaybackInfoDto(playbackInfoDto).Execute()
+	resp, r, err := apiClient.MediaInfoAPI.GetPostedPlaybackInfo(context.Background(), itemId).UserId(userId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).MediaSourceId(mediaSourceId).LiveStreamId(liveStreamId).AutoOpenLiveStream(autoOpenLiveStream).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).EnableTranscoding(enableTranscoding).AllowVideoStreamCopy(allowVideoStreamCopy).AllowAudioStreamCopy(allowAudioStreamCopy).JellyfinPlaybackInfoDto(jellyfinPlaybackInfoDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MediaInfoAPI.GetPostedPlaybackInfo``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPostedPlaybackInfo`: PlaybackInfoResponse
+	// response from `GetPostedPlaybackInfo`: JellyfinJellyfinPlaybackInfoResponse
 	fmt.Fprintf(os.Stdout, "Response from `MediaInfoAPI.GetPostedPlaybackInfo`: %v\n", resp)
 }
 ```
@@ -288,11 +288,11 @@ Name | Type | Description  | Notes
  **enableTranscoding** | **bool** | Whether to enable transcoding. Default: true. | 
  **allowVideoStreamCopy** | **bool** | Whether to allow to copy the video stream. Default: true. | 
  **allowAudioStreamCopy** | **bool** | Whether to allow to copy the audio stream. Default: true. | 
- **playbackInfoDto** | [**PlaybackInfoDto**](PlaybackInfoDto.md) | The playback info. | 
+ **jellyfinPlaybackInfoDto** | [**JellyfinPlaybackInfoDto**](JellyfinPlaybackInfoDto.md) | The playback info. | 
 
 ### Return type
 
-[**PlaybackInfoResponse**](PlaybackInfoResponse.md)
+[**JellyfinJellyfinPlaybackInfoResponse**](JellyfinPlaybackInfoResponse.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ## OpenLiveStream
 
-> LiveStreamResponse OpenLiveStream(ctx).OpenToken(openToken).UserId(userId).PlaySessionId(playSessionId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).ItemId(itemId).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding).OpenLiveStreamDto(openLiveStreamDto).Execute()
+> JellyfinJellyfinLiveStreamResponse OpenLiveStream(ctx).OpenToken(openToken).UserId(userId).PlaySessionId(playSessionId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).ItemId(itemId).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding).JellyfinOpenLiveStreamDto(jellyfinOpenLiveStreamDto).Execute()
 
 Opens a media source.
 
@@ -339,16 +339,16 @@ func main() {
 	enableDirectPlay := true // bool | Whether to enable direct play. Default: true. (optional)
 	enableDirectStream := true // bool | Whether to enable direct stream. Default: true. (optional)
 	alwaysBurnInSubtitleWhenTranscoding := true // bool | Always burn-in subtitle when transcoding. (optional)
-	openLiveStreamDto := *openapiclient.NewOpenLiveStreamDto() // OpenLiveStreamDto | The open live stream dto. (optional)
+	jellyfinOpenLiveStreamDto := *openapiclient.NewJellyfinOpenLiveStreamDto() // JellyfinOpenLiveStreamDto | The open live stream dto. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MediaInfoAPI.OpenLiveStream(context.Background()).OpenToken(openToken).UserId(userId).PlaySessionId(playSessionId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).ItemId(itemId).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding).OpenLiveStreamDto(openLiveStreamDto).Execute()
+	resp, r, err := apiClient.MediaInfoAPI.OpenLiveStream(context.Background()).OpenToken(openToken).UserId(userId).PlaySessionId(playSessionId).MaxStreamingBitrate(maxStreamingBitrate).StartTimeTicks(startTimeTicks).AudioStreamIndex(audioStreamIndex).SubtitleStreamIndex(subtitleStreamIndex).MaxAudioChannels(maxAudioChannels).ItemId(itemId).EnableDirectPlay(enableDirectPlay).EnableDirectStream(enableDirectStream).AlwaysBurnInSubtitleWhenTranscoding(alwaysBurnInSubtitleWhenTranscoding).JellyfinOpenLiveStreamDto(jellyfinOpenLiveStreamDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MediaInfoAPI.OpenLiveStream``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `OpenLiveStream`: LiveStreamResponse
+	// response from `OpenLiveStream`: JellyfinJellyfinLiveStreamResponse
 	fmt.Fprintf(os.Stdout, "Response from `MediaInfoAPI.OpenLiveStream`: %v\n", resp)
 }
 ```
@@ -376,11 +376,11 @@ Name | Type | Description  | Notes
  **enableDirectPlay** | **bool** | Whether to enable direct play. Default: true. | 
  **enableDirectStream** | **bool** | Whether to enable direct stream. Default: true. | 
  **alwaysBurnInSubtitleWhenTranscoding** | **bool** | Always burn-in subtitle when transcoding. | 
- **openLiveStreamDto** | [**OpenLiveStreamDto**](OpenLiveStreamDto.md) | The open live stream dto. | 
+ **jellyfinOpenLiveStreamDto** | [**JellyfinOpenLiveStreamDto**](JellyfinOpenLiveStreamDto.md) | The open live stream dto. | 
 
 ### Return type
 
-[**LiveStreamResponse**](LiveStreamResponse.md)
+[**JellyfinJellyfinLiveStreamResponse**](JellyfinLiveStreamResponse.md)
 
 ### Authorization
 

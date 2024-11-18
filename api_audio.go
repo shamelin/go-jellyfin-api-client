@@ -59,7 +59,7 @@ type ApiGetAudioStreamRequest struct {
 	height *int32
 	videoBitRate *int32
 	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
+	subtitleMethod *JellyfinSubtitleDeliveryMethod
 	maxRefFrames *int32
 	maxVideoBitDepth *int32
 	requireAvc *bool
@@ -74,7 +74,7 @@ type ApiGetAudioStreamRequest struct {
 	transcodeReasons *string
 	audioStreamIndex *int32
 	videoStreamIndex *int32
-	context *EncodingContext
+	context *JellyfinEncodingContext
 	streamOptions *map[string]string
 	enableAudioVbrEncoding *bool
 }
@@ -267,7 +267,7 @@ func (r ApiGetAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32)
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetAudioStreamRequest) SubtitleMethod(subtitleMethod SubtitleDeliveryMethod) ApiGetAudioStreamRequest {
+func (r ApiGetAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetAudioStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
@@ -357,7 +357,7 @@ func (r ApiGetAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiGe
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetAudioStreamRequest) Context(context EncodingContext) ApiGetAudioStreamRequest {
+func (r ApiGetAudioStreamRequest) Context(context JellyfinEncodingContext) ApiGetAudioStreamRequest {
 	r.context = &context
 	return r
 }
@@ -654,7 +654,7 @@ type ApiGetAudioStreamByContainerRequest struct {
 	height *int32
 	videoBitRate *int32
 	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
+	subtitleMethod *JellyfinSubtitleDeliveryMethod
 	maxRefFrames *int32
 	maxVideoBitDepth *int32
 	requireAvc *bool
@@ -669,7 +669,7 @@ type ApiGetAudioStreamByContainerRequest struct {
 	transcodeReasons *string
 	audioStreamIndex *int32
 	videoStreamIndex *int32
-	context *EncodingContext
+	context *JellyfinEncodingContext
 	streamOptions *map[string]string
 	enableAudioVbrEncoding *bool
 }
@@ -856,7 +856,7 @@ func (r ApiGetAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStreamI
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiGetAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod SubtitleDeliveryMethod) ApiGetAudioStreamByContainerRequest {
+func (r ApiGetAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiGetAudioStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
@@ -946,7 +946,7 @@ func (r ApiGetAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex i
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiGetAudioStreamByContainerRequest) Context(context EncodingContext) ApiGetAudioStreamByContainerRequest {
+func (r ApiGetAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiGetAudioStreamByContainerRequest {
 	r.context = &context
 	return r
 }
@@ -1243,7 +1243,7 @@ type ApiHeadAudioStreamRequest struct {
 	height *int32
 	videoBitRate *int32
 	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
+	subtitleMethod *JellyfinSubtitleDeliveryMethod
 	maxRefFrames *int32
 	maxVideoBitDepth *int32
 	requireAvc *bool
@@ -1258,7 +1258,7 @@ type ApiHeadAudioStreamRequest struct {
 	transcodeReasons *string
 	audioStreamIndex *int32
 	videoStreamIndex *int32
-	context *EncodingContext
+	context *JellyfinEncodingContext
 	streamOptions *map[string]string
 	enableAudioVbrEncoding *bool
 }
@@ -1451,7 +1451,7 @@ func (r ApiHeadAudioStreamRequest) SubtitleStreamIndex(subtitleStreamIndex int32
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadAudioStreamRequest) SubtitleMethod(subtitleMethod SubtitleDeliveryMethod) ApiHeadAudioStreamRequest {
+func (r ApiHeadAudioStreamRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadAudioStreamRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
@@ -1541,7 +1541,7 @@ func (r ApiHeadAudioStreamRequest) VideoStreamIndex(videoStreamIndex int32) ApiH
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadAudioStreamRequest) Context(context EncodingContext) ApiHeadAudioStreamRequest {
+func (r ApiHeadAudioStreamRequest) Context(context JellyfinEncodingContext) ApiHeadAudioStreamRequest {
 	r.context = &context
 	return r
 }
@@ -1838,7 +1838,7 @@ type ApiHeadAudioStreamByContainerRequest struct {
 	height *int32
 	videoBitRate *int32
 	subtitleStreamIndex *int32
-	subtitleMethod *SubtitleDeliveryMethod
+	subtitleMethod *JellyfinSubtitleDeliveryMethod
 	maxRefFrames *int32
 	maxVideoBitDepth *int32
 	requireAvc *bool
@@ -1853,7 +1853,7 @@ type ApiHeadAudioStreamByContainerRequest struct {
 	transcodeReasons *string
 	audioStreamIndex *int32
 	videoStreamIndex *int32
-	context *EncodingContext
+	context *JellyfinEncodingContext
 	streamOptions *map[string]string
 	enableAudioVbrEncoding *bool
 }
@@ -2040,7 +2040,7 @@ func (r ApiHeadAudioStreamByContainerRequest) SubtitleStreamIndex(subtitleStream
 }
 
 // Optional. Specify the subtitle delivery method.
-func (r ApiHeadAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod SubtitleDeliveryMethod) ApiHeadAudioStreamByContainerRequest {
+func (r ApiHeadAudioStreamByContainerRequest) SubtitleMethod(subtitleMethod JellyfinSubtitleDeliveryMethod) ApiHeadAudioStreamByContainerRequest {
 	r.subtitleMethod = &subtitleMethod
 	return r
 }
@@ -2130,7 +2130,7 @@ func (r ApiHeadAudioStreamByContainerRequest) VideoStreamIndex(videoStreamIndex 
 }
 
 // Optional. The MediaBrowser.Model.Dlna.EncodingContext.
-func (r ApiHeadAudioStreamByContainerRequest) Context(context EncodingContext) ApiHeadAudioStreamByContainerRequest {
+func (r ApiHeadAudioStreamByContainerRequest) Context(context JellyfinEncodingContext) ApiHeadAudioStreamByContainerRequest {
 	r.context = &context
 	return r
 }

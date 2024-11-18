@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetUtcTime
 
-> UtcTimeResponse GetUtcTime(ctx).Execute()
+> JellyfinJellyfinUtcTimeResponse GetUtcTime(ctx).Execute()
 
 Gets the current UTC time.
 
@@ -35,7 +35,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TimeSyncAPI.GetUtcTime``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUtcTime`: UtcTimeResponse
+	// response from `GetUtcTime`: JellyfinJellyfinUtcTimeResponse
 	fmt.Fprintf(os.Stdout, "Response from `TimeSyncAPI.GetUtcTime`: %v\n", resp)
 }
 ```
@@ -51,7 +51,7 @@ Other parameters are passed through a pointer to a apiGetUtcTimeRequest struct v
 
 ### Return type
 
-[**UtcTimeResponse**](UtcTimeResponse.md)
+[**JellyfinJellyfinUtcTimeResponse**](JellyfinUtcTimeResponse.md)
 
 ### Authorization
 

@@ -452,7 +452,7 @@ func (a *HlsSegmentAPIService) GetHlsVideoSegmentLegacyExecute(r ApiGetHlsVideoS
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

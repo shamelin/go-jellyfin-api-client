@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## AddMediaPath
 
-> AddMediaPath(ctx).MediaPathDto(mediaPathDto).RefreshLibrary(refreshLibrary).Execute()
+> AddMediaPath(ctx).JellyfinMediaPathDto(jellyfinMediaPathDto).RefreshLibrary(refreshLibrary).Execute()
 
 Add a media path to a library.
 
@@ -34,12 +34,12 @@ import (
 )
 
 func main() {
-	mediaPathDto := *openapiclient.NewMediaPathDto("Name_example") // MediaPathDto | The media path dto.
+	jellyfinMediaPathDto := *openapiclient.NewJellyfinMediaPathDto("Name_example") // JellyfinMediaPathDto | The media path dto.
 	refreshLibrary := true // bool | Whether to refresh the library. (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LibraryStructureAPI.AddMediaPath(context.Background()).MediaPathDto(mediaPathDto).RefreshLibrary(refreshLibrary).Execute()
+	r, err := apiClient.LibraryStructureAPI.AddMediaPath(context.Background()).JellyfinMediaPathDto(jellyfinMediaPathDto).RefreshLibrary(refreshLibrary).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryStructureAPI.AddMediaPath``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiAddMediaPathRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **mediaPathDto** | [**MediaPathDto**](MediaPathDto.md) | The media path dto. | 
+ **jellyfinMediaPathDto** | [**JellyfinMediaPathDto**](JellyfinMediaPathDto.md) | The media path dto. | 
  **refreshLibrary** | **bool** | Whether to refresh the library. | [default to false]
 
 ### Return type
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## AddVirtualFolder
 
-> AddVirtualFolder(ctx).Name(name).CollectionType(collectionType).Paths(paths).RefreshLibrary(refreshLibrary).AddVirtualFolderDto(addVirtualFolderDto).Execute()
+> AddVirtualFolder(ctx).Name(name).CollectionType(collectionType).Paths(paths).RefreshLibrary(refreshLibrary).JellyfinAddVirtualFolderDto(jellyfinAddVirtualFolderDto).Execute()
 
 Adds a virtual folder.
 
@@ -99,14 +99,14 @@ import (
 
 func main() {
 	name := "name_example" // string | The name of the virtual folder. (optional)
-	collectionType := "collectionType_example" // CollectionTypeOptions | The type of the collection. (optional)
+	collectionType := "collectionType_example" // JellyfinJellyfinCollectionTypeOptions | The type of the collection. (optional)
 	paths := []string{"Inner_example"} // []string | The paths of the virtual folder. (optional)
 	refreshLibrary := true // bool | Whether to refresh the library. (optional) (default to false)
-	addVirtualFolderDto := *openapiclient.NewAddVirtualFolderDto() // AddVirtualFolderDto | The library options. (optional)
+	jellyfinAddVirtualFolderDto := *openapiclient.NewJellyfinAddVirtualFolderDto() // JellyfinAddVirtualFolderDto | The library options. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LibraryStructureAPI.AddVirtualFolder(context.Background()).Name(name).CollectionType(collectionType).Paths(paths).RefreshLibrary(refreshLibrary).AddVirtualFolderDto(addVirtualFolderDto).Execute()
+	r, err := apiClient.LibraryStructureAPI.AddVirtualFolder(context.Background()).Name(name).CollectionType(collectionType).Paths(paths).RefreshLibrary(refreshLibrary).JellyfinAddVirtualFolderDto(jellyfinAddVirtualFolderDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryStructureAPI.AddVirtualFolder``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,10 +126,10 @@ Other parameters are passed through a pointer to a apiAddVirtualFolderRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string** | The name of the virtual folder. | 
- **collectionType** | **CollectionTypeOptions** | The type of the collection. | 
+ **collectionType** | **JellyfinJellyfinCollectionTypeOptions** | The type of the collection. | 
  **paths** | **[]string** | The paths of the virtual folder. | 
  **refreshLibrary** | **bool** | Whether to refresh the library. | [default to false]
- **addVirtualFolderDto** | [**AddVirtualFolderDto**](AddVirtualFolderDto.md) | The library options. | 
+ **jellyfinAddVirtualFolderDto** | [**JellyfinAddVirtualFolderDto**](JellyfinAddVirtualFolderDto.md) | The library options. | 
 
 ### Return type
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GetVirtualFolders
 
-> []VirtualFolderInfo GetVirtualFolders(ctx).Execute()
+> []JellyfinJellyfinVirtualFolderInfo GetVirtualFolders(ctx).Execute()
 
 Gets all virtual folders.
 
@@ -176,7 +176,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryStructureAPI.GetVirtualFolders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetVirtualFolders`: []VirtualFolderInfo
+	// response from `GetVirtualFolders`: []JellyfinJellyfinVirtualFolderInfo
 	fmt.Fprintf(os.Stdout, "Response from `LibraryStructureAPI.GetVirtualFolders`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiGetVirtualFoldersRequest s
 
 ### Return type
 
-[**[]VirtualFolderInfo**](VirtualFolderInfo.md)
+[**[]JellyfinJellyfinVirtualFolderInfo**](JellyfinVirtualFolderInfo.md)
 
 ### Authorization
 
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 
 ## UpdateLibraryOptions
 
-> UpdateLibraryOptions(ctx).UpdateLibraryOptionsDto(updateLibraryOptionsDto).Execute()
+> UpdateLibraryOptions(ctx).JellyfinUpdateLibraryOptionsDto(jellyfinUpdateLibraryOptionsDto).Execute()
 
 Update library options.
 
@@ -423,11 +423,11 @@ import (
 )
 
 func main() {
-	updateLibraryOptionsDto := *openapiclient.NewUpdateLibraryOptionsDto() // UpdateLibraryOptionsDto | The library name and options. (optional)
+	jellyfinUpdateLibraryOptionsDto := *openapiclient.NewJellyfinUpdateLibraryOptionsDto() // JellyfinUpdateLibraryOptionsDto | The library name and options. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LibraryStructureAPI.UpdateLibraryOptions(context.Background()).UpdateLibraryOptionsDto(updateLibraryOptionsDto).Execute()
+	r, err := apiClient.LibraryStructureAPI.UpdateLibraryOptions(context.Background()).JellyfinUpdateLibraryOptionsDto(jellyfinUpdateLibraryOptionsDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryStructureAPI.UpdateLibraryOptions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -446,7 +446,7 @@ Other parameters are passed through a pointer to a apiUpdateLibraryOptionsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateLibraryOptionsDto** | [**UpdateLibraryOptionsDto**](UpdateLibraryOptionsDto.md) | The library name and options. | 
+ **jellyfinUpdateLibraryOptionsDto** | [**JellyfinUpdateLibraryOptionsDto**](JellyfinUpdateLibraryOptionsDto.md) | The library name and options. | 
 
 ### Return type
 
@@ -468,7 +468,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMediaPath
 
-> UpdateMediaPath(ctx).UpdateMediaPathRequestDto(updateMediaPathRequestDto).Execute()
+> UpdateMediaPath(ctx).JellyfinUpdateMediaPathRequestDto(jellyfinUpdateMediaPathRequestDto).Execute()
 
 Updates a media path.
 
@@ -485,11 +485,11 @@ import (
 )
 
 func main() {
-	updateMediaPathRequestDto := *openapiclient.NewUpdateMediaPathRequestDto("Name_example", *openapiclient.NewMediaPathInfo()) // UpdateMediaPathRequestDto | The name of the library and path infos.
+	jellyfinUpdateMediaPathRequestDto := *openapiclient.NewJellyfinUpdateMediaPathRequestDto("Name_example", "TODO") // JellyfinUpdateMediaPathRequestDto | The name of the library and path infos.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.LibraryStructureAPI.UpdateMediaPath(context.Background()).UpdateMediaPathRequestDto(updateMediaPathRequestDto).Execute()
+	r, err := apiClient.LibraryStructureAPI.UpdateMediaPath(context.Background()).JellyfinUpdateMediaPathRequestDto(jellyfinUpdateMediaPathRequestDto).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LibraryStructureAPI.UpdateMediaPath``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -508,7 +508,7 @@ Other parameters are passed through a pointer to a apiUpdateMediaPathRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateMediaPathRequestDto** | [**UpdateMediaPathRequestDto**](UpdateMediaPathRequestDto.md) | The name of the library and path infos. | 
+ **jellyfinUpdateMediaPathRequestDto** | [**JellyfinUpdateMediaPathRequestDto**](JellyfinUpdateMediaPathRequestDto.md) | The name of the library and path infos. | 
 
 ### Return type
 

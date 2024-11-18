@@ -28,7 +28,7 @@ type ApiGetMovieRecommendationsRequest struct {
 	ApiService *MoviesAPIService
 	userId *string
 	parentId *string
-	fields *[]ItemFields
+	fields *[]JellyfinItemFields
 	categoryLimit *int32
 	itemLimit *int32
 }
@@ -46,7 +46,7 @@ func (r ApiGetMovieRecommendationsRequest) ParentId(parentId string) ApiGetMovie
 }
 
 // Optional. The fields to return.
-func (r ApiGetMovieRecommendationsRequest) Fields(fields []ItemFields) ApiGetMovieRecommendationsRequest {
+func (r ApiGetMovieRecommendationsRequest) Fields(fields []JellyfinItemFields) ApiGetMovieRecommendationsRequest {
 	r.fields = &fields
 	return r
 }
@@ -63,7 +63,7 @@ func (r ApiGetMovieRecommendationsRequest) ItemLimit(itemLimit int32) ApiGetMovi
 	return r
 }
 
-func (r ApiGetMovieRecommendationsRequest) Execute() ([]RecommendationDto, *http.Response, error) {
+func (r ApiGetMovieRecommendationsRequest) Execute() ([]JellyfinRecommendationDto, *http.Response, error) {
 	return r.ApiService.GetMovieRecommendationsExecute(r)
 }
 
@@ -81,13 +81,13 @@ func (a *MoviesAPIService) GetMovieRecommendations(ctx context.Context) ApiGetMo
 }
 
 // Execute executes the request
-//  @return []RecommendationDto
-func (a *MoviesAPIService) GetMovieRecommendationsExecute(r ApiGetMovieRecommendationsRequest) ([]RecommendationDto, *http.Response, error) {
+//  @return []JellyfinRecommendationDto
+func (a *MoviesAPIService) GetMovieRecommendationsExecute(r ApiGetMovieRecommendationsRequest) ([]JellyfinRecommendationDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []RecommendationDto
+		localVarReturnValue  []JellyfinRecommendationDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MoviesAPIService.GetMovieRecommendations")

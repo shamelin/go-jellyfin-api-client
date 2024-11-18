@@ -34,7 +34,7 @@ func (r ApiLogFileRequest) Body(body *os.File) ApiLogFileRequest {
 	return r
 }
 
-func (r ApiLogFileRequest) Execute() (*ClientLogDocumentResponseDto, *http.Response, error) {
+func (r ApiLogFileRequest) Execute() (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
 	return r.ApiService.LogFileExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *ClientLogAPIService) LogFile(ctx context.Context) ApiLogFileRequest {
 }
 
 // Execute executes the request
-//  @return ClientLogDocumentResponseDto
-func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDocumentResponseDto, *http.Response, error) {
+//  @return JellyfinClientLogDocumentResponseDto
+func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*JellyfinClientLogDocumentResponseDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ClientLogDocumentResponseDto
+		localVarReturnValue  *JellyfinClientLogDocumentResponseDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientLogAPIService.LogFile")
@@ -128,7 +128,7 @@ func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDoc
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -139,7 +139,7 @@ func (a *ClientLogAPIService) LogFileExecute(r ApiLogFileRequest) (*ClientLogDoc
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 413 {
-			var v ProblemDetails
+			var v JellyfinProblemDetails
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

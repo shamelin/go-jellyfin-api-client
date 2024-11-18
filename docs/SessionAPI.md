@@ -112,7 +112,7 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session Id.
-	itemType := "itemType_example" // BaseItemKind | The type of item to browse to.
+	itemType := "itemType_example" // JellyfinJellyfinBaseItemKind | The type of item to browse to.
 	itemId := "itemId_example" // string | The Id of the item.
 	itemName := "itemName_example" // string | The name of the item.
 
@@ -142,7 +142,7 @@ Other parameters are passed through a pointer to a apiDisplayContentRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **itemType** | **BaseItemKind** | The type of item to browse to. | 
+ **itemType** | **JellyfinJellyfinBaseItemKind** | The type of item to browse to. | 
  **itemId** | **string** | The Id of the item. | 
  **itemName** | **string** | The name of the item. | 
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## GetAuthProviders
 
-> []NameIdPair GetAuthProviders(ctx).Execute()
+> []JellyfinJellyfinNameIdPair GetAuthProviders(ctx).Execute()
 
 Get all auth providers.
 
@@ -191,7 +191,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetAuthProviders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAuthProviders`: []NameIdPair
+	// response from `GetAuthProviders`: []JellyfinJellyfinNameIdPair
 	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetAuthProviders`: %v\n", resp)
 }
 ```
@@ -207,7 +207,7 @@ Other parameters are passed through a pointer to a apiGetAuthProvidersRequest st
 
 ### Return type
 
-[**[]NameIdPair**](NameIdPair.md)
+[**[]JellyfinJellyfinNameIdPair**](JellyfinNameIdPair.md)
 
 ### Authorization
 
@@ -225,7 +225,7 @@ Other parameters are passed through a pointer to a apiGetAuthProvidersRequest st
 
 ## GetPasswordResetProviders
 
-> []NameIdPair GetPasswordResetProviders(ctx).Execute()
+> []JellyfinJellyfinNameIdPair GetPasswordResetProviders(ctx).Execute()
 
 Get all password reset providers.
 
@@ -250,7 +250,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetPasswordResetProviders``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPasswordResetProviders`: []NameIdPair
+	// response from `GetPasswordResetProviders`: []JellyfinJellyfinNameIdPair
 	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetPasswordResetProviders`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Other parameters are passed through a pointer to a apiGetPasswordResetProvidersR
 
 ### Return type
 
-[**[]NameIdPair**](NameIdPair.md)
+[**[]JellyfinJellyfinNameIdPair**](JellyfinNameIdPair.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Other parameters are passed through a pointer to a apiGetPasswordResetProvidersR
 
 ## GetSessions
 
-> []SessionInfoDto GetSessions(ctx).ControllableByUserId(controllableByUserId).DeviceId(deviceId).ActiveWithinSeconds(activeWithinSeconds).Execute()
+> []JellyfinJellyfinSessionInfoDto GetSessions(ctx).ControllableByUserId(controllableByUserId).DeviceId(deviceId).ActiveWithinSeconds(activeWithinSeconds).Execute()
 
 Gets a list of sessions.
 
@@ -312,7 +312,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.GetSessions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSessions`: []SessionInfoDto
+	// response from `GetSessions`: []JellyfinJellyfinSessionInfoDto
 	fmt.Fprintf(os.Stdout, "Response from `SessionAPI.GetSessions`: %v\n", resp)
 }
 ```
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]SessionInfoDto**](SessionInfoDto.md)
+[**[]JellyfinJellyfinSessionInfoDto**](JellyfinSessionInfoDto.md)
 
 ### Authorization
 
@@ -370,7 +370,7 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	playCommand := "playCommand_example" // PlayCommand | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
+	playCommand := "playCommand_example" // JellyfinJellyfinPlayCommand | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
 	itemIds := []string{"Inner_example"} // []string | The ids of the items to play, comma delimited.
 	startPositionTicks := int64(789) // int64 | The starting position of the first item. (optional)
 	mediaSourceId := "mediaSourceId_example" // string | Optional. The media source id. (optional)
@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiPlayRequest struct via the
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **playCommand** | **PlayCommand** | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
+ **playCommand** | **JellyfinJellyfinPlayCommand** | The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now. | 
  **itemIds** | **[]string** | The ids of the items to play, comma delimited. | 
  **startPositionTicks** | **int64** | The starting position of the first item. | 
  **mediaSourceId** | **string** | Optional. The media source id. | 
@@ -450,8 +450,8 @@ import (
 
 func main() {
 	id := "id_example" // string | The session id. (optional)
-	playableMediaTypes := []openapiclient.MediaType{openapiclient.MediaType("Unknown")} // []MediaType | A list of playable media types, comma delimited. Audio, Video, Book, Photo. (optional)
-	supportedCommands := []openapiclient.GeneralCommandType{openapiclient.GeneralCommandType("MoveUp")} // []GeneralCommandType | A list of supported remote control commands, comma delimited. (optional)
+	playableMediaTypes := []JellyfinJellyfinMediaType{"TODO"} // []JellyfinJellyfinMediaType | A list of playable media types, comma delimited. Audio, Video, Book, Photo. (optional)
+	supportedCommands := []JellyfinJellyfinGeneralCommandType{"TODO"} // []JellyfinJellyfinGeneralCommandType | A list of supported remote control commands, comma delimited. (optional)
 	supportsMediaControl := true // bool | Determines whether media can be played remotely.. (optional) (default to false)
 	supportsPersistentIdentifier := true // bool | Determines whether the device supports a unique identifier. (optional) (default to true)
 
@@ -477,8 +477,8 @@ Other parameters are passed through a pointer to a apiPostCapabilitiesRequest st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string** | The session id. | 
- **playableMediaTypes** | [**[]MediaType**](MediaType.md) | A list of playable media types, comma delimited. Audio, Video, Book, Photo. | 
- **supportedCommands** | [**[]GeneralCommandType**](GeneralCommandType.md) | A list of supported remote control commands, comma delimited. | 
+ **playableMediaTypes** | [**[]JellyfinJellyfinMediaType**](JellyfinMediaType.md) | A list of playable media types, comma delimited. Audio, Video, Book, Photo. | 
+ **supportedCommands** | [**[]JellyfinJellyfinGeneralCommandType**](JellyfinGeneralCommandType.md) | A list of supported remote control commands, comma delimited. | 
  **supportsMediaControl** | **bool** | Determines whether media can be played remotely.. | [default to false]
  **supportsPersistentIdentifier** | **bool** | Determines whether the device supports a unique identifier. | [default to true]
 
@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## PostFullCapabilities
 
-> PostFullCapabilities(ctx).ClientCapabilitiesDto(clientCapabilitiesDto).Id(id).Execute()
+> PostFullCapabilities(ctx).JellyfinClientCapabilitiesDto(jellyfinClientCapabilitiesDto).Id(id).Execute()
 
 Updates capabilities for a device.
 
@@ -519,12 +519,12 @@ import (
 )
 
 func main() {
-	clientCapabilitiesDto := *openapiclient.NewClientCapabilitiesDto() // ClientCapabilitiesDto | The MediaBrowser.Model.Session.ClientCapabilities.
+	jellyfinClientCapabilitiesDto := *openapiclient.NewJellyfinClientCapabilitiesDto() // JellyfinClientCapabilitiesDto | The MediaBrowser.Model.Session.ClientCapabilities.
 	id := "id_example" // string | The session id. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SessionAPI.PostFullCapabilities(context.Background()).ClientCapabilitiesDto(clientCapabilitiesDto).Id(id).Execute()
+	r, err := apiClient.SessionAPI.PostFullCapabilities(context.Background()).JellyfinClientCapabilitiesDto(jellyfinClientCapabilitiesDto).Id(id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.PostFullCapabilities``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -543,7 +543,7 @@ Other parameters are passed through a pointer to a apiPostFullCapabilitiesReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientCapabilitiesDto** | [**ClientCapabilitiesDto**](ClientCapabilitiesDto.md) | The MediaBrowser.Model.Session.ClientCapabilities. | 
+ **jellyfinClientCapabilitiesDto** | [**JellyfinClientCapabilitiesDto**](JellyfinClientCapabilitiesDto.md) | The MediaBrowser.Model.Session.ClientCapabilities. | 
  **id** | **string** | The session id. | 
 
 ### Return type
@@ -756,7 +756,7 @@ Name | Type | Description  | Notes
 
 ## SendFullGeneralCommand
 
-> SendFullGeneralCommand(ctx, sessionId).GeneralCommand(generalCommand).Execute()
+> SendFullGeneralCommand(ctx, sessionId).JellyfinGeneralCommand(jellyfinGeneralCommand).Execute()
 
 Issues a full general command to a client.
 
@@ -774,11 +774,11 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	generalCommand := *openapiclient.NewGeneralCommand() // GeneralCommand | The MediaBrowser.Model.Session.GeneralCommand.
+	jellyfinGeneralCommand := *openapiclient.NewJellyfinGeneralCommand() // JellyfinGeneralCommand | The MediaBrowser.Model.Session.GeneralCommand.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SessionAPI.SendFullGeneralCommand(context.Background(), sessionId).GeneralCommand(generalCommand).Execute()
+	r, err := apiClient.SessionAPI.SendFullGeneralCommand(context.Background(), sessionId).JellyfinGeneralCommand(jellyfinGeneralCommand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.SendFullGeneralCommand``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -802,7 +802,7 @@ Other parameters are passed through a pointer to a apiSendFullGeneralCommandRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **generalCommand** | [**GeneralCommand**](GeneralCommand.md) | The MediaBrowser.Model.Session.GeneralCommand. | 
+ **jellyfinGeneralCommand** | [**JellyfinGeneralCommand**](JellyfinGeneralCommand.md) | The MediaBrowser.Model.Session.GeneralCommand. | 
 
 ### Return type
 
@@ -842,7 +842,7 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	command := "command_example" // GeneralCommandType | The command to send.
+	command := "command_example" // JellyfinJellyfinGeneralCommandType | The command to send.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **sessionId** | **string** | The session id. | 
-**command** | **GeneralCommandType** | The command to send. | 
+**command** | **JellyfinJellyfinGeneralCommandType** | The command to send. | 
 
 ### Other Parameters
 
@@ -893,7 +893,7 @@ Name | Type | Description  | Notes
 
 ## SendMessageCommand
 
-> SendMessageCommand(ctx, sessionId).MessageCommand(messageCommand).Execute()
+> SendMessageCommand(ctx, sessionId).JellyfinMessageCommand(jellyfinMessageCommand).Execute()
 
 Issues a command to a client to display a message to the user.
 
@@ -911,11 +911,11 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	messageCommand := *openapiclient.NewMessageCommand("Text_example") // MessageCommand | The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs.
+	jellyfinMessageCommand := *openapiclient.NewJellyfinMessageCommand("Text_example") // JellyfinMessageCommand | The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.SessionAPI.SendMessageCommand(context.Background(), sessionId).MessageCommand(messageCommand).Execute()
+	r, err := apiClient.SessionAPI.SendMessageCommand(context.Background(), sessionId).JellyfinMessageCommand(jellyfinMessageCommand).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SessionAPI.SendMessageCommand``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -939,7 +939,7 @@ Other parameters are passed through a pointer to a apiSendMessageCommandRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **messageCommand** | [**MessageCommand**](MessageCommand.md) | The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs. | 
+ **jellyfinMessageCommand** | [**JellyfinMessageCommand**](JellyfinMessageCommand.md) | The MediaBrowser.Model.Session.MessageCommand object containing Header, Message Text, and TimeoutMs. | 
 
 ### Return type
 
@@ -979,7 +979,7 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	command := "command_example" // PlaystateCommand | The MediaBrowser.Model.Session.PlaystateCommand.
+	command := "command_example" // JellyfinJellyfinPlaystateCommand | The MediaBrowser.Model.Session.PlaystateCommand.
 	seekPositionTicks := int64(789) // int64 | The optional position ticks. (optional)
 	controllingUserId := "controllingUserId_example" // string | The optional controlling user id. (optional)
 
@@ -1000,7 +1000,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **sessionId** | **string** | The session id. | 
-**command** | **PlaystateCommand** | The MediaBrowser.Model.Session.PlaystateCommand. | 
+**command** | **JellyfinJellyfinPlaystateCommand** | The MediaBrowser.Model.Session.PlaystateCommand. | 
 
 ### Other Parameters
 
@@ -1052,7 +1052,7 @@ import (
 
 func main() {
 	sessionId := "sessionId_example" // string | The session id.
-	command := "command_example" // GeneralCommandType | The command to send.
+	command := "command_example" // JellyfinJellyfinGeneralCommandType | The command to send.
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **sessionId** | **string** | The session id. | 
-**command** | **GeneralCommandType** | The command to send. | 
+**command** | **JellyfinJellyfinGeneralCommandType** | The command to send. | 
 
 ### Other Parameters
 

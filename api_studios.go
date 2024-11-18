@@ -37,7 +37,7 @@ func (r ApiGetStudioRequest) UserId(userId string) ApiGetStudioRequest {
 	return r
 }
 
-func (r ApiGetStudioRequest) Execute() (*BaseItemDto, *http.Response, error) {
+func (r ApiGetStudioRequest) Execute() (*JellyfinBaseItemDto, *http.Response, error) {
 	return r.ApiService.GetStudioExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *StudiosAPIService) GetStudio(ctx context.Context, name string) ApiGetSt
 }
 
 // Execute executes the request
-//  @return BaseItemDto
-func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*BaseItemDto, *http.Response, error) {
+//  @return JellyfinBaseItemDto
+func (a *StudiosAPIService) GetStudioExecute(r ApiGetStudioRequest) (*JellyfinBaseItemDto, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDto
+		localVarReturnValue  *JellyfinBaseItemDto
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StudiosAPIService.GetStudio")
@@ -156,13 +156,13 @@ type ApiGetStudiosRequest struct {
 	limit *int32
 	searchTerm *string
 	parentId *string
-	fields *[]ItemFields
-	excludeItemTypes *[]BaseItemKind
-	includeItemTypes *[]BaseItemKind
+	fields *[]JellyfinItemFields
+	excludeItemTypes *[]JellyfinBaseItemKind
+	includeItemTypes *[]JellyfinBaseItemKind
 	isFavorite *bool
 	enableUserData *bool
 	imageTypeLimit *int32
-	enableImageTypes *[]ImageType
+	enableImageTypes *[]JellyfinImageType
 	userId *string
 	nameStartsWithOrGreater *string
 	nameStartsWith *string
@@ -196,19 +196,19 @@ func (r ApiGetStudiosRequest) ParentId(parentId string) ApiGetStudiosRequest {
 }
 
 // Optional. Specify additional fields of information to return in the output.
-func (r ApiGetStudiosRequest) Fields(fields []ItemFields) ApiGetStudiosRequest {
+func (r ApiGetStudiosRequest) Fields(fields []JellyfinItemFields) ApiGetStudiosRequest {
 	r.fields = &fields
 	return r
 }
 
 // Optional. If specified, results will be filtered out based on item type. This allows multiple, comma delimited.
-func (r ApiGetStudiosRequest) ExcludeItemTypes(excludeItemTypes []BaseItemKind) ApiGetStudiosRequest {
+func (r ApiGetStudiosRequest) ExcludeItemTypes(excludeItemTypes []JellyfinBaseItemKind) ApiGetStudiosRequest {
 	r.excludeItemTypes = &excludeItemTypes
 	return r
 }
 
 // Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
-func (r ApiGetStudiosRequest) IncludeItemTypes(includeItemTypes []BaseItemKind) ApiGetStudiosRequest {
+func (r ApiGetStudiosRequest) IncludeItemTypes(includeItemTypes []JellyfinBaseItemKind) ApiGetStudiosRequest {
 	r.includeItemTypes = &includeItemTypes
 	return r
 }
@@ -232,7 +232,7 @@ func (r ApiGetStudiosRequest) ImageTypeLimit(imageTypeLimit int32) ApiGetStudios
 }
 
 // Optional. The image types to include in the output.
-func (r ApiGetStudiosRequest) EnableImageTypes(enableImageTypes []ImageType) ApiGetStudiosRequest {
+func (r ApiGetStudiosRequest) EnableImageTypes(enableImageTypes []JellyfinImageType) ApiGetStudiosRequest {
 	r.enableImageTypes = &enableImageTypes
 	return r
 }
@@ -273,7 +273,7 @@ func (r ApiGetStudiosRequest) EnableTotalRecordCount(enableTotalRecordCount bool
 	return r
 }
 
-func (r ApiGetStudiosRequest) Execute() (*BaseItemDtoQueryResult, *http.Response, error) {
+func (r ApiGetStudiosRequest) Execute() (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	return r.ApiService.GetStudiosExecute(r)
 }
 
@@ -291,13 +291,13 @@ func (a *StudiosAPIService) GetStudios(ctx context.Context) ApiGetStudiosRequest
 }
 
 // Execute executes the request
-//  @return BaseItemDtoQueryResult
-func (a *StudiosAPIService) GetStudiosExecute(r ApiGetStudiosRequest) (*BaseItemDtoQueryResult, *http.Response, error) {
+//  @return JellyfinBaseItemDtoQueryResult
+func (a *StudiosAPIService) GetStudiosExecute(r ApiGetStudiosRequest) (*JellyfinBaseItemDtoQueryResult, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *BaseItemDtoQueryResult
+		localVarReturnValue  *JellyfinBaseItemDtoQueryResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StudiosAPIService.GetStudios")
