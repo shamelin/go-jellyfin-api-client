@@ -20,11 +20,11 @@ type PlayCommand string
 
 // List of PlayCommand
 const (
-	PLAY_NOW PlayCommand = "PlayNow"
-	PLAY_NEXT PlayCommand = "PlayNext"
-	PLAY_LAST PlayCommand = "PlayLast"
-	PLAY_INSTANT_MIX PlayCommand = "PlayInstantMix"
-	PLAY_SHUFFLE PlayCommand = "PlayShuffle"
+	PLAYCOMMAND_PLAY_NOW PlayCommand = "PlayNow"
+	PLAYCOMMAND_PLAY_NEXT PlayCommand = "PlayNext"
+	PLAYCOMMAND_PLAY_LAST PlayCommand = "PlayLast"
+	PLAYCOMMAND_PLAY_INSTANT_MIX PlayCommand = "PlayInstantMix"
+	PLAYCOMMAND_PLAY_SHUFFLE PlayCommand = "PlayShuffle"
 )
 
 // All allowed values of PlayCommand enum

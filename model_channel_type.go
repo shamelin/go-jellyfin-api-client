@@ -20,8 +20,8 @@ type ChannelType string
 
 // List of ChannelType
 const (
-	TV ChannelType = "TV"
-	RADIO ChannelType = "Radio"
+	CHANNELTYPE_TV ChannelType = "TV"
+	CHANNELTYPE_RADIO ChannelType = "Radio"
 )
 
 // All allowed values of ChannelType enum

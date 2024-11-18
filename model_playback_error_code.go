@@ -20,9 +20,9 @@ type PlaybackErrorCode string
 
 // List of PlaybackErrorCode
 const (
-	NOT_ALLOWED PlaybackErrorCode = "NotAllowed"
-	NO_COMPATIBLE_STREAM PlaybackErrorCode = "NoCompatibleStream"
-	RATE_LIMIT_EXCEEDED PlaybackErrorCode = "RateLimitExceeded"
+	PLAYBACKERRORCODE_NOT_ALLOWED PlaybackErrorCode = "NotAllowed"
+	PLAYBACKERRORCODE_NO_COMPATIBLE_STREAM PlaybackErrorCode = "NoCompatibleStream"
+	PLAYBACKERRORCODE_RATE_LIMIT_EXCEEDED PlaybackErrorCode = "RateLimitExceeded"
 )
 
 // All allowed values of PlaybackErrorCode enum

@@ -20,15 +20,15 @@ type MetadataField string
 
 // List of MetadataField
 const (
-	CAST MetadataField = "Cast"
-	GENRES MetadataField = "Genres"
-	PRODUCTION_LOCATIONS MetadataField = "ProductionLocations"
-	STUDIOS MetadataField = "Studios"
-	TAGS MetadataField = "Tags"
-	NAME MetadataField = "Name"
-	OVERVIEW MetadataField = "Overview"
-	RUNTIME MetadataField = "Runtime"
-	OFFICIAL_RATING MetadataField = "OfficialRating"
+	METADATAFIELD_CAST MetadataField = "Cast"
+	METADATAFIELD_GENRES MetadataField = "Genres"
+	METADATAFIELD_PRODUCTION_LOCATIONS MetadataField = "ProductionLocations"
+	METADATAFIELD_STUDIOS MetadataField = "Studios"
+	METADATAFIELD_TAGS MetadataField = "Tags"
+	METADATAFIELD_NAME MetadataField = "Name"
+	METADATAFIELD_OVERVIEW MetadataField = "Overview"
+	METADATAFIELD_RUNTIME MetadataField = "Runtime"
+	METADATAFIELD_OFFICIAL_RATING MetadataField = "OfficialRating"
 )
 
 // All allowed values of MetadataField enum

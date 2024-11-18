@@ -20,9 +20,9 @@ type RepeatMode string
 
 // List of RepeatMode
 const (
-	REPEAT_NONE RepeatMode = "RepeatNone"
-	REPEAT_ALL RepeatMode = "RepeatAll"
-	REPEAT_ONE RepeatMode = "RepeatOne"
+	REPEATMODE_REPEAT_NONE RepeatMode = "RepeatNone"
+	REPEATMODE_REPEAT_ALL RepeatMode = "RepeatAll"
+	REPEATMODE_REPEAT_ONE RepeatMode = "RepeatOne"
 )
 
 // All allowed values of RepeatMode enum

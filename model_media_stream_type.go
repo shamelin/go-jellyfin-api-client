@@ -20,12 +20,12 @@ type MediaStreamType string
 
 // List of MediaStreamType
 const (
-	AUDIO MediaStreamType = "Audio"
-	VIDEO MediaStreamType = "Video"
-	SUBTITLE MediaStreamType = "Subtitle"
-	EMBEDDED_IMAGE MediaStreamType = "EmbeddedImage"
-	DATA MediaStreamType = "Data"
-	LYRIC MediaStreamType = "Lyric"
+	MEDIASTREAMTYPE_AUDIO MediaStreamType = "Audio"
+	MEDIASTREAMTYPE_VIDEO MediaStreamType = "Video"
+	MEDIASTREAMTYPE_SUBTITLE MediaStreamType = "Subtitle"
+	MEDIASTREAMTYPE_EMBEDDED_IMAGE MediaStreamType = "EmbeddedImage"
+	MEDIASTREAMTYPE_DATA MediaStreamType = "Data"
+	MEDIASTREAMTYPE_LYRIC MediaStreamType = "Lyric"
 )
 
 // All allowed values of MediaStreamType enum

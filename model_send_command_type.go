@@ -20,10 +20,10 @@ type SendCommandType string
 
 // List of SendCommandType
 const (
-	UNPAUSE SendCommandType = "Unpause"
-	PAUSE SendCommandType = "Pause"
-	STOP SendCommandType = "Stop"
-	SEEK SendCommandType = "Seek"
+	SENDCOMMANDTYPE_UNPAUSE SendCommandType = "Unpause"
+	SENDCOMMANDTYPE_PAUSE SendCommandType = "Pause"
+	SENDCOMMANDTYPE_STOP SendCommandType = "Stop"
+	SENDCOMMANDTYPE_SEEK SendCommandType = "Seek"
 )
 
 // All allowed values of SendCommandType enum

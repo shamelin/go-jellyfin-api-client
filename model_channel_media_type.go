@@ -20,9 +20,9 @@ type ChannelMediaType string
 
 // List of ChannelMediaType
 const (
-	AUDIO ChannelMediaType = "Audio"
-	VIDEO ChannelMediaType = "Video"
-	PHOTO ChannelMediaType = "Photo"
+	CHANNELMEDIATYPE_AUDIO ChannelMediaType = "Audio"
+	CHANNELMEDIATYPE_VIDEO ChannelMediaType = "Video"
+	CHANNELMEDIATYPE_PHOTO ChannelMediaType = "Photo"
 )
 
 // All allowed values of ChannelMediaType enum

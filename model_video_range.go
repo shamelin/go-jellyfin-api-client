@@ -20,9 +20,9 @@ type VideoRange string
 
 // List of VideoRange
 const (
-	UNKNOWN VideoRange = "Unknown"
-	SDR VideoRange = "SDR"
-	HDR VideoRange = "HDR"
+	VIDEORANGE_UNKNOWN VideoRange = "Unknown"
+	VIDEORANGE_SDR VideoRange = "SDR"
+	VIDEORANGE_HDR VideoRange = "HDR"
 )
 
 // All allowed values of VideoRange enum

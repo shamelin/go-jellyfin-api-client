@@ -20,9 +20,9 @@ type PlayMethod string
 
 // List of PlayMethod
 const (
-	TRANSCODE PlayMethod = "Transcode"
-	DIRECT_STREAM PlayMethod = "DirectStream"
-	DIRECT_PLAY PlayMethod = "DirectPlay"
+	PLAYMETHOD_TRANSCODE PlayMethod = "Transcode"
+	PLAYMETHOD_DIRECT_STREAM PlayMethod = "DirectStream"
+	PLAYMETHOD_DIRECT_PLAY PlayMethod = "DirectPlay"
 )
 
 // All allowed values of PlayMethod enum

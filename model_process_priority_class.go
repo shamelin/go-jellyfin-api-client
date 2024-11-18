@@ -20,12 +20,12 @@ type ProcessPriorityClass string
 
 // List of ProcessPriorityClass
 const (
-	NORMAL ProcessPriorityClass = "Normal"
-	IDLE ProcessPriorityClass = "Idle"
-	HIGH ProcessPriorityClass = "High"
-	REAL_TIME ProcessPriorityClass = "RealTime"
-	BELOW_NORMAL ProcessPriorityClass = "BelowNormal"
-	ABOVE_NORMAL ProcessPriorityClass = "AboveNormal"
+	PROCESSPRIORITYCLASS_NORMAL ProcessPriorityClass = "Normal"
+	PROCESSPRIORITYCLASS_IDLE ProcessPriorityClass = "Idle"
+	PROCESSPRIORITYCLASS_HIGH ProcessPriorityClass = "High"
+	PROCESSPRIORITYCLASS_REAL_TIME ProcessPriorityClass = "RealTime"
+	PROCESSPRIORITYCLASS_BELOW_NORMAL ProcessPriorityClass = "BelowNormal"
+	PROCESSPRIORITYCLASS_ABOVE_NORMAL ProcessPriorityClass = "AboveNormal"
 )
 
 // All allowed values of ProcessPriorityClass enum

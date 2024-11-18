@@ -20,16 +20,16 @@ type DynamicDayOfWeek string
 
 // List of DynamicDayOfWeek
 const (
-	SUNDAY DynamicDayOfWeek = "Sunday"
-	MONDAY DynamicDayOfWeek = "Monday"
-	TUESDAY DynamicDayOfWeek = "Tuesday"
-	WEDNESDAY DynamicDayOfWeek = "Wednesday"
-	THURSDAY DynamicDayOfWeek = "Thursday"
-	FRIDAY DynamicDayOfWeek = "Friday"
-	SATURDAY DynamicDayOfWeek = "Saturday"
-	EVERYDAY DynamicDayOfWeek = "Everyday"
-	WEEKDAY DynamicDayOfWeek = "Weekday"
-	WEEKEND DynamicDayOfWeek = "Weekend"
+	DYNAMICDAYOFWEEK_SUNDAY DynamicDayOfWeek = "Sunday"
+	DYNAMICDAYOFWEEK_MONDAY DynamicDayOfWeek = "Monday"
+	DYNAMICDAYOFWEEK_TUESDAY DynamicDayOfWeek = "Tuesday"
+	DYNAMICDAYOFWEEK_WEDNESDAY DynamicDayOfWeek = "Wednesday"
+	DYNAMICDAYOFWEEK_THURSDAY DynamicDayOfWeek = "Thursday"
+	DYNAMICDAYOFWEEK_FRIDAY DynamicDayOfWeek = "Friday"
+	DYNAMICDAYOFWEEK_SATURDAY DynamicDayOfWeek = "Saturday"
+	DYNAMICDAYOFWEEK_EVERYDAY DynamicDayOfWeek = "Everyday"
+	DYNAMICDAYOFWEEK_WEEKDAY DynamicDayOfWeek = "Weekday"
+	DYNAMICDAYOFWEEK_WEEKEND DynamicDayOfWeek = "Weekend"
 )
 
 // All allowed values of DynamicDayOfWeek enum

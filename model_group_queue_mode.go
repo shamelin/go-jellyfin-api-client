@@ -20,8 +20,8 @@ type GroupQueueMode string
 
 // List of GroupQueueMode
 const (
-	QUEUE GroupQueueMode = "Queue"
-	QUEUE_NEXT GroupQueueMode = "QueueNext"
+	GROUPQUEUEMODE_QUEUE GroupQueueMode = "Queue"
+	GROUPQUEUEMODE_QUEUE_NEXT GroupQueueMode = "QueueNext"
 )
 
 // All allowed values of GroupQueueMode enum

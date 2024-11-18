@@ -20,9 +20,9 @@ type MediaSourceType string
 
 // List of MediaSourceType
 const (
-	DEFAULT MediaSourceType = "Default"
-	GROUPING MediaSourceType = "Grouping"
-	PLACEHOLDER MediaSourceType = "Placeholder"
+	MEDIASOURCETYPE_DEFAULT MediaSourceType = "Default"
+	MEDIASOURCETYPE_GROUPING MediaSourceType = "Grouping"
+	MEDIASOURCETYPE_PLACEHOLDER MediaSourceType = "Placeholder"
 )
 
 // All allowed values of MediaSourceType enum

@@ -20,13 +20,13 @@ type ChannelItemSortField string
 
 // List of ChannelItemSortField
 const (
-	NAME ChannelItemSortField = "Name"
-	COMMUNITY_RATING ChannelItemSortField = "CommunityRating"
-	PREMIERE_DATE ChannelItemSortField = "PremiereDate"
-	DATE_CREATED ChannelItemSortField = "DateCreated"
-	RUNTIME ChannelItemSortField = "Runtime"
-	PLAY_COUNT ChannelItemSortField = "PlayCount"
-	COMMUNITY_PLAY_COUNT ChannelItemSortField = "CommunityPlayCount"
+	CHANNELITEMSORTFIELD_NAME ChannelItemSortField = "Name"
+	CHANNELITEMSORTFIELD_COMMUNITY_RATING ChannelItemSortField = "CommunityRating"
+	CHANNELITEMSORTFIELD_PREMIERE_DATE ChannelItemSortField = "PremiereDate"
+	CHANNELITEMSORTFIELD_DATE_CREATED ChannelItemSortField = "DateCreated"
+	CHANNELITEMSORTFIELD_RUNTIME ChannelItemSortField = "Runtime"
+	CHANNELITEMSORTFIELD_PLAY_COUNT ChannelItemSortField = "PlayCount"
+	CHANNELITEMSORTFIELD_COMMUNITY_PLAY_COUNT ChannelItemSortField = "CommunityPlayCount"
 )
 
 // All allowed values of ChannelItemSortField enum

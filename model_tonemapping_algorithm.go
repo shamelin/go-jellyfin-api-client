@@ -20,14 +20,14 @@ type TonemappingAlgorithm string
 
 // List of TonemappingAlgorithm
 const (
-	NONE TonemappingAlgorithm = "none"
-	CLIP TonemappingAlgorithm = "clip"
-	LINEAR TonemappingAlgorithm = "linear"
-	GAMMA TonemappingAlgorithm = "gamma"
-	REINHARD TonemappingAlgorithm = "reinhard"
-	HABLE TonemappingAlgorithm = "hable"
-	MOBIUS TonemappingAlgorithm = "mobius"
-	BT2390 TonemappingAlgorithm = "bt2390"
+	TONEMAPPINGALGORITHM_NONE TonemappingAlgorithm = "none"
+	TONEMAPPINGALGORITHM_CLIP TonemappingAlgorithm = "clip"
+	TONEMAPPINGALGORITHM_LINEAR TonemappingAlgorithm = "linear"
+	TONEMAPPINGALGORITHM_GAMMA TonemappingAlgorithm = "gamma"
+	TONEMAPPINGALGORITHM_REINHARD TonemappingAlgorithm = "reinhard"
+	TONEMAPPINGALGORITHM_HABLE TonemappingAlgorithm = "hable"
+	TONEMAPPINGALGORITHM_MOBIUS TonemappingAlgorithm = "mobius"
+	TONEMAPPINGALGORITHM_BT2390 TonemappingAlgorithm = "bt2390"
 )
 
 // All allowed values of TonemappingAlgorithm enum

@@ -20,16 +20,16 @@ type PlayQueueUpdateReason string
 
 // List of PlayQueueUpdateReason
 const (
-	NEW_PLAYLIST PlayQueueUpdateReason = "NewPlaylist"
-	SET_CURRENT_ITEM PlayQueueUpdateReason = "SetCurrentItem"
-	REMOVE_ITEMS PlayQueueUpdateReason = "RemoveItems"
-	MOVE_ITEM PlayQueueUpdateReason = "MoveItem"
-	QUEUE PlayQueueUpdateReason = "Queue"
-	QUEUE_NEXT PlayQueueUpdateReason = "QueueNext"
-	NEXT_ITEM PlayQueueUpdateReason = "NextItem"
-	PREVIOUS_ITEM PlayQueueUpdateReason = "PreviousItem"
-	REPEAT_MODE PlayQueueUpdateReason = "RepeatMode"
-	SHUFFLE_MODE PlayQueueUpdateReason = "ShuffleMode"
+	PLAYQUEUEUPDATEREASON_NEW_PLAYLIST PlayQueueUpdateReason = "NewPlaylist"
+	PLAYQUEUEUPDATEREASON_SET_CURRENT_ITEM PlayQueueUpdateReason = "SetCurrentItem"
+	PLAYQUEUEUPDATEREASON_REMOVE_ITEMS PlayQueueUpdateReason = "RemoveItems"
+	PLAYQUEUEUPDATEREASON_MOVE_ITEM PlayQueueUpdateReason = "MoveItem"
+	PLAYQUEUEUPDATEREASON_QUEUE PlayQueueUpdateReason = "Queue"
+	PLAYQUEUEUPDATEREASON_QUEUE_NEXT PlayQueueUpdateReason = "QueueNext"
+	PLAYQUEUEUPDATEREASON_NEXT_ITEM PlayQueueUpdateReason = "NextItem"
+	PLAYQUEUEUPDATEREASON_PREVIOUS_ITEM PlayQueueUpdateReason = "PreviousItem"
+	PLAYQUEUEUPDATEREASON_REPEAT_MODE PlayQueueUpdateReason = "RepeatMode"
+	PLAYQUEUEUPDATEREASON_SHUFFLE_MODE PlayQueueUpdateReason = "ShuffleMode"
 )
 
 // All allowed values of PlayQueueUpdateReason enum

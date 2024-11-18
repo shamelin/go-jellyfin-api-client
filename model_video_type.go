@@ -20,10 +20,10 @@ type VideoType string
 
 // List of VideoType
 const (
-	VIDEO_FILE VideoType = "VideoFile"
-	ISO VideoType = "Iso"
-	DVD VideoType = "Dvd"
-	BLU_RAY VideoType = "BluRay"
+	VIDEOTYPE_VIDEO_FILE VideoType = "VideoFile"
+	VIDEOTYPE_ISO VideoType = "Iso"
+	VIDEOTYPE_DVD VideoType = "Dvd"
+	VIDEOTYPE_BLU_RAY VideoType = "BluRay"
 )
 
 // All allowed values of VideoType enum

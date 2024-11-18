@@ -20,8 +20,8 @@ type DeinterlaceMethod string
 
 // List of DeinterlaceMethod
 const (
-	YADIF DeinterlaceMethod = "yadif"
-	BWDIF DeinterlaceMethod = "bwdif"
+	DEINTERLACEMETHOD_YADIF DeinterlaceMethod = "yadif"
+	DEINTERLACEMETHOD_BWDIF DeinterlaceMethod = "bwdif"
 )
 
 // All allowed values of DeinterlaceMethod enum

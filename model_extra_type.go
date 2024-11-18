@@ -20,18 +20,18 @@ type ExtraType string
 
 // List of ExtraType
 const (
-	UNKNOWN ExtraType = "Unknown"
-	CLIP ExtraType = "Clip"
-	TRAILER ExtraType = "Trailer"
-	BEHIND_THE_SCENES ExtraType = "BehindTheScenes"
-	DELETED_SCENE ExtraType = "DeletedScene"
-	INTERVIEW ExtraType = "Interview"
-	SCENE ExtraType = "Scene"
-	SAMPLE ExtraType = "Sample"
-	THEME_SONG ExtraType = "ThemeSong"
-	THEME_VIDEO ExtraType = "ThemeVideo"
-	FEATURETTE ExtraType = "Featurette"
-	SHORT ExtraType = "Short"
+	EXTRATYPE_UNKNOWN ExtraType = "Unknown"
+	EXTRATYPE_CLIP ExtraType = "Clip"
+	EXTRATYPE_TRAILER ExtraType = "Trailer"
+	EXTRATYPE_BEHIND_THE_SCENES ExtraType = "BehindTheScenes"
+	EXTRATYPE_DELETED_SCENE ExtraType = "DeletedScene"
+	EXTRATYPE_INTERVIEW ExtraType = "Interview"
+	EXTRATYPE_SCENE ExtraType = "Scene"
+	EXTRATYPE_SAMPLE ExtraType = "Sample"
+	EXTRATYPE_THEME_SONG ExtraType = "ThemeSong"
+	EXTRATYPE_THEME_VIDEO ExtraType = "ThemeVideo"
+	EXTRATYPE_FEATURETTE ExtraType = "Featurette"
+	EXTRATYPE_SHORT ExtraType = "Short"
 )
 
 // All allowed values of ExtraType enum

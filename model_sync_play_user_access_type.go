@@ -20,9 +20,9 @@ type SyncPlayUserAccessType string
 
 // List of SyncPlayUserAccessType
 const (
-	CREATE_AND_JOIN_GROUPS SyncPlayUserAccessType = "CreateAndJoinGroups"
-	JOIN_GROUPS SyncPlayUserAccessType = "JoinGroups"
-	NONE SyncPlayUserAccessType = "None"
+	SYNCPLAYUSERACCESSTYPE_CREATE_AND_JOIN_GROUPS SyncPlayUserAccessType = "CreateAndJoinGroups"
+	SYNCPLAYUSERACCESSTYPE_JOIN_GROUPS SyncPlayUserAccessType = "JoinGroups"
+	SYNCPLAYUSERACCESSTYPE_NONE SyncPlayUserAccessType = "None"
 )
 
 // All allowed values of SyncPlayUserAccessType enum

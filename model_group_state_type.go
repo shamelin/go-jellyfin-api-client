@@ -20,10 +20,10 @@ type GroupStateType string
 
 // List of GroupStateType
 const (
-	IDLE GroupStateType = "Idle"
-	WAITING GroupStateType = "Waiting"
-	PAUSED GroupStateType = "Paused"
-	PLAYING GroupStateType = "Playing"
+	GROUPSTATETYPE_IDLE GroupStateType = "Idle"
+	GROUPSTATETYPE_WAITING GroupStateType = "Waiting"
+	GROUPSTATETYPE_PAUSED GroupStateType = "Paused"
+	GROUPSTATETYPE_PLAYING GroupStateType = "Playing"
 )
 
 // All allowed values of GroupStateType enum

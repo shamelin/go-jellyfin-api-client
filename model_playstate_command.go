@@ -20,15 +20,15 @@ type PlaystateCommand string
 
 // List of PlaystateCommand
 const (
-	STOP PlaystateCommand = "Stop"
-	PAUSE PlaystateCommand = "Pause"
-	UNPAUSE PlaystateCommand = "Unpause"
-	NEXT_TRACK PlaystateCommand = "NextTrack"
-	PREVIOUS_TRACK PlaystateCommand = "PreviousTrack"
-	SEEK PlaystateCommand = "Seek"
-	REWIND PlaystateCommand = "Rewind"
-	FAST_FORWARD PlaystateCommand = "FastForward"
-	PLAY_PAUSE PlaystateCommand = "PlayPause"
+	PLAYSTATECOMMAND_STOP PlaystateCommand = "Stop"
+	PLAYSTATECOMMAND_PAUSE PlaystateCommand = "Pause"
+	PLAYSTATECOMMAND_UNPAUSE PlaystateCommand = "Unpause"
+	PLAYSTATECOMMAND_NEXT_TRACK PlaystateCommand = "NextTrack"
+	PLAYSTATECOMMAND_PREVIOUS_TRACK PlaystateCommand = "PreviousTrack"
+	PLAYSTATECOMMAND_SEEK PlaystateCommand = "Seek"
+	PLAYSTATECOMMAND_REWIND PlaystateCommand = "Rewind"
+	PLAYSTATECOMMAND_FAST_FORWARD PlaystateCommand = "FastForward"
+	PLAYSTATECOMMAND_PLAY_PAUSE PlaystateCommand = "PlayPause"
 )
 
 // All allowed values of PlaystateCommand enum

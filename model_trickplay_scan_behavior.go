@@ -20,8 +20,8 @@ type TrickplayScanBehavior string
 
 // List of TrickplayScanBehavior
 const (
-	BLOCKING TrickplayScanBehavior = "Blocking"
-	NON_BLOCKING TrickplayScanBehavior = "NonBlocking"
+	TRICKPLAYSCANBEHAVIOR_BLOCKING TrickplayScanBehavior = "Blocking"
+	TRICKPLAYSCANBEHAVIOR_NON_BLOCKING TrickplayScanBehavior = "NonBlocking"
 )
 
 // All allowed values of TrickplayScanBehavior enum

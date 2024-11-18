@@ -20,10 +20,10 @@ type MetadataRefreshMode string
 
 // List of MetadataRefreshMode
 const (
-	NONE MetadataRefreshMode = "None"
-	VALIDATION_ONLY MetadataRefreshMode = "ValidationOnly"
-	DEFAULT MetadataRefreshMode = "Default"
-	FULL_REFRESH MetadataRefreshMode = "FullRefresh"
+	METADATAREFRESHMODE_NONE MetadataRefreshMode = "None"
+	METADATAREFRESHMODE_VALIDATION_ONLY MetadataRefreshMode = "ValidationOnly"
+	METADATAREFRESHMODE_DEFAULT MetadataRefreshMode = "Default"
+	METADATAREFRESHMODE_FULL_REFRESH MetadataRefreshMode = "FullRefresh"
 )
 
 // All allowed values of MetadataRefreshMode enum

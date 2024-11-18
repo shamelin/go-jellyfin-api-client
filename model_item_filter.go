@@ -20,15 +20,15 @@ type ItemFilter string
 
 // List of ItemFilter
 const (
-	IS_FOLDER ItemFilter = "IsFolder"
-	IS_NOT_FOLDER ItemFilter = "IsNotFolder"
-	IS_UNPLAYED ItemFilter = "IsUnplayed"
-	IS_PLAYED ItemFilter = "IsPlayed"
-	IS_FAVORITE ItemFilter = "IsFavorite"
-	IS_RESUMABLE ItemFilter = "IsResumable"
-	LIKES ItemFilter = "Likes"
-	DISLIKES ItemFilter = "Dislikes"
-	IS_FAVORITE_OR_LIKES ItemFilter = "IsFavoriteOrLikes"
+	ITEMFILTER_IS_FOLDER ItemFilter = "IsFolder"
+	ITEMFILTER_IS_NOT_FOLDER ItemFilter = "IsNotFolder"
+	ITEMFILTER_IS_UNPLAYED ItemFilter = "IsUnplayed"
+	ITEMFILTER_IS_PLAYED ItemFilter = "IsPlayed"
+	ITEMFILTER_IS_FAVORITE ItemFilter = "IsFavorite"
+	ITEMFILTER_IS_RESUMABLE ItemFilter = "IsResumable"
+	ITEMFILTER_LIKES ItemFilter = "Likes"
+	ITEMFILTER_DISLIKES ItemFilter = "Dislikes"
+	ITEMFILTER_IS_FAVORITE_OR_LIKES ItemFilter = "IsFavoriteOrLikes"
 )
 
 // All allowed values of ItemFilter enum

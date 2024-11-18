@@ -20,19 +20,19 @@ type CollectionType string
 
 // List of CollectionType
 const (
-	UNKNOWN CollectionType = "unknown"
-	MOVIES CollectionType = "movies"
-	TVSHOWS CollectionType = "tvshows"
-	MUSIC CollectionType = "music"
-	MUSICVIDEOS CollectionType = "musicvideos"
-	TRAILERS CollectionType = "trailers"
-	HOMEVIDEOS CollectionType = "homevideos"
-	BOXSETS CollectionType = "boxsets"
-	BOOKS CollectionType = "books"
-	PHOTOS CollectionType = "photos"
-	LIVETV CollectionType = "livetv"
-	PLAYLISTS CollectionType = "playlists"
-	FOLDERS CollectionType = "folders"
+	COLLECTIONTYPE_UNKNOWN CollectionType = "unknown"
+	COLLECTIONTYPE_MOVIES CollectionType = "movies"
+	COLLECTIONTYPE_TVSHOWS CollectionType = "tvshows"
+	COLLECTIONTYPE_MUSIC CollectionType = "music"
+	COLLECTIONTYPE_MUSICVIDEOS CollectionType = "musicvideos"
+	COLLECTIONTYPE_TRAILERS CollectionType = "trailers"
+	COLLECTIONTYPE_HOMEVIDEOS CollectionType = "homevideos"
+	COLLECTIONTYPE_BOXSETS CollectionType = "boxsets"
+	COLLECTIONTYPE_BOOKS CollectionType = "books"
+	COLLECTIONTYPE_PHOTOS CollectionType = "photos"
+	COLLECTIONTYPE_LIVETV CollectionType = "livetv"
+	COLLECTIONTYPE_PLAYLISTS CollectionType = "playlists"
+	COLLECTIONTYPE_FOLDERS CollectionType = "folders"
 )
 
 // All allowed values of CollectionType enum

@@ -20,9 +20,9 @@ type GroupRepeatMode string
 
 // List of GroupRepeatMode
 const (
-	REPEAT_ONE GroupRepeatMode = "RepeatOne"
-	REPEAT_ALL GroupRepeatMode = "RepeatAll"
-	REPEAT_NONE GroupRepeatMode = "RepeatNone"
+	GROUPREPEATMODE_REPEAT_ONE GroupRepeatMode = "RepeatOne"
+	GROUPREPEATMODE_REPEAT_ALL GroupRepeatMode = "RepeatAll"
+	GROUPREPEATMODE_REPEAT_NONE GroupRepeatMode = "RepeatNone"
 )
 
 // All allowed values of GroupRepeatMode enum

@@ -20,8 +20,8 @@ type ImageSavingConvention string
 
 // List of ImageSavingConvention
 const (
-	LEGACY ImageSavingConvention = "Legacy"
-	COMPATIBLE ImageSavingConvention = "Compatible"
+	IMAGESAVINGCONVENTION_LEGACY ImageSavingConvention = "Legacy"
+	IMAGESAVINGCONVENTION_COMPATIBLE ImageSavingConvention = "Compatible"
 )
 
 // All allowed values of ImageSavingConvention enum

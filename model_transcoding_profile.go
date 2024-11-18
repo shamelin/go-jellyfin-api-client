@@ -65,11 +65,11 @@ func NewTranscodingProfile() *TranscodingProfile {
 	this.EstimateContentLength = &estimateContentLength
 	var enableMpegtsM2TsMode bool = false
 	this.EnableMpegtsM2TsMode = &enableMpegtsM2TsMode
-	var transcodeSeekInfo TranscodeSeekInfo = AUTO
+	var transcodeSeekInfo TranscodeSeekInfo = TRANSCODESEEKINFO_AUTO
 	this.TranscodeSeekInfo = &transcodeSeekInfo
 	var copyTimestamps bool = false
 	this.CopyTimestamps = &copyTimestamps
-	var context EncodingContext = STREAMING
+	var context EncodingContext = ENCODINGCONTEXT_STREAMING
 	this.Context = &context
 	var enableSubtitlesInManifest bool = false
 	this.EnableSubtitlesInManifest = &enableSubtitlesInManifest
@@ -93,11 +93,11 @@ func NewTranscodingProfileWithDefaults() *TranscodingProfile {
 	this.EstimateContentLength = &estimateContentLength
 	var enableMpegtsM2TsMode bool = false
 	this.EnableMpegtsM2TsMode = &enableMpegtsM2TsMode
-	var transcodeSeekInfo TranscodeSeekInfo = AUTO
+	var transcodeSeekInfo TranscodeSeekInfo = TRANSCODESEEKINFO_AUTO
 	this.TranscodeSeekInfo = &transcodeSeekInfo
 	var copyTimestamps bool = false
 	this.CopyTimestamps = &copyTimestamps
-	var context EncodingContext = STREAMING
+	var context EncodingContext = ENCODINGCONTEXT_STREAMING
 	this.Context = &context
 	var enableSubtitlesInManifest bool = false
 	this.EnableSubtitlesInManifest = &enableSubtitlesInManifest

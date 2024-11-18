@@ -20,11 +20,11 @@ type DownMixStereoAlgorithms string
 
 // List of DownMixStereoAlgorithms
 const (
-	NONE DownMixStereoAlgorithms = "None"
-	DAVE750 DownMixStereoAlgorithms = "Dave750"
-	NIGHTMODE_DIALOGUE DownMixStereoAlgorithms = "NightmodeDialogue"
-	RFC7845 DownMixStereoAlgorithms = "Rfc7845"
-	AC4 DownMixStereoAlgorithms = "Ac4"
+	DOWNMIXSTEREOALGORITHMS_NONE DownMixStereoAlgorithms = "None"
+	DOWNMIXSTEREOALGORITHMS_DAVE750 DownMixStereoAlgorithms = "Dave750"
+	DOWNMIXSTEREOALGORITHMS_NIGHTMODE_DIALOGUE DownMixStereoAlgorithms = "NightmodeDialogue"
+	DOWNMIXSTEREOALGORITHMS_RFC7845 DownMixStereoAlgorithms = "Rfc7845"
+	DOWNMIXSTEREOALGORITHMS_AC4 DownMixStereoAlgorithms = "Ac4"
 )
 
 // All allowed values of DownMixStereoAlgorithms enum

@@ -20,15 +20,15 @@ type VideoRangeType string
 
 // List of VideoRangeType
 const (
-	UNKNOWN VideoRangeType = "Unknown"
-	SDR VideoRangeType = "SDR"
-	HDR10 VideoRangeType = "HDR10"
-	HLG VideoRangeType = "HLG"
-	DOVI VideoRangeType = "DOVI"
-	DOVI_WITH_HDR10 VideoRangeType = "DOVIWithHDR10"
-	DOVI_WITH_HLG VideoRangeType = "DOVIWithHLG"
-	DOVI_WITH_SDR VideoRangeType = "DOVIWithSDR"
-	HDR10_PLUS VideoRangeType = "HDR10Plus"
+	VIDEORANGETYPE_UNKNOWN VideoRangeType = "Unknown"
+	VIDEORANGETYPE_SDR VideoRangeType = "SDR"
+	VIDEORANGETYPE_HDR10 VideoRangeType = "HDR10"
+	VIDEORANGETYPE_HLG VideoRangeType = "HLG"
+	VIDEORANGETYPE_DOVI VideoRangeType = "DOVI"
+	VIDEORANGETYPE_DOVI_WITH_HDR10 VideoRangeType = "DOVIWithHDR10"
+	VIDEORANGETYPE_DOVI_WITH_HLG VideoRangeType = "DOVIWithHLG"
+	VIDEORANGETYPE_DOVI_WITH_SDR VideoRangeType = "DOVIWithSDR"
+	VIDEORANGETYPE_HDR10_PLUS VideoRangeType = "HDR10Plus"
 )
 
 // All allowed values of VideoRangeType enum

@@ -20,8 +20,8 @@ type GroupShuffleMode string
 
 // List of GroupShuffleMode
 const (
-	SORTED GroupShuffleMode = "Sorted"
-	SHUFFLE GroupShuffleMode = "Shuffle"
+	GROUPSHUFFLEMODE_SORTED GroupShuffleMode = "Sorted"
+	GROUPSHUFFLEMODE_SHUFFLE GroupShuffleMode = "Shuffle"
 )
 
 // All allowed values of GroupShuffleMode enum

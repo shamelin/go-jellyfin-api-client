@@ -20,11 +20,11 @@ type DlnaProfileType string
 
 // List of DlnaProfileType
 const (
-	AUDIO DlnaProfileType = "Audio"
-	VIDEO DlnaProfileType = "Video"
-	PHOTO DlnaProfileType = "Photo"
-	SUBTITLE DlnaProfileType = "Subtitle"
-	LYRIC DlnaProfileType = "Lyric"
+	DLNAPROFILETYPE_AUDIO DlnaProfileType = "Audio"
+	DLNAPROFILETYPE_VIDEO DlnaProfileType = "Video"
+	DLNAPROFILETYPE_PHOTO DlnaProfileType = "Photo"
+	DLNAPROFILETYPE_SUBTITLE DlnaProfileType = "Subtitle"
+	DLNAPROFILETYPE_LYRIC DlnaProfileType = "Lyric"
 )
 
 // All allowed values of DlnaProfileType enum

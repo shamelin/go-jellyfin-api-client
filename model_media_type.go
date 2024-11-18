@@ -20,11 +20,11 @@ type MediaType string
 
 // List of MediaType
 const (
-	UNKNOWN MediaType = "Unknown"
-	VIDEO MediaType = "Video"
-	AUDIO MediaType = "Audio"
-	PHOTO MediaType = "Photo"
-	BOOK MediaType = "Book"
+	MEDIATYPE_UNKNOWN MediaType = "Unknown"
+	MEDIATYPE_VIDEO MediaType = "Video"
+	MEDIATYPE_AUDIO MediaType = "Audio"
+	MEDIATYPE_PHOTO MediaType = "Photo"
+	MEDIATYPE_BOOK MediaType = "Book"
 )
 
 // All allowed values of MediaType enum

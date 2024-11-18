@@ -20,9 +20,9 @@ type DayPattern string
 
 // List of DayPattern
 const (
-	DAILY DayPattern = "Daily"
-	WEEKDAYS DayPattern = "Weekdays"
-	WEEKENDS DayPattern = "Weekends"
+	DAYPATTERN_DAILY DayPattern = "Daily"
+	DAYPATTERN_WEEKDAYS DayPattern = "Weekdays"
+	DAYPATTERN_WEEKENDS DayPattern = "Weekends"
 )
 
 // All allowed values of DayPattern enum

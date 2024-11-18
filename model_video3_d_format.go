@@ -20,11 +20,11 @@ type Video3DFormat string
 
 // List of Video3DFormat
 const (
-	HALF_SIDE_BY_SIDE Video3DFormat = "HalfSideBySide"
-	FULL_SIDE_BY_SIDE Video3DFormat = "FullSideBySide"
-	FULL_TOP_AND_BOTTOM Video3DFormat = "FullTopAndBottom"
-	HALF_TOP_AND_BOTTOM Video3DFormat = "HalfTopAndBottom"
-	MVC Video3DFormat = "MVC"
+	VIDEO3DFORMAT_HALF_SIDE_BY_SIDE Video3DFormat = "HalfSideBySide"
+	VIDEO3DFORMAT_FULL_SIDE_BY_SIDE Video3DFormat = "FullSideBySide"
+	VIDEO3DFORMAT_FULL_TOP_AND_BOTTOM Video3DFormat = "FullTopAndBottom"
+	VIDEO3DFORMAT_HALF_TOP_AND_BOTTOM Video3DFormat = "HalfTopAndBottom"
+	VIDEO3DFORMAT_MVC Video3DFormat = "MVC"
 )
 
 // All allowed values of Video3DFormat enum

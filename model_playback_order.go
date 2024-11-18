@@ -20,8 +20,8 @@ type PlaybackOrder string
 
 // List of PlaybackOrder
 const (
-	DEFAULT PlaybackOrder = "Default"
-	SHUFFLE PlaybackOrder = "Shuffle"
+	PLAYBACKORDER_DEFAULT PlaybackOrder = "Default"
+	PLAYBACKORDER_SHUFFLE PlaybackOrder = "Shuffle"
 )
 
 // All allowed values of PlaybackOrder enum

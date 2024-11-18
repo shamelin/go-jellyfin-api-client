@@ -20,11 +20,11 @@ type ProfileConditionType string
 
 // List of ProfileConditionType
 const (
-	EQUALS ProfileConditionType = "Equals"
-	NOT_EQUALS ProfileConditionType = "NotEquals"
-	LESS_THAN_EQUAL ProfileConditionType = "LessThanEqual"
-	GREATER_THAN_EQUAL ProfileConditionType = "GreaterThanEqual"
-	EQUALS_ANY ProfileConditionType = "EqualsAny"
+	PROFILECONDITIONTYPE_EQUALS ProfileConditionType = "Equals"
+	PROFILECONDITIONTYPE_NOT_EQUALS ProfileConditionType = "NotEquals"
+	PROFILECONDITIONTYPE_LESS_THAN_EQUAL ProfileConditionType = "LessThanEqual"
+	PROFILECONDITIONTYPE_GREATER_THAN_EQUAL ProfileConditionType = "GreaterThanEqual"
+	PROFILECONDITIONTYPE_EQUALS_ANY ProfileConditionType = "EqualsAny"
 )
 
 // All allowed values of ProfileConditionType enum

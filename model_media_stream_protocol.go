@@ -20,8 +20,8 @@ type MediaStreamProtocol string
 
 // List of MediaStreamProtocol
 const (
-	HTTP MediaStreamProtocol = "http"
-	HLS MediaStreamProtocol = "hls"
+	MEDIASTREAMPROTOCOL_HTTP MediaStreamProtocol = "http"
+	MEDIASTREAMPROTOCOL_HLS MediaStreamProtocol = "hls"
 )
 
 // All allowed values of MediaStreamProtocol enum

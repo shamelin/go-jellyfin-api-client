@@ -20,9 +20,9 @@ type TaskState string
 
 // List of TaskState
 const (
-	IDLE TaskState = "Idle"
-	CANCELLING TaskState = "Cancelling"
-	RUNNING TaskState = "Running"
+	TASKSTATE_IDLE TaskState = "Idle"
+	TASKSTATE_CANCELLING TaskState = "Cancelling"
+	TASKSTATE_RUNNING TaskState = "Running"
 )
 
 // All allowed values of TaskState enum

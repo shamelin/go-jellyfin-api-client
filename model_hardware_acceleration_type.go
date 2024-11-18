@@ -20,14 +20,14 @@ type HardwareAccelerationType string
 
 // List of HardwareAccelerationType
 const (
-	NONE HardwareAccelerationType = "none"
-	AMF HardwareAccelerationType = "amf"
-	QSV HardwareAccelerationType = "qsv"
-	NVENC HardwareAccelerationType = "nvenc"
-	V4L2M2M HardwareAccelerationType = "v4l2m2m"
-	VAAPI HardwareAccelerationType = "vaapi"
-	VIDEOTOOLBOX HardwareAccelerationType = "videotoolbox"
-	RKMPP HardwareAccelerationType = "rkmpp"
+	HARDWAREACCELERATIONTYPE_NONE HardwareAccelerationType = "none"
+	HARDWAREACCELERATIONTYPE_AMF HardwareAccelerationType = "amf"
+	HARDWAREACCELERATIONTYPE_QSV HardwareAccelerationType = "qsv"
+	HARDWAREACCELERATIONTYPE_NVENC HardwareAccelerationType = "nvenc"
+	HARDWAREACCELERATIONTYPE_V4L2M2M HardwareAccelerationType = "v4l2m2m"
+	HARDWAREACCELERATIONTYPE_VAAPI HardwareAccelerationType = "vaapi"
+	HARDWAREACCELERATIONTYPE_VIDEOTOOLBOX HardwareAccelerationType = "videotoolbox"
+	HARDWAREACCELERATIONTYPE_RKMPP HardwareAccelerationType = "rkmpp"
 )
 
 // All allowed values of HardwareAccelerationType enum

@@ -20,9 +20,9 @@ type ForgotPasswordAction string
 
 // List of ForgotPasswordAction
 const (
-	CONTACT_ADMIN ForgotPasswordAction = "ContactAdmin"
-	PIN_CODE ForgotPasswordAction = "PinCode"
-	IN_NETWORK_REQUIRED ForgotPasswordAction = "InNetworkRequired"
+	FORGOTPASSWORDACTION_CONTACT_ADMIN ForgotPasswordAction = "ContactAdmin"
+	FORGOTPASSWORDACTION_PIN_CODE ForgotPasswordAction = "PinCode"
+	FORGOTPASSWORDACTION_IN_NETWORK_REQUIRED ForgotPasswordAction = "InNetworkRequired"
 )
 
 // All allowed values of ForgotPasswordAction enum

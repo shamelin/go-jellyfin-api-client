@@ -20,8 +20,8 @@ type ScrollDirection string
 
 // List of ScrollDirection
 const (
-	HORIZONTAL ScrollDirection = "Horizontal"
-	VERTICAL ScrollDirection = "Vertical"
+	SCROLLDIRECTION_HORIZONTAL ScrollDirection = "Horizontal"
+	SCROLLDIRECTION_VERTICAL ScrollDirection = "Vertical"
 )
 
 // All allowed values of ScrollDirection enum

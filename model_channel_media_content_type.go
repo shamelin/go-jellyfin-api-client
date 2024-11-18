@@ -20,14 +20,14 @@ type ChannelMediaContentType string
 
 // List of ChannelMediaContentType
 const (
-	CLIP ChannelMediaContentType = "Clip"
-	PODCAST ChannelMediaContentType = "Podcast"
-	TRAILER ChannelMediaContentType = "Trailer"
-	MOVIE ChannelMediaContentType = "Movie"
-	EPISODE ChannelMediaContentType = "Episode"
-	SONG ChannelMediaContentType = "Song"
-	MOVIE_EXTRA ChannelMediaContentType = "MovieExtra"
-	TV_EXTRA ChannelMediaContentType = "TvExtra"
+	CHANNELMEDIACONTENTTYPE_CLIP ChannelMediaContentType = "Clip"
+	CHANNELMEDIACONTENTTYPE_PODCAST ChannelMediaContentType = "Podcast"
+	CHANNELMEDIACONTENTTYPE_TRAILER ChannelMediaContentType = "Trailer"
+	CHANNELMEDIACONTENTTYPE_MOVIE ChannelMediaContentType = "Movie"
+	CHANNELMEDIACONTENTTYPE_EPISODE ChannelMediaContentType = "Episode"
+	CHANNELMEDIACONTENTTYPE_SONG ChannelMediaContentType = "Song"
+	CHANNELMEDIACONTENTTYPE_MOVIE_EXTRA ChannelMediaContentType = "MovieExtra"
+	CHANNELMEDIACONTENTTYPE_TV_EXTRA ChannelMediaContentType = "TvExtra"
 )
 
 // All allowed values of ChannelMediaContentType enum

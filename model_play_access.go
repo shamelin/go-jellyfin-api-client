@@ -20,8 +20,8 @@ type PlayAccess string
 
 // List of PlayAccess
 const (
-	FULL PlayAccess = "Full"
-	NONE PlayAccess = "None"
+	PLAYACCESS_FULL PlayAccess = "Full"
+	PLAYACCESS_NONE PlayAccess = "None"
 )
 
 // All allowed values of PlayAccess enum

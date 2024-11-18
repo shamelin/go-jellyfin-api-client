@@ -1,3 +1,4 @@
 additionalProperties:
   artifactId: jellyfin
   packageName: jellyfin
+enumClassPrefix: true

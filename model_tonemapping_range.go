@@ -20,9 +20,9 @@ type TonemappingRange string
 
 // List of TonemappingRange
 const (
-	AUTO TonemappingRange = "auto"
-	TV TonemappingRange = "tv"
-	PC TonemappingRange = "pc"
+	TONEMAPPINGRANGE_AUTO TonemappingRange = "auto"
+	TONEMAPPINGRANGE_TV TonemappingRange = "tv"
+	TONEMAPPINGRANGE_PC TonemappingRange = "pc"
 )
 
 // All allowed values of TonemappingRange enum

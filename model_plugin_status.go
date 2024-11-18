@@ -20,13 +20,13 @@ type PluginStatus string
 
 // List of PluginStatus
 const (
-	ACTIVE PluginStatus = "Active"
-	RESTART PluginStatus = "Restart"
-	DELETED PluginStatus = "Deleted"
-	SUPERCEDED PluginStatus = "Superceded"
-	MALFUNCTIONED PluginStatus = "Malfunctioned"
-	NOT_SUPPORTED PluginStatus = "NotSupported"
-	DISABLED PluginStatus = "Disabled"
+	PLUGINSTATUS_ACTIVE PluginStatus = "Active"
+	PLUGINSTATUS_RESTART PluginStatus = "Restart"
+	PLUGINSTATUS_DELETED PluginStatus = "Deleted"
+	PLUGINSTATUS_SUPERCEDED PluginStatus = "Superceded"
+	PLUGINSTATUS_MALFUNCTIONED PluginStatus = "Malfunctioned"
+	PLUGINSTATUS_NOT_SUPPORTED PluginStatus = "NotSupported"
+	PLUGINSTATUS_DISABLED PluginStatus = "Disabled"
 )
 
 // All allowed values of PluginStatus enum

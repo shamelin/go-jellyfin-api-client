@@ -20,8 +20,8 @@ type IsoType string
 
 // List of IsoType
 const (
-	DVD IsoType = "Dvd"
-	BLU_RAY IsoType = "BluRay"
+	ISOTYPE_DVD IsoType = "Dvd"
+	ISOTYPE_BLU_RAY IsoType = "BluRay"
 )
 
 // All allowed values of IsoType enum

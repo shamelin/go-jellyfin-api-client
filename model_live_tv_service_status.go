@@ -20,8 +20,8 @@ type LiveTvServiceStatus string
 
 // List of LiveTvServiceStatus
 const (
-	OK LiveTvServiceStatus = "Ok"
-	UNAVAILABLE LiveTvServiceStatus = "Unavailable"
+	LIVETVSERVICESTATUS_OK LiveTvServiceStatus = "Ok"
+	LIVETVSERVICESTATUS_UNAVAILABLE LiveTvServiceStatus = "Unavailable"
 )
 
 // All allowed values of LiveTvServiceStatus enum

@@ -20,17 +20,17 @@ type GroupUpdateType string
 
 // List of GroupUpdateType
 const (
-	USER_JOINED GroupUpdateType = "UserJoined"
-	USER_LEFT GroupUpdateType = "UserLeft"
-	GROUP_JOINED GroupUpdateType = "GroupJoined"
-	GROUP_LEFT GroupUpdateType = "GroupLeft"
-	STATE_UPDATE GroupUpdateType = "StateUpdate"
-	PLAY_QUEUE GroupUpdateType = "PlayQueue"
-	NOT_IN_GROUP GroupUpdateType = "NotInGroup"
-	GROUP_DOES_NOT_EXIST GroupUpdateType = "GroupDoesNotExist"
-	CREATE_GROUP_DENIED GroupUpdateType = "CreateGroupDenied"
-	JOIN_GROUP_DENIED GroupUpdateType = "JoinGroupDenied"
-	LIBRARY_ACCESS_DENIED GroupUpdateType = "LibraryAccessDenied"
+	GROUPUPDATETYPE_USER_JOINED GroupUpdateType = "UserJoined"
+	GROUPUPDATETYPE_USER_LEFT GroupUpdateType = "UserLeft"
+	GROUPUPDATETYPE_GROUP_JOINED GroupUpdateType = "GroupJoined"
+	GROUPUPDATETYPE_GROUP_LEFT GroupUpdateType = "GroupLeft"
+	GROUPUPDATETYPE_STATE_UPDATE GroupUpdateType = "StateUpdate"
+	GROUPUPDATETYPE_PLAY_QUEUE GroupUpdateType = "PlayQueue"
+	GROUPUPDATETYPE_NOT_IN_GROUP GroupUpdateType = "NotInGroup"
+	GROUPUPDATETYPE_GROUP_DOES_NOT_EXIST GroupUpdateType = "GroupDoesNotExist"
+	GROUPUPDATETYPE_CREATE_GROUP_DENIED GroupUpdateType = "CreateGroupDenied"
+	GROUPUPDATETYPE_JOIN_GROUP_DENIED GroupUpdateType = "JoinGroupDenied"
+	GROUPUPDATETYPE_LIBRARY_ACCESS_DENIED GroupUpdateType = "LibraryAccessDenied"
 )
 
 // All allowed values of GroupUpdateType enum

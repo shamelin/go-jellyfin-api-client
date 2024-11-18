@@ -20,9 +20,9 @@ type AudioSpatialFormat string
 
 // List of AudioSpatialFormat
 const (
-	NONE AudioSpatialFormat = "None"
-	DOLBY_ATMOS AudioSpatialFormat = "DolbyAtmos"
-	DTSX AudioSpatialFormat = "DTSX"
+	AUDIOSPATIALFORMAT_NONE AudioSpatialFormat = "None"
+	AUDIOSPATIALFORMAT_DOLBY_ATMOS AudioSpatialFormat = "DolbyAtmos"
+	AUDIOSPATIALFORMAT_DTSX AudioSpatialFormat = "DTSX"
 )
 
 // All allowed values of AudioSpatialFormat enum

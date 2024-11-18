@@ -20,15 +20,15 @@ type UnratedItem string
 
 // List of UnratedItem
 const (
-	MOVIE UnratedItem = "Movie"
-	TRAILER UnratedItem = "Trailer"
-	SERIES UnratedItem = "Series"
-	MUSIC UnratedItem = "Music"
-	BOOK UnratedItem = "Book"
-	LIVE_TV_CHANNEL UnratedItem = "LiveTvChannel"
-	LIVE_TV_PROGRAM UnratedItem = "LiveTvProgram"
-	CHANNEL_CONTENT UnratedItem = "ChannelContent"
-	OTHER UnratedItem = "Other"
+	UNRATEDITEM_MOVIE UnratedItem = "Movie"
+	UNRATEDITEM_TRAILER UnratedItem = "Trailer"
+	UNRATEDITEM_SERIES UnratedItem = "Series"
+	UNRATEDITEM_MUSIC UnratedItem = "Music"
+	UNRATEDITEM_BOOK UnratedItem = "Book"
+	UNRATEDITEM_LIVE_TV_CHANNEL UnratedItem = "LiveTvChannel"
+	UNRATEDITEM_LIVE_TV_PROGRAM UnratedItem = "LiveTvProgram"
+	UNRATEDITEM_CHANNEL_CONTENT UnratedItem = "ChannelContent"
+	UNRATEDITEM_OTHER UnratedItem = "Other"
 )
 
 // All allowed values of UnratedItem enum

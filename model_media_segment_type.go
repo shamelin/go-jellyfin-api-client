@@ -20,12 +20,12 @@ type MediaSegmentType string
 
 // List of MediaSegmentType
 const (
-	UNKNOWN MediaSegmentType = "Unknown"
-	COMMERCIAL MediaSegmentType = "Commercial"
-	PREVIEW MediaSegmentType = "Preview"
-	RECAP MediaSegmentType = "Recap"
-	OUTRO MediaSegmentType = "Outro"
-	INTRO MediaSegmentType = "Intro"
+	MEDIASEGMENTTYPE_UNKNOWN MediaSegmentType = "Unknown"
+	MEDIASEGMENTTYPE_COMMERCIAL MediaSegmentType = "Commercial"
+	MEDIASEGMENTTYPE_PREVIEW MediaSegmentType = "Preview"
+	MEDIASEGMENTTYPE_RECAP MediaSegmentType = "Recap"
+	MEDIASEGMENTTYPE_OUTRO MediaSegmentType = "Outro"
+	MEDIASEGMENTTYPE_INTRO MediaSegmentType = "Intro"
 )
 
 // All allowed values of MediaSegmentType enum

@@ -20,12 +20,12 @@ type ImageFormat string
 
 // List of ImageFormat
 const (
-	BMP ImageFormat = "Bmp"
-	GIF ImageFormat = "Gif"
-	JPG ImageFormat = "Jpg"
-	PNG ImageFormat = "Png"
-	WEBP ImageFormat = "Webp"
-	SVG ImageFormat = "Svg"
+	IMAGEFORMAT_BMP ImageFormat = "Bmp"
+	IMAGEFORMAT_GIF ImageFormat = "Gif"
+	IMAGEFORMAT_JPG ImageFormat = "Jpg"
+	IMAGEFORMAT_PNG ImageFormat = "Png"
+	IMAGEFORMAT_WEBP ImageFormat = "Webp"
+	IMAGEFORMAT_SVG ImageFormat = "Svg"
 )
 
 // All allowed values of ImageFormat enum

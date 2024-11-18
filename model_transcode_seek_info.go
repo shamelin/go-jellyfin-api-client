@@ -20,8 +20,8 @@ type TranscodeSeekInfo string
 
 // List of TranscodeSeekInfo
 const (
-	AUTO TranscodeSeekInfo = "Auto"
-	BYTES TranscodeSeekInfo = "Bytes"
+	TRANSCODESEEKINFO_AUTO TranscodeSeekInfo = "Auto"
+	TRANSCODESEEKINFO_BYTES TranscodeSeekInfo = "Bytes"
 )
 
 // All allowed values of TranscodeSeekInfo enum

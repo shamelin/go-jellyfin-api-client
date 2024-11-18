@@ -20,10 +20,10 @@ type LocationType string
 
 // List of LocationType
 const (
-	FILE_SYSTEM LocationType = "FileSystem"
-	REMOTE LocationType = "Remote"
-	VIRTUAL LocationType = "Virtual"
-	OFFLINE LocationType = "Offline"
+	LOCATIONTYPE_FILE_SYSTEM LocationType = "FileSystem"
+	LOCATIONTYPE_REMOTE LocationType = "Remote"
+	LOCATIONTYPE_VIRTUAL LocationType = "Virtual"
+	LOCATIONTYPE_OFFLINE LocationType = "Offline"
 )
 
 // All allowed values of LocationType enum

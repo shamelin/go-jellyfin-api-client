@@ -20,8 +20,8 @@ type RatingType string
 
 // List of RatingType
 const (
-	SCORE RatingType = "Score"
-	LIKES RatingType = "Likes"
+	RATINGTYPE_SCORE RatingType = "Score"
+	RATINGTYPE_LIKES RatingType = "Likes"
 )
 
 // All allowed values of RatingType enum

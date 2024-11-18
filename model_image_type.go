@@ -20,19 +20,19 @@ type ImageType string
 
 // List of ImageType
 const (
-	PRIMARY ImageType = "Primary"
-	ART ImageType = "Art"
-	BACKDROP ImageType = "Backdrop"
-	BANNER ImageType = "Banner"
-	LOGO ImageType = "Logo"
-	THUMB ImageType = "Thumb"
-	DISC ImageType = "Disc"
-	BOX ImageType = "Box"
-	SCREENSHOT ImageType = "Screenshot"
-	MENU ImageType = "Menu"
-	CHAPTER ImageType = "Chapter"
-	BOX_REAR ImageType = "BoxRear"
-	PROFILE ImageType = "Profile"
+	IMAGETYPE_PRIMARY ImageType = "Primary"
+	IMAGETYPE_ART ImageType = "Art"
+	IMAGETYPE_BACKDROP ImageType = "Backdrop"
+	IMAGETYPE_BANNER ImageType = "Banner"
+	IMAGETYPE_LOGO ImageType = "Logo"
+	IMAGETYPE_THUMB ImageType = "Thumb"
+	IMAGETYPE_DISC ImageType = "Disc"
+	IMAGETYPE_BOX ImageType = "Box"
+	IMAGETYPE_SCREENSHOT ImageType = "Screenshot"
+	IMAGETYPE_MENU ImageType = "Menu"
+	IMAGETYPE_CHAPTER ImageType = "Chapter"
+	IMAGETYPE_BOX_REAR ImageType = "BoxRear"
+	IMAGETYPE_PROFILE ImageType = "Profile"
 )
 
 // All allowed values of ImageType enum

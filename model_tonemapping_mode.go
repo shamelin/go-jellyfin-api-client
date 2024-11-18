@@ -20,11 +20,11 @@ type TonemappingMode string
 
 // List of TonemappingMode
 const (
-	AUTO TonemappingMode = "auto"
-	MAX TonemappingMode = "max"
-	RGB TonemappingMode = "rgb"
-	LUM TonemappingMode = "lum"
-	ITP TonemappingMode = "itp"
+	TONEMAPPINGMODE_AUTO TonemappingMode = "auto"
+	TONEMAPPINGMODE_MAX TonemappingMode = "max"
+	TONEMAPPINGMODE_RGB TonemappingMode = "rgb"
+	TONEMAPPINGMODE_LUM TonemappingMode = "lum"
+	TONEMAPPINGMODE_ITP TonemappingMode = "itp"
 )
 
 // All allowed values of TonemappingMode enum

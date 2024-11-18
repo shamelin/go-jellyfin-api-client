@@ -20,10 +20,10 @@ type TaskCompletionStatus string
 
 // List of TaskCompletionStatus
 const (
-	COMPLETED TaskCompletionStatus = "Completed"
-	FAILED TaskCompletionStatus = "Failed"
-	CANCELLED TaskCompletionStatus = "Cancelled"
-	ABORTED TaskCompletionStatus = "Aborted"
+	TASKCOMPLETIONSTATUS_COMPLETED TaskCompletionStatus = "Completed"
+	TASKCOMPLETIONSTATUS_FAILED TaskCompletionStatus = "Failed"
+	TASKCOMPLETIONSTATUS_CANCELLED TaskCompletionStatus = "Cancelled"
+	TASKCOMPLETIONSTATUS_ABORTED TaskCompletionStatus = "Aborted"
 )
 
 // All allowed values of TaskCompletionStatus enum

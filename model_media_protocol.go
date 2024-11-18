@@ -20,13 +20,13 @@ type MediaProtocol string
 
 // List of MediaProtocol
 const (
-	FILE MediaProtocol = "File"
-	HTTP MediaProtocol = "Http"
-	RTMP MediaProtocol = "Rtmp"
-	RTSP MediaProtocol = "Rtsp"
-	UDP MediaProtocol = "Udp"
-	RTP MediaProtocol = "Rtp"
-	FTP MediaProtocol = "Ftp"
+	MEDIAPROTOCOL_FILE MediaProtocol = "File"
+	MEDIAPROTOCOL_HTTP MediaProtocol = "Http"
+	MEDIAPROTOCOL_RTMP MediaProtocol = "Rtmp"
+	MEDIAPROTOCOL_RTSP MediaProtocol = "Rtsp"
+	MEDIAPROTOCOL_UDP MediaProtocol = "Udp"
+	MEDIAPROTOCOL_RTP MediaProtocol = "Rtp"
+	MEDIAPROTOCOL_FTP MediaProtocol = "Ftp"
 )
 
 // All allowed values of MediaProtocol enum

@@ -20,13 +20,13 @@ type RecordingStatus string
 
 // List of RecordingStatus
 const (
-	NEW RecordingStatus = "New"
-	IN_PROGRESS RecordingStatus = "InProgress"
-	COMPLETED RecordingStatus = "Completed"
-	CANCELLED RecordingStatus = "Cancelled"
-	CONFLICTED_OK RecordingStatus = "ConflictedOk"
-	CONFLICTED_NOT_OK RecordingStatus = "ConflictedNotOk"
-	ERROR RecordingStatus = "Error"
+	RECORDINGSTATUS_NEW RecordingStatus = "New"
+	RECORDINGSTATUS_IN_PROGRESS RecordingStatus = "InProgress"
+	RECORDINGSTATUS_COMPLETED RecordingStatus = "Completed"
+	RECORDINGSTATUS_CANCELLED RecordingStatus = "Cancelled"
+	RECORDINGSTATUS_CONFLICTED_OK RecordingStatus = "ConflictedOk"
+	RECORDINGSTATUS_CONFLICTED_NOT_OK RecordingStatus = "ConflictedNotOk"
+	RECORDINGSTATUS_ERROR RecordingStatus = "Error"
 )
 
 // All allowed values of RecordingStatus enum

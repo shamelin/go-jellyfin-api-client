@@ -20,10 +20,10 @@ type FileSystemEntryType string
 
 // List of FileSystemEntryType
 const (
-	FILE FileSystemEntryType = "File"
-	DIRECTORY FileSystemEntryType = "Directory"
-	NETWORK_COMPUTER FileSystemEntryType = "NetworkComputer"
-	NETWORK_SHARE FileSystemEntryType = "NetworkShare"
+	FILESYSTEMENTRYTYPE_FILE FileSystemEntryType = "File"
+	FILESYSTEMENTRYTYPE_DIRECTORY FileSystemEntryType = "Directory"
+	FILESYSTEMENTRYTYPE_NETWORK_COMPUTER FileSystemEntryType = "NetworkComputer"
+	FILESYSTEMENTRYTYPE_NETWORK_SHARE FileSystemEntryType = "NetworkShare"
 )
 
 // All allowed values of FileSystemEntryType enum

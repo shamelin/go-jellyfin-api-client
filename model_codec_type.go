@@ -20,9 +20,9 @@ type CodecType string
 
 // List of CodecType
 const (
-	VIDEO CodecType = "Video"
-	VIDEO_AUDIO CodecType = "VideoAudio"
-	AUDIO CodecType = "Audio"
+	CODECTYPE_VIDEO CodecType = "Video"
+	CODECTYPE_VIDEO_AUDIO CodecType = "VideoAudio"
+	CODECTYPE_AUDIO CodecType = "Audio"
 )
 
 // All allowed values of CodecType enum

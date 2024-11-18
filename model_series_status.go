@@ -20,9 +20,9 @@ type SeriesStatus string
 
 // List of SeriesStatus
 const (
-	CONTINUING SeriesStatus = "Continuing"
-	ENDED SeriesStatus = "Ended"
-	UNRELEASED SeriesStatus = "Unreleased"
+	SERIESSTATUS_CONTINUING SeriesStatus = "Continuing"
+	SERIESSTATUS_ENDED SeriesStatus = "Ended"
+	SERIESSTATUS_UNRELEASED SeriesStatus = "Unreleased"
 )
 
 // All allowed values of SeriesStatus enum

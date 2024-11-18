@@ -20,10 +20,10 @@ type KeepUntil string
 
 // List of KeepUntil
 const (
-	UNTIL_DELETED KeepUntil = "UntilDeleted"
-	UNTIL_SPACE_NEEDED KeepUntil = "UntilSpaceNeeded"
-	UNTIL_WATCHED KeepUntil = "UntilWatched"
-	UNTIL_DATE KeepUntil = "UntilDate"
+	KEEPUNTIL_UNTIL_DELETED KeepUntil = "UntilDeleted"
+	KEEPUNTIL_UNTIL_SPACE_NEEDED KeepUntil = "UntilSpaceNeeded"
+	KEEPUNTIL_UNTIL_WATCHED KeepUntil = "UntilWatched"
+	KEEPUNTIL_UNTIL_DATE KeepUntil = "UntilDate"
 )
 
 // All allowed values of KeepUntil enum

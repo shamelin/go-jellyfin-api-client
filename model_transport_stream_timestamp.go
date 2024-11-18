@@ -20,9 +20,9 @@ type TransportStreamTimestamp string
 
 // List of TransportStreamTimestamp
 const (
-	NONE TransportStreamTimestamp = "None"
-	ZERO TransportStreamTimestamp = "Zero"
-	VALID TransportStreamTimestamp = "Valid"
+	TRANSPORTSTREAMTIMESTAMP_NONE TransportStreamTimestamp = "None"
+	TRANSPORTSTREAMTIMESTAMP_ZERO TransportStreamTimestamp = "Zero"
+	TRANSPORTSTREAMTIMESTAMP_VALID TransportStreamTimestamp = "Valid"
 )
 
 // All allowed values of TransportStreamTimestamp enum

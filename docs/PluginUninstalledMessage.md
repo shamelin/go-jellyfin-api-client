@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**NullablePluginInfo**](PluginInfo.md) | This is a serializable stub class that is used by the api to provide information about installed plugins. | [optional] 
 **MessageId** | Pointer to **string** | Gets or sets the message id. | [optional] 
-**MessageType** | Pointer to [**SessionMessageType**](SessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to PACKAGE_UNINSTALLED]
+**MessageType** | Pointer to [**SessionMessageType**](SessionMessageType.md) | The different kinds of messages that are used in the WebSocket api. | [optional] [readonly] [default to SESSIONMESSAGETYPE_PACKAGE_UNINSTALLED]
 
 ## Methods
 

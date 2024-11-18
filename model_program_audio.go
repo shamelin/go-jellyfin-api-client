@@ -20,12 +20,12 @@ type ProgramAudio string
 
 // List of ProgramAudio
 const (
-	MONO ProgramAudio = "Mono"
-	STEREO ProgramAudio = "Stereo"
-	DOLBY ProgramAudio = "Dolby"
-	DOLBY_DIGITAL ProgramAudio = "DolbyDigital"
-	THX ProgramAudio = "Thx"
-	ATMOS ProgramAudio = "Atmos"
+	PROGRAMAUDIO_MONO ProgramAudio = "Mono"
+	PROGRAMAUDIO_STEREO ProgramAudio = "Stereo"
+	PROGRAMAUDIO_DOLBY ProgramAudio = "Dolby"
+	PROGRAMAUDIO_DOLBY_DIGITAL ProgramAudio = "DolbyDigital"
+	PROGRAMAUDIO_THX ProgramAudio = "Thx"
+	PROGRAMAUDIO_ATMOS ProgramAudio = "Atmos"
 )
 
 // All allowed values of ProgramAudio enum

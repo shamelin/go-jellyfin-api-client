@@ -20,14 +20,14 @@ type CollectionTypeOptions string
 
 // List of CollectionTypeOptions
 const (
-	MOVIES CollectionTypeOptions = "movies"
-	TVSHOWS CollectionTypeOptions = "tvshows"
-	MUSIC CollectionTypeOptions = "music"
-	MUSICVIDEOS CollectionTypeOptions = "musicvideos"
-	HOMEVIDEOS CollectionTypeOptions = "homevideos"
-	BOXSETS CollectionTypeOptions = "boxsets"
-	BOOKS CollectionTypeOptions = "books"
-	MIXED CollectionTypeOptions = "mixed"
+	COLLECTIONTYPEOPTIONS_MOVIES CollectionTypeOptions = "movies"
+	COLLECTIONTYPEOPTIONS_TVSHOWS CollectionTypeOptions = "tvshows"
+	COLLECTIONTYPEOPTIONS_MUSIC CollectionTypeOptions = "music"
+	COLLECTIONTYPEOPTIONS_MUSICVIDEOS CollectionTypeOptions = "musicvideos"
+	COLLECTIONTYPEOPTIONS_HOMEVIDEOS CollectionTypeOptions = "homevideos"
+	COLLECTIONTYPEOPTIONS_BOXSETS CollectionTypeOptions = "boxsets"
+	COLLECTIONTYPEOPTIONS_BOOKS CollectionTypeOptions = "books"
+	COLLECTIONTYPEOPTIONS_MIXED CollectionTypeOptions = "mixed"
 )
 
 // All allowed values of CollectionTypeOptions enum

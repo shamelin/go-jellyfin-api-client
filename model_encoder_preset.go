@@ -20,17 +20,17 @@ type EncoderPreset string
 
 // List of EncoderPreset
 const (
-	AUTO EncoderPreset = "auto"
-	PLACEBO EncoderPreset = "placebo"
-	VERYSLOW EncoderPreset = "veryslow"
-	SLOWER EncoderPreset = "slower"
-	SLOW EncoderPreset = "slow"
-	MEDIUM EncoderPreset = "medium"
-	FAST EncoderPreset = "fast"
-	FASTER EncoderPreset = "faster"
-	VERYFAST EncoderPreset = "veryfast"
-	SUPERFAST EncoderPreset = "superfast"
-	ULTRAFAST EncoderPreset = "ultrafast"
+	ENCODERPRESET_AUTO EncoderPreset = "auto"
+	ENCODERPRESET_PLACEBO EncoderPreset = "placebo"
+	ENCODERPRESET_VERYSLOW EncoderPreset = "veryslow"
+	ENCODERPRESET_SLOWER EncoderPreset = "slower"
+	ENCODERPRESET_SLOW EncoderPreset = "slow"
+	ENCODERPRESET_MEDIUM EncoderPreset = "medium"
+	ENCODERPRESET_FAST EncoderPreset = "fast"
+	ENCODERPRESET_FASTER EncoderPreset = "faster"
+	ENCODERPRESET_VERYFAST EncoderPreset = "veryfast"
+	ENCODERPRESET_SUPERFAST EncoderPreset = "superfast"
+	ENCODERPRESET_ULTRAFAST EncoderPreset = "ultrafast"
 )
 
 // All allowed values of EncoderPreset enum

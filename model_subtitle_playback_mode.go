@@ -20,11 +20,11 @@ type SubtitlePlaybackMode string
 
 // List of SubtitlePlaybackMode
 const (
-	DEFAULT SubtitlePlaybackMode = "Default"
-	ALWAYS SubtitlePlaybackMode = "Always"
-	ONLY_FORCED SubtitlePlaybackMode = "OnlyForced"
-	NONE SubtitlePlaybackMode = "None"
-	SMART SubtitlePlaybackMode = "Smart"
+	SUBTITLEPLAYBACKMODE_DEFAULT SubtitlePlaybackMode = "Default"
+	SUBTITLEPLAYBACKMODE_ALWAYS SubtitlePlaybackMode = "Always"
+	SUBTITLEPLAYBACKMODE_ONLY_FORCED SubtitlePlaybackMode = "OnlyForced"
+	SUBTITLEPLAYBACKMODE_NONE SubtitlePlaybackMode = "None"
+	SUBTITLEPLAYBACKMODE_SMART SubtitlePlaybackMode = "Smart"
 )
 
 // All allowed values of SubtitlePlaybackMode enum

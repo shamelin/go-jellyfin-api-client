@@ -20,11 +20,11 @@ type SubtitleDeliveryMethod string
 
 // List of SubtitleDeliveryMethod
 const (
-	ENCODE SubtitleDeliveryMethod = "Encode"
-	EMBED SubtitleDeliveryMethod = "Embed"
-	EXTERNAL SubtitleDeliveryMethod = "External"
-	HLS SubtitleDeliveryMethod = "Hls"
-	DROP SubtitleDeliveryMethod = "Drop"
+	SUBTITLEDELIVERYMETHOD_ENCODE SubtitleDeliveryMethod = "Encode"
+	SUBTITLEDELIVERYMETHOD_EMBED SubtitleDeliveryMethod = "Embed"
+	SUBTITLEDELIVERYMETHOD_EXTERNAL SubtitleDeliveryMethod = "External"
+	SUBTITLEDELIVERYMETHOD_HLS SubtitleDeliveryMethod = "Hls"
+	SUBTITLEDELIVERYMETHOD_DROP SubtitleDeliveryMethod = "Drop"
 )
 
 // All allowed values of SubtitleDeliveryMethod enum

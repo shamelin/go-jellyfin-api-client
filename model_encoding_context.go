@@ -20,8 +20,8 @@ type EncodingContext string
 
 // List of EncodingContext
 const (
-	STREAMING EncodingContext = "Streaming"
-	STATIC EncodingContext = "Static"
+	ENCODINGCONTEXT_STREAMING EncodingContext = "Streaming"
+	ENCODINGCONTEXT_STATIC EncodingContext = "Static"
 )
 
 // All allowed values of EncodingContext enum
