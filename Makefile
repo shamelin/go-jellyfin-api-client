@@ -8,3 +8,4 @@ generate:
 			-c /local/config.yaml \
 			-o /local
 	sed -i 's/JellyfinJellyfin/Jellyfin/g' *.go
+	sed -i 's/JELLYFINJELLYFIN/JELLYFIN/g' *.go

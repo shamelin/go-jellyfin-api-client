@@ -65,11 +65,11 @@ func NewJellyfinTranscodingProfile() *JellyfinTranscodingProfile {
 	this.EstimateContentLength = &estimateContentLength
 	var enableMpegtsM2TsMode bool = false
 	this.EnableMpegtsM2TsMode = &enableMpegtsM2TsMode
-	var transcodeSeekInfo JellyfinTranscodeSeekInfo = JELLYFINJELLYFINTRANSCODESEEKINFO_AUTO
+	var transcodeSeekInfo JellyfinTranscodeSeekInfo = JELLYFINTRANSCODESEEKINFO_AUTO
 	this.TranscodeSeekInfo = &transcodeSeekInfo
 	var copyTimestamps bool = false
 	this.CopyTimestamps = &copyTimestamps
-	var context JellyfinEncodingContext = JELLYFINJELLYFINENCODINGCONTEXT_STREAMING
+	var context JellyfinEncodingContext = JELLYFINENCODINGCONTEXT_STREAMING
 	this.Context = &context
 	var enableSubtitlesInManifest bool = false
 	this.EnableSubtitlesInManifest = &enableSubtitlesInManifest
@@ -93,11 +93,11 @@ func NewJellyfinTranscodingProfileWithDefaults() *JellyfinTranscodingProfile {
 	this.EstimateContentLength = &estimateContentLength
 	var enableMpegtsM2TsMode bool = false
 	this.EnableMpegtsM2TsMode = &enableMpegtsM2TsMode
-	var transcodeSeekInfo JellyfinTranscodeSeekInfo = JELLYFINJELLYFINTRANSCODESEEKINFO_AUTO
+	var transcodeSeekInfo JellyfinTranscodeSeekInfo = JELLYFINTRANSCODESEEKINFO_AUTO
 	this.TranscodeSeekInfo = &transcodeSeekInfo
 	var copyTimestamps bool = false
 	this.CopyTimestamps = &copyTimestamps
-	var context JellyfinEncodingContext = JELLYFINJELLYFINENCODINGCONTEXT_STREAMING
+	var context JellyfinEncodingContext = JELLYFINENCODINGCONTEXT_STREAMING
 	this.Context = &context
 	var enableSubtitlesInManifest bool = false
 	this.EnableSubtitlesInManifest = &enableSubtitlesInManifest
